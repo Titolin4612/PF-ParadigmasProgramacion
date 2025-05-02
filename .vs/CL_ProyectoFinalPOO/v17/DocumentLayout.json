@@ -1,0 +1,109 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\mesaj\\OneDrive\\Documents\\VS2022\\CL_ProyectoFinalPOO\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{092A8095-EE5E-4E1E-9F54-29841327BCA6}|CL_ProyectoFinalPOO.csproj|c:\\users\\mesaj\\onedrive\\documents\\vs2022\\cl_proyectofinalpoo\\castigo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{092A8095-EE5E-4E1E-9F54-29841327BCA6}|CL_ProyectoFinalPOO.csproj|solutionrelative:castigo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{092A8095-EE5E-4E1E-9F54-29841327BCA6}|CL_ProyectoFinalPOO.csproj|c:\\users\\mesaj\\onedrive\\documents\\vs2022\\cl_proyectofinalpoo\\premio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{092A8095-EE5E-4E1E-9F54-29841327BCA6}|CL_ProyectoFinalPOO.csproj|solutionrelative:premio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{092A8095-EE5E-4E1E-9F54-29841327BCA6}|CL_ProyectoFinalPOO.csproj|c:\\users\\mesaj\\onedrive\\documents\\vs2022\\cl_proyectofinalpoo\\juego.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{092A8095-EE5E-4E1E-9F54-29841327BCA6}|CL_ProyectoFinalPOO.csproj|solutionrelative:juego.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{092A8095-EE5E-4E1E-9F54-29841327BCA6}|CL_ProyectoFinalPOO.csproj|c:\\users\\mesaj\\onedrive\\documents\\vs2022\\cl_proyectofinalpoo\\carta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{092A8095-EE5E-4E1E-9F54-29841327BCA6}|CL_ProyectoFinalPOO.csproj|solutionrelative:carta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{092A8095-EE5E-4E1E-9F54-29841327BCA6}|CL_ProyectoFinalPOO.csproj|c:\\users\\mesaj\\onedrive\\documents\\vs2022\\cl_proyectofinalpoo\\jugador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{092A8095-EE5E-4E1E-9F54-29841327BCA6}|CL_ProyectoFinalPOO.csproj|solutionrelative:jugador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Castigo.cs",
+              "DocumentMoniker": "C:\\Users\\mesaj\\OneDrive\\Documents\\VS2022\\CL_ProyectoFinalPOO\\Castigo.cs",
+              "RelativeDocumentMoniker": "Castigo.cs",
+              "ToolTip": "C:\\Users\\mesaj\\OneDrive\\Documents\\VS2022\\CL_ProyectoFinalPOO\\Castigo.cs",
+              "RelativeToolTip": "Castigo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-01T23:18:52.373Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Premio.cs",
+              "DocumentMoniker": "C:\\Users\\mesaj\\OneDrive\\Documents\\VS2022\\CL_ProyectoFinalPOO\\Premio.cs",
+              "RelativeDocumentMoniker": "Premio.cs",
+              "ToolTip": "C:\\Users\\mesaj\\OneDrive\\Documents\\VS2022\\CL_ProyectoFinalPOO\\Premio.cs",
+              "RelativeToolTip": "Premio.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-01T23:18:42.765Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Juego.cs",
+              "DocumentMoniker": "C:\\Users\\mesaj\\OneDrive\\Documents\\VS2022\\CL_ProyectoFinalPOO\\Juego.cs",
+              "RelativeDocumentMoniker": "Juego.cs",
+              "ToolTip": "C:\\Users\\mesaj\\OneDrive\\Documents\\VS2022\\CL_ProyectoFinalPOO\\Juego.cs",
+              "RelativeToolTip": "Juego.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-01T23:18:33.707Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Carta.cs",
+              "DocumentMoniker": "C:\\Users\\mesaj\\OneDrive\\Documents\\VS2022\\CL_ProyectoFinalPOO\\Carta.cs",
+              "RelativeDocumentMoniker": "Carta.cs",
+              "ToolTip": "C:\\Users\\mesaj\\OneDrive\\Documents\\VS2022\\CL_ProyectoFinalPOO\\Carta.cs*",
+              "RelativeToolTip": "Carta.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-01T23:15:15.41Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Jugador.cs",
+              "DocumentMoniker": "C:\\Users\\mesaj\\OneDrive\\Documents\\VS2022\\CL_ProyectoFinalPOO\\Jugador.cs",
+              "RelativeDocumentMoniker": "Jugador.cs",
+              "ToolTip": "C:\\Users\\mesaj\\OneDrive\\Documents\\VS2022\\CL_ProyectoFinalPOO\\Jugador.cs*",
+              "RelativeToolTip": "Jugador.cs*",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-01T23:08:02.344Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
