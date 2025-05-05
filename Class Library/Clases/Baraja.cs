@@ -13,36 +13,37 @@ namespace CL_ProyectoFinalPOO.Clases
             var cartas = new List<Carta>();
 
             // Cartas de Juego
-            cartas.Add(new CartaJuego("Atenea", "Diosa de la sabiduría y la estrategia", "Griega", "Especial"));
-            cartas.Add(new CartaJuego("Zeus", "Rey de los dioses, domina el trueno", "Griega", "Legendario"));
-            cartas.Add(new CartaJuego("Thor", "Guerrero del trueno, hijo de Odín", "Nórdica", "Epico"));
-            cartas.Add(new CartaJuego("Anubis", "Protector del inframundo, guía de almas", "Egipcia", "Raro"));
-            cartas.Add(new CartaJuego("Loki", "Embaucador impredecible de múltiples rostros", "Nórdica", "Especial"));
-            cartas.Add(new CartaJuego("Hades", "Señor del inframundo, silencioso y justo", "Griega", "Raro"));
-            cartas.Add(new CartaJuego("Freya", "Diosa del amor y la guerra, feroz y bella", "Nórdica", "Epico"));
-            cartas.Add(new CartaJuego("Ra", "Dios del Sol, fuente de vida y poder", "Egipcia", "Legendario"));
-            cartas.Add(new CartaJuego("Ares", "Dios de la guerra, sediento de combate", "Griega", "Especial"));
-            cartas.Add(new CartaJuego("Apolo", "Dios de la música, medicina y luz", "Griega", "Especial"));
-            cartas.Add(new CartaJuego("Bastet", "Diosa felina, protectora del hogar", "Egipcia", "Comun"));
-            cartas.Add(new CartaJuego("Hermes", "Mensajero veloz, guía de viajeros", "Griega", "Comun"));
-            cartas.Add(new CartaJuego("Fenrir", "Lobo del Ragnarok, bestia indomable", "Nórdica", "Raro"));
-            cartas.Add(new CartaJuego("Poseidón", "Dios del mar, impredecible y fuerte", "Griega", "Epico"));
-            cartas.Add(new CartaJuego("Ishtar", "Diosa del amor y guerra, bella y mortal", "Mesopotámica", "Especial"));
-            cartas.Add(new CartaJuego("Osiris", "Señor de la resurrección, justo juez", "Egipcia", "Raro"));
-            cartas.Add(new CartaJuego("Tyr", "Dios de la guerra y el sacrificio", "Nórdica", "Comun"));
-            cartas.Add(new CartaJuego("Hel", "Reina de los muertos, gélida presencia", "Nórdica", "Comun"));
-            cartas.Add(new CartaJuego("Artemis", "Cazadora infalible, guardiana del bosque", "Griega", "Especial"));
-            cartas.Add(new CartaJuego("Horus", "Dios halcón, símbolo de protección real", "Egipcia", "Especial"));
-            cartas.Add(new CartaJuego("Cronos", "Titán del tiempo, implacable y eterno", "Griega", "Epico"));
-            cartas.Add(new CartaJuego("Persefone", "Reina del inframundo, entre dos mundos", "Griega", "Especial"));
-            cartas.Add(new CartaJuego("Marduk", "Guerrero de los dioses, mata al caos", "Mesopotámica", "Raro"));
-            cartas.Add(new CartaJuego("Nut", "Diosa del cielo estrellado, madre protectora", "Egipcia", "Comun"));
-            cartas.Add(new CartaJuego("Pan", "Espíritu libre del bosque y la música", "Griega", "Comun"));
-            cartas.Add(new CartaJuego("Eros", "Dios del deseo y el amor irresistible", "Griega", "Comun"));
-            cartas.Add(new CartaJuego("Set", "Caótico dios del desierto y la destrucción", "Egipcia", "Especial"));
-            cartas.Add(new CartaJuego("Odín", "Padre sabio, busca poder y conocimiento", "Nórdica", "Legendario"));
-            cartas.Add(new CartaJuego("Enki", "Señor del agua dulce y la sabiduría", "Sumeria", "Raro"));
-            cartas.Add(new CartaJuego("Chac", "Dios de la lluvia, impredecible y fuerte", "Maya", "Comun"));
+            cartas.Add(new CartaJuego("Atenea", "Diosa de la sabiduría y la estrategia", "Griega", CartaJuego.Rareza.Rara));
+            cartas.Add(new CartaJuego("Zeus", "Rey de los dioses, domina el trueno", "Griega", CartaJuego.Rareza.Legendaria));
+            cartas.Add(new CartaJuego("Thor", "Guerrero del trueno, hijo de Odín", "Nórdica", CartaJuego.Rareza.Epica));
+            cartas.Add(new CartaJuego("Anubis", "Protector del inframundo, guía de almas", "Egipcia", CartaJuego.Rareza.Rara));
+            cartas.Add(new CartaJuego("Loki", "Embaucador impredecible de múltiples rostros", "Nórdica", CartaJuego.Rareza.Rara));
+            cartas.Add(new CartaJuego("Hades", "Señor del inframundo, silencioso y justo", "Griega", CartaJuego.Rareza.Rara));
+            cartas.Add(new CartaJuego("Freya", "Diosa del amor y la guerra, feroz y bella", "Nórdica", CartaJuego.Rareza.Epica));
+            cartas.Add(new CartaJuego("Ra", "Dios del Sol, fuente de vida y poder", "Egipcia", CartaJuego.Rareza.Legendaria));
+            cartas.Add(new CartaJuego("Ares", "Dios de la guerra, sediento de combate", "Griega", CartaJuego.Rareza.Rara));
+            cartas.Add(new CartaJuego("Apolo", "Dios de la música, medicina y luz", "Griega", CartaJuego.Rareza.Rara));
+            cartas.Add(new CartaJuego("Bastet", "Diosa felina, protectora del hogar", "Egipcia", CartaJuego.Rareza.Comun));
+            cartas.Add(new CartaJuego("Hermes", "Mensajero veloz, guía de viajeros", "Griega", CartaJuego.Rareza.Comun));
+            cartas.Add(new CartaJuego("Fenrir", "Lobo del Ragnarok, bestia indomable", "Nórdica", CartaJuego.Rareza.Rara));
+            cartas.Add(new CartaJuego("Poseidón", "Dios del mar, impredecible y fuerte", "Griega", CartaJuego.Rareza.Epica));
+            cartas.Add(new CartaJuego("Ishtar", "Diosa del amor y guerra, bella y mortal", "Mesopotámica", CartaJuego.Rareza.Rara));
+            cartas.Add(new CartaJuego("Osiris", "Señor de la resurrección, justo juez", "Egipcia", CartaJuego.Rareza.Rara));
+            cartas.Add(new CartaJuego("Tyr", "Dios de la guerra y el sacrificio", "Nórdica", CartaJuego.Rareza.Comun));
+            cartas.Add(new CartaJuego("Hel", "Reina de los muertos, gélida presencia", "Nórdica", CartaJuego.Rareza.Comun));
+            cartas.Add(new CartaJuego("Artemis", "Cazadora infalible, guardiana del bosque", "Griega", CartaJuego.Rareza.Rara));
+            cartas.Add(new CartaJuego("Horus", "Dios halcón, símbolo de protección real", "Egipcia", CartaJuego.Rareza.Rara));
+            cartas.Add(new CartaJuego("Cronos", "Titán del tiempo, implacable y eterno", "Griega", CartaJuego.Rareza.Epica));
+            cartas.Add(new CartaJuego("Persefone", "Reina del inframundo, entre dos mundos", "Griega", CartaJuego.Rareza.Rara));
+            cartas.Add(new CartaJuego("Marduk", "Guerrero de los dioses, mata al caos", "Mesopotámica", CartaJuego.Rareza.Rara));
+            cartas.Add(new CartaJuego("Nut", "Diosa del cielo estrellado, madre protectora", "Egipcia", CartaJuego.Rareza.Comun));
+            cartas.Add(new CartaJuego("Pan", "Espíritu libre del bosque y la música", "Griega", CartaJuego.Rareza.Comun));
+            cartas.Add(new CartaJuego("Eros", "Dios del deseo y el amor irresistible", "Griega", CartaJuego.Rareza.Comun));
+            cartas.Add(new CartaJuego("Set", "Caótico dios del desierto y la destrucción", "Egipcia", CartaJuego.Rareza.Rara));
+            cartas.Add(new CartaJuego("Odín", "Padre sabio, busca poder y conocimiento", "Nórdica", CartaJuego.Rareza.Legendaria));
+            cartas.Add(new CartaJuego("Enki", "Señor del agua dulce y la sabiduría", "Sumeria", CartaJuego.Rareza.Rara));
+            cartas.Add(new CartaJuego("Chac", "Dios de la lluvia, impredecible y fuerte", "Maya", CartaJuego.Rareza.Comun));
+
 
             // Cartas de Castigo
             cartas.Add(new CartaCastigo("Medusa", "Su mirada convierte en piedra", "Griega", "Piedra eterna para quien la enfrente"));

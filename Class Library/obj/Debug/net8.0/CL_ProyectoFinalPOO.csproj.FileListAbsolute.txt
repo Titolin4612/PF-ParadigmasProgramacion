@@ -33,3 +33,15 @@ C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Pr
 C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\bin\Debug\net8.0\CL_ProyectoFinalPOO.dll
 C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\bin\Debug\net8.0\CL_ProyectoFinalPOO.pdb
 C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\obj\Debug\net8.0\ref\CL_ProyectoFinalPOO.dll
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\Class Library\bin\Debug\net8.0\CL_ProyectoFinalPOO.deps.json
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\Class Library\bin\Debug\net8.0\CL_ProyectoFinalPOO.dll
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\Class Library\bin\Debug\net8.0\CL_ProyectoFinalPOO.pdb
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\Class Library\obj\Debug\net8.0\CL_ProyectoFinalPOO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\Class Library\obj\Debug\net8.0\CL_ProyectoFinalPOO.AssemblyInfoInputs.cache
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\Class Library\obj\Debug\net8.0\CL_ProyectoFinalPOO.AssemblyInfo.cs
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\Class Library\obj\Debug\net8.0\CL_ProyectoFinalPOO.csproj.CoreCompileInputs.cache
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\Class Library\obj\Debug\net8.0\CL_ProyectoFinalPOO.sourcelink.json
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\Class Library\obj\Debug\net8.0\CL_ProyectoFinalPOO.dll
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\Class Library\obj\Debug\net8.0\refint\CL_ProyectoFinalPOO.dll
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\Class Library\obj\Debug\net8.0\CL_ProyectoFinalPOO.pdb
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\Class Library\obj\Debug\net8.0\ref\CL_ProyectoFinalPOO.dll

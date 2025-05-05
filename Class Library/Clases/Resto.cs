@@ -38,7 +38,7 @@ namespace CL_ProyectoFinalPOO.Clases
                 switch (carta)
                 {
                     case CartaJuego juego:
-                        Console.WriteLine($"Tipo: Juego | Rareza: {juego.Rareza}");
+                        Console.WriteLine($"Tipo: Juego | Rareza: {juego.RarezaCarta}");
                         break;
                     case CartaCastigo castigo:
                         Console.WriteLine($"Tipo: Castigo | Maleficio: {castigo.Maleficio}");

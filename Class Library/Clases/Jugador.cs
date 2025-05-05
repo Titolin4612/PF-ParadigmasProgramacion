@@ -34,5 +34,6 @@ namespace CL_ProyectoFinalPOO.Clases
             L_cartas_jugador = new List<Carta>();
             Puntos = _puntos;
         }
+    
     }
 }

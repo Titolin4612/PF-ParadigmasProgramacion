@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CL_ProyectoFinalPOO.Interfaces;
 
 namespace CL_ProyectoFinalPOO.Clases
 {
@@ -17,11 +18,11 @@ namespace CL_ProyectoFinalPOO.Clases
 
         // Constructor
         public CartaCastigo(string nombre, string descripcion, string mitologia, string maleficio) : base (nombre, descripcion, mitologia)
-        {
-            Nombre = nombre;
-            Descripcion = descripcion;
-            Mitologia = mitologia;
+        { 
             Maleficio = maleficio;
         }
+
+        // Metodos
+        public override int ActualizarPuntos() => -5;
     }
 }

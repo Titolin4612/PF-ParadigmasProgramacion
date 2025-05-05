@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CL_ProyectoFinalPOO.Interfaces;
 
 namespace CL_ProyectoFinalPOO.Clases
 {
-    public abstract class Carta
+    public abstract class Carta : ICartaEfecto
     {
         // Atributos
         public string _nombre;
@@ -44,5 +45,8 @@ namespace CL_ProyectoFinalPOO.Clases
             Mitologia = mitologia;
             Descripcion = descripcion;
         }
+
+        // Metodos
+        public abstract int ActualizarPuntos();
     }
 }

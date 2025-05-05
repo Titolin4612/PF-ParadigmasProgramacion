@@ -17,10 +17,11 @@ namespace CL_ProyectoFinalPOO.Clases
         // Constructor
         public CartaPremio(string nombre, string descripcion, string mitologia, string bendicion) : base(nombre, descripcion, mitologia)
         {
-            Nombre = nombre;
-            Descripcion = descripcion;
-            Mitologia = mitologia;
             Bendicion = bendicion;
         }
+
+
+        // Metodos
+        public override int ActualizarPuntos() => +5;
     }
 }
