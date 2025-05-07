@@ -10,7 +10,7 @@ namespace CL_ProyectoFinalPOO.Clases
     public class Resto
     {
         // Atributos
-        private static List<Carta> l_cartas_resto;
+        private List<Carta> l_cartas_resto;
         private byte _cantidadResto;
 
         public Resto()
@@ -20,16 +20,18 @@ namespace CL_ProyectoFinalPOO.Clases
         }
 
         // Accesores
-        internal static List<Carta> L_cartas_resto { get => l_cartas_resto; set => l_cartas_resto = value; }
+        public List<Carta> L_cartas_resto { get => l_cartas_resto; set => l_cartas_resto = value; }
         public byte CantidadResto { get => _cantidadResto; set => _cantidadResto = value; }
 
-        // Metodo cagado pa imprimir esa cagada de baraja
-        int consecutivo = 1;
-        public void imprimitLista()
+        // Imprimir las cartas en la baraja
+
+        int consecutivo;
+        public void imprimirLista()
         {
+            consecutivo = 1;
             Console.WriteLine("Baraja de cartas:");
             Console.WriteLine(new string('-', 60));
-            
+
             foreach (var carta in l_cartas_resto)
             {
                 Console.WriteLine($"Nombre: {carta.Nombre} | Mitología: {carta.Mitologia} | Numero: {consecutivo}");
@@ -51,14 +53,22 @@ namespace CL_ProyectoFinalPOO.Clases
                         break;
                 }
 
-                Console.WriteLine(new string('-', 60)); 
+                Console.WriteLine(new string('-', 60));
                 consecutivo++;
             }
         }
 
-
-
-
+        public Carta ObtenerCarta() // primera carta de la lista
+        {
+            if (l_cartas_resto != null && l_cartas_resto.Count > 0)
+            {
+                return l_cartas_resto.First();
+            }
+            else
+            {
+                throw new InvalidOperationException("La baraja está vacía o no está inicializada.");
+            }
+        }
 
     }
 }

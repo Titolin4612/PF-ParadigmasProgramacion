@@ -12,11 +12,13 @@ namespace CL_ProyectoFinalPOO.Clases
 
         public enum Rareza
         {
-            Comun = 1,
-            Rara = 2,
-            Epica = 3,
-            Legendaria = 5
+            Comun,
+            Especial,
+            Rara,
+            Epica,
+            Legendaria
         }
+
 
         // Atributos
         private Rareza rarezaCarta;
