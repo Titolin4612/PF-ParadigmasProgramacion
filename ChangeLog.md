@@ -1,3 +1,5 @@
+# ChangeLog
+
 # Juego V 1.30 (Mayo 7 2025) SANTIAGO H
 
 - `Cambie en la clase Baraja para manejar 3 listas diferentes dependiendo el tipo de carta (Juego, Castigo, premio)`
