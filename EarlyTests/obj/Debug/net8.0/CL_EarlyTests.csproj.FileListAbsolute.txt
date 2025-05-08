@@ -1,0 +1,56 @@
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\CL_EarlyTests\obj\Debug\net8.0\CL_EarlyTests.csproj.AssemblyReference.cache
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\CL_EarlyTests\obj\Debug\net8.0\CL_EarlyTests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\CL_EarlyTests\obj\Debug\net8.0\CL_EarlyTests.AssemblyInfoInputs.cache
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\CL_EarlyTests\obj\Debug\net8.0\CL_EarlyTests.AssemblyInfo.cs
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\CL_EarlyTests\obj\Debug\net8.0\CL_EarlyTests.csproj.CoreCompileInputs.cache
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\CL_EarlyTests\bin\Debug\net8.0\CL_EarlyTests.exe
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\CL_EarlyTests\bin\Debug\net8.0\CL_EarlyTests.deps.json
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\CL_EarlyTests\bin\Debug\net8.0\CL_EarlyTests.runtimeconfig.json
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\CL_EarlyTests\bin\Debug\net8.0\CL_EarlyTests.dll
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\CL_EarlyTests\bin\Debug\net8.0\CL_EarlyTests.pdb
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\CL_EarlyTests\bin\Debug\net8.0\CL_ProyectoFinalPOO.dll
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\CL_EarlyTests\bin\Debug\net8.0\CL_ProyectoFinalPOO.pdb
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\CL_EarlyTests\obj\Debug\net8.0\CL_Early.B7643392.Up2Date
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\CL_EarlyTests\obj\Debug\net8.0\CL_EarlyTests.dll
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\CL_EarlyTests\obj\Debug\net8.0\refint\CL_EarlyTests.dll
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\CL_EarlyTests\obj\Debug\net8.0\CL_EarlyTests.pdb
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\CL_EarlyTests\obj\Debug\net8.0\CL_EarlyTests.genruntimeconfig.cache
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\CL_EarlyTests\obj\Debug\net8.0\ref\CL_EarlyTests.dll
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\EarlyTests\CL_EarlyTests\obj\Debug\net8.0\CL_EarlyTests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\EarlyTests\CL_EarlyTests\obj\Debug\net8.0\CL_EarlyTests.AssemblyInfoInputs.cache
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\EarlyTests\CL_EarlyTests\obj\Debug\net8.0\CL_EarlyTests.AssemblyInfo.cs
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\EarlyTests\CL_EarlyTests\obj\Debug\net8.0\CL_EarlyTests.csproj.CoreCompileInputs.cache
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\EarlyTests\CL_EarlyTests\obj\Debug\net8.0\CL_EarlyTests.sourcelink.json
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\EarlyTests\CL_EarlyTests\obj\Debug\net8.0\CL_EarlyTests.dll
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\EarlyTests\CL_EarlyTests\obj\Debug\net8.0\refint\CL_EarlyTests.dll
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\EarlyTests\CL_EarlyTests\obj\Debug\net8.0\CL_EarlyTests.pdb
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\EarlyTests\CL_EarlyTests\bin\Debug\net8.0\CL_EarlyTests.exe
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\EarlyTests\CL_EarlyTests\bin\Debug\net8.0\CL_EarlyTests.deps.json
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\EarlyTests\CL_EarlyTests\bin\Debug\net8.0\CL_EarlyTests.runtimeconfig.json
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\EarlyTests\CL_EarlyTests\bin\Debug\net8.0\CL_EarlyTests.dll
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\EarlyTests\CL_EarlyTests\bin\Debug\net8.0\CL_EarlyTests.pdb
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\EarlyTests\CL_EarlyTests\bin\Debug\net8.0\CL_ProyectoFinalPOO.dll
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\EarlyTests\CL_EarlyTests\bin\Debug\net8.0\CL_ProyectoFinalPOO.pdb
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\EarlyTests\CL_EarlyTests\obj\Debug\net8.0\CL_EarlyTests.csproj.AssemblyReference.cache
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\EarlyTests\CL_EarlyTests\obj\Debug\net8.0\CL_Early.B7643392.Up2Date
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\EarlyTests\CL_EarlyTests\obj\Debug\net8.0\CL_EarlyTests.genruntimeconfig.cache
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\EarlyTests\CL_EarlyTests\obj\Debug\net8.0\ref\CL_EarlyTests.dll
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\EarlyTests\bin\Debug\net8.0\CL_EarlyTests.exe
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\EarlyTests\bin\Debug\net8.0\CL_EarlyTests.deps.json
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\EarlyTests\bin\Debug\net8.0\CL_EarlyTests.runtimeconfig.json
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\EarlyTests\bin\Debug\net8.0\CL_EarlyTests.dll
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\EarlyTests\bin\Debug\net8.0\CL_EarlyTests.pdb
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\EarlyTests\bin\Debug\net8.0\CL_ProyectoFinalPOO.dll
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\EarlyTests\bin\Debug\net8.0\CL_ProyectoFinalPOO.pdb
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\EarlyTests\obj\Debug\net8.0\CL_EarlyTests.csproj.AssemblyReference.cache
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\EarlyTests\obj\Debug\net8.0\CL_EarlyTests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\EarlyTests\obj\Debug\net8.0\CL_EarlyTests.AssemblyInfoInputs.cache
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\EarlyTests\obj\Debug\net8.0\CL_EarlyTests.AssemblyInfo.cs
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\EarlyTests\obj\Debug\net8.0\CL_EarlyTests.csproj.CoreCompileInputs.cache
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\EarlyTests\obj\Debug\net8.0\CL_EarlyTests.sourcelink.json
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\EarlyTests\obj\Debug\net8.0\CL_Early.B7643392.Up2Date
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\EarlyTests\obj\Debug\net8.0\CL_EarlyTests.dll
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\EarlyTests\obj\Debug\net8.0\refint\CL_EarlyTests.dll
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\EarlyTests\obj\Debug\net8.0\CL_EarlyTests.pdb
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\EarlyTests\obj\Debug\net8.0\CL_EarlyTests.genruntimeconfig.cache
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\EarlyTests\obj\Debug\net8.0\ref\CL_EarlyTests.dll
