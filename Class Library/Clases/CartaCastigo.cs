@@ -11,10 +11,14 @@ namespace CL_ProyectoFinalPOO.Clases
     {
         // Atributo
         private string _maleficio;
+        // Valor carta
+        private static int vCastigo = -5;
         
 
         // Accesor
         public string Maleficio { get => _maleficio; set => _maleficio = value; }
+        public static int VCastigo { get => vCastigo; }
+
 
         // Constructor
         public CartaCastigo(string nombre, string descripcion, string mitologia, string maleficio) : base (nombre, descripcion, mitologia)
@@ -22,7 +26,6 @@ namespace CL_ProyectoFinalPOO.Clases
             Maleficio = maleficio;
         }
 
-        // Metodos
-        public override int ActualizarPuntos() => -5;
+        
     }
 }

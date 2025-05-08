@@ -10,9 +10,12 @@ namespace CL_ProyectoFinalPOO.Clases
     {
         // Atributo
         private string _bendicion;
+        // Valor carta
+        private static int vPremio = 5;
 
         // Accesor
         public string Bendicion { get => _bendicion; set => _bendicion = value; }
+        public static int VPremio { get => vPremio; }
 
         // Constructor
         public CartaPremio(string nombre, string descripcion, string mitologia, string bendicion) : base(nombre, descripcion, mitologia)
@@ -21,7 +24,6 @@ namespace CL_ProyectoFinalPOO.Clases
         }
 
 
-        // Metodos
-        public override int ActualizarPuntos() => +5;
+        
     }
 }

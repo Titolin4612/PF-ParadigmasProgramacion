@@ -7,7 +7,7 @@ using CL_ProyectoFinalPOO.Interfaces;
 
 namespace CL_ProyectoFinalPOO.Clases
 {
-    public abstract class Carta : ICartaEfecto
+    public abstract class Carta
     {
         // Atributos
         public string _nombre;
@@ -20,21 +20,32 @@ namespace CL_ProyectoFinalPOO.Clases
         public string Nombre
         {
             get => _nombre;
-            set => _nombre = value = !(string.IsNullOrEmpty(value) && string.IsNullOrWhiteSpace(value)) ? value
-                : throw new Exception("Error, el nombre es inválido.");
-
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                    throw new Exception("Error, el nombre es inválido.");
+                _nombre = value;
+            }
         }
         public string Mitologia
         {
             get => _mitologia;
-            set => _mitologia = value = !(string.IsNullOrEmpty(value) && string.IsNullOrWhiteSpace(value)) ? value
-                : throw new Exception("Error, la mitología es inválida.");
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                    throw new Exception("Error, la mitología es inválida.");
+                _mitologia = value;
+            }
         }
         public string Descripcion
         {
             get => _descripcion;
-            set => _descripcion = value = !(string.IsNullOrEmpty(value) && string.IsNullOrWhiteSpace(value)) && !(value.Length <= 2) ? value
-                : throw new Exception("Error, la descripcion es inválida.");
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value) || value.Length <= 2)
+                    throw new Exception("Error, la descripción es inválida.");
+                _descripcion = value;
+            }
         }
 
 
@@ -46,7 +57,6 @@ namespace CL_ProyectoFinalPOO.Clases
             Descripcion = descripcion;
         }
 
-        // Metodos
-        public abstract int ActualizarPuntos();
+       
     }
 }

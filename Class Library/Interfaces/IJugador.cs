@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace CL_ProyectoFinalPOO.Interfaces
 {
-    internal interface ICartaEfecto
+    internal interface IJugador
     {
-        int ActualizarPuntos();
+
     }
 }

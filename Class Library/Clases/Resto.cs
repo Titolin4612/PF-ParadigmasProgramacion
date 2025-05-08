@@ -12,11 +12,13 @@ namespace CL_ProyectoFinalPOO.Clases
         // Atributos
         private List<Carta> l_cartas_resto;
         private byte _cantidadResto;
+        private byte cantidadCartas = 50;
 
+        // Constructor
         public Resto()
         {
-            CantidadResto = 50;
-            l_cartas_resto = Baraja.CrearCartas();
+            CantidadResto = cantidadCartas;
+            l_cartas_resto = Baraja.CrearCartasJuego();
         }
 
         // Accesores
@@ -58,17 +60,7 @@ namespace CL_ProyectoFinalPOO.Clases
             }
         }
 
-        public Carta ObtenerCarta() // primera carta de la lista
-        {
-            if (l_cartas_resto != null && l_cartas_resto.Count > 0)
-            {
-                return l_cartas_resto.First();
-            }
-            else
-            {
-                throw new InvalidOperationException("La baraja está vacía o no está inicializada.");
-            }
-        }
+        
 
     }
 }

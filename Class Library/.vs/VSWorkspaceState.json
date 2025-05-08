@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\bin",
+    "\\Clases",
+    "\\Interfaces"
   ],
-  "SelectedNode": "\\Class Library",
+  "SelectedNode": "\\CL_ProyectoFinalPOO.sln",
   "PreviewInSolutionExplorer": false
 }

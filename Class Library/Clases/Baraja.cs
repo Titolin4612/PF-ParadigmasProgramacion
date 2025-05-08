@@ -8,7 +8,7 @@ namespace CL_ProyectoFinalPOO.Clases
 {
     public class Baraja
     {
-        public static List<Carta> CrearCartas()
+        public static List<Carta> CrearCartasJuego()
         {
             var cartas = new List<Carta>();
 
@@ -56,6 +56,12 @@ namespace CL_ProyectoFinalPOO.Clases
             cartas.Add(new CartaJuego("Ra", "Dios solar egipcio, símbolo de poder supremo", "Egipcia", CartaJuego.Rareza.Legendaria));
             cartas.Add(new CartaJuego("Odín", "Padre sabio, busca poder y conocimiento", "Nórdica", CartaJuego.Rareza.Legendaria));
 
+            return cartas;
+        }
+
+        public static List<CartaCastigo> CrearCartasCastigo()
+        {
+            var cartas = new List<CartaCastigo>();
 
             // Cartas de Castigo
             cartas.Add(new CartaCastigo("Medusa", "Su mirada convierte en piedra", "Griega", "Piedra eterna para quien la enfrente"));
@@ -71,6 +77,14 @@ namespace CL_ProyectoFinalPOO.Clases
             cartas.Add(new CartaCastigo("Garm", "Perro infernal del fin del mundo", "Nórdica", "Aúlla anunciando la perdición"));
             cartas.Add(new CartaCastigo("Lilith", "Espíritu nocturno y destructor", "Mesopotámica", "Robará tu aliento en la noche"));
 
+            return cartas;
+
+        }
+
+        public static List<CartaPremio> CrearCartasPremio() 
+        { 
+            var cartas = new List<CartaPremio>();
+
             // Cartas de Premio
             cartas.Add(new CartaPremio("Iris", "Mensajera del arcoíris, portadora de buenas nuevas", "Griega", "Trae alegría entre nubes oscuras"));
             cartas.Add(new CartaPremio("Brigid", "Diosa de la sanación, inspiración y fertilidad", "Celta", "Florecen los campos a su paso"));
@@ -82,6 +96,19 @@ namespace CL_ProyectoFinalPOO.Clases
             cartas.Add(new CartaPremio("Gaia", "Madre Tierra, fuente de toda vida", "Griega", "Su abrazo nutre la existencia"));
 
             return cartas;
+        }
+
+        public static List<Carta> ObtenerBarajaCompleta()
+        {
+            var baraja = new List<Carta>();
+
+            baraja.AddRange(CrearCartasJuego());
+
+            baraja.AddRange(CrearCartasCastigo());
+
+            baraja.AddRange(CrearCartasPremio());
+
+            return baraja;
         }
     }
 }

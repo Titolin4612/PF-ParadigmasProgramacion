@@ -19,11 +19,22 @@ namespace CL_ProyectoFinalPOO.Clases
             Legendaria
         }
 
-
         // Atributos
         private Rareza rarezaCarta;
+        // Valores rarezas
+        private static int raComun = -2;
+        private static int raEspecial = -1;
+        private static int raRara = 0;
+        private static int raEpica = 1;
+        private static int raLegendaria = 2;
+
 
         public Rareza RarezaCarta { get => rarezaCarta; set => rarezaCarta = value; }
+        public static int RaComun { get => raComun;}
+        public static int RaEspecial { get => raEspecial; }
+        public static int RaRara { get => raRara;  }
+        public static int RaEpica { get => raEpica; }
+        public static int RaLegendaria { get => raLegendaria; }
 
         // Constructor
         public CartaJuego(string nombre, string descripcion, string mitologia, Rareza rareza)
@@ -32,11 +43,7 @@ namespace CL_ProyectoFinalPOO.Clases
             RarezaCarta = rareza;
         }
 
-        // Método para modificar puntos según rareza
-        public override int ActualizarPuntos()
-        {
-            return (int)RarezaCarta;
-        }
+        
     }
 }
 
