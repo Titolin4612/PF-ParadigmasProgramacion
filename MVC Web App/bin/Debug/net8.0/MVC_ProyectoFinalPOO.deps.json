@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "MVC_ProyectoFinalPOO/1.0.0": {
+        "runtime": {
+          "MVC_ProyectoFinalPOO.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MVC_ProyectoFinalPOO/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

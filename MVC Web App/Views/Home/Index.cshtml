@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<style>
+    .background-full {
+        background-image: url('/images/home.jpg');
+        background-size: 100% auto; /* Ancho al 100%, altura automática para evitar recortes */
+        background-position: center;
+        background-repeat: no-repeat;
+        height: auto; /* Cambia a auto para que el contenedor se ajuste a la imagen */
+        min-height: calc(100vh - 56px); /* Asegura que ocupe al menos la altura de la pantalla menos el header */
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+
+<div class="background-full">
+    <!-- Puedes dejar esto vacío o poner contenido encima si quieres -->
+</div>
