@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CL_ProyectoFinalPOO.Interfaces;
 
 namespace CL_ProyectoFinalPOO.Clases
 {
-    public class Jugador
+    public class Jugador : IJugador
     {
         // Atributos
         private string _nickname;
@@ -61,33 +62,49 @@ namespace CL_ProyectoFinalPOO.Clases
 
         // Metodos
 
-        private void AsignarPuntosSegunApuesta()
+        public void AsignarPuntosSegunApuesta()
         {
-            if (_apuestaInicial < 100)
-                Puntos = 50;
-            else if (_apuestaInicial <= 300)
-                Puntos = 60;
-            else if (_apuestaInicial <= 600)
-                Puntos = 70;
-            else
-                Puntos = 80;
+            try
+            {
+                if (_apuestaInicial < 100)
+                    Puntos = 50;
+                else if (_apuestaInicial <= 300)
+                    Puntos = 60;
+                else if (_apuestaInicial <= 600)
+                    Puntos = 70;
+                else
+                    Puntos = 80;
+
+            } catch (Exception ex)
+            {
+                throw new Exception("Error en el metodo AsignarPuntosSegunApuesta" +  ex);            
+            }
+
+            
         }
 
         public Carta CogerCarta()
         {
-            if (Juego?.Resto != null)
+            try
             {
-                var carta = Juego.ObtenerCarta(); // Llama al método para obtener la primera carta
-                if (carta is CartaJuego)
+                if (Juego?.Resto != null)
                 {
-                    L_cartas_jugador.Add(carta); // Agrega la carta al jugador
+                    var carta = Juego.ObtenerCarta(); // Llama al método para obtener la primera carta
+                    if (carta is CartaJuego)
+                    {
+                        L_cartas_jugador.Add(carta); // Agrega la carta al jugador
+                    }
+                    Puntos += Juego.AplicarEfectoCartas(carta);
+                    return carta; // Devuelve la carta obtenida
                 }
-                Puntos += Juego.AplicarEfectoCartas(carta);
-                return carta; // Devuelve la carta obtenida
+                else
+                {
+                    throw new Exception("No se puede obtener la carta, el Resto no está disponible.");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                throw new Exception("No se puede obtener la carta, el Resto no está disponible.");
+                throw new Exception("Error en el metodo CogerCarta" + ex);
             }
         }
 
@@ -181,7 +198,15 @@ namespace CL_ProyectoFinalPOO.Clases
         // Método para mostrar los puntos del jugador
         public void MostrarPuntos()
         {
-            Console.WriteLine($"{Nickname} tiene {Puntos} puntos.");
+            try
+            {
+                Console.WriteLine($"{Nickname} tiene {Puntos} puntos.");
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error en el metodo MostrarPuntos" + ex);
+            }
+
         }
     }
 }
