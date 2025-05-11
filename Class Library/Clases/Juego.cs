@@ -3,44 +3,84 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CL_ProyectoFinalPOO.Eventos;
 using CL_ProyectoFinalPOO.Interfaces;
 
 namespace CL_ProyectoFinalPOO.Clases
 {
     public class Juego : IJuego
     {
-
+        // Listas
         private List<Jugador> jugadores;
         private List<CartaPremio> l_cartas_premio;
         private List<CartaCastigo> l_cartas_castigo;
-        private List<Carta> l_barajacompleta;
+        private List<CartaJuego> l_cartas_resto;
 
+        // Atributos
+        
+
+        // Ramdom 
         private static Random rng = new Random();
 
+
+
+        // Instancia de clase publicadora
+        private Publisher_Eventos_Juego publicadorJuego;
+        // Metodo para manejar los eventos
+        internal void EventHandler() { }
+
+        // Probabilidades para la selección de cartas
+        private const double ProbJuego = 0.66; // 66%
+        private const double ProbCastigo = 0.2424; // 24.24%
+        private const double ProbPremio = 0.1616; // 16.16%
+
+
         // Atributos de reglas de juego
-        private byte cartasPorJugador = 3, jugadoresMax = 4;
-      
-        // Suponiendo que esta propiedad sea inicializada desde afuera o internamente
-        public Resto Resto { get; set; }
+        private static byte cartasPorJugador = 3,jugadoresMin = 2, jugadoresMax = 4;
+
+
 
         // Accesores
         public List<Jugador> Jugadores { get => jugadores; set => jugadores = value; }
         public List<CartaPremio> L_cartas_premio { get => l_cartas_premio; set => l_cartas_premio = value; }
         public List<CartaCastigo> L_cartas_castigo { get => l_cartas_castigo; set => l_cartas_castigo = value; }
-        public List<Carta> L_barajacompleta { get => l_barajacompleta; set => l_barajacompleta = value; }
         public byte CartasPorJugador { get => cartasPorJugador; set => cartasPorJugador = value; }
+        public byte JugadoresMin { get => jugadoresMin; set => jugadoresMin = value; }
         public byte JugadoresMax { get => jugadoresMax; set => jugadoresMax = value; }
+        internal Publisher_Eventos_Juego PublicadorJuego { get => publicadorJuego; }
+        public List<CartaJuego> L_cartas_resto { get => l_cartas_resto; set => l_cartas_resto = value; }
+        public static double ProbJuego1 => ProbJuego;
+        public static double ProbCastigo1 => ProbCastigo;
+        public static double ProbPremio1 => ProbPremio;
 
         // Constructor
         public Juego()
         {
             Jugadores = new List<Jugador>();
-            Resto = new Resto(); // Esto inicializa el l_cartas_resto del constructor de resto
-            L_barajacompleta = Baraja.ObtenerBarajaCompleta();
+            L_cartas_resto = Baraja.CrearCartasJuego();
             L_cartas_premio = Baraja.CrearCartasPremio();
             L_cartas_castigo = Baraja.CrearCartasCastigo();
+            publicadorJuego = new Publisher_Eventos_Juego();
             BarajarCartas();
         }
+
+        // Metodo para obtener nuevo lider
+        public Jugador ObtenerLider()
+        {
+            try
+            {
+                publicadorJuego.CambioLider += EventHandler;
+                Jugador lider = Jugadores.OrderByDescending(j => j.Puntos).FirstOrDefault();
+                return lider;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error en ObtenerLider: " + ex.Message, ex);
+            }
+        }
+
+
+
 
         // Método para revolver una lista (GENERICO)
         public void Revolver<T>(List<T> lista)
@@ -67,9 +107,11 @@ namespace CL_ProyectoFinalPOO.Clases
         {
             try
             {
-                if (Resto != null && Resto.L_cartas_resto != null && L_cartas_premio != null && L_cartas_castigo != null)
+                if (L_cartas_premio != null && L_cartas_castigo != null && L_cartas_resto != null)
                 {
-                    Revolver(L_barajacompleta);
+                    Revolver(L_cartas_resto);
+                    Revolver(L_cartas_premio);
+                    Revolver(L_cartas_castigo);
                 }
                 else Console.WriteLine("Error");
             }
@@ -78,33 +120,82 @@ namespace CL_ProyectoFinalPOO.Clases
                 throw new Exception("Error del metodo BarajarCartas: " + ex);
             }
 
-
-            
         }
 
         // Metodo para obtener una carta aleatoria de la baraja completa
         public Carta ObtenerCarta()
         {
+            int totalElementos = l_cartas_resto.Count + l_cartas_castigo.Count + l_cartas_premio.Count;
+            var liderActual = ObtenerLider();
+
+            double rand = rng.NextDouble();
+            Carta carta;
+
+            if (rand < ProbJuego && l_cartas_resto.Count > 0)
+            {
+                carta = l_cartas_resto[0];
+                l_cartas_resto.RemoveAt(0);
+                if (l_cartas_resto.Count == 0)
+                {
+                    publicadorJuego.AgotadasResto += EventHandler;
+                    publicadorJuego.NotificarAgotadasResto();
+                }
+                    
+            }
+            else if (rand < ProbJuego + ProbCastigo && l_cartas_castigo.Count > 0)
+            {
+                carta = l_cartas_castigo[0];
+                l_cartas_castigo.RemoveAt(0);
+                if (l_cartas_castigo.Count == 0)
+                {
+                    publicadorJuego.AgotadasCastigo += EventHandler;
+                    publicadorJuego.NotificarAgotadasCastigo();
+                }
+                    
+            }
+            else if (l_cartas_premio.Count > 0)
+            {
+                carta = l_cartas_premio[0];
+                l_cartas_premio.RemoveAt(0);
+                if (l_cartas_premio.Count == 0)
+                {
+                    publicadorJuego.AgotadasPremio += EventHandler;
+                    publicadorJuego.NotificarAgotadasPremio();
+                }
+                    
+            }
+            else
+            {
+                return null;
+            }
+            var nuevoLider = ObtenerLider();
+            if (liderActual != nuevoLider)
+            {
+                publicadorJuego.CambioLider += EventHandler;
+                publicadorJuego.NotificarCambioLider(nuevoLider);
+            }
+            return carta;
+        }
+
+        // Método para asignar puntos según la apuesta inicial del jugador
+        public void AsignarPuntosSegunApuesta(Jugador jugador)
+        {
             try
             {
-                if (L_barajacompleta != null && L_barajacompleta.Count > 0)
-                {
-                    var carta = L_barajacompleta.First();
-                    L_barajacompleta.RemoveAt(0);
-                    return carta;
-                }
+                int apuesta = jugador.ApuestaInicial;
+                if (apuesta < 100)
+                    jugador.Puntos = 50;
+                else if (apuesta <= 300)
+                    jugador.Puntos = 60;
+                else if (apuesta <= 600)
+                    jugador.Puntos = 70;
                 else
-                {
-                    throw new Exception("La baraja está vacía o no está inicializada.");
-                }
+                    jugador.Puntos = 80;
             }
             catch (Exception ex)
             {
-                throw new Exception("Error del metodo ObtenerCarta: " + ex);
+                throw new Exception("Error en el método AsignarPuntosSegunApuesta: " + ex.Message);
             }
-
-
-            
         }
 
         // Metodo para entregar las cartas iniciales a cada jugador
@@ -118,20 +209,18 @@ namespace CL_ProyectoFinalPOO.Clases
                     throw new Exception("No hay jugadores en el juego.");
                 }
 
-                if (Resto == null || Resto.L_cartas_resto.Count < numeroCartasPorJugador * Jugadores.Count)
+                if (L_cartas_resto.Count < numeroCartasPorJugador * Jugadores.Count)
                 {
                     throw new Exception("No hay suficientes cartas en el resto para repartir.");
                 }
-
-                Revolver(Resto.L_cartas_resto); // Barajar antes de repartir
 
                 foreach (var jugador in Jugadores)
                 {
                     Console.WriteLine($"\nCartas repartidas para {jugador.Nickname}");
                     for (int i = 0; i < numeroCartasPorJugador; i++)
                     {
-                        var carta = Resto.L_cartas_resto.First();
-                        Resto.L_cartas_resto.RemoveAt(0);
+                        var carta = L_cartas_resto.First();
+                        L_cartas_resto.RemoveAt(0);
                         jugador.L_cartas_jugador.Add(carta);
                         jugador.Puntos += AplicarEfectoCartas(carta); // Sumar puntos
 
@@ -207,56 +296,30 @@ namespace CL_ProyectoFinalPOO.Clases
 
         }
 
-
-        // Metodo para mostrar las cartas del jugador
-        public void MostrarCartasJugador(Jugador jugador)
+        // Aplicar efectos de las cartas y devolver puntos
+        public int AplicarEfectoCartas2(Carta carta)
         {
+            if (carta == null)
+                throw new ArgumentNullException(nameof(carta));
 
-            try
+            int puntos = carta.ObtenerPuntos();
+            // Nota: Las salidas en consola deben moverse a la capa de presentación en un contexto MVC
+            switch (carta)
             {
-                if (jugador.L_cartas_jugador.Count == 0)
-                {
-                    Console.WriteLine($"{jugador.Nickname} aún no tiene cartas en su poder.");
-                    return;
-                }
-
-                Console.WriteLine($"Cartas de {jugador.Nickname}:");
-                Console.WriteLine(new string('-', 60));
-
-                int i = 1;
-
-                // Imprimir las cartas del jugador
-                foreach (var carta in jugador.L_cartas_jugador)
-                {
-                    Console.WriteLine($"Carta {i++}: {carta.Nombre} | Miología: {carta.Mitologia}");
-                    Console.WriteLine($"Descripción: {carta.Descripcion}");
-
-                    switch (carta)
-                    {
-                        case CartaJuego juego:
-                            Console.WriteLine($"Tipo: Juego | Rareza: {juego.RarezaCarta}");
-                            break;
-                        case CartaCastigo castigo:
-                            Console.WriteLine($"Tipo: Castigo | Maleficio: {castigo.Maleficio}");
-                            break;
-                        case CartaPremio premio:
-                            Console.WriteLine($"Tipo: Premio | Bendición: {premio.Bendicion}");
-                            break;
-                        default:
-                            Console.WriteLine("Tipo desconocido.");
-                            break;
-                    }
-                    Console.WriteLine(new string('-', 60));
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Error del metodo MostrarCartasJugador: " + ex);
+                case CartaJuego juego:
+                    // Registrar: $"Carta de juego obtenida: {juego.Nombre} ({juego.RarezaCarta}), Puntos: {puntos}";
+                    break;
+                case CartaPremio premio:
+                    // Registrar: $"Carta de Premio obtenida: {premio.Nombre}, Bendición: {premio.Bendicion}, Puntos: {puntos}";
+                    break;
+                case CartaCastigo castigo:
+                    // Registrar: $"Carta de Castigo obtenida: {castigo.Nombre}, Maleficio: {castigo.Maleficio}, Puntos: {puntos}";
+                    break;
             }
 
-            
+            return puntos;
         }
 
-        public Jugador ObtenerLider() => Jugadores.OrderByDescending(j => j.Puntos).First();
+        
     }
 }

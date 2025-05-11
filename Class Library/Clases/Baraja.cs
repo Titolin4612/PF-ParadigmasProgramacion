@@ -9,11 +9,11 @@ namespace CL_ProyectoFinalPOO.Clases
 {
     public class Baraja
     {
-        public static List<Carta> CrearCartasJuego()
+        public static List<CartaJuego> CrearCartasJuego()
         {
             try
             {
-                var cartas = new List<Carta>();
+                var cartas = new List<CartaJuego>();
 
                 // Cartas de Juego
                 // COMUN (-2)

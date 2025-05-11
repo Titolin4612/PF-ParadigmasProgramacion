@@ -7,7 +7,7 @@ using CL_ProyectoFinalPOO.Interfaces;
 
 namespace CL_ProyectoFinalPOO.Clases
 {
-    public abstract class Carta
+    public abstract class Carta : IObtenerPuntos
     {
         // Atributos
         public string _nombre;
@@ -56,6 +56,9 @@ namespace CL_ProyectoFinalPOO.Clases
             Mitologia = mitologia;
             Descripcion = descripcion;
         }
+
+        // Metodo abtract
+        public abstract int ObtenerPuntos();
 
        
     }

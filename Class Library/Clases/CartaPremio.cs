@@ -24,6 +24,10 @@ namespace CL_ProyectoFinalPOO.Clases
         }
 
 
-        
+        public override int ObtenerPuntos()
+        {
+            return VPremio;
+        }
+
     }
 }

@@ -13,9 +13,7 @@ namespace CL_ProyectoFinalPOO.Interfaces
         void BarajarCartas();
         Carta ObtenerCarta();
         void RepartirCartasIniciales(int numeroCartasPorJugador);
-
         int AplicarEfectoCartas(Carta carta);
-        void MostrarCartasJugador(Jugador jugador);
         Jugador ObtenerLider();
     }
 }

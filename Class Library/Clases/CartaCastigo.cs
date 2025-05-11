@@ -26,6 +26,10 @@ namespace CL_ProyectoFinalPOO.Clases
             Maleficio = maleficio;
         }
 
-        
+        public override int ObtenerPuntos()
+        {
+            return VCastigo;
+        }
+
     }
 }
