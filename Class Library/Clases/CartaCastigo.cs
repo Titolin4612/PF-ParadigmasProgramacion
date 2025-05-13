@@ -16,7 +16,16 @@ namespace CL_ProyectoFinalPOO.Clases
         
 
         // Accesor
-        public string Maleficio { get => _maleficio; set => _maleficio = value; }
+        public string Maleficio
+        {
+            get => _maleficio;
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                    throw new Exception("Error, el maleficio es inválido.");
+                _maleficio = value;
+            }
+        }
         public static int VCastigo { get => vCastigo; }
 
 

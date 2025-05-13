@@ -51,58 +51,92 @@ namespace CL_EarlyTests
             //    Console.ReadKey();
 
 
+            //try
+            //{
+            //    // Crear instancia de Juego
+            //    Juego juego = new Juego();
+
+            //    // Crear y agregar jugadores (los puntos se asignan en el constructor de Jugador)
+            //    Jugador jugador1 = new Jugador("Alice", 100, juego);
+            //    Jugador jugador2 = new Jugador("Bob", 500, juego);
+            //    Jugador jugador3 = new Jugador("Tito", 800, juego);
+            //    juego.Jugadores.Add(jugador1);
+            //    juego.Jugadores.Add(jugador2);
+            //    juego.Jugadores.Add(jugador3);
+
+            //    // Mostrar puntos iniciales
+            //    Console.WriteLine("Puntos iniciales:");
+            //    jugador1.MostrarPuntos();
+            //    jugador2.MostrarPuntos();
+            //    jugador3.MostrarPuntos();
+
+            //    // Repartir cartas iniciales
+            //    juego.RepartirCartasIniciales(juego.CartasPorJugador);
+
+            //    // Mostrar cartas y puntos tras reparto
+            //    Console.WriteLine("\nTras repartir cartas iniciales:");
+            //    foreach (var jugador in juego.Jugadores)
+            //    {
+            //        juego.MostrarCartasJugador(jugador);
+            //        jugador.MostrarPuntos();
+            //        Console.WriteLine("\n");
+            //    }
+
+            //    // Probar CogerCarta
+            //    Console.WriteLine($"{jugador1.Nickname} probara a coger 3 cartas:");
+            //    jugador1.MostrarPuntos();
+            //    jugador1.CogerCarta();
+            //    jugador1.CogerCarta();
+            //    jugador1.CogerCarta();
+            //    jugador1.MostrarPuntos();
+
+            //    // Probar ObtenerLider
+            //    Jugador lider = juego.ObtenerLider();
+            //    Console.WriteLine($"\nEl líder actual es: {lider.Nickname} con {lider.Puntos} puntos.");
+
+            //    // Probar barajar y mostrar resto (primeras 5 cartas)
+            //    //Console.WriteLine("\nPrimeras 5 cartas del resto tras barajar:");
+            //    //juego.Revolver(juego.L_barajacompleta);
+            //    //juego.Resto.imprimirLista(); 
+            //}
+            //catch (Exception ex)
+            //{
+            //    Console.WriteLine($"Error: {ex.Message}");
+            //}
+
+            
+            Console.WriteLine("Iniciando prueba de carga de cartas...");
+
+            Juego juego = new Juego();
+            Baraja baraja = new Baraja();
+            Baraja.Ruta();
             try
             {
-                // Crear instancia de Juego
-                Juego juego = new Juego();
+                // Simplemente llamar al método estático.
+                // El constructor estático de Baraja se ejecutará automáticamente
+                // la primera vez que se acceda a la clase Baraja aquí.
+                baraja.CargarCartas();
+                Baraja.ImprimirCartasCargadas();
 
-                // Crear y agregar jugadores (los puntos se asignan en el constructor de Jugador)
-                Jugador jugador1 = new Jugador("Alice", 100, juego);
-                Jugador jugador2 = new Jugador("Bob", 500, juego);
-                Jugador jugador3 = new Jugador("Tito", 800, juego);
-                juego.Jugadores.Add(jugador1);
-                juego.Jugadores.Add(jugador2);
-                juego.Jugadores.Add(jugador3);
-
-                // Mostrar puntos iniciales
-                Console.WriteLine("Puntos iniciales:");
-                jugador1.MostrarPuntos();
-                jugador2.MostrarPuntos();
-                jugador3.MostrarPuntos();
-
-                // Repartir cartas iniciales
-                juego.RepartirCartasIniciales(juego.CartasPorJugador);
-
-                // Mostrar cartas y puntos tras reparto
-                Console.WriteLine("\nTras repartir cartas iniciales:");
-                foreach (var jugador in juego.Jugadores)
-                {
-                    juego.MostrarCartasJugador(jugador);
-                    jugador.MostrarPuntos();
-                    Console.WriteLine("\n");
-                }
-
-                // Probar CogerCarta
-                Console.WriteLine($"{jugador1.Nickname} probara a coger 3 cartas:");
-                jugador1.MostrarPuntos();
-                jugador1.CogerCarta();
-                jugador1.CogerCarta();
-                jugador1.CogerCarta();
-                jugador1.MostrarPuntos();
-
-                // Probar ObtenerLider
-                Jugador lider = juego.ObtenerLider();
-                Console.WriteLine($"\nEl líder actual es: {lider.Nickname} con {lider.Puntos} puntos.");
-
-                // Probar barajar y mostrar resto (primeras 5 cartas)
-                //Console.WriteLine("\nPrimeras 5 cartas del resto tras barajar:");
-                //juego.Revolver(juego.L_barajacompleta);
-                //juego.Resto.imprimirLista(); 
+                Console.WriteLine("\nPrueba completada exitosamente.");
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error: {ex.Message}");
+                // Captura cualquier excepción que pueda ocurrir durante la carga en el constructor estático
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+                Console.WriteLine("ERROR FATAL DURANTE LA CARGA DE CARTAS:");
+                Console.WriteLine(ex.ToString()); // Imprime toda la información de la excepción
+                Console.WriteLine("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+                Console.ResetColor();
+                Console.WriteLine("\nLa carga falló. Revisa el archivo cartas.json y los mensajes de error.");
             }
+
+            Console.WriteLine("\nPresiona cualquier tecla para salir...");
+            Console.ReadKey();
+
+            juego.imprimir();
+            
         }
     }
 }

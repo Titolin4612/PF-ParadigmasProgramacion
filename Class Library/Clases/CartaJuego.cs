@@ -21,7 +21,7 @@ namespace CL_ProyectoFinalPOO.Clases
 
         // Atributos
         private Rareza rarezaCarta;
-        // Valores rarezas
+        // Valores rarezas, Reglas de negocio
         private static int raComun = -2;
         private static int raEspecial = -1;
         private static int raRara = 0;

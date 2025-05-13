@@ -28,8 +28,7 @@ namespace CL_ProyectoFinalPOO.Clases
         public int Puntos
         {
             get => _puntos;
-            set => _puntos = value >= 50 ? value
-                : throw new Exception("Los puntos para iniciar no se encuentran dentro del rango esperado.");
+            set => _puntos = value;
         }
 
         public List<Carta> L_cartas_jugador { get => l_cartas_jugador; set => l_cartas_jugador = value; }

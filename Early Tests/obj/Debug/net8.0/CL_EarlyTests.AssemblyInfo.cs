@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CL_EarlyTests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7b9437767a2b2797d5bbfa8c6e2941234c2e16d6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4f8eb2bfc0611bf6b290ac3804677bac1903c3c2")]
 [assembly: System.Reflection.AssemblyProductAttribute("CL_EarlyTests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CL_EarlyTests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CL_ProyectoFinalPOO.Interfaces
 {
-    internal interface IObtenerPuntos
+    public interface IObtenerPuntos
     {
         int ObtenerPuntos();
     }

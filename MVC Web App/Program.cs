@@ -1,36 +1,42 @@
-namespace MVC_ProyectoFinalPOO
-{
-    public class Program
-    {
-        public static void Main(string[] args)
+using Castle.DynamicProxy;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using CL_ProyectoFinalPOO.Clases;
+using CL_ProyectoFinalPOO.Aspectos;
+using CL_ProyectoFinalPOO.Interfaces;
+using MVC_ProyectoFinalPOO.Servicios;
+
+        var builder = WebApplication.CreateBuilder(args);
+
+        // Agregar servicios
+        builder.Services.AddControllersWithViews();
+
+        // Registrar Baraja con ArchivoCargaInterceptor
+        builder.Services.AddSingleton<Baraja>(provider =>
         {
-            var builder = WebApplication.CreateBuilder(args);
+            var proxyGenerator = new ProxyGenerator();
+            var baraja = new Baraja();
+            return proxyGenerator.CreateClassProxyWithTarget<Baraja>(baraja, new InterceptorCargaArchivo());
+        });
 
-            // Add services to the container.
-            builder.Services.AddControllersWithViews();
+        // Registrar JuegoService con AutenticacionInterceptor y ValidacionInterceptor
+        builder.Services.AddTransient<IJuegoService>(provider =>
+        {
+            var proxyGenerator = new ProxyGenerator();
+            var baraja = provider.GetService<Baraja>();
+            var juegoService = new JuegoService(baraja);
+            return proxyGenerator.CreateInterfaceProxyWithTarget<IJuegoService>(
+                juegoService,
+                new InterceptorAutenticacion(),
+                new InterceptorValidacion());
+        });
 
-            var app = builder.Build();
+        var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
-            if (!app.Environment.IsDevelopment())
-            {
-                app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
-            }
+        // Configurar el pipeline
+        app.UseRouting();
+        app.MapControllerRoute(
+            name: "default",
+            pattern: "{controller=Juego}/{action=Index}/{id?}");
 
-            app.UseHttpsRedirection();
-            app.UseStaticFiles();
-
-            app.UseRouting();
-
-            app.UseAuthorization();
-
-            app.MapControllerRoute(
-                name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
-
-            app.Run();
-        }
-    }
-}
+        app.Run();

@@ -14,7 +14,16 @@ namespace CL_ProyectoFinalPOO.Clases
         private static int vPremio = 5;
 
         // Accesor
-        public string Bendicion { get => _bendicion; set => _bendicion = value; }
+        public string Bendicion
+        {
+            get => _bendicion;
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                    throw new Exception("Error, la bendicion es inválida.");
+                _bendicion = value;
+            }
+        }
         public static int VPremio { get => vPremio; }
 
         // Constructor

@@ -6,4 +6,14 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Castle.Core" Version="5.2.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="CL_ProyectoFinalPOO">
+      <HintPath>..\Class Library\bin\Debug\net8.0\CL_ProyectoFinalPOO.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

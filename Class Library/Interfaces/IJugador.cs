@@ -7,7 +7,7 @@ using CL_ProyectoFinalPOO.Clases;
 
 namespace CL_ProyectoFinalPOO.Interfaces
 {
-    internal interface IJugador
+    public interface IJugador
     {
         Carta CogerCarta();
     }

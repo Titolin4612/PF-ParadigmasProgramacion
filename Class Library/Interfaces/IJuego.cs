@@ -7,7 +7,7 @@ using CL_ProyectoFinalPOO.Clases;
 
 namespace CL_ProyectoFinalPOO.Interfaces
 {
-    internal interface IJuego
+    public interface IJuego
     {
         void Revolver<T>(List<T> lista);
         void BarajarCartas();

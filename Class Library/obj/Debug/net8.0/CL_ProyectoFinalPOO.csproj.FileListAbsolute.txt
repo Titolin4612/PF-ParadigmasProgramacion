@@ -45,3 +45,4 @@ C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Pr
 C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\Class Library\obj\Debug\net8.0\refint\CL_ProyectoFinalPOO.dll
 C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\Class Library\obj\Debug\net8.0\CL_ProyectoFinalPOO.pdb
 C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\Class Library\obj\Debug\net8.0\ref\CL_ProyectoFinalPOO.dll
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\Class Library\obj\Debug\net8.0\CL_ProyectoFinalPOO.csproj.AssemblyReference.cache

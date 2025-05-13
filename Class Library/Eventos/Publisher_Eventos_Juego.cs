@@ -7,7 +7,7 @@ using CL_ProyectoFinalPOO.Clases;
 
 namespace CL_ProyectoFinalPOO.Eventos
 {
-    internal class Publisher_Eventos_Juego
+    public class Publisher_Eventos_Juego
     {
         // Delegado para eventos sin parámetros
         public delegate void DelegadoEvento();
