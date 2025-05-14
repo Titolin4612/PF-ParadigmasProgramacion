@@ -12,7 +12,7 @@ namespace CL_ProyectoFinalPOO.Aspectos
         private bool IsAuthenticated()
         {
             // Simulación: Cambia a true para pruebas positivas
-            return false;
+            return true;
         }
 
         public void Intercept(IInvocation invocation)

@@ -1,74 +1,36 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using CL_ProyectoFinalPOO.Clases;
 
 namespace CL_ProyectoFinalPOO.Eventos
 {
     public class Publisher_Eventos_Juego
     {
-        // Delegado para eventos sin parámetros
-        public delegate void DelegadoEvento();
+        public delegate void DelegadoEventoGeneral(); // Para eventos sin parámetros específicos
+        public delegate void DelegadoEventoCambioLider(Jugador nuevoLider); // Para evento con el nuevo líder
 
-        // Eventos
-        public event DelegadoEvento AgotadasPremio;
-        public event DelegadoEvento AgotadasCastigo;
-        public event DelegadoEvento AgotadasResto;
-        public event DelegadoEvento CambioLider;
+        public event DelegadoEventoGeneral AgotadasPremio;
+        public event DelegadoEventoGeneral AgotadasCastigo;
+        public event DelegadoEventoGeneral AgotadasResto;
+        public event DelegadoEventoCambioLider CambioLider;
 
-        // Métodos para disparar eventos
-        public string NotificarAgotadasPremio()
+        public void NotificarAgotadasPremio()
         {
-            if (AgotadasPremio != null)
-            {
-                AgotadasPremio();
-                return "¡Las cartas de premio se han agotado!";
-            }
-            else
-            {
-                return "No hay suscriptores para el evento AgotadasPremio.";
-            }
+            AgotadasPremio?.Invoke();
         }
 
-        public string NotificarAgotadasCastigo()
+        public void NotificarAgotadasCastigo()
         {
-            if (AgotadasCastigo != null)
-            {
-                AgotadasCastigo();
-                return "¡Las cartas de castigo se han agotado!";
-            }
-            else
-            {
-                return "No hay suscriptores para el evento AgotadasCastigo.";
-            }
+            AgotadasCastigo?.Invoke();
         }
 
-        public string NotificarAgotadasResto()
+        public void NotificarAgotadasResto()
         {
-            if (AgotadasResto != null)
-            {
-                AgotadasResto();
-                return "¡Las cartas del resto se han agotado!";
-            }
-            else
-            {
-                return "No hay suscriptores para el evento AgotadasResto.";
-            }
+            AgotadasResto?.Invoke();
         }
 
-        public string NotificarCambioLider(Jugador jugador)
+        public void NotificarCambioLider(Jugador nuevoLider)
         {
-            if (CambioLider != null)
-            {
-                CambioLider();
-                return $"¡El líder del juego ha cambiado! Ahora es: {jugador}";
-            }
-            else
-            {
-                return "No hay suscriptores para el evento CambioLider.";
-            }
+            CambioLider?.Invoke(nuevoLider);
         }
     }
 }

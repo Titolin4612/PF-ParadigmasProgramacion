@@ -62,10 +62,7 @@ namespace CL_ProyectoFinalPOO.Clases
             try
             { 
                     var carta = Juego.ObtenerCarta(); // Llama al método para obtener la primera carta
-                    if (carta is CartaJuego)
-                    {
-                        L_cartas_jugador.Add(carta); // Agrega la carta al jugador
-                    }
+                    L_cartas_jugador.Add(carta); // Agrega la carta al jugador
                     Puntos += Juego.AplicarEfectoCartas(carta);
                     return carta; // Devuelve la carta 
             }

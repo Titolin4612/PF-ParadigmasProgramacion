@@ -20,13 +20,14 @@ namespace CL_ProyectoFinalPOO.Clases
         private static List<CartaJuego> l_cartas_resto;
 
         // Atributos
-        private static byte indiceJugador;
+        private static uint indiceJugador;
 
         // Ramdom 
         private static Random rng = new Random();
 
         // Instancia de clase publicadora
         private Publisher_Eventos_Juego publicadorJuego;
+        private Historial historial;
 
         // Metodo para manejar los eventos 
         // TODO: Implementar mejor el EventHandler para que tenga estructura y maneje bien los eventos
@@ -55,7 +56,8 @@ namespace CL_ProyectoFinalPOO.Clases
         public byte JugadoresMax { get => jugadoresMax; }
         internal Publisher_Eventos_Juego PublicadorJuego { get => publicadorJuego; }
         public List<CartaJuego> L_cartas_resto { get => l_cartas_resto; set => l_cartas_resto = value; }
-        public static byte IndiceJugador { get => indiceJugador; set => indiceJugador = value; }
+        public static uint IndiceJugador { get => indiceJugador; set => indiceJugador = value; }
+        public Historial Historial { get => historial; set => historial = value; }
 
         // Constructor
         public Juego()
@@ -65,6 +67,8 @@ namespace CL_ProyectoFinalPOO.Clases
             L_cartas_premio = new List<CartaPremio>(Baraja.CartasPremio);
             L_cartas_castigo = new List<CartaCastigo>(Baraja.CartasCastigo);
             publicadorJuego = new Publisher_Eventos_Juego();
+            Historial = new Historial(publicadorJuego);
+
         }
 
         // Metodo para obtener nuevo lider
@@ -72,7 +76,6 @@ namespace CL_ProyectoFinalPOO.Clases
         {
             try
             {
-                publicadorJuego.CambioLider += EventHandler;
                 Jugador lider = Jugadores.OrderByDescending(j => j.Puntos).FirstOrDefault();
                 return lider;
             }
@@ -181,32 +184,36 @@ namespace CL_ProyectoFinalPOO.Clases
 
                 AplicarEfectoCartas(carta);
 
-                if (L_cartas_resto.Count == 0)
-                {
-                    publicadorJuego.NotificarAgotadasResto();
-                }
-                if (L_cartas_castigo.Count == 0)
-                {
-                    publicadorJuego.NotificarAgotadasCastigo();
-                }
-                if (L_cartas_premio.Count == 0)
-                {
-                    publicadorJuego.NotificarAgotadasPremio();
-                }
-
-                
-                // Ver si hay nuevo ldier
-                Jugador liderNuevo = ObtenerLider();
-                if (liderNuevo != liderInicial)
-                {
-                    publicadorJuego.NotificarCambioLider(liderNuevo);
-                }
+                ValidarYDispararEventos(liderInicial);
 
                 return carta; 
             }
             catch (Exception ex)
             {
                 throw new Exception("Error en el metodo ObtenerCarta", ex);
+            }
+        }
+
+        // Metodo para validar y disparar eventos
+        private void ValidarYDispararEventos(Jugador liderInicial)
+        {
+            if (l_cartas_resto.Count == 0)
+            {
+                publicadorJuego.NotificarAgotadasResto();
+            }
+            if (l_cartas_castigo.Count == 0)
+            {
+                publicadorJuego.NotificarAgotadasCastigo();
+            }
+            if (l_cartas_premio.Count == 0)
+            {
+                publicadorJuego.NotificarAgotadasPremio();
+            }
+
+            Jugador liderNuevo = ObtenerLider();
+            if (liderNuevo != liderInicial)
+            {
+                publicadorJuego.NotificarCambioLider(liderNuevo);
             }
         }
 

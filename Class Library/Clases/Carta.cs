@@ -42,7 +42,7 @@ namespace CL_ProyectoFinalPOO.Clases
             get => _descripcion;
             set
             {
-                if (string.IsNullOrWhiteSpace(value) || value.Length <= 2)
+                if (string.IsNullOrWhiteSpace(value))
                     throw new Exception("Error, la descripción es inválida.");
                 _descripcion = value;
             }
