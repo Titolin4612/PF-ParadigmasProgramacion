@@ -1,4 +1,4 @@
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Alfa+Slab+One&size=30&pause=1000&color=98F7D0&width=435&lines=Proyecto+Final+Paradigmas)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Alfa+Slab+One&size=30&pause=1000&color=98F7D0&vCenter=true&width=435&lines=Proyecto+Final+Paradigmas)](https://git.io/typing-svg)
 ## 👤 **Integrantes**
 
 * `Santiago Hernández Morantes`
