@@ -1,6 +1,9 @@
 wwwroot\css\site.css
 wwwroot\favicon.ico
-wwwroot\images\home.jpg
+wwwroot\images\background-image.jpg
+wwwroot\images\character-female.png
+wwwroot\images\character-male.png
+wwwroot\images\title-logo.png
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css
 wwwroot\lib\bootstrap\dist\css\bootstrap.css.map

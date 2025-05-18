@@ -34,9 +34,9 @@ namespace CL_ProyectoFinalPOO.Clases
         internal void EventHandler() { }
 
         // Atributos de reglas de negocio
-        private static byte cartasPorJugador = 3;
-        private static byte jugadoresMin = 2;
-        private static byte jugadoresMax = 4;
+        private static uint cartasPorJugador = 3;
+        private static uint jugadoresMin = 2;
+        private static uint jugadoresMax = 4;
 
         // TODO: Implementa 4 eventos, que notifican al usuario hechos importantes | •	No impresión desde los métodos |
 
@@ -51,9 +51,9 @@ namespace CL_ProyectoFinalPOO.Clases
         public List<Jugador> Jugadores { get => jugadores; set => jugadores = value; }
         public List<CartaPremio> L_cartas_premio { get => l_cartas_premio; set => l_cartas_premio = value; }
         public List<CartaCastigo> L_cartas_castigo { get => l_cartas_castigo; set => l_cartas_castigo = value; }
-        public byte CartasPorJugador { get => cartasPorJugador; }
-        public byte JugadoresMin { get => jugadoresMin; }
-        public byte JugadoresMax { get => jugadoresMax; }
+        public uint CartasPorJugador { get => cartasPorJugador; }
+        public uint JugadoresMin { get => jugadoresMin; }
+        public uint JugadoresMax { get => jugadoresMax; }
         internal Publisher_Eventos_Juego PublicadorJuego { get => publicadorJuego; }
         public List<CartaJuego> L_cartas_resto { get => l_cartas_resto; set => l_cartas_resto = value; }
         public static uint IndiceJugador { get => indiceJugador; set => indiceJugador = value; }

@@ -58,13 +58,5 @@ namespace CL_ProyectoFinalPOO.Clases
             return _notificaciones.AsReadOnly();
         }
 
-        // Opcional: Método para desuscribirse si es necesario (ej. en un Dispose)
-        public void DesuscribirEventos()
-        {
-            _publisher.AgotadasPremio -= AgotadasPremioHandler;
-            _publisher.AgotadasCastigo -= AgotadasCastigoHandler;
-            _publisher.AgotadasResto -= AgotadasRestoHandler;
-            _publisher.CambioLider -= CambioLiderHandler;
-        }
     }
 }

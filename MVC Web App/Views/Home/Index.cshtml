@@ -1,22 +1,30 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Blessings and Curses";
 }
 
-<style>
-    .background-full {
-        background-image: url('/images/home.jpg');
-        background-size: 100% auto; /* Ancho al 100%, altura automática para evitar recortes */
-        background-position: center;
-        background-repeat: no-repeat;
-        height: auto; /* Cambia a auto para que el contenedor se ajuste a la imagen */
-        min-height: calc(100vh - 56px); /* Asegura que ocupe al menos la altura de la pantalla menos el header */
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-</style>
+<link rel="stylesheet" href="~/css/style.css" />
 
-<div class="background-full">
-    <!-- Puedes dejar esto vacío o poner contenido encima si quieres -->
+<div class="game-container">
+    <img src="~/images/title-logo.png" alt="Blessings and Curses" class="title-logo" />
+
+    <div class="form-container">
+    <div class="nickname-row">
+        <button type="button" class="remove-player-icon" title="Eliminar último jugador">
+            <i class="fas fa-trash"></i>
+        </button>
+
+        <input type="text" placeholder="Nickname" class="game-input nickname-input" />
+
+        <button type="button" class="add-player-icon" title="Añadir jugador">
+            <i class="fas fa-user-plus"></i>
+        </button>
+    </div>
+
+    <input type="number" placeholder="Apuesta inicial" class="game-input" />
+    <button class="rules-button">Reglas de juego</button>
+    <button class="play-button">Jugar</button>
+</div>
+
+    <img src="~/images/character-male.png" alt="Male Character" class="character male" />
+    <img src="~/images/character-female.png" alt="Female Character" class="character female" />
 </div>

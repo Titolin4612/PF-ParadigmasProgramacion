@@ -78,10 +78,6 @@ builder.Services.AddSingleton<Baraja>(provider =>
                           // Lo importante es que proxiedBaraja.CargarCartas() se ejecute.
 });
 
-
-// Servicio de Juego: Administra la lógica y el estado del juego en sesión.
-builder.Services.AddScoped<IJuegoService, JuegoService>(); // Scoped porque depende de HttpContext (sesión)
-
 // Para IHttpContextAccessor (necesario para acceder a HttpContext en servicios)
 builder.Services.AddHttpContextAccessor();
 

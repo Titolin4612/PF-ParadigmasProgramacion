@@ -13,8 +13,20 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\images\\home.jpg",
-      "PackagePath": "staticwebassets\\images\\home.jpg"
+      "Id": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\images\\background-image.jpg",
+      "PackagePath": "staticwebassets\\images\\background-image.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\images\\character-female.png",
+      "PackagePath": "staticwebassets\\images\\character-female.png"
+    },
+    {
+      "Id": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\images\\character-male.png",
+      "PackagePath": "staticwebassets\\images\\character-male.png"
+    },
+    {
+      "Id": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\images\\title-logo.png",
+      "PackagePath": "staticwebassets\\images\\title-logo.png"
     },
     {
       "Id": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\js\\site.js",

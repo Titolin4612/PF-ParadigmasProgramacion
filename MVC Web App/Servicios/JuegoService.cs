@@ -4,7 +4,7 @@ using CL_ProyectoFinalPOO.Clases;
 
 namespace MVC_ProyectoFinalPOO.Servicios
 {
-    public class JuegoService : IJuegoService
+    public class JuegoService
     {
         private readonly Baraja _baraja;
 

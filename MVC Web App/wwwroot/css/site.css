@@ -1,22 +1,198 @@
-html {
-  font-size: 14px;
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Georgia', serif;
+    background: url('../images/background-image.jpg') no-repeat center center fixed;
+    background-size: cover;
 }
 
-@media (min-width: 768px) {
-  html {
+.game-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    padding-top: 60px;
+    box-sizing: border-box;
+}
+
+.title-logo {
+    width: 600px;
+    max-width: 90%;
+    margin-bottom: 70px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    max-width: 400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.game-input {
+    width: 250px;
+    padding: 12px;
     font-size: 16px;
-  }
+    background: linear-gradient(to right, #c2b280, #e0e0e0);
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    text-align: center;
+    font-weight: bold;
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+.rules-button, .play-button {
+    width: 200px;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-html {
-  position: relative;
-  min-height: 100%;
+.rules-button {
+    background: #e0e0e0;
+    color: #222;
 }
 
-body {
-  margin-bottom: 60px;
+.play-button {
+    background: linear-gradient(to right, #a5d6a7, #81c784);
+    color: #000;
+}
+
+.character {
+    position: absolute;
+    bottom: 0;
+    width: auto;
+    max-height: 75vh; 
+    pointer-events: none;
+    z-index: 1;
+    margin-left: -80px;
+    margin-right: -80px;
+}
+
+    .character.male {
+        left: -15vw; 
+    }
+
+    .character.female {
+        right: -18vw;
+    }
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.nickname-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.nickname-input {
+    flex: 1;
+    max-width: 250px;
+}
+
+.add-player-icon,
+.remove-player-icon {
+    border: none;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* INPUTS */
+.game-input {
+    width: 250px;
+    padding: 12px;
+    font-size: 16px;
+    background: linear-gradient(to right, #e0d4a7, #f4f1e1);
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+    text-align: center;
+    font-weight: bold;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+    .game-input:focus {
+        outline: none;
+        transform: scale(1.03);
+        box-shadow: 0 0 10px rgba(255, 225, 100, 0.6);
+    }
+
+/* BOTONES BASE */
+.rules-button,
+.play-button,
+.add-player-icon,
+.remove-player-icon {
+    padding: 12px 16px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 45px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+    /* EFECTO HOVER GENERAL */
+    .rules-button:hover,
+    .play-button:hover,
+    .add-player-icon:hover,
+    .remove-player-icon:hover {
+        transform: translateY(-2px) scale(1.04);
+        box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+    }
+
+/* BOTÓN: Reglas */
+.rules-button {
+    background: linear-gradient(to right, #f1f1f1, #d9d9d9);
+    color: #333;
+}
+
+/* BOTÓN: Jugar */
+.play-button {
+    background: linear-gradient(to right, #81c784, #66bb6a);
+    color: white;
+}
+
+/* BOTÓN: Añadir jugador */
+.add-player-icon {
+    background: linear-gradient(to right, #555, #333);
+    color: white;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    font-size: 18px;
+}
+
+/* BOTÓN: Eliminar jugador */
+.remove-player-icon {
+    background: linear-gradient(to right, #d32f2f, #b71c1c);
+    color: white;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    font-size: 18px;
 }

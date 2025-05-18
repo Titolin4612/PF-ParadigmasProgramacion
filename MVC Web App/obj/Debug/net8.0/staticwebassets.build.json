@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "lCQMQC4bv2GGY/NOgkJdfOL516euocGrQcW+sOlyW24=",
+  "Hash": "/t0RIRc0ilB26C8gBnTCwPR1GtT5QDVReSNxg8sxj0g=",
   "Source": "MVC_ProyectoFinalPOO",
   "BasePath": "_content/MVC_ProyectoFinalPOO",
   "Mode": "Default",
@@ -73,8 +73,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "c2tiyv64ts",
-      "Integrity": "pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0=",
+      "Fingerprint": "t9e5p1ge9r",
+      "Integrity": "gbT8/QAfOj4YPjQHC4v+Q74wGDfg6T/nFFpFWlpvPlU=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -101,12 +101,12 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\images\\home.jpg",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\images\\background-image.jpg",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
-      "RelativePath": "images/home#[.{fingerprint}]?.jpg",
+      "RelativePath": "images/background-image#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -115,11 +115,74 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "idomqf02xj",
-      "Integrity": "GmVMKfZcoIbxv8mxkMujYPHQEtR3uCEgm+SJ+bEyNiI=",
+      "Fingerprint": "dks45jwnkn",
+      "Integrity": "nXoHUnQAk/UZJpLYOoiv3ZYdYw0XNGahtNJT8SG6ONM=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\home.jpg"
+      "OriginalItemSpec": "wwwroot\\images\\background-image.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\images\\character-female.png",
+      "SourceId": "MVC_ProyectoFinalPOO",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\",
+      "BasePath": "_content/MVC_ProyectoFinalPOO",
+      "RelativePath": "images/character-female#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "t6d40v86ax",
+      "Integrity": "xfcYbBmpojkSk3Tg7Qvt2ODsZaIth0wAvuR4WGZWRgM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\character-female.png"
+    },
+    {
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\images\\character-male.png",
+      "SourceId": "MVC_ProyectoFinalPOO",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\",
+      "BasePath": "_content/MVC_ProyectoFinalPOO",
+      "RelativePath": "images/character-male#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "8dw7khzk6n",
+      "Integrity": "ZLh2LgDYiRCLN6vg5vVu5nDtBUnEyZba7z1KLmKIv2U=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\character-male.png"
+    },
+    {
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\images\\title-logo.png",
+      "SourceId": "MVC_ProyectoFinalPOO",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\",
+      "BasePath": "_content/MVC_ProyectoFinalPOO",
+      "RelativePath": "images/title-logo#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "rc96cusst9",
+      "Integrity": "2/h8ixGm74o2lHO4HJorLfK/rlsxD8MWZjYcWO0NRQQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\title-logo.png"
     },
     {
       "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\js\\site.js",
@@ -1342,51 +1405,6 @@
   ],
   "Endpoints": [
     {
-      "Route": "css/site.c2tiyv64ts.css",
-      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\css\\site.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "362"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 10 May 2025 05:59:27 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "c2tiyv64ts"
-        },
-        {
-          "Name": "label",
-          "Value": "css/site.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0="
-        }
-      ]
-    },
-    {
       "Route": "css/site.css",
       "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\css\\site.css",
       "Selectors": [],
@@ -1397,7 +1415,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "362"
+          "Value": "4105"
         },
         {
           "Name": "Content-Type",
@@ -1405,11 +1423,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0=\""
+          "Value": "\"gbT8/QAfOj4YPjQHC4v+Q74wGDfg6T/nFFpFWlpvPlU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 10 May 2025 05:59:27 GMT"
+          "Value": "Sun, 18 May 2025 04:02:06 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1419,7 +1437,52 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0="
+          "Value": "sha256-gbT8/QAfOj4YPjQHC4v+Q74wGDfg6T/nFFpFWlpvPlU="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.t9e5p1ge9r.css",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\css\\site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4105"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gbT8/QAfOj4YPjQHC4v+Q74wGDfg6T/nFFpFWlpvPlU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 18 May 2025 04:02:06 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "t9e5p1ge9r"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-gbT8/QAfOj4YPjQHC4v+Q74wGDfg6T/nFFpFWlpvPlU="
         }
       ]
     },
@@ -1506,8 +1569,8 @@
       ]
     },
     {
-      "Route": "images/home.idomqf02xj.jpg",
-      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\images\\home.jpg",
+      "Route": "images/background-image.dks45jwnkn.jpg",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\images\\background-image.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1516,7 +1579,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "213024"
+          "Value": "401008"
         },
         {
           "Name": "Content-Type",
@@ -1524,11 +1587,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"GmVMKfZcoIbxv8mxkMujYPHQEtR3uCEgm+SJ+bEyNiI=\""
+          "Value": "\"nXoHUnQAk/UZJpLYOoiv3ZYdYw0XNGahtNJT8SG6ONM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 10 May 2025 05:43:27 GMT"
+          "Value": "Sat, 10 May 2025 05:18:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1538,21 +1601,21 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "idomqf02xj"
+          "Value": "dks45jwnkn"
         },
         {
           "Name": "label",
-          "Value": "images/home.jpg"
+          "Value": "images/background-image.jpg"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-GmVMKfZcoIbxv8mxkMujYPHQEtR3uCEgm+SJ+bEyNiI="
+          "Value": "sha256-nXoHUnQAk/UZJpLYOoiv3ZYdYw0XNGahtNJT8SG6ONM="
         }
       ]
     },
     {
-      "Route": "images/home.jpg",
-      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\images\\home.jpg",
+      "Route": "images/background-image.jpg",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\images\\background-image.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1561,7 +1624,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "213024"
+          "Value": "401008"
         },
         {
           "Name": "Content-Type",
@@ -1569,11 +1632,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"GmVMKfZcoIbxv8mxkMujYPHQEtR3uCEgm+SJ+bEyNiI=\""
+          "Value": "\"nXoHUnQAk/UZJpLYOoiv3ZYdYw0XNGahtNJT8SG6ONM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 10 May 2025 05:43:27 GMT"
+          "Value": "Sat, 10 May 2025 05:18:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1583,7 +1646,253 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-GmVMKfZcoIbxv8mxkMujYPHQEtR3uCEgm+SJ+bEyNiI="
+          "Value": "sha256-nXoHUnQAk/UZJpLYOoiv3ZYdYw0XNGahtNJT8SG6ONM="
+        }
+      ]
+    },
+    {
+      "Route": "images/character-female.png",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\images\\character-female.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2717994"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"xfcYbBmpojkSk3Tg7Qvt2ODsZaIth0wAvuR4WGZWRgM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 10 May 2025 04:19:43 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-xfcYbBmpojkSk3Tg7Qvt2ODsZaIth0wAvuR4WGZWRgM="
+        }
+      ]
+    },
+    {
+      "Route": "images/character-female.t6d40v86ax.png",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\images\\character-female.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2717994"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"xfcYbBmpojkSk3Tg7Qvt2ODsZaIth0wAvuR4WGZWRgM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 10 May 2025 04:19:43 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "t6d40v86ax"
+        },
+        {
+          "Name": "label",
+          "Value": "images/character-female.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-xfcYbBmpojkSk3Tg7Qvt2ODsZaIth0wAvuR4WGZWRgM="
+        }
+      ]
+    },
+    {
+      "Route": "images/character-male.8dw7khzk6n.png",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\images\\character-male.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1070218"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZLh2LgDYiRCLN6vg5vVu5nDtBUnEyZba7z1KLmKIv2U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 10 May 2025 04:14:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "8dw7khzk6n"
+        },
+        {
+          "Name": "label",
+          "Value": "images/character-male.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZLh2LgDYiRCLN6vg5vVu5nDtBUnEyZba7z1KLmKIv2U="
+        }
+      ]
+    },
+    {
+      "Route": "images/character-male.png",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\images\\character-male.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1070218"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZLh2LgDYiRCLN6vg5vVu5nDtBUnEyZba7z1KLmKIv2U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 10 May 2025 04:14:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZLh2LgDYiRCLN6vg5vVu5nDtBUnEyZba7z1KLmKIv2U="
+        }
+      ]
+    },
+    {
+      "Route": "images/title-logo.png",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\images\\title-logo.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1328968"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2/h8ixGm74o2lHO4HJorLfK/rlsxD8MWZjYcWO0NRQQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 10 May 2025 05:15:08 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-2/h8ixGm74o2lHO4HJorLfK/rlsxD8MWZjYcWO0NRQQ="
+        }
+      ]
+    },
+    {
+      "Route": "images/title-logo.rc96cusst9.png",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\images\\title-logo.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1328968"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2/h8ixGm74o2lHO4HJorLfK/rlsxD8MWZjYcWO0NRQQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 10 May 2025 05:15:08 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "rc96cusst9"
+        },
+        {
+          "Name": "label",
+          "Value": "images/title-logo.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-2/h8ixGm74o2lHO4HJorLfK/rlsxD8MWZjYcWO0NRQQ="
         }
       ]
     },
