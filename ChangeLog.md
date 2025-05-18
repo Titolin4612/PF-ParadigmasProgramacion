@@ -1,3 +1,4 @@
+
 # 📝 ChangeLog
 ## Juego V 1.30 (Mayo 7 2025) SANTIAGO H
 
@@ -44,3 +45,10 @@
 - A TODOS los métodos le cree bloque Try Catch para mejor control de errores y mejorar el cumplimiento de requisitos
 
 - Cree la carpeta de Eventos para encaminar el creado de los eventos 
+--- 
+## Juego V 1.40 (Mayo 17 2025) SANTIAGO H
+* Empecé a implementar en el MVC, Fueron avances cortos pero significativos en la parte del front de el Home, Ya se ve bonito al menos para la pantalla 2k y la 1080p. quizas en resoluciones mayores se pueda distorsionar un poco
+
+* Los botones ya están bien pero aun no son funcionales, falta hacer el controller
+
+* Corregí la NavBar que estaba terriblemente fea  
