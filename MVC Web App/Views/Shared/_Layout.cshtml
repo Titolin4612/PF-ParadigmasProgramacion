@@ -16,32 +16,24 @@
     </style>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-dark bg-transparent border-0 shadow-none">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MVC_ProyectoFinalPOO</a>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
+   <header>
+    <nav class="bc-navbar">
+        <div class="bc-navbar-inner">
+            <a class="bc-brand" asp-controller="Home" asp-action="Index">
+                <i class="fas fa-hat-wizard"></i> B&C
+            </a>
+            <ul class="bc-nav-items">
+                <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                <li><a asp-controller="Home" asp-action="Privacy">About Us</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
-
-    <footer class="border-top footer">
-    <div class="container text-center">
-        <span style="color: #ffffff; font-weight: bold;">© 2025 - MVC_ProyectoFinalPOO </span>
     </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

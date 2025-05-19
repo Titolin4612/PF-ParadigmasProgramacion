@@ -1,8 +1,12 @@
 wwwroot\css\site.css
 wwwroot\favicon.ico
 wwwroot\images\background-image.jpg
+wwwroot\images\background-image-casino.webp
+wwwroot\images\card.png
 wwwroot\images\character-female.png
+wwwroot\images\character-female2.png
 wwwroot\images\character-male.png
+wwwroot\images\character-male2.png
 wwwroot\images\title-logo.png
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css

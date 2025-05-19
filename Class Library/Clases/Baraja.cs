@@ -14,7 +14,6 @@ namespace CL_ProyectoFinalPOO.Clases
 
         // Path to the JSON file (in the same folder as the program)
         public static readonly string _rutaArchivoCartas = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "cartas.json");
-        
 
         public static void Ruta()
         {

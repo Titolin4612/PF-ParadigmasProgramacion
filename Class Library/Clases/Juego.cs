@@ -20,7 +20,7 @@ namespace CL_ProyectoFinalPOO.Clases
         private static List<CartaJuego> l_cartas_resto;
 
         // Atributos
-        private static uint indiceJugador;
+        private static int indiceJugador;
 
         // Ramdom 
         private static Random rng = new Random();
@@ -34,9 +34,9 @@ namespace CL_ProyectoFinalPOO.Clases
         internal void EventHandler() { }
 
         // Atributos de reglas de negocio
-        private static uint cartasPorJugador = 3;
-        private static uint jugadoresMin = 2;
-        private static uint jugadoresMax = 4;
+        private static int cartasPorJugador = 3;
+        private static int jugadoresMin = 2;
+        private static int jugadoresMax = 4;
 
         // TODO: Implementa 4 eventos, que notifican al usuario hechos importantes | •	No impresión desde los métodos |
 
@@ -51,12 +51,12 @@ namespace CL_ProyectoFinalPOO.Clases
         public List<Jugador> Jugadores { get => jugadores; set => jugadores = value; }
         public List<CartaPremio> L_cartas_premio { get => l_cartas_premio; set => l_cartas_premio = value; }
         public List<CartaCastigo> L_cartas_castigo { get => l_cartas_castigo; set => l_cartas_castigo = value; }
-        public uint CartasPorJugador { get => cartasPorJugador; }
-        public uint JugadoresMin { get => jugadoresMin; }
-        public uint JugadoresMax { get => jugadoresMax; }
+        public int CartasPorJugador { get => cartasPorJugador; }
+        public int JugadoresMin { get => jugadoresMin; }
+        public int JugadoresMax { get => jugadoresMax; }
         internal Publisher_Eventos_Juego PublicadorJuego { get => publicadorJuego; }
         public List<CartaJuego> L_cartas_resto { get => l_cartas_resto; set => l_cartas_resto = value; }
-        public static uint IndiceJugador { get => indiceJugador; set => indiceJugador = value; }
+        public static int IndiceJugador { get => indiceJugador; set => indiceJugador = value; }
         public Historial Historial { get => historial; set => historial = value; }
 
         // Constructor

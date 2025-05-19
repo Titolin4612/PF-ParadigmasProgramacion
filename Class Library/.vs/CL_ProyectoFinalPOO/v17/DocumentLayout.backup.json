@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programaci\u00F3n\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\Class Library\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{092A8095-EE5E-4E1E-9F54-29841327BCA6}|CL_ProyectoFinalPOO.csproj|c:\\users\\sanda\\onedrive - upb\\archivos materias\\tercer semestre\\paradigmas de programaci\u00F3n\\proyecto final poo\\proyectofinal-paradigmas\\class library\\aspectos\\interceptorcargaarchivo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{092A8095-EE5E-4E1E-9F54-29841327BCA6}|CL_ProyectoFinalPOO.csproj|solutionrelative:aspectos\\interceptorcargaarchivo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{092A8095-EE5E-4E1E-9F54-29841327BCA6}|CL_ProyectoFinalPOO.csproj|c:\\users\\sanda\\onedrive - upb\\archivos materias\\tercer semestre\\paradigmas de programaci\u00F3n\\proyecto final poo\\proyectofinal-paradigmas\\class library\\clases\\juego.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{092A8095-EE5E-4E1E-9F54-29841327BCA6}|CL_ProyectoFinalPOO.csproj|solutionrelative:clases\\juego.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{092A8095-EE5E-4E1E-9F54-29841327BCA6}|CL_ProyectoFinalPOO.csproj|c:\\users\\sanda\\onedrive - upb\\archivos materias\\tercer semestre\\paradigmas de programaci\u00F3n\\proyecto final poo\\proyectofinal-paradigmas\\class library\\aspectos\\interceptorcargaarchivo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{092A8095-EE5E-4E1E-9F54-29841327BCA6}|CL_ProyectoFinalPOO.csproj|solutionrelative:aspectos\\interceptorcargaarchivo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{092A8095-EE5E-4E1E-9F54-29841327BCA6}|CL_ProyectoFinalPOO.csproj|c:\\users\\sanda\\onedrive - upb\\archivos materias\\tercer semestre\\paradigmas de programaci\u00F3n\\proyecto final poo\\proyectofinal-paradigmas\\class library\\clases\\cartacastigo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -73,7 +73,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 12,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -165,13 +165,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Juego.cs",
               "DocumentMoniker": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programaci\u00F3n\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\Class Library\\Clases\\Juego.cs",
               "RelativeDocumentMoniker": "Clases\\Juego.cs",
               "ToolTip": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programaci\u00F3n\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\Class Library\\Clases\\Juego.cs",
               "RelativeToolTip": "Clases\\Juego.cs",
-              "ViewState": "AgIAANEAAAAAAAAAAAAAwN0AAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-14T02:08:27.94Z",
               "EditorCaption": ""
@@ -190,7 +190,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "InterceptorCargaArchivo.cs",
               "DocumentMoniker": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programaci\u00F3n\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\Class Library\\Aspectos\\InterceptorCargaArchivo.cs",
               "RelativeDocumentMoniker": "Aspectos\\InterceptorCargaArchivo.cs",

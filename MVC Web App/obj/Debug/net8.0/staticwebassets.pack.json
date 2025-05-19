@@ -13,16 +13,32 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\images\\background-image-casino.webp",
+      "PackagePath": "staticwebassets\\images\\background-image-casino.webp"
+    },
+    {
       "Id": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\images\\background-image.jpg",
       "PackagePath": "staticwebassets\\images\\background-image.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\images\\card.png",
+      "PackagePath": "staticwebassets\\images\\card.png"
     },
     {
       "Id": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\images\\character-female.png",
       "PackagePath": "staticwebassets\\images\\character-female.png"
     },
     {
+      "Id": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\images\\character-female2.png",
+      "PackagePath": "staticwebassets\\images\\character-female2.png"
+    },
+    {
       "Id": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\images\\character-male.png",
       "PackagePath": "staticwebassets\\images\\character-male.png"
+    },
+    {
+      "Id": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\images\\character-male2.png",
+      "PackagePath": "staticwebassets\\images\\character-male2.png"
     },
     {
       "Id": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\images\\title-logo.png",

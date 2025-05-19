@@ -1,0 +1,77 @@
+﻿@{
+    ViewData["Title"] = "Reglas del Juego";
+}
+<link rel="stylesheet" href="~/css/style.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+<div class="game-container">
+
+    <div class="rules-scroll">
+        <h1>Blessings & Curses</h1>
+        <h2>Reglas del Juego</h2>
+
+        <section class="rule-box">
+            <h3>El Juicio de los Dioses</h3>
+            <p>En este juego de destinos entrelazados, los dioses de todas las mitologías observan tus decisiones. Cada carta que eliges puede ser tu bendición... o tu perdición. Los antiguos panteones deciden tu destino mientras compites por la gloria eterna.</p>
+        </section>
+
+        <section class="rule-box">
+            <h3>Preparación del Ritual</h3>
+            <ul>
+                <li>Entre 2 y 4 jugadores pueden participar en este sagrado concurso</li>
+                <li>Cada jugador recibe una apuesta inicial entre 50 y 80 puntos, dependiendo de su apuesta</li>
+                <li>Se reparten 3 cartas de juego a cada participante</li>
+                <li>El orden de juego se decide por el vuelo de los cuervos de Odín</li>
+                <li>El ganador se llevará 20 puntos adicionales</li>
+            </ul>
+        </section>
+
+        <section class="rule-box">
+            <h3>Tipos de Cartas Sagradas</h3>
+
+            <h4>Cartas de Juego</h4>
+            <p>Representan a las deidades principales de diversas mitologías. Cada una posee habilidades únicas que pueden alterar tu puntaje.</p>
+
+            <h4>Cartas de Castigo</h4>
+            <p>Encarnan las maldiciones de los dioses. Cada carta de castigo quita 5 valiosos puntos al jugador que la recibe.</p>
+
+            <h4>Cartas de Premio</h4>
+            <p>Manifiestan las bendiciones divinas. Cada carta de premio otorga 5 gloriosos puntos al jugador que la recibe.</p>
+        </section>
+
+        <div class="return-section">
+            <a asp-controller="Home" asp-action="Index" class="back-button">
+                <i class="fas fa-arrow-left"></i> Volver al Home
+            </a>
+        </div>
+    </div>
+
+    <img src="~/images/character-male.png" class="character male" />
+    <img src="~/images/character-female.png" class="character female" />
+</div>
+
+<style>
+
+    .character {
+    position: absolute;
+    bottom: 0;
+    width: auto;
+    max-height: 75vh;
+    pointer-events: none;
+    z-index: 1;
+    margin-left: -80px;
+    margin-right: -80px;
+}
+
+    .character.male {
+        left: -18vw;
+    }
+
+    .character.female {
+        right: -21vw;
+    }
+
+html, body {
+    overflow-x: hidden;
+}
+</style>

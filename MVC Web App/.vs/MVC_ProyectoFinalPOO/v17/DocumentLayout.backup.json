@@ -3,8 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programaci\u00F3n\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2EE9462E-BBCA-4D87-B02C-3179778BC7E1}|MVC_ProyectoFinalPOO.csproj|c:\\users\\sanda\\onedrive - upb\\archivos materias\\tercer semestre\\paradigmas de programaci\u00F3n\\proyecto final poo\\proyectofinal-paradigmas\\mvc web app\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{2EE9462E-BBCA-4D87-B02C-3179778BC7E1}|MVC_ProyectoFinalPOO.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{2EE9462E-BBCA-4D87-B02C-3179778BC7E1}|MVC_ProyectoFinalPOO.csproj|c:\\users\\sanda\\onedrive - upb\\archivos materias\\tercer semestre\\paradigmas de programaci\u00F3n\\proyecto final poo\\proyectofinal-paradigmas\\mvc web app\\views\\juego\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2EE9462E-BBCA-4D87-B02C-3179778BC7E1}|MVC_ProyectoFinalPOO.csproj|solutionrelative:views\\juego\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2EE9462E-BBCA-4D87-B02C-3179778BC7E1}|MVC_ProyectoFinalPOO.csproj|c:\\users\\sanda\\onedrive - upb\\archivos materias\\tercer semestre\\paradigmas de programaci\u00F3n\\proyecto final poo\\proyectofinal-paradigmas\\mvc web app\\controllers\\juegocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2EE9462E-BBCA-4D87-B02C-3179778BC7E1}|MVC_ProyectoFinalPOO.csproj|solutionrelative:controllers\\juegocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2EE9462E-BBCA-4D87-B02C-3179778BC7E1}|MVC_ProyectoFinalPOO.csproj|c:\\users\\sanda\\onedrive - upb\\archivos materias\\tercer semestre\\paradigmas de programaci\u00F3n\\proyecto final poo\\proyectofinal-paradigmas\\mvc web app\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2EE9462E-BBCA-4D87-B02C-3179778BC7E1}|MVC_ProyectoFinalPOO.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2EE9462E-BBCA-4D87-B02C-3179778BC7E1}|MVC_ProyectoFinalPOO.csproj|c:\\users\\sanda\\onedrive - upb\\archivos materias\\tercer semestre\\paradigmas de programaci\u00F3n\\proyecto final poo\\proyectofinal-paradigmas\\mvc web app\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2EE9462E-BBCA-4D87-B02C-3179778BC7E1}|MVC_ProyectoFinalPOO.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2EE9462E-BBCA-4D87-B02C-3179778BC7E1}|MVC_ProyectoFinalPOO.csproj|c:\\users\\sanda\\onedrive - upb\\archivos materias\\tercer semestre\\paradigmas de programaci\u00F3n\\proyecto final poo\\proyectofinal-paradigmas\\mvc web app\\views\\reglas\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2EE9462E-BBCA-4D87-B02C-3179778BC7E1}|MVC_ProyectoFinalPOO.csproj|solutionrelative:views\\reglas\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2EE9462E-BBCA-4D87-B02C-3179778BC7E1}|MVC_ProyectoFinalPOO.csproj|c:\\users\\sanda\\onedrive - upb\\archivos materias\\tercer semestre\\paradigmas de programaci\u00F3n\\proyecto final poo\\proyectofinal-paradigmas\\mvc web app\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -15,16 +31,27 @@
       "RelativeMoniker": "D:0:0:{2EE9462E-BBCA-4D87-B02C-3179778BC7E1}|MVC_ProyectoFinalPOO.csproj|solutionrelative:views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2EE9462E-BBCA-4D87-B02C-3179778BC7E1}|MVC_ProyectoFinalPOO.csproj|c:\\users\\sanda\\onedrive - upb\\archivos materias\\tercer semestre\\paradigmas de programaci\u00F3n\\proyecto final poo\\proyectofinal-paradigmas\\mvc web app\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2EE9462E-BBCA-4D87-B02C-3179778BC7E1}|MVC_ProyectoFinalPOO.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2EE9462E-BBCA-4D87-B02C-3179778BC7E1}|MVC_ProyectoFinalPOO.csproj|c:\\users\\sanda\\onedrive - upb\\archivos materias\\tercer semestre\\paradigmas de programaci\u00F3n\\proyecto final poo\\proyectofinal-paradigmas\\mvc web app\\controllers\\reglascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2EE9462E-BBCA-4D87-B02C-3179778BC7E1}|MVC_ProyectoFinalPOO.csproj|solutionrelative:controllers\\reglascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2EE9462E-BBCA-4D87-B02C-3179778BC7E1}|MVC_ProyectoFinalPOO.csproj|c:\\users\\sanda\\onedrive - upb\\archivos materias\\tercer semestre\\paradigmas de programaci\u00F3n\\proyecto final poo\\proyectofinal-paradigmas\\mvc web app\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{2EE9462E-BBCA-4D87-B02C-3179778BC7E1}|MVC_ProyectoFinalPOO.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2EE9462E-BBCA-4D87-B02C-3179778BC7E1}|MVC_ProyectoFinalPOO.csproj|c:\\users\\sanda\\onedrive - upb\\archivos materias\\tercer semestre\\paradigmas de programaci\u00F3n\\proyecto final poo\\proyectofinal-paradigmas\\mvc web app\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2EE9462E-BBCA-4D87-B02C-3179778BC7E1}|MVC_ProyectoFinalPOO.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programaci\u00F3n\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\Class Library\\Clases\\Baraja.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2EE9462E-BBCA-4D87-B02C-3179778BC7E1}|MVC_ProyectoFinalPOO.csproj|c:\\users\\sanda\\onedrive - upb\\archivos materias\\tercer semestre\\paradigmas de programaci\u00F3n\\proyecto final poo\\proyectofinal-paradigmas\\mvc web app\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{2EE9462E-BBCA-4D87-B02C-3179778BC7E1}|MVC_ProyectoFinalPOO.csproj|solutionrelative:wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2EE9462E-BBCA-4D87-B02C-3179778BC7E1}|MVC_ProyectoFinalPOO.csproj|c:\\users\\sanda\\onedrive - upb\\archivos materias\\tercer semestre\\paradigmas de programaci\u00F3n\\proyecto final poo\\proyectofinal-paradigmas\\mvc web app\\servicios\\juegoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2EE9462E-BBCA-4D87-B02C-3179778BC7E1}|MVC_ProyectoFinalPOO.csproj|solutionrelative:servicios\\juegoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2EE9462E-BBCA-4D87-B02C-3179778BC7E1}|MVC_ProyectoFinalPOO.csproj|c:\\users\\sanda\\onedrive - upb\\archivos materias\\tercer semestre\\paradigmas de programaci\u00F3n\\proyecto final poo\\proyectofinal-paradigmas\\mvc web app\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2EE9462E-BBCA-4D87-B02C-3179778BC7E1}|MVC_ProyectoFinalPOO.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +61,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,19 +81,110 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programaci\u00F3n\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\Views\\Juego\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Juego\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programaci\u00F3n\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\Views\\Juego\\Index.cshtml",
+              "RelativeToolTip": "Views\\Juego\\Index.cshtml",
+              "ViewState": "AgIAAFMAAAAAAAAAAAAAwGYAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-19T02:17:25.497Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "JuegoController.cs",
+              "DocumentMoniker": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programaci\u00F3n\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\Controllers\\JuegoController.cs",
+              "RelativeDocumentMoniker": "Controllers\\JuegoController.cs",
+              "ToolTip": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programaci\u00F3n\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\Controllers\\JuegoController.cs",
+              "RelativeToolTip": "Controllers\\JuegoController.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAAACgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T02:16:08.98Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programaci\u00F3n\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programaci\u00F3n\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-18T23:48:56.415Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programaci\u00F3n\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\Views\\Reglas\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Reglas\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programaci\u00F3n\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\Views\\Reglas\\Index.cshtml",
+              "RelativeToolTip": "Views\\Reglas\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-18T23:48:22.685Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "site.js",
+              "DocumentMoniker": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programaci\u00F3n\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\js\\site.js",
+              "RelativeDocumentMoniker": "wwwroot\\js\\site.js",
+              "ToolTip": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programaci\u00F3n\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\js\\site.js",
+              "RelativeToolTip": "wwwroot\\js\\site.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-05-18T21:43:02.161Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Baraja.cs",
+              "DocumentMoniker": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programaci\u00F3n\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\Class Library\\Clases\\Baraja.cs",
+              "RelativeDocumentMoniker": "..\\Class Library\\Clases\\Baraja.cs",
+              "ToolTip": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programaci\u00F3n\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\Class Library\\Clases\\Baraja.cs",
+              "RelativeToolTip": "..\\Class Library\\Clases\\Baraja.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T20:27:18.44Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ReglasController.cs",
+              "DocumentMoniker": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programaci\u00F3n\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\Controllers\\ReglasController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ReglasController.cs",
+              "ToolTip": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programaci\u00F3n\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\Controllers\\ReglasController.cs",
+              "RelativeToolTip": "Controllers\\ReglasController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T19:38:36.503Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programaci\u00F3n\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programaci\u00F3n\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAAAFkAAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAAE8AAAAAAAAAAAAQwHoAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T02:39:30.187Z"
+              "WhenOpened": "2025-05-18T02:39:30.187Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 12,
               "Title": "JuegoService.cs",
               "DocumentMoniker": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programaci\u00F3n\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\Servicios\\JuegoService.cs",
               "RelativeDocumentMoniker": "Servicios\\JuegoService.cs",
@@ -78,15 +196,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "Privacy.cshtml",
               "DocumentMoniker": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programaci\u00F3n\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\Views\\Home\\Privacy.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Privacy.cshtml",
               "ToolTip": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programaci\u00F3n\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\Views\\Home\\Privacy.cshtml",
               "RelativeToolTip": "Views\\Home\\Privacy.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACUAAAAAAAAAAAAAwFAAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-18T02:37:06.285Z"
+              "WhenOpened": "2025-05-18T02:37:06.285Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -96,34 +215,36 @@
               "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
               "ToolTip": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programaci\u00F3n\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\Controllers\\HomeController.cs",
               "RelativeToolTip": "Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAIwG0AAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T02:34:27.026Z"
+              "WhenOpened": "2025-05-18T02:34:27.026Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 8,
               "Title": "site.css",
               "DocumentMoniker": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programaci\u00F3n\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\css\\site.css",
               "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
               "ToolTip": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programaci\u00F3n\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\css\\site.css",
               "RelativeToolTip": "wwwroot\\css\\site.css",
-              "ViewState": "AgIAAJoAAAAAAAAAAAAYwMYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABoCAAAAAAAAAAAAwEYCAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2025-05-18T02:34:18.115Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programaci\u00F3n\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
               "ToolTip": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programaci\u00F3n\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAGAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAAowCUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-18T02:34:03.274Z"
+              "WhenOpened": "2025-05-18T02:34:03.274Z",
+              "EditorCaption": ""
             }
           ]
         }

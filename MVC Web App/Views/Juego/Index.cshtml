@@ -1,0 +1,126 @@
+﻿@{
+    ViewData["Title"] = "Mesa de Juego";
+    var jugadores = ViewBag.Jugadores as List<CL_ProyectoFinalPOO.Clases.Jugador>;
+    var carta = ViewBag.Carta as CL_ProyectoFinalPOO.Clases.Carta;
+}
+
+<link rel="stylesheet" href="~/css/style.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+<style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: 'Georgia', serif;
+        background: url('/images/background-image-casino.webp') no-repeat center center fixed;
+        background-size: cover;
+        color: #fff;
+    }
+
+    .mesa-juego {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .bloque-carta {
+        background: rgba(0,0,0,0.65);
+        padding: 25px 30px;
+        border: 2px solid #ffd700;
+        border-radius: 18px;
+        box-shadow: 0 0 30px rgba(255,215,0,0.4);
+        max-width: 360px;
+    }
+
+    .bloque-carta img {
+        width: 180px;
+        height: auto;
+        border-radius: 12px;
+        margin-bottom: 14px;
+        box-shadow: 0 0 12px rgba(255, 255, 200, 0.6);
+    }
+
+    .robar-btn {
+        margin-top: 15px;
+        padding: 12px 26px;
+        font-size: 1rem;
+        background: linear-gradient(to right, #f9d97c, #f6c13c);
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        cursor: pointer;
+        font-weight: bold;
+        color: #3b2a16;
+        transition: all 0.3s ease;
+    }
+
+    .robar-btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 18px rgba(0,0,0,0.4);
+    }
+
+    .jugadores-panel {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .jugador-card {
+        background: rgba(0, 0, 0, 0.7);
+        padding: 15px 20px;
+        border-radius: 10px;
+        border: 1px solid #ffd700;
+        box-shadow: 0 0 10px rgba(255,215,0,0.3);
+        width: 200px;
+        text-align: center;
+    }
+
+    .jugador-card h4 {
+        margin-bottom: 8px;
+        color: #ffe066;
+    }
+</style>
+
+<div class="mesa-juego">
+
+    <div class="bloque-carta">
+        <img src="~/images/card.png" alt="Carta actual" />
+        @if (carta != null)
+        {
+                <h3>@carta.Nombre</h3>
+                <p><em>@carta.Mitologia</em></p>
+                <p><strong>Puntos:</strong> @carta.ObtenerPuntos()</p>
+        }
+        else
+        {
+                <p><em>Toma una carta y prueba tu suerte</em></p>
+        }
+
+        <form method="post" asp-action="RobarCarta">
+            <button type="submit" class="robar-btn">
+                <i class="fas fa-hand-holding"></i> Robar Carta
+            </button>
+        </form>
+    </div>
+
+    @if (jugadores != null && jugadores.Count > 0)
+    {
+            <div class="jugadores-panel">
+            @foreach (var jugador in jugadores)
+            {
+                        <div class="jugador-card">
+                            <h4>@jugador.Nickname</h4>
+                            <p>Puntos: @jugador.Puntos</p>
+                            <p>Cartas: @jugador.L_cartas_jugador.Count</p>
+                        </div>
+            }
+            </div>
+    }
+</div>
