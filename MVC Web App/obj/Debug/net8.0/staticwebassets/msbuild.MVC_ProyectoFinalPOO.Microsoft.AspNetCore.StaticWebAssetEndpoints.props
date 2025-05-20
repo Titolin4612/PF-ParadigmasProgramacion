@@ -3,14 +3,14 @@
     <StaticWebAssetEndpoint Include="_content/MVC_ProyectoFinalPOO/css/site.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-A3vL1FLRYQ1FQXUaay/TYM8pBGsSS6hjGhvzLAMW/H0="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"12509"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022A3vL1FLRYQ1FQXUaay/TYM8pBGsSS6hjGhvzLAMW/H0=\u0022"},{"Name":"Last-Modified","Value":"Mon, 19 May 2025 01:02:30 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-OOQLzCQaiUrN5ocOCS\u002BYU4zdtYelKrEPYTe1N9acy/g="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"30910"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022OOQLzCQaiUrN5ocOCS\u002BYU4zdtYelKrEPYTe1N9acy/g=\u0022"},{"Name":"Last-Modified","Value":"Mon, 19 May 2025 18:36:02 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/MVC_ProyectoFinalPOO/css/site.f5gd0mdgom.css">
+    <StaticWebAssetEndpoint Include="_content/MVC_ProyectoFinalPOO/css/site.w2eqed73wv.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"f5gd0mdgom"},{"Name":"integrity","Value":"sha256-A3vL1FLRYQ1FQXUaay/TYM8pBGsSS6hjGhvzLAMW/H0="},{"Name":"label","Value":"_content/MVC_ProyectoFinalPOO/css/site.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"12509"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022A3vL1FLRYQ1FQXUaay/TYM8pBGsSS6hjGhvzLAMW/H0=\u0022"},{"Name":"Last-Modified","Value":"Mon, 19 May 2025 01:02:30 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"w2eqed73wv"},{"Name":"integrity","Value":"sha256-OOQLzCQaiUrN5ocOCS\u002BYU4zdtYelKrEPYTe1N9acy/g="},{"Name":"label","Value":"_content/MVC_ProyectoFinalPOO/css/site.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"30910"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022OOQLzCQaiUrN5ocOCS\u002BYU4zdtYelKrEPYTe1N9acy/g=\u0022"},{"Name":"Last-Modified","Value":"Mon, 19 May 2025 18:36:02 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/MVC_ProyectoFinalPOO/favicon.61n19gt1b8.ico">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\favicon.ico'))</AssetFile>
@@ -24,17 +24,29 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-Jtxf9L\u002B5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"5430"},{"Name":"Content-Type","Value":"image/x-icon"},{"Name":"ETag","Value":"\u0022Jtxf9L\u002B5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM=\u0022"},{"Name":"Last-Modified","Value":"Sat, 10 May 2025 05:59:27 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/MVC_ProyectoFinalPOO/images/background-image-casino.1ytcasgxgl.webp">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\background-image-casino.webp'))</AssetFile>
+    <StaticWebAssetEndpoint Include="_content/MVC_ProyectoFinalPOO/images/background-image-casino.jgd0fw0m2v.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\background-image-casino.png'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"1ytcasgxgl"},{"Name":"integrity","Value":"sha256-Z2MxHeFLXo2IPYSbAgh2wC9h\u002BJsB35H14vPyVGmja\u002Bo="},{"Name":"label","Value":"_content/MVC_ProyectoFinalPOO/images/background-image-casino.webp"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"23294"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022Z2MxHeFLXo2IPYSbAgh2wC9h\u002BJsB35H14vPyVGmja\u002Bo=\u0022"},{"Name":"Last-Modified","Value":"Mon, 19 May 2025 03:28:39 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"jgd0fw0m2v"},{"Name":"integrity","Value":"sha256-3Uzj8vl\u002BOWL5OzDXbU3bZKTekZ\u002Bh9ID5WCCDH2qGrFI="},{"Name":"label","Value":"_content/MVC_ProyectoFinalPOO/images/background-image-casino.png"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"542681"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u00223Uzj8vl\u002BOWL5OzDXbU3bZKTekZ\u002Bh9ID5WCCDH2qGrFI=\u0022"},{"Name":"Last-Modified","Value":"Mon, 19 May 2025 18:01:02 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/MVC_ProyectoFinalPOO/images/background-image-casino.webp">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\background-image-casino.webp'))</AssetFile>
+    <StaticWebAssetEndpoint Include="_content/MVC_ProyectoFinalPOO/images/background-image-casino.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\background-image-casino.png'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-Z2MxHeFLXo2IPYSbAgh2wC9h\u002BJsB35H14vPyVGmja\u002Bo="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"23294"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022Z2MxHeFLXo2IPYSbAgh2wC9h\u002BJsB35H14vPyVGmja\u002Bo=\u0022"},{"Name":"Last-Modified","Value":"Mon, 19 May 2025 03:28:39 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-3Uzj8vl\u002BOWL5OzDXbU3bZKTekZ\u002Bh9ID5WCCDH2qGrFI="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"542681"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u00223Uzj8vl\u002BOWL5OzDXbU3bZKTekZ\u002Bh9ID5WCCDH2qGrFI=\u0022"},{"Name":"Last-Modified","Value":"Mon, 19 May 2025 18:01:02 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/MVC_ProyectoFinalPOO/images/background-image-casino2.lmuk1160wm.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\background-image-casino2.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"lmuk1160wm"},{"Name":"integrity","Value":"sha256-DX31n2DaEhp45VTEWl\u002BmgdSRwqSG6Lxeb8NxlnfCSYU="},{"Name":"label","Value":"_content/MVC_ProyectoFinalPOO/images/background-image-casino2.png"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"542252"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022DX31n2DaEhp45VTEWl\u002BmgdSRwqSG6Lxeb8NxlnfCSYU=\u0022"},{"Name":"Last-Modified","Value":"Mon, 19 May 2025 18:04:51 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/MVC_ProyectoFinalPOO/images/background-image-casino2.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\background-image-casino2.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-DX31n2DaEhp45VTEWl\u002BmgdSRwqSG6Lxeb8NxlnfCSYU="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"542252"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022DX31n2DaEhp45VTEWl\u002BmgdSRwqSG6Lxeb8NxlnfCSYU=\u0022"},{"Name":"Last-Modified","Value":"Mon, 19 May 2025 18:04:51 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/MVC_ProyectoFinalPOO/images/background-image.dks45jwnkn.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\background-image.jpg'))</AssetFile>

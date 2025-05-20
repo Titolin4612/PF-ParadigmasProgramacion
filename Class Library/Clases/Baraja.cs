@@ -30,7 +30,7 @@ namespace CL_ProyectoFinalPOO.Clases
         }
 
         // Load cards from JSON file
-        public virtual void CargarCartas()
+        public static void CargarCartas()
         {
             // Check if the file exists
             if (!File.Exists(_rutaArchivoCartas))

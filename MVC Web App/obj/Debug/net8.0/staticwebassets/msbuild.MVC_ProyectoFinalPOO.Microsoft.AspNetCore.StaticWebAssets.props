@@ -12,8 +12,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>f5gd0mdgom</Fingerprint>
-      <Integrity>A3vL1FLRYQ1FQXUaay/TYM8pBGsSS6hjGhvzLAMW/H0=</Integrity>
+      <Fingerprint>w2eqed73wv</Fingerprint>
+      <Integrity>OOQLzCQaiUrN5ocOCS+YU4zdtYelKrEPYTe1N9acy/g=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</OriginalItemSpec>
@@ -54,23 +54,41 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\background-image.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\background-image-casino.webp'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\background-image-casino.png'))">
       <SourceType>Package</SourceType>
       <SourceId>MVC_ProyectoFinalPOO</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/MVC_ProyectoFinalPOO</BasePath>
-      <RelativePath>images/background-image-casino.webp</RelativePath>
+      <RelativePath>images/background-image-casino.png</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>1ytcasgxgl</Fingerprint>
-      <Integrity>Z2MxHeFLXo2IPYSbAgh2wC9h+JsB35H14vPyVGmja+o=</Integrity>
+      <Fingerprint>jgd0fw0m2v</Fingerprint>
+      <Integrity>3Uzj8vl+OWL5OzDXbU3bZKTekZ+h9ID5WCCDH2qGrFI=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\background-image-casino.webp'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\background-image-casino.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\background-image-casino2.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>MVC_ProyectoFinalPOO</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/MVC_ProyectoFinalPOO</BasePath>
+      <RelativePath>images/background-image-casino2.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>lmuk1160wm</Fingerprint>
+      <Integrity>DX31n2DaEhp45VTEWl+mgdSRwqSG6Lxeb8NxlnfCSYU=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\background-image-casino2.png'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\card.png'))">
       <SourceType>Package</SourceType>

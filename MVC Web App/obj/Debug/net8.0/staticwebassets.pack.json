@@ -13,8 +13,12 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\images\\background-image-casino.webp",
-      "PackagePath": "staticwebassets\\images\\background-image-casino.webp"
+      "Id": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\images\\background-image-casino.png",
+      "PackagePath": "staticwebassets\\images\\background-image-casino.png"
+    },
+    {
+      "Id": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\images\\background-image-casino2.png",
+      "PackagePath": "staticwebassets\\images\\background-image-casino2.png"
     },
     {
       "Id": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\images\\background-image.jpg",

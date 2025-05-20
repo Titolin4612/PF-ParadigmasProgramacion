@@ -47,10 +47,6 @@ namespace CL_ProyectoFinalPOO.Clases
             {
                 _notificaciones.Add($"{DateTime.Now:HH:mm:ss} - ¡El líder del juego ha cambiado! Ahora es: {nuevoLider.Nickname} con {nuevoLider.Puntos} puntos.");
             }
-            else
-            {
-                _notificaciones.Add($"{DateTime.Now:HH:mm:ss} - Cambio de líder, pero no hay un líder claro (posiblemente no hay jugadores o empate sin resolver).");
-            }
         }
 
         public IReadOnlyList<string> ObtenerNotificaciones()

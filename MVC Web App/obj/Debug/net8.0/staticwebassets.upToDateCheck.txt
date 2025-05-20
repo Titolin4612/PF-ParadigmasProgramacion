@@ -1,7 +1,8 @@
 wwwroot\css\site.css
 wwwroot\favicon.ico
 wwwroot\images\background-image.jpg
-wwwroot\images\background-image-casino.webp
+wwwroot\images\background-image-casino.png
+wwwroot\images\background-image-casino2.png
 wwwroot\images\card.png
 wwwroot\images\character-female.png
 wwwroot\images\character-female2.png

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "5BeMdThL5qlSLCWrIg9TS5HOw0/Yo4MnBhztUYpuy3E=",
+  "Hash": "LcVufD39ZzrMAM0Xd8nFkyCIgvV8RCXiFu90bb5l2r8=",
   "Source": "MVC_ProyectoFinalPOO",
   "BasePath": "_content/MVC_ProyectoFinalPOO",
   "Mode": "Default",
@@ -73,8 +73,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "f5gd0mdgom",
-      "Integrity": "A3vL1FLRYQ1FQXUaay/TYM8pBGsSS6hjGhvzLAMW/H0=",
+      "Fingerprint": "w2eqed73wv",
+      "Integrity": "OOQLzCQaiUrN5ocOCS+YU4zdtYelKrEPYTe1N9acy/g=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -122,12 +122,12 @@
       "OriginalItemSpec": "wwwroot\\images\\background-image.jpg"
     },
     {
-      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\images\\background-image-casino.webp",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\images\\background-image-casino.png",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
-      "RelativePath": "images/background-image-casino#[.{fingerprint}]?.webp",
+      "RelativePath": "images/background-image-casino#[.{fingerprint}]?.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -136,11 +136,32 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "1ytcasgxgl",
-      "Integrity": "Z2MxHeFLXo2IPYSbAgh2wC9h+JsB35H14vPyVGmja+o=",
+      "Fingerprint": "jgd0fw0m2v",
+      "Integrity": "3Uzj8vl+OWL5OzDXbU3bZKTekZ+h9ID5WCCDH2qGrFI=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\background-image-casino.webp"
+      "OriginalItemSpec": "wwwroot\\images\\background-image-casino.png"
+    },
+    {
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\images\\background-image-casino2.png",
+      "SourceId": "MVC_ProyectoFinalPOO",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\",
+      "BasePath": "_content/MVC_ProyectoFinalPOO",
+      "RelativePath": "images/background-image-casino2#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "lmuk1160wm",
+      "Integrity": "DX31n2DaEhp45VTEWl+mgdSRwqSG6Lxeb8NxlnfCSYU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\background-image-casino2.png"
     },
     {
       "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\images\\card.png",
@@ -1499,7 +1520,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "12509"
+          "Value": "30910"
         },
         {
           "Name": "Content-Type",
@@ -1507,11 +1528,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"A3vL1FLRYQ1FQXUaay/TYM8pBGsSS6hjGhvzLAMW/H0=\""
+          "Value": "\"OOQLzCQaiUrN5ocOCS+YU4zdtYelKrEPYTe1N9acy/g=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 01:02:30 GMT"
+          "Value": "Mon, 19 May 2025 18:36:02 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1521,12 +1542,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-A3vL1FLRYQ1FQXUaay/TYM8pBGsSS6hjGhvzLAMW/H0="
+          "Value": "sha256-OOQLzCQaiUrN5ocOCS+YU4zdtYelKrEPYTe1N9acy/g="
         }
       ]
     },
     {
-      "Route": "css/site.f5gd0mdgom.css",
+      "Route": "css/site.w2eqed73wv.css",
       "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -1536,7 +1557,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "12509"
+          "Value": "30910"
         },
         {
           "Name": "Content-Type",
@@ -1544,11 +1565,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"A3vL1FLRYQ1FQXUaay/TYM8pBGsSS6hjGhvzLAMW/H0=\""
+          "Value": "\"OOQLzCQaiUrN5ocOCS+YU4zdtYelKrEPYTe1N9acy/g=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 01:02:30 GMT"
+          "Value": "Mon, 19 May 2025 18:36:02 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1558,7 +1579,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "f5gd0mdgom"
+          "Value": "w2eqed73wv"
         },
         {
           "Name": "label",
@@ -1566,7 +1587,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-A3vL1FLRYQ1FQXUaay/TYM8pBGsSS6hjGhvzLAMW/H0="
+          "Value": "sha256-OOQLzCQaiUrN5ocOCS+YU4zdtYelKrEPYTe1N9acy/g="
         }
       ]
     },
@@ -1735,8 +1756,8 @@
       ]
     },
     {
-      "Route": "images/background-image-casino.1ytcasgxgl.webp",
-      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\images\\background-image-casino.webp",
+      "Route": "images/background-image-casino.jgd0fw0m2v.png",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\images\\background-image-casino.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1745,19 +1766,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "23294"
+          "Value": "542681"
         },
         {
           "Name": "Content-Type",
-          "Value": "image/webp"
+          "Value": "image/png"
         },
         {
           "Name": "ETag",
-          "Value": "\"Z2MxHeFLXo2IPYSbAgh2wC9h+JsB35H14vPyVGmja+o=\""
+          "Value": "\"3Uzj8vl+OWL5OzDXbU3bZKTekZ+h9ID5WCCDH2qGrFI=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 03:28:39 GMT"
+          "Value": "Mon, 19 May 2025 18:01:02 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1767,21 +1788,21 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "1ytcasgxgl"
+          "Value": "jgd0fw0m2v"
         },
         {
           "Name": "label",
-          "Value": "images/background-image-casino.webp"
+          "Value": "images/background-image-casino.png"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-Z2MxHeFLXo2IPYSbAgh2wC9h+JsB35H14vPyVGmja+o="
+          "Value": "sha256-3Uzj8vl+OWL5OzDXbU3bZKTekZ+h9ID5WCCDH2qGrFI="
         }
       ]
     },
     {
-      "Route": "images/background-image-casino.webp",
-      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\images\\background-image-casino.webp",
+      "Route": "images/background-image-casino.png",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\images\\background-image-casino.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1790,19 +1811,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "23294"
+          "Value": "542681"
         },
         {
           "Name": "Content-Type",
-          "Value": "image/webp"
+          "Value": "image/png"
         },
         {
           "Name": "ETag",
-          "Value": "\"Z2MxHeFLXo2IPYSbAgh2wC9h+JsB35H14vPyVGmja+o=\""
+          "Value": "\"3Uzj8vl+OWL5OzDXbU3bZKTekZ+h9ID5WCCDH2qGrFI=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 03:28:39 GMT"
+          "Value": "Mon, 19 May 2025 18:01:02 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1812,7 +1833,89 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-Z2MxHeFLXo2IPYSbAgh2wC9h+JsB35H14vPyVGmja+o="
+          "Value": "sha256-3Uzj8vl+OWL5OzDXbU3bZKTekZ+h9ID5WCCDH2qGrFI="
+        }
+      ]
+    },
+    {
+      "Route": "images/background-image-casino2.lmuk1160wm.png",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\images\\background-image-casino2.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "542252"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"DX31n2DaEhp45VTEWl+mgdSRwqSG6Lxeb8NxlnfCSYU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 19 May 2025 18:04:51 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "lmuk1160wm"
+        },
+        {
+          "Name": "label",
+          "Value": "images/background-image-casino2.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-DX31n2DaEhp45VTEWl+mgdSRwqSG6Lxeb8NxlnfCSYU="
+        }
+      ]
+    },
+    {
+      "Route": "images/background-image-casino2.png",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\images\\background-image-casino2.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "542252"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"DX31n2DaEhp45VTEWl+mgdSRwqSG6Lxeb8NxlnfCSYU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 19 May 2025 18:04:51 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-DX31n2DaEhp45VTEWl+mgdSRwqSG6Lxeb8NxlnfCSYU="
         }
       ]
     },

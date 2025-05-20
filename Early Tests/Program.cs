@@ -104,39 +104,98 @@ namespace CL_EarlyTests
             //    Console.WriteLine($"Error: {ex.Message}");
             //}
 
-            
-            Console.WriteLine("Iniciando prueba de carga de cartas...");
 
+            //Console.WriteLine("Iniciando prueba de carga de cartas...");
+
+            //Juego juego = new Juego();
+            //Baraja baraja = new Baraja();
+            //Baraja.Ruta();
+            //try
+            //{
+            //    // Simplemente llamar al método estático.
+            //    // El constructor estático de Baraja se ejecutará automáticamente
+            //    // la primera vez que se acceda a la clase Baraja aquí.
+            //    baraja.CargarCartas();
+            //    Baraja.ImprimirCartasCargadas();
+
+            //    Console.WriteLine("\nPrueba completada exitosamente.");
+            //}
+            //catch (Exception ex)
+            //{
+            //    // Captura cualquier excepción que pueda ocurrir durante la carga en el constructor estático
+            //    Console.ForegroundColor = ConsoleColor.Red;
+            //    Console.WriteLine("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+            //    Console.WriteLine("ERROR FATAL DURANTE LA CARGA DE CARTAS:");
+            //    Console.WriteLine(ex.ToString()); // Imprime toda la información de la excepción
+            //    Console.WriteLine("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+            //    Console.ResetColor();
+            //    Console.WriteLine("\nLa carga falló. Revisa el archivo cartas.json y los mensajes de error.");
+            //}
+            //Console.WriteLine("juego.Imprimir");
+            //juego.imprimir();
+
+            //Console.WriteLine("\nPresiona cualquier tecla para salir...");
+            //Console.ReadKey();
+
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+            Console.WriteLine("🎮 BIENVENIDO A BLESSINGS AND CURSES\n");
+
+            // 1. Crear instancia del juego
             Juego juego = new Juego();
-            Baraja baraja = new Baraja();
-            Baraja.Ruta();
-            try
-            {
-                // Simplemente llamar al método estático.
-                // El constructor estático de Baraja se ejecutará automáticamente
-                // la primera vez que se acceda a la clase Baraja aquí.
-                baraja.CargarCartas();
-                Baraja.ImprimirCartasCargadas();
 
-                Console.WriteLine("\nPrueba completada exitosamente.");
-            }
-            catch (Exception ex)
+            // 2. Crear jugadores
+            Juego.Jugadores.Add(new Jugador("Santi", 200, juego));
+            Juego.Jugadores.Add(new Jugador("Laura", 500, juego));
+            Juego.Jugadores.Add(new Jugador("Nico", 100, juego));
+
+            Console.WriteLine("✅ Jugadores registrados:");
+            foreach (var j in Juego.Jugadores)
             {
-                // Captura cualquier excepción que pueda ocurrir durante la carga en el constructor estático
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-                Console.WriteLine("ERROR FATAL DURANTE LA CARGA DE CARTAS:");
-                Console.WriteLine(ex.ToString()); // Imprime toda la información de la excepción
-                Console.WriteLine("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-                Console.ResetColor();
-                Console.WriteLine("\nLa carga falló. Revisa el archivo cartas.json y los mensajes de error.");
+                Console.WriteLine($"   - {j.Nickname} (Apuesta: {j.ApuestaInicial} | Puntos iniciales: {j.Puntos})");
             }
 
-            Console.WriteLine("\nPresiona cualquier tecla para salir...");
-            Console.ReadKey();
+            // 3. Iniciar el juego
+            juego.IniciarRonda();
 
-            juego.imprimir();
-            
+            // 4. Ciclo principal del juego
+            while (juego.L_cartas_resto.Count > 0 || Juego.L_cartas_castigo.Count > 0 || Juego.L_cartas_premio.Count > 0)
+            {
+                var jugadorActual = Juego.Jugadores[Juego.IndiceJugador];
+
+                Console.WriteLine($"\n🕹️ Turno de {jugadorActual.Nickname}:");
+                var carta = jugadorActual.CogerCarta();
+
+                Console.WriteLine($"   🃏 Carta: {carta.Nombre} | Puntos obtenidos: {juego.AplicarEfectoCartas(carta)}");
+                Console.WriteLine($"   🔢 Puntos totales de {jugadorActual.Nickname}: {jugadorActual.Puntos}");
+
+                juego.PasarTurno();
+
+                Console.WriteLine("Presiona ENTER para continuar...");
+                Console.ReadLine();
+            }
+
+            // 5. Finalizar juego
+            var ganador = juego.FinalizarJuego();
+
+            Console.WriteLine($"\n🏁 FIN DEL JUEGO");
+            Console.WriteLine($"🎉 GANADOR: {ganador.Nickname} con {ganador.Puntos} puntos");
+            Console.WriteLine("\n📜 Historial de eventos:");
+            foreach (var evento in juego.Historial.ObtenerNotificaciones())
+            {
+                Console.WriteLine("   - " + evento);
+            }
+
+            Console.WriteLine("\nGracias por jugar 🃏");
+            Console.ReadLine();
+            Console.ReadLine();
+            Console.ReadLine();
+            Console.ReadLine();
+            Console.ReadLine();
+            Console.ReadLine();
+            Console.ReadLine();
+
         }
+
+
     }
 }

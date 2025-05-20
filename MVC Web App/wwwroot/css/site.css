@@ -580,3 +580,783 @@ a, a:hover, a:visited, a:focus {
         box-shadow: 0 6px 12px rgba(0,0,0,0.5);
         color: white;
     }
+
+/* wwwroot/css/juego-pantalla.css */
+
+/* --- GENERALES DE PANTALLA DE JUEGO --- */
+body.game-active-bg {
+    background: url('../images/background-image-darker.jpg') no-repeat center center fixed;
+    background-size: cover;
+    overflow-y: auto; /* Permitir scroll vertical si es necesario */
+}
+
+.play-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    padding-top: 75px; /* Espacio para el turn-indicator si fuera fijo o navbar */
+    gap: 20px; /* Espacio entre secciones principales */
+    min-height: 100vh;
+    color: #e0d6c7; /* Color de texto base para esta pantalla */
+}
+
+.turn-indicator {
+    background: rgba(0, 0, 0, 0.75);
+    padding: 10px 25px;
+    border-radius: 30px;
+    border: 2px solid #d4af37;
+    font-size: 1.25em;
+    color: #f5eeda;
+    margin-bottom: 15px;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5), 0 0 5px rgba(0,0,0,0.3) inset;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+    font-family: 'Cinzel Decorative', serif; /* Una fuente más temática si la tienes */
+}
+
+.current-player-name {
+    color: #ffd700;
+    font-weight: 700; /* Cinzel Decorative puede necesitar más peso */
+}
+
+/* --- ÁREA DE JUGADORES --- */
+.player-areas-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 1300px; /* Ajusta según el número de jugadores */
+}
+
+.player-box {
+    background: linear-gradient(145deg, rgba(40, 30, 20, 0.85), rgba(20, 15, 10, 0.9));
+    border: 2px solid #5a4a3c;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+    transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+    width: 260px; /* Ancho base, se ajustará */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+    .player-box:hover {
+        transform: translateY(-8px) scale(1.02);
+        border-color: #ab987a;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.7), 0 0 15px rgba(200,160,100,0.3);
+    }
+
+.player-avatar {
+    font-size: 2.8rem;
+    color: #c2b280;
+    margin-bottom: 12px;
+    background: radial-gradient(circle, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.5) 100%);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #6b4f34;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4) inset;
+}
+
+.player-nickname { /* Cambiado de h4 a .player-nickname */
+    color: #ffd700;
+    margin-bottom: 15px;
+    font-size: 1.35em;
+    border-bottom: 1px solid #7a6240;
+    padding-bottom: 10px;
+    width: 100%;
+    font-family: 'Cinzel', serif; /* Fuente temática */
+    letter-spacing: 0.5px;
+}
+
+.player-stats p {
+    font-size: 1em;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Alineado a la izquierda dentro de su espacio */
+    width: 100%;
+    padding-left: 20px; /* Un poco de indentación */
+}
+
+    .player-stats p i {
+        margin-right: 10px;
+        width: 20px; /* Ancho fijo para iconos para alinear texto */
+        text-align: center;
+    }
+
+.player-stats strong {
+    font-weight: 600;
+    color: #fff;
+}
+
+.gold-icon {
+    color: #f9d97c;
+}
+
+.card-count-icon {
+    color: #a0b8d0;
+}
+
+.current-player-turn {
+    border-color: #ffd700 !important;
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.7), 0 0 15px rgba(255,255,255,0.3) inset !important;
+    transform: scale(1.08) translateY(-8px) !important;
+    background: linear-gradient(145deg, rgba(50, 40, 25, 0.9), rgba(30, 20, 10, 0.95)) !important;
+}
+
+    .current-player-turn .player-avatar {
+        color: #ffd700;
+        border-color: #ffd700;
+        box-shadow: 0 0 15px rgba(255,215,0,0.5) inset, 0 0 10px rgba(255,215,0,0.3);
+    }
+
+.player-hand-preview {
+    margin-top: 15px;
+    min-height: 35px;
+    display: flex;
+    gap: 4px;
+    padding-top: 10px;
+    border-top: 1px dashed #5b3924;
+    width: 100%;
+    justify-content: center;
+}
+
+.tiny-card-icon {
+    width: 24px;
+    height: 34px;
+    border-radius: 3px;
+    border: 1px solid #8a7250;
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+    background-color: #4a3b2c; /* Color de fondo si la imagen no carga */
+}
+
+/* --- ÁREA CENTRAL DEL JUEGO --- */
+.central-game-board {
+    display: flex;
+    gap: 25px;
+    width: 100%;
+    max-width: 850px; /* Ajustado */
+    padding: 25px;
+    background: rgba(0,0,0,0.7);
+    border-radius: 20px;
+    border: 2px solid #6b4f34; /* Borde más pronunciado */
+    align-items: stretch;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.deck-and-actions-column {
+    flex: 0 0 220px; /* Ligeramente más ancho */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    padding: 15px;
+    background-color: rgba(10,5,0,0.2);
+    border-radius: 12px;
+}
+
+.deck-pile {
+    text-align: center;
+}
+
+.deck-image {
+    width: 140px; /* Mazo más grande */
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 0 18px rgba(0,0,0,0.8);
+    border: 4px solid #4b3a2a;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: pointer;
+}
+
+    .deck-image:hover {
+        transform: scale(1.07) rotate(-3deg);
+        box-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
+        border-color: #c2b280;
+    }
+
+.deck-count-text {
+    color: #ffedc4;
+    font-style: italic;
+    margin-top: 12px;
+    font-size: 0.95em;
+}
+
+.game-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.main-action-button {
+    font-size: 1.15em !important;
+    padding: 15px 10px !important;
+}
+
+.secondary-action-button {
+    background: linear-gradient(to right, #5c666f, #3e444a) !important;
+    font-size: 0.95em !important;
+}
+
+.tertiary-action-button { /* Hereda de .back-button, puedes ajustar aquí si es necesario */
+}
+
+
+.revealed-card-zone {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 480px; /* Para la carta más grande */
+    background-color: rgba(10,5,0,0.35);
+    border-radius: 15px;
+    padding: 20px;
+    border: 2px dashed #7a6240; /* Borde más visible */
+    position: relative; /* Para efectos de entrada de carta si se añaden */
+}
+
+.card-display-placeholder {
+    display: flex; /* Controlado por JS */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #c2b280;
+    font-style: italic;
+    width: 320px;
+    height: 450px;
+    border: 4px dashed #8a7250;
+    border-radius: 20px;
+    background-color: rgba(0,0,0,0.1);
+}
+
+.placeholder-icon {
+    font-size: 4.5rem;
+    margin-bottom: 20px;
+    opacity: 0.6;
+    color: #d4af37;
+}
+
+.card-display-placeholder p {
+    font-size: 1.1em;
+}
+
+/* --- ESTILO DE LA CARTA VISUAL --- */
+.game-card-visual {
+    width: 320px; /* Ancho de la carta */
+    height: 450px; /* Alto de la carta */
+    border-radius: 20px; /* Bordes más redondeados */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+    font-family: 'Georgia', serif;
+    display: flex; /* Controlado por JS, por defecto 'none' o el placeholder visible */
+    flex-direction: column;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease; /* Efecto al aparecer */
+    position: relative; /* Para elementos internos absolutamente posicionados si es necesario */
+}
+    /* Animación de entrada (opcional) */
+    .game-card-visual.revealed { /* Añadir esta clase con JS al mostrar */
+        transform: scale(1) rotateY(0deg);
+        opacity: 1;
+    }
+
+.game-card-visual { /* Estado inicial para animación */
+    transform: scale(0.9) rotateY(-30deg);
+    opacity: 0;
+}
+
+
+.card-top-banner {
+    padding: 12px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid; /* Color por tipo */
+    background: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(255,255,255,0)); /* Ligero brillo superior */
+}
+
+.card-title-text {
+    font-size: 1.4em; /* Título más grande */
+    font-weight: bold;
+    font-family: 'Cinzel Decorative', serif; /* Fuente temática para títulos */
+    letter-spacing: 0.5px;
+}
+
+.card-mythology-badge {
+    font-size: 0.85em;
+    font-style: italic;
+    padding: 4px 10px;
+    border-radius: 12px;
+    background-color: rgba(0,0,0,0.15);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.card-art-area {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px; /* Reducido para que la imagen ocupe más */
+    background-color: rgba(0,0,0,0.1); /* Sutil fondo para el arte */
+    overflow: hidden;
+    position: relative; /* Para superponer efectos si es necesario */
+}
+
+    .card-art-area img {
+        max-width: calc(100% - 10px); /* Pequeño margen interno */
+        max-height: calc(100% - 10px);
+        height: 200px; /* Altura base para el arte */
+        object-fit: contain;
+        border-radius: 10px; /* Redondeo sutil para la imagen */
+        box-shadow: 0 0 10px rgba(0,0,0,0.3) inset;
+    }
+
+.card-description-box {
+    padding: 15px 18px;
+    font-size: 0.95em;
+    line-height: 1.55;
+    min-height: 80px;
+    text-align: center;
+    background-color: rgba(255,255,255,0.03); /* Casi imperceptible */
+    border-top: 1px dashed rgba(0,0,0,0.2);
+    border-bottom: 1px dashed rgba(0,0,0,0.2);
+}
+
+.card-stats-banner {
+    padding: 12px 18px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 0.9em;
+    border-top: 3px solid; /* Color por tipo */
+    background: linear-gradient(to top, rgba(255,255,255,0.05), rgba(255,255,255,0)); /* Ligero brillo inferior */
+}
+
+    .card-stats-banner span {
+        flex: 1;
+        text-align: center;
+    }
+/* Para espaciarlos */
+
+.points-positive {
+    color: #a1e0a1;
+    font-weight: bold;
+}
+/* Verde más claro */
+.points-negative {
+    color: #f7a3a3;
+    font-weight: bold;
+}
+/* Rojo más claro */
+.points-neutral {
+    color: #d0d0d0;
+    font-weight: bold;
+}
+
+.rarity-comun {
+    color: #b0bec5;
+}
+
+.rarity-especial {
+    color: #80deea;
+}
+
+.rarity-rara {
+    color: #90caf9;
+}
+
+.rarity-epica {
+    color: #ce93d8;
+}
+
+.rarity-legendaria {
+    color: #ffcc80;
+}
+
+.type-text {
+    font-style: italic;
+    color: #f5eeda;
+}
+
+/* Colores específicos por tipo de carta (fondos, bordes, texto principal) */
+.game-card-visual.type-juego {
+    background: linear-gradient(150deg, #d7c7ad 0%, #c0aa8e 100%);
+    border: 4px solid #604c38;
+    color: #423425;
+}
+
+.type-juego .card-top-banner, .type-juego .card-stats-banner {
+    border-color: #604c38;
+}
+
+.type-juego .card-title-text {
+    color: #503f2d;
+}
+
+.type-juego .card-mythology-badge {
+    background-color: rgba(80, 63, 45, 0.2);
+    border-color: rgba(80, 63, 45, 0.4);
+}
+
+
+.game-card-visual.type-premio {
+    background: linear-gradient(150deg, #fff0c5 0%, #ffe082 100%);
+    border: 4px solid #c5a052; /* Dorado más oscuro */
+    color: #6d4c10;
+}
+
+.type-premio .card-top-banner, .type-premio .card-stats-banner {
+    border-color: #c5a052;
+}
+
+.type-premio .card-title-text {
+    color: #a06b09;
+}
+
+.type-premio .card-mythology-badge {
+    background-color: rgba(160, 107, 9, 0.2);
+    border-color: rgba(160, 107, 9, 0.4);
+}
+
+
+.game-card-visual.type-castigo {
+    background: linear-gradient(150deg, #e8c5c5 0%, #d8a8a8 100%);
+    border: 4px solid #7a2a2a; /* Rojo oscuro más apagado */
+    color: #4d1a1a;
+}
+
+.type-castigo .card-top-banner, .type-castigo .card-stats-banner {
+    border-color: #7a2a2a;
+}
+
+.type-castigo .card-title-text {
+    color: #681f1f;
+}
+
+.type-castigo .card-mythology-badge {
+    background-color: rgba(104, 31, 31, 0.2);
+    border-color: rgba(104, 31, 31, 0.4);
+}
+
+
+/* --- HISTORIAL DEL JUEGO --- */
+.game-history-log {
+    width: 100%;
+    max-width: 850px; /* Coincide con el tablero central */
+    background: rgba(10,5,0,0.75);
+    border: 2px solid #5a4a3c;
+    border-radius: 15px;
+    padding: 18px 25px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+}
+
+    .game-history-log h4 {
+        color: #ffd700;
+        text-align: center;
+        margin-bottom: 15px;
+        font-size: 1.25em;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        font-family: 'Cinzel', serif;
+    }
+
+        .game-history-log h4 i {
+            margin-right: 12px;
+        }
+
+    .game-history-log ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        max-height: 125px;
+        overflow-y: auto;
+        font-size: 0.9em;
+    }
+
+    .game-history-log li {
+        padding: 7px 5px;
+        border-bottom: 1px dashed #4a3b2c;
+        color: #d8ccbb;
+        line-height: 1.45;
+    }
+
+        .game-history-log li:last-child {
+            border-bottom: none;
+        }
+
+.log-player {
+    font-weight: bold;
+    color: #fada8b;
+}
+
+.log-player-turn {
+    font-weight: bold;
+    color: #ffd700;
+}
+
+.log-points-pos {
+    color: #90ee90;
+    font-style: italic;
+}
+/* LightGreen */
+.log-points-neg {
+    color: #f08080;
+    font-style: italic;
+}
+/* LightCoral */
+.log-event {
+    font-style: italic;
+    color: #add8e6;
+}
+/* LightBlue */
+.log-turn {
+    color: #c8bba7;
+}
+
+.log-system {
+    font-size: 0.85em;
+    color: #aaa;
+    text-align: center;
+    display: block;
+    padding: 5px 0;
+}
+
+/* Scrollbar para el historial (Webkit) */
+.game-history-log ul::-webkit-scrollbar {
+    width: 10px;
+}
+
+.game-history-log ul::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.25);
+    border-radius: 5px;
+}
+
+.game-history-log ul::-webkit-scrollbar-thumb {
+    background: #6b4f34;
+    border-radius: 5px;
+    border: 1px solid #4a3b2c;
+}
+
+    .game-history-log ul::-webkit-scrollbar-thumb:hover {
+        background: #c2b280;
+    }
+
+/* --- PERSONAJES DE FONDO (GAME SCREEN) --- */
+.game-bg-character {
+    opacity: 0; /* Inicialmente ocultos, si los quieres fade in con JS o CSS animation */
+    /* opacity: 0.2; Para que sean visibles pero sutiles */
+    max-height: 70vh !important;
+    pointer-events: none; /* Para que no interfieran con clicks */
+    z-index: -1; /* Detrás de todo el contenido del juego */
+}
+
+    .game-bg-character.male {
+        left: -22vw !important;
+        bottom: -5vh !important;
+    }
+    /* Ajusta posiciones */
+    .game-bg-character.female {
+        right: -25vw !important;
+        bottom: -5vh !important;
+    }
+
+/* --- MEDIA QUERIES (Ajustes para diferentes tamaños) --- */
+@media (max-width: 1200px) {
+    .player-box {
+        width: 230px;
+        padding: 15px;
+    }
+
+    .player-nickname {
+        font-size: 1.2em;
+    }
+
+    .central-game-board {
+        max-width: 750px;
+        gap: 20px;
+    }
+
+    .deck-and-actions-column {
+        flex-basis: 200px;
+    }
+
+    .game-card-visual {
+        width: 280px;
+        height: 400px;
+    }
+
+    .card-art-area img {
+        height: 170px;
+    }
+}
+
+@media (max-width: 992px) { /* Tablets */
+    .play-screen {
+        padding-top: 60px;
+        gap: 15px;
+    }
+
+    .turn-indicator {
+        font-size: 1.1em;
+    }
+
+    .player-areas-container {
+        max-width: 100%;
+    }
+    /* Ocupar todo el ancho */
+    .player-box {
+        width: calc(50% - 20px);
+    }
+    /* Dos por fila */
+    .central-game-board {
+        flex-direction: column;
+        align-items: center;
+        max-width: 90%;
+        padding: 15px;
+    }
+
+    .deck-and-actions-column {
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+        flex-basis: auto; /* Reset */
+        padding: 10px;
+        margin-bottom: 15px;
+    }
+
+    .deck-pile {
+        order: 1;
+    }
+
+    .game-actions {
+        order: 2;
+        width: auto;
+        max-width: 180px;
+    }
+
+    .revealed-card-zone {
+        min-height: 420px;
+        width: 100%;
+    }
+
+    .game-card-visual {
+        width: 260px;
+        height: 380px;
+    }
+
+    .card-art-area img {
+        height: 160px;
+    }
+
+    .game-history-log {
+        max-width: 90%;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 767px) { /* Móviles grandes */
+    .player-box {
+        width: calc(100% - 20px);
+        max-width: 380px;
+    }
+    /* Un jugador por fila */
+    .game-card-visual {
+        width: 240px;
+        height: 350px;
+    }
+
+    .card-title-text {
+        font-size: 1.2em;
+    }
+
+    .card-art-area img {
+        height: 140px;
+    }
+
+    .card-description-box {
+        font-size: 0.9em;
+        min-height: 65px;
+    }
+
+    .game-actions button, .game-actions a {
+        font-size: 0.9em !important;
+        padding: 10px 8px !important;
+    }
+}
+
+@media (max-width: 480px) { /* Móviles pequeños */
+    .play-screen {
+        padding: 10px;
+        padding-top: 50px;
+    }
+
+    .turn-indicator {
+        font-size: 1em;
+        padding: 8px 15px;
+    }
+
+    .player-nickname {
+        font-size: 1.1em;
+    }
+
+    .player-stats p {
+        font-size: 0.9em;
+        padding-left: 10px;
+    }
+
+    .deck-and-actions-column {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .game-actions {
+        max-width: 200px;
+    }
+
+    .game-card-visual {
+        width: 210px;
+        height: 310px;
+        border-radius: 15px;
+    }
+
+    .card-top-banner, .card-stats-banner {
+        padding: 8px 12px;
+    }
+
+    .card-title-text {
+        font-size: 1em;
+    }
+
+    .card-mythology-badge {
+        font-size: 0.75em;
+        padding: 2px 6px;
+    }
+
+    .card-art-area img {
+        height: 110px;
+    }
+
+    .card-description-box {
+        font-size: 0.8em;
+        min-height: 55px;
+        padding: 10px 12px;
+    }
+
+    .game-history-log h4 {
+        font-size: 1em;
+    }
+
+    .game-history-log ul {
+        font-size: 0.8em;
+    }
+}
