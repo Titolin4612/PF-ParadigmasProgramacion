@@ -27,7 +27,8 @@ namespace CL_ProyectoFinalPOO.Clases
         public static int VPremio { get => vPremio; }
 
         // Constructor
-        public CartaPremio(string nombre, string descripcion, string mitologia, string bendicion) : base(nombre, descripcion, mitologia)
+        public CartaPremio(string nombre, string descripcion, string mitologia, string bendicion, string imagenUrl) 
+        : base(nombre, descripcion, mitologia, imagenUrl) 
         {
             Bendicion = bendicion;
         }

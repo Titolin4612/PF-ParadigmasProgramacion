@@ -37,8 +37,8 @@ namespace CL_ProyectoFinalPOO.Clases
         public static int RaLegendaria { get => raLegendaria; }
 
         // Constructor
-        public CartaJuego(string nombre, string descripcion, string mitologia, Rareza rareza)
-            : base(nombre, descripcion, mitologia)
+        public CartaJuego(string nombre, string descripcion, string mitologia, Rareza rareza, string imagenUrl) 
+       : base(nombre, descripcion, mitologia, imagenUrl)
         {
             RarezaCarta = rareza;
         }

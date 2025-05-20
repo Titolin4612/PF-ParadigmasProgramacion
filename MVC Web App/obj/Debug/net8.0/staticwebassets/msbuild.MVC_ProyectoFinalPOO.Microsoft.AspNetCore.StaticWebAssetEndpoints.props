@@ -1,16 +1,16 @@
 ﻿<Project>
   <ItemGroup>
+    <StaticWebAssetEndpoint Include="_content/MVC_ProyectoFinalPOO/css/site.1s7j1pokab.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"1s7j1pokab"},{"Name":"integrity","Value":"sha256-IdONQguUzkopqCBtgl7u/VwbrAzMlaKiKjpZMGxg3yk="},{"Name":"label","Value":"_content/MVC_ProyectoFinalPOO/css/site.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"30916"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022IdONQguUzkopqCBtgl7u/VwbrAzMlaKiKjpZMGxg3yk=\u0022"},{"Name":"Last-Modified","Value":"Tue, 20 May 2025 21:24:17 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/MVC_ProyectoFinalPOO/css/site.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-OOQLzCQaiUrN5ocOCS\u002BYU4zdtYelKrEPYTe1N9acy/g="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"30910"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022OOQLzCQaiUrN5ocOCS\u002BYU4zdtYelKrEPYTe1N9acy/g=\u0022"},{"Name":"Last-Modified","Value":"Mon, 19 May 2025 18:36:02 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/MVC_ProyectoFinalPOO/css/site.w2eqed73wv.css">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"w2eqed73wv"},{"Name":"integrity","Value":"sha256-OOQLzCQaiUrN5ocOCS\u002BYU4zdtYelKrEPYTe1N9acy/g="},{"Name":"label","Value":"_content/MVC_ProyectoFinalPOO/css/site.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"30910"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022OOQLzCQaiUrN5ocOCS\u002BYU4zdtYelKrEPYTe1N9acy/g=\u0022"},{"Name":"Last-Modified","Value":"Mon, 19 May 2025 18:36:02 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-IdONQguUzkopqCBtgl7u/VwbrAzMlaKiKjpZMGxg3yk="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"30916"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022IdONQguUzkopqCBtgl7u/VwbrAzMlaKiKjpZMGxg3yk=\u0022"},{"Name":"Last-Modified","Value":"Tue, 20 May 2025 21:24:17 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/MVC_ProyectoFinalPOO/favicon.61n19gt1b8.ico">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\favicon.ico'))</AssetFile>
@@ -71,6 +71,42 @@
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-sjNGrrJ\u002BKsGv6EJMmBlacs5RFlWK9yenVbKgoyzniw4="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"3277920"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022sjNGrrJ\u002BKsGv6EJMmBlacs5RFlWK9yenVbKgoyzniw4=\u0022"},{"Name":"Last-Modified","Value":"Mon, 19 May 2025 03:32:59 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/MVC_ProyectoFinalPOO/images/cartas/background-card-castigo.oaio51w9z6.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\cartas\background-card-castigo.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"oaio51w9z6"},{"Name":"integrity","Value":"sha256-oHsJe4D0/YM4zW3680R5db8IbDwzvIO2lkaTyX/bxkA="},{"Name":"label","Value":"_content/MVC_ProyectoFinalPOO/images/cartas/background-card-castigo.png"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"511470"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022oHsJe4D0/YM4zW3680R5db8IbDwzvIO2lkaTyX/bxkA=\u0022"},{"Name":"Last-Modified","Value":"Tue, 20 May 2025 22:27:53 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/MVC_ProyectoFinalPOO/images/cartas/background-card-castigo.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\cartas\background-card-castigo.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-oHsJe4D0/YM4zW3680R5db8IbDwzvIO2lkaTyX/bxkA="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"511470"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022oHsJe4D0/YM4zW3680R5db8IbDwzvIO2lkaTyX/bxkA=\u0022"},{"Name":"Last-Modified","Value":"Tue, 20 May 2025 22:27:53 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/MVC_ProyectoFinalPOO/images/cartas/background-card-juego.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\cartas\background-card-juego.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-nCRDEtGeHtGAKABKtfvEfmpXx9Ont1xSFDADO4mADJQ="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"540744"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022nCRDEtGeHtGAKABKtfvEfmpXx9Ont1xSFDADO4mADJQ=\u0022"},{"Name":"Last-Modified","Value":"Tue, 20 May 2025 22:27:46 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/MVC_ProyectoFinalPOO/images/cartas/background-card-juego.smzskth0nf.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\cartas\background-card-juego.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"smzskth0nf"},{"Name":"integrity","Value":"sha256-nCRDEtGeHtGAKABKtfvEfmpXx9Ont1xSFDADO4mADJQ="},{"Name":"label","Value":"_content/MVC_ProyectoFinalPOO/images/cartas/background-card-juego.png"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"540744"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022nCRDEtGeHtGAKABKtfvEfmpXx9Ont1xSFDADO4mADJQ=\u0022"},{"Name":"Last-Modified","Value":"Tue, 20 May 2025 22:27:46 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/MVC_ProyectoFinalPOO/images/cartas/background-card-premio.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\cartas\background-card-premio.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-3/9twImNP1h3\u002BOSr72JtBJEdiNOvWFIaNdwYybQviNs="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"543331"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u00223/9twImNP1h3\u002BOSr72JtBJEdiNOvWFIaNdwYybQviNs=\u0022"},{"Name":"Last-Modified","Value":"Tue, 20 May 2025 22:27:56 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/MVC_ProyectoFinalPOO/images/cartas/background-card-premio.vom4cmhk8m.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\cartas\background-card-premio.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"vom4cmhk8m"},{"Name":"integrity","Value":"sha256-3/9twImNP1h3\u002BOSr72JtBJEdiNOvWFIaNdwYybQviNs="},{"Name":"label","Value":"_content/MVC_ProyectoFinalPOO/images/cartas/background-card-premio.png"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"543331"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u00223/9twImNP1h3\u002BOSr72JtBJEdiNOvWFIaNdwYybQviNs=\u0022"},{"Name":"Last-Modified","Value":"Tue, 20 May 2025 22:27:56 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/MVC_ProyectoFinalPOO/images/character-female.png">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\character-female.png'))</AssetFile>

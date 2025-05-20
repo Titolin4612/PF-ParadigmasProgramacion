@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "LcVufD39ZzrMAM0Xd8nFkyCIgvV8RCXiFu90bb5l2r8=",
+  "Hash": "qLONppzfsSwyzGGAoIM9h2Y2nzT5oVK/kJa6RELBsfY=",
   "Source": "MVC_ProyectoFinalPOO",
   "BasePath": "_content/MVC_ProyectoFinalPOO",
   "Mode": "Default",
@@ -73,8 +73,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "w2eqed73wv",
-      "Integrity": "OOQLzCQaiUrN5ocOCS+YU4zdtYelKrEPYTe1N9acy/g=",
+      "Fingerprint": "1s7j1pokab",
+      "Integrity": "IdONQguUzkopqCBtgl7u/VwbrAzMlaKiKjpZMGxg3yk=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -183,6 +183,69 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\card.png"
+    },
+    {
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\images\\cartas\\background-card-castigo.png",
+      "SourceId": "MVC_ProyectoFinalPOO",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\",
+      "BasePath": "_content/MVC_ProyectoFinalPOO",
+      "RelativePath": "images/cartas/background-card-castigo#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "oaio51w9z6",
+      "Integrity": "oHsJe4D0/YM4zW3680R5db8IbDwzvIO2lkaTyX/bxkA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\cartas\\background-card-castigo.png"
+    },
+    {
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\images\\cartas\\background-card-juego.png",
+      "SourceId": "MVC_ProyectoFinalPOO",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\",
+      "BasePath": "_content/MVC_ProyectoFinalPOO",
+      "RelativePath": "images/cartas/background-card-juego#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "smzskth0nf",
+      "Integrity": "nCRDEtGeHtGAKABKtfvEfmpXx9Ont1xSFDADO4mADJQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\cartas\\background-card-juego.png"
+    },
+    {
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\images\\cartas\\background-card-premio.png",
+      "SourceId": "MVC_ProyectoFinalPOO",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\",
+      "BasePath": "_content/MVC_ProyectoFinalPOO",
+      "RelativePath": "images/cartas/background-card-premio#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "vom4cmhk8m",
+      "Integrity": "3/9twImNP1h3+OSr72JtBJEdiNOvWFIaNdwYybQviNs=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\cartas\\background-card-premio.png"
     },
     {
       "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\images\\character-female.png",
@@ -1510,6 +1573,51 @@
   ],
   "Endpoints": [
     {
+      "Route": "css/site.1s7j1pokab.css",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\css\\site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "30916"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"IdONQguUzkopqCBtgl7u/VwbrAzMlaKiKjpZMGxg3yk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 20 May 2025 21:24:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "1s7j1pokab"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-IdONQguUzkopqCBtgl7u/VwbrAzMlaKiKjpZMGxg3yk="
+        }
+      ]
+    },
+    {
       "Route": "css/site.css",
       "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\css\\site.css",
       "Selectors": [],
@@ -1520,7 +1628,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "30910"
+          "Value": "30916"
         },
         {
           "Name": "Content-Type",
@@ -1528,11 +1636,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"OOQLzCQaiUrN5ocOCS+YU4zdtYelKrEPYTe1N9acy/g=\""
+          "Value": "\"IdONQguUzkopqCBtgl7u/VwbrAzMlaKiKjpZMGxg3yk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 18:36:02 GMT"
+          "Value": "Tue, 20 May 2025 21:24:17 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1542,52 +1650,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-OOQLzCQaiUrN5ocOCS+YU4zdtYelKrEPYTe1N9acy/g="
-        }
-      ]
-    },
-    {
-      "Route": "css/site.w2eqed73wv.css",
-      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\css\\site.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "30910"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"OOQLzCQaiUrN5ocOCS+YU4zdtYelKrEPYTe1N9acy/g=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 19 May 2025 18:36:02 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "w2eqed73wv"
-        },
-        {
-          "Name": "label",
-          "Value": "css/site.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-OOQLzCQaiUrN5ocOCS+YU4zdtYelKrEPYTe1N9acy/g="
+          "Value": "sha256-IdONQguUzkopqCBtgl7u/VwbrAzMlaKiKjpZMGxg3yk="
         }
       ]
     },
@@ -1998,6 +2061,252 @@
         {
           "Name": "integrity",
           "Value": "sha256-sjNGrrJ+KsGv6EJMmBlacs5RFlWK9yenVbKgoyzniw4="
+        }
+      ]
+    },
+    {
+      "Route": "images/cartas/background-card-castigo.oaio51w9z6.png",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\images\\cartas\\background-card-castigo.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "511470"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oHsJe4D0/YM4zW3680R5db8IbDwzvIO2lkaTyX/bxkA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 20 May 2025 22:27:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "oaio51w9z6"
+        },
+        {
+          "Name": "label",
+          "Value": "images/cartas/background-card-castigo.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-oHsJe4D0/YM4zW3680R5db8IbDwzvIO2lkaTyX/bxkA="
+        }
+      ]
+    },
+    {
+      "Route": "images/cartas/background-card-castigo.png",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\images\\cartas\\background-card-castigo.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "511470"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oHsJe4D0/YM4zW3680R5db8IbDwzvIO2lkaTyX/bxkA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 20 May 2025 22:27:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-oHsJe4D0/YM4zW3680R5db8IbDwzvIO2lkaTyX/bxkA="
+        }
+      ]
+    },
+    {
+      "Route": "images/cartas/background-card-juego.png",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\images\\cartas\\background-card-juego.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "540744"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"nCRDEtGeHtGAKABKtfvEfmpXx9Ont1xSFDADO4mADJQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 20 May 2025 22:27:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-nCRDEtGeHtGAKABKtfvEfmpXx9Ont1xSFDADO4mADJQ="
+        }
+      ]
+    },
+    {
+      "Route": "images/cartas/background-card-juego.smzskth0nf.png",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\images\\cartas\\background-card-juego.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "540744"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"nCRDEtGeHtGAKABKtfvEfmpXx9Ont1xSFDADO4mADJQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 20 May 2025 22:27:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "smzskth0nf"
+        },
+        {
+          "Name": "label",
+          "Value": "images/cartas/background-card-juego.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-nCRDEtGeHtGAKABKtfvEfmpXx9Ont1xSFDADO4mADJQ="
+        }
+      ]
+    },
+    {
+      "Route": "images/cartas/background-card-premio.png",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\images\\cartas\\background-card-premio.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "543331"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"3/9twImNP1h3+OSr72JtBJEdiNOvWFIaNdwYybQviNs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 20 May 2025 22:27:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-3/9twImNP1h3+OSr72JtBJEdiNOvWFIaNdwYybQviNs="
+        }
+      ]
+    },
+    {
+      "Route": "images/cartas/background-card-premio.vom4cmhk8m.png",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\images\\cartas\\background-card-premio.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "543331"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"3/9twImNP1h3+OSr72JtBJEdiNOvWFIaNdwYybQviNs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 20 May 2025 22:27:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "vom4cmhk8m"
+        },
+        {
+          "Name": "label",
+          "Value": "images/cartas/background-card-premio.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-3/9twImNP1h3+OSr72JtBJEdiNOvWFIaNdwYybQviNs="
         }
       ]
     },

@@ -13,6 +13,7 @@ namespace CL_ProyectoFinalPOO.Clases
         public string _nombre;
         private string _mitologia;
         private string _descripcion;
+        private string _imagenUrl;
 
 
 
@@ -48,13 +49,16 @@ namespace CL_ProyectoFinalPOO.Clases
             }
         }
 
+        public string ImagenUrl { get => _imagenUrl; set => _imagenUrl = value; }
+
 
         // Constructor
-        public Carta(string nombre, string descripcion, string mitologia)
+        public Carta(string nombre, string descripcion, string mitologia, string imagenurl)
         {
             Nombre = nombre;
             Mitologia = mitologia;
             Descripcion = descripcion;
+            ImagenUrl = imagenurl;
         }
 
         // Metodo abtract

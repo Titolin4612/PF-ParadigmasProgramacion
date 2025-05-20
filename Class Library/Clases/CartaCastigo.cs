@@ -30,8 +30,9 @@ namespace CL_ProyectoFinalPOO.Clases
 
 
         // Constructor
-        public CartaCastigo(string nombre, string descripcion, string mitologia, string maleficio) : base (nombre, descripcion, mitologia)
-        { 
+        public CartaCastigo(string nombre, string descripcion, string mitologia, string maleficio, string imagenUrl) 
+        : base(nombre, descripcion, mitologia, imagenUrl)
+        {
             Maleficio = maleficio;
         }
 

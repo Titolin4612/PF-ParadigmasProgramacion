@@ -14,10 +14,14 @@ namespace CL_ProyectoFinalPOO.Clases
 
         // Path to the JSON file (in the same folder as the program)
         public static readonly string _rutaArchivoCartas = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "cartas.json");
+        public static readonly string _rutaBaseImagenesCartas = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "cartas\\");
+        public const string _rutaBaseImagenes = "images/cartas/";
 
         public static void Ruta()
         {
             Console.WriteLine(_rutaArchivoCartas);
+            Console.WriteLine(_rutaBaseImagenesCartas);
+            Console.WriteLine("Ruta base imágenes para la web: /" + _rutaBaseImagenes);
         }
 
         // Runs once when the class is first used
@@ -37,6 +41,8 @@ namespace CL_ProyectoFinalPOO.Clases
             {
                 throw new Exception("Error: No se encontró el archivo cartas.json");
             }
+
+            CartasJuego.Clear(); CartasPremio.Clear(); CartasCastigo.Clear();
 
             try
             {
@@ -60,12 +66,21 @@ namespace CL_ProyectoFinalPOO.Clases
                     string nombre = carta.ContainsKey("Nombre") ? carta["Nombre"] : "";
                     string descripcion = carta.ContainsKey("Descripcion") ? carta["Descripcion"] : "";
                     string mitologia = carta.ContainsKey("Mitologia") ? carta["Mitologia"] : "";
+                    string nombreArchivoImagen = carta.ContainsKey("ArchivoImagen") ? carta["ArchivoImagen"] : "";
+                    string imagenUrl = "";
 
                     // Check if Nombre or Tipo are missing
                     if (string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(tipo))
                     {
                         Console.WriteLine($"Advertencia: Carta sin Nombre o Tipo, se ignora");
                         continue;
+                    }
+
+                    if (!string.IsNullOrEmpty(nombreArchivoImagen))
+                    {
+                        // Construimos la URL que el navegador entenderá
+                        //imagenUrl = _rutaBaseImagenesCartas + nombreArchivoImagen.Replace("\\", "/"); 
+                        imagenUrl = _rutaBaseImagenes + nombreArchivoImagen;
                     }
 
                     // Handle different card types
@@ -78,7 +93,7 @@ namespace CL_ProyectoFinalPOO.Clases
                             Console.WriteLine($"Advertencia: Carta '{nombre}' no tiene Rareza válida, se ignora");
                             continue;
                         }
-                        CartasJuego.Add(new CartaJuego(nombre, descripcion, mitologia, rarezaEnum));
+                        CartasJuego.Add(new CartaJuego(nombre, descripcion, mitologia, rarezaEnum, imagenUrl));
                     }
                     else if (tipo == "premio")
                     {
@@ -89,18 +104,18 @@ namespace CL_ProyectoFinalPOO.Clases
                             Console.WriteLine($"Advertencia: Carta '{nombre}' no tiene Bendición, se ignora");
                             continue;
                         }
-                        CartasPremio.Add(new CartaPremio(nombre, descripcion, mitologia, bendicion));
+                        CartasPremio.Add(new CartaPremio(nombre, descripcion, mitologia, bendicion, imagenUrl));
                     }
                     else if (tipo == "castigo")
                     {
                         // Get Maleficio
                         string maleficio = carta.ContainsKey("Maleficio") ? carta["Maleficio"] : "";
                         if (string.IsNullOrEmpty(maleficio))
-                        {
+                        {   
                             Console.WriteLine($"Advertencia: Carta '{nombre}' no tiene Maleficio, se ignora");
                             continue;
                         }
-                        CartasCastigo.Add(new CartaCastigo(nombre, descripcion, mitologia, maleficio));
+                        CartasCastigo.Add(new CartaCastigo(nombre, descripcion, mitologia, maleficio, imagenUrl));
                     }
                     else
                     {

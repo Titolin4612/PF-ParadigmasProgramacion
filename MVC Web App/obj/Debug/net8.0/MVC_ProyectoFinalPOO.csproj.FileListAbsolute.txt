@@ -62,3 +62,4 @@ C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Pr
 C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\obj\Debug\net8.0\MVC_ProyectoFinalPOO.pdb
 C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\obj\Debug\net8.0\MVC_ProyectoFinalPOO.genruntimeconfig.cache
 C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\obj\Debug\net8.0\ref\MVC_ProyectoFinalPOO.dll
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\bin\Debug\net8.0\cartas.json

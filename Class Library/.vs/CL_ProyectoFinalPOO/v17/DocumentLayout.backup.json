@@ -3,6 +3,26 @@
   "WorkspaceRootPath": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programaci\u00F3n\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\Class Library\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{092A8095-EE5E-4E1E-9F54-29841327BCA6}|CL_ProyectoFinalPOO.csproj|c:\\users\\sanda\\onedrive - upb\\archivos materias\\tercer semestre\\paradigmas de programaci\u00F3n\\proyecto final poo\\proyectofinal-paradigmas\\class library\\clases\\baraja.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{092A8095-EE5E-4E1E-9F54-29841327BCA6}|CL_ProyectoFinalPOO.csproj|solutionrelative:clases\\baraja.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{092A8095-EE5E-4E1E-9F54-29841327BCA6}|CL_ProyectoFinalPOO.csproj|c:\\users\\sanda\\onedrive - upb\\archivos materias\\tercer semestre\\paradigmas de programaci\u00F3n\\proyecto final poo\\proyectofinal-paradigmas\\class library\\clases\\cartajuego.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{092A8095-EE5E-4E1E-9F54-29841327BCA6}|CL_ProyectoFinalPOO.csproj|solutionrelative:clases\\cartajuego.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{092A8095-EE5E-4E1E-9F54-29841327BCA6}|CL_ProyectoFinalPOO.csproj|c:\\users\\sanda\\onedrive - upb\\archivos materias\\tercer semestre\\paradigmas de programaci\u00F3n\\proyecto final poo\\proyectofinal-paradigmas\\class library\\clases\\cartapremio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{092A8095-EE5E-4E1E-9F54-29841327BCA6}|CL_ProyectoFinalPOO.csproj|solutionrelative:clases\\cartapremio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{092A8095-EE5E-4E1E-9F54-29841327BCA6}|CL_ProyectoFinalPOO.csproj|c:\\users\\sanda\\onedrive - upb\\archivos materias\\tercer semestre\\paradigmas de programaci\u00F3n\\proyecto final poo\\proyectofinal-paradigmas\\class library\\clases\\cartacastigo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{092A8095-EE5E-4E1E-9F54-29841327BCA6}|CL_ProyectoFinalPOO.csproj|solutionrelative:clases\\cartacastigo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{092A8095-EE5E-4E1E-9F54-29841327BCA6}|CL_ProyectoFinalPOO.csproj|c:\\users\\sanda\\onedrive - upb\\archivos materias\\tercer semestre\\paradigmas de programaci\u00F3n\\proyecto final poo\\proyectofinal-paradigmas\\class library\\clases\\carta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{092A8095-EE5E-4E1E-9F54-29841327BCA6}|CL_ProyectoFinalPOO.csproj|solutionrelative:clases\\carta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{092A8095-EE5E-4E1E-9F54-29841327BCA6}|CL_ProyectoFinalPOO.csproj|c:\\users\\sanda\\onedrive - upb\\archivos materias\\tercer semestre\\paradigmas de programaci\u00F3n\\proyecto final poo\\proyectofinal-paradigmas\\class library\\clases\\juego.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{092A8095-EE5E-4E1E-9F54-29841327BCA6}|CL_ProyectoFinalPOO.csproj|solutionrelative:clases\\juego.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -13,10 +33,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{092A8095-EE5E-4E1E-9F54-29841327BCA6}|CL_ProyectoFinalPOO.csproj|c:\\users\\sanda\\onedrive - upb\\archivos materias\\tercer semestre\\paradigmas de programaci\u00F3n\\proyecto final poo\\proyectofinal-paradigmas\\class library\\eventos\\publisher_eventos_juego.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{092A8095-EE5E-4E1E-9F54-29841327BCA6}|CL_ProyectoFinalPOO.csproj|solutionrelative:eventos\\publisher_eventos_juego.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{092A8095-EE5E-4E1E-9F54-29841327BCA6}|CL_ProyectoFinalPOO.csproj|c:\\users\\sanda\\onedrive - upb\\archivos materias\\tercer semestre\\paradigmas de programaci\u00F3n\\proyecto final poo\\proyectofinal-paradigmas\\class library\\clases\\baraja.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{092A8095-EE5E-4E1E-9F54-29841327BCA6}|CL_ProyectoFinalPOO.csproj|solutionrelative:clases\\baraja.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{092A8095-EE5E-4E1E-9F54-29841327BCA6}|CL_ProyectoFinalPOO.csproj|c:\\users\\sanda\\onedrive - upb\\archivos materias\\tercer semestre\\paradigmas de programaci\u00F3n\\proyecto final poo\\proyectofinal-paradigmas\\class library\\clases\\jugador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -30,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 12,
           "Children": [
             {
               "$type": "Bookmark",
@@ -51,6 +67,58 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "CartaPremio.cs",
+              "DocumentMoniker": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programaci\u00F3n\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\Class Library\\Clases\\CartaPremio.cs",
+              "RelativeDocumentMoniker": "Clases\\CartaPremio.cs",
+              "ToolTip": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programaci\u00F3n\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\Class Library\\Clases\\CartaPremio.cs",
+              "RelativeToolTip": "Clases\\CartaPremio.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAmwB0AAAB0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T21:43:20.189Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CartaJuego.cs",
+              "DocumentMoniker": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programaci\u00F3n\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\Class Library\\Clases\\CartaJuego.cs",
+              "RelativeDocumentMoniker": "Clases\\CartaJuego.cs",
+              "ToolTip": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programaci\u00F3n\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\Class Library\\Clases\\CartaJuego.cs",
+              "RelativeToolTip": "Clases\\CartaJuego.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACcAAABwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T21:43:07.714Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CartaCastigo.cs",
+              "DocumentMoniker": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programaci\u00F3n\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\Class Library\\Clases\\CartaCastigo.cs",
+              "RelativeDocumentMoniker": "Clases\\CartaCastigo.cs",
+              "ToolTip": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programaci\u00F3n\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\Class Library\\Clases\\CartaCastigo.cs",
+              "RelativeToolTip": "Clases\\CartaCastigo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAB1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T21:42:11.632Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Carta.cs",
+              "DocumentMoniker": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programaci\u00F3n\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\Class Library\\Clases\\Carta.cs",
+              "RelativeDocumentMoniker": "Clases\\Carta.cs",
+              "ToolTip": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programaci\u00F3n\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\Class Library\\Clases\\Carta.cs",
+              "RelativeToolTip": "Clases\\Carta.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAYwDIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T21:00:03.116Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "Publisher_Eventos_Juego.cs",
               "DocumentMoniker": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programaci\u00F3n\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\Class Library\\Eventos\\Publisher_Eventos_Juego.cs",
               "RelativeDocumentMoniker": "Eventos\\Publisher_Eventos_Juego.cs",
@@ -58,25 +126,23 @@
               "RelativeToolTip": "Eventos\\Publisher_Eventos_Juego.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T04:13:18.397Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T04:13:18.397Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "Historial.cs",
               "DocumentMoniker": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programaci\u00F3n\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\Class Library\\Clases\\Historial.cs",
               "RelativeDocumentMoniker": "Clases\\Historial.cs",
               "ToolTip": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programaci\u00F3n\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\Class Library\\Clases\\Historial.cs",
               "RelativeToolTip": "Clases\\Historial.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAswDMAAAA8AAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAAgwDMAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T04:13:12.713Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T04:13:12.713Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "Jugador.cs",
               "DocumentMoniker": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programaci\u00F3n\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\Class Library\\Clases\\Jugador.cs",
               "RelativeDocumentMoniker": "Clases\\Jugador.cs",
@@ -84,31 +150,30 @@
               "RelativeToolTip": "Clases\\Jugador.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T03:36:22.281Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T03:36:22.281Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "Juego.cs",
               "DocumentMoniker": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programaci\u00F3n\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\Class Library\\Clases\\Juego.cs",
               "RelativeDocumentMoniker": "Clases\\Juego.cs",
               "ToolTip": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programaci\u00F3n\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\Class Library\\Clases\\Juego.cs",
               "RelativeToolTip": "Clases\\Juego.cs",
-              "ViewState": "AgIAANMAAAAAAAAAAAA0wOgAAABTAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-20T03:35:04.796Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Baraja.cs",
               "DocumentMoniker": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programaci\u00F3n\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\Class Library\\Clases\\Baraja.cs",
               "RelativeDocumentMoniker": "Clases\\Baraja.cs",
               "ToolTip": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programaci\u00F3n\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\Class Library\\Clases\\Baraja.cs",
               "RelativeToolTip": "Clases\\Baraja.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAUwB0AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-20T03:35:03.965Z",
               "EditorCaption": ""

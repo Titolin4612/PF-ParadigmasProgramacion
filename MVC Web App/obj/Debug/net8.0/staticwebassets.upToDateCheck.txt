@@ -4,6 +4,9 @@ wwwroot\images\background-image.jpg
 wwwroot\images\background-image-casino.png
 wwwroot\images\background-image-casino2.png
 wwwroot\images\card.png
+wwwroot\images\cartas\background-card-castigo.png
+wwwroot\images\cartas\background-card-juego.png
+wwwroot\images\cartas\background-card-premio.png
 wwwroot\images\character-female.png
 wwwroot\images\character-female2.png
 wwwroot\images\character-male.png

@@ -29,6 +29,18 @@
       "PackagePath": "staticwebassets\\images\\card.png"
     },
     {
+      "Id": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\images\\cartas\\background-card-castigo.png",
+      "PackagePath": "staticwebassets\\images\\cartas\\background-card-castigo.png"
+    },
+    {
+      "Id": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\images\\cartas\\background-card-juego.png",
+      "PackagePath": "staticwebassets\\images\\cartas\\background-card-juego.png"
+    },
+    {
+      "Id": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\images\\cartas\\background-card-premio.png",
+      "PackagePath": "staticwebassets\\images\\cartas\\background-card-premio.png"
+    },
+    {
       "Id": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\ProyectoFinal-Paradigmas\\MVC Web App\\wwwroot\\images\\character-female.png",
       "PackagePath": "staticwebassets\\images\\character-female.png"
     },
