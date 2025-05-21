@@ -1,0 +1,1364 @@
+/* RESET Y FUENTES */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Georgia', serif;
+    background: url('../images/background-image.jpg') no-repeat center center fixed;
+    background-size: cover;
+    overflow: hidden;
+    color: #f5f5f5;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.game-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding-top: 60px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* LOGO */
+.title-logo {
+    display: block;
+    width: 600px;
+    max-width: 90%;
+    margin: 0 auto 3rem;
+    margin-top: 80px;
+    margin-bottom: 100px;
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.8));
+    animation: pulse-logo 3s infinite ease-in-out;
+}
+
+/* FORMULARIO */
+.form-container {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 25px 30px;
+    border-radius: 16px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+    max-width: 400px;
+    margin: 0 auto;
+    backdrop-filter: blur(4px);
+}
+
+/* CAMPOS */
+.nickname-row, .apuesta-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.game-input {
+    width: 250px;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 16px;
+    background: linear-gradient(to right, #faf1d6, #f6e4b6);
+    border: none;
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
+    color: #3b2a16;
+    text-align: center;
+    font-weight: bold;
+    transition: transform 0.2s ease;
+}
+
+    .game-input:focus {
+        outline: none;
+        transform: scale(1.03);
+        box-shadow: 0 0 10px rgba(255, 230, 150, 0.5);
+    }
+
+/* BOTONES CIRCULARES */
+.add-player-icon, .remove-player-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.add-player-icon {
+    background: linear-gradient(to right, #555, #222);
+}
+
+.remove-player-icon {
+    background: linear-gradient(to right, #8b0000, #5a0000);
+}
+
+    .add-player-icon:hover, .remove-player-icon:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 10px rgba(255,255,255,0.3);
+    }
+
+/* BOTONES PRINCIPALES */
+.button-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+/* Ambos botones comparten diseño base */
+
+.rules-button,
+.play-button {
+    width: 240px;
+    padding: 14px;
+    font-size: 17px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #2a1f0f; /* Negro oscuro SIEMPRE */
+    background: linear-gradient(to right, #ffedc4, #f9d97c);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+}
+
+    /* Hover - se mantiene el color del texto */
+    .rules-button:hover,
+    .play-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+        color: #2a1f0f; /* Sigue negro */
+    }
+
+/* LISTA DE JUGADORES */
+.player-list {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid #c2b280;
+    border-radius: 10px;
+    max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+    .player-list h3 {
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+
+    .player-list ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .player-list li {
+        font-size: 14px;
+        color: #f3f3f3;
+        border-bottom: 1px dashed #aaa;
+        padding: 4px 0;
+    }
+
+/* MENSAJE DE ERROR */
+.error-banner {
+    background: #b30000;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    margin: 15px auto;
+    max-width: 320px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* PERSONAJES FIRMES */
+.character {
+    position: absolute;
+    bottom: 0;
+    width: auto;
+    max-height: 75vh;
+    pointer-events: none;
+    z-index: 1;
+    margin-left: -80px;
+    margin-right: -80px;
+}
+
+    .character.male {
+        left: -15vw;
+    }
+
+    .character.female {
+        right: -18vw;
+    }
+
+/* ANIMACIÓN LOGO */
+@keyframes pulse-logo {
+    0%, 100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 10px rgba(255, 215, 100, 0.6));
+    }
+
+    50% {
+        transform: scale(1.02);
+        filter: drop-shadow(0 0 20px rgba(255, 255, 150, 0.9));
+    }
+}
+
+/* QUITA EL AZUL DE LINKS */
+a, a:hover, a:visited, a:focus {
+    text-decoration: none;
+    color: inherit;
+}
+
+.rules-button {
+    color: #2a1f0f !important;
+}
+
+    .rules-button:hover {
+        color: #2a1f0f !important;
+    }
+
+/* === NAVBAR FLORAL Y CENTRADA PARA BLESSINGS & CURSES === */
+.bc-navbar {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(to right, #3a2e1f, #4d3929);
+    border: 1px solid #d4af37;
+    border-radius: 18px;
+    padding: 8px 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    z-index: 999;
+    width: max-content;
+    max-width: 90%;
+    font-family: 'Georgia', serif;
+}
+
+/* CONTENIDO INTERNO */
+.bc-navbar-inner {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+/* LOGO MARCA */
+.bc-brand {
+    font-weight: bold;
+    font-size: 18px;
+    color: #ffd700;
+    text-shadow: 0 0 6px rgba(255, 255, 200, 0.5);
+}
+
+/* LINKS */
+.bc-nav-items {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+    .bc-nav-items li a {
+        color: #f8f4e6;
+        font-weight: bold;
+        font-size: 16px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+        .bc-nav-items li a:hover {
+            color: #ffd700;
+            text-shadow: 0 0 5px rgba(255, 255, 120, 0.7);
+        }
+
+.rules-scroll {
+    background: rgba(245, 230, 202, 0.95);
+    border: 2px solid #c17e3a;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    padding: 40px;
+    max-width: 900px;
+    margin-top: 800px;
+    margin: 0 auto;
+    border-radius: 12px;
+    color: #000;
+}
+
+    .rules-scroll h1 {
+        font-family: 'Georgia', serif;
+        font-size: 3rem;
+        color: #8b0000;
+        text-align: center;
+        margin-bottom: 10px;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+    }
+
+    .rules-scroll h2 {
+        font-family: 'Georgia', serif;
+        font-size: 2rem;
+        color: #333;
+        text-align: center;
+        margin-bottom: 30px;
+        border-bottom: 2px solid #c17e3a;
+        padding-bottom: 10px;
+    }
+
+.rule-box {
+    background-color: rgba(255,255,255,0.15);
+    padding: 20px;
+    border-left: 5px solid #d4af37;
+    border-radius: 5px;
+}
+
+    .rule-box h3 {
+        font-size: 1.5rem;
+        color: #5b3924;
+        margin-bottom: 10px;
+        border-bottom: 1px dashed #c17e3a;
+    }
+
+    .rule-box h4 {
+        font-size: 1.2rem;
+        margin-top: 20px;
+        color: #000;
+        font-weight: bold;
+    }
+
+    .rule-box p, .rule-box ul {
+        font-size: 1rem;
+        line-height: 1.7;
+        color: #111;
+    }
+
+    .rule-box ul {
+        list-style: none;
+        padding-left: 1.5rem;
+    }
+
+    .rule-box li {
+        margin-bottom: 10px;
+        position: relative;
+        padding-left: 1.5rem;
+    }
+
+        .rule-box li::before {
+            content: "-";
+            position: absolute;
+            left: 0;
+            color: #d4af37;
+        }
+
+.return-section {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.back-button {
+    background: linear-gradient(#c17e3a, #8b0000);
+    color: #fff;
+    padding: 12px 30px;
+    font-weight: bold;
+    font-family: 'Georgia', serif;
+    font-size: 1rem;
+    text-decoration: none;
+    border: none;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+    .back-button:hover {
+        background: linear-gradient(#a85f00, #6c0000);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0,0,0,0.5);
+        color: white;
+    }
+
+.rules-container {
+    margin-top: 150px; /* Ajusta a gusto */
+}
+
+/* Estilos específicos para la página About */
+.about-scroll {
+    background: rgba(245, 230, 202, 0.95);
+    border: 2px solid #c17e3a;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    padding: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 12px;
+    color: #000;
+}
+
+    .about-scroll h1 {
+        font-family: 'Georgia', serif;
+        font-size: 3rem;
+        color: #8b0000;
+        text-align: center;
+        margin-bottom: 10px;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+    }
+
+    .about-scroll h2 {
+        font-family: 'Georgia', serif;
+        font-size: 2rem;
+        color: #333;
+        text-align: center;
+        margin-bottom: 30px;
+        border-bottom: 2px solid #c17e3a;
+        padding-bottom: 10px;
+    }
+
+.about-box {
+    background-color: rgba(255,255,255,0.15);
+    padding: 25px;
+    border-left: 5px solid #d4af37;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+    .about-box h3 {
+        font-size: 1.8rem;
+        color: #5b3924;
+        margin-bottom: 15px;
+        border-bottom: 1px dashed #c17e3a;
+        padding-bottom: 8px;
+    }
+
+    .about-box h4 {
+        font-size: 1.3rem;
+        margin: 20px 0 10px;
+        color: #000;
+        font-weight: bold;
+    }
+
+    .about-box p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: #111;
+        margin-bottom: 15px;
+    }
+
+.team-members {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 25px 0;
+}
+
+.member-card {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 20px;
+    width: 280px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+    .member-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+.member-icon {
+    font-size: 2.5rem;
+    color: #8b0000;
+    margin-bottom: 15px;
+}
+
+.member-card h4 {
+    font-size: 1.3rem;
+    color: #5b3924;
+    margin-bottom: 10px;
+}
+
+.member-card p {
+    font-size: 1rem;
+    color: #555;
+    margin: 5px 0;
+}
+
+.upb-info {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-top: 20px;
+    background: rgba(255,255,255,0.2);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.upb-logo img {
+    max-width: 120px;
+    height: auto;
+}
+
+.upb-text {
+    flex: 1;
+}
+
+    .upb-text p:first-child {
+        font-style: italic;
+        color: #5b3924;
+        font-size: 1.1rem;
+    }
+
+    .upb-text p:last-child {
+        font-weight: bold;
+        color: #8b0000;
+        margin-top: 10px;
+    }
+
+/* Mantenemos los estilos existentes para los personajes y botones */
+.character {
+    position: absolute;
+    bottom: 0;
+    width: auto;
+    max-height: 75vh;
+    pointer-events: none;
+    z-index: 1;
+    margin-left: -80px;
+    margin-right: -80px;
+}
+
+    .character.male {
+        left: -15vw;
+    }
+
+    .character.female {
+        right: -18vw;
+    }
+
+.return-section {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.back-button {
+    background: linear-gradient(#c17e3a, #8b0000);
+    color: #fff;
+    padding: 12px 30px;
+    font-weight: bold;
+    font-family: 'Georgia', serif;
+    font-size: 1rem;
+    text-decoration: none;
+    border: none;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+    .back-button:hover {
+        background: linear-gradient(#a85f00, #6c0000);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0,0,0,0.5);
+        color: white;
+    }
+
+/* wwwroot/css/juego-pantalla.css */
+
+/* --- GENERALES DE PANTALLA DE JUEGO --- */
+body.game-active-bg {
+    background: url('../images/background-image-darker.jpg') no-repeat center center fixed;
+    background-size: cover;
+    overflow-y: auto; /* Permitir scroll vertical si es necesario */
+}
+
+.play-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    padding-top: 75px; /* Espacio para el turn-indicator si fuera fijo o navbar */
+    gap: 20px; /* Espacio entre secciones principales */
+    min-height: 100vh;
+    color: #e0d6c7; /* Color de texto base para esta pantalla */
+}
+
+.turn-indicator {
+    background: rgba(0, 0, 0, 0.75);
+    padding: 10px 25px;
+    border-radius: 30px;
+    border: 2px solid #d4af37;
+    font-size: 1.25em;
+    color: #f5eeda;
+    margin-bottom: 15px;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5), 0 0 5px rgba(0,0,0,0.3) inset;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+    font-family: 'Cinzel Decorative', serif; /* Una fuente más temática si la tienes */
+}
+
+.current-player-name {
+    color: #ffd700;
+    font-weight: 700; /* Cinzel Decorative puede necesitar más peso */
+}
+
+/* --- ÁREA DE JUGADORES --- */
+.player-areas-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 1300px; /* Ajusta según el número de jugadores */
+}
+
+.player-box {
+    background: linear-gradient(145deg, rgba(40, 30, 20, 0.85), rgba(20, 15, 10, 0.9));
+    border: 2px solid #5a4a3c;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+    transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+    width: 260px; /* Ancho base, se ajustará */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+    .player-box:hover {
+        transform: translateY(-8px) scale(1.02);
+        border-color: #ab987a;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.7), 0 0 15px rgba(200,160,100,0.3);
+    }
+
+.player-avatar {
+    font-size: 2.8rem;
+    color: #c2b280;
+    margin-bottom: 12px;
+    background: radial-gradient(circle, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.5) 100%);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #6b4f34;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4) inset;
+}
+
+.player-nickname { /* Cambiado de h4 a .player-nickname */
+    color: #ffd700;
+    margin-bottom: 15px;
+    font-size: 1.35em;
+    border-bottom: 1px solid #7a6240;
+    padding-bottom: 10px;
+    width: 100%;
+    font-family: 'Cinzel', serif; /* Fuente temática */
+    letter-spacing: 0.5px;
+}
+
+.player-stats p {
+    font-size: 1em;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Alineado a la izquierda dentro de su espacio */
+    width: 100%;
+    padding-left: 20px; /* Un poco de indentación */
+}
+
+    .player-stats p i {
+        margin-right: 10px;
+        width: 20px; /* Ancho fijo para iconos para alinear texto */
+        text-align: center;
+    }
+
+.player-stats strong {
+    font-weight: 600;
+    color: #fff;
+}
+
+.gold-icon {
+    color: #f9d97c;
+}
+
+.card-count-icon {
+    color: #a0b8d0;
+}
+
+.current-player-turn {
+    border-color: #ffd700 !important;
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.7), 0 0 15px rgba(255,255,255,0.3) inset !important;
+    transform: scale(1.08) translateY(-8px) !important;
+    background: linear-gradient(145deg, rgba(50, 40, 25, 0.9), rgba(30, 20, 10, 0.95)) !important;
+}
+
+    .current-player-turn .player-avatar {
+        color: #ffd700;
+        border-color: #ffd700;
+        box-shadow: 0 0 15px rgba(255,215,0,0.5) inset, 0 0 10px rgba(255,215,0,0.3);
+    }
+
+.player-hand-preview {
+    margin-top: 15px;
+    min-height: 35px;
+    display: flex;
+    gap: 4px;
+    padding-top: 10px;
+    border-top: 1px dashed #5b3924;
+    width: 100%;
+    justify-content: center;
+}
+
+.tiny-card-icon {
+    width: 24px;
+    height: 34px;
+    border-radius: 3px;
+    border: 1px solid #8a7250;
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+    background-color: #4a3b2c; /* Color de fondo si la imagen no carga */
+}
+
+/* --- ÁREA CENTRAL DEL JUEGO --- */
+.central-game-board {
+    display: flex;
+    gap: 25px;
+    width: 100%;
+    max-width: 850px; /* Ajustado */
+    padding: 25px;
+    background: rgba(0,0,0,0.7);
+    border-radius: 20px;
+    border: 2px solid #6b4f34; /* Borde más pronunciado */
+    align-items: stretch;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.deck-and-actions-column {
+    flex: 0 0 220px; /* Ligeramente más ancho */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    padding: 15px;
+    background-color: rgba(10,5,0,0.2);
+    border-radius: 12px;
+}
+
+.deck-pile {
+    text-align: center;
+}
+
+.deck-image {
+    width: 140px; /* Mazo más grande */
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 0 18px rgba(0,0,0,0.8);
+    border: 4px solid #4b3a2a;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: pointer;
+}
+
+    .deck-image:hover {
+        transform: scale(1.07) rotate(-3deg);
+        box-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
+        border-color: #c2b280;
+    }
+
+.deck-count-text {
+    color: #ffedc4;
+    font-style: italic;
+    margin-top: 12px;
+    font-size: 0.95em;
+}
+
+.game-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.main-action-button {
+    font-size: 1.15em !important;
+    padding: 15px 10px !important;
+}
+
+.secondary-action-button {
+    background: linear-gradient(to right, #5c666f, #3e444a) !important;
+    font-size: 0.95em !important;
+}
+
+.tertiary-action-button { /* Hereda de .back-button, puedes ajustar aquí si es necesario */
+}
+
+
+.revealed-card-zone {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 480px; /* Para la carta más grande */
+    background-color: rgba(10,5,0,0.35);
+    border-radius: 15px;
+    padding: 20px;
+    border: 2px dashed #7a6240; /* Borde más visible */
+    position: relative; /* Para efectos de entrada de carta si se añaden */
+}
+
+.card-display-placeholder {
+    display: flex; /* Controlado por JS */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #c2b280;
+    font-style: italic;
+    width: 320px;
+    height: 450px;
+    border: 4px dashed #8a7250;
+    border-radius: 20px;
+    background-color: rgba(0,0,0,0.1);
+}
+
+.placeholder-icon {
+    font-size: 4.5rem;
+    margin-bottom: 20px;
+    opacity: 0.6;
+    color: #d4af37;
+}
+
+.card-display-placeholder p {
+    font-size: 1.1em;
+}
+
+/* --- ESTILO DE LA CARTA VISUAL --- */
+.game-card-visual {
+    width: 320px; /* Ancho de la carta */
+    height: 450px; /* Alto de la carta */
+    border-radius: 20px; /* Bordes más redondeados */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+    font-family: 'Georgia', serif;
+    display: flex; /* Controlado por JS, por defecto 'none' o el placeholder visible */
+    flex-direction: column;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease; /* Efecto al aparecer */
+    position: relative; /* Para elementos internos absolutamente posicionados si es necesario */
+}
+    /* Animación de entrada (opcional) */
+    .game-card-visual.revealed { /* Añadir esta clase con JS al mostrar */
+        transform: scale(1) rotateY(0deg);
+        opacity: 1;
+    }
+
+.game-card-visual { /* Estado inicial para animación */
+    transform: scale(0.9) rotateY(-30deg);
+    opacity: 0;
+}
+
+
+.card-top-banner {
+    padding: 12px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid; /* Color por tipo */
+    background: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(255,255,255,0)); /* Ligero brillo superior */
+}
+
+.card-title-text {
+    font-size: 1.4em; /* Título más grande */
+    font-weight: bold;
+    font-family: 'Cinzel Decorative', serif; /* Fuente temática para títulos */
+    letter-spacing: 0.5px;
+}
+
+.card-mythology-badge {
+    font-size: 0.85em;
+    font-style: italic;
+    padding: 4px 10px;
+    border-radius: 12px;
+    background-color: rgba(0,0,0,0.15);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.card-art-area {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px; /* Reducido para que la imagen ocupe más */
+    background-color: rgba(0,0,0,0.1); /* Sutil fondo para el arte */
+    overflow: hidden;
+    position: relative; /* Para superponer efectos si es necesario */
+}
+
+    .card-art-area img {
+        max-width: calc(100% - 10px); /* Pequeño margen interno */
+        max-height: calc(100% - 10px);
+        height: 200px; /* Altura base para el arte */
+        object-fit: contain;
+        border-radius: 10px; /* Redondeo sutil para la imagen */
+        box-shadow: 0 0 10px rgba(0,0,0,0.3) inset;
+    }
+
+.card-description-box {
+    padding: 15px 18px;
+    font-size: 0.95em;
+    line-height: 1.55;
+    min-height: 80px;
+    text-align: center;
+    background-color: rgba(255,255,255,0.03); /* Casi imperceptible */
+    border-top: 1px dashed rgba(0,0,0,0.2);
+    border-bottom: 1px dashed rgba(0,0,0,0.2);
+}
+
+.card-stats-banner {
+    padding: 12px 18px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 0.9em;
+    border-top: 3px solid; /* Color por tipo */
+    background: linear-gradient(to top, rgba(255,255,255,0.05), rgba(255,255,255,0)); /* Ligero brillo inferior */
+}
+
+    .card-stats-banner span {
+        flex: 1;
+        text-align: center;
+    }
+/* Para espaciarlos */
+
+.points-positive {
+    color: #a1e0a1;
+    font-weight: bold;
+}
+/* Verde más claro */
+.points-negative {
+    color: #f7a3a3;
+    font-weight: bold;
+}
+/* Rojo más claro */
+.points-neutral {
+    color: #d0d0d0;
+    font-weight: bold;
+}
+
+.rarity-comun {
+    color: #b0bec5;
+}
+
+.rarity-especial {
+    color: #80deea;
+}
+
+.rarity-rara {
+    color: #90caf9;
+}
+
+.rarity-epica {
+    color: #ce93d8;
+}
+
+.rarity-legendaria {
+    color: #ffcc80;
+}
+
+.type-text {
+    font-style: italic;
+    color: #f5eeda;
+}
+
+/* Colores específicos por tipo de carta (fondos, bordes, texto principal) */
+.game-card-visual.type-juego {
+    background: linear-gradient(150deg, #d7c7ad 0%, #c0aa8e 100%);
+    border: 4px solid #604c38;
+    color: #423425;
+}
+
+.type-juego .card-top-banner, .type-juego .card-stats-banner {
+    border-color: #604c38;
+}
+
+.type-juego .card-title-text {
+    color: #503f2d;
+}
+
+.type-juego .card-mythology-badge {
+    background-color: rgba(80, 63, 45, 0.2);
+    border-color: rgba(80, 63, 45, 0.4);
+}
+
+
+.game-card-visual.type-premio {
+    background: linear-gradient(150deg, #fff0c5 0%, #ffe082 100%);
+    border: 4px solid #c5a052; /* Dorado más oscuro */
+    color: #6d4c10;
+}
+
+.type-premio .card-top-banner, .type-premio .card-stats-banner {
+    border-color: #c5a052;
+}
+
+.type-premio .card-title-text {
+    color: #a06b09;
+}
+
+.type-premio .card-mythology-badge {
+    background-color: rgba(160, 107, 9, 0.2);
+    border-color: rgba(160, 107, 9, 0.4);
+}
+
+
+.game-card-visual.type-castigo {
+    background: linear-gradient(150deg, #e8c5c5 0%, #d8a8a8 100%);
+    border: 4px solid #7a2a2a; /* Rojo oscuro más apagado */
+    color: #4d1a1a;
+}
+
+.type-castigo .card-top-banner, .type-castigo .card-stats-banner {
+    border-color: #7a2a2a;
+}
+
+.type-castigo .card-title-text {
+    color: #681f1f;
+}
+
+.type-castigo .card-mythology-badge {
+    background-color: rgba(104, 31, 31, 0.2);
+    border-color: rgba(104, 31, 31, 0.4);
+}
+
+
+/* --- HISTORIAL DEL JUEGO --- */
+.game-history-log {
+    width: 100%;
+    max-width: 850px; /* Coincide con el tablero central */
+    background: rgba(10,5,0,0.75);
+    border: 2px solid #5a4a3c;
+    border-radius: 15px;
+    padding: 18px 25px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+}
+
+    .game-history-log h4 {
+        color: #ffd700;
+        text-align: center;
+        margin-bottom: 15px;
+        font-size: 1.25em;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        font-family: 'Cinzel', serif;
+    }
+
+        .game-history-log h4 i {
+            margin-right: 12px;
+        }
+
+    .game-history-log ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        max-height: 125px;
+        overflow-y: auto;
+        font-size: 0.9em;
+    }
+
+    .game-history-log li {
+        padding: 7px 5px;
+        border-bottom: 1px dashed #4a3b2c;
+        color: #d8ccbb;
+        line-height: 1.45;
+    }
+
+        .game-history-log li:last-child {
+            border-bottom: none;
+        }
+
+.log-player {
+    font-weight: bold;
+    color: #fada8b;
+}
+
+.log-player-turn {
+    font-weight: bold;
+    color: #ffd700;
+}
+
+.log-points-pos {
+    color: #90ee90;
+    font-style: italic;
+}
+/* LightGreen */
+.log-points-neg {
+    color: #f08080;
+    font-style: italic;
+}
+/* LightCoral */
+.log-event {
+    font-style: italic;
+    color: #add8e6;
+}
+/* LightBlue */
+.log-turn {
+    color: #c8bba7;
+}
+
+.log-system {
+    font-size: 0.85em;
+    color: #aaa;
+    text-align: center;
+    display: block;
+    padding: 5px 0;
+}
+
+/* Scrollbar para el historial (Webkit) */
+.game-history-log ul::-webkit-scrollbar {
+    width: 10px;
+}
+
+.game-history-log ul::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.25);
+    border-radius: 5px;
+}
+
+.game-history-log ul::-webkit-scrollbar-thumb {
+    background: #6b4f34;
+    border-radius: 5px;
+    border: 1px solid #4a3b2c;
+}
+
+    .game-history-log ul::-webkit-scrollbar-thumb:hover {
+        background: #c2b280;
+    }
+
+/* --- PERSONAJES DE FONDO (GAME SCREEN) --- */
+.game-bg-character {
+    opacity: 0; /* Inicialmente ocultos, si los quieres fade in con JS o CSS animation */
+    /* opacity: 0.2; Para que sean visibles pero sutiles */
+    max-height: 70vh !important;
+    pointer-events: none; /* Para que no interfieran con clicks */
+    z-index: -1; /* Detrás de todo el contenido del juego */
+}
+
+    .game-bg-character.male {
+        left: -22vw !important;
+        bottom: -5vh !important;
+    }
+    /* Ajusta posiciones */
+    .game-bg-character.female {
+        right: -25vw !important;
+        bottom: -5vh !important;
+    }
+
+/* --- MEDIA QUERIES (Ajustes para diferentes tamaños) --- */
+@media (max-width: 1200px) {
+    .player-box {
+        width: 230px;
+        padding: 15px;
+    }
+
+    .player-nickname {
+        font-size: 1.2em;
+    }
+
+    .central-game-board {
+        max-width: 750px;
+        gap: 20px;
+    }
+
+    .deck-and-actions-column {
+        flex-basis: 200px;
+    }
+
+    .game-card-visual {
+        width: 280px;
+        height: 400px;
+    }
+
+    .card-art-area img {
+        height: 170px;
+    }
+}
+
+@media (max-width: 992px) { /* Tablets */
+    .play-screen {
+        padding-top: 60px;
+        gap: 15px;
+    }
+
+    .turn-indicator {
+        font-size: 1.1em;
+    }
+
+    .player-areas-container {
+        max-width: 100%;
+    }
+    /* Ocupar todo el ancho */
+    .player-box {
+        width: calc(50% - 20px);
+    }
+    /* Dos por fila */
+    .central-game-board {
+        flex-direction: column;
+        align-items: center;
+        max-width: 90%;
+        padding: 15px;
+    }
+
+    .deck-and-actions-column {
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+        flex-basis: auto; /* Reset */
+        padding: 10px;
+        margin-bottom: 15px;
+    }
+
+    .deck-pile {
+        order: 1;
+    }
+
+    .game-actions {
+        order: 2;
+        width: auto;
+        max-width: 180px;
+    }
+
+    .revealed-card-zone {
+        min-height: 420px;
+        width: 100%;
+    }
+
+    .game-card-visual {
+        width: 260px;
+        height: 380px;
+    }
+
+    .card-art-area img {
+        height: 160px;
+    }
+
+    .game-history-log {
+        max-width: 90%;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 767px) { /* Móviles grandes */
+    .player-box {
+        width: calc(100% - 20px);
+        max-width: 380px;
+    }
+    /* Un jugador por fila */
+    .game-card-visual {
+        width: 240px;
+        height: 350px;
+    }
+
+    .card-title-text {
+        font-size: 1.2em;
+    }
+
+    .card-art-area img {
+        height: 140px;
+    }
+
+    .card-description-box {
+        font-size: 0.9em;
+        min-height: 65px;
+    }
+
+    .game-actions button, .game-actions a {
+        font-size: 0.9em !important;
+        padding: 10px 8px !important;
+    }
+}
+
+@media (max-width: 480px) { /* Móviles pequeños */
+    .play-screen {
+        padding: 10px;
+        padding-top: 50px;
+    }
+
+    .turn-indicator {
+        font-size: 1em;
+        padding: 8px 15px;
+    }
+
+    .player-nickname {
+        font-size: 1.1em;
+    }
+
+    .player-stats p {
+        font-size: 0.9em;
+        padding-left: 10px;
+    }
+
+    .deck-and-actions-column {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .game-actions {
+        max-width: 200px;
+    }
+
+    .game-card-visual {
+        width: 210px;
+        height: 310px;
+        border-radius: 15px;
+    }
+
+    .card-top-banner, .card-stats-banner {
+        padding: 8px 12px;
+    }
+
+    .card-title-text {
+        font-size: 1em;
+    }
+
+    .card-mythology-badge {
+        font-size: 0.75em;
+        padding: 2px 6px;
+    }
+
+    .card-art-area img {
+        height: 110px;
+    }
+
+    .card-description-box {
+        font-size: 0.8em;
+        min-height: 55px;
+        padding: 10px 12px;
+    }
+
+    .game-history-log h4 {
+        font-size: 1em;
+    }
+
+    .game-history-log ul {
+        font-size: 0.8em;
+    }
+}
+
+

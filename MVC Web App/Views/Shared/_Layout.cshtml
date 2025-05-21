@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MVC_ProyectoFinalPOO</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/MVC_ProyectoFinalPOO.styles.css" asp-append-version="true" />
+    <style>
+        .navbar-nav .nav-link {
+            color: #ffffff !important; /* Strong white color */
+            font-weight: bold; /* Makes the text stand out */
+        }
+    </style>
+</head>
+<body>
+   <header>
+    <nav class="bc-navbar">
+        <div class="bc-navbar-inner">
+            <a class="bc-brand" asp-controller="Home" asp-action="Index">
+                <i class="fas fa-hat-wizard"></i> B&C
+            </a>
+            <ul class="bc-nav-items">
+                <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                <li><a asp-controller="Home" asp-action="Privacy">About Us</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

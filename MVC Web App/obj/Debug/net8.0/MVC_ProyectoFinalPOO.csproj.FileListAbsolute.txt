@@ -1,0 +1,145 @@
+C:\Users\LENOVO\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\obj\Debug\net8.0\MVC_ProyectoFinalPOO.csproj.AssemblyReference.cache
+C:\Users\LENOVO\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\obj\Debug\net8.0\MVC_ProyectoFinalPOO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LENOVO\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\obj\Debug\net8.0\MVC_ProyectoFinalPOO.AssemblyInfoInputs.cache
+C:\Users\LENOVO\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\obj\Debug\net8.0\MVC_ProyectoFinalPOO.AssemblyInfo.cs
+C:\Users\LENOVO\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\obj\Debug\net8.0\MVC_ProyectoFinalPOO.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\obj\Debug\net8.0\MVC_ProyectoFinalPOO.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\LENOVO\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\obj\Debug\net8.0\MVC_ProyectoFinalPOO.RazorAssemblyInfo.cache
+C:\Users\LENOVO\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\obj\Debug\net8.0\MVC_ProyectoFinalPOO.RazorAssemblyInfo.cs
+C:\Users\LENOVO\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\obj\Debug\net8.0\MVC_ProyectoFinalPOO.sourcelink.json
+C:\Users\LENOVO\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\LENOVO\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\obj\Debug\net8.0\scopedcss\bundle\MVC_ProyectoFinalPOO.styles.css
+C:\Users\LENOVO\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\obj\Debug\net8.0\scopedcss\projectbundle\MVC_ProyectoFinalPOO.bundle.scp.css
+C:\Users\LENOVO\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\LENOVO\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\LENOVO\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\LENOVO\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\obj\Debug\net8.0\staticwebassets\msbuild.MVC_ProyectoFinalPOO.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\LENOVO\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\obj\Debug\net8.0\staticwebassets\msbuild.MVC_ProyectoFinalPOO.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\LENOVO\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\obj\Debug\net8.0\staticwebassets\msbuild.build.MVC_ProyectoFinalPOO.props
+C:\Users\LENOVO\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.MVC_ProyectoFinalPOO.props
+C:\Users\LENOVO\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.MVC_ProyectoFinalPOO.props
+C:\Users\LENOVO\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\LENOVO\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\obj\Debug\net8.0\MVC_ProyectoFinalPOO.dll
+C:\Users\LENOVO\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\obj\Debug\net8.0\refint\MVC_ProyectoFinalPOO.dll
+C:\Users\LENOVO\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\obj\Debug\net8.0\MVC_ProyectoFinalPOO.pdb
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\bin\Debug\net8.0\appsettings.json
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\bin\Debug\net8.0\MVC_ProyectoFinalPOO.staticwebassets.runtime.json
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\bin\Debug\net8.0\MVC_ProyectoFinalPOO.staticwebassets.endpoints.json
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\bin\Debug\net8.0\MVC_ProyectoFinalPOO.exe
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\bin\Debug\net8.0\MVC_ProyectoFinalPOO.deps.json
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\bin\Debug\net8.0\MVC_ProyectoFinalPOO.runtimeconfig.json
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\bin\Debug\net8.0\MVC_ProyectoFinalPOO.dll
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\bin\Debug\net8.0\MVC_ProyectoFinalPOO.pdb
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\bin\Debug\net8.0\Castle.Core.dll
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\bin\Debug\net8.0\CL_ProyectoFinalPOO.dll
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\bin\Debug\net8.0\CL_ProyectoFinalPOO.pdb
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\obj\Debug\net8.0\MVC_ProyectoFinalPOO.csproj.AssemblyReference.cache
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\obj\Debug\net8.0\MVC_ProyectoFinalPOO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\obj\Debug\net8.0\MVC_ProyectoFinalPOO.AssemblyInfoInputs.cache
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\obj\Debug\net8.0\MVC_ProyectoFinalPOO.AssemblyInfo.cs
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\obj\Debug\net8.0\MVC_ProyectoFinalPOO.csproj.CoreCompileInputs.cache
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\obj\Debug\net8.0\MVC_ProyectoFinalPOO.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\obj\Debug\net8.0\MVC_ProyectoFinalPOO.RazorAssemblyInfo.cache
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\obj\Debug\net8.0\MVC_ProyectoFinalPOO.RazorAssemblyInfo.cs
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\obj\Debug\net8.0\MVC_ProyectoFinalPOO.sourcelink.json
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\obj\Debug\net8.0\scopedcss\bundle\MVC_ProyectoFinalPOO.styles.css
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\obj\Debug\net8.0\scopedcss\projectbundle\MVC_ProyectoFinalPOO.bundle.scp.css
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\obj\Debug\net8.0\staticwebassets\msbuild.MVC_ProyectoFinalPOO.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\obj\Debug\net8.0\staticwebassets\msbuild.MVC_ProyectoFinalPOO.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\obj\Debug\net8.0\staticwebassets\msbuild.build.MVC_ProyectoFinalPOO.props
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.MVC_ProyectoFinalPOO.props
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.MVC_ProyectoFinalPOO.props
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\obj\Debug\net8.0\MVC_Proy.DB254CD3.Up2Date
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\obj\Debug\net8.0\MVC_ProyectoFinalPOO.dll
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\obj\Debug\net8.0\refint\MVC_ProyectoFinalPOO.dll
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\obj\Debug\net8.0\MVC_ProyectoFinalPOO.pdb
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\obj\Debug\net8.0\MVC_ProyectoFinalPOO.genruntimeconfig.cache
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\obj\Debug\net8.0\ref\MVC_ProyectoFinalPOO.dll
+C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\ProyectoFinal-Paradigmas\MVC Web App\bin\Debug\net8.0\cartas.json
+C:\Users\mesaj\OneDrive\Escritorio\MVC Web App\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\mesaj\OneDrive\Escritorio\MVC Web App\bin\Debug\net8.0\appsettings.json
+C:\Users\mesaj\OneDrive\Escritorio\MVC Web App\bin\Debug\net8.0\MVC_ProyectoFinalPOO.staticwebassets.runtime.json
+C:\Users\mesaj\OneDrive\Escritorio\MVC Web App\bin\Debug\net8.0\MVC_ProyectoFinalPOO.staticwebassets.endpoints.json
+C:\Users\mesaj\OneDrive\Escritorio\MVC Web App\bin\Debug\net8.0\MVC_ProyectoFinalPOO.exe
+C:\Users\mesaj\OneDrive\Escritorio\MVC Web App\bin\Debug\net8.0\cartas.json
+C:\Users\mesaj\OneDrive\Escritorio\MVC Web App\bin\Debug\net8.0\MVC_ProyectoFinalPOO.deps.json
+C:\Users\mesaj\OneDrive\Escritorio\MVC Web App\bin\Debug\net8.0\MVC_ProyectoFinalPOO.runtimeconfig.json
+C:\Users\mesaj\OneDrive\Escritorio\MVC Web App\bin\Debug\net8.0\MVC_ProyectoFinalPOO.dll
+C:\Users\mesaj\OneDrive\Escritorio\MVC Web App\bin\Debug\net8.0\MVC_ProyectoFinalPOO.pdb
+C:\Users\mesaj\OneDrive\Escritorio\MVC Web App\bin\Debug\net8.0\Castle.Core.dll
+C:\Users\mesaj\OneDrive\Escritorio\MVC Web App\bin\Debug\net8.0\CL_ProyectoFinalPOO.dll
+C:\Users\mesaj\OneDrive\Escritorio\MVC Web App\bin\Debug\net8.0\CL_ProyectoFinalPOO.pdb
+C:\Users\mesaj\OneDrive\Escritorio\MVC Web App\obj\Debug\net8.0\MVC_ProyectoFinalPOO.csproj.AssemblyReference.cache
+C:\Users\mesaj\OneDrive\Escritorio\MVC Web App\obj\Debug\net8.0\MVC_ProyectoFinalPOO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mesaj\OneDrive\Escritorio\MVC Web App\obj\Debug\net8.0\MVC_ProyectoFinalPOO.AssemblyInfoInputs.cache
+C:\Users\mesaj\OneDrive\Escritorio\MVC Web App\obj\Debug\net8.0\MVC_ProyectoFinalPOO.AssemblyInfo.cs
+C:\Users\mesaj\OneDrive\Escritorio\MVC Web App\obj\Debug\net8.0\MVC_ProyectoFinalPOO.csproj.CoreCompileInputs.cache
+C:\Users\mesaj\OneDrive\Escritorio\MVC Web App\obj\Debug\net8.0\MVC_ProyectoFinalPOO.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\mesaj\OneDrive\Escritorio\MVC Web App\obj\Debug\net8.0\MVC_ProyectoFinalPOO.RazorAssemblyInfo.cache
+C:\Users\mesaj\OneDrive\Escritorio\MVC Web App\obj\Debug\net8.0\MVC_ProyectoFinalPOO.RazorAssemblyInfo.cs
+C:\Users\mesaj\OneDrive\Escritorio\MVC Web App\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\mesaj\OneDrive\Escritorio\MVC Web App\obj\Debug\net8.0\scopedcss\bundle\MVC_ProyectoFinalPOO.styles.css
+C:\Users\mesaj\OneDrive\Escritorio\MVC Web App\obj\Debug\net8.0\scopedcss\projectbundle\MVC_ProyectoFinalPOO.bundle.scp.css
+C:\Users\mesaj\OneDrive\Escritorio\MVC Web App\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\mesaj\OneDrive\Escritorio\MVC Web App\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\mesaj\OneDrive\Escritorio\MVC Web App\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\mesaj\OneDrive\Escritorio\MVC Web App\obj\Debug\net8.0\staticwebassets\msbuild.MVC_ProyectoFinalPOO.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\mesaj\OneDrive\Escritorio\MVC Web App\obj\Debug\net8.0\staticwebassets\msbuild.MVC_ProyectoFinalPOO.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\mesaj\OneDrive\Escritorio\MVC Web App\obj\Debug\net8.0\staticwebassets\msbuild.build.MVC_ProyectoFinalPOO.props
+C:\Users\mesaj\OneDrive\Escritorio\MVC Web App\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.MVC_ProyectoFinalPOO.props
+C:\Users\mesaj\OneDrive\Escritorio\MVC Web App\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.MVC_ProyectoFinalPOO.props
+C:\Users\mesaj\OneDrive\Escritorio\MVC Web App\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\mesaj\OneDrive\Escritorio\MVC Web App\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\mesaj\OneDrive\Escritorio\MVC Web App\obj\Debug\net8.0\MVC_Proy.DB254CD3.Up2Date
+C:\Users\mesaj\OneDrive\Escritorio\MVC Web App\obj\Debug\net8.0\MVC_ProyectoFinalPOO.dll
+C:\Users\mesaj\OneDrive\Escritorio\MVC Web App\obj\Debug\net8.0\refint\MVC_ProyectoFinalPOO.dll
+C:\Users\mesaj\OneDrive\Escritorio\MVC Web App\obj\Debug\net8.0\MVC_ProyectoFinalPOO.pdb
+C:\Users\mesaj\OneDrive\Escritorio\MVC Web App\obj\Debug\net8.0\MVC_ProyectoFinalPOO.genruntimeconfig.cache
+C:\Users\mesaj\OneDrive\Escritorio\MVC Web App\obj\Debug\net8.0\ref\MVC_ProyectoFinalPOO.dll
+C:\Users\mesaj\OneDrive\Escritorio\PF-ParadigmasProgramacion-main\MVC Web App\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\mesaj\OneDrive\Escritorio\PF-ParadigmasProgramacion-main\MVC Web App\bin\Debug\net8.0\appsettings.json
+C:\Users\mesaj\OneDrive\Escritorio\PF-ParadigmasProgramacion-main\MVC Web App\bin\Debug\net8.0\MVC_ProyectoFinalPOO.staticwebassets.endpoints.json
+C:\Users\mesaj\OneDrive\Escritorio\PF-ParadigmasProgramacion-main\MVC Web App\bin\Debug\net8.0\MVC_ProyectoFinalPOO.staticwebassets.runtime.json
+C:\Users\mesaj\OneDrive\Escritorio\PF-ParadigmasProgramacion-main\MVC Web App\bin\Debug\net8.0\MVC_ProyectoFinalPOO.exe
+C:\Users\mesaj\OneDrive\Escritorio\PF-ParadigmasProgramacion-main\MVC Web App\bin\Debug\net8.0\cartas.json
+C:\Users\mesaj\OneDrive\Escritorio\PF-ParadigmasProgramacion-main\MVC Web App\bin\Debug\net8.0\MVC_ProyectoFinalPOO.deps.json
+C:\Users\mesaj\OneDrive\Escritorio\PF-ParadigmasProgramacion-main\MVC Web App\bin\Debug\net8.0\MVC_ProyectoFinalPOO.runtimeconfig.json
+C:\Users\mesaj\OneDrive\Escritorio\PF-ParadigmasProgramacion-main\MVC Web App\bin\Debug\net8.0\MVC_ProyectoFinalPOO.dll
+C:\Users\mesaj\OneDrive\Escritorio\PF-ParadigmasProgramacion-main\MVC Web App\bin\Debug\net8.0\MVC_ProyectoFinalPOO.pdb
+C:\Users\mesaj\OneDrive\Escritorio\PF-ParadigmasProgramacion-main\MVC Web App\bin\Debug\net8.0\Castle.Core.dll
+C:\Users\mesaj\OneDrive\Escritorio\PF-ParadigmasProgramacion-main\MVC Web App\bin\Debug\net8.0\CL_ProyectoFinalPOO.dll
+C:\Users\mesaj\OneDrive\Escritorio\PF-ParadigmasProgramacion-main\MVC Web App\bin\Debug\net8.0\CL_ProyectoFinalPOO.pdb
+C:\Users\mesaj\OneDrive\Escritorio\PF-ParadigmasProgramacion-main\MVC Web App\obj\Debug\net8.0\MVC_ProyectoFinalPOO.csproj.AssemblyReference.cache
+C:\Users\mesaj\OneDrive\Escritorio\PF-ParadigmasProgramacion-main\MVC Web App\obj\Debug\net8.0\MVC_ProyectoFinalPOO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mesaj\OneDrive\Escritorio\PF-ParadigmasProgramacion-main\MVC Web App\obj\Debug\net8.0\MVC_ProyectoFinalPOO.AssemblyInfoInputs.cache
+C:\Users\mesaj\OneDrive\Escritorio\PF-ParadigmasProgramacion-main\MVC Web App\obj\Debug\net8.0\MVC_ProyectoFinalPOO.AssemblyInfo.cs
+C:\Users\mesaj\OneDrive\Escritorio\PF-ParadigmasProgramacion-main\MVC Web App\obj\Debug\net8.0\MVC_ProyectoFinalPOO.csproj.CoreCompileInputs.cache
+C:\Users\mesaj\OneDrive\Escritorio\PF-ParadigmasProgramacion-main\MVC Web App\obj\Debug\net8.0\MVC_ProyectoFinalPOO.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\mesaj\OneDrive\Escritorio\PF-ParadigmasProgramacion-main\MVC Web App\obj\Debug\net8.0\MVC_ProyectoFinalPOO.RazorAssemblyInfo.cache
+C:\Users\mesaj\OneDrive\Escritorio\PF-ParadigmasProgramacion-main\MVC Web App\obj\Debug\net8.0\MVC_ProyectoFinalPOO.RazorAssemblyInfo.cs
+C:\Users\mesaj\OneDrive\Escritorio\PF-ParadigmasProgramacion-main\MVC Web App\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\mesaj\OneDrive\Escritorio\PF-ParadigmasProgramacion-main\MVC Web App\obj\Debug\net8.0\scopedcss\bundle\MVC_ProyectoFinalPOO.styles.css
+C:\Users\mesaj\OneDrive\Escritorio\PF-ParadigmasProgramacion-main\MVC Web App\obj\Debug\net8.0\scopedcss\projectbundle\MVC_ProyectoFinalPOO.bundle.scp.css
+C:\Users\mesaj\OneDrive\Escritorio\PF-ParadigmasProgramacion-main\MVC Web App\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\mesaj\OneDrive\Escritorio\PF-ParadigmasProgramacion-main\MVC Web App\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\mesaj\OneDrive\Escritorio\PF-ParadigmasProgramacion-main\MVC Web App\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\mesaj\OneDrive\Escritorio\PF-ParadigmasProgramacion-main\MVC Web App\obj\Debug\net8.0\staticwebassets\msbuild.MVC_ProyectoFinalPOO.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\mesaj\OneDrive\Escritorio\PF-ParadigmasProgramacion-main\MVC Web App\obj\Debug\net8.0\staticwebassets\msbuild.MVC_ProyectoFinalPOO.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\mesaj\OneDrive\Escritorio\PF-ParadigmasProgramacion-main\MVC Web App\obj\Debug\net8.0\staticwebassets\msbuild.build.MVC_ProyectoFinalPOO.props
+C:\Users\mesaj\OneDrive\Escritorio\PF-ParadigmasProgramacion-main\MVC Web App\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.MVC_ProyectoFinalPOO.props
+C:\Users\mesaj\OneDrive\Escritorio\PF-ParadigmasProgramacion-main\MVC Web App\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.MVC_ProyectoFinalPOO.props
+C:\Users\mesaj\OneDrive\Escritorio\PF-ParadigmasProgramacion-main\MVC Web App\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\mesaj\OneDrive\Escritorio\PF-ParadigmasProgramacion-main\MVC Web App\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\mesaj\OneDrive\Escritorio\PF-ParadigmasProgramacion-main\MVC Web App\obj\Debug\net8.0\MVC_Proy.DB254CD3.Up2Date
+C:\Users\mesaj\OneDrive\Escritorio\PF-ParadigmasProgramacion-main\MVC Web App\obj\Debug\net8.0\MVC_ProyectoFinalPOO.dll
+C:\Users\mesaj\OneDrive\Escritorio\PF-ParadigmasProgramacion-main\MVC Web App\obj\Debug\net8.0\refint\MVC_ProyectoFinalPOO.dll
+C:\Users\mesaj\OneDrive\Escritorio\PF-ParadigmasProgramacion-main\MVC Web App\obj\Debug\net8.0\MVC_ProyectoFinalPOO.pdb
+C:\Users\mesaj\OneDrive\Escritorio\PF-ParadigmasProgramacion-main\MVC Web App\obj\Debug\net8.0\MVC_ProyectoFinalPOO.genruntimeconfig.cache
+C:\Users\mesaj\OneDrive\Escritorio\PF-ParadigmasProgramacion-main\MVC Web App\obj\Debug\net8.0\ref\MVC_ProyectoFinalPOO.dll

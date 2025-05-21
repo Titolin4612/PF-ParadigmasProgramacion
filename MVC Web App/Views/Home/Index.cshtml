@@ -1,0 +1,73 @@
+﻿@{
+    ViewData["Title"] = "Blessings and Curses";
+    var jugadores = ViewBag.Players as List<CL_ProyectoFinalPOO.Clases.Jugador>;
+}
+
+<link rel="stylesheet" href="~/css/style.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+<div class="game-container">
+    <img src="~/images/title-logo.png" alt="Blessings and Curses" class="title-logo" />
+
+    @* Mostrar errores *@
+    @if (ViewBag.Error != null)
+    {
+            <div class="error-banner" id="error-message">
+                <i class="fas fa-exclamation-triangle"></i> @ViewBag.Error
+            </div>
+    }
+
+    <form method="post" class="form-container" id="game-form">
+        <div class="nickname-row">
+            <button type="submit" formaction="@Url.Action("EliminarJugador", "Home")" 
+                    formnovalidate class="remove-player-icon" title="Eliminar jugador">
+                <i class="fas fa-trash"></i>
+            </button>
+
+            <input name="nickname" type="text" placeholder="Nickname" class="game-input nickname-input" />
+
+            <button type="submit" formaction="@Url.Action("AgregarJugador", "Home")" 
+                    class="add-player-icon" title="Añadir jugador">
+                <i class="fas fa-user-plus"></i>
+            </button>
+        </div>
+
+        <div class="apuesta-container">
+            <input name="apuesta" type="number" placeholder="Apuesta inicial" class="game-input" />
+        </div>
+
+        <div class="button-group">
+            <a asp-controller="Reglas" asp-action="Index" class="rules-button">Reglas de juego</a>
+            <button type="submit" formaction="@Url.Action("Play", "Home")" class="play-button">Jugar</button>
+        </div>
+
+        @if (jugadores != null && jugadores.Count > 0)
+        {
+                <div class="player-list">
+                    <h3>Jugadores:</h3>
+                    <ul>
+                    @foreach (var j in jugadores)
+                    {
+                                <li>@j.Nickname (Puntos: @j.Puntos)</li>
+                    }
+                    </ul>
+                </div>
+        }
+    </form>
+
+    <img src="~/images/character-male.png" alt="Male Character" class="character male" />
+    <img src="~/images/character-female.png" alt="Female Character" class="character female" />
+</div>
+
+<script>
+    // Ocultar errores después de unos segundos
+    document.addEventListener("DOMContentLoaded", function () {
+        const error = document.getElementById("error-message");
+        if (error) {
+            setTimeout(() => {
+                error.style.opacity = "0";
+                setTimeout(() => error.remove(), 800);
+            }, 4000);
+        }
+    });
+</script>

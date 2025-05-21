@@ -1,0 +1,402 @@
+[
+  {
+    "Tipo": "Juego",
+    "Nombre": "Hermes",
+    "Descripcion": "Mensajero de los dioses, veloz pero poco influyente",
+    "Mitologia": "Griega",
+    "Rareza": "Comun",
+    "ArchivoImagen": "background-card-juego.png"
+  },
+  {
+    "Tipo": "Juego",
+    "Nombre": "Pan",
+    "Descripcion": "Espíritu libre del bosque, más bromista que fuerte",
+    "Mitologia": "Griega",
+    "Rareza": "Comun",
+    "ArchivoImagen": "background-card-juego.png"
+  },
+  {
+    "Tipo": "Juego",
+    "Nombre": "Bastet",
+    "Descripcion": "Protectora del hogar, tierna pero discreta",
+    "Mitologia": "Egipcia",
+    "Rareza": "Comun",
+    "ArchivoImagen": "background-card-juego.png"
+  },
+  {
+    "Tipo": "Juego",
+    "Nombre": "Tyr",
+    "Descripcion": "Valiente, pero limitado tras perder su brazo",
+    "Mitologia": "Nórdica",
+    "Rareza": "Comun",
+    "ArchivoImagen": "background-card-juego.png"
+  },
+  {
+    "Tipo": "Juego",
+    "Nombre": "Nut",
+    "Descripcion": "Diosa madre del cielo, protectora pero pasiva",
+    "Mitologia": "Egipcia",
+    "Rareza": "Comun",
+    "ArchivoImagen": "background-card-juego.png"
+  },
+  {
+    "Tipo": "Juego",
+    "Nombre": "Chac",
+    "Descripcion": "Dios maya de la lluvia, algo temperamental",
+    "Mitologia": "Maya",
+    "Rareza": "Comun",
+    "ArchivoImagen": "background-card-juego.png"
+  },
+  {
+    "Tipo": "Juego",
+    "Nombre": "Hel",
+    "Descripcion": "Reina del inframundo, gélida pero inmóvil",
+    "Mitologia": "Nórdica",
+    "Rareza": "Comun",
+    "ArchivoImagen": "background-card-juego.png"
+  },
+  {
+    "Tipo": "Juego",
+    "Nombre": "Eros",
+    "Descripcion": "Dios del amor, poderoso pero emocionalmente volátil",
+    "Mitologia": "Griega",
+    "Rareza": "Comun",
+    "ArchivoImagen": "background-card-juego.png"
+  },
+  {
+    "Tipo": "Juego",
+    "Nombre": "Brigid",
+    "Descripcion": "Diosa celta del fuego y la poesía, inspiradora",
+    "Mitologia": "Celta",
+    "Rareza": "Especial",
+    "ArchivoImagen": "background-card-juego.png"
+  },
+  {
+    "Tipo": "Juego",
+    "Nombre": "Neit",
+    "Descripcion": "Guerrera egipcia, estratega, pero no muy influyente",
+    "Mitologia": "Egipcia",
+    "Rareza": "Especial",
+    "ArchivoImagen": "background-card-juego.png"
+  },
+  {
+    "Tipo": "Juego",
+    "Nombre": "Ixchel",
+    "Descripcion": "Diosa maya de la medicina y los partos",
+    "Mitologia": "Maya",
+    "Rareza": "Especial",
+    "ArchivoImagen": "background-card-juego.png"
+  },
+  {
+    "Tipo": "Juego",
+    "Nombre": "Epona",
+    "Descripcion": "Diosa celta de los caballos, símbolo de nobleza",
+    "Mitologia": "Celta",
+    "Rareza": "Especial",
+    "ArchivoImagen": "background-card-juego.png"
+  },
+  {
+    "Tipo": "Juego",
+    "Nombre": "Enki",
+    "Descripcion": "Sabio sumerio, menos activo en batalla",
+    "Mitologia": "Sumeria",
+    "Rareza": "Especial",
+    "ArchivoImagen": "background-card-juego.png"
+  },
+  {
+    "Tipo": "Juego",
+    "Nombre": "Hecate",
+    "Descripcion": "Diosa de la brujería y los portales, misteriosa",
+    "Mitologia": "Griega",
+    "Rareza": "Especial",
+    "ArchivoImagen": "background-card-juego.png"
+  },
+  {
+    "Tipo": "Juego",
+    "Nombre": "Atenea",
+    "Descripcion": "Diosa de la sabiduría y la estrategia",
+    "Mitologia": "Griega",
+    "Rareza": "Rara",
+    "ArchivoImagen": "background-card-juego.png"
+  },
+  {
+    "Tipo": "Juego",
+    "Nombre": "Loki",
+    "Descripcion": "Embaucador impredecible de múltiples rostros",
+    "Mitologia": "Nórdica",
+    "Rareza": "Rara",
+    "ArchivoImagen": "background-card-juego.png"
+  },
+  {
+    "Tipo": "Juego",
+    "Nombre": "Anubis",
+    "Descripcion": "Protector de tumbas y guía de almas",
+    "Mitologia": "Egipcia",
+    "Rareza": "Rara",
+    "ArchivoImagen": "background-card-juego.png"
+  },
+  {
+    "Tipo": "Juego",
+    "Nombre": "Ishtar",
+    "Descripcion": "Diosa babilónica del amor y la guerra",
+    "Mitologia": "Mesopotámica",
+    "Rareza": "Rara",
+    "ArchivoImagen": "background-card-juego.png"
+  },
+  {
+    "Tipo": "Juego",
+    "Nombre": "Marduk",
+    "Descripcion": "Campeón babilónico contra el caos",
+    "Mitologia": "Mesopotámica",
+    "Rareza": "Rara",
+    "ArchivoImagen": "background-card-juego.png"
+  },
+  {
+    "Tipo": "Juego",
+    "Nombre": "Persefone",
+    "Descripcion": "Reina del inframundo, dulce y temida",
+    "Mitologia": "Griega",
+    "Rareza": "Rara",
+    "ArchivoImagen": "background-card-juego.png"
+  },
+  {
+    "Tipo": "Juego",
+    "Nombre": "Fenrir",
+    "Descripcion": "Lobo del fin del mundo, temido pero incontrolable",
+    "Mitologia": "Nórdica",
+    "Rareza": "Rara",
+    "ArchivoImagen": "background-card-juego.png"
+  },
+  {
+    "Tipo": "Juego",
+    "Nombre": "Horus",
+    "Descripcion": "Dios de la realeza y el cielo",
+    "Mitologia": "Egipcia",
+    "Rareza": "Rara",
+    "ArchivoImagen": "background-card-juego.png"
+  },
+  {
+    "Tipo": "Juego",
+    "Nombre": "Thor",
+    "Descripcion": "Dios del trueno, valiente y devastador",
+    "Mitologia": "Nórdica",
+    "Rareza": "Epica",
+    "ArchivoImagen": "background-card-juego.png"
+  },
+  {
+    "Tipo": "Juego",
+    "Nombre": "Freya",
+    "Descripcion": "Diosa del amor y la guerra, feroz y hermosa",
+    "Mitologia": "Nórdica",
+    "Rareza": "Epica",
+    "ArchivoImagen": "background-card-juego.png"
+  },
+  {
+    "Tipo": "Juego",
+    "Nombre": "Poseidón",
+    "Descripcion": "Dios del mar, impredecible y poderoso",
+    "Mitologia": "Griega",
+    "Rareza": "Epica",
+    "ArchivoImagen": "background-card-juego.png"
+  },
+  {
+    "Tipo": "Juego",
+    "Nombre": "Cronos",
+    "Descripcion": "Titán del tiempo, inmutable e inevitable",
+    "Mitologia": "Griega",
+    "Rareza": "Epica",
+    "ArchivoImagen": "background-card-juego.png"
+  },
+  {
+    "Tipo": "Juego",
+    "Nombre": "Apolo",
+    "Descripcion": "Dios del sol, la medicina y la música",
+    "Mitologia": "Griega",
+    "Rareza": "Epica",
+    "ArchivoImagen": "background-card-juego.png"
+  },
+  {
+    "Tipo": "Juego",
+    "Nombre": "Zeus",
+    "Descripcion": "Rey del Olimpo, maestro del rayo",
+    "Mitologia": "Griega",
+    "Rareza": "Legendaria",
+    "ArchivoImagen": "background-card-juego.png"
+  },
+  {
+    "Tipo": "Juego",
+    "Nombre": "Ra",
+    "Descripcion": "Dios solar egipcio, símbolo de poder supremo",
+    "Mitologia": "Egipcia",
+    "Rareza": "Legendaria",
+    "ArchivoImagen": "background-card-juego.png"
+  },
+  {
+    "Tipo": "Juego",
+    "Nombre": "Odín",
+    "Descripcion": "Padre sabio, busca poder y conocimiento",
+    "Mitologia": "Nórdica",
+    "Rareza": "Legendaria",
+    "ArchivoImagen": "background-card-juego.png"
+  },
+  {
+    "Tipo": "Castigo",
+    "Nombre": "Medusa",
+    "Descripcion": "Su mirada convierte en piedra",
+    "Mitologia": "Griega",
+    "Maleficio": "Piedra eterna para quien la enfrente",
+    "ArchivoImagen": "background-card-castigo.png"
+  },
+  {
+    "Tipo": "Castigo",
+    "Nombre": "Quimera",
+    "Descripcion": "Monstruo con fuego y ferocidad incontrolable",
+    "Mitologia": "Griega",
+    "Maleficio": "Quema todo a su paso",
+    "ArchivoImagen": "background-card-castigo.png"
+  },
+  {
+    "Tipo": "Castigo",
+    "Nombre": "Cerbero",
+    "Descripcion": "Guardián infernal de tres cabezas",
+    "Mitologia": "Griega",
+    "Maleficio": "No permite el regreso del inframundo",
+    "ArchivoImagen": "background-card-castigo.png"
+  },
+  {
+    "Tipo": "Castigo",
+    "Nombre": "Hidra de Lerna",
+    "Descripcion": "Cada cabeza cortada da lugar a dos más",
+    "Mitologia": "Griega",
+    "Maleficio": "Multiplica el sufrimiento",
+    "ArchivoImagen": "background-card-castigo.png"
+  },
+  {
+    "Tipo": "Castigo",
+    "Nombre": "Tifón",
+    "Descripcion": "Criatura colosal de fuego y tormenta",
+    "Mitologia": "Griega",
+    "Maleficio": "Trae caos donde pisa",
+    "ArchivoImagen": "background-card-castigo.png"
+  },
+  {
+    "Tipo": "Castigo",
+    "Nombre": "Apofis",
+    "Descripcion": "Serpiente del caos, opuesto al orden",
+    "Mitologia": "Egipcia",
+    "Maleficio": "Engulle el sol y el equilibrio",
+    "ArchivoImagen": "background-card-castigo.png"
+  },
+  {
+    "Tipo": "Castigo",
+    "Nombre": "Jörmungandr",
+    "Descripcion": "Serpiente marina que rodea el mundo",
+    "Mitologia": "Nórdica",
+    "Maleficio": "Inicia el fin con su mordida",
+    "ArchivoImagen": "background-card-castigo.png"
+  },
+  {
+    "Tipo": "Castigo",
+    "Nombre": "Lamia",
+    "Descripcion": "Monstruo devorador de niños",
+    "Mitologia": "Griega",
+    "Maleficio": "Acecha en sueños inocentes",
+    "ArchivoImagen": "background-card-castigo.png"
+  },
+  {
+    "Tipo": "Castigo",
+    "Nombre": "Echidna",
+    "Descripcion": "Madre de monstruos, salvaje y astuta",
+    "Mitologia": "Griega",
+    "Maleficio": "Engendra pesadillas vivas",
+    "ArchivoImagen": "background-card-castigo.png"
+  },
+  {
+    "Tipo": "Castigo",
+    "Nombre": "Hécate",
+    "Descripcion": "Hechicera oscura, guía entre sombras",
+    "Mitologia": "Griega",
+    "Maleficio": "Oscurece todo destino",
+    "ArchivoImagen": "background-card-castigo.png"
+  },
+  {
+    "Tipo": "Castigo",
+    "Nombre": "Garm",
+    "Descripcion": "Perro infernal del fin del mundo",
+    "Mitologia": "Nórdica",
+    "Maleficio": "Aúlla anunciando la perdición",
+    "ArchivoImagen": "background-card-castigo.png"
+  },
+  {
+    "Tipo": "Castigo",
+    "Nombre": "Lilith",
+    "Descripcion": "Espíritu nocturno y destructor",
+    "Mitologia": "Mesopotámica",
+    "Maleficio": "Robará tu aliento en la noche",
+    "ArchivoImagen": "background-card-castigo.png"
+  },
+  {
+    "Tipo": "Premio",
+    "Nombre": "Iris",
+    "Descripcion": "Mensajera del arcoíris, portadora de buenas nuevas",
+    "Mitologia": "Griega",
+    "Bendicion": "Trae alegría entre nubes oscuras",
+    "ArchivoImagen": "background-card-premio.png"
+  },
+  {
+    "Tipo": "Premio",
+    "Nombre": "Brigid",
+    "Descripcion": "Diosa de la sanación, inspiración y fertilidad",
+    "Mitologia": "Celta",
+    "Bendicion": "Florecen los campos a su paso",
+    "ArchivoImagen": "background-card-premio.png"
+  },
+  {
+    "Tipo": "Premio",
+    "Nombre": "Hathor",
+    "Descripcion": "Diosa del amor, la alegría y la música",
+    "Mitologia": "Egipcia",
+    "Bendicion": "Su canto sana el alma",
+    "ArchivoImagen": "background-card-premio.png"
+  },
+  {
+    "Tipo": "Premio",
+    "Nombre": "Eir",
+    "Descripcion": "Sanadora divina de los dioses",
+    "Mitologia": "Nórdica",
+    "Bendicion": "Sus manos tejen la salud",
+    "ArchivoImagen": "background-card-premio.png"
+  },
+  {
+    "Tipo": "Premio",
+    "Nombre": "Fortuna",
+    "Descripcion": "Dadora del destino y la buena suerte",
+    "Mitologia": "Romana",
+    "Bendicion": "Todo gira a tu favor",
+    "ArchivoImagen": "background-card-premio.png"
+  },
+  {
+    "Tipo": "Premio",
+    "Nombre": "Deméter",
+    "Descripcion": "Diosa de la cosecha y la abundancia",
+    "Mitologia": "Griega",
+    "Bendicion": "Todo lo que tocas florece",
+    "ArchivoImagen": "background-card-premio.png"
+  },
+  {
+    "Tipo": "Premio",
+    "Nombre": "Inanna",
+    "Descripcion": "Diosa del amor, justicia y poder",
+    "Mitologia": "Sumeria",
+    "Bendicion": "Hace que reine la armonía",
+    "ArchivoImagen": "background-card-premio.png"
+  },
+  {
+    "Tipo": "Premio",
+    "Nombre": "Gaia",
+    "Descripcion": "Madre Tierra, fuente de toda vida",
+    "Mitologia": "Griega",
+    "Bendicion": "Su abrazo nutre la existencia",
+    "ArchivoImagen": "background-card-premio.png"
+  }
+]

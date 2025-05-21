@@ -1,0 +1,81 @@
+﻿@{
+    ViewData["Title"] = "Acerca de Nosotros";
+}
+<link rel="stylesheet" href="~/css/style.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+<div class="game-container">
+
+    <div class="about-scroll">
+        <h1>Blessings & Curses</h1>
+        <h2>Acerca del Proyecto</h2>
+
+        <section class="about-box">
+            <h3>Nuestro Equipo</h3>
+            <div class="team-members">
+                <div class="member-card">
+                    <div class="member-icon"><i class="fas fa-user-graduate"></i></div>
+                    <h4>Santiago Hernández Morantes</h4>
+                    <p>Estudiante de Ingeniería de Sistemas e informatica - UPB</p>
+                </div>
+                <div class="member-card">
+                    <div class="member-icon"><i class="fas fa-user-graduate"></i></div>
+                    <h4>Juan José Mesa</h4>
+                    <p>Estudiante de Ingeniería de Sistemas e informatica - UPB</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-box">
+            <h3>El Proyecto</h3>
+            <p>Blessings & Curses es un juego de cartas estratégico desarrollado como proyecto final para la materia <strong>Paradigmas de la Programación</strong> en la Universidad Pontificia Bolivariana, Medellín.</p>
+
+            <p>El juego combina elementos de programación orientada a objetos con mecánicas de juego inspiradas en la mitología antigua, demostrando los conceptos aprendidos durante el curso.</p>
+
+            <h4>Tecnologías Utilizadas</h4>
+            <ul>
+                <li>ASP.NET Core MVC</li>
+                <li>C#</li>
+                <li>HTML5, CSS3, JavaScript</li>
+                <li>Bootstrap</li>
+                <li>Font Awesome</li>
+            </ul>
+        </section>
+
+        <div class="return-section">
+            <a asp-controller="Home" asp-action="Index" class="rules-button">
+                <i class="fas fa-arrow-left"></i> Volver
+            </a>
+        </div>
+    </div>
+
+    <img src="~/images/character-male2.png" class="character male" />
+    <img src="~/images/character-female2.png" class="character female" />
+</div>
+
+<style>
+
+    .character {
+    position: absolute;
+    bottom: 0;
+    width: auto;
+    max-height: 75vh;
+    pointer-events: none;
+    z-index: 1;
+    margin-left: -80px;
+    margin-right: -80px;
+}
+
+    .character.male {
+
+        left: -24vw;
+    }
+
+    .character.female {
+        right: -24vw;
+    }
+
+html, body {
+    overflow-x: hidden;
+}
+</style>
