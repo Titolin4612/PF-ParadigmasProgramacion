@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "fPq+RjJKFM8ZBk+7+TbvkJylCMhFA3mPVpD5PpBJXUw=",
+  "Hash": "uv7M4mWdKmM/3bjGL/YdXbSYRv2TlJWjyxreQtluEXM=",
   "Source": "MVC_ProyectoFinalPOO",
   "BasePath": "_content/MVC_ProyectoFinalPOO",
   "Mode": "Default",
@@ -73,8 +73,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "1s7j1pokab",
-      "Integrity": "IdONQguUzkopqCBtgl7u/VwbrAzMlaKiKjpZMGxg3yk=",
+      "Fingerprint": "xcmzxp8vn3",
+      "Integrity": "D5+pexzSDkfBLe0LCuwSejumV77Syc9DYerNRMPFquM=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -1531,51 +1531,6 @@
   ],
   "Endpoints": [
     {
-      "Route": "css/site.1s7j1pokab.css",
-      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\css\\site.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "30916"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"IdONQguUzkopqCBtgl7u/VwbrAzMlaKiKjpZMGxg3yk=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 21 May 2025 18:46:42 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "1s7j1pokab"
-        },
-        {
-          "Name": "label",
-          "Value": "css/site.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-IdONQguUzkopqCBtgl7u/VwbrAzMlaKiKjpZMGxg3yk="
-        }
-      ]
-    },
-    {
       "Route": "css/site.css",
       "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\css\\site.css",
       "Selectors": [],
@@ -1586,7 +1541,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "30916"
+          "Value": "39360"
         },
         {
           "Name": "Content-Type",
@@ -1594,11 +1549,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"IdONQguUzkopqCBtgl7u/VwbrAzMlaKiKjpZMGxg3yk=\""
+          "Value": "\"D5+pexzSDkfBLe0LCuwSejumV77Syc9DYerNRMPFquM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 21 May 2025 18:46:42 GMT"
+          "Value": "Thu, 22 May 2025 01:32:26 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1608,7 +1563,52 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-IdONQguUzkopqCBtgl7u/VwbrAzMlaKiKjpZMGxg3yk="
+          "Value": "sha256-D5+pexzSDkfBLe0LCuwSejumV77Syc9DYerNRMPFquM="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.xcmzxp8vn3.css",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\css\\site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "39360"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"D5+pexzSDkfBLe0LCuwSejumV77Syc9DYerNRMPFquM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 22 May 2025 01:32:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "xcmzxp8vn3"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-D5+pexzSDkfBLe0LCuwSejumV77Syc9DYerNRMPFquM="
         }
       ]
     },
