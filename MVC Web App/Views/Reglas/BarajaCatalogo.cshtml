@@ -1,10 +1,15 @@
 ﻿@using CL_ProyectoFinalPOO.Clases
+@* NECESARIO PARA ACCEDER A JuegoController.juegoIniciado si el controlador de esta vista no es JuegoController *@
+@using MVC_ProyectoFinalPOO.Controllers 
 
 @{
     ViewData["Title"] = "Catálogo de Cartas";
     var cartasJuego = ViewData["CartasJuego"] as List<CartaJuego> ?? new List<CartaJuego>();
     var cartasPremio = ViewData["CartasPremio"] as List<CartaPremio> ?? new List<CartaPremio>();
     var cartasCastigo = ViewData["CartasCastigo"] as List<CartaCastigo> ?? new List<CartaCastigo>();
+
+    // Obtenemos el valor del ViewBag. Si es null (no se estableció), por defecto es false.
+    bool hayJuegoActivo = ViewBag.HayJuegoActivo as bool? ?? false;
 }
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -17,132 +22,135 @@
 
         @if (ViewBag.Error != null)
         {
-                <div class="papyrus-alert error-alert-papyrus">
-                    <i class="fas fa-exclamation-triangle"></i> @ViewBag.Error
-                </div>
+                    <div class="papyrus-alert error-alert-papyrus">
+                        <i class="fas fa-exclamation-triangle"></i> @ViewBag.Error
+                    </div>
         }
         else
         {
             @* --- CARTAS DE JUEGO --- *@
-                <section class="card-gallery-section">
-                    <h2><i class="fas fa-atlas"></i> Cartas de Juego</h2>
+                    <section class="card-gallery-section">
+                        <h2><i class="fas fa-atlas"></i> Cartas de Juego</h2>
                 @if (cartasJuego.Any())
                 {
-                            <div class="image-carousel-container">
+                                    <div class="image-carousel-container">
                         @foreach (var carta in cartasJuego)
                         {
-                                        <div class="card-poster-item" tabindex="0">
-                                            <img src="@(string.IsNullOrEmpty(carta.ImagenUrl) ? "https://via.placeholder.com/200x280/2a2a3a/ccc?text=Fondo" : Url.Content("~/" + carta.ImagenUrl))"
-                                                 alt="Fondo de @carta.Nombre" class="card-visual-background" />
-                                            <div class="card-visual-overlay-content">
-                                                <h4 class="card-visual-title">@carta.Nombre</h4>
-                                                <img src="@Url.Content("~/images/title-logo.png")" alt="Blessings & Curses Logo" class="card-visual-logo" />
-                                            </div>
-                                            <div class="card-hover-info">
-                                                <h3>@carta.Nombre</h3>
-                                                <div class="hover-info-content">
-                                                    <p><strong>Mitología:</strong> @carta.Mitologia</p>
-                                                    <p><strong>Rareza:</strong> @carta.RarezaCarta</p>
-                                                    <p class="description">@carta.Descripcion</p>
-                                                </div>
-                                                <div class="hover-info-footer">
-                                                    <span>Puntos: <strong class="@(carta.ObtenerPuntos() >= 0 ? "points-positive-papyrus" : "points-negative-papyrus")">@carta.ObtenerPuntos()</strong></span>
-                                                    <span class="badge-type type-juego">Juego</span>
-                                                </div>
-                                            </div>
-                                        </div>
+                                                    <div class="card-poster-item" tabindex="0">
+                                                        <img src="@(string.IsNullOrEmpty(carta.ImagenUrl) ? "https://via.placeholder.com/200x280/2a2a3a/ccc?text=Fondo" : Url.Content("~/" + carta.ImagenUrl))"
+                                                             alt="Fondo de @carta.Nombre" class="card-visual-background" />
+                                                        <div class="card-visual-overlay-content">
+                                                            <h4 class="card-visual-title">@carta.Nombre</h4>
+                                                            <img src="@Url.Content("~/images/title-logo.png")" alt="Blessings & Curses Logo" class="card-visual-logo" />
+                                                        </div>
+                                                        <div class="card-hover-info">
+                                                            <h3>@carta.Nombre</h3>
+                                                            <div class="hover-info-content">
+                                                                <p><strong>Mitología:</strong> @carta.Mitologia</p>
+                                                                <p><strong>Rareza:</strong> @carta.RarezaCarta</p>
+                                                                <p class="description">@carta.Descripcion</p>
+                                                            </div>
+                                                            <div class="hover-info-footer">
+                                                                <span>Puntos: <strong class="@(carta.ObtenerPuntos() >= 0 ? "points-positive-papyrus" : "points-negative-papyrus")">@carta.ObtenerPuntos()</strong></span>
+                                                                <span class="badge-type type-juego">Juego</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                         }
-                            </div>
+                                    </div>
                 }
                 else
                 {
-                            <p class="no-cards-message-papyrus">El tomo de las Cartas de Juego yace vacío por el momento.</p>
+                                    <p class="no-cards-message-papyrus">El tomo de las Cartas de Juego yace vacío por el momento.</p>
                 }
-                </section>
+                    </section>
 
             @* --- CARTAS DE PREMIO --- *@
-                <section class="card-gallery-section">
-                    <h2><i class="fas fa-magic"></i> Cartas de Premio</h2>
+                    <section class="card-gallery-section">
+                        <h2><i class="fas fa-magic"></i> Cartas de Premio</h2>
                 @if (cartasPremio.Any())
                 {
-                            <div class="image-carousel-container">
+                                    <div class="image-carousel-container">
                         @foreach (var carta in cartasPremio)
                         {
-                                        <div class="card-poster-item" tabindex="0">
-                                            <img src="@(string.IsNullOrEmpty(carta.ImagenUrl) ? "https://via.placeholder.com/200x280/c5a052/111?text=Fondo" : Url.Content("~/" + carta.ImagenUrl))"
-                                                 alt="Fondo de @carta.Nombre" class="card-visual-background" />
-                                            <div class="card-visual-overlay-content">
-                                                <h4 class="card-visual-title">@carta.Nombre</h4>
-                                                <img src="@Url.Content("~/images/title-logo.png")" alt="Blessings & Curses Logo" class="card-visual-logo" />
-                                            </div>
-                                            <div class="card-hover-info">
-                                                <h3>@carta.Nombre</h3>
-                                                <div class="hover-info-content">
-                                                    <p><strong>Mitología:</strong> @carta.Mitologia</p>
-                                                    <p><strong>Bendición:</strong> @carta.Bendicion</p>
-                                                    <p class="description">@carta.Descripcion</p>
-                                                </div>
-                                                <div class="hover-info-footer">
-                                                    <span>Puntos: <strong class="points-positive-papyrus">@carta.ObtenerPuntos()</strong></span>
-                                                    <span class="badge-type type-premio">Premio</span>
-                                                </div>
-                                            </div>
-                                        </div>
+                                                    <div class="card-poster-item" tabindex="0">
+                                                        <img src="@(string.IsNullOrEmpty(carta.ImagenUrl) ? "https://via.placeholder.com/200x280/c5a052/111?text=Fondo" : Url.Content("~/" + carta.ImagenUrl))"
+                                                             alt="Fondo de @carta.Nombre" class="card-visual-background" />
+                                                        <div class="card-visual-overlay-content">
+                                                            <h4 class="card-visual-title">@carta.Nombre</h4>
+                                                            <img src="@Url.Content("~/images/title-logo.png")" alt="Blessings & Curses Logo" class="card-visual-logo" />
+                                                        </div>
+                                                        <div class="card-hover-info">
+                                                            <h3>@carta.Nombre</h3>
+                                                            <div class="hover-info-content">
+                                                                <p><strong>Mitología:</strong> @carta.Mitologia</p>
+                                                                <p><strong>Bendición:</strong> @carta.Bendicion</p>
+                                                                <p class="description">@carta.Descripcion</p>
+                                                            </div>
+                                                            <div class="hover-info-footer">
+                                                                <span>Puntos: <strong class="points-positive-papyrus">@carta.ObtenerPuntos()</strong></span>
+                                                                <span class="badge-type type-premio">Premio</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                         }
-                            </div>
+                                    </div>
                 }
                 else
                 {
-                            <p class="no-cards-message-papyrus">Las bendiciones divinas aún no se han manifestado en este tomo.</p>
+                                    <p class="no-cards-message-papyrus">Las bendiciones divinas aún no se han manifestado en este tomo.</p>
                 }
-                </section>
+                    </section>
 
             @* --- CARTAS DE CASTIGO --- *@
-                <section class="card-gallery-section">
-                    <h2><i class="fas fa-skull"></i> Cartas de Castigo</h2>
+                    <section class="card-gallery-section">
+                        <h2><i class="fas fa-skull"></i> Cartas de Castigo</h2>
                 @if (cartasCastigo.Any())
                 {
-                            <div class="image-carousel-container">
+                                    <div class="image-carousel-container">
                         @foreach (var carta in cartasCastigo)
                         {
-                                        <div class="card-poster-item" tabindex="0">
-                                            <img src="@(string.IsNullOrEmpty(carta.ImagenUrl) ? "https://via.placeholder.com/200x280/6a3838/eee?text=Fondo" : Url.Content("~/" + carta.ImagenUrl))"
-                                                 alt="Fondo de @carta.Nombre" class="card-visual-background" />
-                                            <div class="card-visual-overlay-content">
-                                                <h4 class="card-visual-title">@carta.Nombre</h4>
-                                                <img src="@Url.Content("~/images/title-logo.png")" alt="Blessings & Curses Logo" class="card-visual-logo" />
-                                            </div>
-                                            <div class="card-hover-info">
-                                                <h3>@carta.Nombre</h3>
-                                                <div class="hover-info-content">
-                                                    <p><strong>Mitología:</strong> @carta.Mitologia</p>
-                                                    <p><strong>Maleficio:</strong> @carta.Maleficio</p>
-                                                    <p class="description">@carta.Descripcion</p>
-                                                </div>
-                                                <div class="hover-info-footer">
-                                                    <span>Puntos: <strong class="points-negative-papyrus">@carta.ObtenerPuntos()</strong></span>
-                                                    <span class="badge-type type-castigo">Castigo</span>
-                                                </div>
-                                            </div>
-                                        </div>
+                                                    <div class="card-poster-item" tabindex="0">
+                                                        <img src="@(string.IsNullOrEmpty(carta.ImagenUrl) ? "https://via.placeholder.com/200x280/6a3838/eee?text=Fondo" : Url.Content("~/" + carta.ImagenUrl))"
+                                                             alt="Fondo de @carta.Nombre" class="card-visual-background" />
+                                                        <div class="card-visual-overlay-content">
+                                                            <h4 class="card-visual-title">@carta.Nombre</h4>
+                                                            <img src="@Url.Content("~/images/title-logo.png")" alt="Blessings & Curses Logo" class="card-visual-logo" />
+                                                        </div>
+                                                        <div class="card-hover-info">
+                                                            <h3>@carta.Nombre</h3>
+                                                            <div class="hover-info-content">
+                                                                <p><strong>Mitología:</strong> @carta.Mitologia</p>
+                                                                <p><strong>Maleficio:</strong> @carta.Maleficio</p>
+                                                                <p class="description">@carta.Descripcion</p>
+                                                            </div>
+                                                            <div class="hover-info-footer">
+                                                                <span>Puntos: <strong class="points-negative-papyrus">@carta.ObtenerPuntos()</strong></span>
+                                                                <span class="badge-type type-castigo">Castigo</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                         }
-                            </div>
+                                    </div>
                 }
                 else
                 {
-                            <p class="no-cards-message-papyrus">Las sombras de las Cartas de Castigo permanecen ocultas.</p>
+                                    <p class="no-cards-message-papyrus">Las sombras de las Cartas de Castigo permanecen ocultas.</p>
                 }
-                </section>
+                    </section>
         }
 
         @* ---------- INICIO DE LA MODIFICACIÓN PARA BOTONES DE ACCIÓN ---------- *@
         <div class="action-buttons-section-papyrus">
-            <a asp-controller="Reglas" asp-action="Index" class="papyrus-button styled-button-papyrus">
+            <a asp-controller="Reglas" asp-action="Index" class="rules-button"> 
                 <i class="fas fa-book-open"></i> Ver Reglas
             </a>
-            <a asp-controller="Juego" asp-action="Index" class="papyrus-button styled-button-papyrus primary-papyrus-button">
-                <i class="fas fa-dice-d20"></i> Ir al Juego
-            </a>
+            @if (hayJuegoActivo) 
+            {
+                        <a asp-controller="Juego" asp-action="Index" class="rules-button"> 
+                        <i class="fas fa-dice-d20"></i> Ir al Juego
+                    </a>
+            }
         </div>
         @* ---------- FIN DE LA MODIFICACIÓN ---------- *@
     </div>
@@ -422,8 +430,8 @@
 
     /* Estilo base para los botones (<a> tags) */
     .papyrus-button {
-        display: inline-flex; 
-        align-items: center; 
+        display: inline-flex;
+        align-items: center;
         justify-content: center;
         padding: 12px 25px;
         font-family: 'Georgia', serif;

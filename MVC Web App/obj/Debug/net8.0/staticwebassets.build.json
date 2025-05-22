@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "irNoI/nUJdYY77vJ788JE0ki9kcNf7xJpvB6DSRzShk=",
+  "Hash": "AzuE20HIYVnR+EtKkHi5xWbo36pUhQaplX5sa1lpZhk=",
   "Source": "MVC_ProyectoFinalPOO",
   "BasePath": "_content/MVC_ProyectoFinalPOO",
   "Mode": "Default",
@@ -73,8 +73,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "9fozidyc4v",
-      "Integrity": "m9Mj46NoMdzBFXUfAoEiSYEUF9jIbwqsfDeN2vaCfvs=",
+      "Fingerprint": "8mx7vs5zw7",
+      "Integrity": "8CTE5EwbIR1Vvaj16+5v0x9Ak+QVWNtY03Z71iTRaCY=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -1531,7 +1531,7 @@
   ],
   "Endpoints": [
     {
-      "Route": "css/site.9fozidyc4v.css",
+      "Route": "css/site.8mx7vs5zw7.css",
       "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -1541,7 +1541,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "51572"
+          "Value": "51455"
         },
         {
           "Name": "Content-Type",
@@ -1549,11 +1549,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"m9Mj46NoMdzBFXUfAoEiSYEUF9jIbwqsfDeN2vaCfvs=\""
+          "Value": "\"8CTE5EwbIR1Vvaj16+5v0x9Ak+QVWNtY03Z71iTRaCY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 22 May 2025 07:45:38 GMT"
+          "Value": "Thu, 22 May 2025 23:48:17 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1563,7 +1563,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "9fozidyc4v"
+          "Value": "8mx7vs5zw7"
         },
         {
           "Name": "label",
@@ -1571,7 +1571,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-m9Mj46NoMdzBFXUfAoEiSYEUF9jIbwqsfDeN2vaCfvs="
+          "Value": "sha256-8CTE5EwbIR1Vvaj16+5v0x9Ak+QVWNtY03Z71iTRaCY="
         }
       ]
     },
@@ -1586,7 +1586,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "51572"
+          "Value": "51455"
         },
         {
           "Name": "Content-Type",
@@ -1594,11 +1594,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"m9Mj46NoMdzBFXUfAoEiSYEUF9jIbwqsfDeN2vaCfvs=\""
+          "Value": "\"8CTE5EwbIR1Vvaj16+5v0x9Ak+QVWNtY03Z71iTRaCY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 22 May 2025 07:45:38 GMT"
+          "Value": "Thu, 22 May 2025 23:48:17 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1608,7 +1608,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-m9Mj46NoMdzBFXUfAoEiSYEUF9jIbwqsfDeN2vaCfvs="
+          "Value": "sha256-8CTE5EwbIR1Vvaj16+5v0x9Ak+QVWNtY03Z71iTRaCY="
         }
       ]
     },

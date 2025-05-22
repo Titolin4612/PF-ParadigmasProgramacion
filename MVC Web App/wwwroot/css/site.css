@@ -147,12 +147,36 @@ html, body {
     transition: all 0.3s ease;
 }
 
+.mazo-button {
+    background: linear-gradient(to right, #110C19, #3D2A51);
+    color: #F9E2BB; /* Sigue negro */
+    padding: 14px;
+    font-weight: bold;
+    font-size: 1rem;
+    font-size: 15px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+    .mazo-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+        color: white /* Sigue negro */
+
+    }
+
     /* Hover - se mantiene el color del texto */
 .rules-button:hover,
 .play-button:hover, .turno-button {
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-    color: #2a1f0f; /* Sigue negro */
+    color: black /* Sigue negro */
 }
 
 /* LISTA DE JUGADORES */
@@ -414,27 +438,7 @@ a, a:hover, a:visited, a:focus {
         color: white;
     }
 
-.mazo-button {
-    background: linear-gradient(#c17e3a, #8b0000);
-    color: #fff;
-    padding: 12px 30px;
-    font-weight: bold;
-    font-family: 'Georgia', serif;
-    font-size: 1rem;
-    text-decoration: none;
-    border: none;
-    border-radius: 6px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-}
 
-    .mazo-button:hover {
-        background: linear-gradient(#a85f00, #6c0000);
-        transform: translateY(-2px);
-        box-shadow: 0 6px 12px rgba(0,0,0,0.5);
-        color: white;
-    }
 
 .rules-container {
     margin-top: 150px; /* Ajusta a gusto */
