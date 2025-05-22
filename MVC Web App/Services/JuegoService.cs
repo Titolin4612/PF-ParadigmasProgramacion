@@ -53,6 +53,7 @@ namespace MVC_ProyectoFinalPOO.Services
 
             jugadorActual.Puntos += puntos;
             jugadorActual.L_cartas_jugador.Add(carta); // También le agregas la carta
+            juego.ValidarYDispararEventos(null);
 
             return (carta, puntos);
         }
@@ -77,8 +78,6 @@ namespace MVC_ProyectoFinalPOO.Services
 
         public Jugador FinalizarJuego()
         {
-
-            juego.FinalizarJuego();
             ObtenerHistorial();
             return juego.FinalizarJuego();
         }

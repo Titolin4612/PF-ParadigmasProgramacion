@@ -124,6 +124,7 @@ namespace MVC_ProyectoFinalPOO.Controllers
                 if (_juegoService.JuegoTerminado())
                 {
                     Finalizar();
+                    ViewBag.HistorialJuego = _juegoService.ObtenerHistorial();
                 }
 
                 return View("Index");
@@ -147,13 +148,14 @@ namespace MVC_ProyectoFinalPOO.Controllers
             
             _juegoService.PasarTurno();
             ViewBag.HistorialJuego = _juegoService.ObtenerHistorial();
+
             return RedirectToAction("Index");
         }
 
         [HttpPost]
         public IActionResult Finalizar()
         {
-            _juegoService.FinalizarJuego();
+            juegoIniciado = false;
             var ganador = _juegoService.FinalizarJuego();
             ViewBag.HistorialJuego = _juegoService.ObtenerHistorial();
             ViewBag.Jugadores = _juegoService.ObtenerJugadores();
@@ -167,11 +169,10 @@ namespace MVC_ProyectoFinalPOO.Controllers
             {
                 ViewBag.MensajeError = "La partida ha finalizado.";
             }
-            juegoIniciado = false;
             ViewBag.HistorialJuego = _juegoService.ObtenerHistorial();
             ViewBag.HistorialJuego = _juegoService.ObtenerHistorial();
             ViewBag.JuegoTerminado = _juegoService.JuegoTerminado();
-            return View("Index");
+            return RedirectToAction("Index");
         }
 
         [HttpPost]
@@ -189,7 +190,7 @@ namespace MVC_ProyectoFinalPOO.Controllers
                 ViewBag.MensajeError = "Error al inciiar nueva ronda, no hay suficientes jugadores";
             }
 
-            return RedirectToAction("Index");
+            return View("Index");
         }
 
         [HttpPost]

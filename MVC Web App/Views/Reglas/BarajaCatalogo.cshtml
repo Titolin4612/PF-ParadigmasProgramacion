@@ -134,11 +134,17 @@
                 }
                 </section>
         }
-        <div class="return-section-papyrus">
-            <a href="javascript:history.back()" class="rules-button">
-                <i class="fas fa-arrow-left"></i> Volver
+
+        @* ---------- INICIO DE LA MODIFICACIÓN PARA BOTONES DE ACCIÓN ---------- *@
+        <div class="action-buttons-section-papyrus">
+            <a asp-controller="Reglas" asp-action="Index" class="papyrus-button styled-button-papyrus">
+                <i class="fas fa-book-open"></i> Ver Reglas
+            </a>
+            <a asp-controller="Juego" asp-action="Index" class="papyrus-button styled-button-papyrus primary-papyrus-button">
+                <i class="fas fa-dice-d20"></i> Ir al Juego
             </a>
         </div>
+        @* ---------- FIN DE LA MODIFICACIÓN ---------- *@
     </div>
 </div>
 
@@ -199,54 +205,42 @@
 
     /* === ESTILO PARA LA CARTA === */
     .card-poster-item {
-        position: relative; 
+        position: relative;
         min-width: 185px;
         max-width: 205px;
         aspect-ratio: 10 / 14;
         cursor: pointer;
         flex-shrink: 0;
-        border-radius: 12px; 
+        border-radius: 12px;
         box-shadow: 0 6px 18px rgba(0,0,0,0.35);
         border: 1px solid rgba(50,30,10,0.25);
-        overflow: hidden; 
+        overflow: hidden;
         transition: transform 0.25s ease-out, box-shadow 0.25s ease-out;
         background-color: #333; /* Fallback si la imagen de fondo no carga o es transparente */
     }
     .card-poster-item:hover,
-    .card-poster-item:focus-within { 
+    .card-poster-item:focus-within {
         transform: translateY(-6px) scale(1.05);
         box-shadow: 0 10px 25px rgba(0,0,0,0.45);
-        z-index: 10; 
+        z-index: 10;
     }
      .card-poster-item:focus-within {
         outline: 2px solid #c5a052;
         outline-offset: 3px;
     }
 
-    /* === IMAGEN DE FONDO DE LA CARTA Y SUS EFECTOS === */
     .card-visual-background {
         position: absolute;
         top: 0; left: 0; width: 100%; height: 100%;
         object-fit: cover;
         border-radius: inherit;
         z-index: 1;
-
-        /* --- AJUSTA ESTOS VALORES PARA CAMBIAR EL EFECTO DE LA IMAGEN --- */
-        opacity: 0.8; /* 0 (transparente) a 1 (opaco). Más alto = más color original. */
-                      /* Un valor de 0.7-0.9 muestra más la imagen que antes (0.5) */
-
-        /* filter: grayscale(10%) sepia(10%); */ /* Descomenta y ajusta si quieres filtros de color. */
-                                            /* grayscale(0%) sepia(0%) o eliminar la línea no aplica filtro. */
-                                            /* Ej: grayscale(5%) sepia(5%) es muy sutil. */
-        /* Si quieres la imagen completamente original, sin transparencia ni filtro: */
-        /* opacity: 1; */
-        /* (y comenta o elimina la línea de filter) */
-        /* PERO CUIDADO: el texto del anverso podría no ser legible si la imagen es muy clara o compleja */
+        opacity: 0.8;
     }
 
     .card-visual-overlay-content {
-        position: relative; 
-        z-index: 2; 
+        position: relative;
+        z-index: 2;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -277,31 +271,30 @@
         filter: drop-shadow(1px 1px 3px rgba(0,0,0,0.6));
     }
 
-    /* --- INFORMACIÓN DEL HOVER MEJORADA --- */
     .card-hover-info {
         position: absolute;
         top: 0; left: 0;
         width: 100%; height: 100%;
         background: linear-gradient(175deg, rgba(15, 10, 25, 0.97) 0%, rgba(5, 0, 15, 0.98) 100%);
-        color: #f8f0e0; 
+        color: #f8f0e0;
         padding: 18px 15px;
         box-sizing: border-box;
         border-radius: inherit;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        font-size: 0.82rem; 
+        font-size: 0.82rem;
         line-height: 1.45;
         opacity: 0;
         visibility: hidden;
-        transform: translateY(10px) scale(0.97); 
-        transform-origin: center center; 
-        transition: opacity 0.28s cubic-bezier(0.25, 0.1, 0.25, 1), 
-                    visibility 0s linear 0.28s, 
+        transform: translateY(10px) scale(0.97);
+        transform-origin: center center;
+        transition: opacity 0.28s cubic-bezier(0.25, 0.1, 0.25, 1),
+                    visibility 0s linear 0.28s,
                     transform 0.28s cubic-bezier(0.25, 0.1, 0.25, 1);
         z-index: 3;
-        box-shadow: inset 0 0 20px rgba(0,0,0,0.25), 
-                    inset 0 0 5px rgba(255,235,179,0.1); 
+        box-shadow: inset 0 0 20px rgba(0,0,0,0.25),
+                    inset 0 0 5px rgba(255,235,179,0.1);
     }
 
     .card-poster-item:hover .card-hover-info,
@@ -309,27 +302,27 @@
         opacity: 1;
         visibility: visible;
         transform: translateY(0) scale(1);
-        transition-delay: 0.05s; 
+        transition-delay: 0.05s;
     }
 
-    .card-hover-info h3 { 
+    .card-hover-info h3 {
         font-family: 'Cinzel Decorative', cursive;
-        font-size: 1.25em; 
-        color: #ffeeaa; 
+        font-size: 1.25em;
+        color: #ffeeaa;
         text-align: center;
         margin: 0 0 12px 0;
-        padding-bottom: 10px; 
-        border-bottom: 2px solid; 
+        padding-bottom: 10px;
+        border-bottom: 2px solid;
         border-image: linear-gradient(to right, rgba(255,238,170,0.2), rgba(255,238,170,0.8), rgba(255,238,170,0.2)) 1;
-        text-shadow: 0 0 8px rgba(255, 220, 100, 0.6), 0 0 3px rgba(0,0,0,0.5); 
+        text-shadow: 0 0 8px rgba(255, 220, 100, 0.6), 0 0 3px rgba(0,0,0,0.5);
     }
 
     .hover-info-content {
         flex-grow: 1;
-        margin-bottom: 12px; 
+        margin-bottom: 12px;
         overflow-y: auto;
         scrollbar-width: thin;
-        scrollbar-color: #cdaa70 #504030; 
+        scrollbar-color: #cdaa70 #504030;
     }
     .hover-info-content::-webkit-scrollbar { width: 8px; }
     .hover-info-content::-webkit-scrollbar-track { background: #504030; border-radius: 4px;}
@@ -337,19 +330,19 @@
 
     .hover-info-content p { margin: 6px 0; }
     .hover-info-content p strong {
-        color: #ffe0b3; 
+        color: #ffe0b3;
         font-weight: 600;
     }
     .hover-info-content .description {
         font-style: italic;
         font-size: 0.95em;
-        color: #e0d8c8; 
+        color: #e0d8c8;
         margin-top: 10px;
         padding: 5px;
-        background-color: rgba(0,0,0,0.05); 
+        background-color: rgba(0,0,0,0.05);
         border-radius: 3px;
-        max-height: 85px; 
-        overflow-y: auto; 
+        max-height: 85px;
+        overflow-y: auto;
     }
 
     .hover-info-footer {
@@ -361,64 +354,118 @@
         font-size: 0.9em;
     }
 
-    .hover-info-footer span:first-child { 
+    .hover-info-footer span:first-child {
         font-weight: 500;
         color: #f0e8d8;
     }
     .hover-info-footer .points-positive-papyrus,
     .hover-info-footer .points-negative-papyrus {
-        font-weight: 800; 
-        font-size: 1.4em; 
-        padding: 3px 8px; 
+        font-weight: 800;
+        font-size: 1.4em;
+        padding: 3px 8px;
         border-radius: 4px;
-        margin-left: 5px; 
-        line-height: 1; 
-        display: inline-block; 
+        margin-left: 5px;
+        line-height: 1;
+        display: inline-block;
     }
     .points-positive-papyrus {
-        color: #90ee90; 
+        color: #90ee90;
         background-color: rgba(144, 238, 144, 0.15);
         border: 1px solid rgba(144, 238, 144, 0.4);
-        text-shadow: 0 0 8px #90ee90, 0 0 3px #508050; 
+        text-shadow: 0 0 8px #90ee90, 0 0 3px #508050;
         box-shadow: 0 0 5px rgba(144,238,144,0.3);
     }
     .points-negative-papyrus {
-        color: #ff9999; 
+        color: #ff9999;
         background-color: rgba(255, 153, 153, 0.15);
         border: 1px solid rgba(255, 153, 153, 0.4);
-        text-shadow: 0 0 8px #ff9999, 0 0 3px #a06060; 
+        text-shadow: 0 0 8px #ff9999, 0 0 3px #a06060;
         box-shadow: 0 0 5px rgba(255,153,153,0.3);
     }
 
     .badge-type {
-        padding: 5px 10px; 
-        border-radius: 6px; 
-        font-size: 0.85em; 
+        padding: 5px 10px;
+        border-radius: 6px;
+        font-size: 0.85em;
         font-weight: bold;
         color: #ffffff;
         text-transform: uppercase;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.1); 
+        box-shadow: 0 2px 4px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.1);
         transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
-        border-top: 1px solid rgba(255,255,255,0.15); 
+        border-top: 1px solid rgba(255,255,255,0.15);
     }
-    .badge-type:hover { 
+    .badge-type:hover {
         transform: translateY(-2px) scale(1.03);
         box-shadow: 0 4px 8px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.1);
     }
-    .badge-type.type-juego { background: linear-gradient(to bottom, #2a75bb, #1a4f7a); } /* Azul más profundo */
-    .badge-type.type-premio { background: linear-gradient(to bottom, #28a745, #1e7d32); } /* Verde */
-    .badge-type.type-castigo { background: linear-gradient(to bottom, #a04040, #8b0000); } /* Rojo oscuro (sin cambios) */
+    .badge-type.type-juego { background: linear-gradient(to bottom, #2a75bb, #1a4f7a); }
+    .badge-type.type-premio { background: linear-gradient(to bottom, #28a745, #1e7d32); }
+    .badge-type.type-castigo { background: linear-gradient(to bottom, #a04040, #8b0000); }
 
-
-
-    /* --- ESTILOS AUXILIARES --- */
+    /* --- ESTILOS AUXILIARES Y PARA LOS NUEVOS BOTONES --- */
     .no-cards-message-papyrus { text-align: center; padding: 20px; font-style: italic; color: #605040; }
     .papyrus-alert { margin: 20px; padding: 15px 20px; border-radius: 6px; font-size: 1em; display: flex; align-items: center; background-color: #fff3cd; color: #664d03; border: 1px solid #ffe69c; }
     .papyrus-alert i { margin-right: 10px; font-size: 1.2em; }
     .error-alert-papyrus { background-color: #f8d7da; color: #58151c; border-color: #f1aeb5; }
-    .return-section-papyrus { text-align: center; margin-top: 30px; margin-bottom: 10px; }
-    .papyrus-button { display: inline-block; padding: 10px 20px; font-family: 'Georgia', serif; font-size: 1em; color: #f5e5c5; background-color: #8c643c; border: 1px solid #5a4a3c; border-radius: 5px; text-decoration: none; box-shadow: 0 2px 4px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.1); transition: background-color 0.2s, box-shadow 0.2s; }
-    .papyrus-button:hover { background-color: #7a542c; box-shadow: 0 3px 6px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.05); color: #fff; }
-    .papyrus-button i { margin-right: 8px; }
+
+    /* Contenedor para los botones de acción inferiores */
+    .action-buttons-section-papyrus {
+        text-align: center;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        padding: 0 20px;
+        display: flex;
+        justify-content: center;
+        gap: 20px; /* Espacio entre los botones */
+        flex-wrap: wrap; /* Para que los botones se ajusten en pantallas pequeñas */
+    }
+
+    /* Estilo base para los botones (<a> tags) */
+    .papyrus-button {
+        display: inline-flex; 
+        align-items: center; 
+        justify-content: center;
+        padding: 12px 25px;
+        font-family: 'Georgia', serif;
+        font-size: 1em;
+        color: #f5e5c5;
+        background-color: #8c643c; /* Color base */
+        border: 1px solid #5a4a3c;
+        border-radius: 6px;
+        text-decoration: none;
+        box-shadow: 0 3px 5px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.1);
+        transition: background-color 0.2s, box-shadow 0.2s, transform 0.15s;
+        cursor: pointer;
+        font-weight: 500;
+        min-width: 180px; /* Ancho mínimo para los botones */
+        text-align: center;
+    }
+
+    .papyrus-button:hover {
+        background-color: #7a542c; /* Oscurecer en hover */
+        box-shadow: 0 4px 7px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.05);
+        color: #fff;
+        transform: translateY(-1px);
+    }
+    .papyrus-button:active {
+        transform: translateY(0px);
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2), inset 0 1px 0 rgba(0,0,0,0.1);
+    }
+
+    .papyrus-button i {
+        margin-right: 10px;
+        font-size: 0.95em;
+    }
+
+    /* Estilo específico para el botón primario (Ir al Juego) */
+    .primary-papyrus-button {
+        background-color: #7a542c; /* Un color un poco más oscuro o distintivo */
+        /* Puedes añadir más estilos si quieres que se vea más diferente */
+    }
+    .primary-papyrus-button:hover {
+        background-color: #68441c; /* Hover específico para el primario */
+    }
+
+    /* La clase styled-button-papyrus ya no es necesaria si .papyrus-button tiene todo */
 
 </style>

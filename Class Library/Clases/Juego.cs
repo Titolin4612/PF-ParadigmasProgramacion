@@ -39,7 +39,7 @@ namespace CL_ProyectoFinalPOO.Clases
         public void EventHandler() { }
 
         // Atributos de reglas de negocio
-        private  int cartasPorJugador = 3;
+        private  int cartasPorJugador = 15;
         private  int jugadoresMin = 2;
         private  int jugadoresMax = 4;
         private bool agotadasResto = false;
@@ -267,6 +267,8 @@ namespace CL_ProyectoFinalPOO.Clases
             {
                 IndiceJugador = 0;
             }
+
+
 
         }
 

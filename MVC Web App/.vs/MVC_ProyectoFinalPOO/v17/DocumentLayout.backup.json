@@ -64,7 +64,7 @@
               "RelativeDocumentMoniker": "Views\\Juego\\Index.cshtml",
               "ToolTip": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programaci\u00F3n\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\Views\\Juego\\Index.cshtml",
               "RelativeToolTip": "Views\\Juego\\Index.cshtml",
-              "ViewState": "AgIAAM4AAAAAAAAAAAAEwNgAAABhAAAAAAAAAA==",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAnwFgAAAB/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-05-22T21:11:21.262Z",
               "EditorCaption": ""
@@ -79,8 +79,7 @@
               "RelativeToolTip": "Services\\ReglasService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T21:08:49.834Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-22T21:08:49.834Z"
             },
             {
               "$type": "Document",
@@ -90,7 +89,7 @@
               "RelativeDocumentMoniker": "Services\\JuegoService.cs",
               "ToolTip": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programaci\u00F3n\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\Services\\JuegoService.cs",
               "RelativeToolTip": "Services\\JuegoService.cs",
-              "ViewState": "AgIAAE0AAAAAAAAAAAA8wGQAAABXAAAAAAAAAA==",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAvwDgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-22T21:08:49.382Z",
               "EditorCaption": ""
@@ -105,8 +104,7 @@
               "RelativeToolTip": "Services\\HomeService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T21:08:48.877Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-22T21:08:48.877Z"
             },
             {
               "$type": "Document",
@@ -118,8 +116,7 @@
               "RelativeToolTip": "Controllers\\ReglasController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T21:08:48.275Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-22T21:08:48.275Z"
             },
             {
               "$type": "Document",
@@ -129,7 +126,7 @@
               "RelativeDocumentMoniker": "Controllers\\JuegoController.cs",
               "ToolTip": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programaci\u00F3n\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\Controllers\\JuegoController.cs",
               "RelativeToolTip": "Controllers\\JuegoController.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAmwBYAAABKAAAAAAAAAA==",
+              "ViewState": "AgIAAHEAAAAAAAAAAAAcwIIAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-22T21:08:47.145Z",
               "EditorCaption": ""
@@ -144,8 +141,7 @@
               "RelativeToolTip": "Controllers\\HomeController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T21:08:45.975Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-22T21:08:45.975Z"
             }
           ]
         }
