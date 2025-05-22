@@ -47,13 +47,11 @@ namespace CL_ProyectoFinalPOO.Clases
 
         // Constructor
 
-        public Jugador(string nickname, int apuestaInicial, Juego juego)
+        public Jugador(string nickname, int apuestaInicial)
         {
             Nickname = nickname;
-            L_cartas_jugador = new List<Carta>();
             ApuestaInicial = apuestaInicial;
-            Juego = juego;
-            Juego.AsignarPuntosSegunApuesta(this);
+            L_cartas_jugador = new List<Carta>();
         }
 
 

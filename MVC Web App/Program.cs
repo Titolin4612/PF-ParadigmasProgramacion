@@ -35,6 +35,12 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+builder.Services.AddSession(); // Habilitar sesiones
+app.UseStaticFiles();
+app.UseRouting();
+app.UseSession(); // Importante para ViewBag y Session
+app.MapDefaultControllerRoute();
+app.Run();
 
 
 app.UseHttpsRedirection();

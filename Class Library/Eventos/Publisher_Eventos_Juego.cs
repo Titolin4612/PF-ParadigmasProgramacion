@@ -1,5 +1,6 @@
 ﻿using System;
 using CL_ProyectoFinalPOO.Clases;
+using CL_ProyectoFinalPOO.Interfaces;
 
 namespace CL_ProyectoFinalPOO.Eventos
 {
@@ -28,9 +29,10 @@ namespace CL_ProyectoFinalPOO.Eventos
             AgotadasResto?.Invoke();
         }
 
-        public void NotificarCambioLider(Jugador nuevoLider)
+        public void NotificarCambioLider(Jugador nuevoLider, Juego juego)
         {
             CambioLider?.Invoke(nuevoLider);
+            juego.NicknameLiderAnterior = nuevoLider.Nickname;
         }
     }
 }

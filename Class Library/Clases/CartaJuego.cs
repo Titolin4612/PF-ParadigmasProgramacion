@@ -9,7 +9,6 @@ namespace CL_ProyectoFinalPOO.Clases
 {
     public class CartaJuego : Carta
     {
-
         public enum Rareza
         {
             Comun,

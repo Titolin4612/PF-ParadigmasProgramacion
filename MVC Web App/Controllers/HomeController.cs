@@ -9,10 +9,12 @@ namespace MVC_ProyectoFinalPOO.Controllers
     public class HomeController : Controller
     {
         private readonly HomeService _homeService;
+        private readonly JuegoService _juegoService;
 
         public HomeController()
         {
             _homeService = HomeService.Instance; // Uso del Singleton
+            _juegoService = JuegoService.Instance; // Uso del Singleton
         }
 
         public IActionResult Index(string error = null)
@@ -64,9 +66,11 @@ namespace MVC_ProyectoFinalPOO.Controllers
             Debug.WriteLine("HomeController.Play: Iniciando proceso.");
             try
             {
+                
                 var jugadores = _homeService.ValidarJugadores();
                 HttpContext.Session.SetString("ListaJugadoresConfig", JsonSerializer.Serialize(jugadores));
                 Debug.WriteLine("HomeController.Play: Configuración de jugadores guardada en sesión. Redirigiendo a JuegoController.");
+                _juegoService.IniciarJuego(jugadores);
                 return RedirectToAction("Index", "Juego");
             }
             catch (Exception ex)

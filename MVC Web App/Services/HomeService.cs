@@ -10,25 +10,23 @@ namespace MVC_ProyectoFinalPOO.Services
     public class HomeService
     {
         private static HomeService _instance;
-        private static readonly object _lock = new object();
         private List<Jugador> _listaJugadoresConfig = new List<Jugador>();
 
         // Singleton: Constructor privado
-        private HomeService() { }
+        public HomeService() { }
 
         // Singleton: Método para obtener la instancia
         public static HomeService Instance
         {
             get
             {
-                lock (_lock)
+                
+                if (_instance == null)
                 {
-                    if (_instance == null)
-                    {
-                        _instance = new HomeService();
-                    }
-                    return _instance;
+                    _instance = new HomeService();
                 }
+                return _instance;
+                
             }
         }
 

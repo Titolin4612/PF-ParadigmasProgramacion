@@ -20,7 +20,7 @@ namespace CL_ProyectoFinalPOO.Clases
         private static List<CartaJuego> l_cartas_resto;
 
         // Atributos
-        private static int indiceJugador;
+        private static int indiceJugadorActual;
         private string nicknameLiderAnterior = null;
 
 
@@ -59,12 +59,12 @@ namespace CL_ProyectoFinalPOO.Clases
         public static List<Jugador> Jugadores { get => jugadores; set => jugadores = value; }
         public static List<CartaPremio> L_cartas_premio { get => l_cartas_premio; set => l_cartas_premio = value; }
         public static List<CartaCastigo> L_cartas_castigo { get => l_cartas_castigo; set => l_cartas_castigo = value; }
+        public static List<CartaJuego> L_cartas_resto { get => l_cartas_resto; set => l_cartas_resto = value; }
         public int CartasPorJugador { get => cartasPorJugador; }
         public int JugadoresMin { get => jugadoresMin; }
         public int JugadoresMax { get => jugadoresMax; }
 
-        public List<CartaJuego> L_cartas_resto { get => l_cartas_resto; set => l_cartas_resto = value; }
-        public static int IndiceJugador { get => indiceJugador; set => indiceJugador = value; }
+        public static int IndiceJugador { get => indiceJugadorActual; set => indiceJugadorActual = value; }
         public Historial Historial { get => historial; set => historial = value; }
         public Publisher_Eventos_Juego PublicadorJuego { get => publicadorJuego; set => publicadorJuego = value; }
         public bool AgotadasResto { get => agotadasResto; set => agotadasResto = value; }
@@ -76,11 +76,17 @@ namespace CL_ProyectoFinalPOO.Clases
         public Juego()
         {
             baraja = new Baraja(); 
-            Baraja.CargarCartas();
-            Jugadores = new List<Jugador>();
+                                  
+            Baraja.CargarCartas(); 
+
+            // Inicializar las listas de instancia de la partida
             L_cartas_resto = new List<CartaJuego>(Baraja.CartasJuego);
             L_cartas_premio = new List<CartaPremio>(Baraja.CartasPremio);
             L_cartas_castigo = new List<CartaCastigo>(Baraja.CartasCastigo);
+
+            Jugadores = new List<Jugador>();
+            indiceJugadorActual = 0;                 
+
             PublicadorJuego = new Publisher_Eventos_Juego();
             Historial = new Historial(PublicadorJuego);
         }
@@ -209,7 +215,7 @@ namespace CL_ProyectoFinalPOO.Clases
         }
 
         // Metodo para validar y disparar eventos
-        private void ValidarYDispararEventos(Jugador liderInicial)
+        public void ValidarYDispararEventos(Jugador liderInicial)
 {
             if (l_cartas_resto.Count == 0 && !agotadasResto)
             {
@@ -232,7 +238,7 @@ namespace CL_ProyectoFinalPOO.Clases
             Jugador liderNuevo = ObtenerLider();
             if (liderNuevo != null && liderNuevo.Nickname != nicknameLiderAnterior)
             {
-                PublicadorJuego.NotificarCambioLider(liderNuevo);
+                PublicadorJuego.NotificarCambioLider(liderNuevo, this);
                 nicknameLiderAnterior = liderNuevo.Nickname;
             }
         }
