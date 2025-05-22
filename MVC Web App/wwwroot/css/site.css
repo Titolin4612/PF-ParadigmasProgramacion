@@ -1393,318 +1393,330 @@ body.game-active-bg {
     margin: 1px;
 }
 
-/* JUEGO */
+/* JUEGO --------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
-/.revealed-card-zone {
-    perspective: 1000px;
+:root {
+    --card-bg-color: #1a1520; /* Fondo oscuro para la carta */
+    --card-border-color: rgba(200, 180, 150, 0.2); /* Borde sutil */
+    --card-text-primary: #f0e8d8; /* Texto principal */
+    --card-text-secondary: #d0c0a0; /* Texto secundario (mitología, etiquetas) */
+    --card-text-title: #ffe8c0; /* Título de la carta */
+    --card-accent-gold: #c5a052; /* Acento dorado (como en el catálogo) */
+    --points-positive-color: #a0ffa0;
+    --points-negative-color: #ffa0a0;
+    --points-neutral-color: #dadada;
+    --font-primary: 'Sorts Mill Goudy', serif; /* Fuente más clásica para texto general */
+    --font-decorative: 'Cinzel Decorative', cursive; /* Fuente para títulos y elementos destacados */
+}
+
+.revealed-card-zone {
+    perspective: 1500px;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 480px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    min-height: 520px; /* Un poco más de espacio */
+    padding: 25px;
 }
 
-.game-card-visual {
-    width: 300px;
-    height: 450px;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4), 0 0 0 5px #4a3b2a;
-    background: linear-gradient(145deg, #7d6c59, #524536);
-    color: #f0e6d2;
-    font-family: 'Georgia', 'Times New Roman', Times, serif;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
+.revealed-game-card {
+    width: 340px; /* Ancho de la carta */
+    height: 510px; /* Alto de la carta (proporción ~2.5:3.5) */
     position: relative;
-    border: 3px solid transparent;
+    border-radius: 18px; /* Bordes más redondeados */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 0 4px var(--card-border-color), inset 0 0 20px rgba(0,0,0,0.4);
+    overflow: hidden;
     transform-style: preserve-3d;
-    transition: transform 0.5s ease-out, box-shadow 0.5s ease-out;
+    background-color: var(--card-bg-color);
+    transition: transform 0.7s cubic-bezier(0.19, 1, 0.22, 1), box-shadow 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+    font-family: var(--font-primary);
 }
 
-    .game-card-visual.revealed-animation {
-        animation: revealCardAnim 0.9s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    .revealed-game-card.animate-in {
+        animation: cardEntranceAnimFull 1.2s cubic-bezier(0.19, 1, 0.22, 1) 0.1s forwards;
     }
 
-@keyframes revealCardAnim {
+@keyframes cardEntranceAnimFull {
     0% {
-        transform: scale(0.3) rotateY(120deg) translateY(80px) translateX(50px) translateZ(-100px);
+        transform: scale(0.4) rotateY(70deg) rotateX(25deg) translateY(60px) translateZ(-200px);
         opacity: 0;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
 
-    60% {
-        transform: scale(1.05) rotateY(-10deg) translateY(0) translateX(0) translateZ(20px);
+    65% {
+        transform: scale(1.06) rotateY(-7deg) rotateX(-3deg) translateY(0px) translateZ(40px);
         opacity: 1;
+        box-shadow: 0 18px 45px rgba(0,0,0,0.6), 0 0 0 5px rgba(220,200,170,0.25), inset 0 0 25px rgba(0,0,0,0.5);
     }
 
     100% {
-        transform: scale(1) rotateY(0deg) translateY(0) translateX(0) translateZ(0px);
+        transform: scale(1) rotateY(0deg) rotateX(0deg) translateY(0px) translateZ(0px);
         opacity: 1;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 0 4px var(--card-border-color), inset 0 0 20px rgba(0,0,0,0.4);
     }
 }
 
-.game-card-visual:hover {
-    transform: scale(1.03) rotateY(3deg) translateZ(10px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.5), 0 0 0 5px #6a543e;
+.revealed-game-card:hover {
+    transform: scale(1.04) rotateY(1.5deg) translateZ(20px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.65), 0 0 0 5px rgba(220,200,170,0.28), inset 0 0 25px rgba(0,0,0,0.5);
 }
 
-.card-top-banner {
-    background: rgba(0, 0, 0, 0.65);
-    padding: 10px 15px;
+.card-visual-background-game {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+    z-index: 1;
+    /* Podrías añadir una leve opacidad o filtro si el fondo es muy brillante */
+    /* opacity: 0.8; filter: brightness(0.9); */
+}
+
+.card-content-overlay-game { /* Gradiente sobre el fondo para legibilidad */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(10, 5, 20, 0.5) 0%, rgba(10, 5, 20, 0.75) 50%, rgba(5,0,15,0.9) 100%);
+    z-index: 2;
+    border-radius: inherit;
+}
+
+.card-inner-content-game { /* Contenido real de la carta, sobre el overlay */
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid #382c1e;
-    text-shadow: 1px 1px 3px #000;
+    color: var(--card-text-primary);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 
-.card-title-text {
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #fff;
+/* Área superior de la carta (nombre, mitología, logo) */
+.card-top-section-game {
+    text-align: center;
 }
 
-.card-mythology-badge {
-    font-size: 0.7em;
-    padding: 4px 8px;
-    background-color: #3e2e1f;
-    border-radius: 5px;
-    border: 1px solid #c8b08f;
+.card-title-game {
+    font-family: var(--font-decorative);
+    font-size: 1.9em; /* Título más grande */
+    color: var(--card-text-title);
+    margin: 0 0 2px 0;
+    line-height: 1.1;
+    text-shadow: 0 0 12px rgba(255, 230, 180, 0.7), 1px 1px 3px rgba(0,0,0,0.8);
+}
+
+.card-mythology-game {
+    font-family: var(--font-primary);
+    font-size: 0.85em;
+    color: var(--card-text-secondary);
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 1.5px;
+    margin-bottom: 15px; /* Espacio antes del logo */
+    opacity: 0.9;
 }
 
-.card-art-area {
-    height: 200px;
-    overflow: hidden;
-    margin: 10px;
-    border-radius: 8px;
-    border: 2px solid #6a543e;
-    box-shadow: inset 0 0 10px rgba(0,0,0,0.7);
+.card-logo-area-game {
+    width: 75%;
+    max-height: 120px; /* Ajusta según el tamaño de tu logo */
+    margin: 0 auto 15px auto; /* Espacio después del logo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-    .card-art-area img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-        transition: transform 0.4s ease-out;
+    .card-logo-area-game img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        filter: drop-shadow(2px 3px 6px rgba(0,0,0,0.6));
     }
 
-.game-card-visual:hover .card-art-area img {
-    transform: scale(1.05);
+/* Sección media para tipo, rareza/atributo y descripción */
+.card-middle-section-game {
+    flex-grow: 1; /* Ocupa el espacio disponible */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra el contenido si hay poco */
+    overflow: hidden; /* Previene que la descripción crezca demasiado */
+    margin-bottom: 15px;
 }
 
-.card-description-box {
-    padding: 12px 15px;
-    font-size: 0.85em;
-    line-height: 1.45;
-    background: rgba(0, 0, 0, 0.35);
-    margin: 0 10px 10px 10px;
+.card-attributes-display-game { /* Contenedor para Tipo y Atributo específico */
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    background-color: rgba(0,0,0,0.3);
+    border: 1px solid rgba(200, 180, 150, 0.1);
+    border-radius: 8px;
+    font-size: 0.95em;
+}
+
+    .card-attributes-display-game p {
+        margin: 5px 0;
+        display: flex; /* Para alinear etiqueta y valor */
+        justify-content: space-between; /* Espacio entre etiqueta y valor */
+    }
+
+    .card-attributes-display-game .attr-label {
+        font-weight: 600;
+        color: var(--card-text-secondary);
+        margin-right: 8px;
+        flex-shrink: 0; /* Evita que la etiqueta se encoja */
+    }
+
+    .card-attributes-display-game .attr-value {
+        color: var(--card-text-primary);
+        text-align: right; /* Alinea el valor a la derecha */
+        word-break: break-word; /* Si el valor es muy largo */
+    }
+
+        .card-attributes-display-game .attr-value.rarity {
+            font-weight: bold;
+        }
+/* Para las clases de color de rareza */
+
+
+.card-description-text-game {
+    font-family: var(--font-primary);
+    font-size: 0.9em;
+    line-height: 1.55;
+    color: #e0d8c8;
+    padding: 8px;
+    background-color: rgba(0,0,0,0.2);
     border-radius: 5px;
-    flex-grow: 1;
+    max-height: 80px;
     overflow-y: auto;
-    border: 1px solid #5a4a3a;
-    max-height: 100px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--card-accent-gold) rgba(0,0,0,0.1);
 }
 
-    .card-description-box strong { /* Para el resaltado de la descripción si se usa */
-        color: #ffd700;
+    .card-description-text-game::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .card-description-text-game::-webkit-scrollbar-track {
+        background: rgba(0,0,0,0.1);
+        border-radius: 3px;
+    }
+
+    .card-description-text-game::-webkit-scrollbar-thumb {
+        background-color: var(--card-accent-gold);
+        border-radius: 3px;
+    }
+
+    .card-description-text-game strong {
+        color: var(--card-accent-gold);
+        font-weight: bold;
+    }
+
+/* Footer (solo puntos) */
+.card-points-footer-game {
+    padding-top: 15px;
+    margin-top: auto; /* Empuja al fondo si hay espacio */
+    border-top: 1px solid rgba(200, 180, 150, 0.2);
+    text-align: center;
+}
+
+    .card-points-footer-game .points-text-label {
+        font-size: 1em;
+        color: var(--card-text-secondary);
         font-weight: 600;
     }
 
-.card-stats-banner {
-    background: rgba(0, 0, 0, 0.65);
-    padding: 10px 15px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    border-top: 2px solid #382c1e;
-    font-size: 0.85em;
-    min-height: 40px;
-}
-
-    .card-stats-banner span {
-        display: flex;
-        align-items: center;
-        gap: 6px;
+    .card-points-footer-game .points-value-display {
+        font-family: var(--font-decorative);
+        font-size: 2.2em; /* Puntos más grandes */
+        font-weight: 700;
+        padding: 0 5px;
+        border-radius: 4px;
+        line-height: 1;
+        display: inline-block;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
     }
 
-    .card-stats-banner strong {
-        font-size: 1.1em;
-    }
-
-    .card-stats-banner .fas {
-        font-size: 1.1em;
-        opacity: 0.8;
-    }
-
-/* Colores por tipo de carta y borde */
-.game-card-visual.type-juego {
-    border-color: #4a90e2;
-    box-shadow: 0 0 15px #4a90e2, 0 0 25px rgba(74,144,226,0.4) inset, 0 10px 25px rgba(0,0,0,0.4), 0 0 0 5px #357abd;
+.points-value-display.points-positive {
+    color: var(--points-positive-color);
 }
 
-.game-card-visual.type-premio {
-    border-color: #7ed321;
-    box-shadow: 0 0 15px #7ed321, 0 0 25px rgba(126,211,33,0.4) inset, 0 10px 25px rgba(0,0,0,0.4), 0 0 0 5px #68b01b;
+.points-value-display.points-negative {
+    color: var(--points-negative-color);
 }
 
-.game-card-visual.type-castigo {
-    border-color: #d0021b;
-    box-shadow: 0 0 15px #d0021b, 0 0 25px rgba(208,2,27,0.4) inset, 0 10px 25px rgba(0,0,0,0.4), 0 0 0 5px #a30215;
+.points-value-display.points-neutral {
+    color: var(--points-neutral-color);
 }
 
-.game-card-visual.type-desconocido {
-    border-color: #888;
-    box-shadow: 0 0 15px #888, 0 0 25px rgba(136,136,136,0.4) inset, 0 10px 25px rgba(0,0,0,0.4), 0 0 0 5px #666;
-}
-
-
-/* Rareza (el JSON usa "Comun", "Especial", "Rara", "Epica", "Legendaria") */
+/* Clases de rareza (se mantienen) */
 .rarity-comun {
-    color: #e0e0e0;
+    color: #d8d8d8;
 }
 
 .rarity-especial {
-    color: #7ac5cd;
-    font-weight: bold;
+    color: #80d8ff;
 }
-/* Celeste para especial */
+
 .rarity-rara {
-    color: #6bb7ff;
-    font-weight: bold;
+    color: #60a8ff;
 }
 
 .rarity-epica {
-    color: #d870ff;
-    font-weight: bold;
-    text-shadow: 0 0 5px #d870ff;
+    color: #c080ff;
+    text-shadow: 0 0 5px #d870ff, 0 0 2px #d870ff;
 }
 
 .rarity-legendaria {
-    color: #ffc659;
-    font-weight: bold;
-    text-shadow: 0 0 8px #ffc659;
+    color: #ffd880;
+    text-shadow: 0 0 8px #ffc659, 0 0 3px #ffc659;
 }
 
-
-.points-indicator.points-positive {
-    color: #90ee90;
-    text-shadow: 0 0 6px #32cd32, 0 0 3px #32cd32;
-}
-
-.points-indicator.points-negative {
-    color: #ff7f7f;
-    text-shadow: 0 0 6px #dc143c, 0 0 3px #dc143c;
-}
-
-.points-indicator.points-neutral {
-    color: #f0e6d2;
-}
-
+/* Indicador flotante de puntos (se mantiene similar) */
 .points-change-floater {
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 3.5em;
-    font-weight: bold;
-    padding: 8px 18px;
-    border-radius: 10px;
-    z-index: 100;
+    font-size: 4.2em;
+    font-weight: 700;
+    padding: 12px 22px;
+    border-radius: 14px;
+    z-index: 150;
     opacity: 0;
-    animation: pointsChangeAnim 2s 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-    text-shadow: 0 0 5px black, 0 0 10px black, 2px 2px 2px rgba(0,0,0,0.5);
+    animation: pointsChangeAnimEpic 2.2s 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    text-shadow: 0 0 10px black, 0 0 15px black, 3px 3px 4px rgba(0,0,0,0.7);
     pointer-events: none;
+    font-family: var(--font-decorative);
 }
 
     .points-change-floater.points-positive {
-        color: #7ed321;
-        background-color: rgba(30, 80, 0, 0.75);
-        border: 2px solid #adff2f;
+        color: #90ee90;
+        background-color: rgba(20, 110, 20, 0.85);
+        border: 2px solid #b0ffb0;
     }
 
     .points-change-floater.points-negative {
-        color: #ff4500;
-        background-color: rgba(80, 10, 0, 0.75);
-        border: 2px solid #ff6347;
+        color: #ff9090;
+        background-color: rgba(110, 20, 20, 0.85);
+        border: 2px solid #ffb0b0;
     }
 
-@keyframes pointsChangeAnim {
-    0% {
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(0.3) rotate(-15deg);
+    .points-change-floater.points-neutral {
+        color: #e8e8e8;
+        background-color: rgba(60, 60, 60, 0.85);
+        border: 2px solid #f8f8f8;
     }
 
-    25% {
-        opacity: 1;
-        transform: translate(-50%, -50%) scale(1.15) rotate(7deg);
-    }
-
-    50% {
-        transform: translate(-50%, -50%) scale(1) rotate(-3deg);
-    }
-
-    85% {
-        opacity: 1;
-        transform: translate(-50%, -50%) scale(1) rotate(0deg);
-    }
-
-    100% {
-        opacity: 0;
-        transform: translate(-50%, -120%) scale(0.7) rotate(15deg);
-    }
+@keyframes pointsChangeAnimEpic { 
 }
 
-.card-display-placeholder {
-    width: 300px;
-    height: 450px;
-    border: 3px dashed #7f6d59;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: #b8a690;
-    background: rgba(30,20,10,0.2);
-    transition: background-color 0.3s, border-color 0.3s;
+
+.card-display-placeholder { /* ... */
 }
 
-    .card-display-placeholder:hover {
-        background-color: rgba(30,20,10,0.3);
-        border-color: #9f8d79;
-    }
-
-    .card-display-placeholder .placeholder-icon {
-        font-size: 4.5em;
-        margin-bottom: 20px;
-        opacity: 0.4;
-    }
-
-    .card-display-placeholder p {
-        font-size: 1.1em;
-        font-style: italic;
-    }
-
-.deck-pile img { /* Estilo para la imagen del mazo */
-    width: 100px;
-    margin-top: 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3), 0 0 0 2px #4a3b2a;
-    transition: transform 0.2s ease-out;
+.deck-pile img { /* ... */
 }
-
-    .deck-pile img:hover {
-        transform: scale(1.05);
-    }
-
-/* Estilos para los botones de acción si no están en los CSS globales */
-.main-action-button, .secondary-action-button, .tertiary-action-button {
-    /* Estilos base de botón aquí si es necesario */
-}
-
-    .tertiary-action-button.back-button { /* Para el botón Ver Baraja y Salir */
-        /* Estilos específicos si es necesario */
-    }

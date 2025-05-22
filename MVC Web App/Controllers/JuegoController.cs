@@ -1,172 +1,172 @@
-﻿// ViewModel para la carta revelada (puede ir en un archivo separado)
-using CL_ProyectoFinalPOO.Clases;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using CL_ProyectoFinalPOO.Clases; // Asegúrate que tus clases de carta están aquí
 using MVC_ProyectoFinalPOO.Services;
-using MVC_ProyectoFinalPOO.Controllers;
 
-
-public class JuegoController : Controller
+namespace MVC_ProyectoFinalPOO.Controllers
 {
-    private readonly HomeService _homeService;
-    private readonly JuegoService _juegoService;
-    public static bool juegoIniciado = false; // Considerar alternativas para el estado en producción
-
-    public JuegoController()
+    public class JuegoController : Controller
     {
-        _homeService = HomeService.Instance;
-        _juegoService = JuegoService.Instance;
-    }
+        private readonly HomeService _homeService;
+        private readonly JuegoService _juegoService;
+        public static bool juegoIniciado = false;
 
-    public IActionResult Index()
-    {
-        try
+        public JuegoController()
         {
-            // Lógica para iniciar el juego si no está iniciado
-            if (!juegoIniciado)
-            {
-                List<Jugador> jugadoresConfigurados = _homeService.ObtenerJugadores();
-                if (jugadoresConfigurados != null && jugadoresConfigurados.Any())
-                {
-                    _juegoService.IniciarJuego(jugadoresConfigurados);
-                    juegoIniciado = true;
-                }
-            }
-
-            var jugadoresEnPartida = _juegoService.ObtenerJugadores();
-            if (jugadoresEnPartida == null || !jugadoresEnPartida.Any())
-            {
-                ViewBag.MensajeError = "No hay jugadores configurados para la partida. Vuelve a la pantalla inicial.";
-                juegoIniciado = false; // Permitir reintentar configuración
-                                       // No se puede continuar sin jugadores, así que podrías retornar a Home
-                                       // return RedirectToAction("Index", "Home"); 
-            }
-
-            ViewBag.Jugadores = jugadoresEnPartida;
-            ViewBag.JugadorActual = _juegoService.ObtenerJugadorActual();
-            ViewBag.HistorialJuego = _juegoService.ObtenerHistorial();
-            ViewBag.JuegoTerminado = _juegoService.JuegoTerminado();
-            ViewBag.TotalCartasEnMazo = _juegoService.TotalCartas();
-
-            // CartaRevelada viene del POST de CogerCarta, o es null si es GET de SiguienteTurno/Finalizar
-            // La vista ya maneja ViewBag.CartaRevelada siendo null.
-
-            return View("Index");
+            _homeService = HomeService.Instance;
+            _juegoService = JuegoService.Instance;
         }
-        catch (Exception ex)
+
+        public IActionResult Index()
         {
-            ViewBag.MensajeError = "Error al cargar el juego: " + ex.Message;
-            juegoIniciado = false; // Resetear para permitir reintento
-            return View("Index"); // Presentar el error en la misma vista
-        }
-    }
-
-    [HttpPost]
-    public IActionResult CogerCarta()
-    {
-        try
-        {
-            var (carta, puntos) = _juegoService.CogerCarta();
-            var jugadorActual = _juegoService.ObtenerJugadorActual();
-
-            CartaReveladaViewModel viewModel = null;
-
-            if (carta != null) // Solo procesar si se obtuvo una carta
+            try
             {
-                viewModel = new CartaReveladaViewModel
+                if (!juegoIniciado)
                 {
-                    Nombre = carta.Nombre,
-                    Mitologia = carta.Mitologia,
-                    Descripcion = carta.Descripcion,
-                    // Asumiendo que ImagenUrl en tus clases Carta ya es la URL correcta (ej. ~/images/cards/...)
-                    // Si ImagenUrl es solo el nombre del archivo, necesitarías construir la ruta aquí o en la vista.
-                    ImagenArteUrl = carta.ImagenUrl,
-                    Puntos = puntos
-                };
+                    List<Jugador> jugadoresConfigurados = _homeService.ObtenerJugadores();
+                    if (jugadoresConfigurados != null && jugadoresConfigurados.Any())
+                    {
+                        _juegoService.IniciarJuego(jugadoresConfigurados);
+                        juegoIniciado = true;
+                    }
+                }
 
-                if (carta is CartaJuego juego)
+                var jugadoresEnPartida = _juegoService.ObtenerJugadores();
+                if (jugadoresEnPartida == null || !jugadoresEnPartida.Any())
                 {
-                    viewModel.TipoCarta = "juego";
-                    viewModel.Rareza = juego.RarezaCarta.ToString();
+                    ViewBag.MensajeError = "No hay jugadores configurados para la partida. Vuelve a la pantalla inicial.";
+                    juegoIniciado = false;
                 }
-                else if (carta is CartaPremio premio)
+
+                ViewBag.Jugadores = jugadoresEnPartida;
+                ViewBag.JugadorActual = _juegoService.ObtenerJugadorActual();
+                ViewBag.HistorialJuego = _juegoService.ObtenerHistorial();
+                ViewBag.JuegoTerminado = _juegoService.JuegoTerminado();
+                ViewBag.TotalCartasEnMazo = _juegoService.TotalCartas();
+
+                return View("Index");
+            }
+            catch (Exception ex)
+            {
+                ViewBag.MensajeError = "Error al cargar el juego: " + ex.Message;
+                juegoIniciado = false;
+                return View("Index");
+            }
+        }
+
+        [HttpPost]
+        public IActionResult CogerCarta()
+        {
+            try
+            {
+                var (carta, puntos) = _juegoService.CogerCarta();
+                var jugadorActual = _juegoService.ObtenerJugadorActual();
+
+                object cartaReveladaParaViewBag = null;
+
+                if (carta != null)
                 {
-                    viewModel.TipoCarta = "premio";
-                    viewModel.Bendicion = premio.Bendicion;
-                }
-                else if (carta is CartaCastigo castigo)
-                {
-                    viewModel.TipoCarta = "castigo";
-                    viewModel.Maleficio = castigo.Maleficio;
+                    // Inicializar todas las propiedades posibles a null o valores por defecto
+                    string tipoCarta = "desconocido";
+                    string nombre = carta.Nombre;
+                    string mitologia = carta.Mitologia;
+                    string descripcion = carta.Descripcion;
+                    // Asumiendo que ImagenUrl ya es la ruta correcta o solo el nombre del archivo
+                    // Si es solo el nombre, la vista se encargará de Url.Content()
+                    string imagenArteUrl = carta.ImagenUrl;
+                    string rareza = null;
+                    string bendicion = null;
+                    string maleficio = null;
+
+                    if (carta is CartaJuego juego)
+                    {
+                        tipoCarta = "juego";
+                        rareza = juego.RarezaCarta.ToString();
+                    }
+                    else if (carta is CartaPremio premio)
+                    {
+                        tipoCarta = "premio";
+                        bendicion = premio.Bendicion;
+                    }
+                    else if (carta is CartaCastigo castigo)
+                    {
+                        tipoCarta = "castigo";
+                        maleficio = castigo.Maleficio;
+                    }
+
+                    cartaReveladaParaViewBag = new
+                    {
+                        TipoCarta = tipoCarta,
+                        Nombre = nombre,
+                        Mitologia = mitologia,
+                        Descripcion = descripcion,
+                        ImagenArteUrl = imagenArteUrl,
+                        Puntos = puntos,
+                        Rareza = rareza,
+                        Bendicion = bendicion,
+                        Maleficio = maleficio
+                    };
                 }
                 else
                 {
-                    viewModel.TipoCarta = "desconocido"; // Para un tipo de carta no manejado explícitamente
+                    ViewBag.MensajeError = "No quedan más cartas en el mazo o no se pudo obtener una carta.";
                 }
+
+                ViewBag.CartaRevelada = cartaReveladaParaViewBag;
+                ViewBag.Jugadores = _juegoService.ObtenerJugadores();
+                ViewBag.JugadorActual = jugadorActual;
+                ViewBag.HistorialJuego = _juegoService.ObtenerHistorial();
+                ViewBag.JuegoTerminado = _juegoService.JuegoTerminado();
+                ViewBag.TotalCartasEnMazo = _juegoService.TotalCartas();
+
+                return View("Index");
+            }
+            catch (Exception ex)
+            {
+                ViewBag.MensajeError = "Error al coger carta: " + ex.Message;
+                ViewBag.CartaRevelada = null;
+                ViewBag.Jugadores = _juegoService.ObtenerJugadores();
+                ViewBag.JugadorActual = _juegoService.ObtenerJugadorActual();
+                ViewBag.HistorialJuego = _juegoService.ObtenerHistorial();
+                ViewBag.JuegoTerminado = _juegoService.JuegoTerminado();
+                ViewBag.TotalCartasEnMazo = _juegoService.TotalCartas();
+                return View("Index");
+            }
+        }
+
+        [HttpPost]
+        public IActionResult SiguienteTurno()
+        {
+            _juegoService.PasarTurno();
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public IActionResult Finalizar()
+        {
+            var ganador = _juegoService.FinalizarJuego();
+            ViewBag.Jugadores = _juegoService.ObtenerJugadores();
+            ViewBag.HistorialJuego = _juegoService.ObtenerHistorial();
+            ViewBag.JuegoTerminado = true;
+            ViewBag.CartaRevelada = null;
+
+            if (ganador != null)
+            {
+                ViewBag.MensajeError = $"🎉 ¡GANADOR! {ganador.Nickname} con {ganador.Puntos} puntos. 🎉";
             }
             else
             {
-                // No hay más cartas o error al obtenerla desde el servicio
-                ViewBag.MensajeError = "No quedan más cartas en el mazo o no se pudo obtener una carta.";
+                ViewBag.MensajeError = "La partida ha finalizado.";
             }
-
-
-            ViewBag.CartaRevelada = viewModel; // Puede ser null si no se cogió carta
-            ViewBag.Jugadores = _juegoService.ObtenerJugadores();
-            ViewBag.JugadorActual = jugadorActual;
-            ViewBag.HistorialJuego = _juegoService.ObtenerHistorial();
-            ViewBag.JuegoTerminado = _juegoService.JuegoTerminado();
-            ViewBag.TotalCartasEnMazo = _juegoService.TotalCartas();
-
+            juegoIniciado = false;
             return View("Index");
         }
-        catch (Exception ex)
+
+        [HttpPost]
+        public IActionResult Reiniciar()
         {
-            ViewBag.MensajeError = "Error al coger carta: " + ex.Message;
-            ViewBag.CartaRevelada = null;
-            // Poblar el resto del ViewBag para que la vista no falle
-            ViewBag.Jugadores = _juegoService.ObtenerJugadores();
-            ViewBag.JugadorActual = _juegoService.ObtenerJugadorActual();
-            ViewBag.HistorialJuego = _juegoService.ObtenerHistorial();
-            ViewBag.JuegoTerminado = _juegoService.JuegoTerminado();
-            ViewBag.TotalCartasEnMazo = _juegoService.TotalCartas();
-            return View("Index");
+            _juegoService.ReiniciarJuego();
+            juegoIniciado = false;
+            return RedirectToAction("Index", "Home");
         }
-    }
-
-    [HttpPost]
-    public IActionResult SiguienteTurno()
-    {
-        _juegoService.PasarTurno();
-        // ViewBag.CartaRevelada se limpiará naturalmente al hacer RedirectToAction
-        return RedirectToAction("Index");
-    }
-
-    [HttpPost]
-    public IActionResult Finalizar()
-    {
-        var ganador = _juegoService.FinalizarJuego();
-        ViewBag.Jugadores = _juegoService.ObtenerJugadores();
-        ViewBag.HistorialJuego = _juegoService.ObtenerHistorial();
-        ViewBag.JuegoTerminado = true;
-        ViewBag.CartaRevelada = null; // No hay carta al finalizar
-
-        if (ganador != null)
-        {
-            ViewBag.MensajeError = $"🎉 ¡GANADOR! {ganador.Nickname} con {ganador.Puntos} puntos. 🎉";
-        }
-        else
-        {
-            ViewBag.MensajeError = "La partida ha finalizado.";
-        }
-        juegoIniciado = false; // Preparar para una nueva partida desde Home
-        return View("Index");
-    }
-
-    [HttpPost]
-    public IActionResult Reiniciar()
-    {
-        _juegoService.ReiniciarJuego(); // Esto debería limpiar el estado en JuegoService
-        juegoIniciado = false;          // Resetear el flag del controlador
-        return RedirectToAction("Index", "Home");
     }
 }
