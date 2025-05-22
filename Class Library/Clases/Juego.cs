@@ -204,8 +204,6 @@ namespace CL_ProyectoFinalPOO.Clases
 
                 AplicarEfectoCartas(carta);
 
-                ValidarYDispararEventos(liderInicial);
-
                 return carta; 
             }
             catch (Exception ex)
@@ -242,6 +240,33 @@ namespace CL_ProyectoFinalPOO.Clases
                 nicknameLiderAnterior = liderNuevo.Nickname;
             }
 
+            for (int i = Jugadores.Count - 1; i >= 0; i--)
+            {
+                Jugador jugador = Jugadores[i];
+                if (jugador.Puntos <= 0 && !jugador.Perdio)
+                {
+                    PublicadorJuego.NotificarJugadorSinPuntos(jugador);
+                    jugador.Perdio = true; 
+                    Jugadores.RemoveAt(i);  
+
+                    if (i <= IndiceJugador)
+                    {
+                        if (IndiceJugador > 0) 
+                        {
+                            IndiceJugador--;
+                        }
+                    }
+                }
+            }
+
+            if (Jugadores.Count > 0 && IndiceJugador >= Jugadores.Count)
+            {
+                IndiceJugador = 0; 
+            }
+            else if (Jugadores.Count == 0)
+            {
+                IndiceJugador = 0;
+            }
 
         }
 
@@ -359,16 +384,36 @@ namespace CL_ProyectoFinalPOO.Clases
         public void IniciarRonda()
         {
             PublicadorJuego.NotificarInicioPartida();
-            Console.WriteLine("Iniciando nueva ronda...");
+            Console.WriteLine("Iniciando nueva ronda con jugadores y puntos actuales...");
+
             Baraja.CargarCartas();
+            L_cartas_resto = new List<CartaJuego>(Baraja.CartasJuego);
+            L_cartas_premio = new List<CartaPremio>(Baraja.CartasPremio);
+            L_cartas_castigo = new List<CartaCastigo>(Baraja.CartasCastigo);
             BarajarCartas();
-            RepartirCartasIniciales(CartasPorJugador);
+
+            if (Jugadores != null && Jugadores.Count() >= 2)
+            {
+                foreach (var jugador in Jugadores)
+                {
+                    jugador.L_cartas_jugador.Clear();
+                }
+            }
+            else
+            {
+                Console.WriteLine("Advertencia: Iniciando ronda sin jugadores definidos.");
+                Jugadores = new List<Jugador>();
+            }
+
+
+            RepartirCartasIniciales(CartasPorJugador); 
             IndiceJugador = 0;
-            Console.WriteLine("Ronda iniciada correctamente.");
             AgotadasResto = false;
             AgotadasCastigo = false;
             AgotadasPremio = false;
+            NicknameLiderAnterior = null;
 
+            Console.WriteLine("Nueva ronda iniciada. Los jugadores conservan sus puntos y reciben nuevas cartas.");
         }
 
         public void PasarTurno()

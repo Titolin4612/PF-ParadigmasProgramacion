@@ -24,6 +24,7 @@ namespace CL_ProyectoFinalPOO.Clases
             _publisher.AgotadasResto += AgotadasRestoHandler;
             _publisher.CambioLider += CambioLiderHandler;
             _publisher.InicioPartida += InicioPartidaHandler;
+            _publisher.SinPuntos += SinPuntosHandler;
             _publisher.CartasIniciales += CartasObtenidasHandler;
             _publisher.FinPartida += FinPartidaHandler;
         }
@@ -48,7 +49,7 @@ namespace CL_ProyectoFinalPOO.Clases
         {
             if (nuevoLider != null)
             {
-                _notificaciones.Add($"{DateTime.Now:HH:mm:ss} - ¡El líder del juego ha cambiado! Ahora es: {nuevoLider.Nickname} con {nuevoLider.Puntos} puntos.");
+                _notificaciones.Add($"{DateTime.Now:HH:mm:ss} - ¡El líder del juego ha cambiado! Ahora es: {nuevoLider.Nickname} con {nuevoLider.Puntos} puntos!");
             }
         }
         
@@ -64,28 +65,33 @@ namespace CL_ProyectoFinalPOO.Clases
 
             if (carta is CartaJuego)
             {
-                _notificaciones.Add($"{DateTime.Now:HH:mm:ss} - ¡{jugador.Nickname} recibio una carta de Juego: {carta.Nombre} de {carta.ObtenerPuntos()} puntos");
+                _notificaciones.Add($"{DateTime.Now:HH:mm:ss} - ¡{jugador.Nickname} recibio una carta de Juego: {carta.Nombre} de {carta.ObtenerPuntos()} puntos!");
             }
             else if (carta is CartaPremio)
             {
-                _notificaciones.Add($"{DateTime.Now:HH:mm:ss} - ¡{jugador.Nickname} recibio una carta de Premio: {carta.Nombre} de {carta.ObtenerPuntos()} puntos");
+                _notificaciones.Add($"{DateTime.Now:HH:mm:ss} - ¡{jugador.Nickname} recibio una carta de Premio: {carta.Nombre} de {carta.ObtenerPuntos()} puntos!");
             }
             else if (carta is CartaCastigo)
             {
-                _notificaciones.Add($"{DateTime.Now:HH:mm:ss} - ¡{jugador.Nickname} recibio una carta de Castigo: {carta.Nombre} de {carta.ObtenerPuntos()} puntos");
+                _notificaciones.Add($"{DateTime.Now:HH:mm:ss} - ¡{jugador.Nickname} recibio una carta de Castigo: {carta.Nombre} de {carta.ObtenerPuntos()} puntos!");
             }
 
+        }
+
+        public void SinPuntosHandler(Jugador jugador)
+        {
+            _notificaciones.Add($"{DateTime.Now:HH:mm:ss} - ¡El jugador {jugador.Nickname} se ha quedado sin puntos, pierde el juego.!");
         }
 
         private void FinPartidaHandler(Jugador ganador)
         {
             if (ganador != null)
             {
-                _notificaciones.Add($"{DateTime.Now:HH:mm:ss} - ¡El juego ha concluido!\nEl ganador fue {ganador.Nickname}, Se le dan 20 puntos adicionales, para un total de {ganador.Puntos} puntos.");
+                _notificaciones.Add($"{DateTime.Now:HH:mm:ss} - ¡El juego ha concluido!\nEl ganador fue {ganador.Nickname}, Se le dan 20 puntos adicionales, para un total de {ganador.Puntos} puntos.!");
             }
             else
             {
-                _notificaciones.Add($"{DateTime.Now:HH:mm:ss} - ¡El juego ha concluido! No hubo un ganador claro o la partida terminó en empate.");
+                _notificaciones.Add($"{DateTime.Now:HH:mm:ss} - ¡El juego ha concluido! No hubo un ganador claro o la partida terminó en empate!");
             }
         }
 

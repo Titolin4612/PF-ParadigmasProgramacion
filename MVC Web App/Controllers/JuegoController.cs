@@ -20,6 +20,7 @@ namespace MVC_ProyectoFinalPOO.Controllers
         {
             try
             {
+                ViewBag.HistorialJuego = _juegoService.ObtenerHistorial();
                 if (!juegoIniciado)
                 {
                     List<Jugador> jugadoresConfigurados = _homeService.ObtenerJugadores();
@@ -59,7 +60,7 @@ namespace MVC_ProyectoFinalPOO.Controllers
         public IActionResult CogerCarta()
         {
             try
-            {
+            {   
                 var (carta, puntos) = _juegoService.CogerCarta();
                 var jugadorActual = _juegoService.ObtenerJugadorActual();
 
@@ -143,19 +144,20 @@ namespace MVC_ProyectoFinalPOO.Controllers
         [HttpPost]
         public IActionResult SiguienteTurno()
         {
+            
             _juegoService.PasarTurno();
+            ViewBag.HistorialJuego = _juegoService.ObtenerHistorial();
             return RedirectToAction("Index");
         }
 
         [HttpPost]
         public IActionResult Finalizar()
         {
- 
+            _juegoService.FinalizarJuego();
             var ganador = _juegoService.FinalizarJuego();
             ViewBag.HistorialJuego = _juegoService.ObtenerHistorial();
             ViewBag.Jugadores = _juegoService.ObtenerJugadores();
             ViewBag.CartaRevelada = null;
-
 
             if (ganador != null)
             {
@@ -175,28 +177,18 @@ namespace MVC_ProyectoFinalPOO.Controllers
         [HttpPost]
         public IActionResult NuevaRonda()
         {
-            if (!juegoIniciado || _juegoService.ObtenerJugadores() == null || !_juegoService.ObtenerJugadores().Any())
-            {
+            var jugadoresActualesEnServicio = _juegoService.ObtenerJugadores();
 
-                List<Jugador> jugadoresParaIniciar = _homeService.ObtenerJugadores();
-                if (jugadoresParaIniciar != null && jugadoresParaIniciar.Any())
-                {
-                    _juegoService.IniciarJuego(jugadoresParaIniciar);
-                    juegoIniciado = true;
-                }
-                else
-                {
-                    return RedirectToAction("Index", "Home"); // No hay jugadores, ir a Home
-                }
-            }
-            else
+            if (jugadoresActualesEnServicio != null && jugadoresActualesEnServicio.Any() && jugadoresActualesEnServicio.Count() >= 2)
             {
-
-                _juegoService.ComenzarNuevaRondaConJugadoresActuales(); 
+         
+                _juegoService.ComenzarNuevaRondaConJugadoresActuales();
                 juegoIniciado = true; 
+            } else
+            {
+                ViewBag.MensajeError = "Error al inciiar nueva ronda, no hay suficientes jugadores";
             }
 
-            // ViewBag.JuegoTerminado = false; // Index se encargará de esto
             return RedirectToAction("Index");
         }
 

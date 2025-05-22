@@ -14,6 +14,7 @@ namespace CL_ProyectoFinalPOO.Clases
         private int _puntos;
         private int _apuestaInicial;
         private List<Carta> l_cartas_jugador;
+        private bool perdio = false;
         public Juego Juego { get; set; }
 
         // Accesores
@@ -43,6 +44,8 @@ namespace CL_ProyectoFinalPOO.Clases
                 _apuestaInicial = value;
             }
         }
+
+        public bool Perdio { get => perdio; set => perdio = value; }
 
 
         // Constructor

@@ -100,11 +100,7 @@
                                     </form>
 
                                     <form asp-controller="Juego" asp-action="Reiniciar" method="post" class="end-game-action-form">
-                                        <button type="submit" class="secondary-action-button end-game-button"><i class="fas fa-power-off"></i> Reiniciar Juego</button>
-                                    </form>
-
-                                    <form asp-controller="Home" asp-action="Index" method="post" class="end-game-action-form">
-                                        <button type="submit" class="tertiary-action-button end-game-button"><i class="fas fa-sign-out-alt"></i> Salir</button>
+                                                <button type="submit" class="tertiary-action-button end-game-button"><i class="fas fa-sign-out-alt"></i> Reiniciar Juego y Salir</button>
                                     </form>
                                 </div>
                             @* ---------- FIN DE LA MODIFICACIÓN ---------- *@
@@ -115,9 +111,9 @@
                            Si quieres un botón de salir durante el juego, sería este: *@
                         @if (!juegoTerminado)
                         {
-                                <form asp-controller="Home" asp-action="Index" method="post" style="margin-top: auto;">
-                                    <button type="submit" class="tertiary-action-button"><i class="fas fa-sign-out-alt"></i> Salir del Juego</button>
-                                </form>
+                                    <form asp-controller="Juego" asp-action="Reiniciar" method="post" class="end-game-action-form">
+                                                <button type="submit" class="tertiary-action-button end-game-button"><i class="fas fa-sign-out-alt"></i> Reiniciar Juego y Salir</button>
+                                    </form>
                         }
                     </div>
                 </div>
