@@ -23,6 +23,9 @@ namespace CL_ProyectoFinalPOO.Clases
             _publisher.AgotadasCastigo += AgotadasCastigoHandler;
             _publisher.AgotadasResto += AgotadasRestoHandler;
             _publisher.CambioLider += CambioLiderHandler;
+            _publisher.InicioPartida += InicioPartidaHandler;
+            _publisher.CartasIniciales += CartasObtenidasHandler;
+            _publisher.FinPartida += FinPartidaHandler;
         }
 
         // Métodos Handler para cada evento
@@ -46,6 +49,43 @@ namespace CL_ProyectoFinalPOO.Clases
             if (nuevoLider != null)
             {
                 _notificaciones.Add($"{DateTime.Now:HH:mm:ss} - ¡El líder del juego ha cambiado! Ahora es: {nuevoLider.Nickname} con {nuevoLider.Puntos} puntos.");
+            }
+        }
+        
+        private void InicioPartidaHandler()
+        {
+
+            _notificaciones.Add($"{DateTime.Now:HH:mm:ss} - ¡El juego ha comenzado, preparate para probar tu suerte!");
+            
+        }
+
+        private void CartasObtenidasHandler(Jugador jugador, Carta carta)
+        {
+
+            if (carta is CartaJuego)
+            {
+                _notificaciones.Add($"{DateTime.Now:HH:mm:ss} - ¡{jugador.Nickname} recibio una carta de Juego: {carta.Nombre} de {carta.ObtenerPuntos()} puntos");
+            }
+            else if (carta is CartaPremio)
+            {
+                _notificaciones.Add($"{DateTime.Now:HH:mm:ss} - ¡{jugador.Nickname} recibio una carta de Premio: {carta.Nombre} de {carta.ObtenerPuntos()} puntos");
+            }
+            else if (carta is CartaCastigo)
+            {
+                _notificaciones.Add($"{DateTime.Now:HH:mm:ss} - ¡{jugador.Nickname} recibio una carta de Castigo: {carta.Nombre} de {carta.ObtenerPuntos()} puntos");
+            }
+
+        }
+
+        private void FinPartidaHandler(Jugador ganador)
+        {
+            if (ganador != null)
+            {
+                _notificaciones.Add($"{DateTime.Now:HH:mm:ss} - ¡El juego ha concluido!\nEl ganador fue {ganador.Nickname}, Se le dan 20 puntos adicionales, para un total de {ganador.Puntos} puntos.");
+            }
+            else
+            {
+                _notificaciones.Add($"{DateTime.Now:HH:mm:ss} - ¡El juego ha concluido! No hubo un ganador claro o la partida terminó en empate.");
             }
         }
 

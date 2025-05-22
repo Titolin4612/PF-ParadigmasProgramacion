@@ -24,13 +24,10 @@ namespace MVC_ProyectoFinalPOO.Services
         public void IniciarJuego(List<Jugador> jugadores)
         {
             juego = new Juego();
-            Juego.Jugadores.Clear();
-            Juego.IndiceJugador = 0;
-
             foreach (var j in jugadores)
                 Juego.Jugadores.Add(new Jugador(j.Nickname, j.ApuestaInicial, juego));
 
-            juego.BarajarCartas();
+            juego.IniciarRonda();
         }
 
         public Jugador ObtenerJugadorActual()
@@ -63,6 +60,7 @@ namespace MVC_ProyectoFinalPOO.Services
 
         public Jugador FinalizarJuego()
         {
+            ObtenerHistorial();
             return juego.FinalizarJuego();
         }
 
@@ -78,7 +76,13 @@ namespace MVC_ProyectoFinalPOO.Services
 
         public bool JuegoTerminado()
         {
-            return juego.AgotadasResto && juego.AgotadasCastigo && juego.AgotadasPremio;       
+            if (juego.AgotadasResto && juego.AgotadasCastigo && juego.AgotadasPremio)
+            {
+                return true;
+            }
+
+
+            return false;     
         }
 
         public int TotalCartas()
@@ -89,6 +93,18 @@ namespace MVC_ProyectoFinalPOO.Services
         public void ReiniciarJuego()
         {
             juego = null;
+        }
+
+        public void ComenzarNuevaRondaConJugadoresActuales()
+        {
+            if (juego == null)
+            {
+                throw new InvalidOperationException("El objeto de juego no existe para iniciar una nueva ronda.");
+            }
+
+            juego.IniciarRonda();
+
+
         }
     }
 }

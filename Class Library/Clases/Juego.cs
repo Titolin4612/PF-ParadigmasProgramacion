@@ -241,6 +241,8 @@ namespace CL_ProyectoFinalPOO.Clases
                 PublicadorJuego.NotificarCambioLider(liderNuevo, this);
                 nicknameLiderAnterior = liderNuevo.Nickname;
             }
+
+
         }
 
 
@@ -283,8 +285,10 @@ namespace CL_ProyectoFinalPOO.Clases
                     throw new Exception("No hay suficientes cartas en el resto para repartir.");
                 }
 
+
                 foreach (var jugador in Jugadores)
                 {
+
                     Console.WriteLine($"\nRepartiendo cartas para {jugador.Nickname}");
                     for (int i = 0; i < numeroCartasPorJugador; i++)
                     {
@@ -293,6 +297,7 @@ namespace CL_ProyectoFinalPOO.Clases
                         jugador.L_cartas_jugador.Add(carta);
                         jugador.Puntos += AplicarEfectoCartas(carta);
                         Console.WriteLine($"   - {carta.Nombre} | Total puntos: {jugador.Puntos}");
+                        PublicadorJuego.NotificarCartasObtenidas(jugador, carta);
                     }
                 }
 
@@ -331,14 +336,9 @@ namespace CL_ProyectoFinalPOO.Clases
             return puntos;
         }
 
-        public void imprimir()
-        {
-            foreach (CartaJuego c in L_cartas_resto)
-                Console.WriteLine($"{c.Nombre}");
-        }
-
         public Jugador FinalizarJuego()
         {
+
             if (Jugadores == null || Jugadores.Count == 0)
                 throw new Exception("No hay jugadores para finalizar el juego.");
 
@@ -347,46 +347,28 @@ namespace CL_ProyectoFinalPOO.Clases
             {
                 ganador.Puntos += 20;
                 Console.WriteLine($"🏆 El ganador es {ganador.Nickname}, se le suman 20 puntos. Total: {ganador.Puntos}");
+                PublicadorJuego.NotificarFinPartida(ganador);
             }
             else
             {
                 Console.WriteLine("⚠️ No se pudo determinar un ganador.");
             }
-
             return ganador;
-        }
-
-
-        public void ReiniciarJuego()
-        {
-            Console.WriteLine("Reiniciando juego...");
-            foreach (var j in Jugadores)
-            {
-                j.Puntos = 0;
-                j.L_cartas_jugador.Clear();
-            }
-
-            Baraja.CargarCartas();
-            L_cartas_resto = new List<CartaJuego>(Baraja.CartasJuego);
-            L_cartas_premio = new List<CartaPremio>(Baraja.CartasPremio);
-            L_cartas_castigo = new List<CartaCastigo>(Baraja.CartasCastigo);
-
-            BarajarCartas();
-            RepartirCartasIniciales(cartasPorJugador);
-
-            IndiceJugador = 0;
-            Historial = new Historial(PublicadorJuego);
-            Console.WriteLine("Juego reiniciado.");
         }
 
         public void IniciarRonda()
         {
+            PublicadorJuego.NotificarInicioPartida();
             Console.WriteLine("Iniciando nueva ronda...");
             Baraja.CargarCartas();
             BarajarCartas();
             RepartirCartasIniciales(CartasPorJugador);
             IndiceJugador = 0;
             Console.WriteLine("Ronda iniciada correctamente.");
+            AgotadasResto = false;
+            AgotadasCastigo = false;
+            AgotadasPremio = false;
+
         }
 
         public void PasarTurno()
@@ -401,7 +383,7 @@ namespace CL_ProyectoFinalPOO.Clases
             {
                 Console.WriteLine("❌ No hay jugadores registrados.");
                 throw new Exception("No hay jugadores en el juego.");
-            }
+            } 
         }
 
     }

@@ -148,12 +148,12 @@ html, body {
 }
 
     /* Hover - se mantiene el color del texto */
-    .rules-button:hover,
-    .play-button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-        color: #2a1f0f; /* Sigue negro */
-    }
+.rules-button:hover,
+.play-button:hover, .turno-button {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    color: #2a1f0f; /* Sigue negro */
+}
 
 /* LISTA DE JUGADORES */
 .player-list {
@@ -414,6 +414,28 @@ a, a:hover, a:visited, a:focus {
         color: white;
     }
 
+.mazo-button {
+    background: linear-gradient(#c17e3a, #8b0000);
+    color: #fff;
+    padding: 12px 30px;
+    font-weight: bold;
+    font-family: 'Georgia', serif;
+    font-size: 1rem;
+    text-decoration: none;
+    border: none;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+    .mazo-button:hover {
+        background: linear-gradient(#a85f00, #6c0000);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0,0,0,0.5);
+        color: white;
+    }
+
 .rules-container {
     margin-top: 150px; /* Ajusta a gusto */
 }
@@ -601,35 +623,45 @@ a, a:hover, a:visited, a:focus {
 /* wwwroot/css/juego-pantalla.css */
 
 /* --- GENERALES DE PANTALLA DE JUEGO --- */
-body.game-active-bg {
-    background: url('../images/background-image-darker.jpg') no-repeat center center fixed;
-    background-size: cover;
-    overflow-y: auto; /* Permitir scroll vertical si es necesario */
-}
-
-.play-screen {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    padding-top: 75px; /* Espacio para el turn-indicator si fuera fijo o navbar */
-    gap: 20px; /* Espacio entre secciones principales */
-    min-height: 100vh;
-    color: #e0d6c7; /* Color de texto base para esta pantalla */
-}
-
+/* === INDICADOR DE TURNO (Esta es la que debes conservar y ajustar si es necesario) === */
 .turn-indicator {
-    background: rgba(0, 0, 0, 0.75);
-    padding: 10px 25px;
-    border-radius: 30px;
-    border: 2px solid #d4af37;
+    background: rgba(0, 0, 0, 0.85); /* Fondo un poco más opaco */
+    padding: 10px 30px; /* Más padding horizontal */
+    border-radius: 30px; /* Píldora */
+    border: 2px solid #d4af37; /* Borde dorado */
     font-size: 1.25em;
-    color: #f5eeda;
-    margin-bottom: 15px;
+    color: #f5eeda; /* Color de texto principal */
+    margin-bottom: 25px; /* Aumentar un poco el margen inferior */
     box-shadow: 0 0 20px rgba(255, 215, 0, 0.5), 0 0 5px rgba(0,0,0,0.3) inset;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
-    font-family: 'Cinzel Decorative', serif; /* Una fuente más temática si la tienes */
+    font-family: 'Cinzel Decorative', serif;
+    /* Añadidos para asegurar centrado y visibilidad */
+    width: fit-content; /* Ajustar al contenido */
+    min-width: 280px; /* Ancho mínimo */
+    max-width: 90%; /* Máximo del contenedor */
+    margin-left: auto; /* Centrar */
+    margin-right: auto; /* Centrar */
+    display: block; /* Para que margin:auto funcione bien */
+    visibility: visible;
+    opacity: 1;
+    position: relative;
+    z-index: 10;
 }
+
+    /* Ajustar el nombre del jugador DENTRO del indicador de turno */
+    .turn-indicator strong, /* Si usas <strong> directamente */
+    .turn-indicator .current-player-name /* Si tienes una clase específica para el nombre */ {
+        color: #ffd700; /* Dorado brillante */
+        font-weight: 700;
+    }
+
+    /* Estilo para cuando el turno/partida ha terminado */
+    .turn-indicator.turn-ended {
+        background: rgba(80, 20, 20, 0.85); /* Fondo rojo oscuro */
+        color: #ffdad4;
+        border-color: #b75757; /* Borde rojo más oscuro */
+        box-shadow: 0 0 15px rgba(200, 80, 80, 0.5), 0 0 5px rgba(0,0,0,0.3) inset;
+    }
 
 .current-player-name {
     color: #ffd700;
@@ -814,15 +846,6 @@ body.game-active-bg {
     width: 100%;
 }
 
-.main-action-button {
-    font-size: 1.15em !important;
-    padding: 15px 10px !important;
-}
-
-.secondary-action-button {
-    background: linear-gradient(to right, #5c666f, #3e444a) !important;
-    font-size: 0.95em !important;
-}
 
 .tertiary-action-button { /* Hereda de .back-button, puedes ajustar aquí si es necesario */
 }
@@ -867,101 +890,7 @@ body.game-active-bg {
     font-size: 1.1em;
 }
 
-/* --- ESTILO DE LA CARTA VISUAL --- */
-.game-card-visual {
-    width: 320px; /* Ancho de la carta */
-    height: 450px; /* Alto de la carta */
-    border-radius: 20px; /* Bordes más redondeados */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
-    font-family: 'Georgia', serif;
-    display: flex; /* Controlado por JS, por defecto 'none' o el placeholder visible */
-    flex-direction: column;
-    overflow: hidden;
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease; /* Efecto al aparecer */
-    position: relative; /* Para elementos internos absolutamente posicionados si es necesario */
-}
-    /* Animación de entrada (opcional) */
-    .game-card-visual.revealed { /* Añadir esta clase con JS al mostrar */
-        transform: scale(1) rotateY(0deg);
-        opacity: 1;
-    }
 
-.game-card-visual { /* Estado inicial para animación */
-    transform: scale(0.9) rotateY(-30deg);
-    opacity: 0;
-}
-
-
-.card-top-banner {
-    padding: 12px 18px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 3px solid; /* Color por tipo */
-    background: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(255,255,255,0)); /* Ligero brillo superior */
-}
-
-.card-title-text {
-    font-size: 1.4em; /* Título más grande */
-    font-weight: bold;
-    font-family: 'Cinzel Decorative', serif; /* Fuente temática para títulos */
-    letter-spacing: 0.5px;
-}
-
-.card-mythology-badge {
-    font-size: 0.85em;
-    font-style: italic;
-    padding: 4px 10px;
-    border-radius: 12px;
-    background-color: rgba(0,0,0,0.15);
-    border: 1px solid rgba(255,255,255,0.1);
-}
-
-.card-art-area {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px; /* Reducido para que la imagen ocupe más */
-    background-color: rgba(0,0,0,0.1); /* Sutil fondo para el arte */
-    overflow: hidden;
-    position: relative; /* Para superponer efectos si es necesario */
-}
-
-    .card-art-area img {
-        max-width: calc(100% - 10px); /* Pequeño margen interno */
-        max-height: calc(100% - 10px);
-        height: 200px; /* Altura base para el arte */
-        object-fit: contain;
-        border-radius: 10px; /* Redondeo sutil para la imagen */
-        box-shadow: 0 0 10px rgba(0,0,0,0.3) inset;
-    }
-
-.card-description-box {
-    padding: 15px 18px;
-    font-size: 0.95em;
-    line-height: 1.55;
-    min-height: 80px;
-    text-align: center;
-    background-color: rgba(255,255,255,0.03); /* Casi imperceptible */
-    border-top: 1px dashed rgba(0,0,0,0.2);
-    border-bottom: 1px dashed rgba(0,0,0,0.2);
-}
-
-.card-stats-banner {
-    padding: 12px 18px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    font-size: 0.9em;
-    border-top: 3px solid; /* Color por tipo */
-    background: linear-gradient(to top, rgba(255,255,255,0.05), rgba(255,255,255,0)); /* Ligero brillo inferior */
-}
-
-    .card-stats-banner span {
-        flex: 1;
-        text-align: center;
-    }
 /* Para espaciarlos */
 
 .points-positive {
@@ -1222,10 +1151,6 @@ body.game-active-bg {
         gap: 15px;
     }
 
-    .turn-indicator {
-        font-size: 1.1em;
-    }
-
     .player-areas-container {
         max-width: 100%;
     }
@@ -1316,10 +1241,6 @@ body.game-active-bg {
         padding-top: 50px;
     }
 
-    .turn-indicator {
-        font-size: 1em;
-        padding: 8px 15px;
-    }
 
     .player-nickname {
         font-size: 1.1em;
@@ -1393,73 +1314,338 @@ body.game-active-bg {
     margin: 1px;
 }
 
-/* JUEGO --------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* JUEGO ========================================================================================================================================================================================= */
+/* JUEGO ========================================================================================================================================================================================= */
 
+/* === VARIABLES GLOBALES DE DISEÑO === */
 :root {
     --card-bg-color: #1a1520; /* Fondo oscuro para la carta */
     --card-border-color: rgba(200, 180, 150, 0.2); /* Borde sutil */
     --card-text-primary: #f0e8d8; /* Texto principal */
     --card-text-secondary: #d0c0a0; /* Texto secundario (mitología, etiquetas) */
     --card-text-title: #ffe8c0; /* Título de la carta */
-    --card-accent-gold: #c5a052; /* Acento dorado (como en el catálogo) */
+    --card-accent-gold: #c5a052; /* Acento dorado */
     --points-positive-color: #a0ffa0;
     --points-negative-color: #ffa0a0;
     --points-neutral-color: #dadada;
-    --font-primary: 'Sorts Mill Goudy', serif; /* Fuente más clásica para texto general */
-    --font-decorative: 'Cinzel Decorative', cursive; /* Fuente para títulos y elementos destacados */
+    --font-primary: 'Sorts Mill Goudy', serif;
+    --font-decorative: 'Cinzel Decorative', cursive;
+    /* Colores para los player-box y elementos del UI general */
+    --ui-bg-dark: rgba(26, 21, 32, 0.85); /* #1a1520 con opacidad */
+    --ui-border-light: rgba(220, 200, 170, 0.25);
+    --ui-text-light: #e8e0d0;
+    --ui-text-highlight: #fff0c0;
+    --ui-accent-color1: #b8860b; /* Dorado oscuro para botones/acentos */
+    --ui-accent-color2: #8c643c; /* Marrón cobrizo */
+
+    --color-accent-gold: var(--card-accent-gold);
+    --color-bg-deep-dark: var(--card-bg-color);
+    --color-accent-copper: var(--ui-accent-color2);
+    --color-text-primary: var(--card-text-primary);
+    --color-text-highlight: var(--ui-text-highlight);
+    --font-display: var(--font-decorative);
 }
 
+/* === ESTILOS GENERALES DE LA PANTALLA DE JUEGO === */
+.game-active-bg { /* Asumo que esto está en tu <body> */
+    /* Ejemplo: background: url(...) no-repeat center center fixed; background-size: cover; */
+}
+
+.game-container.play-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Mantiene el centrado horizontal */
+    justify-content: flex-start; /* Mueve el contenido hacia arriba */
+    min-height: 100vh;
+    padding-top: 120px; /* Le da un poco de espacio superior */
+    box-sizing: border-box;
+    color: var(--ui-text-light);
+}
+
+
+/* === LAYOUT PRINCIPAL: JUGADORES LATERALES Y ZONA CENTRAL === */
+.game-main-content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1600px;
+    gap: 25px;
+}
+
+.players-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 240px;
+    flex-shrink: 0;
+}
+
+.player-box {
+    background-color: var(--ui-bg-dark);
+    border: 1px solid var(--ui-border-light);
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.4);
+    width: 100%;
+    font-family: var(--font-primary);
+}
+
+    .player-box.current-player-turn {
+        border-color: var(--card-accent-gold);
+        box-shadow: 0 0 15px var(--card-accent-gold), 0 3px 8px rgba(0,0,0,0.4);
+    }
+
+.player-avatar {
+    text-align: center;
+    font-size: 2.5em;
+    color: var(--card-accent-gold);
+    margin-bottom: 10px;
+}
+
+.player-nickname {
+    text-align: center;
+    font-family: var(--font-decorative);
+    font-size: 1.3em;
+    color: var(--ui-text-highlight);
+    margin: 0 0 12px 0;
+}
+
+.player-stats p {
+    margin: 5px 0;
+    font-size: 0.9em;
+    color: var(--ui-text-light);
+}
+
+    .player-stats p i {
+        margin-right: 8px;
+        color: var(--ui-accent-color2);
+    }
+
+.player-stats strong {
+    font-weight: bold;
+    color: #fff;
+}
+
+.central-game-board {
+    display: flex;
+    gap: 20px;
+    flex-grow: 1;
+    max-width: 800px;
+}
+
+.deck-and-actions-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 200px;
+    flex-shrink: 0;
+}
+
+.deck-pile {
+    
+    border: 1px solid var(--ui-border-light);
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.4);
+}
+
+    .deck-pile img {
+        width: 100px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.3), 0 0 0 2px #4a3b2a;
+        transition: transform 0.2s ease-out;
+        cursor: default;
+    }
+
+        .deck-pile img:hover {
+            transform: scale(1.05);
+        }
+
+.deck-count-text {
+    font-size: 0.9em;
+    margin-top: 10px;
+    color: var(--ui-text-secondary);
+}
+
+.deck-image-placeholder {
+    color: var(--ui-text-secondary);
+    padding: 20px 0;
+}
+
+    .deck-image-placeholder i {
+        opacity: 0.7;
+    }
+
+.game-actions {
+    
+    border: 1px solid var(--ui-border-light);
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.4);
+}
+
+    .game-actions form {
+        width: 100%;
+    }
+
+    .game-actions button {
+        width: 100%;
+        padding: 10px 15px;
+        border-radius: 6px;
+        border: 1px solid;
+        font-family: var(--font-primary);
+        font-weight: bold;
+        font-size: 1em;
+        cursor: pointer;
+        transition: all 0.2s ease-out;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .game-actions .main-action-button {
+        background-color: var(--ui-accent-color1);
+        border-color: var(--ui-accent-color1);
+        color: var(--card-text-title);
+    }
+
+        .game-actions .main-action-button:hover {
+            background-color: #DAA520;
+            box-shadow: 0 0 10px var(--ui-accent-color1);
+        }
+
+    .game-actions .secondary-action-button {
+        background-color: var(--ui-accent-color2);
+        border-color: var(--ui-accent-color2);
+        color: var(--ui-text-light);
+    }
+
+        .game-actions .secondary-action-button:hover {
+            background-color: #A07250;
+        }
+
+    .game-actions .tertiary-action-button, .deck-pile .tertiary-action-button {
+        background-color: transparent;
+        border-color: var(--ui-accent-color2);
+        color: var(--ui-accent-color2);
+    }
+
+        .game-actions .tertiary-action-button:hover, .deck-pile .tertiary-action-button:hover {
+            background-color: rgba(140, 100, 60, 0.2);
+            color: var(--ui-text-highlight);
+        }
+
+/* === ESTILOS DE LA CARTA REVELADA === */
 .revealed-card-zone {
     perspective: 1500px;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 520px; /* Un poco más de espacio */
+    min-height: 520px;
     padding: 25px;
+    flex-grow: 1;
 }
 
-.revealed-game-card {
-    width: 340px; /* Ancho de la carta */
-    height: 510px; /* Alto de la carta (proporción ~2.5:3.5) */
+.card-flipper-container {
+    width: 340px;
+    height: 510px;
     position: relative;
-    border-radius: 18px; /* Bordes más redondeados */
+    transform-style: preserve-3d;
+}
+
+.revealed-game-card,
+.card-placeholder-visual {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 18px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 0 4px var(--card-border-color), inset 0 0 20px rgba(0,0,0,0.4);
     overflow: hidden;
-    transform-style: preserve-3d;
     background-color: var(--card-bg-color);
-    transition: transform 0.7s cubic-bezier(0.19, 1, 0.22, 1), box-shadow 0.7s cubic-bezier(0.19, 1, 0.22, 1);
     font-family: var(--font-primary);
+    backface-visibility: hidden;
+    transition: transform 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955), opacity 0.2s 0.1s ease-out;
 }
 
-    .revealed-game-card.animate-in {
-        animation: cardEntranceAnimFull 1.2s cubic-bezier(0.19, 1, 0.22, 1) 0.1s forwards;
-    }
+.card-placeholder-visual {
+    z-index: 10;
+    transform: rotateY(0deg);
+    opacity: 1;
+    pointer-events: auto;
+}
 
-@keyframes cardEntranceAnimFull {
-    0% {
-        transform: scale(0.4) rotateY(70deg) rotateX(25deg) translateY(60px) translateZ(-200px);
-        opacity: 0;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    .card-placeholder-visual .placeholder-content { /* Contenido dentro del placeholder visual */
+        position: relative;
+        z-index: 3;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        text-align: center;
     }
-
-    65% {
-        transform: scale(1.06) rotateY(-7deg) rotateX(-3deg) translateY(0px) translateZ(40px);
+    /* ASEGURAR QUE EL CONTENIDO DEL PLACEHOLDER SEA VISIBLE Y NO HEREDE TRANSICIONES */
+    .card-placeholder-visual .card-inner-content-game.placeholder-content {
         opacity: 1;
-        box-shadow: 0 18px 45px rgba(0,0,0,0.6), 0 0 0 5px rgba(220,200,170,0.25), inset 0 0 25px rgba(0,0,0,0.5);
+        transform: translateY(0) scale(1);
+        transition: none !important; /* Evitar transiciones no deseadas heredadas */
     }
 
-    100% {
-        transform: scale(1) rotateY(0deg) rotateX(0deg) translateY(0px) translateZ(0px);
-        opacity: 1;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 0 4px var(--card-border-color), inset 0 0 20px rgba(0,0,0,0.4);
+    .card-placeholder-visual .placeholder-logo-img {
+        max-width: 65%;
+        max-height: 45%;
+        object-fit: contain;
+        filter: drop-shadow(3px 3px 8px rgba(0,0,0,0.6));
+        margin-bottom: 20px;
     }
+
+    .card-placeholder-visual .placeholder-text-instruction {
+        font-family: var(--font-decorative);
+        color: var(--card-text-title);
+        font-size: 1.3em;
+        font-weight: 700;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+    }
+
+.revealed-game-card {
+    z-index: 5;
 }
 
-.revealed-game-card:hover {
-    transform: scale(1.04) rotateY(1.5deg) translateZ(20px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.65), 0 0 0 5px rgba(220,200,170,0.28), inset 0 0 25px rgba(0,0,0,0.5);
+    .revealed-game-card:hover {
+        transform: scale(1.04) rotateY(1.5deg) translateZ(20px);
+        box-shadow: 0 15px 40px rgba(0,0,0,0.65), 0 0 0 5px rgba(220,200,170,0.28), inset 0 0 25px rgba(0,0,0,0.5);
+    }
+
+.is-flipped-away {
+    transform: rotateY(180deg) !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
 }
 
+.is-flipping-away {
+    transform: rotateY(-180deg); /* O 180deg, ser consistente */
+    opacity: 0;
+    pointer-events: none;
+}
+
+.is-flipping-to-front {
+    transform: rotateY(0deg);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Contenido de la CARTA REVELADA */
 .card-visual-background-game {
     position: absolute;
     top: 0;
@@ -1469,11 +1655,9 @@ body.game-active-bg {
     object-fit: cover;
     border-radius: inherit;
     z-index: 1;
-    /* Podrías añadir una leve opacidad o filtro si el fondo es muy brillante */
-    /* opacity: 0.8; filter: brightness(0.9); */
 }
 
-.card-content-overlay-game { /* Gradiente sobre el fondo para legibilidad */
+.card-content-overlay-game {
     position: absolute;
     top: 0;
     left: 0;
@@ -1484,7 +1668,7 @@ body.game-active-bg {
     border-radius: inherit;
 }
 
-.card-inner-content-game { /* Contenido real de la carta, sobre el overlay */
+.card-inner-content-game { /* Contenido REAL de la carta revelada */
     position: relative;
     z-index: 3;
     width: 100%;
@@ -1496,16 +1680,51 @@ body.game-active-bg {
     justify-content: space-between;
     color: var(--card-text-primary);
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    opacity: 0; /* Inicialmente oculto */
+    transform: translateY(15px) scale(0.98);
+    transition: opacity 0.25s 0.15s ease-out, transform 0.4s 0.3s ease-out; /* Delay para aparecer DESPUÉS del giro */
 }
 
-/* Área superior de la carta (nombre, mitología, logo) */
+.revealed-game-card.animate-card-content-in .card-inner-content-game {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.revealed-game-card.animate-card-content-out .card-inner-content-game {
+    opacity: 0;
+    transform: translateY(15px) scale(0.98);
+    transition-delay: 0s; /* Salida inmediata del contenido */
+}
+
+/* Animación de entrada opcional si la carta ya está revelada al cargar (NO USADA AHORA para evitar doble animación) */
+.revealed-game-card.animate-initial-entrance {
+    animation: cardEntranceAnimFull 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0.1s forwards;
+}
+
+@keyframes cardEntranceAnimFull {
+    0% {
+        transform: rotateY(0deg) scale(0.4) translateZ(-200px);
+        opacity: 0;
+    }
+
+    65% {
+        transform: rotateY(0deg) scale(1.06) translateZ(40px);
+        opacity: 1;
+    }
+
+    100% {
+        transform: rotateY(0deg) scale(1) translateZ(0px);
+        opacity: 1;
+    }
+}
+
 .card-top-section-game {
     text-align: center;
 }
 
 .card-title-game {
     font-family: var(--font-decorative);
-    font-size: 1.9em; /* Título más grande */
+    font-size: 1.9em;
     color: var(--card-text-title);
     margin: 0 0 2px 0;
     line-height: 1.1;
@@ -1518,14 +1737,14 @@ body.game-active-bg {
     color: var(--card-text-secondary);
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    margin-bottom: 15px; /* Espacio antes del logo */
+    margin-bottom: 15px;
     opacity: 0.9;
 }
 
 .card-logo-area-game {
     width: 75%;
-    max-height: 120px; /* Ajusta según el tamaño de tu logo */
-    margin: 0 auto 15px auto; /* Espacio después del logo */
+    max-height: 120px;
+    margin: 0 auto 15px auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1538,17 +1757,16 @@ body.game-active-bg {
         filter: drop-shadow(2px 3px 6px rgba(0,0,0,0.6));
     }
 
-/* Sección media para tipo, rareza/atributo y descripción */
 .card-middle-section-game {
-    flex-grow: 1; /* Ocupa el espacio disponible */
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centra el contenido si hay poco */
-    overflow: hidden; /* Previene que la descripción crezca demasiado */
+    justify-content: center;
+    overflow: hidden;
     margin-bottom: 15px;
 }
 
-.card-attributes-display-game { /* Contenedor para Tipo y Atributo específico */
+.card-attributes-display-game {
     padding: 10px 12px;
     margin-bottom: 10px;
     background-color: rgba(0,0,0,0.3);
@@ -1559,28 +1777,26 @@ body.game-active-bg {
 
     .card-attributes-display-game p {
         margin: 5px 0;
-        display: flex; /* Para alinear etiqueta y valor */
-        justify-content: space-between; /* Espacio entre etiqueta y valor */
+        display: flex;
+        justify-content: space-between;
     }
 
     .card-attributes-display-game .attr-label {
         font-weight: 600;
         color: var(--card-text-secondary);
         margin-right: 8px;
-        flex-shrink: 0; /* Evita que la etiqueta se encoja */
+        flex-shrink: 0;
     }
 
     .card-attributes-display-game .attr-value {
         color: var(--card-text-primary);
-        text-align: right; /* Alinea el valor a la derecha */
-        word-break: break-word; /* Si el valor es muy largo */
+        text-align: right;
+        word-break: break-word;
     }
 
         .card-attributes-display-game .attr-value.rarity {
             font-weight: bold;
         }
-/* Para las clases de color de rareza */
-
 
 .card-description-text-game {
     font-family: var(--font-primary);
@@ -1615,10 +1831,9 @@ body.game-active-bg {
         font-weight: bold;
     }
 
-/* Footer (solo puntos) */
 .card-points-footer-game {
     padding-top: 15px;
-    margin-top: auto; /* Empuja al fondo si hay espacio */
+    margin-top: auto;
     border-top: 1px solid rgba(200, 180, 150, 0.2);
     text-align: center;
 }
@@ -1631,7 +1846,7 @@ body.game-active-bg {
 
     .card-points-footer-game .points-value-display {
         font-family: var(--font-decorative);
-        font-size: 2.2em; /* Puntos más grandes */
+        font-size: 2.2em;
         font-weight: 700;
         padding: 0 5px;
         border-radius: 4px;
@@ -1652,7 +1867,6 @@ body.game-active-bg {
     color: var(--points-neutral-color);
 }
 
-/* Clases de rareza (se mantienen) */
 .rarity-comun {
     color: #d8d8d8;
 }
@@ -1675,7 +1889,6 @@ body.game-active-bg {
     text-shadow: 0 0 8px #ffc659, 0 0 3px #ffc659;
 }
 
-/* Indicador flotante de puntos (se mantiene similar) */
 .points-change-floater {
     position: absolute;
     top: 50%;
@@ -1687,7 +1900,7 @@ body.game-active-bg {
     border-radius: 14px;
     z-index: 150;
     opacity: 0;
-    animation: pointsChangeAnimEpic 2.2s 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    animation: pointsChangeAnimEpic 1.5s 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
     text-shadow: 0 0 10px black, 0 0 15px black, 3px 3px 4px rgba(0,0,0,0.7);
     pointer-events: none;
     font-family: var(--font-decorative);
@@ -1711,12 +1924,217 @@ body.game-active-bg {
         border: 2px solid #f8f8f8;
     }
 
-@keyframes pointsChangeAnimEpic { 
+@keyframes pointsChangeAnimEpic {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.2) rotate(-20deg);
+    }
+
+    20% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.2) rotate(8deg);
+    }
+
+    40% {
+        transform: translate(-50%, -50%) scale(0.95) rotate(-4deg);
+    }
+
+    60% {
+        transform: translate(-50%, -50%) scale(1.05) rotate(2deg);
+    }
+
+    85% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1) rotate(0deg);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -150%) scale(0.6) rotate(20deg);
+    }
 }
 
-
-.card-display-placeholder { /* ... */
+.card-display-placeholder {
+    width: 340px;
+    height: 510px;
+    border: 3px dashed var(--ui-border-light);
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--ui-text-secondary);
+    background: rgba(26,21,32,0.5);
+    font-family: var(--font-primary);
 }
 
-.deck-pile img { /* ... */
+    .card-display-placeholder .placeholder-icon {
+        font-size: 5em;
+        margin-bottom: 20px;
+        opacity: 0.5;
+        color: var(--card-accent-gold);
+    }
+
+    .card-display-placeholder p {
+        font-size: 1.2em;
+        font-style: italic;
+    }
+
+/* === HISTORIAL DEL JUEGO === */
+.game-history-log {
+    
+    border: 1px solid var(--ui-border-light);
+    border-radius: 10px;
+    padding: 15px 20px;
+    width: 100%;
+    max-width: 900px;
+    margin-top: 25px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.4);
+    font-family: var(--font-primary);
 }
+
+    .game-history-log h4 {
+        font-family: var(--font-decorative);
+        color: var(--ui-text-highlight);
+        text-align: center;
+        margin: 0 0 15px 0;
+        font-size: 2em;
+        border-bottom: 1px solid var(--ui-border-light);
+        padding-bottom: 10px;
+    }
+
+        .game-history-log h4 i {
+            margin-right: 10px;
+            color: var(--card-accent-gold);
+        }
+
+    .game-history-log ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        max-height: 150px;
+        overflow-y: auto;
+        scrollbar-width: thin;
+        scrollbar-color: var(--ui-accent-color2) rgba(0,0,0,0.1);
+    }
+
+        .game-history-log ul::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .game-history-log ul::-webkit-scrollbar-track {
+            background: rgba(0,0,0,0.1);
+            border-radius: 4px;
+        }
+
+        .game-history-log ul::-webkit-scrollbar-thumb {
+            background-color: var(--ui-accent-color2);
+            border-radius: 4px;
+        }
+
+    .game-history-log li {
+        padding: 6px 0;
+        border-bottom: 1px dotted rgba(200, 180, 150, 0.15);
+        font-size: 1.5em;
+        color: var(--ui-text-light);
+    }
+
+        .game-history-log li:last-child {
+            border-bottom: none;
+        }
+
+/* === ELEMENTOS DECORATIVOS === */
+.character.game-bg-character { /* position: fixed; bottom: 0; z-index: -1; opacity: 0.3; */
+}
+
+.character.male { /* left: 5%; */
+}
+
+.character.female { /* right: 5%; */
+}
+
+/* BANNER DE ERROR */
+.error-banner {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #d0021b;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    z-index: 1000;
+    font-family: var(--font-primary);
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+    .error-banner i {
+        font-size: 1.3em;
+    }
+
+.end-game-actions-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.end-game-action-form {
+    width: 90%; /* O el ancho que prefieras para los formularios */
+    margin-bottom: 10px;
+}
+
+.end-game-button {
+    width: 100%; /* Para que todos los botones tengan el mismo ancho */
+    padding: 10px 15px; /* Ajusta el padding si es necesario */
+    font-size: 0.9rem; /* Ajusta el tamaño de fuente si es necesario */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .end-game-button i {
+        margin-right: 8px; /* Espacio entre el icono y el texto */
+    }
+
+/* Puedes usar tus clases existentes de botones (primary, secondary, tertiary)
+   o definir estilos específicos si es necesario.
+   Por ejemplo, para .primary-action-button, .secondary-action-button, .tertiary-action-button
+   que ya tienes, solo asegúrate que se vean bien en este contexto. */
+
+/* Ejemplo de cómo podrían ser tus clases de botones si no las tienes definidas con mucho estilo */
+.primary-action-button {
+    background-color: var(--card-accent-gold); /* O tu color primario */
+    color: var(--dark-text-color); /* O tu color de texto para primario */
+    border: 1px solid var(--card-accent-gold);
+}
+
+    .primary-action-button:hover {
+        background-color: #e0ac4e; /* Un tono más oscuro o diferente para el hover */
+    }
+
+.secondary-action-button {
+    background-color: var(--ui-background-dark); /* O tu color secundario */
+    color: var(--light-text-color); /* O tu color de texto para secundario */
+    border: 1px solid var(--border-color-medium);
+}
+
+    .secondary-action-button:hover {
+        background-color: #555;
+    }
+
+.tertiary-action-button {
+    background-color: transparent;
+    color: var(--subtle-text-or-border);
+    border: 1px solid var(--subtle-text-or-border);
+}
+
+    .tertiary-action-button:hover {
+        background-color: rgba(255,255,255,0.1);
+        color: #fff;
+    }

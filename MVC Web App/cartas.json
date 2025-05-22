@@ -336,6 +336,46 @@
     "ArchivoImagen": "background-card-castigo.png"
   },
   {
+    "Tipo": "Castigo",
+    "Nombre": "Níðhöggr",
+    "Descripcion": "Dragón que roe las raíces del mundo",
+    "Mitologia": "Nórdica",
+    "Maleficio": "Devora la esperanza desde su base",
+    "ArchivoImagen": "background-card-castigo.png"
+  },
+  {
+    "Tipo": "Castigo",
+    "Nombre": "Kali",
+    "Descripcion": "Diosa de la destrucción, furia indomable",
+    "Mitologia": "Hindú",
+    "Maleficio": "Su danza arrasa todo a su paso",
+    "ArchivoImagen": "background-card-castigo.png"
+  },
+  {
+    "Tipo": "Castigo",
+    "Nombre": "Cetus",
+    "Descripcion": "Monstruo marino de fauces abismales",
+    "Mitologia": "Griega",
+    "Maleficio": "Hunde a los héroes en el abismo",
+    "ArchivoImagen": "background-card-castigo.png"
+  },
+  {
+    "Tipo": "Castigo",
+    "Nombre": "Tzitzimitl",
+    "Descripcion": "Demonio estelar, heraldo del fin",
+    "Mitologia": "Azteca",
+    "Maleficio": "Oscurece el cielo y trae la ruina",
+    "ArchivoImagen": "background-card-castigo.png"
+  },
+  {
+    "Tipo": "Castigo",
+    "Nombre": "Angra Mainyu",
+    "Descripcion": "Espíritu maligno, encarnación del caos",
+    "Mitologia": "Persa",
+    "Maleficio": "Siembra discordia en todo corazón",
+    "ArchivoImagen": "background-card-castigo.png"
+  },
+  {
     "Tipo": "Premio",
     "Nombre": "Iris",
     "Descripcion": "Mensajera del arcoíris, portadora de buenas nuevas",
@@ -397,6 +437,46 @@
     "Descripcion": "Madre Tierra, fuente de toda vida",
     "Mitologia": "Griega",
     "Bendicion": "Su abrazo nutre la existencia",
+    "ArchivoImagen": "background-card-premio.png"
+  },
+  {
+    "Tipo": "Premio",
+    "Nombre": "Amaterasu",
+    "Descripcion": "Diosa del sol, trae luz y esperanza",
+    "Mitologia": "Japonesa",
+    "Bendicion": "Ilumina el camino hacia la victoria",
+    "ArchivoImagen": "background-card-premio.png"
+  },
+  {
+    "Tipo": "Premio",
+    "Nombre": "Lakshmi",
+    "Descripcion": "Diosa de la riqueza y la prosperidad",
+    "Mitologia": "Hindú",
+    "Bendicion": "Derrama abundancia en tus esfuerzos",
+    "ArchivoImagen": "background-card-premio.png"
+  },
+  {
+    "Tipo": "Premio",
+    "Nombre": "Balder",
+    "Descripcion": "Dios de la pureza y la bondad",
+    "Mitologia": "Nórdica",
+    "Bendicion": "Su luz protege de toda maldad",
+    "ArchivoImagen": "background-card-premio.png"
+  },
+  {
+    "Tipo": "Premio",
+    "Nombre": "Kuan Yin",
+    "Descripcion": "Diosa de la compasión y la misericordia",
+    "Mitologia": "China",
+    "Bendicion": "Su calma restaura el espíritu roto",
+    "ArchivoImagen": "background-card-premio.png"
+  },
+  {
+    "Tipo": "Premio",
+    "Nombre": "Inti",
+    "Descripcion": "Dios del sol, padre de reyes",
+    "Mitologia": "Inca",
+    "Bendicion": "Su calor fortalece el corazón valiente",
     "ArchivoImagen": "background-card-premio.png"
   }
 ]

@@ -1,11 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Blessings & Curses - En Partida";
     string cardBackDeckPath = Url.Content("~/images/cards/card_back.png");
-
-    // --- DEFINE AQUÍ LAS RUTAS A TUS IMÁGENES GLOBALES ---
-    // CAMBIA "background-card-generic.png" por el nombre de tu archivo de fondo global
     string globalCardBackgroundUrl = Url.Content("~/images/cards/background-card-generic.png");
-    // CAMBIA "title-logo.png" por el nombre de tu archivo de logo
     string gameLogoUrl = Url.Content("~/images/title-logo.png");
 
     var jugadores = ViewBag.Jugadores as List<CL_ProyectoFinalPOO.Clases.Jugador> ?? new();
@@ -15,6 +11,11 @@
     bool juegoTerminado = ViewBag.JuegoTerminado ?? false;
     string mensajeError = ViewBag.MensajeError as string;
     int totalCartasEnMazo = ViewBag.TotalCartasEnMazo ?? 0;
+
+    var jugadoresIzquierda = jugadores.Take((int)Math.Ceiling(jugadores.Count / 2.0)).ToList();
+    var jugadoresDerecha = jugadores.Skip((int)Math.Ceiling(jugadores.Count / 2.0)).ToList();
+
+    bool mostrarCartaReal = cartaRevelada != null;
 }
 <!DOCTYPE html>
 <html lang="es">
@@ -25,18 +26,17 @@
     <link rel="stylesheet" href="~/css/juego-pantalla.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Sorts+Mill+Goudy&display=swap" rel="stylesheet">
-
 </head>
 <body class="game-active-bg">
     <div class="game-container play-screen">
 
         @if (!string.IsNullOrEmpty(mensajeError))
         {
-            <div class="error-banner" id="gameErrorBanner"><i class="fas fa-exclamation-triangle"></i> @mensajeError</div>
+                    <div class="error-banner" id="gameErrorBanner"><i class="fas fa-exclamation-triangle"></i> @mensajeError</div>
         }
 
         <div class="turn-indicator @(juegoTerminado ? "turn-ended" : "")">
-            @if (juegoTerminado && string.IsNullOrEmpty(mensajeError))
+            @if (juegoTerminado && string.IsNullOrEmpty(mensajeError)) // Si el juego terminó Y NO HAY un banner de error específico del ganador
             {
                 <span>¡La partida ha concluido!</span>
             }
@@ -44,145 +44,197 @@
             {
                 <span>Turno de: <strong>@jugadorActual.Nickname</strong></span>
             }
-            else if (!juegoTerminado)
+            else if (!juegoTerminado && jugadorActual == null) // Condición para "Cargando..." o estado inicial sin jugador
             {
                 <span>Cargando...</span>
             }
+            @* No se muestra nada más en el turn-indicator si hay mensajeError (banner) *@
         </div>
 
-        <div class="player-areas-container">
-            @foreach (var jugador in jugadores)
-            {
-                    <div class="player-box @(jugador.Nickname == jugadorActual?.Nickname ? "current-player-turn" : "")">
-                        <div class="player-avatar"><i class="fas fa-user-shield"></i></div>
-                        <h4 class="player-nickname">@jugador.Nickname</h4>
-                        <div class="player-stats">
-                            <p><i class="fas fa-coins gold-icon"></i> Puntos: <strong>@jugador.Puntos</strong></p>
-                            <p><i class="fas fa-layer-group card-count-icon"></i> Cartas: <strong>@(jugador.L_cartas_jugador?.Count ?? 0)</strong></p>
-                        </div>
-                    </div>
-            }
-        </div>
-
-        <div class="central-game-board">
-            <div class="deck-and-actions-column">
-                <div class="deck-pile">
-                    @if (!juegoTerminado)
-                    {
-                            <form asp-controller="Reglas" asp-action="BarajaCatalogo" method="post">
-                                <button type="submit" class="back-button tertiary-action-button"><i class="fas fa-eye"></i> Ver Mazo</button>
-                            </form>
-                        @if (totalCartasEnMazo > 0)
-                        {
-                        }
-                    }
-                    else
-                    {
-                        <div class="deck-image-placeholder"><i class="fas fa-times-circle fa-3x" style="color: #d0021b;"></i><p>Mazo agotado</p></div>
-                    }
-                    <p class="deck-count-text">Destino: <strong>@totalCartasEnMazo</strong> cartas</p>
-                </div>
-                <div class="game-actions">
-                    @if (!juegoTerminado)
-                    {
-                            <form asp-controller="Juego" asp-action="CogerCarta" method="post" id="formCogerCarta" style="@(cartaRevelada != null ? "display:none;" : "display:block;")">
-                                <button type="submit" class="rules-button"><i class="fas fa-hand-sparkles"></i> Coger Carta</button>
-                            </form>
-                            <form asp-controller="Juego" asp-action="SiguienteTurno" method="post" id="formSiguienteTurno" style="@(cartaRevelada == null ? "display:none;" : "display:block;")">
-                                <button type="submit" class="turno-button"><i class="fas fa-arrow-right"></i> Siguiente Turno</button>
-                            </form>
-                    }
-                    else
-                    {
-                        <p style="text-align:center; font-weight:bold; margin-top: 10px;">Partida Finalizada</p>
-                    }
-                    <form asp-controller="Home" asp-action="Index" method="post" style="margin-top: auto;">
-                        <button type="submit" class="back-button"><i class="fas fa-sign-out-alt"></i> Salir</button>
-                    </form>
-                </div>
+        <div class="game-main-content-wrapper">
+            <div class="players-column" id="players-left-column">
+                @foreach (var jugador in jugadoresIzquierda)
+                {
+                            <div class="player-box @(jugador.Nickname == jugadorActual?.Nickname ? "current-player-turn" : "")">
+                                <div class="player-avatar"><i class="fas fa-user-shield"></i></div>
+                                <h4 class="player-nickname">@jugador.Nickname</h4>
+                                <div class="player-stats">
+                                    <p><i class="fas fa-coins gold-icon"></i> Puntos:  <strong>@jugador.Puntos</strong></p>
+                                    <p><i class="fas fa-layer-group card-count-icon"></i> Cartas: <strong>@(jugador.L_cartas_jugador?.Count ?? 0)</strong></p>
+                                </div>
+                            </div>
+                }
             </div>
 
-            <div class="revealed-card-zone" id="revealedCardZone">
-                @if (cartaRevelada != null)
-                {
-                    string tipoCarta = (string)cartaRevelada.TipoCarta ?? "desconocido";
-                    tipoCarta = tipoCarta.Length > 0 ? char.ToUpper(tipoCarta[0]) + tipoCarta.Substring(1) : "Desconocido"; // Capitalizar
+            <div class="central-game-board">
+                <div class="deck-and-actions-column">
+                    <div class="deck-pile">
+                        @if (!juegoTerminado)
+                        {
+                                    <form asp-controller="Reglas" asp-action="BarajaCatalogo" method="post">
+                                        <button type="submit" class="mazo-button"><i class="fas fa-eye"></i> Ver Mazo</button>
+                                    </form>
+                        }
 
-                    int puntosCarta = cartaRevelada.Puntos;
-                    string puntosClaseTexto = puntosCarta > 0 ? "points-positive" :
-                                              puntosCarta < 0 ? "points-negative" : "points-neutral";
-                    string puntosTextoAMostrar = (puntosCarta >= 0 ? "+" : "") + puntosCarta;
-                    if (puntosCarta == 0) puntosTextoAMostrar = "0";
 
-                    string descripcionRaw = (string)cartaRevelada.Descripcion ?? "";
-                    string descripcionHtml = System.Text.RegularExpressions.Regex.Replace(descripcionRaw, @"\*(.*?)\*", "<strong>$1</strong>");
+                        <p class="deck-count-text">Destino: <strong>@totalCartasEnMazo</strong> cartas</p>
+                    </div>
+                   <div class="game-actions">
+                        @if (!juegoTerminado)
+                        {
+                                    <form asp-controller="Juego" asp-action="CogerCarta" method="post" id="formCogerCarta" style="@(mostrarCartaReal ? "display:none;" : "display:block;")">
+                                        <button type="submit" class="rules-button"><i class="fas fa-hand-sparkles"></i> Coger Carta</button>
+                                    </form>
+                                    <form asp-controller="Juego" asp-action="SiguienteTurno" method="post" id="formSiguienteTurno" style="@(!mostrarCartaReal ? "display:none;" : "display:block;")">
+                                        <button type="submit" class="turno-button"><i class="fas fa-arrow-right"></i> Siguiente Turno</button>
+                                    </form>
+                        }
+                        else
+                        {
+                            @* ---------- INICIO DE LA MODIFICACIÓN PARA BOTONES DE FIN DE JUEGO ---------- *@
+                                <div class="end-game-actions-container">
+                                    <p style="text-align:center; font-weight:bold; margin-bottom: 15px;">Partida Finalizada</p>
 
-                    string rarezaCarta = (string)cartaRevelada.Rareza;
-                    string bendicionCarta = (string)cartaRevelada.Bendicion;
-                    string maleficioCarta = (string)cartaRevelada.Maleficio; 
+                                    <form asp-controller="Juego" asp-action="NuevaRonda" method="post" class="end-game-action-form">
+                                        <button type="submit" class="primary-action-button end-game-button"><i class="fas fa-redo-alt"></i> Nueva Ronda</button>
+                                    </form>
 
-                        <div class="revealed-game-card animate-in">
-                            <img src="@globalCardBackgroundUrl" alt="Fondo de Carta" class="card-visual-background-game" />
-                            <div class="card-content-overlay-game"></div> @* Gradiente superpuesto *@
+                                    <form asp-controller="Juego" asp-action="Reiniciar" method="post" class="end-game-action-form">
+                                        <button type="submit" class="secondary-action-button end-game-button"><i class="fas fa-power-off"></i> Reiniciar Juego</button>
+                                    </form>
 
-                            <div class="card-inner-content-game"> @* Contenido sobre el gradiente *@
-                                <div class="card-top-section-game">
-                                    <h3 class="card-title-game">@cartaRevelada.Nombre</h3>
-                                    <p class="card-mythology-game">@cartaRevelada.Mitologia</p>
-                                    <div class="card-logo-area-game">
-                                        <img src="@gameLogoUrl" alt="Logo del Juego" />
+                                    <form asp-controller="Home" asp-action="Index" method="post" class="end-game-action-form">
+                                        <button type="submit" class="tertiary-action-button end-game-button"><i class="fas fa-sign-out-alt"></i> Salir</button>
+                                    </form>
+                                </div>
+                            @* ---------- FIN DE LA MODIFICACIÓN ---------- *@
+                        }
+                        @* Mover el botón de salir general fuera del if/else si quieres que siempre esté visible,
+                           o dejarlo solo para cuando el juego NO ha terminado.
+                           Si lo dejas como está arriba, el botón de Salir solo aparecerá cuando el juego termine.
+                           Si quieres un botón de salir durante el juego, sería este: *@
+                        @if (!juegoTerminado)
+                        {
+                                <form asp-controller="Home" asp-action="Index" method="post" style="margin-top: auto;">
+                                    <button type="submit" class="tertiary-action-button"><i class="fas fa-sign-out-alt"></i> Salir del Juego</button>
+                                </form>
+                        }
+                    </div>
+                </div>
+
+                @* ---------- INICIO DE LA MODIFICACIÓN ---------- *@
+                <div class="revealed-card-zone" id="revealedCardZone">
+                    @if (juegoTerminado && cartaRevelada == null)
+                    {
+                        @* Mostrar solo el placeholder de juego terminado *@
+                            <div class="card-display-placeholder" id="cardPlaceholderFinished">
+                                <i class="fas fa-gavel placeholder-icon" style="color: var(--card-accent-gold);"></i>
+                                <p>El juicio ha terminado.</p>
+                            </div>
+                    }
+                    else
+                    {
+                        @* Mostrar el flipper de la carta normal si el juego no ha terminado o hay una carta revelada *@
+                            <div class="card-flipper-container" id="cardFlipper">
+
+                            @* Placeholder Visual *@
+                                <div class="card-placeholder-visual @(mostrarCartaReal ? "is-flipped-away" : "")" id="cardPlaceholderVisual">
+                                    <div class="card-content-overlay-game"></div>
+                                    <div class="card-inner-content-game placeholder-content"> @* Contenido del placeholder, visible por CSS *@
+                                        <img src="@gameLogoUrl" alt="Logo del Juego" class="placeholder-logo-img"/>
+                                        <p class="placeholder-text-instruction">Invoca tu Destino</p>
                                     </div>
                                 </div>
 
-                                <div class="card-middle-section-game">
-                                    <div class="card-attributes-display-game">
-                                        <p><span class="attr-label">Tipo:</span> <span class="attr-value">@tipoCarta</span></p>
-                                    @if ((tipoCarta == "Juego" || tipoCarta == "juego") && !string.IsNullOrEmpty(rarezaCarta))
-                                    {
-                                                <p><span class="attr-label">Rareza:</span> <span class="attr-value rarity @($"rarity-{rarezaCarta.ToLowerInvariant()}")">@rarezaCarta</span></p>
-                                    }
-                                    else if ((tipoCarta == "Premio" || tipoCarta == "premio") && !string.IsNullOrEmpty(bendicionCarta))
-                                    {
-                                                <p><span class="attr-label">Bendición:</span> <span class="attr-value">@bendicionCarta</span></p>
-                                    }
-                                    else if ((tipoCarta == "Castigo" || tipoCarta == "castigo") && !string.IsNullOrEmpty(maleficioCarta))
-                                    {
-                                                <p><span class="attr-label">Maleficio:</span> <span class="attr-value">@maleficioCarta</span></p>
-                                    }
-                                    </div>
+                            @* Carta Real Revelada *@
+                            @{
+                                string revealedCardClasses = "revealed-game-card";
+                                if (mostrarCartaReal)
+                                {
+                                    revealedCardClasses += " animate-card-content-in"; // Contenido visible si hay carta
+                                }
+                                else
+                                {
+                                    revealedCardClasses += " is-flipped-away"; // Oculta si no hay carta
+                                }
+                            }
+                                <div class="@revealedCardClasses" id="revealedGameCard">
+                                @if (cartaRevelada != null)
+                                {
+                                    string tipoCarta = (string)cartaRevelada.TipoCarta ?? "desconocido";
+                                    tipoCarta = tipoCarta.Length > 0 ? char.ToUpper(tipoCarta[0]) + tipoCarta.Substring(1) : "Desconocido";
+                                    int puntosCarta = cartaRevelada.Puntos;
+                                    string puntosClaseTexto = puntosCarta > 0 ? "points-positive" : (puntosCarta < 0 ? "points-negative" : "points-neutral");
+                                    string puntosTextoAMostrar = (puntosCarta >= 0 ? "+" : "") + puntosCarta;
+                                    if (puntosCarta == 0) puntosTextoAMostrar = "0";
+                                    string descripcionRaw = (string)cartaRevelada.Descripcion ?? "";
+                                    string descripcionHtml = System.Text.RegularExpressions.Regex.Replace(descripcionRaw, @"\*(.*?)\*", "<strong>$1</strong>");
+                                    string rarezaCarta = (string)cartaRevelada.Rareza;
+                                    string bendicionCarta = (string)cartaRevelada.Bendicion;
+                                    string maleficioCarta = (string)cartaRevelada.Maleficio;
+                                    string altFondoCarta = $"Carta: {cartaRevelada.Nombre}";
 
-                                    <div class="card-description-text-game">
-                                    @Html.Raw(descripcionHtml)
-                                    </div>
-                                </div>
-
-                                <div class="card-points-footer-game">
-                                    <span class="points-text-label">Puntos:</span>
-                                    <span class="points-value-display @puntosClaseTexto">@puntosTextoAMostrar</span>
+                                                <div class="card-content-overlay-game"></div>
+                                                <div class="card-inner-content-game"> @* El contenido se anima por la clase del padre *@
+                                                    <div class="card-top-section-game">
+                                                        <h3 class="card-title-game">@cartaRevelada.Nombre</h3>
+                                                        <p class="card-mythology-game">@cartaRevelada.Mitologia</p>
+                                                        <div class="card-logo-area-game">
+                                                            <img src="@gameLogoUrl" alt="Logo del Juego" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-middle-section-game">
+                                                        <div class="card-attributes-display-game">
+                                                            <p><span class="attr-label">Tipo:</span> <span class="attr-value">@tipoCarta</span></p>
+                                                @if ((tipoCarta.Equals("Juego", StringComparison.OrdinalIgnoreCase)) && !string.IsNullOrEmpty(rarezaCarta))
+                                                {
+                                                                        <p><span class="attr-label">Rareza:</span> <span class="attr-value rarity @($"rarity-{rarezaCarta.ToLowerInvariant()}")">@rarezaCarta</span></p>
+                                                }
+                                                else if ((tipoCarta.Equals("Premio", StringComparison.OrdinalIgnoreCase)) && !string.IsNullOrEmpty(bendicionCarta))
+                                                {
+                                                                        <p><span class="attr-label">Bendición:</span> <span class="attr-value">@bendicionCarta</span></p>
+                                                }
+                                                else if ((tipoCarta.Equals("Castigo", StringComparison.OrdinalIgnoreCase)) && !string.IsNullOrEmpty(maleficioCarta))
+                                                {
+                                                                        <p><span class="attr-label">Maleficio:</span> <span class="attr-value">@maleficioCarta</span></p>
+                                                }
+                                                        </div>
+                                                        <div class="card-description-text-game">@Html.Raw(descripcionHtml)</div>
+                                                    </div>
+                                                    <div class="card-points-footer-game">
+                                                        <span class="points-text-label">Puntos:   </span>
+                                                        <span class="points-value-display @puntosClaseTexto">@puntosTextoAMostrar</span>
+                                                    </div>
+                                                </div>
+                                                <div class="points-change-floater @puntosClaseTexto">@puntosTextoAMostrar</div>
+                                }
                                 </div>
                             </div>
+                    }
+                </div>
+                @* ---------- FIN DE LA MODIFICACIÓN ---------- *@
+            </div>
 
-                            <div class="points-change-floater @puntosClaseTexto">
-                            @puntosTextoAMostrar
+            <div class="players-column" id="players-right-column">
+                @foreach (var jugador in jugadoresDerecha)
+                {
+                            <div class="player-box @(jugador.Nickname == jugadorActual?.Nickname ? "current-player-turn" : "")">
+                                <div class="player-avatar"><i class="fas fa-user-shield"></i></div>
+                                <h4 class="player-nickname">@jugador.Nickname</h4>
+                                <div class="player-stats">
+                                    <p><i class="fas fa-coins gold-icon"></i> Puntos:   <strong>@jugador.Puntos</strong></p>
+                                    <p><i class="fas fa-layer-group card-count-icon"></i> Cartas: <strong>@(jugador.L_cartas_jugador?.Count ?? 0)</strong></p>
+                                </div>
                             </div>
-                        </div>
-                }
-                else if (!juegoTerminado)
-                {
-                    <div class="card-display-placeholder" id="cardPlaceholder"><i class="fas fa-scroll placeholder-icon"></i><p>Invoca tu destino...</p></div>
-                }
-                else
-                {
-                    <div class="card-display-placeholder" id="cardPlaceholderFinished"><i class="fas fa-gavel placeholder-icon" style="color: #ffd700;"></i><p>El juicio ha terminado.</p></div>
                 }
             </div>
         </div>
 
         <div class="game-history-log">
             <h4><i class="fas fa-book-open"></i> Crónicas del Destino</h4>
-            <ul> @foreach (var entrada in historialJuego.TakeLast(10).Reverse())
+            <ul> @foreach (var entrada in historialJuego.TakeLast(15))
                 {
-                    <li>@Html.Raw(entrada)</li>
+                        <li>@Html.Raw(entrada)</li>
                 } </ul>
         </div>
 
@@ -190,19 +242,76 @@
         <img src="@Url.Content("~/images/character-female.png")" alt="Decoración" class="character female game-bg-character" />
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const errorBanner = document.getElementById('gameErrorBanner');
-            if (errorBanner) { setTimeout(() => { errorBanner.style.transition = 'opacity 0.5s ease-out'; errorBanner.style.opacity = '0'; setTimeout(() => errorBanner.remove(), 500); }, 7000); }
-            const logContainer = document.querySelector('.game-history-log ul');
-            if (logContainer) { logContainer.scrollTop = logContainer.scrollHeight; }
-            const revealedCardElement = document.querySelector('.revealed-game-card.animate-in');
-            if (revealedCardElement) {
-                revealedCardElement.style.animation = 'none'; void revealedCardElement.offsetHeight; revealedCardElement.style.animation = ''; 
-                const pointsFloater = revealedCardElement.querySelector('.points-change-floater');
-                if (pointsFloater) { pointsFloater.style.animation = 'none'; void pointsFloater.offsetHeight; pointsFloater.style.animation = ''; }
-            }
-        });
-    </script>
+   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const errorBanner = document.getElementById('gameErrorBanner');
+        if (errorBanner) { setTimeout(() => { errorBanner.style.transition = 'opacity 0.5s ease-out'; errorBanner.style.opacity = '0'; setTimeout(() => errorBanner.remove(), 500); }, 7000); }
+
+        const logContainer = document.querySelector('.game-history-log ul');
+        function scrollToBottomLog() { if (logContainer) { logContainer.scrollTop = logContainer.scrollHeight; } }
+        scrollToBottomLog();
+        if (logContainer) { const observer = new MutationObserver(scrollToBottomLog); observer.observe(logContainer, { childList: true }); }
+
+        const formCogerCarta = document.getElementById('formCogerCarta');
+        const formSiguienteTurno = document.getElementById('formSiguienteTurno');
+        const revealedGameCard = document.getElementById('revealedGameCard');
+        const cardPlaceholderVisual = document.getElementById('cardPlaceholderVisual');
+
+        if (formCogerCarta) {
+            formCogerCarta.addEventListener('submit', function(event) {
+                if (cardPlaceholderVisual && revealedGameCard) {
+                    event.preventDefault();
+
+                    // 1. Ocultar placeholder, mostrar carta real (iniciar giro)
+                    cardPlaceholderVisual.classList.remove('is-flipping-to-front');
+                    cardPlaceholderVisual.classList.add('is-flipping-away');
+
+                    revealedGameCard.classList.remove('is-flipped-away');
+                    revealedGameCard.classList.add('is-flipping-to-front');
+
+                    // 2. Animar entrada del contenido de la carta real
+                    revealedGameCard.classList.remove('animate-card-content-out');
+                    revealedGameCard.classList.add('animate-card-content-in');
+
+                    const pointsFloater = revealedGameCard.querySelector('.points-change-floater');
+                    if (pointsFloater) {
+                        pointsFloater.style.animation = 'none';
+                        void pointsFloater.offsetHeight;
+                        pointsFloater.style.animation = '';
+                    }
+
+                    setTimeout(() => {
+                        formCogerCarta.submit();
+                    }, 450); // Ajustado de 750ms a 450ms (0.4s giro + 50ms margen)
+                }
+            });
+        }
+
+        if (formSiguienteTurno) {
+        formSiguienteTurno.addEventListener('submit', function(event) {
+                if (revealedGameCard && cardPlaceholderVisual) {
+                    event.preventDefault();
+
+                    // 1. Animar salida del contenido de la carta real
+                    revealedGameCard.classList.remove('animate-card-content-in');
+                    revealedGameCard.classList.add('animate-card-content-out');
+
+                    // 2. Girar la carta real para ocultarla y mostrar el placeholder
+                    setTimeout(() => {
+                        revealedGameCard.classList.remove('is-flipping-to-front');
+                        revealedGameCard.classList.add('is-flipping-away');
+
+                        cardPlaceholderVisual.classList.remove('is-flipped-away');
+                        cardPlaceholderVisual.classList.add('is-flipping-to-front');
+                    }, 200); // Ajustado de 350ms a 200ms (antes de que termine el desvanecimiento de 0.25s)
+
+                    setTimeout(() => {
+                        formSiguienteTurno.submit();
+                    }, 650); // Ajustado de 1050ms a 650ms (0.2s + 0.4s giro + 50ms margen)
+                }
+            });
+        }
+    });
+</script>
 </body>
 </html>

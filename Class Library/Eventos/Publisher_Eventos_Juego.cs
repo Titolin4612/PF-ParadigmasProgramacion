@@ -7,12 +7,15 @@ namespace CL_ProyectoFinalPOO.Eventos
     public class Publisher_Eventos_Juego
     {
         public delegate void DelegadoEventoGeneral(); // Para eventos sin parámetros específicos
-        public delegate void DelegadoEventoCambioLider(Jugador nuevoLider); // Para evento con el nuevo líder
-
+        public delegate void DelegadoEventoParametroJugador(Jugador jugador); // Para evento con el nuevo líder
+        public delegate void DelegadoEventoParametroJugador2(Jugador jugador, Carta carta); // Para evento con el nuevo líder
         public event DelegadoEventoGeneral AgotadasPremio;
         public event DelegadoEventoGeneral AgotadasCastigo;
         public event DelegadoEventoGeneral AgotadasResto;
-        public event DelegadoEventoCambioLider CambioLider;
+        public event DelegadoEventoGeneral InicioPartida;
+        public event DelegadoEventoParametroJugador2 CartasIniciales;
+        public event DelegadoEventoParametroJugador FinPartida;
+        public event DelegadoEventoParametroJugador CambioLider;
 
         public void NotificarAgotadasPremio()
         {
@@ -33,6 +36,21 @@ namespace CL_ProyectoFinalPOO.Eventos
         {
             CambioLider?.Invoke(nuevoLider);
             juego.NicknameLiderAnterior = nuevoLider.Nickname;
+        }
+
+        public void NotificarInicioPartida()
+        {
+            InicioPartida?.Invoke();
+        }
+        public void NotificarCartasObtenidas(Jugador jugador, Carta carta)
+        {
+            CartasIniciales?.Invoke(jugador, carta);
+        }
+
+
+        public void NotificarFinPartida(Jugador ganador)
+        {
+            FinPartida?.Invoke(ganador);
         }
     }
 }

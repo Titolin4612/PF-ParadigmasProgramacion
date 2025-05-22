@@ -25,6 +25,8 @@ namespace MVC_ProyectoFinalPOO.Controllers
                     List<Jugador> jugadoresConfigurados = _homeService.ObtenerJugadores();
                     if (jugadoresConfigurados != null && jugadoresConfigurados.Any())
                     {
+                        Juego.Jugadores.Clear();
+                        Juego.IndiceJugador = 0;
                         _juegoService.IniciarJuego(jugadoresConfigurados);
                         juegoIniciado = true;
                     }
@@ -118,6 +120,11 @@ namespace MVC_ProyectoFinalPOO.Controllers
                 ViewBag.JuegoTerminado = _juegoService.JuegoTerminado();
                 ViewBag.TotalCartasEnMazo = _juegoService.TotalCartas();
 
+                if (_juegoService.JuegoTerminado())
+                {
+                    Finalizar();
+                }
+
                 return View("Index");
             }
             catch (Exception ex)
@@ -143,11 +150,12 @@ namespace MVC_ProyectoFinalPOO.Controllers
         [HttpPost]
         public IActionResult Finalizar()
         {
+ 
             var ganador = _juegoService.FinalizarJuego();
-            ViewBag.Jugadores = _juegoService.ObtenerJugadores();
             ViewBag.HistorialJuego = _juegoService.ObtenerHistorial();
-            ViewBag.JuegoTerminado = true;
+            ViewBag.Jugadores = _juegoService.ObtenerJugadores();
             ViewBag.CartaRevelada = null;
+
 
             if (ganador != null)
             {
@@ -158,15 +166,48 @@ namespace MVC_ProyectoFinalPOO.Controllers
                 ViewBag.MensajeError = "La partida ha finalizado.";
             }
             juegoIniciado = false;
+            ViewBag.HistorialJuego = _juegoService.ObtenerHistorial();
+            ViewBag.HistorialJuego = _juegoService.ObtenerHistorial();
+            ViewBag.JuegoTerminado = _juegoService.JuegoTerminado();
             return View("Index");
         }
 
         [HttpPost]
-        public IActionResult Reiniciar()
+        public IActionResult NuevaRonda()
         {
-            _juegoService.ReiniciarJuego();
+            if (!juegoIniciado || _juegoService.ObtenerJugadores() == null || !_juegoService.ObtenerJugadores().Any())
+            {
+
+                List<Jugador> jugadoresParaIniciar = _homeService.ObtenerJugadores();
+                if (jugadoresParaIniciar != null && jugadoresParaIniciar.Any())
+                {
+                    _juegoService.IniciarJuego(jugadoresParaIniciar);
+                    juegoIniciado = true;
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Home"); // No hay jugadores, ir a Home
+                }
+            }
+            else
+            {
+
+                _juegoService.ComenzarNuevaRondaConJugadoresActuales(); 
+                juegoIniciado = true; 
+            }
+
+            // ViewBag.JuegoTerminado = false; // Index se encargará de esto
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public IActionResult Reiniciar() 
+        {
+            Juego.Jugadores.Clear();
+            Juego.IndiceJugador = 0;
+            _juegoService.ReiniciarJuego(); 
             juegoIniciado = false;
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Home"); 
         }
     }
 }
