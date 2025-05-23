@@ -21,7 +21,7 @@ namespace MVC_ProyectoFinalPOO.Controllers
             _juegoService = juegoService;
         }
 
-        private void CargarViewBagComun(string mensajeErrorPersonalizado = null)
+        public void CargarViewBagComun(string mensajeErrorPersonalizado = null)
         {
             ViewBag.Jugadores = _juegoService.ObtenerJugadores();
             ViewBag.JugadorActual = _juegoService.ObtenerJugadorActual();
@@ -33,10 +33,6 @@ namespace MVC_ProyectoFinalPOO.Controllers
             {
                 ViewBag.MensajeError = mensajeErrorPersonalizado;
             }
-            else if (TempData.ContainsKey("ErrorGlobalJuego")) // Usar un TempData específico para JuegoController
-            {
-                ViewBag.MensajeError = TempData["ErrorGlobalJuego"] as string;
-            }
         }
 
         public IActionResult Index()
@@ -45,22 +41,18 @@ namespace MVC_ProyectoFinalPOO.Controllers
             {
                 if (!_juegoService.EstaJuegoActivo())
                 {
-                    // Si el usuario navega aquí directamente o después de un reinicio completo.
-                    // HomeController es responsable de llamar a _juegoService.IniciarJuego().
                     CargarViewBagComun("No hay partida en curso. Por favor, configura los jugadores en la pantalla de inicio.");
-                    // Asegurar que la vista Index.cshtml maneje bien este estado (ej. ocultar botones de acción de juego).
-                    // ViewBag.JuegoTerminado será true en este caso por la lógica de _juegoService.JuegoTerminado().
                     return View("Index");
                 }
 
-                CargarViewBagComun();
+                CargarViewBagComun(); // 👈 Primero cargá todo
+
                 return View("Index");
             }
             catch (Exception ex)
             {
-                Debug.WriteLine($"JuegoController.Index: Error crítico - {ex.Message}");
                 CargarViewBagComun("Error crítico al cargar la página del juego: " + ex.Message);
-                ViewBag.JuegoTerminado = true; // En caso de error, asumir terminado para la UI.
+                ViewBag.JuegoTerminado = true;
                 return View("Index");
             }
         }
@@ -70,27 +62,66 @@ namespace MVC_ProyectoFinalPOO.Controllers
         {
             if (!_juegoService.EstaJuegoActivo())
             {
-                TempData["ErrorGlobal"] = "No se puede coger carta, la partida no está activa."; // Error para Home
+                TempData["ErrorGlobal"] = "No se puede coger carta, la partida no está activa.";
                 return RedirectToAction("Index", "Home");
             }
 
             try
             {
-                var (_, _, cartaViewModel) = _juegoService.CogerCarta();
-                ViewBag.CartaRevelada = cartaViewModel;
+                // MODIFICADO: Ahora recibe (Carta, int)
+                var (cartaCogida, puntosObtenidos) = _juegoService.CogerCarta();
 
-                if (cartaViewModel == null && !_juegoService.JuegoTerminado())
+                if (cartaCogida != null)
                 {
-                    CargarViewBagComun("No quedan más cartas en el mazo o no se pudo obtener una carta.");
+                    // MODIFICADO: Construir el objeto para ViewBag.CartaRevelada aquí
+                    string tipoCartaStr = "desconocido";
+                    string rareza = null, bendicion = null, maleficio = null;
+
+                    if (cartaCogida is CartaJuego cj) { tipoCartaStr = "juego"; rareza = cj.RarezaCarta.ToString(); }
+                    else if (cartaCogida is CartaPremio cp) { tipoCartaStr = "premio"; bendicion = cp.Bendicion; }
+                    else if (cartaCogida is CartaCastigo cc) { tipoCartaStr = "castigo"; maleficio = cc.Maleficio; }
+
+                    ViewBag.CartaRevelada = new
+                    {
+                        TipoCarta = tipoCartaStr,
+                        cartaCogida.Nombre,
+                        cartaCogida.Mitologia,
+                        cartaCogida.Descripcion,
+                        cartaCogida.ImagenUrl, // Asumiendo que ImagenUrl está en la clase base Carta o en todas las derivadas
+                        Puntos = puntosObtenidos,
+                        Rareza = rareza,
+                        Bendicion = bendicion,
+                        Maleficio = maleficio
+                    };
                 }
                 else
                 {
-                    CargarViewBagComun();
+                    ViewBag.CartaRevelada = null;
                 }
 
-                // La vista Index.cshtml ya reacciona a ViewBag.JuegoTerminado para mostrar
-                // los botones de fin de juego. No es necesario llamar a FinalizarJuego() aquí explícitamente.
-                // El servicio ya actualizó el estado del juego.
+                // El resto de tu lógica para manejar el mensaje de error y la finalización del juego
+                // (que proporcioné en la respuesta anterior) seguiría aquí.
+                // Por ejemplo:
+                string mensajeErrorCarta = null;
+                if (ViewBag.CartaRevelada == null && !_juegoService.JuegoTerminado())
+                {
+                    mensajeErrorCarta = "No quedan más cartas en el mazo o no se pudo obtener una carta.";
+                }
+
+                CargarViewBagComun(mensajeErrorCarta);
+
+                if (ViewBag.JuegoTerminado == true)
+                {
+                    ViewBag.CartaRevelada = null;
+                    if (string.IsNullOrEmpty(ViewBag.MensajeError))
+                    {
+                        var ganador = _juegoService.FinalizarJuego();
+                        ViewBag.MensajeGanador = (ganador != null)
+                            ? $"🎉 ¡GANADOR! {ganador.Nickname} con {ganador.Puntos} puntos. 🎉"
+                            : "La partida ha finalizado sin un ganador claro, o no hay jugadores.";
+                    }
+                }
+
                 return View("Index");
             }
             catch (Exception ex)
@@ -105,16 +136,12 @@ namespace MVC_ProyectoFinalPOO.Controllers
         [HttpPost]
         public IActionResult SiguienteTurno()
         {
-            if (!_juegoService.EstaJuegoActivo())
-            {
-                TempData["ErrorGlobal"] = "No se puede pasar turno, la partida no está activa.";
-                return RedirectToAction("Index", "Home");
-            }
             try
             {
                 _juegoService.PasarTurno();
                 // Después de pasar turno, el estado se actualiza. Redirigir a Index para que
                 // recargue los ViewBags con la información fresca.
+
                 return RedirectToAction("Index");
             }
             catch (Exception ex)
@@ -126,38 +153,6 @@ namespace MVC_ProyectoFinalPOO.Controllers
                 return View("Index");
             }
         }
-
-        // El botón "Finalizar" en la UI si existe, debería ser para forzar fin si el juego aún no ha terminado.
-        // Si el juego ya terminó (ViewBag.JuegoTerminado == true), la UI muestra "Nueva Ronda", "Reiniciar", "Ver Resumen".
-        // Esta acción es si se quiere un botón explícito de "Terminar Juego Ahora".
-        // La vista Index.cshtml actualmente no parece tener un botón para "Finalizar" la partida en curso,
-        // sino que reacciona a _juegoService.JuegoTerminado().
-        // Por lo tanto, el método [HttpPost] Finalizar() que tenías podría ser innecesario.
-        // Si decides mantenerlo, debería llamarse por un botón específico.
-        // Lo comentaré por ahora, ya que la lógica de terminación parece bien manejada por el estado.
-        /*
-        [HttpPost]
-        public IActionResult FinalizarPartidaActual() // Nombre más descriptivo
-        {
-            if (!_juegoService.EstaJuegoActivo())
-            {
-                 TempData["ErrorGlobalJuego"] = "No hay juego activo para finalizar.";
-                 return RedirectToAction("Index");
-            }
-            try
-            {
-                _juegoService.FinalizarJuego(); // El servicio actualiza su estado interno.
-                // Redirigir a Index, que mostrará el estado de juego terminado.
-                return RedirectToAction("Index");
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine($"JuegoController.FinalizarPartidaActual: Error - {ex.Message}");
-                CargarViewBagComun("Error al intentar finalizar el juego: " + ex.Message);
-                return View("Index");
-            }
-        }
-        */
 
         [HttpPost]
         public IActionResult NuevaRonda()
@@ -213,9 +208,6 @@ namespace MVC_ProyectoFinalPOO.Controllers
                 // Asegurarse que el juego esté efectivamente terminado o no activo para ver resumen.
                 if (!_juegoService.JuegoTerminado() && _juegoService.EstaJuegoActivo())
                 {
-                    // Opcionalmente, forzar finalización si se intenta ver resumen de juego activo.
-                    // _juegoService.FinalizarJuego();
-                    // O mostrar un mensaje de que el juego no ha terminado.
                     TempData["ErrorGlobalJuego"] = "La partida aún no ha finalizado para ver el resumen.";
                     return RedirectToAction("Index");
                 }

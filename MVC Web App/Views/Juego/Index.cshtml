@@ -32,8 +32,16 @@
 
         @if (!string.IsNullOrEmpty(mensajeError))
         {
-                        <div class="error-banner" id="gameErrorBanner"><i class="fas fa-exclamation-triangle"></i> @mensajeError</div>
+            <div class="error-banner" id="gameErrorBanner"><i class="fas fa-exclamation-triangle"></i> @mensajeError</div>
         }
+
+        @if (juegoTerminado && ViewBag.MensajeGanador != null)
+        {
+            <div class="success-banner" id="winnerBanner">
+                <i class="fas fa-trophy"></i> @Html.Raw(ViewBag.MensajeGanador)
+            </div>
+        }
+
 
         <div class="turn-indicator @(juegoTerminado ? "turn-ended" : "")">
             @if (juegoTerminado && string.IsNullOrEmpty(mensajeError)) // Si el juego terminó Y NO HAY un banner de error específico del ganador
@@ -95,12 +103,14 @@
                                     <div class="end-game-actions-container">
                                         <p style="text-align:center; font-weight:bold; margin-bottom: 15px;">Partida Finalizada</p>
 
-                                        <form asp-controller="Juego" asp-action="NuevaRonda" method="post" class="end-game-action-form">
-                                            <button type="submit" class="primary-action-button end-game-button"><i class="fas fa-redo-alt"></i> Nueva Ronda</button>
-                                        </form>
+
 
                                         <form asp-controller="Juego" asp-action="Reiniciar" method="post" class="end-game-action-form">
                                                     <button type="submit" class="tertiary-action-button end-game-button"><i class="fas fa-sign-out-alt"></i> Reiniciar Juego y Salir</button>
+                                        </form>
+
+                                        <form asp-controller="Juego" asp-action="NuevaRonda" method="post" class="end-game-action-form">
+                                                    <button type="submit" class="primary-action-button end-game-button"><i class="fas fa-redo-alt"></i> Nueva Ronda</button>
                                         </form>
 
                                         <form asp-controller="Juego" asp-action="VerResumen" method="post" class="end-game-action-form">
@@ -126,11 +136,10 @@
                 <div class="revealed-card-zone" id="revealedCardZone">
                     @if (juegoTerminado && cartaRevelada == null)
                     {
-                        @* Mostrar solo el placeholder de juego terminado *@
-                                <div class="card-display-placeholder" id="cardPlaceholderFinished">
-                                    <i class="fas fa-gavel placeholder-icon" style="color: var(--card-accent-gold);"></i>
-                                    <p>El juicio ha terminado.</p>
-                                </div>
+                            <div class="card-display-placeholder" id="cardPlaceholderFinished">
+                                <i class="fas fa-gavel placeholder-icon"></i>
+                                <p>El juicio ha terminado.</p>
+                            </div>
                     }
                     else
                     {
@@ -232,7 +241,7 @@
 
         <div class="game-history-log">
             <h4><i class="fas fa-book-open"></i> Crónicas del Destino</h4>
-            <ul> @foreach (var entrada in historialJuego.TakeLast(15))
+            <ul> @foreach (var entrada in historialJuego.TakeLast(50))
                 {
                             <li>@Html.Raw(entrada)</li>
                 } </ul>

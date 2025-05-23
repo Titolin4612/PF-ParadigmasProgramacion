@@ -268,7 +268,10 @@ namespace CL_ProyectoFinalPOO.Clases
                 IndiceJugador = 0;
             }
 
-
+            if ((agotadasResto && agotadasCastigo && agotadasPremio) || Jugadores.Count < jugadoresMin)
+            {
+                FinalizarJuego(); 
+            }
 
         }
 

@@ -1001,6 +1001,29 @@ a, a:hover, a:visited, a:focus {
     border-color: rgba(104, 31, 31, 0.4);
 }
 
+.success-banner {
+    background: linear-gradient(to right, #3e8e41, #5ac45e); /* Degradado verde más vibrante */
+    color: #fff; /* Asegurar contraste con el fondo */
+    font-weight: bold;
+    text-align: center;
+    padding: 12px 25px; /* Un poco más de espacio interno */
+    border-radius: 8px;
+    margin: 15px auto;
+    max-width: 700px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Mayor profundidad */
+    font-size: 1.2rem;
+    z-index: 9999;
+    transition: all 0.3s ease-in-out;
+}
+
+    .success-banner:hover {
+        background: linear-gradient(to right, #2e7d32, #4caf50); /* Oscurecido para efecto dinámico */
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+        transform: translateY(-3px);
+    }
+
+
+
 
 /* --- HISTORIAL DEL JUEGO --- */
 .game-history-log {
@@ -2068,22 +2091,30 @@ a, a:hover, a:visited, a:focus {
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #d0021b;
-    color: white;
+    background: linear-gradient(to right, #b71c1c, #e53935); /* Degradado rojo intenso */
+    color: #fff;
     padding: 12px 25px;
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5); /* Mayor profundidad */
     z-index: 1000;
     font-family: var(--font-primary);
     font-size: 1.1em;
     display: flex;
     align-items: center;
     gap: 10px;
+    transition: all 0.3s ease-in-out;
 }
+
+    .error-banner:hover {
+        background: linear-gradient(to right, #8e0e0e, #c62828); /* Oscurecido para efecto dinámico */
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+        transform: translateY(-3px);
+    }
 
     .error-banner i {
         font-size: 1.3em;
     }
+
 
 .end-game-actions-container {
     display: flex;
@@ -2998,6 +3029,22 @@ body {
         border-color: #ffd700;
         box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
         background: linear-gradient(145deg, rgba(50, 40, 25, 0.9), rgba(30, 20, 10, 0.95));
+    }
+
+    .fin-juego-player-box:hover {
+        transform: translateY(-20px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+        box-shadow: 0 0 30px rgba(160, 160, 160, 0.8), 0 0 20px rgba(120, 120, 120, 0.5); /* Efecto gris más notable 
+        background: linear-gradient(145deg, rgba(80, 60, 40, 0.95), rgba(50, 30, 15, 1)); /* Fondo con más intensidad */
+    }
+
+/* Hover especial para el ganador */
+    .fin-juego-player-box.fin-juego-winner-highlight:hover {
+        transform: translateY(-20px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+        border-color: #ffe066; /* Dorado más vibrante */
+        box-shadow: 0 0 30px rgba(255, 215, 0, 0.8), 0 0 20px rgba(255, 230, 102, 0.5); /* Efecto dorado más notable */
+        background: linear-gradient(145deg, rgba(80, 60, 40, 0.95), rgba(50, 30, 15, 1)); /* Fondo con más intensidad */
     }
 
 .fin-juego-player-avatar {
