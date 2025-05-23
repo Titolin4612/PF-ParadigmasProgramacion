@@ -1,27 +1,30 @@
-﻿// Services/ReglasService.cs
+﻿// MVC_ProyectoFinalPOO/Services/ReglasService.cs
 using CL_ProyectoFinalPOO.Clases;
-using Microsoft.AspNetCore.Hosting;
+// Se eliminan using no necesarios como Microsoft.AspNetCore.Hosting, CultureInfo, etc.
+// a menos que sean realmente utilizados por otros métodos no mostrados.
 using System;
 using System.Collections.Generic;
-using System.Globalization;
-using System.IO;
 using System.Linq;
-using System.Text.RegularExpressions;
-using System.Text;
+using System.Diagnostics;
+
 
 namespace MVC_ProyectoFinalPOO.Services
 {
     public class ReglasService
     {
+        // Constructor público (ya lo tiene, implícito si no se define otro)
+        // public ReglasService() {}
+
         public List<CartaJuego> ObtenerCartasJuego()
         {
             try
             {
-                Baraja.CargarCartas();
+                Baraja.CargarCartas(); // Carga/recarga desde el JSON. Baraja usa miembros estáticos.
                 return Baraja.CartasJuego;
             }
             catch (Exception ex)
             {
+                Debug.WriteLine($"ReglasService.ObtenerCartasJuego: Error - {ex.Message}");
                 throw new Exception("Error en ReglasService ObtenerCartasJuego", ex);
             }
         }
@@ -35,6 +38,7 @@ namespace MVC_ProyectoFinalPOO.Services
             }
             catch (Exception ex)
             {
+                Debug.WriteLine($"ReglasService.ObtenerCartasPremio: Error - {ex.Message}");
                 throw new Exception("Error en ReglasService ObtenerCartasPremio", ex);
             }
         }
@@ -48,6 +52,7 @@ namespace MVC_ProyectoFinalPOO.Services
             }
             catch (Exception ex)
             {
+                Debug.WriteLine($"ReglasService.ObtenerCartasCastigo: Error - {ex.Message}");
                 throw new Exception("Error en ReglasService ObtenerCartasCastigo", ex);
             }
         }

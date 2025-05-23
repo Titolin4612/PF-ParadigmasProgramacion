@@ -1,57 +1,66 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿// MVC_ProyectoFinalPOO/Controllers/JuegoController.cs
+using Microsoft.AspNetCore.Mvc;
 using CL_ProyectoFinalPOO.Clases;
 using MVC_ProyectoFinalPOO.Services;
+using System;
+using System.Linq;
+using System.Diagnostics;
+using System.Collections.Generic; // Para List<T>
 
 namespace MVC_ProyectoFinalPOO.Controllers
 {
     public class JuegoController : Controller
     {
-        private readonly HomeService _homeService;
         private readonly JuegoService _juegoService;
-        public static bool juegoIniciado = false;
+        // Ya no se necesita HomeService aquí si toda la configuración y limpieza post-inicio
+        // es manejada por HomeController y JuegoService internamente.
 
-        public JuegoController()
+        // Constructor para Inyección de Dependencias
+        public JuegoController(JuegoService juegoService)
         {
-            _homeService = HomeService.Instance;
-            _juegoService = JuegoService.Instance;
+            _juegoService = juegoService;
+        }
+
+        private void CargarViewBagComun(string mensajeErrorPersonalizado = null)
+        {
+            ViewBag.Jugadores = _juegoService.ObtenerJugadores();
+            ViewBag.JugadorActual = _juegoService.ObtenerJugadorActual();
+            ViewBag.HistorialJuego = _juegoService.ObtenerHistorial();
+            ViewBag.JuegoTerminado = _juegoService.JuegoTerminado();
+            ViewBag.TotalCartasEnMazo = _juegoService.TotalCartasEnMazo();
+
+            if (!string.IsNullOrEmpty(mensajeErrorPersonalizado))
+            {
+                ViewBag.MensajeError = mensajeErrorPersonalizado;
+            }
+            else if (TempData.ContainsKey("ErrorGlobalJuego")) // Usar un TempData específico para JuegoController
+            {
+                ViewBag.MensajeError = TempData["ErrorGlobalJuego"] as string;
+            }
         }
 
         public IActionResult Index()
         {
             try
             {
-                ViewBag.HistorialJuego = _juegoService.ObtenerHistorial();
-                if (!juegoIniciado)
+                if (!_juegoService.EstaJuegoActivo())
                 {
-                    List<Jugador> jugadoresConfigurados = _homeService.ObtenerJugadores();
-                    if (jugadoresConfigurados != null && jugadoresConfigurados.Any())
-                    {
-                        Juego.Jugadores.Clear();
-                        Juego.IndiceJugador = 0;
-                        _juegoService.IniciarJuego(jugadoresConfigurados);
-                        juegoIniciado = true;
-                    }
+                    // Si el usuario navega aquí directamente o después de un reinicio completo.
+                    // HomeController es responsable de llamar a _juegoService.IniciarJuego().
+                    CargarViewBagComun("No hay partida en curso. Por favor, configura los jugadores en la pantalla de inicio.");
+                    // Asegurar que la vista Index.cshtml maneje bien este estado (ej. ocultar botones de acción de juego).
+                    // ViewBag.JuegoTerminado será true en este caso por la lógica de _juegoService.JuegoTerminado().
+                    return View("Index");
                 }
 
-                var jugadoresEnPartida = _juegoService.ObtenerJugadores();
-                if (jugadoresEnPartida == null || !jugadoresEnPartida.Any())
-                {
-                    ViewBag.MensajeError = "No hay jugadores configurados para la partida. Vuelve a la pantalla inicial.";
-                    juegoIniciado = false;
-                }
-
-                ViewBag.Jugadores = jugadoresEnPartida;
-                ViewBag.JugadorActual = _juegoService.ObtenerJugadorActual();
-                ViewBag.HistorialJuego = _juegoService.ObtenerHistorial();
-                ViewBag.JuegoTerminado = _juegoService.JuegoTerminado();
-                ViewBag.TotalCartasEnMazo = _juegoService.TotalCartas();
-
+                CargarViewBagComun();
                 return View("Index");
             }
             catch (Exception ex)
             {
-                ViewBag.MensajeError = "Error al cargar el juego: " + ex.Message;
-                juegoIniciado = false;
+                Debug.WriteLine($"JuegoController.Index: Error crítico - {ex.Message}");
+                CargarViewBagComun("Error crítico al cargar la página del juego: " + ex.Message);
+                ViewBag.JuegoTerminado = true; // En caso de error, asumir terminado para la UI.
                 return View("Index");
             }
         }
@@ -59,83 +68,36 @@ namespace MVC_ProyectoFinalPOO.Controllers
         [HttpPost]
         public IActionResult CogerCarta()
         {
+            if (!_juegoService.EstaJuegoActivo())
+            {
+                TempData["ErrorGlobal"] = "No se puede coger carta, la partida no está activa."; // Error para Home
+                return RedirectToAction("Index", "Home");
+            }
+
             try
             {
-                var (carta, puntos) = _juegoService.CogerCarta();
-                var jugadorActual = _juegoService.ObtenerJugadorActual();
+                var (_, _, cartaViewModel) = _juegoService.CogerCarta();
+                ViewBag.CartaRevelada = cartaViewModel;
 
-                object cartaReveladaParaViewBag = null;
-
-                if (carta != null)
+                if (cartaViewModel == null && !_juegoService.JuegoTerminado())
                 {
-                    // Inicializar todas las propiedades posibles a null o valores por defecto
-                    string tipoCarta = "desconocido";
-                    string nombre = carta.Nombre;
-                    string mitologia = carta.Mitologia;
-                    string descripcion = carta.Descripcion;
-                    string imagenArteUrl = carta.ImagenUrl;
-                    string rareza = null;
-                    string bendicion = null;
-                    string maleficio = null;
-
-                    if (carta is CartaJuego juego)
-                    {
-                        tipoCarta = "juego";
-                        rareza = juego.RarezaCarta.ToString();
-                    }
-                    else if (carta is CartaPremio premio)
-                    {
-                        tipoCarta = "premio";
-                        bendicion = premio.Bendicion;
-                    }
-                    else if (carta is CartaCastigo castigo)
-                    {
-                        tipoCarta = "castigo";
-                        maleficio = castigo.Maleficio;
-                    }
-
-                    cartaReveladaParaViewBag = new
-                    {
-                        TipoCarta = tipoCarta,
-                        Nombre = nombre,
-                        Mitologia = mitologia,
-                        Descripcion = descripcion,
-                        ImagenArteUrl = imagenArteUrl,
-                        Puntos = puntos,
-                        Rareza = rareza,
-                        Bendicion = bendicion,
-                        Maleficio = maleficio
-                    };
+                    CargarViewBagComun("No quedan más cartas en el mazo o no se pudo obtener una carta.");
                 }
                 else
                 {
-                    ViewBag.MensajeError = "No quedan más cartas en el mazo o no se pudo obtener una carta.";
+                    CargarViewBagComun();
                 }
 
-                ViewBag.CartaRevelada = cartaReveladaParaViewBag;
-                ViewBag.Jugadores = _juegoService.ObtenerJugadores();
-                ViewBag.JugadorActual = jugadorActual;
-                ViewBag.HistorialJuego = _juegoService.ObtenerHistorial();
-                ViewBag.JuegoTerminado = _juegoService.JuegoTerminado();
-                ViewBag.TotalCartasEnMazo = _juegoService.TotalCartas();
-
-                if (_juegoService.JuegoTerminado())
-                {
-                    Finalizar();
-                    ViewBag.HistorialJuego = _juegoService.ObtenerHistorial();
-                }
-
+                // La vista Index.cshtml ya reacciona a ViewBag.JuegoTerminado para mostrar
+                // los botones de fin de juego. No es necesario llamar a FinalizarJuego() aquí explícitamente.
+                // El servicio ya actualizó el estado del juego.
                 return View("Index");
             }
             catch (Exception ex)
             {
-                ViewBag.MensajeError = "Error al coger carta: " + ex.Message;
+                Debug.WriteLine($"JuegoController.CogerCarta: Error - {ex.Message}");
                 ViewBag.CartaRevelada = null;
-                ViewBag.Jugadores = _juegoService.ObtenerJugadores();
-                ViewBag.JugadorActual = _juegoService.ObtenerJugadorActual();
-                ViewBag.HistorialJuego = _juegoService.ObtenerHistorial();
-                ViewBag.JuegoTerminado = _juegoService.JuegoTerminado();
-                ViewBag.TotalCartasEnMazo = _juegoService.TotalCartas();
+                CargarViewBagComun("Error al coger carta: " + ex.Message);
                 return View("Index");
             }
         }
@@ -143,120 +105,146 @@ namespace MVC_ProyectoFinalPOO.Controllers
         [HttpPost]
         public IActionResult SiguienteTurno()
         {
+            if (!_juegoService.EstaJuegoActivo())
+            {
+                TempData["ErrorGlobal"] = "No se puede pasar turno, la partida no está activa.";
+                return RedirectToAction("Index", "Home");
+            }
             try
             {
                 _juegoService.PasarTurno();
-                ViewBag.HistorialJuego = _juegoService.ObtenerHistorial();
-
+                // Después de pasar turno, el estado se actualiza. Redirigir a Index para que
+                // recargue los ViewBags con la información fresca.
                 return RedirectToAction("Index");
             }
             catch (Exception ex)
             {
-                ViewBag.MensajeError = "Error: " + ex.Message;
+                Debug.WriteLine($"JuegoController.SiguienteTurno: Error - {ex.Message}");
+                // Si hay error, no redirigir, sino mostrar el error en la vista actual.
+                ViewBag.CartaRevelada = null; // Limpiar cualquier carta mostrada.
+                CargarViewBagComun("Error al pasar el turno: " + ex.Message);
                 return View("Index");
             }
-
         }
 
+        // El botón "Finalizar" en la UI si existe, debería ser para forzar fin si el juego aún no ha terminado.
+        // Si el juego ya terminó (ViewBag.JuegoTerminado == true), la UI muestra "Nueva Ronda", "Reiniciar", "Ver Resumen".
+        // Esta acción es si se quiere un botón explícito de "Terminar Juego Ahora".
+        // La vista Index.cshtml actualmente no parece tener un botón para "Finalizar" la partida en curso,
+        // sino que reacciona a _juegoService.JuegoTerminado().
+        // Por lo tanto, el método [HttpPost] Finalizar() que tenías podría ser innecesario.
+        // Si decides mantenerlo, debería llamarse por un botón específico.
+        // Lo comentaré por ahora, ya que la lógica de terminación parece bien manejada por el estado.
+        /*
         [HttpPost]
-        public IActionResult Finalizar()
+        public IActionResult FinalizarPartidaActual() // Nombre más descriptivo
         {
+            if (!_juegoService.EstaJuegoActivo())
+            {
+                 TempData["ErrorGlobalJuego"] = "No hay juego activo para finalizar.";
+                 return RedirectToAction("Index");
+            }
             try
             {
-                juegoIniciado = false;
-                var ganador = _juegoService.FinalizarJuego();
-                ViewBag.HistorialJuego = _juegoService.ObtenerHistorial();
-                ViewBag.Jugadores = _juegoService.ObtenerJugadores();
-                ViewBag.CartaRevelada = null;
-
-                if (ganador != null)
-                {
-                    ViewBag.MensajeError = $"🎉 ¡GANADOR! {ganador.Nickname} con {ganador.Puntos} puntos. 🎉";
-                }
-                else
-                {
-                    ViewBag.MensajeError = "La partida ha finalizado.";
-                }
-                ViewBag.HistorialJuego = _juegoService.ObtenerHistorial();
-                ViewBag.HistorialJuego = _juegoService.ObtenerHistorial();
-                ViewBag.JuegoTerminado = _juegoService.JuegoTerminado();
+                _juegoService.FinalizarJuego(); // El servicio actualiza su estado interno.
+                // Redirigir a Index, que mostrará el estado de juego terminado.
                 return RedirectToAction("Index");
             }
             catch (Exception ex)
             {
-                ViewBag.MensajeError = "Error: " + ex.Message;
+                Debug.WriteLine($"JuegoController.FinalizarPartidaActual: Error - {ex.Message}");
+                CargarViewBagComun("Error al intentar finalizar el juego: " + ex.Message);
                 return View("Index");
             }
         }
+        */
 
         [HttpPost]
         public IActionResult NuevaRonda()
         {
+            // Se asume que esta acción solo está disponible si el juego anterior terminó.
+            // EstaJuegoActivo podría seguir siendo true si _juegoActual no se ha anulado.
+            if (!_juegoService.EstaJuegoActivo() || !_juegoService.JuegoTerminado())
+            {
+                TempData["ErrorGlobalJuego"] = "No se puede iniciar una nueva ronda en este momento.";
+                return RedirectToAction("Index");
+            }
             try
             {
-                var jugadoresActualesEnServicio = _juegoService.ObtenerJugadores();
-
-                if (jugadoresActualesEnServicio != null && jugadoresActualesEnServicio.Any() && jugadoresActualesEnServicio.Count() >= 2)
-                {
-
-                    _juegoService.ComenzarNuevaRondaConJugadoresActuales();
-                    juegoIniciado = true;
-                }
-                else
-                {
-                    ViewBag.MensajeError = "Error al inciiar nueva ronda, no hay suficientes jugadores";
-                }
-
-                return View("Index");
+                _juegoService.ComenzarNuevaRondaConJugadoresActuales();
+                return RedirectToAction("Index");
             }
-            catch (Exception ex)
+            catch (InvalidOperationException ex) // Errores esperados, como no suficientes jugadores.
             {
-                ViewBag.MensajeError = "Error: " + ex.Message;
-                return View("Index");
+                Debug.WriteLine($"JuegoController.NuevaRonda: Operación inválida - {ex.Message}");
+                TempData["ErrorGlobalJuego"] = ex.Message;
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex) // Errores inesperados.
+            {
+                Debug.WriteLine($"JuegoController.NuevaRonda: Error crítico - {ex.Message}");
+                TempData["ErrorGlobalJuego"] = "Error crítico al iniciar nueva ronda: " + ex.Message;
+                return RedirectToAction("Index");
             }
         }
 
         [HttpPost]
-        public IActionResult Reiniciar()
+        public IActionResult Reiniciar() // Volver a Home para configurar nuevo juego.
         {
             try
             {
-                Juego.Jugadores.Clear();
-                Juego.IndiceJugador = 0;
-                _juegoService.ReiniciarJuego();
-                juegoIniciado = false;
+                _juegoService.ReiniciarJuego(); // Anula _juegoActual y limpia config.
                 return RedirectToAction("Index", "Home");
             }
             catch (Exception ex)
             {
-                ViewBag.MensajeError = "Error: " + ex.Message;
-                return View("Index");
+                Debug.WriteLine($"JuegoController.Reiniciar: Error - {ex.Message}");
+                // Incluso si falla el reinicio en el servicio, intentamos llevar al usuario a Home.
+                TempData["ErrorGlobal"] = "Ocurrió un error al reiniciar el juego, por favor intente de nuevo: " + ex.Message;
+                return RedirectToAction("Index", "Home");
             }
         }
 
         [HttpPost]
         public IActionResult VerResumen()
         {
-            var jugadores = _juegoService.ObtenerJugadores();
-            var historial = _juegoService.ObtenerHistorial();
-            var juegoTerminado = _juegoService.JuegoTerminado();
-
-            ViewBag.Jugadores = jugadores;
-            ViewBag.HistorialJuego = historial;
-            ViewBag.JuegoTerminado = juegoTerminado;
-
-            var ganador = jugadores.OrderByDescending(j => j.Puntos).FirstOrDefault();
-            if (ganador != null)
+            try
             {
-                ViewBag.MensajeGanador = $"🎉 ¡GANADOR! {ganador.Nickname} con {ganador.Puntos} puntos. 🎉";
-            }
-            else
-            {
-                ViewBag.MensajeGanador = "La partida ha finalizado sin un ganador claro.";
-            }
+                // Asegurarse que el juego esté efectivamente terminado o no activo para ver resumen.
+                if (!_juegoService.JuegoTerminado() && _juegoService.EstaJuegoActivo())
+                {
+                    // Opcionalmente, forzar finalización si se intenta ver resumen de juego activo.
+                    // _juegoService.FinalizarJuego();
+                    // O mostrar un mensaje de que el juego no ha terminado.
+                    TempData["ErrorGlobalJuego"] = "La partida aún no ha finalizado para ver el resumen.";
+                    return RedirectToAction("Index");
+                }
+                if (!_juegoService.EstaJuegoActivo() && !_juegoService.JuegoTerminado()) // Caso raro: no activo pero tampoco marcado como terminado
+                {
+                    CargarViewBagComun("No hay información de partida para mostrar resumen.");
+                    ViewBag.MensajeGanador = "No hay partida finalizada.";
+                    return View("FinJuego");
+                }
 
-            return View("FinJuego");
+
+                var jugadores = _juegoService.ObtenerJugadores();
+                ViewBag.Jugadores = jugadores;
+                ViewBag.HistorialJuego = _juegoService.ObtenerHistorial();
+                ViewBag.JuegoTerminado = true; // Para la vista FinJuego, siempre debe ser true.
+
+                var ganador = jugadores?.OrderByDescending(j => j.Puntos).FirstOrDefault();
+                ViewBag.MensajeGanador = (ganador != null)
+                    ? $"🎉 ¡GANADOR! {ganador.Nickname} con {ganador.Puntos} puntos. 🎉"
+                    : "La partida ha finalizado sin un ganador claro, o no hay jugadores.";
+
+                return View("FinJuego");
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"JuegoController.VerResumen: Error - {ex.Message}");
+                CargarViewBagComun("Error al generar el resumen del juego: " + ex.Message);
+                return View("Index"); // Vuelve a Index con mensaje de error.
+            }
         }
-
     }
 }

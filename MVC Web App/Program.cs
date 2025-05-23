@@ -12,7 +12,9 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddControllersWithViews();
 builder.Services.AddHttpContextAccessor(); // Si lo necesitas para Session u otros servicios de HttpContext
 
-// Registrar tu servicio usando la clase concreta
+// Registrar servicios como Singleton para que la misma instancia sea usada en toda la app
+builder.Services.AddSingleton<HomeService>();
+builder.Services.AddSingleton<JuegoService>();
 builder.Services.AddSingleton<ReglasService>();
 
 // --- HABILITAR SESIONES ---

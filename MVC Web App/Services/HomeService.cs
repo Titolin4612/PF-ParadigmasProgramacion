@@ -1,107 +1,116 @@
-﻿using MVC_ProyectoFinalPOO.Models;
-using CL_ProyectoFinalPOO.Clases;
+﻿// MVC_ProyectoFinalPOO/Services/HomeService.cs
+using MVC_ProyectoFinalPOO.Models; // O donde estén Jugador/Juego
+using CL_ProyectoFinalPOO.Clases; // Necesario si Jugador y Juego están en este namespace
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Diagnostics;
+using System.Diagnostics; // Para Debug.WriteLine
 
 namespace MVC_ProyectoFinalPOO.Services
 {
     public class HomeService
     {
-        private static HomeService _instance;
-        private List<Jugador> _listaJugadoresConfig = new List<Jugador>();
+        // Esta lista mantiene el estado de los jugadores que se están configurando actualmente.
+        // Dado que HomeService es un Singleton (gestionado por DI), esta lista es compartida a nivel de aplicación.
+        // Es importante gestionarla adecuadamente (p.ej., limpiarla después de su uso).
+        private List<Jugador> _listaJugadoresConfigActual = new List<Jugador>();
 
-        // Singleton: Constructor privado
+        // Constructor público para DI
         public HomeService() { }
 
-        // Singleton: Método para obtener la instancia
-        public static HomeService Instance
-        {
-            get
-            {
-                
-                if (_instance == null)
-                {
-                    _instance = new HomeService();
-                }
-                return _instance;
-                
-            }
-        }
-
+        // Limpia la lista de jugadores que estaban en proceso de configuración.
         public void LimpiarConfiguracionJugadores()
         {
             try
             {
-                _listaJugadoresConfig.Clear();
-                Debug.WriteLine("HomeService: Configuración de jugadores limpiada.");
+                _listaJugadoresConfigActual.Clear();
+                Debug.WriteLine("HomeService: Configuración de jugadores actual ha sido limpiada.");
             }
             catch (Exception ex)
             {
-                throw new Exception("Error en HomeService LimpiarConfiguracionJugadores", ex);
+                Debug.WriteLine($"HomeService: Error al limpiar configuración: {ex.Message}");
+                // Considera no lanzar una nueva excepción genérica aquí si el Debug.WriteLine es suficiente
+                // o si el error no es realmente "crítico" para la operación de limpieza.
+                // throw new Exception("Error crítico en HomeService al intentar limpiar la configuración de jugadores.", ex);
             }
         }
 
-        public void AgregarJugador(string nickname, int apuesta)
+        // Agrega un jugador a la lista de configuración actual, realizando validaciones previas.
+        public void AgregarJugadorConfigurado(string nickname, int apuesta)
         {
-
-            // Validaciones
             if (string.IsNullOrWhiteSpace(nickname) || nickname.Length < 4)
-                throw new ArgumentException("Nickname inválido, debe tener mínimo 4 caracteres.");
-            if (apuesta < 10 || apuesta > 1000)
-                throw new ArgumentException("Apuesta entre 10 y 1000.");
-            if (_listaJugadoresConfig.Count >= 4)
-                throw new InvalidOperationException("Máximo 4 jugadores.");
-            if (_listaJugadoresConfig.Any(j => j.Nickname.Equals(nickname, StringComparison.OrdinalIgnoreCase)))
-                throw new ArgumentException("Ese nickname ya está en uso.");
+                throw new ArgumentException("El Nickname es inválido. Debe tener al menos 4 caracteres.");
+            if (apuesta < 10 || apuesta > 1000) // Límites de apuesta de ejemplo
+                throw new ArgumentException("La apuesta debe estar entre 10 y 1000 puntos.");
+
+            Juego juegoReglas = new Juego();
+            if (_listaJugadoresConfigActual.Count >= juegoReglas.JugadoresMax)
+                throw new InvalidOperationException($"No se pueden agregar más de {juegoReglas.JugadoresMax} jugadores.");
+
+            if (_listaJugadoresConfigActual.Any(j => j.Nickname.Equals(nickname, StringComparison.OrdinalIgnoreCase)))
+                throw new ArgumentException("El nickname ingresado ya está en uso por otro jugador en la configuración actual.");
+
             try
             {
-                Juego juegoTemporalParaConstructor = new Juego();
+                Juego juegoTemporalParaConstructor = new Juego(); // Esta instancia es para el constructor de Jugador
                 var nuevoJugador = new Jugador(nickname, apuesta, juegoTemporalParaConstructor);
-                _listaJugadoresConfig.Add(nuevoJugador);
-                Debug.WriteLine($"HomeService.AgregarJugador: Jugador '{nickname}' añadido a configuración. Puntos asignados: {nuevoJugador.Puntos}. Total en config: {_listaJugadoresConfig.Count}");
 
+                _listaJugadoresConfigActual.Add(nuevoJugador);
+                Debug.WriteLine($"HomeService.AgregarJugadorConfigurado: Jugador '{nickname}' (Apuesta: {apuesta}, Puntos: {nuevoJugador.Puntos}) añadido a la configuración. Total en config: {_listaJugadoresConfigActual.Count}");
             }
             catch (Exception ex)
             {
-                throw new Exception("Error en HomeService AgregarJugador", ex);
+                Debug.WriteLine($"HomeService: Error al agregar jugador '{nickname}': {ex.Message}");
+                throw new Exception("Error interno del servicio al intentar agregar el jugador.", ex);
             }
         }
 
-        public void EliminarJugador()
+        // Elimina el último jugador que fue agregado a la lista de configuración.
+        public void EliminarUltimoJugadorConfigurado()
+        {
+            if (_listaJugadoresConfigActual.Count == 0)
+                throw new InvalidOperationException("No hay jugadores en la configuración actual para eliminar.");
+
+            try
+            {
+                var jugadorEliminado = _listaJugadoresConfigActual.Last();
+                _listaJugadoresConfigActual.RemoveAt(_listaJugadoresConfigActual.Count - 1);
+                Debug.WriteLine($"HomeService.EliminarUltimoJugadorConfigurado: Jugador '{jugadorEliminado.Nickname}' eliminado de la configuración. Total restantes: {_listaJugadoresConfigActual.Count}");
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"HomeService: Error al eliminar último jugador: {ex.Message}");
+                throw new Exception("Error interno del servicio al intentar eliminar el último jugador.", ex);
+            }
+        }
+
+        public List<Jugador> ValidarConfiguracionJugadoresParaJuego()
+        {
+            Juego juegoReglas = new Juego();
+            int minJugadores = juegoReglas.JugadoresMin;
+            int maxJugadores = juegoReglas.JugadoresMax;
+
+            if (_listaJugadoresConfigActual.Count < minJugadores || _listaJugadoresConfigActual.Count > maxJugadores)
+            {
+                string mensajeError = $"Se requieren entre {minJugadores} y {maxJugadores} jugadores para iniciar el juego. Actualmente hay {_listaJugadoresConfigActual.Count} jugadores configurados.";
+                Debug.WriteLine($"HomeService.ValidarConfiguracionJugadoresParaJuego: Validación fallida. {mensajeError}");
+                throw new InvalidOperationException(mensajeError);
+            }
+
+            Debug.WriteLine($"HomeService.ValidarConfiguracionJugadoresParaJuego: Configuración de {_listaJugadoresConfigActual.Count} jugadores validada exitosamente.");
+            return new List<Jugador>(_listaJugadoresConfigActual);
+        }
+
+        public List<Jugador> ObtenerJugadoresConfigurados()
         {
             try
             {
-                Debug.WriteLine($"HomeService.EliminarJugador: Eliminando jugador: {_listaJugadoresConfig.Last().Nickname}");
-                _listaJugadoresConfig.RemoveAt(_listaJugadoresConfig.Count - 1);
+                return new List<Jugador>(_listaJugadoresConfigActual);
             }
             catch (Exception ex)
             {
-                throw new InvalidOperationException("No hay jugadores para eliminar.");
-            }
-        }
-
-        public List<Jugador> ValidarJugadores()
-        {
-                Juego juego1 = new Juego();
-                if (_listaJugadoresConfig.Count < juego1.JugadoresMin || _listaJugadoresConfig.Count > juego1.JugadoresMax)
-                {
-                    Debug.WriteLine($"HomeService.ValidarJugadores: Número de jugadores ({_listaJugadoresConfig.Count}) no válido.");
-                    throw new InvalidOperationException($"Se requieren entre {juego1.JugadoresMin} y {juego1.JugadoresMax} jugadores.");
-                }
-                return _listaJugadoresConfig;
-        }
-
-        public List<Jugador> ObtenerJugadores()
-        {
-            try
-            {
-                return _listaJugadoresConfig;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Error en HomeService ObtenerJugadores", ex);
+                Debug.WriteLine($"HomeService: Error al obtener jugadores configurados: {ex.Message}");
+                throw new Exception("Error interno del servicio al intentar obtener la lista de jugadores configurados.", ex);
             }
         }
     }
