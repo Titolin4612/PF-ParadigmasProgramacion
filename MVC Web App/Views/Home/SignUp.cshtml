@@ -1,27 +1,31 @@
 ﻿@{
     ViewData["Title"] = "Registro - Blessings and Curses";
-    var prefillNickname = ViewBag.PrefillNickname as string ?? "";
+    var PerfilNickname = ViewBag.PerfilNickname as string ?? "";
 }
 
 <div class="game-container">
     <img src="~/images/title-logo.png" alt="Blessings and Curses" class="title-logo" />
 
+    @* MODIFICADO: Contenedor de títulos con ambas opciones *@
+    <div class="auth-title-container">
+        <h2 class="auth-title"><a asp-controller="Home" asp-action="Login">Iniciar Sesión</a></h2>
+        <h2 class="auth-title active">Crear Cuenta</h2>
+    </div>
+
     @* Mensaje si se redirigió desde Login porque el usuario NO EXISTE *@
-    @* AHORA USARÁ EL ESTILO .error-banner *@
     @if (ViewBag.Prompt != null)
     {
-            <div class="error-banner" id="signup-prompt-server"> @* Cambiado de info-banner a error-banner *@
-            @* <i class="fas fa-exclamation-triangle"></i> *@ @* Opcional, si quieres mantener un icono *@
+                <div class="error-banner" id="signup-prompt-server">
             @ViewBag.Prompt
-            </div>
+                </div>
     }
 
     @* Mensaje de Error general del signup (ej. nickname ya existe, contraseña corta) *@
     @if (ViewBag.Error != null)
     {
-            <div class="error-banner" id="signup-error-server">
+                <div class="error-banner" id="signup-error-server">
             @ViewBag.Error
-            </div>
+                </div>
     }
 
     <div class="error-banner" id="signup-error-client" style="display: none;">
@@ -30,11 +34,9 @@
 
     <div class="form-container">
         <form method="post" asp-action="Signup" id="signup-form" novalidate>
-            @* <h2>Crear Cuenta</h2> *@
-
             <div style="margin-bottom: 16px;">
                 <input name="nickname" id="signup-nickname" type="text" placeholder="Elige tu nickname"
-                       class="game-input" value="@prefillNickname"
+                       class="game-input" value="@PerfilNickname"
                        required minlength="4" maxlength="50" pattern="^[A-Za-z0-9]+$"
                        title="El nickname debe tener al menos 4 caracteres y solo puede contener letras y números." />
             </div>
@@ -46,21 +48,20 @@
             </div>
 
             <div class="button-group">
-                <button type="submit" class="play-button">Registrarse</button>
-                <a asp-controller="Home" asp-action="Login" class="rules-button">Ya tengo cuenta</a>
+                <button type="submit" class="play-button">Crear Cuenta</button>
             </div>
         </form>
     </div>
 
-    <img src="~/images/character-male.png" alt="Personaje Masculino" class="character male" />
-    <img src="~/images/character-female.png" alt="Personaje Femenino" class="character female" />
+    <img src="~/images/character-male6.png" alt="Personaje Masculino" class="character male" />
+    <img src="~/images/character-female6.png" alt="Personaje Femenino" class="character female" />
 </div>
 
 @section Scripts {
         <script>
+            // Tu script de manageBanner y validación de formulario (sin cambios)
             document.addEventListener("DOMContentLoaded", function () {
                 function manageBanner(bannerElement, messageContent, isClientError = false) {
-                    // Misma función manageBanner que en Login.cshtml
                     if (bannerElement) {
                         const messageSpan = isClientError ? bannerElement.querySelector('span') : null;
                         const hasContent = isClientError ? (messageContent && messageContent.trim() !== "") : (bannerElement.textContent.trim() !== "");
@@ -102,9 +103,10 @@
 
                 signupForm.addEventListener("submit", function (event) {
                     let errorMessageText = null;
-
-                    clientErrorBanner.style.display = "none";
-                    clientErrorBanner.style.opacity = "0";
+                    if (clientErrorBanner) { // Asegurarse de que el elemento existe
+                        clientErrorBanner.style.display = "none";
+                        clientErrorBanner.style.opacity = "0";
+                    }
 
                     const nickname = nicknameInput.value.trim();
                     if (nickname.length === 0) {
@@ -124,9 +126,12 @@
                         }
                     }
 
-                    if (errorMessageText) {
+                    if (errorMessageText && clientErrorBanner) { // Asegurarse de que el elemento existe
                         event.preventDefault();
                         manageBanner(clientErrorBanner, errorMessageText, true);
+                    } else if (errorMessageText) { // Si el banner no existe, al menos prevenir el envío
+                        event.preventDefault();
+                        console.error("Error banner not found, but validation failed:", errorMessageText);
                     }
                 });
             });

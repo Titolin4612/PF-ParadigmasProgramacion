@@ -59,7 +59,7 @@ namespace MVC_ProyectoFinalPOO.Controllers
         {
             if (!_juegoService.EstaJuegoActivo())
             {
-                TempData["ErrorGlobal"] = "No se puede coger carta, la partida no está activa.";
+                TempData["ErrorGeneral"] = "No se puede coger carta, la partida no está activa.";
                 return RedirectToAction("Index", "Home");
             }
 
@@ -158,7 +158,7 @@ namespace MVC_ProyectoFinalPOO.Controllers
             // EstaJuegoActivo podría seguir siendo true si _juegoActual no se ha anulado.
             if (!_juegoService.EstaJuegoActivo() || !_juegoService.JuegoTerminado())
             {
-                TempData["ErrorGlobalJuego"] = "No se puede iniciar una nueva ronda en este momento.";
+                TempData["ErrorGeneralJuego"] = "No se puede iniciar una nueva ronda en este momento.";
                 return RedirectToAction("Index");
             }
             try
@@ -169,13 +169,13 @@ namespace MVC_ProyectoFinalPOO.Controllers
             catch (InvalidOperationException ex) // Errores esperados, como no suficientes jugadores.
             {
                 Debug.WriteLine($"JuegoController.NuevaRonda: Operación inválida - {ex.Message}");
-                TempData["ErrorGlobalJuego"] = ex.Message;
+                TempData["ErrorGeneralJuego"] = ex.Message;
                 return RedirectToAction("Index");
             }
             catch (Exception ex) // Errores inesperados.
             {
                 Debug.WriteLine($"JuegoController.NuevaRonda: Error crítico - {ex.Message}");
-                TempData["ErrorGlobalJuego"] = "Error crítico al iniciar nueva ronda: " + ex.Message;
+                TempData["ErrorGeneralJuego"] = "Error crítico al iniciar nueva ronda: " + ex.Message;
                 return RedirectToAction("Index");
             }
         }
@@ -192,7 +192,7 @@ namespace MVC_ProyectoFinalPOO.Controllers
             {
                 Debug.WriteLine($"JuegoController.Reiniciar: Error - {ex.Message}");
                 // Incluso si falla el reinicio en el servicio, intentamos llevar al usuario a Home.
-                TempData["ErrorGlobal"] = "Ocurrió un error al reiniciar el juego, por favor intente de nuevo: " + ex.Message;
+                TempData["ErrorGeneral"] = "Ocurrió un error al reiniciar el juego, por favor intente de nuevo: " + ex.Message;
                 return RedirectToAction("Index", "Home");
             }
         }
@@ -205,7 +205,7 @@ namespace MVC_ProyectoFinalPOO.Controllers
                 // Asegurarse que el juego esté efectivamente terminado o no activo para ver resumen.
                 if (!_juegoService.JuegoTerminado() && _juegoService.EstaJuegoActivo())
                 {
-                    TempData["ErrorGlobalJuego"] = "La partida aún no ha finalizado para ver el resumen.";
+                    TempData["ErrorGeneralJuego"] = "La partida aún no ha finalizado para ver el resumen.";
                     return RedirectToAction("Index");
                 }
                 if (!_juegoService.EstaJuegoActivo() && !_juegoService.JuegoTerminado()) // Caso raro: no activo pero tampoco marcado como terminado

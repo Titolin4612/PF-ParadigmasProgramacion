@@ -7,6 +7,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Sorts+Mill+Goudy&display=swap" rel="stylesheet">
 
 <div class="game-container">
+    <!-- Botón de cerrar sesión -->
+    <form method="post" action="@Url.Action("Logout", "Home")" class="logout-form">
+        <button type="submit" class="logout-button" title="Cerrar sesión">
+            <i class="fas fa-sign-out-alt"></i>
+        </button>
+    </form>
+
     <img src="~/images/title-logo.png" alt="Blessings and Curses" class="title-logo" />
 
     @* Mostrar errores *@
@@ -71,5 +78,3 @@
         }
     });
 </script>
-
-

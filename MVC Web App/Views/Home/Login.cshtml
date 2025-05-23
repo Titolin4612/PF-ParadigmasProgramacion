@@ -2,86 +2,75 @@
     ViewData["Title"] = "Iniciar Sesión - Blessings and Curses";
 }
 
-@* No necesitas <link rel="stylesheet" href="~/css/style.css" /> aquí si ya está en _Layout.cshtml
-   y si el CSS que me pasaste es tu style.css principal.
-   Si es un archivo separado solo para estas páginas, entonces sí lo necesitarías.
-   Asegúrate que las fuentes de Google Fonts también estén enlazadas globalmente.
-*@
-
 <div class="game-container">
     <img src="~/images/title-logo.png" alt="Blessings and Curses" class="title-logo" />
+
+    @* MODIFICADO: Contenedor de títulos con ambas opciones *@
+    <div class="auth-title-container">
+        <h2 class="auth-title active">Iniciar Sesión</h2>
+        <h2 class="auth-title"><a asp-controller="Home" asp-action="Signup">Crear Cuenta</a></h2>
+    </div>
 
     @* El HomeController se encarga de poner el error en ViewBag.Error si la contraseña es incorrecta
        o si hay un error general en el intento de login que no sea "usuario no existe".
        Si el usuario no existe, redirige a Signup. *@
     @if (ViewBag.Error != null)
     {
-            <div class="error-banner" id="login-error-server">
-            @* Podrías añadir un icono si lo deseas, aunque tu CSS no lo define para error-banner *@
-            @* <i class="fas fa-exclamation-triangle"></i> *@
+                <div class="error-banner" id="login-error-server">
             @ViewBag.Error
-            </div>
+                </div>
     }
 
     <div class="error-banner" id="login-error-client" style="display: none;">
-        @* <i class="fas fa-exclamation-triangle"></i> *@
         <span id="login-error-client-message"></span>
     </div>
 
-    <div class="form-container"> @* Usando tu clase .form-container *@
+    <div class="form-container">
         <form method="post" asp-action="Login" id="login-form" novalidate>
-            @* No veo un H2 en tu estructura original, pero se podría añadir si quieres título aquí *@
-            @* <h2>Iniciar Sesión</h2> *@
-
-            @* Tu CSS original usa .nickname-row, pero aquí no hay botones +/-
-               así que un simple div para agrupar el input es suficiente
-               o directamente los inputs si .form-container los maneja.
-               Para mantener consistencia, podríamos usar un div similar.
-            *@
-            <div style="margin-bottom: 16px;"> @* Espaciado similar a .nickname-row *@
+            <div style="margin-bottom: 16px;">
                 <input name="nickname" id="login-nickname" type="text" placeholder="Ingresa tu nickname"
-                       class="game-input" @* Usando tu clase .game-input *@
+                       class="game-input"
                        required minlength="4" maxlength="50" pattern="^[A-Za-z0-9]+$"
                        title="El nickname debe tener al menos 4 caracteres y solo puede contener letras y números." />
             </div>
 
             <div style="margin-bottom: 16px;">
                 <input name="contraseña" id="login-contraseña" type="password" placeholder="Ingresa tu contraseña"
-                       class="game-input" @* Usando tu clase .game-input *@
+                       class="game-input"
                        required minlength="6" maxlength="100"
                        title="La contraseña debe tener al menos 6 caracteres." />
             </div>
 
-            <div class="button-group"> @* Usando tu clase .button-group *@
+            <div class="button-group">
                 <button type="submit" class="play-button">Iniciar Sesión</button>
-                <a asp-controller="Home" asp-action="Signup" class="rules-button">Crear Cuenta</a>
             </div>
         </form>
     </div>
 
-    <img src="~/images/character-male.png" alt="Personaje Masculino" class="character male" />
-    <img src="~/images/character-female.png" alt="Personaje Femenino" class="character female" />
+    <img src="~/images/character-male6.png" alt="Personaje Masculino" class="character male" />
+    <img src="~/images/character-female6.png" alt="Personaje Femenino" class="character female" />
 </div>
 
 @section Scripts {
         <script>
+            // Tu script de manageBanner y validación de formulario (sin cambios)
             document.addEventListener("DOMContentLoaded", function () {
                 function manageBanner(bannerElement, messageContent, isClientError = false) {
                     if (bannerElement) {
                         const messageSpan = isClientError ? bannerElement.querySelector('span') : null;
-                        const hasContent = isClientError ? (messageContent && messageContent.trim() !== "") : (bannerElement.textContent.trim() !== ""); // Simplificado para tu CSS
+                        const hasContent = isClientError ? (messageContent && messageContent.trim() !== "") : (bannerElement.textContent.trim() !== ""); 
 
                         if (hasContent) {
                             if (isClientError && messageSpan) messageSpan.textContent = messageContent;
-                            bannerElement.style.display = "block"; // O 'flex' si tu CSS lo requiere
+                            bannerElement.style.display = "block"; 
                             bannerElement.style.opacity = "1";
-                            bannerElement.style.animation = "fadeIn 0.5s ease-out"; // Aplicar animación
+                            bannerElement.style.animation = "fadeIn 0.5s ease-out"; 
 
                             setTimeout(() => {
                                 bannerElement.style.opacity = "0";
                                 setTimeout(() => {
                                     bannerElement.style.display = "none";
-                                    bannerElement.style.animation = ""; // Resetear animación
+                                    bannerElement.style.animation = ""; 
                                 }, 500); 
                             }, 4000); 
                         } else {
@@ -96,7 +85,6 @@
                      manageBanner(serverErrorBanner, null);
                 }
 
-
                 const loginForm = document.getElementById("login-form");
                 const nicknameInput = document.getElementById("login-nickname");
                 const passwordInput = document.getElementById("login-contraseña");
@@ -104,9 +92,10 @@
 
                 loginForm.addEventListener("submit", function (event) {
                     let errorMessageText = null;
-
-                    clientErrorBanner.style.display = "none";
-                    clientErrorBanner.style.opacity = "0";
+                    if (clientErrorBanner) { // Asegurarse de que el elemento existe
+                        clientErrorBanner.style.display = "none";
+                        clientErrorBanner.style.opacity = "0";
+                    }
 
                     const nickname = nicknameInput.value.trim();
                     if (nickname.length === 0) {
@@ -126,9 +115,12 @@
                         }
                     }
 
-                    if (errorMessageText) {
+                    if (errorMessageText && clientErrorBanner) { // Asegurarse de que el elemento existe
                         event.preventDefault();
                         manageBanner(clientErrorBanner, errorMessageText, true);
+                    } else if (errorMessageText) { // Si el banner no existe, al menos prevenir el envío
+                         event.preventDefault();
+                         console.error("Error banner not found, but validation failed:", errorMessageText);
                     }
                 });
             });

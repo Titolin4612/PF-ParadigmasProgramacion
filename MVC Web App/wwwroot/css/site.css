@@ -214,6 +214,7 @@ html, body {
     }
 
 /* MENSAJE DE ERROR */
+/* MENSAJE DE ERROR */
 .error-banner {
     background: #b30000;
     color: white;
@@ -224,7 +225,14 @@ html, body {
     max-width: 320px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.4);
     animation: fadeIn 0.5s ease-out;
+    transition: all 0.5s ease-in-out; /* Transición suave y lenta */
 }
+
+    .error-banner:hover {
+        background: #8b0000; /* Rojo más oscuro */
+        box-shadow: 0 8px 16px rgba(0,0,0,0.5); /* Sombra más profunda */
+        transform: translateY(5px) scale(1.05); /* Desplazamiento hacia abajo y escalado suave */
+    }
 
 @keyframes fadeIn {
     from {
@@ -1002,26 +1010,25 @@ a, a:hover, a:visited, a:focus {
 }
 
 .success-banner {
-    background: linear-gradient(to right, #3e8e41, #5ac45e); /* Degradado verde más vibrante */
+    background: linear-gradient(to right, #3e8e41, #5ac45e); /* Degradado verde vibrante */
     color: #fff; /* Asegurar contraste con el fondo */
     font-weight: bold;
     text-align: center;
-    padding: 12px 25px; /* Un poco más de espacio interno */
+    padding: 12px 25px;
     border-radius: 8px;
     margin: 15px auto;
     max-width: 700px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Mayor profundidad */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     font-size: 1.2rem;
     z-index: 9999;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.5s ease-in-out; /* Transición suave y lenta */
 }
 
     .success-banner:hover {
-        background: linear-gradient(to right, #2e7d32, #4caf50); /* Oscurecido para efecto dinámico */
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
-        transform: translateY(-3px);
+        background: linear-gradient(to right, #2e7d32, #4caf50); /* Degradado verde más oscuro */
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Sombra más profunda */
+        transform: translateY(5px) scale(1.05); /* Desplazamiento hacia abajo y escalado suave */
     }
-
 
 
 
@@ -2085,35 +2092,6 @@ a, a:hover, a:visited, a:focus {
 .character.female { /* right: 5%; */
 }
 
-/* BANNER DE ERROR */
-.error-banner {
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: linear-gradient(to right, #b71c1c, #e53935); /* Degradado rojo intenso */
-    color: #fff;
-    padding: 12px 25px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5); /* Mayor profundidad */
-    z-index: 1000;
-    font-family: var(--font-primary);
-    font-size: 1.1em;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    transition: all 0.3s ease-in-out;
-}
-
-    .error-banner:hover {
-        background: linear-gradient(to right, #8e0e0e, #c62828); /* Oscurecido para efecto dinámico */
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
-        transform: translateY(-3px);
-    }
-
-    .error-banner i {
-        font-size: 1.3em;
-    }
 
 
 .end-game-actions-container {
@@ -3200,188 +3178,135 @@ body {
 }
 
 
-/* --- Contenedor Principal del Juego/Vista --- */
-.game-container {
+/* --- Estilos para los Títulos de Autenticación (Login/Signup) --- */
+.auth-title-container {
     display: flex;
-    flex-direction: column;
-    align-items: center; /* Centra horizontalmente hijos directos */
-    justify-content: flex-start; /* Alinea al inicio, el formulario tomará espacio */
-    min-height: 100vh;
-    padding: 20px;
-    box-sizing: border-box;
-    position: relative;
-    background-image: url('../images/background-blurry.jpg'); /* Asumiendo que tienes una imagen */
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-}
-
-.title-logo {
-    max-width: 80%;
-    height: auto;
-    margin-bottom: 20px; /* Reducido un poco */
-}
-
-/* --- Wrappers para Login y Signup (para centrar el form-container) --- */
-.login-page-wrapper,
-.signup-page-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    max-width: 480px; /* Un poco más ancho para acomodar banners y formulario */
-}
-
-/* --- Contenedor del Formulario (Clase Base) --- */
-.auth-form-container { /* Renombrado de form-container para ser más específico a auth */
-    background-color: rgba(30, 15, 5, 0.88);
-    padding: 30px 35px;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
-    width: 100%; /* Ocupa el ancho del wrapper */
-    max-width: 450px; /* Ancho del formulario en sí */
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* CENTRA horizontalmente los .auth-input-group y .auth-button-group */
-    gap: 18px;
-    text-align: center;
-}
-
-    .auth-form-container h2 {
-        font-family: 'Cinzel Decorative', cursive;
-        color: #e0c9a6;
-        font-size: 2em;
-        margin-top: 0;
-        margin-bottom: 15px;
-    }
-
-/* --- Grupos de Inputs (Clase Base) --- */
-.auth-input-group {
-    width: 100%; /* Ocupa todo el ancho del .auth-form-container */
-    display: flex;
-    justify-content: center; /* CENTRA el .auth-input si es menor a 100% */
-}
-
-/* --- Inputs (Clase Base) --- */
-.auth-input {
-    width: 95%; /* Ligeramente menor para que el centrado en .auth-input-group sea visible */
-    padding: 12px 18px;
-    border-radius: 8px;
-    border: 1px solid #504030;
-    background-color: #f0e0d0;
-    color: #302010;
-    font-family: 'Sorts Mill Goudy', serif;
-    font-size: 1em;
-    box-sizing: border-box;
-}
-
-    .auth-input::placeholder {
-        color: #7a6a5a;
-    }
-
-/* --- Grupos de Botones (Clase Base) --- */
-.auth-button-group {
-    width: 95%; /* Coincide con el .auth-input para alineación visual */
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centra botones si no son 100% del grupo */
-    gap: 15px;
-    margin-top: 10px;
-}
-
-/* --- Botones y Enlaces como Botones (Clases Base) --- */
-.auth-button-primary,
-.auth-button-secondary {
-    width: 100%; /* Botones ocupan todo el ancho del .auth-button-group */
-    padding: 12px 20px;
-    border-radius: 8px;
-    text-decoration: none;
-    text-align: center;
-    font-family: 'Cinzel Decorative', cursive;
-    font-size: 1.1em;
-    font-weight: 700;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.1s ease;
-    border: none;
-    box-sizing: border-box;
-}
-
-.auth-button-primary {
-    background-color: #b8860b;
-    color: white;
-}
-
-    .auth-button-primary:hover {
-        background-color: #daa520;
-        transform: translateY(-2px);
-    }
-
-.auth-button-secondary {
-    background-color: #8B4513;
-    color: #f0e0d0;
-    display: inline-block;
-}
-
-    .auth-button-secondary:hover {
-        background-color: #A0522D;
-        transform: translateY(-2px);
-    }
-
-/* --- Banners de Mensajes (Error, Info, Success) --- */
-/* Clase base para todos los banners */
-.message-banner {
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    width: 100%; /* Ocupan el ancho del wrapper (login-page-wrapper) */
-    max-width: 450px; /* Pero no más que el formulario */
-    display: none; /* Oculto por defecto, se muestra con JS o si hay contenido */
-    align-items: center;
     justify-content: center;
-    gap: 10px;
-    opacity: 0;
-    transition: opacity 0.5s ease-out, display 0s linear 0.5s; /* Transición de display después de opacidad */
-    font-family: 'Sorts Mill Goudy', serif;
-    font-size: 0.95em;
+    width: 100%;
+    max-width: 420px;
+    margin: 25px auto 35px auto;
+    background: linear-gradient(145deg, rgba(40, 30, 20, 0.85), rgba(20, 15, 10, 0.9));
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45);
+    padding: 0;
+    overflow: hidden;
     box-sizing: border-box;
-    text-align: center; /* Centra el texto dentro del banner */
 }
 
-    .message-banner i {
-        font-size: 1.3em;
-        flex-shrink: 0; /* Evita que el icono se encoja */
-    }
-
-/* Banner de Error */
-.error-banner {
-    background-color: #58181F;
-    border: 1px solid #8B0000;
-    color: #FFDAB9;
+.auth-title {
+    flex-grow: 1;
+    flex-basis: 0;
+    padding: 14px 10px;
+    font-family: 'Georgia', serif;
+    font-size: 1.05em;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    position: relative;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    color: rgba(245, 230, 202, 0.65);
+    background-color: transparent;
 }
 
-    .error-banner i {
-        color: #FFDAB9;
+    /* Pseudo-elemento para la barra animada */
+    .auth-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 3px;
+        background-color: #b8860b; /* Color por defecto, el activo lo sobrescribirá si es necesario */
+        transition: width 0.3s ease-in-out, left 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Añadida transición para background-color */
     }
 
-/* Banner de Información */
-.info-banner {
-    background-color: #e7f3fe;
-    border: 1px solid #b3d7f9;
-    color: #31708f;
+    .auth-title a {
+        color: inherit;
+        text-decoration: none;
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* HOVER en el título INACTIVO */
+    .auth-title:not(.active):hover {
+        color: #f5e6ca;
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+
+        .auth-title:not(.active):hover::after {
+            width: 70%; /* Ancho de la barra en hover (ajustado para ser consistente) */
+            left: 15%; /* 50% - (70%/2) = 15% */
+            background-color: rgba(245, 230, 202, 0.7); /* Color más sutil para el hover */
+        }
+
+    /* Estilo para el título ACTIVO */
+    .auth-title.active {
+        color: #f5e6ca;
+    }
+
+        .auth-title.active::after {
+            width: 70%; /* MISMO ANCHO que en el hover */
+            left: 15%; /* MISMO LEFT que en el hover */
+            background-color: #b8860b; /* Color principal para la barra del activo */
+        }
+
+
+/* Media Query para pantallas más pequeñas */
+@media (max-width: 480px) {
+    .auth-title-container {
+        max-width: 90%;
+    }
+
+    .auth-title {
+        font-size: 0.95em;
+        padding: 12px 8px;
+        letter-spacing: 0.3px;
+    }
+
+        .auth-title::after {
+            height: 2px;
+        }
+
+        /* Asegurar consistencia en móviles también */
+        .auth-title:not(.active):hover::after,
+        .auth-title.active::after {
+            width: 60%; /* Ajustar si es necesario para móviles */
+            left: 20%;
+        }
 }
 
-    .info-banner i {
-        color: #31708f;
-    }
-
-/* Banner de Éxito */
-.success-banner {
-    background-color: #d4edda;
-    border: 1px solid #c3e6cb;
-    color: #155724;
+/* FORMULARIO DE CERRAR SESIÓN */
+.logout-form {
+    position: absolute;
+    top: 20px;
+    right: 5px; /* Más cerca del borde derecho, pero con un pequeño margen */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
 }
 
-    .success-banner i {
-        color: #155724;
-    }
+/* BOTÓN DE CERRAR SESIÓN */
+.logout-button {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: none;
+    background: linear-gradient(to right, #8b0000, #5a0000);
+    color: white;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
 
+    .logout-button:hover {
+        transform: scale(1.1) translateY(3px);
+        box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+        background: linear-gradient(to right, #a30000, #6b0000);
+    }
