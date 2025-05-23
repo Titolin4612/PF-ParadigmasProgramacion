@@ -2892,7 +2892,7 @@ body {
     align-items: center;
     width: 100%;
     min-height: 100vh;
-    padding: 120px 20px 0; /* Espacio superior para el navbar, sin padding-bottom */
+    padding: 120px 20px 20px; /* Espacio superior para el navbar y lateral */
     box-sizing: border-box;
     background: inherit; /* Heredar el fondo de .game-active-bg */
 }
@@ -3077,25 +3077,21 @@ body {
 
 /* Estilos para los personajes a los costados */
 .fin-juego-character {
-    max-height: 75vh; /* Altura máxima */
+     /* Tamaño máximo para las imágenes */
+    max-height: 75vh; /* Altura máxima según lo especificado */
     width: auto;
     height: 75vh;
-    align-self: flex-end; /* Mantenerlo abajo */
-    margin-bottom: 0; /* Asegurar que no haya separación */
-    flex-grow: 1; /* Ayuda a ocupar el espacio disponible */
-    z-index: 0;
+    align-self: flex-end; /* Asegurar que estén abajo */
+    z-index: 0; /* Por detrás del contenedor central si hay superposición */
 }
 
 .left-character {
-    transform: scaleX(-1) scale(0.9); /* Voltear y reducir tamaño */
-    margin-right: 20px; /* Espacio entre imagen y contenedor */
-    margin-bottom: 0; /* Sin espacio debajo */
+    transform: scaleX(-1); /* Voltear horizontalmente para que mire hacia el centro */
+    margin-right: 20px; /* Espacio entre la imagen y el contenedor central */
 }
 
 .right-character {
-    transform: scale(12); /* Escala grande */
     margin-left: 20px; /* Espacio entre la imagen y el contenedor central */
-    margin-bottom: 0; /* Sin espacio debajo */
 }
 
 /* Media Queries */

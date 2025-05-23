@@ -24,7 +24,6 @@ namespace CL_ProyectoFinalPOO.Aspectos
                 if (puntosNuevos > 1000)
                     throw new InvalidOperationException("Los puntos exceden el máximo permitido (1000).");
 
-                System.Threading.Thread.Sleep(100); // Simula latencia de DB
                 invocation.Proceed();
                 Console.WriteLine($"Éxito: Los puntos de {jugador.Nickname} se actualizaron a {puntosNuevos}.");
             }

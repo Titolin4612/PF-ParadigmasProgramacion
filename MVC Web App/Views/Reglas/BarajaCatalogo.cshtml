@@ -232,7 +232,35 @@
             }
         </div>
     </div>
+    <img src="~/images/character-male5.png" class="character male" />
+    <img src="~/images/character-female5.png" class="character female" />
 </div>
+
+<style>
+
+    .character {
+    position: absolute;
+    bottom: 0;
+    width: auto;
+    max-height: 75vh;
+    pointer-events: none;
+    z-index: 1;
+    margin-left: -80px;
+    margin-right: -80px;
+}
+
+     .character.male {
+
+        left: -7vw;
+    }
+
+    .character.female {
+        right: -5vw;
+    }
+
+html, body {
+    overflow-x: hidden;
+}
 
 @* Considera importar las fuentes si no están disponibles globalmente *@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Sorts+Mill+Goudy&family=Georgia&display=swap" rel="stylesheet">

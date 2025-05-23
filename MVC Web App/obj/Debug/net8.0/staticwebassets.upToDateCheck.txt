@@ -8,9 +8,13 @@ wwwroot\images\cartas\background-card-premio.png
 wwwroot\images\character-female.png
 wwwroot\images\character-female2.png
 wwwroot\images\character-female3.png
+wwwroot\images\character-female4.png
+wwwroot\images\character-female5.png
 wwwroot\images\character-male.png
 wwwroot\images\character-male2.png
 wwwroot\images\character-male3.png
+wwwroot\images\character-male4.png
+wwwroot\images\character-male5.png
 wwwroot\images\title-logo.png
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css

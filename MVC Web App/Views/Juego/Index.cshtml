@@ -100,11 +100,11 @@
                                         </form>
 
                                         <form asp-controller="Juego" asp-action="Reiniciar" method="post" class="end-game-action-form">
-                                                    <button type="submit" class="secondary-action-button end-game-button"><i class="fas fa-sign-out-alt"></i> Reiniciar Juego y Salir</button>
+                                                    <button type="submit" class="tertiary-action-button end-game-button"><i class="fas fa-sign-out-alt"></i> Reiniciar Juego y Salir</button>
                                         </form>
 
                                         <form asp-controller="Juego" asp-action="VerResumen" method="post" class="end-game-action-form">
-                                            <button type="submit" class="tertiary-action-button end-game-button"><i class="fas fa-sign-out-alt"></i>Ver Resumen</button>
+                                                    <button type="submit" class="tertiary-action-button end-game-button"><i class="fas fa-sign-out-alt"></i>Ver Resumen</button>
                                         </form>
                                     </div>
                             @* ---------- FIN DE LA MODIFICACIÓN ---------- *@
@@ -237,9 +237,8 @@
                             <li>@Html.Raw(entrada)</li>
                 } </ul>
         </div>
-
-        <img src="@Url.Content("~/images/character-male.png")" alt="Decoración" class="character male game-bg-character" />
-        <img src="@Url.Content("~/images/character-female.png")" alt="Decoración" class="character female game-bg-character" />
+            <img src="~/images/character-male4.png" class="character male" />
+            <img src="~/images/character-female4.png" class="character female" />
     </div>
 
    <script>
@@ -262,12 +261,14 @@
                 if (cardPlaceholderVisual && revealedGameCard) {
                     event.preventDefault();
 
+                    // 1. Ocultar placeholder, mostrar carta real (iniciar giro)
                     cardPlaceholderVisual.classList.remove('is-flipping-to-front');
                     cardPlaceholderVisual.classList.add('is-flipping-away');
 
                     revealedGameCard.classList.remove('is-flipped-away');
                     revealedGameCard.classList.add('is-flipping-to-front');
 
+                    // 2. Animar entrada del contenido de la carta real
                     revealedGameCard.classList.remove('animate-card-content-out');
                     revealedGameCard.classList.add('animate-card-content-in');
 
@@ -280,6 +281,7 @@
 
                     setTimeout(() => {
                         formCogerCarta.submit();
+                    }, 450); // Ajustado de 750ms a 450ms (0.4s giro + 50ms margen)
                 }
             });
         }
@@ -289,22 +291,58 @@
                 if (revealedGameCard && cardPlaceholderVisual) {
                     event.preventDefault();
 
+                    // 1. Animar salida del contenido de la carta real
                     revealedGameCard.classList.remove('animate-card-content-in');
                     revealedGameCard.classList.add('animate-card-content-out');
 
+                    // 2. Girar la carta real para ocultarla y mostrar el placeholder
                     setTimeout(() => {
                         revealedGameCard.classList.remove('is-flipping-to-front');
                         revealedGameCard.classList.add('is-flipping-away');
 
                         cardPlaceholderVisual.classList.remove('is-flipped-away');
                         cardPlaceholderVisual.classList.add('is-flipping-to-front');
+                    }, 200); // Ajustado de 350ms a 200ms (antes de que termine el desvanecimiento de 0.25s)
 
                     setTimeout(() => {
                         formSiguienteTurno.submit();
+                    }, 650); // Ajustado de 1050ms a 650ms (0.2s + 0.4s giro + 50ms margen)
                 }
             });
         }
     });
 </script>
 </body>
+
+<style>
+
+.character {
+    position: absolute;
+    bottom: 0;
+    width: auto;
+    max-height: 75vh;
+    pointer-events: none;
+    z-index: 1;
+    margin-left: -80px;
+    margin-right: -80px;
+}
+
+.character.male {
+    transform: scale(0.9);
+    left: -26vw;
+    transform-origin: 50% 100%; 
+}
+
+.character.female {
+    transform: scale(0.8);
+    right: -26vw;
+    transform-origin: 50% 100%; 
+}
+
+
+html, body {
+    overflow-x: hidden;
+}
+</style>
+
 </html>
