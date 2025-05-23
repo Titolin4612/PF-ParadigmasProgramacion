@@ -32,12 +32,20 @@ namespace MVC_ProyectoFinalPOO.Services
 
         public void LimpiarConfiguracionJugadores()
         {
-            _listaJugadoresConfig.Clear();
-            Debug.WriteLine("HomeService: Configuración de jugadores limpiada.");
+            try
+            {
+                _listaJugadoresConfig.Clear();
+                Debug.WriteLine("HomeService: Configuración de jugadores limpiada.");
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error en HomeService LimpiarConfiguracionJugadores", ex);
+            }
         }
 
         public void AgregarJugador(string nickname, int apuesta)
         {
+
             // Validaciones
             if (string.IsNullOrWhiteSpace(nickname) || nickname.Length < 4)
                 throw new ArgumentException("Nickname inválido, debe tener mínimo 4 caracteres.");
@@ -47,44 +55,54 @@ namespace MVC_ProyectoFinalPOO.Services
                 throw new InvalidOperationException("Máximo 4 jugadores.");
             if (_listaJugadoresConfig.Any(j => j.Nickname.Equals(nickname, StringComparison.OrdinalIgnoreCase)))
                 throw new ArgumentException("Ese nickname ya está en uso.");
-
             try
             {
                 Juego juegoTemporalParaConstructor = new Juego();
                 var nuevoJugador = new Jugador(nickname, apuesta, juegoTemporalParaConstructor);
                 _listaJugadoresConfig.Add(nuevoJugador);
                 Debug.WriteLine($"HomeService.AgregarJugador: Jugador '{nickname}' añadido a configuración. Puntos asignados: {nuevoJugador.Puntos}. Total en config: {_listaJugadoresConfig.Count}");
+
             }
             catch (Exception ex)
             {
-                Debug.WriteLine($"ERROR en HomeService.AgregarJugador: {ex.Message} {ex.StackTrace}");
-                throw new InvalidOperationException("Error añadiendo jugador: " + ex.Message, ex);
+                throw new Exception("Error en HomeService AgregarJugador", ex);
             }
         }
 
         public void EliminarJugador()
         {
-            if (!_listaJugadoresConfig.Any())
+            try
+            {
+                Debug.WriteLine($"HomeService.EliminarJugador: Eliminando jugador: {_listaJugadoresConfig.Last().Nickname}");
+                _listaJugadoresConfig.RemoveAt(_listaJugadoresConfig.Count - 1);
+            }
+            catch (Exception ex)
+            {
                 throw new InvalidOperationException("No hay jugadores para eliminar.");
-
-            Debug.WriteLine($"HomeService.EliminarJugador: Eliminando jugador: {_listaJugadoresConfig.Last().Nickname}");
-            _listaJugadoresConfig.RemoveAt(_listaJugadoresConfig.Count - 1);
+            }
         }
 
         public List<Jugador> ValidarJugadores()
         {
-            Juego juegoDeReglas = new Juego();
-            if (_listaJugadoresConfig.Count < juegoDeReglas.JugadoresMin || _listaJugadoresConfig.Count > juegoDeReglas.JugadoresMax)
-            {
-                Debug.WriteLine($"HomeService.ValidarJugadores: Número de jugadores ({_listaJugadoresConfig.Count}) no válido.");
-                throw new InvalidOperationException($"Se requieren entre {juegoDeReglas.JugadoresMin} y {juegoDeReglas.JugadoresMax} jugadores.");
-            }
-            return _listaJugadoresConfig;
+                Juego juego1 = new Juego();
+                if (_listaJugadoresConfig.Count < juego1.JugadoresMin || _listaJugadoresConfig.Count > juego1.JugadoresMax)
+                {
+                    Debug.WriteLine($"HomeService.ValidarJugadores: Número de jugadores ({_listaJugadoresConfig.Count}) no válido.");
+                    throw new InvalidOperationException($"Se requieren entre {juego1.JugadoresMin} y {juego1.JugadoresMax} jugadores.");
+                }
+                return _listaJugadoresConfig;
         }
 
         public List<Jugador> ObtenerJugadores()
         {
-            return _listaJugadoresConfig;
+            try
+            {
+                return _listaJugadoresConfig;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error en HomeService ObtenerJugadores", ex);
+            }
         }
     }
 }

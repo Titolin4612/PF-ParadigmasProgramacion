@@ -41,12 +41,20 @@
       "PackagePath": "staticwebassets\\images\\character-female2.png"
     },
     {
+      "Id": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-female3.png",
+      "PackagePath": "staticwebassets\\images\\character-female3.png"
+    },
+    {
       "Id": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-male.png",
       "PackagePath": "staticwebassets\\images\\character-male.png"
     },
     {
       "Id": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-male2.png",
       "PackagePath": "staticwebassets\\images\\character-male2.png"
+    },
+    {
+      "Id": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-male3.png",
+      "PackagePath": "staticwebassets\\images\\character-male3.png"
     },
     {
       "Id": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\title-logo.png",

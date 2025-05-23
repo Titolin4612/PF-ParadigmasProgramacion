@@ -63,19 +63,15 @@ namespace MVC_ProyectoFinalPOO.Controllers
         [HttpPost]
         public IActionResult Play()
         {
-            Debug.WriteLine("HomeController.Play: Iniciando proceso.");
             try
-            {
-                
+            {  
                 var jugadores = _homeService.ValidarJugadores();
                 HttpContext.Session.SetString("ListaJugadoresConfig", JsonSerializer.Serialize(jugadores));
-                Debug.WriteLine("HomeController.Play: Configuración de jugadores guardada en sesión. Redirigiendo a JuegoController.");
                 _juegoService.IniciarJuego(jugadores);
                 return RedirectToAction("Index", "Juego");
             }
             catch (Exception ex)
             {
-                Debug.WriteLine($"ERROR en HomeController.Play: {ex.Message} {ex.StackTrace}");
                 TempData["ErrorGlobal"] = "Error al intentar iniciar el juego: " + ex.Message;
                 return RedirectToAction("Index");
             }
@@ -88,10 +84,5 @@ namespace MVC_ProyectoFinalPOO.Controllers
             return View("Reglas");
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
     }
 }

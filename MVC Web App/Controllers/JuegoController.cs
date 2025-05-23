@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using CL_ProyectoFinalPOO.Clases; // Asegúrate que tus clases de carta están aquí
+using CL_ProyectoFinalPOO.Clases;
 using MVC_ProyectoFinalPOO.Services;
 
 namespace MVC_ProyectoFinalPOO.Controllers
@@ -60,7 +60,7 @@ namespace MVC_ProyectoFinalPOO.Controllers
         public IActionResult CogerCarta()
         {
             try
-            {   
+            {
                 var (carta, puntos) = _juegoService.CogerCarta();
                 var jugadorActual = _juegoService.ObtenerJugadorActual();
 
@@ -73,8 +73,6 @@ namespace MVC_ProyectoFinalPOO.Controllers
                     string nombre = carta.Nombre;
                     string mitologia = carta.Mitologia;
                     string descripcion = carta.Descripcion;
-                    // Asumiendo que ImagenUrl ya es la ruta correcta o solo el nombre del archivo
-                    // Si es solo el nombre, la vista se encargará de Url.Content()
                     string imagenArteUrl = carta.ImagenUrl;
                     string rareza = null;
                     string bendicion = null;
@@ -145,62 +143,120 @@ namespace MVC_ProyectoFinalPOO.Controllers
         [HttpPost]
         public IActionResult SiguienteTurno()
         {
-            
-            _juegoService.PasarTurno();
-            ViewBag.HistorialJuego = _juegoService.ObtenerHistorial();
+            try
+            {
+                _juegoService.PasarTurno();
+                ViewBag.HistorialJuego = _juegoService.ObtenerHistorial();
 
-            return RedirectToAction("Index");
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                ViewBag.MensajeError = "Error: " + ex.Message;
+                return View("Index");
+            }
+
         }
 
         [HttpPost]
         public IActionResult Finalizar()
         {
-            juegoIniciado = false;
-            var ganador = _juegoService.FinalizarJuego();
-            ViewBag.HistorialJuego = _juegoService.ObtenerHistorial();
-            ViewBag.Jugadores = _juegoService.ObtenerJugadores();
-            ViewBag.CartaRevelada = null;
+            try
+            {
+                juegoIniciado = false;
+                var ganador = _juegoService.FinalizarJuego();
+                ViewBag.HistorialJuego = _juegoService.ObtenerHistorial();
+                ViewBag.Jugadores = _juegoService.ObtenerJugadores();
+                ViewBag.CartaRevelada = null;
 
-            if (ganador != null)
-            {
-                ViewBag.MensajeError = $"🎉 ¡GANADOR! {ganador.Nickname} con {ganador.Puntos} puntos. 🎉";
+                if (ganador != null)
+                {
+                    ViewBag.MensajeError = $"🎉 ¡GANADOR! {ganador.Nickname} con {ganador.Puntos} puntos. 🎉";
+                }
+                else
+                {
+                    ViewBag.MensajeError = "La partida ha finalizado.";
+                }
+                ViewBag.HistorialJuego = _juegoService.ObtenerHistorial();
+                ViewBag.HistorialJuego = _juegoService.ObtenerHistorial();
+                ViewBag.JuegoTerminado = _juegoService.JuegoTerminado();
+                return RedirectToAction("Index");
             }
-            else
+            catch (Exception ex)
             {
-                ViewBag.MensajeError = "La partida ha finalizado.";
+                ViewBag.MensajeError = "Error: " + ex.Message;
+                return View("Index");
             }
-            ViewBag.HistorialJuego = _juegoService.ObtenerHistorial();
-            ViewBag.HistorialJuego = _juegoService.ObtenerHistorial();
-            ViewBag.JuegoTerminado = _juegoService.JuegoTerminado();
-            return RedirectToAction("Index");
         }
 
         [HttpPost]
         public IActionResult NuevaRonda()
         {
-            var jugadoresActualesEnServicio = _juegoService.ObtenerJugadores();
+            try
+            {
+                var jugadoresActualesEnServicio = _juegoService.ObtenerJugadores();
 
-            if (jugadoresActualesEnServicio != null && jugadoresActualesEnServicio.Any() && jugadoresActualesEnServicio.Count() >= 2)
-            {
-         
-                _juegoService.ComenzarNuevaRondaConJugadoresActuales();
-                juegoIniciado = true; 
-            } else
-            {
-                ViewBag.MensajeError = "Error al inciiar nueva ronda, no hay suficientes jugadores";
+                if (jugadoresActualesEnServicio != null && jugadoresActualesEnServicio.Any() && jugadoresActualesEnServicio.Count() >= 2)
+                {
+
+                    _juegoService.ComenzarNuevaRondaConJugadoresActuales();
+                    juegoIniciado = true;
+                }
+                else
+                {
+                    ViewBag.MensajeError = "Error al inciiar nueva ronda, no hay suficientes jugadores";
+                }
+
+                return View("Index");
             }
-
-            return View("Index");
+            catch (Exception ex)
+            {
+                ViewBag.MensajeError = "Error: " + ex.Message;
+                return View("Index");
+            }
         }
 
         [HttpPost]
-        public IActionResult Reiniciar() 
+        public IActionResult Reiniciar()
         {
-            Juego.Jugadores.Clear();
-            Juego.IndiceJugador = 0;
-            _juegoService.ReiniciarJuego(); 
-            juegoIniciado = false;
-            return RedirectToAction("Index", "Home"); 
+            try
+            {
+                Juego.Jugadores.Clear();
+                Juego.IndiceJugador = 0;
+                _juegoService.ReiniciarJuego();
+                juegoIniciado = false;
+                return RedirectToAction("Index", "Home");
+            }
+            catch (Exception ex)
+            {
+                ViewBag.MensajeError = "Error: " + ex.Message;
+                return View("Index");
+            }
         }
+
+        [HttpPost]
+        public IActionResult VerResumen()
+        {
+            var jugadores = _juegoService.ObtenerJugadores();
+            var historial = _juegoService.ObtenerHistorial();
+            var juegoTerminado = _juegoService.JuegoTerminado();
+
+            ViewBag.Jugadores = jugadores;
+            ViewBag.HistorialJuego = historial;
+            ViewBag.JuegoTerminado = juegoTerminado;
+
+            var ganador = jugadores.OrderByDescending(j => j.Puntos).FirstOrDefault();
+            if (ganador != null)
+            {
+                ViewBag.MensajeGanador = $"🎉 ¡GANADOR! {ganador.Nickname} con {ganador.Puntos} puntos. 🎉";
+            }
+            else
+            {
+                ViewBag.MensajeGanador = "La partida ha finalizado sin un ganador claro.";
+            }
+
+            return View("FinJuego");
+        }
+
     }
 }

@@ -23,115 +23,196 @@ namespace MVC_ProyectoFinalPOO.Services
 
         public void IniciarJuego(List<Jugador> jugadoresConfigurados)
         {
-           
-            if (juego == null) 
+            try
             {
-                juego = new Juego(); 
+                if (juego == null)
+                {
+                    juego = new Juego();
+                }
+
+                foreach (var jConf in jugadoresConfigurados)
+                {
+                    var nuevoJugador = new Jugador(jConf.Nickname, jConf.ApuestaInicial, juego);
+                    juego.AsignarPuntosSegunApuesta(nuevoJugador);
+                    Juego.Jugadores.Add(nuevoJugador);
+                }
+                juego.IniciarRonda();
             }
-
-
-            foreach (var jConf in jugadoresConfigurados)
+            catch (Exception ex)
             {
-                var nuevoJugador = new Jugador(jConf.Nickname, jConf.ApuestaInicial, juego);
-                juego.AsignarPuntosSegunApuesta(nuevoJugador);
-                Juego.Jugadores.Add(nuevoJugador);
+                throw new Exception("Error en JuegoService IniciarJuego", ex);
             }
-            juego.IniciarRonda();
         }
 
         public Jugador ObtenerJugadorActual()
         {
-            return Juego.Jugadores.Count == 0 ? null : Juego.Jugadores[Juego.IndiceJugador];
+            try
+            {
+                return Juego.Jugadores.Count == 0 ? null : Juego.Jugadores[Juego.IndiceJugador];
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error en JuegoService ObtenerJugadorActual", ex);
+            }
         }
 
         public (Carta carta, int puntos) CogerCarta()
         {
-            var jugadorActual = ObtenerJugadorActual();
-            var carta = juego.ObtenerCarta();
+            try
+            {
+                var jugadorActual = ObtenerJugadorActual();
+                var carta = juego.ObtenerCarta();
 
-            int puntos = juego.AplicarEfectoCartas(carta);
+                int puntos = juego.AplicarEfectoCartas(carta);
 
-            jugadorActual.Puntos += puntos;
-            jugadorActual.L_cartas_jugador.Add(carta); // También le agregas la carta
-            juego.ValidarYDispararEventos(null);
+                jugadorActual.Puntos += puntos;
+                jugadorActual.L_cartas_jugador.Add(carta); // También le agregas la carta
+                juego.ValidarYDispararEventos(null);
 
-            return (carta, puntos);
+                return (carta, puntos);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error en JuegoService CogerCarta", ex);
+            }
         }
 
         public int AplicarCarta(Carta carta)
         {
-            return juego.AplicarEfectoCartas(carta);
+            try
+            {
+                return juego.AplicarEfectoCartas(carta);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error en JuegoService AplicarCarta", ex);
+            }
         }
 
         public void PasarTurno()
         {
-            if (juego == null) throw new InvalidOperationException("El juego no ha sido iniciado.");
-
-            Jugador LiderInicial = juego.ObtenerLider(); 
-            juego.ValidarYDispararEventos(LiderInicial); 
-
-            if (!JuegoTerminado() && Juego.Jugadores != null && Juego.Jugadores.Any())
+            try
             {
-                juego.PasarTurno();
+                if (juego == null) throw new InvalidOperationException("El juego no ha sido iniciado.");
+
+                Jugador LiderInicial = juego.ObtenerLider();
+                juego.ValidarYDispararEventos(LiderInicial);
+
+                if (!JuegoTerminado() && Juego.Jugadores != null && Juego.Jugadores.Any())
+                {
+                    juego.PasarTurno();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error en JuegoService PasarTurno", ex);
             }
         }
 
         public Jugador FinalizarJuego()
         {
-            ObtenerHistorial();
-            return juego.FinalizarJuego();
+            try
+            {
+                ObtenerHistorial();
+                return juego.FinalizarJuego();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error en JuegoService FinalizarJuego", ex);
+            }
         }
 
         public List<Jugador> ObtenerJugadores()
         {
-            return Juego.Jugadores;
+            try
+            {
+                return Juego.Jugadores;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error en JuegoService ObtenerJugadores", ex);
+            }
         }
 
         public List<string> ObtenerHistorial()
         {
-            return juego.Historial.ObtenerNotificaciones().ToList();
+            try
+            {
+                return juego.Historial.ObtenerNotificaciones().ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error en JuegoService ObtenerHistorial", ex);
+            }
         }
 
         public bool JuegoTerminado()
         {
-            if (juego.AgotadasResto && juego.AgotadasCastigo && juego.AgotadasPremio)
+            try
             {
-                return true;
-            }
+                if (juego.AgotadasResto && juego.AgotadasCastigo && juego.AgotadasPremio)
+                {
+                    return true;
+                }
 
-            if (Juego.Jugadores == null || Juego.Jugadores.Count < juego.JugadoresMin) 
+                if (Juego.Jugadores == null || Juego.Jugadores.Count < juego.JugadoresMin)
+                {
+                    return true;
+                }
+
+                return false;
+            }
+            catch (Exception ex)
             {
-                return true;
+                throw new Exception("Error en JuegoService JuegoTerminado", ex);
             }
-
-            return false;     
         }
 
         public int TotalCartas()
         {
-            return Juego.L_cartas_resto.Count + Juego.L_cartas_castigo.Count + Juego.L_cartas_premio.Count;
+            try
+            {
+                return Juego.L_cartas_resto.Count + Juego.L_cartas_castigo.Count + Juego.L_cartas_premio.Count;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error en JuegoService TotalCartas", ex);
+            }
         }
 
         public void ReiniciarJuego()
         {
-            juego = null;
-
+            try
+            {
+                juego = null;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error en JuegoService ReiniciarJuego", ex);
+            }
         }
 
         public void ComenzarNuevaRondaConJugadoresActuales()
         {
-            if (juego == null)
+            try
             {
-                throw new InvalidOperationException("El objeto de juego no existe para iniciar una nueva ronda.");
-            }
-            if (Juego.Jugadores == null || !Juego.Jugadores.Any())
-            {
-                // Esto no debería pasar si se llega aquí desde una partida en curso.
-                // Podrías redirigir a IniciarJuego si es necesario, o lanzar error.
-                throw new InvalidOperationException("No hay jugadores actuales para comenzar una nueva ronda.");
-            }
+                if (juego == null)
+                {
+                    throw new InvalidOperationException("El objeto de juego no existe para iniciar una nueva ronda.");
+                }
+                if (Juego.Jugadores == null || !Juego.Jugadores.Any())
+                {
+                    // Esto no debería pasar si se llega aquí desde una partida en curso.
+                    // Podrías redirigir a IniciarJuego si es necesario, o lanzar error.
+                    throw new InvalidOperationException("No hay jugadores actuales para comenzar una nueva ronda.");
+                }
 
-            juego.IniciarRonda();
+                juego.IniciarRonda();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error en JuegoService ComenzarNuevaRondaConJugadoresActuales", ex);
+            }
         }
     }
 }

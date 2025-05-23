@@ -128,6 +128,10 @@ html, body {
     background: linear-gradient(to right, #ffedc4, #f9d97c);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
     transition: all 0.3s ease;
+    display: inline-flex; /* O 'flex' si quieres que ocupe todo el ancho disponible de su contenedor si es un elemento de bloque */
+    align-items: center; /* Centra verticalmente el icono y el texto */
+    justify-content: center; /* Centra horizontalmente el icono y el texto */
+    gap: 8px;
 }
 
 .turno-button {
@@ -2142,3 +2146,1012 @@ a, a:hover, a:visited, a:focus {
         background-color: rgba(255,255,255,0.1);
         color: #fff;
     }
+
+/* BARJA ===================================================================================================================================================================== */
+/* BARJA ===================================================================================================================================================================== */
+
+/* === VARIABLES GLOBALES DE DISEÑO (adaptadas de juego-pantalla.css) === */
+:root {
+    --card-bg-color: #1a1520;
+    --card-border-color: rgba(200, 180, 150, 0.25);
+    --card-border-color-hover: rgba(224, 190, 138, 0.5);
+    --card-text-primary: #f0e8d8;
+    --card-text-secondary: #d0c0a0;
+    --card-text-title: #ffe8c0;
+    --card-accent-gold: #c5a052;
+    --card-accent-gold-rgb: 197, 160, 82; /* For RGBA usage */
+    --points-positive-color: #a0ffa0;
+    --points-negative-color: #ffa0a0;
+    --points-neutral-color: #dadada;
+    --font-primary: 'Sorts Mill Goudy', serif;
+    --font-decorative: 'Cinzel Decorative', cursive;
+    --ui-bg-dark: rgba(26, 21, 32, 0.92); /* Usado para fondo de cartas, no papiro */
+    --ui-border-light: rgba(220, 200, 170, 0.2);
+    --ui-text-light: #e8e0d0;
+    --ui-text-highlight: #fff0c0;
+    --ui-accent-color1: #b8860b;
+    --ui-accent-color2: #8c643c;
+    --type-juego-bg: #4a69bd;
+    --type-premio-bg: #f0932b;
+    --type-castigo-bg: #eb4d4b;
+    --type-text-color: #ffffff;
+    /* Colores específicos para el tema Papiro si es necesario, o usar directos */
+    --papyrus-bg: rgba(245, 230, 202, 0.96);
+    --papyrus-border: #a07d5c;
+    --papyrus-text-primary: #3a2e1f;
+    --papyrus-text-title: #800000; /* Rojo oscuro para títulos principales en papiro */
+    --papyrus-text-subtitle: #4a3b2c; /* Marrón para subtítulos en papiro */
+    --papyrus-icon-color: #b87333; /* Cobre para iconos en papiro */
+    /* Para que el CSS pueda usar las variables de RGB directamente */
+    --card-border-color-rgb: 200, 180, 150;
+}
+
+/* Apply fonts if not globally set in _Layout.cshtml or site.css */
+body {
+    font-family: var(--font-primary); /* Fuente por defecto, puede ser sobreescrita por elementos papiro */
+    background-color: #1e1a27; /* Fondo oscuro general de la página, como en tu segundo ejemplo */
+    color: var(--ui-text-light); /* Color de texto general para fuera del papiro */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevenir scroll horizontal general */
+}
+
+/* Contenedor principal que simula el espacio para la navbar y centra el papiro */
+.catalog-container {
+    width: 100%;
+    min-height: 100vh; /* Asegura que ocupa toda la altura de la ventana */
+    padding-top: 70px; /* Espacio para la navbar (ajustar según altura real de tu navbar) */
+    padding-bottom: 20px; /* Espacio inferior */
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinea el papiro arriba */
+}
+
+/* El área de scroll que simula el papiro */
+.catalog-scroll-area {
+    width: 100%;
+    max-width: 1400px;
+    height: calc(100vh - 90px); /* Altura del papiro: total viewport - (padding-top + padding-bottom del catalog-container) */
+    padding: 25px 0; /* Padding interno vertical del papiro, horizontal se maneja en secciones */
+    box-sizing: border-box;
+    background: var(--papyrus-bg);
+    border: 2px solid var(--papyrus-border);
+    box-shadow: 0 5px 25px rgba(0,0,0,0.5), 0 0 8px #5a4a3c inset;
+    border-radius: 8px;
+    color: var(--papyrus-text-primary); /* Color de texto principal dentro del papiro */
+    overflow-y: auto; /* Habilita el scroll vertical para el papiro */
+    overflow-x: hidden; /* Previene scroll horizontal accidental en el papiro */
+    font-family: 'Georgia', serif; /* Fuente específica para el contenido del papiro */
+}
+
+    /* Estilo para el SCROLLBAR PRINCIPAL del papiro */
+    .catalog-scroll-area::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    .catalog-scroll-area::-webkit-scrollbar-track {
+        background: rgba(160, 125, 92, 0.15); /* Color del riel, semi-transparente sobre el fondo del papiro */
+        border-radius: 6px;
+    }
+
+    .catalog-scroll-area::-webkit-scrollbar-thumb {
+        background-color: var(--papyrus-border); /* Color del pulgar, igual al borde del papiro */
+        border-radius: 6px;
+        border: 2px solid var(--papyrus-bg); /* Borde que simula estar "dentro" del riel */
+    }
+
+        .catalog-scroll-area::-webkit-scrollbar-thumb:hover {
+            background-color: #8c643c; /* Un tono más oscuro del borde del papiro para el hover */
+        }
+/* Para Firefox */
+.catalog-scroll-area {
+    scrollbar-width: auto; /* o thin */
+    scrollbar-color: var(--papyrus-border) rgba(160, 125, 92, 0.15);
+}
+
+
+.catalog-main-title {
+    font-family: var(--font-decorative);
+    color: var(--papyrus-text-title); /* Color para título principal en papiro */
+    text-align: center;
+    font-size: 2.3em; /* Tamaño del título como en tu segundo ejemplo */
+    margin-top: 0; /* Quitamos margen superior ya que el papiro tiene su padding */
+    margin-bottom: 25px;
+    padding: 0 25px; /* Añadido padding horizontal como en el segundo ejemplo */
+    border-bottom: 1px solid var(--card-accent-gold); /* Mantenemos este borde de tu primer CSS */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.25);
+}
+
+    .catalog-main-title i {
+        margin-right: 12px;
+        color: var(--papyrus-icon-color); /* Icono con color cobre */
+    }
+
+/* === CARD GALLERY SECTIONS === */
+.card-gallery-section {
+    margin-bottom: 35px; /* Espaciado como en el segundo ejemplo */
+    padding: 0 25px; /* Padding horizontal para las secciones dentro del papiro */
+}
+
+    .card-gallery-section:last-of-type {
+        margin-bottom: 15px;
+    }
+
+    .card-gallery-section h2 {
+        font-family: 'Georgia', serif; /* Fuente para los subtítulos de sección */
+        color: var(--papyrus-text-subtitle); /* Color para subtítulos en papiro */
+        font-size: 1.7em; /* Tamaño como en tu segundo ejemplo */
+        margin-bottom: 18px;
+        padding-bottom: 10px;
+        border-bottom: 1px dashed #c1a57e; /* Borde como en tu segundo ejemplo */
+        display: flex; /* Para alinear icono y texto */
+        align-items: center; /* Para alinear icono y texto */
+    }
+
+        .card-gallery-section h2 i {
+            margin-right: 10px;
+            color: #8c643c; /* Color para iconos de subtítulo */
+            font-size: 0.9em;
+        }
+
+/* === CARD CAROUSEL (Mantenemos el estilo de tu primer CSS) === */
+.card-carousel {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 25px;
+    padding: 20px 5px;
+    min-height: 320px;
+    /* Quitado el padding horizontal global, se maneja por sección */
+}
+
+    /* Scrollbar styling for Webkit (Chrome, Safari, Edge) */
+    .card-carousel::-webkit-scrollbar {
+        height: 12px;
+    }
+
+    .card-carousel::-webkit-scrollbar-track {
+        background: rgba(0,0,0,0.2);
+        border-radius: 6px;
+    }
+
+    .card-carousel::-webkit-scrollbar-thumb {
+        background-color: var(--ui-accent-color2);
+        border-radius: 6px;
+        border: 2px solid rgba(0,0,0,0.2);
+    }
+
+        .card-carousel::-webkit-scrollbar-thumb:hover {
+            background-color: var(--card-accent-gold);
+        }
+/* Scrollbar styling for Firefox */
+.card-carousel {
+    scrollbar-width: thin;
+    scrollbar-color: var(--ui-accent-color2) rgba(0,0,0,0.2);
+}
+
+
+/* === INDIVIDUAL CATALOG CARD ITEM - FLIP MECHANICS (MANTENIDO DE TU PRIMER CSS) === */
+.catalog-card-item {
+    width: 200px;
+    height: 280px;
+    flex-shrink: 0;
+    position: relative;
+    perspective: 1200px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .catalog-card-item:focus {
+        outline: 2px solid var(--card-accent-gold);
+        outline-offset: 3px;
+    }
+
+.catalog-card-flipper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.7s cubic-bezier(0.3, 1, 0.3, 1);
+    border-radius: inherit;
+}
+
+.catalog-card-item:hover .catalog-card-flipper,
+.catalog-card-item:focus .catalog-card-flipper {
+    transform: rotateY(180deg);
+}
+
+.catalog-card-item:hover,
+.catalog-card-item:focus {
+    z-index: 10;
+    box-shadow: 0 10px 30px rgba(var(--card-accent-gold-rgb), 0.3);
+}
+
+
+/* === CARD FACES (FRONT & BACK) (MANTENIDO DE TU PRIMER CSS) === */
+.catalog-card-front,
+.catalog-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: inherit;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3), inset 0 0 10px rgba(0,0,0,0.2);
+}
+
+.catalog-card-front {
+    transform: rotateY(0deg);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-item-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+    z-index: 1;
+    transition: transform 0.5s ease;
+}
+
+.card-item-overlay-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.7) 100%);
+    color: var(--card-text-title);
+}
+
+.card-item-title-preview {
+    font-family: var(--font-decorative);
+    font-size: 1.1em;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+    line-height: 1.2;
+    max-width: 90%;
+}
+
+.card-item-logo-preview {
+    max-width: 140px;
+    max-height: 140px;
+    width: 75%;
+    height: auto;
+    opacity: 1;
+    object-fit: contain;
+}
+
+/* INICIO DE CAMBIOS PARA EL REVERSO DE LA CARTA DEL CATÁLOGO */
+.catalog-card-back {
+    transform: rotateY(180deg);
+    z-index: 1;
+    background-color: var(--card-bg-color); /* Fondo base oscuro */
+    border: 2px solid var(--card-border-color);
+    display: flex; /* Para que .card-hover-details ocupe todo */
+    /* Hereda border-radius y overflow:hidden de la regla .catalog-card-front, .catalog-card-back */
+}
+
+.catalog-card-item:hover .catalog-card-back,
+.catalog-card-item:focus .catalog-card-back {
+    border-color: var(--card-border-color-hover);
+    box-shadow: 0 8px 25px rgba(var(--card-accent-gold-rgb), 0.2), inset 0 0 15px rgba(var(--card-accent-gold-rgb), 0.1);
+}
+
+.card-hover-details { /* Este div ahora es el contenedor principal del contenido del reverso */
+    width: 100%;
+    height: 100%;
+    position: relative; /* Para posicionar el overlay y el inner-content */
+    display: flex;
+    flex-direction: column;
+    border-radius: inherit; /* Asegurar que los hijos respeten el borde redondeado */
+    overflow: hidden; /* Importante para el overlay y contenido */
+}
+
+/* Overlay similar a card-content-overlay-game */
+.card-details-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(10, 5, 20, 0.65) 0%, rgba(10, 5, 20, 0.8) 50%, rgba(5,0,15,0.95) 100%);
+    z-index: 1; /* Debajo del contenido de texto */
+    border-radius: inherit;
+}
+
+/* Contenido interno, similar a card-inner-content-game */
+.card-details-inner-content {
+    position: relative;
+    z-index: 2; /* Encima del overlay */
+    width: 100%;
+    height: 100%;
+    padding: 15px; /* Ajusta este padding según necesites */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribuye el espacio */
+    color: var(--card-text-primary);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+    font-size: 0.85em; /* Tamaño base un poco más pequeño para el catálogo */
+}
+
+/* Sección superior: Título y Mitología */
+.details-top-section {
+    text-align: center;
+    margin-bottom: 8px; /* Espacio antes de la sección media */
+}
+
+.details-title { /* Reutilizamos la clase pero ajustamos estilos */
+    font-family: var(--font-decorative);
+    font-size: 1.5em; /* Ajustado para el tamaño de la carta de catálogo */
+    color: var(--card-text-title);
+    margin: 0 0 2px 0;
+    line-height: 1.1;
+    text-shadow: 0 0 10px rgba(var(--card-accent-gold-rgb), 0.6), 1px 1px 2px rgba(0,0,0,0.7);
+    border-bottom: none; /* Quitamos el borde que tenía antes */
+    padding-bottom: 0;
+}
+
+.details-mythology { /* Nueva clase para la mitología */
+    font-family: var(--font-primary);
+    font-size: 0.8em;
+    color: var(--card-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+/* Sección media: Atributos (Rareza, Bendición/Maleficio) y Descripción */
+.details-middle-section {
+    flex-grow: 1; /* Ocupa el espacio disponible */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Alinea el contenido arriba */
+    overflow: hidden; /* Para controlar el scroll de la descripción */
+    margin-bottom: 8px; /* Espacio antes del footer */
+}
+
+.details-attributes { /* Contenedor para rareza, bendición/maleficio */
+    padding: 6px 8px;
+    margin-bottom: 8px;
+    background-color: rgba(0,0,0,0.25);
+    border: 1px solid rgba(var(--card-border-color-rgb), 0.1);
+    border-radius: 6px;
+    font-size: 0.9em;
+}
+
+    .details-attributes p {
+        margin: 3px 0;
+        display: flex;
+        justify-content: space-between;
+        color: var(--card-text-secondary);
+    }
+
+    .details-attributes strong { /* Etiqueta del atributo */
+        color: var(--card-text-primary);
+        font-weight: 600;
+        margin-right: 5px;
+        flex-shrink: 0; /* Evita que la etiqueta se encoja */
+    }
+
+    .details-attributes .attr-value { /* Valor del atributo */
+        color: var(--card-text-primary);
+        text-align: right;
+        font-weight: normal;
+        word-break: break-word; /* Para textos largos en valores */
+    }
+
+        .details-attributes .attr-value.rarity { /* Para aplicar estilos de rareza */
+            font-weight: bold;
+        }
+
+.details-content-scrollable { /* Contenedor para la descripción, que será scrollable */
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 6px;
+    margin-bottom: 0;
+    background-color: rgba(0,0,0,0.15);
+    border-radius: 4px;
+    font-size: 0.95em;
+    line-height: 1.45;
+    color: #c0b0a0;
+    /* Se mantiene el estilo de scrollbar definido anteriormente */
+}
+
+    .details-content-scrollable::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .details-content-scrollable::-webkit-scrollbar-track {
+        background: rgba(0,0,0,0.1);
+        border-radius: 3px;
+    }
+
+    .details-content-scrollable::-webkit-scrollbar-thumb {
+        background-color: var(--ui-accent-color2);
+        border-radius: 3px;
+    }
+
+        .details-content-scrollable::-webkit-scrollbar-thumb:hover {
+            background-color: var(--card-accent-gold);
+        }
+
+.details-content-scrollable {
+    scrollbar-width: thin;
+    scrollbar-color: var(--ui-accent-color2) rgba(0,0,0,0.1);
+}
+
+    .details-content-scrollable.description-text {
+        font-style: italic;
+    }
+/* Ya no son necesarios los estilos para p y p strong dentro de .details-content-scrollable,
+       ya que ahora solo contiene el texto de la descripción directamente. */
+
+
+/* Footer: Puntos y Tipo de Carta */
+.details-footer {
+    padding-top: 8px;
+    margin-top: auto;
+    border-top: 1px solid rgba(var(--card-border-color-rgb), 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9em;
+}
+
+    .details-footer .points-section {
+        text-align: left;
+    }
+
+    .details-footer .points-label {
+        font-size: 0.9em;
+        color: var(--card-text-secondary);
+        font-weight: 500;
+    }
+
+    .details-footer .points-value {
+        font-family: var(--font-decorative);
+        font-size: 1.6em;
+        font-weight: 700;
+        line-height: 1;
+        display: inline-block;
+        margin-left: 4px;
+    }
+/* Las clases .points-positive, .points-negative, .points-neutral se aplicarán aquí */
+
+/* .details-footer .badge-type se mantiene como estaba, ya tiene sus estilos */
+/* FIN DE CAMBIOS PARA EL REVERSO DE LA CARTA DEL CATÁLOGO */
+
+
+/* Rarity styles (MANTENIDO DE TU PRIMER CSS) */
+.rarity-text {
+    font-weight: bold;
+}
+
+.rarity-comun {
+    color: #d8d8d8;
+}
+
+.rarity-especial {
+    color: #80d8ff;
+}
+
+.rarity-rara {
+    color: #60a8ff;
+}
+
+.rarity-epica {
+    color: #c080ff;
+    text-shadow: 0 0 5px #d870ff, 0 0 2px #d870ff;
+}
+
+.rarity-legendaria {
+    color: #ffd880;
+    text-shadow: 0 0 8px #ffc659, 0 0 3px #ffc659;
+}
+
+/* .details-footer span strong YA NO SE USA ASÍ, los puntos tienen su propia estructura */
+
+.points-positive {
+    color: var(--points-positive-color);
+}
+
+.points-negative {
+    color: var(--points-negative-color);
+}
+
+.points-neutral {
+    color: var(--points-neutral-color);
+}
+
+.badge-type {
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: bold;
+    color: var(--type-text-color);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.type-juego {
+    background-color: var(--type-juego-bg);
+}
+
+.type-premio {
+    background-color: var(--type-premio-bg);
+}
+
+.type-castigo {
+    background-color: var(--type-castigo-bg);
+}
+
+
+/* === NO CARDS MESSAGE === */
+/* Adaptado para el estilo papiro */
+.no-cards-message {
+    text-align: center;
+    font-style: italic;
+    color: var(--papyrus-text-primary); /* Color de texto de papiro */
+    padding: 30px;
+    font-size: 1.1em;
+    border: 1px dashed var(--papyrus-border); /* Borde estilo papiro */
+    border-radius: 8px;
+    background-color: rgba(0,0,0,0.05); /* Un fondo muy sutil sobre el papiro */
+    margin: 0 25px; /* Para que no toque los bordes del papiro */
+}
+
+/* === ACTION BUTTONS SECTION (MANTENIDO DE TU PRIMER CSS) === */
+.action-buttons-section {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(160, 125, 92, 0.5); /* Borde superior con color papiro-amigable */
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding-left: 25px; /* Padding para alinear con contenido de papiro */
+    padding-right: 25px; /* Padding para alinear con contenido de papiro */
+}
+
+.action-button {
+    padding: 12px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-family: var(--font-primary); /* Usamos la fuente primaria para botones */
+    font-weight: bold;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid transparent;
+    min-width: 180px;
+    justify-content: center;
+}
+
+    .action-button i {
+        font-size: 1.1em;
+    }
+
+    .action-button.primary-action {
+        background-color: var(--card-accent-gold);
+        border-color: var(--card-accent-gold);
+        color: var(--card-bg-color);
+        box-shadow: 0 2px 5px rgba(var(--card-accent-gold-rgb),0.3);
+    }
+
+        .action-button.primary-action:hover {
+            background-color: #dab368;
+            border-color: #dab368;
+            box-shadow: 0 4px 10px rgba(var(--card-accent-gold-rgb),0.5);
+            transform: translateY(-2px);
+        }
+
+    .action-button.secondary-action {
+        background-color: transparent;
+        border-color: var(--ui-accent-color2); /* Usar un color que contraste con el papiro */
+        color: var(--ui-accent-color2);
+    }
+
+        .action-button.secondary-action:hover {
+            background-color: rgba(var(--card-accent-gold-rgb), 0.1);
+            color: var(--card-accent-gold);
+            border-color: var(--card-accent-gold);
+            transform: translateY(-2px);
+        }
+
+/* === ERROR ALERT === */
+/* Adaptado para el estilo papiro */
+.catalog-alert.error-alert {
+    background-color: #f8d7da; /* Fondo rojo claro para alerta en papiro */
+    color: #58151c; /* Texto rojo oscuro */
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Sombra más sutil sobre papiro */
+    font-family: 'Georgia', serif; /* Fuente papiro */
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 20px 25px; /* Margen para que no toque bordes del papiro */
+    border: 1px solid #f1aeb5; /* Borde rojo */
+}
+
+    .catalog-alert.error-alert i {
+        font-size: 1.4em;
+        color: #8c232c; /* Icono rojo oscuro */
+    }
+
+/* Small screen adjustments (MANTENIDO DE TU PRIMER CSS, PUEDE NECESITAR AJUSTES FINOS) */
+@media (max-width: 768px) {
+    .catalog-main-title {
+        font-size: 1.8em; /* Un poco más pequeño para móviles */
+    }
+
+    .card-gallery-section h2 {
+        font-size: 1.4em; /* Un poco más pequeño para móviles */
+    }
+
+    .catalog-card-item {
+        width: 180px;
+        height: 252px;
+    }
+
+    .card-carousel {
+        gap: 15px;
+        padding: 15px 0px; /* Menos padding en el carrusel para móviles */
+    }
+
+    .card-gallery-section, .action-buttons-section, .catalog-main-title, .catalog-alert.error-alert {
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-left: 0; /* Resetear márgenes si los tiene */
+        margin-right: 0;
+    }
+
+    .action-buttons-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .action-button {
+        width: 90%;
+        max-width: 300px;
+        font-size: 1em;
+        padding: 10px 20px;
+    }
+    /* Ajuste para que el papiro no sea tan alto y deje ver el fondo superior/inferior */
+    .catalog-container {
+        padding-top: 60px; /* Menos padding si la navbar es más pequeña en móvil */
+        padding-bottom: 10px;
+    }
+
+    .catalog-scroll-area {
+        height: calc(100vh - 70px);
+    }
+
+    /* Ajustes para el reverso de la carta en móviles */
+    .card-details-inner-content {
+        padding: 10px;
+        font-size: 0.8em;
+    }
+
+    .details-title {
+        font-size: 1.3em;
+    }
+
+    .details-mythology {
+        font-size: 0.75em;
+    }
+
+    .details-attributes {
+        padding: 4px 6px;
+        margin-bottom: 6px;
+        font-size: 0.85em;
+    }
+
+    .details-content-scrollable {
+        padding: 4px;
+        font-size: 0.9em;
+    }
+
+    .details-footer .points-value {
+        font-size: 1.4em;
+    }
+
+    .details-footer .badge-type {
+        font-size: 0.75em;
+        padding: 2px 6px;
+    }
+}
+
+/*----- Resumen del Juego -----*/
+
+/* Contenedor principal de la vista FinJuego */
+.fin-juego-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    padding: 120px 20px 0; /* Espacio superior para el navbar, sin padding-bottom */
+    box-sizing: border-box;
+    background: inherit; /* Heredar el fondo de .game-active-bg */
+}
+
+/* Contenedor principal horizontal */
+.fin-juego-main-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end; /* Alinear todo en la parte baja */
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 25px;
+    min-height: calc(100vh - 160px); /* Asegurar que ocupe el espacio vertical disponible */
+    flex-grow: 1; /* Permitir que crezca y deje espacio para las imágenes abajo */
+}
+
+/* Contenedor central de puntuaciones */
+.fin-juego-central-board {
+    flex-grow: 1;
+    max-width: 1200px;
+    background: rgba(0, 0, 0, 0.7); /* Fondo oscuro */
+    border: 2px solid #5a4a3c; /* Borde marrón oscuro */
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: flex-start; /* Mantener el contenedor arriba */
+}
+
+/* Contenedor de puntuaciones finales */
+.fin-juego-scores-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Logo de la vista FinJuego */
+.fin-juego-logo {
+    width: 200px;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 15px;
+    filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6));
+}
+
+/* Header de puntuaciones */
+.fin-juego-scores-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+    .fin-juego-scores-header h2 {
+        font-family: 'Cinzel Decorative', cursive;
+        font-size: 1.8rem;
+        color: #ffd700;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+        margin: 10px 0;
+    }
+
+        .fin-juego-scores-header h2 i {
+            margin-right: 10px;
+            color: #d4af37;
+        }
+
+.fin-juego-winner-message {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 1.3rem;
+    color: #ffd700;
+    text-align: center;
+    margin: 10px 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Lista de jugadores */
+.fin-juego-scores-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap; /* Mantener una sola fila */
+    justify-content: center; /* Centrar los elementos */
+    gap: 20px; /* Espacio entre las cajas de jugadores */
+    width: 100%;
+    margin: 20px 0;
+}
+
+/* Cajas de jugadores */
+.fin-juego-player-box {
+    background: linear-gradient(145deg, rgba(40, 30, 20, 0.85), rgba(20, 15, 10, 0.9));
+    border: 2px solid #5a4a3c;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+    width: 200px;
+    transition: transform 0.35s ease;
+}
+
+    .fin-juego-player-box.fin-juego-winner-highlight {
+        border-color: #ffd700;
+        box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+        background: linear-gradient(145deg, rgba(50, 40, 25, 0.9), rgba(30, 20, 10, 0.95));
+    }
+
+.fin-juego-player-avatar {
+    font-size: 2.8rem;
+    color: #c2b280;
+    margin-bottom: 12px;
+}
+
+.fin-juego-player-nickname {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 1.35em;
+    color: #ffd700;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #7a6240;
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+.fin-juego-player-stats p {
+    font-size: 1em;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    padding-left: 20px;
+}
+
+    .fin-juego-player-stats p i {
+        margin-right: 10px;
+        width: 20px;
+        text-align: center;
+    }
+
+.fin-juego-player-stats strong {
+    font-weight: 600;
+    color: #fff;
+}
+
+/* Contenedor de acciones */
+.fin-juego-actions-container {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fin-juego-action-form {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 10px;
+}
+
+.fin-juego-button {
+    width: 100%;
+    padding: 12px 15px;
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #d4a017;
+    color: #fff;
+}
+
+    .fin-juego-button i {
+        margin-right: 8px;
+    }
+
+    .fin-juego-button:hover {
+        background-color: #f1c40f;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+/* Estilos para los personajes a los costados */
+.fin-juego-character {
+    max-height: 75vh; /* Altura máxima */
+    width: auto;
+    height: 75vh;
+    align-self: flex-end; /* Mantenerlo abajo */
+    margin-bottom: 0; /* Asegurar que no haya separación */
+    flex-grow: 1; /* Ayuda a ocupar el espacio disponible */
+    z-index: 0;
+}
+
+.left-character {
+    transform: scaleX(-1) scale(0.9); /* Voltear y reducir tamaño */
+    margin-right: 20px; /* Espacio entre imagen y contenedor */
+    margin-bottom: 0; /* Sin espacio debajo */
+}
+
+.right-character {
+    transform: scale(12); /* Escala grande */
+    margin-left: 20px; /* Espacio entre la imagen y el contenedor central */
+    margin-bottom: 0; /* Sin espacio debajo */
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+    .fin-juego-main-wrapper {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 10px;
+        min-height: auto; /* Ajustar en móviles */
+    }
+
+    .fin-juego-central-board {
+        max-width: 100%;
+        margin: 0;
+        align-self: center; /* Centrar en móviles */
+    }
+
+    .fin-juego-scores-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .fin-juego-player-box {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .fin-juego-action-form {
+        max-width: 100%;
+    }
+
+    /* Ajustar personajes en pantallas pequeñas */
+    .fin-juego-character {
+        display: none; /* Ocultar personajes en pantallas pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .fin-juego-logo {
+        width: 150px;
+    }
+
+    .fin-juego-scores-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .fin-juego-winner-message {
+        font-size: 1.1rem;
+    }
+
+    .fin-juego-player-box {
+        padding: 10px;
+    }
+
+    .fin-juego-button {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+}

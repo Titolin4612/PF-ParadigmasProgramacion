@@ -1,0 +1,139 @@
+﻿@{
+    ViewData["Title"] = "Blessings & Curses - Fin de Partida";
+    string gameLogoUrl = Url.Content("~/images/title-logo.png");
+    var jugadores = ViewBag.Jugadores as List<CL_ProyectoFinalPOO.Clases.Jugador> ?? new();
+    bool juegoTerminado = ViewBag.JuegoTerminado ?? false;
+    string mensajeGanador = ViewBag.MensajeGanador as string;
+    string mensajeError = ViewBag.MensajeError as string;
+
+    // Ordenar jugadores por puntos (descendente) para mostrar el ranking
+    var jugadoresOrdenados = jugadores.OrderByDescending(j => j.Puntos).ToList();
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/juego-pantalla.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/fin-juego.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Sorts+Mill+Goudy&display=swap" rel="stylesheet">
+</head>
+<body class="game-active-bg">
+    <div class="fin-juego-container">
+        @if (!string.IsNullOrEmpty(mensajeError))
+        {
+            <div class="error-banner" id="gameErrorBanner"><i class="fas fa-exclamation-triangle"></i> @mensajeError</div>
+        }
+
+        <div class="turn-indicator turn-ended">
+            <span>¡La partida ha concluido!</span>
+        </div>
+
+        <div class="fin-juego-main-wrapper">
+            <!-- Imagen del personaje a la izquierda -->
+            <img src="@Url.Content("~/images/character-female3.png")" alt="Reina" class="fin-juego-character left-character" />
+
+            <div class="fin-juego-central-board">
+                <div class="fin-juego-scores-container">
+                    <div class="fin-juego-scores-header">
+                        <img src="@gameLogoUrl" alt="Logo del Juego" class="fin-juego-logo" />
+                        <h2><i class="fas fa-trophy"></i> Tabla de Puntuaciones Finales</h2>
+                        @if (!string.IsNullOrEmpty(mensajeGanador))
+                        {
+                            <p class="fin-juego-winner-message">@mensajeGanador</p>
+                        }
+                    </div>
+                    <div class="fin-juego-scores-list">
+                        @foreach (var jugador in jugadoresOrdenados)
+                        {
+                            <div class="fin-juego-player-box @(jugadoresOrdenados.IndexOf(jugador) == 0 ? "fin-juego-winner-highlight" : "")">
+                                <div class="fin-juego-player-avatar">
+                                    <i class="fas @(jugadoresOrdenados.IndexOf(jugador) == 0 ? "fa-crown" : "fa-user-shield")"></i>
+                                </div>
+                                <h4 class="fin-juego-player-nickname">@jugador.Nickname</h4>
+                                <div class="fin-juego-player-stats">
+                                    <p><i class="fas fa-coins gold-icon"></i> Puntos: <strong>@jugador.Puntos</strong></p>
+                                    <p><i class="fas fa-layer-group card-count-icon"></i> Cartas: <strong>@(jugador.L_cartas_jugador?.Count ?? 0)</strong></p>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                    <div class="fin-juego-actions-container">
+                        <p style="text-align:center; font-weight:bold; margin-bottom: 15px;">¿Qué deseas hacer?</p>
+                        <form asp-controller="Juego" asp-action="NuevaRonda" method="post" class="fin-juego-action-form">
+                            <button type="submit" class="fin-juego-button"><i class="fas fa-redo-alt"></i> Nueva Ronda</button>
+                        </form>
+                        <form asp-controller="Juego" asp-action="Reiniciar" method="post" class="fin-juego-action-form">
+                            <button type="submit" class="fin-juego-button"><i class="fas fa-sign-out-alt"></i> Reiniciar Juego y Salir</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Imagen del personaje a la derecha -->
+            <img src="@Url.Content("~/images/character-male3.png")" alt="Rey" class="fin-juego-character left-character" />
+        </div>
+
+        <img src="@Url.Content("~/images/character-male.png")" alt="Decoración" class="character male game-bg-character" />
+        <img src="@Url.Content("~/images/character-female.png")" alt="Decoración" class="character female game-bg-character" />
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const errorBanner = document.getElementById('gameErrorBanner');
+            if (errorBanner) {
+                setTimeout(() => {
+                    errorBanner.style.transition = 'opacity 0.5s ease-out';
+                    errorBanner.style.opacity = '0';
+                    setTimeout(() => errorBanner.remove(), 500);
+                }, 7000);
+            }
+
+            const playerBoxes = document.querySelectorAll('.fin-juego-player-box');
+            playerBoxes.forEach((box, index) => {
+                setTimeout(() => {
+                    box.style.opacity = '0';
+                    box.style.transform = 'translateY(20px)';
+                    box.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    setTimeout(() => {
+                        box.style.opacity = '1';
+                        box.style.transform = 'translateY(0)';
+                    }, index * 100);
+                }, 0);
+            });
+        });
+    </script>
+</body>
+
+<style>
+
+    .character {
+    position: absolute;
+    bottom: 0;
+    width: auto;
+    max-height: 75vh;
+    pointer-events: none;
+    z-index: 1;
+    margin-left: -80px;
+    margin-right: -80px;
+}
+
+     .character.male {
+
+        left: -24vw;
+    }
+
+    .character.female {
+        right: -24vw;
+    }
+
+html, body {
+    overflow-x: hidden;
+}
+</style>
+
+
+</html>

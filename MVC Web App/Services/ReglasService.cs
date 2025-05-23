@@ -15,20 +15,41 @@ namespace MVC_ProyectoFinalPOO.Services
     {
         public List<CartaJuego> ObtenerCartasJuego()
         {
-            Baraja.CargarCartas();
-            return Baraja.CartasJuego;
+            try
+            {
+                Baraja.CargarCartas();
+                return Baraja.CartasJuego;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error en ReglasService ObtenerCartasJuego", ex);
+            }
         }
 
         public List<CartaPremio> ObtenerCartasPremio()
         {
-            Baraja.CargarCartas();
-            return Baraja.CartasPremio;
+            try
+            {
+                Baraja.CargarCartas();
+                return Baraja.CartasPremio;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error en ReglasService ObtenerCartasPremio", ex);
+            }
         }
 
         public List<CartaCastigo> ObtenerCartasCastigo()
         {
-            Baraja.CargarCartas();
-            return Baraja.CartasCastigo;
+            try
+            {
+                Baraja.CargarCartas();
+                return Baraja.CartasCastigo;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error en ReglasService ObtenerCartasCastigo", ex);
+            }
         }
     }
 }

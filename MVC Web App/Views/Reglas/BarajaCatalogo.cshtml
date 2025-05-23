@@ -1,6 +1,6 @@
 ﻿@using CL_ProyectoFinalPOO.Clases
 @* NECESARIO PARA ACCEDER A JuegoController.juegoIniciado si el controlador de esta vista no es JuegoController *@
-@using MVC_ProyectoFinalPOO.Controllers 
+@using MVC_ProyectoFinalPOO.Controllers
 
 @{
     ViewData["Title"] = "Catálogo de Cartas";
@@ -8,472 +8,231 @@
     var cartasPremio = ViewData["CartasPremio"] as List<CartaPremio> ?? new List<CartaPremio>();
     var cartasCastigo = ViewData["CartasCastigo"] as List<CartaCastigo> ?? new List<CartaCastigo>();
 
-    // Obtenemos el valor del ViewBag. Si es null (no se estableció), por defecto es false.
     bool hayJuegoActivo = ViewBag.HayJuegoActivo as bool? ?? false;
 }
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
       integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
       crossorigin="anonymous" referrerpolicy="no-referrer" />
+@* Asegúrate de enlazar el archivo CSS correcto que te proporcioné, por ejemplo:
+   <link rel="stylesheet" href="~/css/tu-archivo-de-estilos-catalogo.css" asp-append-version="true" />
+*@
 
-<div class="catalog-game-container netflix-style">
-    <div class="catalog-scroll-area-netflix">
-        <h1 class="catalog-main-title-papyrus"><i class="fas fa-layer-group"></i> Baraja de cartas</h1>
+<div class="catalog-container">
+    <div class="catalog-scroll-area">
+        <h1 class="catalog-main-title"><i class="fas fa-layer-group"></i> Baraja de Cartas</h1>
 
         @if (ViewBag.Error != null)
         {
-                    <div class="papyrus-alert error-alert-papyrus">
-                        <i class="fas fa-exclamation-triangle"></i> @ViewBag.Error
-                    </div>
+                <div class="catalog-alert error-alert">
+                    <i class="fas fa-exclamation-triangle"></i> @ViewBag.Error
+                </div>
         }
         else
         {
             @* --- CARTAS DE JUEGO --- *@
-                    <section class="card-gallery-section">
-                        <h2><i class="fas fa-atlas"></i> Cartas de Juego</h2>
+                <section class="card-gallery-section">
+                    <h2><i class="fas fa-atlas"></i> Cartas de Juego</h2>
                 @if (cartasJuego.Any())
                 {
-                                    <div class="image-carousel-container">
+                            <div class="card-carousel">
                         @foreach (var carta in cartasJuego)
                         {
-                                                    <div class="card-poster-item" tabindex="0">
-                                                        <img src="@(string.IsNullOrEmpty(carta.ImagenUrl) ? "https://via.placeholder.com/200x280/2a2a3a/ccc?text=Fondo" : Url.Content("~/" + carta.ImagenUrl))"
-                                                             alt="Fondo de @carta.Nombre" class="card-visual-background" />
-                                                        <div class="card-visual-overlay-content">
-                                                            <h4 class="card-visual-title">@carta.Nombre</h4>
-                                                            <img src="@Url.Content("~/images/title-logo.png")" alt="Blessings & Curses Logo" class="card-visual-logo" />
-                                                        </div>
-                                                        <div class="card-hover-info">
-                                                            <h3>@carta.Nombre</h3>
-                                                            <div class="hover-info-content">
-                                                                <p><strong>Mitología:</strong> @carta.Mitologia</p>
-                                                                <p><strong>Rareza:</strong> @carta.RarezaCarta</p>
-                                                                <p class="description">@carta.Descripcion</p>
+                                        <div class="catalog-card-item" tabindex="0">
+                                            <div class="catalog-card-flipper">
+                                                <div class="catalog-card-front">
+                                                    <img src="@(string.IsNullOrEmpty(carta.ImagenUrl) ? "https://via.placeholder.com/200x280/1a1520/403550?text=Fondo" : Url.Content("~/" + carta.ImagenUrl))"
+                                                         alt="Fondo de @carta.Nombre" class="card-item-background" />
+                                                    <div class="card-item-overlay-content">
+                                                        <h4 class="card-item-title-preview">@carta.Nombre</h4>
+                                                        <img src="@Url.Content("~/images/title-logo.png")" alt="Blessings & Curses Logo" class="card-item-logo-preview" />
+                                                    </div>
+                                                </div>
+                                                <div class="catalog-card-back">
+                                                    <div class="card-hover-details"> @* Contenedor principal del reverso *@
+                                                        <div class="card-details-overlay"></div> @* El overlay oscuro *@
+                                                        <div class="card-details-inner-content"> @* Contenido visible *@
+
+                                                            <div class="details-top-section">
+                                                                <h3 class="details-title">@carta.Nombre</h3>
+                                                                <p class="details-mythology">@carta.Mitologia</p>
                                                             </div>
-                                                            <div class="hover-info-footer">
-                                                                <span>Puntos: <strong class="@(carta.ObtenerPuntos() >= 0 ? "points-positive-papyrus" : "points-negative-papyrus")">@carta.ObtenerPuntos()</strong></span>
+
+                                                            <div class="details-middle-section">
+                                                                <div class="details-attributes">
+                                                                    <p>
+                                                                        <strong>Rareza:</strong>
+                                                                        <span class="attr-value rarity rarity-@(carta.RarezaCarta.ToString().ToLower())">@carta.RarezaCarta</span>
+                                                                    </p>
+                                                        @* No hay Bendición/Maleficio para CartaJuego base *@
+                                                                </div>
+                                                                <div class="details-content-scrollable description-text">
+                                                        @carta.Descripcion
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="details-footer">
+                                                                <div class="points-section">
+                                                                    <span class="points-label">Puntos:</span>
+                                                                    <span class="points-value @(carta.ObtenerPuntos() >= 0 ? (carta.ObtenerPuntos() == 0 ? "points-neutral" : "points-positive") : "points-negative")">
+                                                            @carta.ObtenerPuntos()
+                                                                    </span>
+                                                                </div>
                                                                 <span class="badge-type type-juego">Juego</span>
                                                             </div>
+
                                                         </div>
                                                     </div>
+                                                </div>
+                                            </div>
+                                        </div>
                         }
-                                    </div>
+                            </div>
                 }
                 else
                 {
-                                    <p class="no-cards-message-papyrus">El tomo de las Cartas de Juego yace vacío por el momento.</p>
+                            <p class="no-cards-message">El tomo de las Cartas de Juego yace vacío por el momento.</p>
                 }
-                    </section>
+                </section>
 
             @* --- CARTAS DE PREMIO --- *@
-                    <section class="card-gallery-section">
-                        <h2><i class="fas fa-magic"></i> Cartas de Premio</h2>
+                <section class="card-gallery-section">
+                    <h2><i class="fas fa-magic"></i> Cartas de Premio</h2>
                 @if (cartasPremio.Any())
                 {
-                                    <div class="image-carousel-container">
+                            <div class="card-carousel">
                         @foreach (var carta in cartasPremio)
                         {
-                                                    <div class="card-poster-item" tabindex="0">
-                                                        <img src="@(string.IsNullOrEmpty(carta.ImagenUrl) ? "https://via.placeholder.com/200x280/c5a052/111?text=Fondo" : Url.Content("~/" + carta.ImagenUrl))"
-                                                             alt="Fondo de @carta.Nombre" class="card-visual-background" />
-                                                        <div class="card-visual-overlay-content">
-                                                            <h4 class="card-visual-title">@carta.Nombre</h4>
-                                                            <img src="@Url.Content("~/images/title-logo.png")" alt="Blessings & Curses Logo" class="card-visual-logo" />
-                                                        </div>
-                                                        <div class="card-hover-info">
-                                                            <h3>@carta.Nombre</h3>
-                                                            <div class="hover-info-content">
-                                                                <p><strong>Mitología:</strong> @carta.Mitologia</p>
-                                                                <p><strong>Bendición:</strong> @carta.Bendicion</p>
-                                                                <p class="description">@carta.Descripcion</p>
+                                        <div class="catalog-card-item" tabindex="0">
+                                            <div class="catalog-card-flipper">
+                                                <div class="catalog-card-front">
+                                                    <img src="@(string.IsNullOrEmpty(carta.ImagenUrl) ? "https://via.placeholder.com/200x280/1a1520/c5a052?text=Fondo" : Url.Content("~/" + carta.ImagenUrl))"
+                                                         alt="Fondo de @carta.Nombre" class="card-item-background" />
+                                                    <div class="card-item-overlay-content">
+                                                        <h4 class="card-item-title-preview">@carta.Nombre</h4>
+                                                        <img src="@Url.Content("~/images/title-logo.png")" alt="Blessings & Curses Logo" class="card-item-logo-preview" />
+                                                    </div>
+                                                </div>
+                                                <div class="catalog-card-back">
+                                                    <div class="card-hover-details">
+                                                        <div class="card-details-overlay"></div>
+                                                        <div class="card-details-inner-content">
+
+                                                            <div class="details-top-section">
+                                                                <h3 class="details-title">@carta.Nombre</h3>
+                                                                <p class="details-mythology">@carta.Mitologia</p>
                                                             </div>
-                                                            <div class="hover-info-footer">
-                                                                <span>Puntos: <strong class="points-positive-papyrus">@carta.ObtenerPuntos()</strong></span>
+
+                                                            <div class="details-middle-section">
+                                                                <div class="details-attributes">
+                                                        @* Rareza no es un atributo directo de CartaPremio, si lo necesitas, debes agregarlo a la clase o manejarlo diferente *@
+                                                                    <p><strong>Bendición:</strong> <span class="attr-value">@carta.Bendicion</span></p>
+                                                                </div>
+                                                                <div class="details-content-scrollable description-text">
+                                                        @carta.Descripcion
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="details-footer">
+                                                                <div class="points-section">
+                                                                    <span class="points-label">Puntos:</span>
+                                                                    <span class="points-value points-positive">@* CartaPremio siempre es positiva *@
+                                                            @carta.ObtenerPuntos()
+                                                                    </span>
+                                                                </div>
                                                                 <span class="badge-type type-premio">Premio</span>
                                                             </div>
+
                                                         </div>
                                                     </div>
+                                                </div>
+                                            </div>
+                                        </div>
                         }
-                                    </div>
+                            </div>
                 }
                 else
                 {
-                                    <p class="no-cards-message-papyrus">Las bendiciones divinas aún no se han manifestado en este tomo.</p>
+                            <p class="no-cards-message">Las bendiciones divinas aún no se han manifestado en este tomo.</p>
                 }
-                    </section>
+                </section>
 
             @* --- CARTAS DE CASTIGO --- *@
-                    <section class="card-gallery-section">
-                        <h2><i class="fas fa-skull"></i> Cartas de Castigo</h2>
+                <section class="card-gallery-section">
+                    <h2><i class="fas fa-skull"></i> Cartas de Castigo</h2>
                 @if (cartasCastigo.Any())
                 {
-                                    <div class="image-carousel-container">
+                            <div class="card-carousel">
                         @foreach (var carta in cartasCastigo)
                         {
-                                                    <div class="card-poster-item" tabindex="0">
-                                                        <img src="@(string.IsNullOrEmpty(carta.ImagenUrl) ? "https://via.placeholder.com/200x280/6a3838/eee?text=Fondo" : Url.Content("~/" + carta.ImagenUrl))"
-                                                             alt="Fondo de @carta.Nombre" class="card-visual-background" />
-                                                        <div class="card-visual-overlay-content">
-                                                            <h4 class="card-visual-title">@carta.Nombre</h4>
-                                                            <img src="@Url.Content("~/images/title-logo.png")" alt="Blessings & Curses Logo" class="card-visual-logo" />
-                                                        </div>
-                                                        <div class="card-hover-info">
-                                                            <h3>@carta.Nombre</h3>
-                                                            <div class="hover-info-content">
-                                                                <p><strong>Mitología:</strong> @carta.Mitologia</p>
-                                                                <p><strong>Maleficio:</strong> @carta.Maleficio</p>
-                                                                <p class="description">@carta.Descripcion</p>
+                                        <div class="catalog-card-item" tabindex="0">
+                                            <div class="catalog-card-flipper">
+                                                <div class="catalog-card-front">
+                                                    <img src="@(string.IsNullOrEmpty(carta.ImagenUrl) ? "https://via.placeholder.com/200x280/1a1520/803030?text=Fondo" : Url.Content("~/" + carta.ImagenUrl))"
+                                                         alt="Fondo de @carta.Nombre" class="card-item-background" />
+                                                    <div class="card-item-overlay-content">
+                                                        <h4 class="card-item-title-preview">@carta.Nombre</h4>
+                                                        <img src="@Url.Content("~/images/title-logo.png")" alt="Blessings & Curses Logo" class="card-item-logo-preview" />
+                                                    </div>
+                                                </div>
+                                                <div class="catalog-card-back">
+                                                    <div class="card-hover-details">
+                                                        <div class="card-details-overlay"></div>
+                                                        <div class="card-details-inner-content">
+
+                                                            <div class="details-top-section">
+                                                                <h3 class="details-title">@carta.Nombre</h3>
+                                                                <p class="details-mythology">@carta.Mitologia</p>
                                                             </div>
-                                                            <div class="hover-info-footer">
-                                                                <span>Puntos: <strong class="points-negative-papyrus">@carta.ObtenerPuntos()</strong></span>
+
+                                                            <div class="details-middle-section">
+                                                                <div class="details-attributes">
+                                                        @* Rareza no es un atributo directo de CartaCastigo, si lo necesitas, debes agregarlo a la clase o manejarlo diferente *@
+                                                                    <p><strong>Maleficio:</strong> <span class="attr-value">@carta.Maleficio</span></p>
+                                                                </div>
+                                                                <div class="details-content-scrollable description-text">
+                                                        @carta.Descripcion
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="details-footer">
+                                                                <div class="points-section">
+                                                                    <span class="points-label">Puntos:</span>
+                                                                    <span class="points-value points-negative">@* CartaCastigo siempre es negativa *@
+                                                            @carta.ObtenerPuntos()
+                                                                    </span>
+                                                                </div>
                                                                 <span class="badge-type type-castigo">Castigo</span>
                                                             </div>
+
                                                         </div>
                                                     </div>
+                                                </div>
+                                            </div>
+                                        </div>
                         }
-                                    </div>
+                            </div>
                 }
                 else
                 {
-                                    <p class="no-cards-message-papyrus">Las sombras de las Cartas de Castigo permanecen ocultas.</p>
+                            <p class="no-cards-message">Las sombras de las Cartas de Castigo permanecen ocultas.</p>
                 }
-                    </section>
+                </section>
         }
 
-        @* ---------- INICIO DE LA MODIFICACIÓN PARA BOTONES DE ACCIÓN ---------- *@
-        <div class="action-buttons-section-papyrus">
-            <a asp-controller="Reglas" asp-action="Index" class="rules-button"> 
-                <i class="fas fa-book-open"></i> Ver Reglas
+        <div class="action-buttons-section">
+            <a asp-controller="Reglas" asp-action="Index"  class="rules-button">
+                    <i class="fas fa-arrow-left"></i> Ver Reglas
             </a>
-            @if (hayJuegoActivo) 
+            @if (hayJuegoActivo)
             {
-                        <a asp-controller="Juego" asp-action="Index" class="rules-button"> 
-                        <i class="fas fa-dice-d20"></i> Ir al Juego
+                    <a asp-controller="Juego" asp-action="Index"  class="rules-button">
+                        <i class="fas fa-arrow-right"></i> Ir a Juego
                     </a>
             }
         </div>
-        @* ---------- FIN DE LA MODIFICACIÓN ---------- *@
     </div>
 </div>
 
-<style>
-    /* === ESTILOS GENERALES === */
-    html, body { margin: 0; padding: 0; height: 100%; font-family: 'Georgia', serif; background-color: #1e1a27; overflow-x: hidden; color: #3a2e1f; }
-    body.catalog-page-active { overflow-y: hidden; }
-    .catalog-game-container.netflix-style { position: relative; width: 100%; height: 100vh; padding-top: 70px; padding-bottom: 20px; box-sizing: border-box; display: flex; justify-content: center; align-items: flex-start; }
-    .catalog-scroll-area-netflix { background: rgba(245, 230, 202, 0.96); border: 2px solid #a07d5c; box-shadow: 0 5px 25px rgba(0,0,0,0.5), 0 0 8px #5a4a3c inset; padding: 25px 0; width: 100%; max-width: 1400px; height: calc(100vh - 90px); margin: 0 auto; border-radius: 8px; color: #3a2e1f; overflow-y: auto; overflow-x: hidden; }
-
-    /* Scrollbar vertical principal */
-    .catalog-scroll-area-netflix::-webkit-scrollbar { width: 10px; }
-    .catalog-scroll-area-netflix::-webkit-scrollbar-track { background: rgba(160, 125, 92, 0.15); border-radius: 5px;}
-    .catalog-scroll-area-netflix::-webkit-scrollbar-thumb { background-color: #a07d5c; border-radius: 5px; border: 2px solid rgba(245, 230, 202, 0.96); }
-    .catalog-scroll-area-netflix::-webkit-scrollbar-thumb:hover { background-color: #8c643c; }
-    .catalog-scroll-area-netflix { scrollbar-width: thin; scrollbar-color: #a07d5c rgba(245, 230, 202, 0.96); }
-
-    .catalog-main-title-papyrus { font-family: 'Cinzel Decorative', cursive; font-size: 2.3em; color: #800000; text-align: center; margin-bottom: 25px; margin-top: 0; padding: 0 20px; text-shadow: 1px 1px 2px rgba(0,0,0,0.25); }
-    .catalog-main-title-papyrus i { margin-right: 12px; color: #b87333; }
-    .card-gallery-section { margin-bottom: 35px; }
-    .card-gallery-section:last-of-type { margin-bottom: 15px; }
-    .card-gallery-section h2 { font-family: 'Georgia', serif; font-size: 1.7em; color: #4a3b2c; margin-bottom: 18px; padding: 0 20px; display: flex; align-items: center; border-bottom: 1px dashed #c1a57e; padding-bottom: 8px; }
-    .card-gallery-section h2 i { margin-right: 10px; font-size: 0.9em; color: #8c643c; }
-
-    /* === CARRUSEL DE IMÁGENES Y SU SCROLLBAR HORIZONTAL === */
-    .image-carousel-container {
-        display: flex;
-        overflow-x: auto; /* Permite el scroll horizontal */
-        overflow-y: hidden;
-        padding: 15px 20px 25px 20px; /* Aumentado padding-bottom para dar espacio al scrollbar */
-        gap: 22px;
-        margin-bottom: 10px;
-        min-height: 330px; /* Un poco más para el scrollbar si es visible */
-
-        /* Estilos para el scrollbar horizontal del carrusel */
-        scrollbar-width: thin; /* Para Firefox */
-        scrollbar-color: #b8860b rgba(245, 230, 202, 0.5); /* thumb y track para Firefox */
-    }
-
-    .image-carousel-container::-webkit-scrollbar {
-        height: 10px; /* Altura del scrollbar horizontal */
-        background-color: rgba(245, 230, 202, 0.3); /* Fondo del área del scrollbar */
-    }
-    .image-carousel-container::-webkit-scrollbar-track {
-        background: rgba(160, 125, 92, 0.2); /* Color del riel */
-        border-radius: 5px;
-        margin: 0 5px; /* Margen a los lados del riel */
-    }
-    .image-carousel-container::-webkit-scrollbar-thumb {
-        background-color: #b8860b; /* Color del pulgar (dorado oscuro) */
-        border-radius: 5px;
-        border: 2px solid rgba(245, 230, 202, 0.8); /* Borde para el pulgar */
-    }
-    .image-carousel-container::-webkit-scrollbar-thumb:hover {
-        background-color: #daa520; /* Dorado más claro al hacer hover */
-    }
-
-
-    /* === ESTILO PARA LA CARTA === */
-    .card-poster-item {
-        position: relative;
-        min-width: 185px;
-        max-width: 205px;
-        aspect-ratio: 10 / 14;
-        cursor: pointer;
-        flex-shrink: 0;
-        border-radius: 12px;
-        box-shadow: 0 6px 18px rgba(0,0,0,0.35);
-        border: 1px solid rgba(50,30,10,0.25);
-        overflow: hidden;
-        transition: transform 0.25s ease-out, box-shadow 0.25s ease-out;
-        background-color: #333; /* Fallback si la imagen de fondo no carga o es transparente */
-    }
-    .card-poster-item:hover,
-    .card-poster-item:focus-within {
-        transform: translateY(-6px) scale(1.05);
-        box-shadow: 0 10px 25px rgba(0,0,0,0.45);
-        z-index: 10;
-    }
-     .card-poster-item:focus-within {
-        outline: 2px solid #c5a052;
-        outline-offset: 3px;
-    }
-
-    .card-visual-background {
-        position: absolute;
-        top: 0; left: 0; width: 100%; height: 100%;
-        object-fit: cover;
-        border-radius: inherit;
-        z-index: 1;
-        opacity: 0.8;
-    }
-
-    .card-visual-overlay-content {
-        position: relative;
-        z-index: 2;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        padding: 15px;
-        width: 100%;
-        height: 100%;
-        box-sizing: border-box;
-    }
-
-    .card-visual-title {
-        font-family: 'Cinzel Decorative', cursive;
-        color: #f5e5c5;
-        font-size: 1.15em;
-        font-weight: 700;
-        margin: 0 0 12px 0;
-        text-shadow: 1px 1px 1px rgba(0,0,0,0.7), 2px 2px 4px rgba(0,0,0,0.5);
-        line-height: 1.2;
-        max-width: 90%;
-    }
-
-    .card-visual-logo {
-        max-width: 75%;
-        max-height: 50%;
-        height: auto;
-        opacity: 0.9;
-        filter: drop-shadow(1px 1px 3px rgba(0,0,0,0.6));
-    }
-
-    .card-hover-info {
-        position: absolute;
-        top: 0; left: 0;
-        width: 100%; height: 100%;
-        background: linear-gradient(175deg, rgba(15, 10, 25, 0.97) 0%, rgba(5, 0, 15, 0.98) 100%);
-        color: #f8f0e0;
-        padding: 18px 15px;
-        box-sizing: border-box;
-        border-radius: inherit;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        font-size: 0.82rem;
-        line-height: 1.45;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(10px) scale(0.97);
-        transform-origin: center center;
-        transition: opacity 0.28s cubic-bezier(0.25, 0.1, 0.25, 1),
-                    visibility 0s linear 0.28s,
-                    transform 0.28s cubic-bezier(0.25, 0.1, 0.25, 1);
-        z-index: 3;
-        box-shadow: inset 0 0 20px rgba(0,0,0,0.25),
-                    inset 0 0 5px rgba(255,235,179,0.1);
-    }
-
-    .card-poster-item:hover .card-hover-info,
-    .card-poster-item:focus-within .card-hover-info {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0) scale(1);
-        transition-delay: 0.05s;
-    }
-
-    .card-hover-info h3 {
-        font-family: 'Cinzel Decorative', cursive;
-        font-size: 1.25em;
-        color: #ffeeaa;
-        text-align: center;
-        margin: 0 0 12px 0;
-        padding-bottom: 10px;
-        border-bottom: 2px solid;
-        border-image: linear-gradient(to right, rgba(255,238,170,0.2), rgba(255,238,170,0.8), rgba(255,238,170,0.2)) 1;
-        text-shadow: 0 0 8px rgba(255, 220, 100, 0.6), 0 0 3px rgba(0,0,0,0.5);
-    }
-
-    .hover-info-content {
-        flex-grow: 1;
-        margin-bottom: 12px;
-        overflow-y: auto;
-        scrollbar-width: thin;
-        scrollbar-color: #cdaa70 #504030;
-    }
-    .hover-info-content::-webkit-scrollbar { width: 8px; }
-    .hover-info-content::-webkit-scrollbar-track { background: #504030; border-radius: 4px;}
-    .hover-info-content::-webkit-scrollbar-thumb { background-color: #cdaa70; border-radius: 4px; border: 1px solid #504030;}
-
-    .hover-info-content p { margin: 6px 0; }
-    .hover-info-content p strong {
-        color: #ffe0b3;
-        font-weight: 600;
-    }
-    .hover-info-content .description {
-        font-style: italic;
-        font-size: 0.95em;
-        color: #e0d8c8;
-        margin-top: 10px;
-        padding: 5px;
-        background-color: rgba(0,0,0,0.05);
-        border-radius: 3px;
-        max-height: 85px;
-        overflow-y: auto;
-    }
-
-    .hover-info-footer {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-top: 12px;
-        border-top: 1px solid rgba(255,238,170,0.3);
-        font-size: 0.9em;
-    }
-
-    .hover-info-footer span:first-child {
-        font-weight: 500;
-        color: #f0e8d8;
-    }
-    .hover-info-footer .points-positive-papyrus,
-    .hover-info-footer .points-negative-papyrus {
-        font-weight: 800;
-        font-size: 1.4em;
-        padding: 3px 8px;
-        border-radius: 4px;
-        margin-left: 5px;
-        line-height: 1;
-        display: inline-block;
-    }
-    .points-positive-papyrus {
-        color: #90ee90;
-        background-color: rgba(144, 238, 144, 0.15);
-        border: 1px solid rgba(144, 238, 144, 0.4);
-        text-shadow: 0 0 8px #90ee90, 0 0 3px #508050;
-        box-shadow: 0 0 5px rgba(144,238,144,0.3);
-    }
-    .points-negative-papyrus {
-        color: #ff9999;
-        background-color: rgba(255, 153, 153, 0.15);
-        border: 1px solid rgba(255, 153, 153, 0.4);
-        text-shadow: 0 0 8px #ff9999, 0 0 3px #a06060;
-        box-shadow: 0 0 5px rgba(255,153,153,0.3);
-    }
-
-    .badge-type {
-        padding: 5px 10px;
-        border-radius: 6px;
-        font-size: 0.85em;
-        font-weight: bold;
-        color: #ffffff;
-        text-transform: uppercase;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.1);
-        transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
-        border-top: 1px solid rgba(255,255,255,0.15);
-    }
-    .badge-type:hover {
-        transform: translateY(-2px) scale(1.03);
-        box-shadow: 0 4px 8px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.1);
-    }
-    .badge-type.type-juego { background: linear-gradient(to bottom, #2a75bb, #1a4f7a); }
-    .badge-type.type-premio { background: linear-gradient(to bottom, #28a745, #1e7d32); }
-    .badge-type.type-castigo { background: linear-gradient(to bottom, #a04040, #8b0000); }
-
-    /* --- ESTILOS AUXILIARES Y PARA LOS NUEVOS BOTONES --- */
-    .no-cards-message-papyrus { text-align: center; padding: 20px; font-style: italic; color: #605040; }
-    .papyrus-alert { margin: 20px; padding: 15px 20px; border-radius: 6px; font-size: 1em; display: flex; align-items: center; background-color: #fff3cd; color: #664d03; border: 1px solid #ffe69c; }
-    .papyrus-alert i { margin-right: 10px; font-size: 1.2em; }
-    .error-alert-papyrus { background-color: #f8d7da; color: #58151c; border-color: #f1aeb5; }
-
-    /* Contenedor para los botones de acción inferiores */
-    .action-buttons-section-papyrus {
-        text-align: center;
-        margin-top: 40px;
-        margin-bottom: 20px;
-        padding: 0 20px;
-        display: flex;
-        justify-content: center;
-        gap: 20px; /* Espacio entre los botones */
-        flex-wrap: wrap; /* Para que los botones se ajusten en pantallas pequeñas */
-    }
-
-    /* Estilo base para los botones (<a> tags) */
-    .papyrus-button {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 12px 25px;
-        font-family: 'Georgia', serif;
-        font-size: 1em;
-        color: #f5e5c5;
-        background-color: #8c643c; /* Color base */
-        border: 1px solid #5a4a3c;
-        border-radius: 6px;
-        text-decoration: none;
-        box-shadow: 0 3px 5px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.1);
-        transition: background-color 0.2s, box-shadow 0.2s, transform 0.15s;
-        cursor: pointer;
-        font-weight: 500;
-        min-width: 180px; /* Ancho mínimo para los botones */
-        text-align: center;
-    }
-
-    .papyrus-button:hover {
-        background-color: #7a542c; /* Oscurecer en hover */
-        box-shadow: 0 4px 7px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.05);
-        color: #fff;
-        transform: translateY(-1px);
-    }
-    .papyrus-button:active {
-        transform: translateY(0px);
-        box-shadow: 0 2px 4px rgba(0,0,0,0.2), inset 0 1px 0 rgba(0,0,0,0.1);
-    }
-
-    .papyrus-button i {
-        margin-right: 10px;
-        font-size: 0.95em;
-    }
-
-    /* Estilo específico para el botón primario (Ir al Juego) */
-    .primary-papyrus-button {
-        background-color: #7a542c; /* Un color un poco más oscuro o distintivo */
-        /* Puedes añadir más estilos si quieres que se vea más diferente */
-    }
-    .primary-papyrus-button:hover {
-        background-color: #68441c; /* Hover específico para el primario */
-    }
-
-    /* La clase styled-button-papyrus ya no es necesaria si .papyrus-button tiene todo */
-
-</style>
+@* Considera importar las fuentes si no están disponibles globalmente *@
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Sorts+Mill+Goudy&family=Georgia&display=swap" rel="stylesheet">
