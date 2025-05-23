@@ -4,19 +4,19 @@ using CL_ProyectoFinalPOO.Clases; // Necesario si Jugador y Juego están en este
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Diagnostics; // Para Debug.WriteLine
+using System.Diagnostics;
+using CL_ProyectoFinalPOO.Interfaces; // Para Debug.WriteLine
 
 namespace MVC_ProyectoFinalPOO.Services
 {
-    public class HomeService
+    public class HomeService : IHomeService
     {
         // Esta lista mantiene el estado de los jugadores que se están configurando actualmente.
         // Dado que HomeService es un Singleton (gestionado por DI), esta lista es compartida a nivel de aplicación.
         // Es importante gestionarla adecuadamente (p.ej., limpiarla después de su uso).
         private List<Jugador> _listaJugadoresConfigActual = new List<Jugador>();
+        private Dictionary<string, string> _usuariosRegistrados = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
 
-        // Constructor público para DI
-        public HomeService() { }
 
         // Limpia la lista de jugadores que estaban en proceso de configuración.
         public void LimpiarConfiguracionJugadores()
@@ -34,6 +34,78 @@ namespace MVC_ProyectoFinalPOO.Services
                 // throw new Exception("Error crítico en HomeService al intentar limpiar la configuración de jugadores.", ex);
             }
         }
+
+        public bool BuscarUsuario(string usuario, string contraseña = null)
+        {
+            if (string.IsNullOrWhiteSpace(usuario))
+            {
+                Debug.WriteLine("HomeService.BuscarUsuario: El nombre de usuario proporcionado está vacío o es nulo.");
+                return false;
+            }
+
+            Debug.WriteLine($"HomeService.BuscarUsuario: Buscando usuario '{usuario}'. Usuarios registrados: {string.Join(", ", _usuariosRegistrados.Keys)}");
+            try
+            {
+                if (_usuariosRegistrados.ContainsKey(usuario))
+                {
+                    Debug.WriteLine($"HomeService.BuscarUsuario: Usuario '{usuario}' ENCONTRADO en el diccionario.");
+                    if (contraseña != null)
+                    {
+                        bool contraseñaCoincide = _usuariosRegistrados[usuario] == contraseña;
+                        Debug.WriteLine($"HomeService.BuscarUsuario: Verificando contraseña para '{usuario}'. Coincide: {contraseñaCoincide}");
+                        return contraseñaCoincide;
+                    }
+                    return true; // Usuario existe, no se verificó contraseña
+                }
+                Debug.WriteLine($"HomeService.BuscarUsuario: Usuario '{usuario}' NO ENCONTRADO en el diccionario.");
+                return false; // Usuario no existe
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"HomeService.BuscarUsuario: EXCEPCIÓN al buscar usuario '{usuario}' - {ex.Message}");
+                return false; // Es más seguro retornar false que dejar que una excepción rompa el flujo.
+            }
+        }
+
+        public void RegistrarUsuario(string usuario, string contraseña)
+        {
+            if (string.IsNullOrWhiteSpace(usuario) || usuario.Length < 4)
+            {
+                Debug.WriteLine($"HomeService.RegistrarUsuario: Intento de registrar usuario inválido (nombre): '{usuario}'");
+                throw new ArgumentException("El nickname debe tener al menos 4 caracteres.");
+            }
+            if (string.IsNullOrWhiteSpace(contraseña) || contraseña.Length < 6)
+            {
+                Debug.WriteLine($"HomeService.RegistrarUsuario: Intento de registrar contraseña inválida para usuario '{usuario}'");
+                throw new ArgumentException("La contraseña debe tener al menos 6 caracteres.");
+            }
+
+            Debug.WriteLine($"HomeService.RegistrarUsuario: Intentando registrar usuario '{usuario}'. Usuarios antes: {string.Join(", ", _usuariosRegistrados.Keys)}");
+
+            // Comprobación doble por si acaso, aunque el controlador ya lo hace.
+            if (_usuariosRegistrados.ContainsKey(usuario))
+            {
+                Debug.WriteLine($"HomeService.RegistrarUsuario: Usuario '{usuario}' YA EXISTE. Lanzando InvalidOperationException.");
+                throw new InvalidOperationException($"El usuario '{usuario}' ya está registrado.");
+            }
+
+            try
+            {
+                _usuariosRegistrados.Add(usuario, contraseña);
+                Debug.WriteLine($"HomeService.RegistrarUsuario: Usuario '{usuario}' REGISTRADO exitosamente. Usuarios después: {string.Join(", ", _usuariosRegistrados.Keys)}");
+            }
+            catch (ArgumentException ex) // Esto podría pasar si Add falla por alguna razón con el key (muy raro si ContainsKey es false)
+            {
+                Debug.WriteLine($"HomeService.RegistrarUsuario: EXCEPCIÓN (ArgumentException) al agregar usuario '{usuario}' al diccionario - {ex.Message}");
+                throw; // Relanzar para que el controlador lo maneje
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"HomeService.RegistrarUsuario: EXCEPCIÓN GENERAL al registrar usuario '{usuario}' - {ex.Message}");
+                throw new Exception($"Error interno al intentar registrar el usuario '{usuario}'.", ex);
+            }
+        }
+
 
         // Agrega un jugador a la lista de configuración actual, realizando validaciones previas.
         public void AgregarJugadorConfigurado(string nickname, int apuesta)

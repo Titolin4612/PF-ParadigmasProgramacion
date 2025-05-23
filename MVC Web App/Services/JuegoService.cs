@@ -3,10 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Diagnostics;
+using CL_ProyectoFinalPOO.Interfaces;
 
 namespace MVC_ProyectoFinalPOO.Services
 {
-    public class JuegoService
+    public class JuegoService : IJuegoService
     {
         private Juego _juegoActual; // Instancia del juego en curso. Será gestionada por este servicio Singleton.
         private readonly HomeService _homeService; // Para limpiar la configuración de jugadores
@@ -15,7 +16,6 @@ namespace MVC_ProyectoFinalPOO.Services
         public JuegoService(HomeService homeService)
         {
             _homeService = homeService;
-            Debug.WriteLine("JuegoService: Instancia Singleton creada por DI.");
         }
 
         public bool EstaJuegoActivo()

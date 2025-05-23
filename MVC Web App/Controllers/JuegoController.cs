@@ -1,6 +1,7 @@
 ﻿// MVC_ProyectoFinalPOO/Controllers/JuegoController.cs
 using Microsoft.AspNetCore.Mvc;
 using CL_ProyectoFinalPOO.Clases;
+using CL_ProyectoFinalPOO.Interfaces;
 using MVC_ProyectoFinalPOO.Services;
 using System;
 using System.Linq;
@@ -11,12 +12,8 @@ namespace MVC_ProyectoFinalPOO.Controllers
 {
     public class JuegoController : Controller
     {
-        private readonly JuegoService _juegoService;
-        // Ya no se necesita HomeService aquí si toda la configuración y limpieza post-inicio
-        // es manejada por HomeController y JuegoService internamente.
-
-        // Constructor para Inyección de Dependencias
-        public JuegoController(JuegoService juegoService)
+        private readonly IJuegoService _juegoService;
+        public JuegoController(IJuegoService juegoService)
         {
             _juegoService = juegoService;
         }

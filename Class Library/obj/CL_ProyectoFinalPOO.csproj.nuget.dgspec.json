@@ -53,6 +53,14 @@
             "Castle.Core": {
               "target": "Package",
               "version": "[5.2.1, )"
+            },
+            "Microsoft.AspNetCore.Http.Abstractions": {
+              "target": "Package",
+              "version": "[2.3.0, )"
+            },
+            "Microsoft.AspNetCore.Http.Extensions": {
+              "target": "Package",
+              "version": "[2.3.0, )"
             }
           },
           "imports": [

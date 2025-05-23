@@ -3198,3 +3198,190 @@ body {
         font-size: 0.9rem;
     }
 }
+
+
+/* --- Contenedor Principal del Juego/Vista --- */
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente hijos directos */
+    justify-content: flex-start; /* Alinea al inicio, el formulario tomará espacio */
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+    background-image: url('../images/background-blurry.jpg'); /* Asumiendo que tienes una imagen */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.title-logo {
+    max-width: 80%;
+    height: auto;
+    margin-bottom: 20px; /* Reducido un poco */
+}
+
+/* --- Wrappers para Login y Signup (para centrar el form-container) --- */
+.login-page-wrapper,
+.signup-page-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 480px; /* Un poco más ancho para acomodar banners y formulario */
+}
+
+/* --- Contenedor del Formulario (Clase Base) --- */
+.auth-form-container { /* Renombrado de form-container para ser más específico a auth */
+    background-color: rgba(30, 15, 5, 0.88);
+    padding: 30px 35px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+    width: 100%; /* Ocupa el ancho del wrapper */
+    max-width: 450px; /* Ancho del formulario en sí */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* CENTRA horizontalmente los .auth-input-group y .auth-button-group */
+    gap: 18px;
+    text-align: center;
+}
+
+    .auth-form-container h2 {
+        font-family: 'Cinzel Decorative', cursive;
+        color: #e0c9a6;
+        font-size: 2em;
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+
+/* --- Grupos de Inputs (Clase Base) --- */
+.auth-input-group {
+    width: 100%; /* Ocupa todo el ancho del .auth-form-container */
+    display: flex;
+    justify-content: center; /* CENTRA el .auth-input si es menor a 100% */
+}
+
+/* --- Inputs (Clase Base) --- */
+.auth-input {
+    width: 95%; /* Ligeramente menor para que el centrado en .auth-input-group sea visible */
+    padding: 12px 18px;
+    border-radius: 8px;
+    border: 1px solid #504030;
+    background-color: #f0e0d0;
+    color: #302010;
+    font-family: 'Sorts Mill Goudy', serif;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+    .auth-input::placeholder {
+        color: #7a6a5a;
+    }
+
+/* --- Grupos de Botones (Clase Base) --- */
+.auth-button-group {
+    width: 95%; /* Coincide con el .auth-input para alineación visual */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra botones si no son 100% del grupo */
+    gap: 15px;
+    margin-top: 10px;
+}
+
+/* --- Botones y Enlaces como Botones (Clases Base) --- */
+.auth-button-primary,
+.auth-button-secondary {
+    width: 100%; /* Botones ocupan todo el ancho del .auth-button-group */
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 1.1em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    border: none;
+    box-sizing: border-box;
+}
+
+.auth-button-primary {
+    background-color: #b8860b;
+    color: white;
+}
+
+    .auth-button-primary:hover {
+        background-color: #daa520;
+        transform: translateY(-2px);
+    }
+
+.auth-button-secondary {
+    background-color: #8B4513;
+    color: #f0e0d0;
+    display: inline-block;
+}
+
+    .auth-button-secondary:hover {
+        background-color: #A0522D;
+        transform: translateY(-2px);
+    }
+
+/* --- Banners de Mensajes (Error, Info, Success) --- */
+/* Clase base para todos los banners */
+.message-banner {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    width: 100%; /* Ocupan el ancho del wrapper (login-page-wrapper) */
+    max-width: 450px; /* Pero no más que el formulario */
+    display: none; /* Oculto por defecto, se muestra con JS o si hay contenido */
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    opacity: 0;
+    transition: opacity 0.5s ease-out, display 0s linear 0.5s; /* Transición de display después de opacidad */
+    font-family: 'Sorts Mill Goudy', serif;
+    font-size: 0.95em;
+    box-sizing: border-box;
+    text-align: center; /* Centra el texto dentro del banner */
+}
+
+    .message-banner i {
+        font-size: 1.3em;
+        flex-shrink: 0; /* Evita que el icono se encoja */
+    }
+
+/* Banner de Error */
+.error-banner {
+    background-color: #58181F;
+    border: 1px solid #8B0000;
+    color: #FFDAB9;
+}
+
+    .error-banner i {
+        color: #FFDAB9;
+    }
+
+/* Banner de Información */
+.info-banner {
+    background-color: #e7f3fe;
+    border: 1px solid #b3d7f9;
+    color: #31708f;
+}
+
+    .info-banner i {
+        color: #31708f;
+    }
+
+/* Banner de Éxito */
+.success-banner {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+}
+
+    .success-banner i {
+        color: #155724;
+    }
+

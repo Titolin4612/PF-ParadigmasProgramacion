@@ -1,3 +1,6 @@
+using Castle.DynamicProxy;
+using CL_ProyectoFinalPOO.Aspectos;
+using CL_ProyectoFinalPOO.Interfaces;
 using Microsoft.AspNetCore.Builder; // Para WebApplication, etc.
 using Microsoft.Extensions.DependencyInjection; // Para IServiceCollection
 using Microsoft.Extensions.Hosting; // Para IHostEnvironment
@@ -11,11 +14,33 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddHttpContextAccessor(); // Si lo necesitas para Session u otros servicios de HttpContext
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddSingleton<AuthInterceptor>();
 
-// Registrar servicios como Singleton para que la misma instancia sea usada en toda la app
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+builder.Services.AddSingleton<AuthInterceptor>();
+
+// Registrar instancias reales
 builder.Services.AddSingleton<HomeService>();
 builder.Services.AddSingleton<JuegoService>();
 builder.Services.AddSingleton<ReglasService>();
+
+// Registrar con Proxy
+builder.Services.AddScoped<IHomeService>(provider =>
+{
+    var generator = new ProxyGenerator();
+    var interceptor = provider.GetRequiredService<AuthInterceptor>();
+    var real = provider.GetRequiredService<HomeService>();
+    return generator.CreateInterfaceProxyWithTarget<IHomeService>(real, interceptor);
+});
+
+builder.Services.AddScoped<IJuegoService>(provider =>
+{
+    var generator = new ProxyGenerator();
+    var interceptor = provider.GetRequiredService<AuthInterceptor>();
+    var real = provider.GetRequiredService<JuegoService>();
+    return generator.CreateInterfaceProxyWithTarget<IJuegoService>(real, interceptor);
+});
 
 // --- HABILITAR SESIONES ---
 builder.Services.AddDistributedMemoryCache(); // Necesario para la sesión en memoria

@@ -1,27 +1,59 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Castle.DynamicProxy;
+﻿using Castle.DynamicProxy;
+using Microsoft.AspNetCore.Http;
+using System;
 
 namespace CL_ProyectoFinalPOO.Aspectos
 {
-    public class InterceptorAutenticacion : IInterceptor
+    public class AuthInterceptor : IInterceptor
     {
-        private bool IsAuthenticated()
+        private readonly IHttpContextAccessor _httpContextAccessor;
+
+        public AuthInterceptor(IHttpContextAccessor httpContextAccessor)
         {
-            // Simulación: Cambia a true para pruebas positivas
-            return true;
+            _httpContextAccessor = httpContextAccessor;
         }
 
         public void Intercept(IInvocation invocation)
         {
-            if (!IsAuthenticated())
-                throw new UnauthorizedAccessException(
-                    $"Acceso denegado al método {invocation.Method.Name}. Inicie sesión primero.");
-            invocation.Proceed();
-            Console.WriteLine($"Acceso autorizado al método {invocation.Method.Name}.");
+            var context = _httpContextAccessor.HttpContext;
+
+            if (context == null)
+            {
+                invocation.Proceed();
+                return;
+            }
+
+            bool tieneSesion = context.Session.GetString("UsuarioSesion") != null;
+
+            // Permitir si hay sesión o si está accediendo a algo libre
+            if (tieneSesion)
+            {
+                invocation.Proceed();
+            }
+            else
+            {
+                // ❌ no hay sesión, y se llama a un método que espera retorno
+                var returnType = invocation.Method.ReturnType;
+
+                if (returnType == typeof(void))
+                {
+                    context.Response.Redirect("/Home/Login");
+                }
+                else if (returnType == typeof(bool))
+                {
+                    context.Response.Redirect("/Home/Login");
+                    invocation.ReturnValue = false; // valor por defecto
+                }
+                else if (returnType.IsClass || returnType.IsInterface)
+                {
+                    context.Response.Redirect("/Home/Login");
+                    invocation.ReturnValue = null;
+                }
+                else
+                {
+                    throw new InvalidOperationException("Usuario no autenticado y tipo de retorno no controlado por el interceptor.");
+                }
+            }
         }
     }
 }
