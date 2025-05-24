@@ -11,9 +11,6 @@
         <h2 class="auth-title"><a asp-controller="Home" asp-action="Signup">Crear Cuenta</a></h2>
     </div>
 
-    @* El HomeController se encarga de poner el error en ViewBag.Error si la contraseña es incorrecta
-       o si hay un error general en el intento de login que no sea "usuario no existe".
-       Si el usuario no existe, redirige a Signup. *@
     @if (ViewBag.Error != null)
     {
                 <div class="error-banner" id="login-error-server">

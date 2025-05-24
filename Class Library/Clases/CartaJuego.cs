@@ -27,7 +27,6 @@ namespace CL_ProyectoFinalPOO.Clases
         private static int raEpica = 1;
         private static int raLegendaria = 2;
 
-
         public Rareza RarezaCarta { get => rarezaCarta; set => rarezaCarta = value; }
         public static int RaComun { get => raComun;}
         public static int RaEspecial { get => raEspecial; }

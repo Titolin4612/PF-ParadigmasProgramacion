@@ -5,7 +5,7 @@ using CL_ProyectoFinalPOO.Eventos;
 
 namespace CL_ProyectoFinalPOO.Clases
 {
-    public class Historial // No necesita implementar ninguna interfaz específica para el enunciado
+    public class Historial
     {
         private readonly List<string> _notificaciones;
         private readonly Publisher_Eventos_Juego _publisherJuego;
@@ -14,9 +14,9 @@ namespace CL_ProyectoFinalPOO.Clases
 
         public Historial(Publisher_Eventos_Juego publisherJuego, Publisher_Eventos_Jugador publisherJugador, Publisher_Eventos_Cartas publisherCartas)
         {
-            _publisherJuego = publisherJuego ?? throw new ArgumentNullException(nameof(publisherJuego));
-            _publisherJugador = publisherJugador ?? throw new ArgumentNullException(nameof(publisherJugador));
-            _publisherCartas = publisherCartas ?? throw new ArgumentNullException(nameof(publisherCartas));
+            _publisherJuego = publisherJuego ?? throw new Exception(nameof(publisherJuego));
+            _publisherJugador = publisherJugador ?? throw new Exception(nameof(publisherJugador));
+            _publisherCartas = publisherCartas ?? throw new Exception(nameof(publisherCartas));
             _notificaciones = new List<string>();
 
             // Suscripción a los eventos de PublisherEventosJuego

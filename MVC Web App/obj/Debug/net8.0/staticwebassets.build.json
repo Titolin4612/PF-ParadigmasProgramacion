@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "tyeBCFItN8KYd8fhbjd5GLL5KckWhagK9ANyhSiwxBU=",
+  "Hash": "IMKkAhqPAYEJkYbxZjm5ea49IPbCzNe3QqurxBgY8PE=",
   "Source": "MVC_ProyectoFinalPOO",
   "BasePath": "_content/MVC_ProyectoFinalPOO",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "MVC_ProyectoFinalPOO\\wwwroot",
       "Source": "MVC_ProyectoFinalPOO",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\obj\\Debug\\net8.0\\scopedcss\\bundle\\MVC_ProyectoFinalPOO.styles.css",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\obj\\Debug\\net8.0\\scopedcss\\bundle\\MVC_ProyectoFinalPOO.styles.css",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "MVC_ProyectoFinalPOO#[.{fingerprint}]?.styles.css",
       "AssetKind": "All",
@@ -35,13 +35,13 @@
       "Integrity": "siGgVGiSmbPhyTVfS6i/bCMagRIaZU28D5L41amh4wI=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\obj\\Debug\\net8.0\\scopedcss\\bundle\\MVC_ProyectoFinalPOO.styles.css"
+      "OriginalItemSpec": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\obj\\Debug\\net8.0\\scopedcss\\bundle\\MVC_ProyectoFinalPOO.styles.css"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\MVC_ProyectoFinalPOO.bundle.scp.css",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\MVC_ProyectoFinalPOO.bundle.scp.css",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "MVC_ProyectoFinalPOO#[.{fingerprint}]!.bundle.scp.css",
       "AssetKind": "All",
@@ -56,13 +56,13 @@
       "Integrity": "siGgVGiSmbPhyTVfS6i/bCMagRIaZU28D5L41amh4wI=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\MVC_ProyectoFinalPOO.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\MVC_ProyectoFinalPOO.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\css\\site.css",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\css\\site.css",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "css/site#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -80,10 +80,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\favicon.ico",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\favicon.ico",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "favicon#[.{fingerprint}]?.ico",
       "AssetKind": "All",
@@ -101,10 +101,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\background-image.jpg",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\background-image.jpg",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "images/background-image#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -122,10 +122,10 @@
       "OriginalItemSpec": "wwwroot\\images\\background-image.jpg"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\card.png",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\card.png",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "images/card#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -143,10 +143,10 @@
       "OriginalItemSpec": "wwwroot\\images\\card.png"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\cartas\\background-card-castigo.png",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\cartas\\background-card-castigo.png",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "images/cartas/background-card-castigo#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -164,10 +164,10 @@
       "OriginalItemSpec": "wwwroot\\images\\cartas\\background-card-castigo.png"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\cartas\\background-card-juego.png",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\cartas\\background-card-juego.png",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "images/cartas/background-card-juego#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -185,10 +185,10 @@
       "OriginalItemSpec": "wwwroot\\images\\cartas\\background-card-juego.png"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\cartas\\background-card-premio.png",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\cartas\\background-card-premio.png",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "images/cartas/background-card-premio#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -206,10 +206,10 @@
       "OriginalItemSpec": "wwwroot\\images\\cartas\\background-card-premio.png"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-female.png",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-female.png",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "images/character-female#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -227,10 +227,10 @@
       "OriginalItemSpec": "wwwroot\\images\\character-female.png"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-female2.png",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-female2.png",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "images/character-female2#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -248,10 +248,10 @@
       "OriginalItemSpec": "wwwroot\\images\\character-female2.png"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-female3.png",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-female3.png",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "images/character-female3#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -269,10 +269,10 @@
       "OriginalItemSpec": "wwwroot\\images\\character-female3.png"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-female4.png",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-female4.png",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "images/character-female4#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -290,10 +290,10 @@
       "OriginalItemSpec": "wwwroot\\images\\character-female4.png"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-female5.png",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-female5.png",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "images/character-female5#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -311,10 +311,10 @@
       "OriginalItemSpec": "wwwroot\\images\\character-female5.png"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-female6.png",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-female6.png",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "images/character-female6#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -332,10 +332,10 @@
       "OriginalItemSpec": "wwwroot\\images\\character-female6.png"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-male.png",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-male.png",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "images/character-male#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -353,10 +353,10 @@
       "OriginalItemSpec": "wwwroot\\images\\character-male.png"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-male2.png",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-male2.png",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "images/character-male2#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -374,10 +374,10 @@
       "OriginalItemSpec": "wwwroot\\images\\character-male2.png"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-male3.png",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-male3.png",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "images/character-male3#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -395,10 +395,10 @@
       "OriginalItemSpec": "wwwroot\\images\\character-male3.png"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-male4.png",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-male4.png",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "images/character-male4#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -416,10 +416,10 @@
       "OriginalItemSpec": "wwwroot\\images\\character-male4.png"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-male5.png",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-male5.png",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "images/character-male5#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -437,10 +437,10 @@
       "OriginalItemSpec": "wwwroot\\images\\character-male5.png"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-male6.png",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-male6.png",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "images/character-male6#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -458,10 +458,10 @@
       "OriginalItemSpec": "wwwroot\\images\\character-male6.png"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\title-logo.png",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\title-logo.png",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "images/title-logo#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -479,10 +479,10 @@
       "OriginalItemSpec": "wwwroot\\images\\title-logo.png"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\js\\site.js",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\js\\site.js",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "js/site#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -500,10 +500,10 @@
       "OriginalItemSpec": "wwwroot\\js\\site.js"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -521,10 +521,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css#[.{fingerprint}]?.map",
       "AssetKind": "All",
@@ -542,10 +542,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -563,10 +563,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css#[.{fingerprint}]?.map",
       "AssetKind": "All",
@@ -584,10 +584,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -605,10 +605,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css#[.{fingerprint}]?.map",
       "AssetKind": "All",
@@ -626,10 +626,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -647,10 +647,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css#[.{fingerprint}]?.map",
       "AssetKind": "All",
@@ -668,10 +668,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -689,10 +689,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css#[.{fingerprint}]?.map",
       "AssetKind": "All",
@@ -710,10 +710,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -731,10 +731,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css#[.{fingerprint}]?.map",
       "AssetKind": "All",
@@ -752,10 +752,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -773,10 +773,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css#[.{fingerprint}]?.map",
       "AssetKind": "All",
@@ -794,10 +794,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -815,10 +815,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css#[.{fingerprint}]?.map",
       "AssetKind": "All",
@@ -836,10 +836,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -857,10 +857,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css#[.{fingerprint}]?.map",
       "AssetKind": "All",
@@ -878,10 +878,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -899,10 +899,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css#[.{fingerprint}]?.map",
       "AssetKind": "All",
@@ -920,10 +920,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -941,10 +941,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css#[.{fingerprint}]?.map",
       "AssetKind": "All",
@@ -962,10 +962,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -983,10 +983,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css#[.{fingerprint}]?.map",
       "AssetKind": "All",
@@ -1004,10 +1004,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -1025,10 +1025,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css#[.{fingerprint}]?.map",
       "AssetKind": "All",
@@ -1046,10 +1046,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -1067,10 +1067,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css#[.{fingerprint}]?.map",
       "AssetKind": "All",
@@ -1088,10 +1088,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -1109,10 +1109,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css#[.{fingerprint}]?.map",
       "AssetKind": "All",
@@ -1130,10 +1130,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -1151,10 +1151,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css#[.{fingerprint}]?.map",
       "AssetKind": "All",
@@ -1172,10 +1172,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -1193,10 +1193,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js#[.{fingerprint}]?.map",
       "AssetKind": "All",
@@ -1214,10 +1214,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -1235,10 +1235,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js#[.{fingerprint}]?.map",
       "AssetKind": "All",
@@ -1256,10 +1256,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -1277,10 +1277,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js#[.{fingerprint}]?.map",
       "AssetKind": "All",
@@ -1298,10 +1298,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -1319,10 +1319,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js#[.{fingerprint}]?.map",
       "AssetKind": "All",
@@ -1340,10 +1340,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -1361,10 +1361,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js#[.{fingerprint}]?.map",
       "AssetKind": "All",
@@ -1382,10 +1382,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -1403,10 +1403,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js#[.{fingerprint}]?.map",
       "AssetKind": "All",
@@ -1424,10 +1424,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\LICENSE",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "lib/bootstrap/LICENSE#[.{fingerprint}]?",
       "AssetKind": "All",
@@ -1445,10 +1445,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\LICENSE"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "lib/jquery/dist/jquery#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -1466,10 +1466,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "lib/jquery/dist/jquery.min#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -1487,10 +1487,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "lib/jquery/dist/jquery.min#[.{fingerprint}]?.map",
       "AssetKind": "All",
@@ -1508,10 +1508,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "lib/jquery/LICENSE#[.{fingerprint}]?.txt",
       "AssetKind": "All",
@@ -1529,10 +1529,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "lib/jquery-validation/dist/additional-methods#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -1550,10 +1550,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -1571,10 +1571,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -1592,10 +1592,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -1613,10 +1613,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "lib/jquery-validation/LICENSE#[.{fingerprint}]?.md",
       "AssetKind": "All",
@@ -1634,10 +1634,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -1655,10 +1655,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -1676,10 +1676,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "MVC_ProyectoFinalPOO",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\",
       "BasePath": "_content/MVC_ProyectoFinalPOO",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE#[.{fingerprint}]?.txt",
       "AssetKind": "All",
@@ -1700,7 +1700,7 @@
   "Endpoints": [
     {
       "Route": "css/site.css",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\css\\site.css",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1737,7 +1737,7 @@
     },
     {
       "Route": "css/site.sxlm39d96b.css",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\css\\site.css",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1782,7 +1782,7 @@
     },
     {
       "Route": "favicon.61n19gt1b8.ico",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\favicon.ico",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\favicon.ico",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1827,7 +1827,7 @@
     },
     {
       "Route": "favicon.ico",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\favicon.ico",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\favicon.ico",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1864,7 +1864,7 @@
     },
     {
       "Route": "images/background-image.dks45jwnkn.jpg",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\background-image.jpg",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\background-image.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1909,7 +1909,7 @@
     },
     {
       "Route": "images/background-image.jpg",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\background-image.jpg",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\background-image.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1946,7 +1946,7 @@
     },
     {
       "Route": "images/card.27ta6t0fij.png",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\card.png",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\card.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1991,7 +1991,7 @@
     },
     {
       "Route": "images/card.png",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\card.png",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\card.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2028,7 +2028,7 @@
     },
     {
       "Route": "images/cartas/background-card-castigo.oaio51w9z6.png",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\cartas\\background-card-castigo.png",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\cartas\\background-card-castigo.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2073,7 +2073,7 @@
     },
     {
       "Route": "images/cartas/background-card-castigo.png",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\cartas\\background-card-castigo.png",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\cartas\\background-card-castigo.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2110,7 +2110,7 @@
     },
     {
       "Route": "images/cartas/background-card-juego.png",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\cartas\\background-card-juego.png",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\cartas\\background-card-juego.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2147,7 +2147,7 @@
     },
     {
       "Route": "images/cartas/background-card-juego.smzskth0nf.png",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\cartas\\background-card-juego.png",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\cartas\\background-card-juego.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2192,7 +2192,7 @@
     },
     {
       "Route": "images/cartas/background-card-premio.png",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\cartas\\background-card-premio.png",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\cartas\\background-card-premio.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2229,7 +2229,7 @@
     },
     {
       "Route": "images/cartas/background-card-premio.vom4cmhk8m.png",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\cartas\\background-card-premio.png",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\cartas\\background-card-premio.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2274,7 +2274,7 @@
     },
     {
       "Route": "images/character-female.png",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-female.png",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-female.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2311,7 +2311,7 @@
     },
     {
       "Route": "images/character-female.t6d40v86ax.png",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-female.png",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-female.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2356,7 +2356,7 @@
     },
     {
       "Route": "images/character-female2.png",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-female2.png",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-female2.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2393,7 +2393,7 @@
     },
     {
       "Route": "images/character-female2.quuh9teajy.png",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-female2.png",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-female2.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2438,7 +2438,7 @@
     },
     {
       "Route": "images/character-female3.e4vqxwzefi.png",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-female3.png",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-female3.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2483,7 +2483,7 @@
     },
     {
       "Route": "images/character-female3.png",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-female3.png",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-female3.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2520,7 +2520,7 @@
     },
     {
       "Route": "images/character-female4.nfyxkav0c7.png",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-female4.png",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-female4.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2565,7 +2565,7 @@
     },
     {
       "Route": "images/character-female4.png",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-female4.png",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-female4.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2602,7 +2602,7 @@
     },
     {
       "Route": "images/character-female5.1vuu2klypf.png",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-female5.png",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-female5.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2647,7 +2647,7 @@
     },
     {
       "Route": "images/character-female5.png",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-female5.png",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-female5.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2684,7 +2684,7 @@
     },
     {
       "Route": "images/character-female6.5zzpeory54.png",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-female6.png",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-female6.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2729,7 +2729,7 @@
     },
     {
       "Route": "images/character-female6.png",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-female6.png",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-female6.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2766,7 +2766,7 @@
     },
     {
       "Route": "images/character-male.8dw7khzk6n.png",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-male.png",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-male.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2811,7 +2811,7 @@
     },
     {
       "Route": "images/character-male.png",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-male.png",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-male.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2848,7 +2848,7 @@
     },
     {
       "Route": "images/character-male2.o4pagujg9v.png",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-male2.png",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-male2.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2893,7 +2893,7 @@
     },
     {
       "Route": "images/character-male2.png",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-male2.png",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-male2.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2930,7 +2930,7 @@
     },
     {
       "Route": "images/character-male3.png",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-male3.png",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-male3.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2967,7 +2967,7 @@
     },
     {
       "Route": "images/character-male3.u7076zwyp7.png",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-male3.png",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-male3.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3012,7 +3012,7 @@
     },
     {
       "Route": "images/character-male4.png",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-male4.png",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-male4.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3049,7 +3049,7 @@
     },
     {
       "Route": "images/character-male4.vpu4us43i7.png",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-male4.png",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-male4.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3094,7 +3094,7 @@
     },
     {
       "Route": "images/character-male5.m6yofvyr4t.png",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-male5.png",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-male5.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3139,7 +3139,7 @@
     },
     {
       "Route": "images/character-male5.png",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-male5.png",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-male5.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3176,7 +3176,7 @@
     },
     {
       "Route": "images/character-male6.8u7nceoc2b.png",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-male6.png",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-male6.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3221,7 +3221,7 @@
     },
     {
       "Route": "images/character-male6.png",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-male6.png",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\character-male6.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3258,7 +3258,7 @@
     },
     {
       "Route": "images/title-logo.png",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\title-logo.png",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\title-logo.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3295,7 +3295,7 @@
     },
     {
       "Route": "images/title-logo.rc96cusst9.png",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\title-logo.png",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\images\\title-logo.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3340,7 +3340,7 @@
     },
     {
       "Route": "js/site.js",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\js\\site.js",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\js\\site.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3377,7 +3377,7 @@
     },
     {
       "Route": "js/site.xtxxf3hu2r.js",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\js\\site.js",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\js\\site.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3422,7 +3422,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap.css",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3459,7 +3459,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap.css.73kdqttayv.map",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3504,7 +3504,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap.css.map",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3541,7 +3541,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap.min.6gzpyzhau4.css",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3586,7 +3586,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap.min.css",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3623,7 +3623,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap.min.css.8inm30yfxf.map",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3668,7 +3668,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap.min.css.map",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3705,7 +3705,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap.ozu22stjof.css",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3750,7 +3750,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap.rtl.css",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3787,7 +3787,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap.rtl.css.4gxs3k148c.map",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3832,7 +3832,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap.rtl.css.map",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3869,7 +3869,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap.rtl.gjcw7pocpk.css",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3914,7 +3914,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap.rtl.min.6l4ir0ityv.css",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3959,7 +3959,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap.rtl.min.css",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3996,7 +3996,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap.rtl.min.css.fctod5rc9n.map",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4041,7 +4041,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4078,7 +4078,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-grid.css",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4115,7 +4115,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-grid.css.map",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4152,7 +4152,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-grid.css.st1cbwfwo5.map",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4197,7 +4197,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-grid.min.5p029spbuu.css",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4242,7 +4242,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-grid.min.css",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4279,7 +4279,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-grid.min.css.5vj65cig9w.map",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4324,7 +4324,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4361,7 +4361,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-grid.nakmwdwsxp.css",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4406,7 +4406,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4443,7 +4443,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css.2q4vfeazbq.map",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4488,7 +4488,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4525,7 +4525,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-grid.rtl.e6q6xbwqzk.css",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4570,7 +4570,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4607,7 +4607,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4644,7 +4644,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.o371a8zbv2.map",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4689,7 +4689,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.dy6jgresuo.css",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4734,7 +4734,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-reboot.css",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4771,7 +4771,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-reboot.css.jeal3x0ldm.map",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4816,7 +4816,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-reboot.css.map",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4853,7 +4853,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-reboot.min.css",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4890,7 +4890,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4927,7 +4927,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-reboot.min.css.okkk44j0xs.map",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4972,7 +4972,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-reboot.min.z7kmom2977.css",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5017,7 +5017,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-reboot.mk8rdyw69w.css",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5062,7 +5062,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.97yrjpyf9r.css",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5107,7 +5107,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5144,7 +5144,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.cwzlr5n8x4.map",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5189,7 +5189,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5226,7 +5226,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5263,7 +5263,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5300,7 +5300,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.wmug9u23qg.map",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5345,7 +5345,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.y53cy5s2zj.css",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5390,7 +5390,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-utilities.css",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5427,7 +5427,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-utilities.css.j75batdsum.map",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5472,7 +5472,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-utilities.css.map",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5509,7 +5509,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-utilities.min.2yn17lgxub.css",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5554,7 +5554,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-utilities.min.css",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5591,7 +5591,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5628,7 +5628,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-utilities.min.css.vy0bq9ydhf.map",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5673,7 +5673,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5710,7 +5710,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.ab1c3rmv7g.map",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5755,7 +5755,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5792,7 +5792,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5829,7 +5829,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.56d2bn4wt9.map",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5874,7 +5874,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5911,7 +5911,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.ik6i2hrs65.css",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5956,7 +5956,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.ophe14yye5.css",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6001,7 +6001,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-utilities.z9shlbduue.css",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6046,7 +6046,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/js/bootstrap.1piudyfv7h.js",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6091,7 +6091,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/js/bootstrap.bundle.f6zq8v6eb3.js",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6136,7 +6136,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/js/bootstrap.bundle.js",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6173,7 +6173,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/js/bootstrap.bundle.js.kbynt5jhd9.map",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6218,7 +6218,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/js/bootstrap.bundle.js.map",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6255,7 +6255,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/js/bootstrap.bundle.min.89qbw8ngem.js",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6300,7 +6300,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/js/bootstrap.bundle.min.js",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6337,7 +6337,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/js/bootstrap.bundle.min.js.c2nslu3uf3.map",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6382,7 +6382,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6419,7 +6419,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/js/bootstrap.esm.js",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6456,7 +6456,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/js/bootstrap.esm.js.2lgwfvgpvi.map",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6501,7 +6501,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/js/bootstrap.esm.js.map",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6538,7 +6538,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/js/bootstrap.esm.min.jqwzsa9uv6.js",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6583,7 +6583,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/js/bootstrap.esm.min.js",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6620,7 +6620,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6657,7 +6657,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/js/bootstrap.esm.min.js.wsezl0heh6.map",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6702,7 +6702,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/js/bootstrap.esm.n5w6o92d9r.js",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6747,7 +6747,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/js/bootstrap.js",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6784,7 +6784,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/js/bootstrap.js.6ukhryfubh.map",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6829,7 +6829,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/js/bootstrap.js.map",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6866,7 +6866,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/js/bootstrap.min.4908xmbfjr.js",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6911,7 +6911,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/js/bootstrap.min.js",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6948,7 +6948,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/js/bootstrap.min.js.map",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6985,7 +6985,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/js/bootstrap.min.js.u33ctipx7g.map",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7030,7 +7030,7 @@
     },
     {
       "Route": "lib/bootstrap/LICENSE",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\LICENSE",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7067,7 +7067,7 @@
     },
     {
       "Route": "lib/bootstrap/LICENSE.81b7ukuj9c",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\bootstrap\\LICENSE",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7112,7 +7112,7 @@
     },
     {
       "Route": "lib/jquery/dist/jquery.7s2n0ol71w.js",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7157,7 +7157,7 @@
     },
     {
       "Route": "lib/jquery/dist/jquery.js",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7194,7 +7194,7 @@
     },
     {
       "Route": "lib/jquery/dist/jquery.min.5pze98is44.map",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7239,7 +7239,7 @@
     },
     {
       "Route": "lib/jquery/dist/jquery.min.ehgnz7f14e.js",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7284,7 +7284,7 @@
     },
     {
       "Route": "lib/jquery/dist/jquery.min.js",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7321,7 +7321,7 @@
     },
     {
       "Route": "lib/jquery/dist/jquery.min.map",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7358,7 +7358,7 @@
     },
     {
       "Route": "lib/jquery/LICENSE.mlv21k5csn.txt",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7403,7 +7403,7 @@
     },
     {
       "Route": "lib/jquery/LICENSE.txt",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7440,7 +7440,7 @@
     },
     {
       "Route": "lib/jquery-validation/dist/additional-methods.ay5nd8zt9x.js",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7485,7 +7485,7 @@
     },
     {
       "Route": "lib/jquery-validation/dist/additional-methods.js",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7522,7 +7522,7 @@
     },
     {
       "Route": "lib/jquery-validation/dist/additional-methods.min.9oaff4kq20.js",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7567,7 +7567,7 @@
     },
     {
       "Route": "lib/jquery-validation/dist/additional-methods.min.js",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7604,7 +7604,7 @@
     },
     {
       "Route": "lib/jquery-validation/dist/jquery.validate.6d0lkjaslc.js",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7649,7 +7649,7 @@
     },
     {
       "Route": "lib/jquery-validation/dist/jquery.validate.js",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7686,7 +7686,7 @@
     },
     {
       "Route": "lib/jquery-validation/dist/jquery.validate.min.js",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7723,7 +7723,7 @@
     },
     {
       "Route": "lib/jquery-validation/dist/jquery.validate.min.l1zq2mitth.js",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7768,7 +7768,7 @@
     },
     {
       "Route": "lib/jquery-validation/LICENSE.md",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7805,7 +7805,7 @@
     },
     {
       "Route": "lib/jquery-validation/LICENSE.x0q3zqp4vz.md",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7850,7 +7850,7 @@
     },
     {
       "Route": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.03hjc8e09r.js",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7895,7 +7895,7 @@
     },
     {
       "Route": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7932,7 +7932,7 @@
     },
     {
       "Route": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.48y08845bh.js",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -7977,7 +7977,7 @@
     },
     {
       "Route": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -8014,7 +8014,7 @@
     },
     {
       "Route": "lib/jquery-validation-unobtrusive/LICENSE.356vix0kms.txt",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -8059,7 +8059,7 @@
     },
     {
       "Route": "lib/jquery-validation-unobtrusive/LICENSE.txt",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -8096,7 +8096,7 @@
     },
     {
       "Route": "MVC_ProyectoFinalPOO.bundle.scp.css",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\MVC_ProyectoFinalPOO.bundle.scp.css",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\MVC_ProyectoFinalPOO.bundle.scp.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -8133,7 +8133,7 @@
     },
     {
       "Route": "MVC_ProyectoFinalPOO.ew4emu4acf.bundle.scp.css",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\MVC_ProyectoFinalPOO.bundle.scp.css",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\MVC_ProyectoFinalPOO.bundle.scp.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -8178,7 +8178,7 @@
     },
     {
       "Route": "MVC_ProyectoFinalPOO.ew4emu4acf.styles.css",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\obj\\Debug\\net8.0\\scopedcss\\bundle\\MVC_ProyectoFinalPOO.styles.css",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\obj\\Debug\\net8.0\\scopedcss\\bundle\\MVC_ProyectoFinalPOO.styles.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -8223,7 +8223,7 @@
     },
     {
       "Route": "MVC_ProyectoFinalPOO.styles.css",
-      "AssetFile": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\obj\\Debug\\net8.0\\scopedcss\\bundle\\MVC_ProyectoFinalPOO.styles.css",
+      "AssetFile": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\obj\\Debug\\net8.0\\scopedcss\\bundle\\MVC_ProyectoFinalPOO.styles.css",
       "Selectors": [],
       "ResponseHeaders": [
         {

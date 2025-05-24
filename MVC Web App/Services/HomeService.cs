@@ -1,37 +1,28 @@
-﻿// MVC_ProyectoFinalPOO/Services/HomeService.cs
-using MVC_ProyectoFinalPOO.Models; // O donde estén Jugador/Juego
-using CL_ProyectoFinalPOO.Clases; // Necesario si Jugador y Juego están en este namespace
-using System;
+﻿
+using MVC_ProyectoFinalPOO.Models; 
+using CL_ProyectoFinalPOO.Clases; 
 using System.Collections.Generic;
 using System.Linq;
 using System.Diagnostics;
-using CL_ProyectoFinalPOO.Interfaces; // Para Debug.WriteLine
+using CL_ProyectoFinalPOO.Interfaces; 
 
 namespace MVC_ProyectoFinalPOO.Services
 {
     public class HomeService : IHomeService
     {
-        // Esta lista mantiene el estado de los jugadores que se están configurando actualmente.
-        // Dado que HomeService es un Singleton (gestionado por DI), esta lista es compartida a nivel de aplicación.
-        // Es importante gestionarla adecuadamente (p.ej., limpiarla después de su uso).
+
         private List<Jugador> _listaJugadoresConfigActual = new List<Jugador>();
         private static Dictionary<string, string> _usuariosRegistrados = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
 
-
-        // Limpia la lista de jugadores que estaban en proceso de configuración.
         public void LimpiarConfiguracionJugadores()
         {
             try
             {
                 _listaJugadoresConfigActual.Clear();
-                Debug.WriteLine("HomeService: Configuración de jugadores actual ha sido limpiada.");
             }
             catch (Exception ex)
             {
                 Debug.WriteLine($"HomeService: Error al limpiar configuración: {ex.Message}");
-                // Considera no lanzar una nueva excepción genérica aquí si el Debug.WriteLine es suficiente
-                // o si el error no es realmente "crítico" para la operación de limpieza.
-                // throw new Exception("Error crítico en HomeService al intentar limpiar la configuración de jugadores.", ex);
             }
         }
 
@@ -39,7 +30,6 @@ namespace MVC_ProyectoFinalPOO.Services
         {
             if (string.IsNullOrWhiteSpace(usuario))
             {
-                Debug.WriteLine("HomeService.BuscarUsuario: El nombre de usuario está vacío o es nulo.");
                 return false;
             }
 
@@ -70,16 +60,13 @@ namespace MVC_ProyectoFinalPOO.Services
             }
 
             _usuariosRegistrados.Add(usuario, contraseña);
-            Debug.WriteLine($"HomeService.RegistrarUsuario: Usuario '{usuario}' registrado exitosamente.");
         }
 
-
-        // Agrega un jugador a la lista de configuración actual, realizando validaciones previas.
         public void AgregarJugadorConfigurado(string nickname, int apuesta)
         {
             if (string.IsNullOrWhiteSpace(nickname) || nickname.Length < 4)
                 throw new ArgumentException("El Nickname es inválido. Debe tener al menos 4 caracteres.");
-            if (apuesta < 10 || apuesta > 1000) // Límites de apuesta de ejemplo
+            if (apuesta < 10 || apuesta > 1000) 
                 throw new ArgumentException("La apuesta debe estar entre 10 y 1000 puntos.");
 
             Juego juegoReglas = new Juego();
@@ -91,20 +78,17 @@ namespace MVC_ProyectoFinalPOO.Services
 
             try
             {
-                Juego juegoTemporalParaConstructor = new Juego(); // Esta instancia es para el constructor de Jugador
+                Juego juegoTemporalParaConstructor = new Juego();
                 var nuevoJugador = new Jugador(nickname, apuesta, juegoTemporalParaConstructor);
 
                 _listaJugadoresConfigActual.Add(nuevoJugador);
-                Debug.WriteLine($"HomeService.AgregarJugadorConfigurado: Jugador '{nickname}' (Apuesta: {apuesta}, Puntos: {nuevoJugador.Puntos}) añadido a la configuración. Total en config: {_listaJugadoresConfigActual.Count}");
             }
             catch (Exception ex)
             {
-                Debug.WriteLine($"HomeService: Error al agregar jugador '{nickname}': {ex.Message}");
                 throw new Exception("Error interno del servicio al intentar agregar el jugador.", ex);
             }
         }
 
-        // Elimina el último jugador que fue agregado a la lista de configuración.
         public void EliminarUltimoJugadorConfigurado()
         {
             if (_listaJugadoresConfigActual.Count == 0)
@@ -114,15 +98,12 @@ namespace MVC_ProyectoFinalPOO.Services
             {
                 var jugadorEliminado = _listaJugadoresConfigActual.Last();
                 _listaJugadoresConfigActual.RemoveAt(_listaJugadoresConfigActual.Count - 1);
-                Debug.WriteLine($"HomeService.EliminarUltimoJugadorConfigurado: Jugador '{jugadorEliminado.Nickname}' eliminado de la configuración. Total restantes: {_listaJugadoresConfigActual.Count}");
             }
             catch (Exception ex)
             {
-                Debug.WriteLine($"HomeService: Error al eliminar último jugador: {ex.Message}");
                 throw new Exception("Error interno del servicio al intentar eliminar el último jugador.", ex);
             }
         }
-
         public List<Jugador> ValidarConfiguracionJugadoresParaJuego()
         {
             Juego juegoReglas = new Juego();
@@ -132,11 +113,9 @@ namespace MVC_ProyectoFinalPOO.Services
             if (_listaJugadoresConfigActual.Count < minJugadores || _listaJugadoresConfigActual.Count > maxJugadores)
             {
                 string mensajeError = $"Se requieren entre {minJugadores} y {maxJugadores} jugadores para iniciar el juego. Actualmente hay {_listaJugadoresConfigActual.Count} jugadores configurados.";
-                Debug.WriteLine($"HomeService.ValidarConfiguracionJugadoresParaJuego: Validación fallida. {mensajeError}");
                 throw new InvalidOperationException(mensajeError);
             }
 
-            Debug.WriteLine($"HomeService.ValidarConfiguracionJugadoresParaJuego: Configuración de {_listaJugadoresConfigActual.Count} jugadores validada exitosamente.");
             return new List<Jugador>(_listaJugadoresConfigActual);
         }
 
@@ -148,7 +127,6 @@ namespace MVC_ProyectoFinalPOO.Services
             }
             catch (Exception ex)
             {
-                Debug.WriteLine($"HomeService: Error al obtener jugadores configurados: {ex.Message}");
                 throw new Exception("Error interno del servicio al intentar obtener la lista de jugadores configurados.", ex);
             }
         }

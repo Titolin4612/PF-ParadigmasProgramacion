@@ -12,7 +12,6 @@ namespace CL_ProyectoFinalPOO.Aspectos
         {
             _httpContextAccessor = httpContextAccessor;
         }
-
         public void Intercept(IInvocation invocation)
         {
             var context = _httpContextAccessor.HttpContext;

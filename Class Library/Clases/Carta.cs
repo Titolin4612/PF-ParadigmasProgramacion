@@ -15,8 +15,6 @@ namespace CL_ProyectoFinalPOO.Clases
         private string _descripcion;
         private string _imagenUrl;
 
-
-
         // Accesores
         public string Nombre
         {
@@ -50,7 +48,6 @@ namespace CL_ProyectoFinalPOO.Clases
         }
 
         public string ImagenUrl { get => _imagenUrl; set => _imagenUrl = value; }
-
 
         // Constructor
         public Carta(string nombre, string descripcion, string mitologia, string imagenurl)

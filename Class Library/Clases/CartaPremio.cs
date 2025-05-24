@@ -33,7 +33,6 @@ namespace CL_ProyectoFinalPOO.Clases
             Bendicion = bendicion;
         }
 
-
         public override int ObtenerPuntos()
         {
             return VPremio;

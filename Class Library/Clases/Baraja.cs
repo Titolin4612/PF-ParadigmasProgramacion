@@ -8,17 +8,14 @@ namespace CL_ProyectoFinalPOO.Clases
 {
     public class Baraja
     {
-        // Lists to store the cards - NOW INSTANCE PROPERTIES
         public List<CartaJuego> CartasJuego { get; private set; }
         public List<CartaPremio> CartasPremio { get; private set; }
         public List<CartaCastigo> CartasCastigo { get; private set; }
 
-        // Path to the JSON file (in the same folder as the program) - These can remain static readonly
         public static readonly string _rutaArchivoCartas = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "cartas.json");
         public static readonly string _rutaBaseImagenesCartas = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "cartas\\");
         public const string _rutaBaseImagenes = "images/cartas/";
 
-        // Constructor for the Baraja instance (replaces the static constructor for initialization)
         public Baraja()
         {
             CartasJuego = new List<CartaJuego>();
@@ -26,13 +23,10 @@ namespace CL_ProyectoFinalPOO.Clases
             CartasCastigo = new List<CartaCastigo>();
         }
 
-        // Load cards from JSON file - NOW A VIRTUAL INSTANCE METHOD
-        // Mark it as 'virtual' so Castle.DynamicProxy can override it.
         public virtual void CargarCartas(string rutaArchivo = null)
         {
             rutaArchivo = rutaArchivo ?? _rutaArchivoCartas;
 
-            // Clear lists via instance references
             CartasJuego.Clear();
             CartasPremio.Clear();
             CartasCastigo.Clear();

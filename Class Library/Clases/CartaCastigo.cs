@@ -14,7 +14,6 @@ namespace CL_ProyectoFinalPOO.Clases
         // Valor carta
         private static int vCastigo = -5;
         
-
         // Accesor
         public string Maleficio
         {
@@ -27,7 +26,6 @@ namespace CL_ProyectoFinalPOO.Clases
             }
         }
         public static int VCastigo { get => vCastigo; }
-
 
         // Constructor
         public CartaCastigo(string nombre, string descripcion, string mitologia, string maleficio, string imagenUrl) 

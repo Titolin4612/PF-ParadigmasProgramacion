@@ -1,5 +1,4 @@
-﻿// MVC_ProyectoFinalPOO/Controllers/ReglasController.cs
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using MVC_ProyectoFinalPOO.Services;
 using System;
 using System.Diagnostics;
@@ -32,7 +31,7 @@ namespace MVC_ProyectoFinalPOO.Controllers
             {
                 Debug.WriteLine($"ReglasController.BarajaCatalogo: Error - {ex.Message}");
                 ViewBag.Error = "Error al cargar el catálogo de cartas: " + ex.Message;
-                ViewBag.HayJuegoActivo = _juegoService.EstaJuegoActivo(); // Aun así, intentar obtener este estado
+                ViewBag.HayJuegoActivo = _juegoService.EstaJuegoActivo(); 
                 return View(); 
             }
         }

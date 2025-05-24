@@ -25,7 +25,6 @@ namespace MVC_ProyectoFinalPOO.Services
 
         public bool EstaJuegoActivo()
         {
-            // Access Jugadores through the _juegoActual instance
             return _juegoActual != null && _juegoActual.Jugadores != null && _juegoActual.Jugadores.Any();
         }
 
@@ -33,37 +32,30 @@ namespace MVC_ProyectoFinalPOO.Services
         {
             if (jugadoresConfigurados == null || !jugadoresConfigurados.Any())
             {
-                Debug.WriteLine("JuegoService.IniciarJuego: Intento de iniciar juego sin jugadores configurados.");
                 throw new ArgumentException("Se requiere al menos un jugador configurado para iniciar el juego.");
             }
 
             try
             {
-                Debug.WriteLine($"JuegoService.IniciarJuego: Iniciando juego con {jugadoresConfigurados.Count} jugadores.");
                 _juegoActual = new Juego(); // Create a new instance of Juego
 
-                // Access Jugadores and IndiceJugador through the _juegoActual instance
                 _juegoActual.Jugadores.Clear();
                 _juegoActual.IndiceJugador = 0;
 
                 foreach (var jConf in jugadoresConfigurados)
                 {
-                    // Pass _juegoActual to the Jugador constructor if Jugador needs a reference to the game instance.
-                    // This assumes Jugador's constructor is designed to accept it.
+
                     var nuevoJugador = new Jugador(jConf.Nickname, jConf.ApuestaInicial, _juegoActual);
                     _juegoActual.AsignarPuntosSegunApuesta(nuevoJugador);
-                    // Add to the instance's Jugadores list
+
                     _juegoActual.Jugadores.Add(nuevoJugador);
-                    Debug.WriteLine($"JuegoService.IniciarJuego: Jugador '{nuevoJugador.Nickname}' añadido con {nuevoJugador.Puntos} puntos.");
                 }
 
                 _juegoActual.IniciarRonda();
                 _homeService.LimpiarConfiguracionJugadores();
-                Debug.WriteLine("JuegoService.IniciarJuego: Juego iniciado y configuración de HomeService limpiada.");
             }
             catch (Exception ex)
             {
-                Debug.WriteLine($"JuegoService.IniciarJuego: Error crítico - {ex.Message}");
                 _juegoActual = null;
                 throw new Exception("Error crítico en JuegoService al intentar iniciar el juego.", ex);
             }
@@ -73,10 +65,8 @@ namespace MVC_ProyectoFinalPOO.Services
         {
             if (!EstaJuegoActivo())
             {
-                Debug.WriteLine("JuegoService.ObtenerJugadorActual: No hay juego activo.");
                 return null;
             }
-            // Access Jugadores and IndiceJugador through the _juegoActual instance
             return _juegoActual.Jugadores.Count == 0 ?
                 null : _juegoActual.Jugadores[_juegoActual.IndiceJugador];
         }
@@ -85,14 +75,12 @@ namespace MVC_ProyectoFinalPOO.Services
         {
             if (!EstaJuegoActivo())
             {
-                Debug.WriteLine("JuegoService.CogerCarta: Intento de coger carta sin juego activo.");
                 throw new InvalidOperationException("El juego no ha sido iniciado o no hay jugadores.");
             }
 
             var jugadorActual = ObtenerJugadorActual();
             if (jugadorActual == null)
             {
-                Debug.WriteLine("JuegoService.CogerCarta: No se pudo determinar el jugador actual.");
                 throw new InvalidOperationException("No se pudo determinar el jugador actual.");
             }
 
@@ -106,19 +94,16 @@ namespace MVC_ProyectoFinalPOO.Services
                     puntosObtenidos = _juegoActual.AplicarEfectoCartas(carta);
                     jugadorActual.Puntos += puntosObtenidos;
                     jugadorActual.L_cartas_jugador.Add(carta);
-                    Debug.WriteLine($"JuegoService.CogerCarta: Jugador '{jugadorActual.Nickname}' cogió '{carta.Nombre}'. Puntos efecto: {puntosObtenidos}. Puntos totales: {jugadorActual.Puntos}.");
                 }
                 else
                 {
-                    Debug.WriteLine("JuegoService.CogerCarta: No se pudo obtener una carta (mazo posiblemente vacío).");
                 }
 
-                _juegoActual.ValidarYDispararEventos(null); // Validar y disparar eventos después de la acción
+                _juegoActual.ValidarYDispararEventos(null); 
                 return (carta, puntosObtenidos);
             }
             catch (Exception ex)
             {
-                Debug.WriteLine($"JuegoService.CogerCarta: Error - {ex.Message}");
                 throw new Exception("Error en JuegoService al procesar CogerCarta.", ex);
             }
         }
@@ -127,7 +112,6 @@ namespace MVC_ProyectoFinalPOO.Services
         {
             if (!EstaJuegoActivo())
             {
-                Debug.WriteLine("JuegoService.PasarTurno: Intento de pasar turno sin juego activo.");
                 throw new InvalidOperationException("El juego no ha sido iniciado.");
             }
             try
@@ -135,20 +119,16 @@ namespace MVC_ProyectoFinalPOO.Services
                 Jugador liderInicial = _juegoActual.ObtenerLider();
                 _juegoActual.ValidarYDispararEventos(liderInicial);
 
-                // Access Jugadores through the _juegoActual instance
                 if (!JuegoTerminado() && _juegoActual.Jugadores != null && _juegoActual.Jugadores.Any())
                 {
                     _juegoActual.PasarTurno();
-                    Debug.WriteLine($"JuegoService.PasarTurno: Turno pasado. Nuevo jugador actual: {ObtenerJugadorActual()?.Nickname ?? "Ninguno"}.");
                 }
                 else
                 {
-                    Debug.WriteLine("JuegoService.PasarTurno: No se pasó el turno, el juego terminó o no hay jugadores.");
                 }
             }
             catch (Exception ex)
             {
-                Debug.WriteLine($"JuegoService.PasarTurno: Error - {ex.Message}");
                 throw new Exception("Error en JuegoService al intentar pasar el turno.", ex);
             }
         }
@@ -157,19 +137,16 @@ namespace MVC_ProyectoFinalPOO.Services
         {
             if (!EstaJuegoActivo() && _juegoActual == null)
             {
-                Debug.WriteLine("JuegoService.FinalizarJuego: No hay juego (_juegoActual es null) para finalizar.");
                 return null;
             }
 
             try
             {
                 var ganador = _juegoActual.ObtenerLider();
-                Debug.WriteLine($"JuegoService.FinalizarJuego: Juego finalizado. Ganador: {ganador?.Nickname ?? "Ninguno"}.");
                 return ganador;
             }
             catch (Exception ex)
             {
-                Debug.WriteLine($"JuegoService.FinalizarJuego: Error - {ex.Message}");
                 throw new Exception("Error en JuegoService al finalizar el juego.", ex);
             }
         }
@@ -178,7 +155,6 @@ namespace MVC_ProyectoFinalPOO.Services
         {
             if (_juegoActual != null)
             {
-                // Access Jugadores through the _juegoActual instance
                 return _juegoActual.Jugadores ?? new List<Jugador>();
             }
             return new List<Jugador>();
@@ -196,7 +172,6 @@ namespace MVC_ProyectoFinalPOO.Services
             }
             catch (Exception ex)
             {
-                Debug.WriteLine($"JuegoService.ObtenerHistorial: Error - {ex.Message}");
                 return new List<string> { $"Error al obtener historial: {ex.Message}" };
             }
         }
@@ -205,24 +180,19 @@ namespace MVC_ProyectoFinalPOO.Services
         {
             if (!EstaJuegoActivo())
             {
-                Debug.WriteLine("JuegoService.JuegoTerminado: No hay juego activo, se considera terminado.");
                 return true;
             }
             try
             {
-                // Access instance properties through _juegoActual
+
                 bool mazosAgotados = _juegoActual.AgotadasResto && _juegoActual.AgotadasCastigo && _juegoActual.AgotadasPremio;
-                // Access Jugadores and JugadoresMin through _juegoActual
                 bool pocosJugadores = _juegoActual.Jugadores == null || _juegoActual.Jugadores.Count < _juegoActual.JugadoresMin;
 
                 bool terminado = mazosAgotados || pocosJugadores;
-                Debug.WriteLineIf(terminado, "JuegoService.JuegoTerminado: El juego ha terminado.");
-                Debug.WriteLineIf(!terminado, "JuegoService.JuegoTerminado: El juego NO ha terminado.");
                 return terminado;
             }
             catch (Exception ex)
             {
-                Debug.WriteLine($"JuegoService.JuegoTerminado: Error - {ex.Message}");
                 return true;
             }
         }
@@ -235,14 +205,12 @@ namespace MVC_ProyectoFinalPOO.Services
             }
             try
             {
-                // Access instance lists through _juegoActual
                 return _juegoActual.L_cartas_resto.Count +
                        _juegoActual.L_cartas_castigo.Count +
                        _juegoActual.L_cartas_premio.Count;
             }
             catch (Exception ex)
             {
-                Debug.WriteLine($"JuegoService.TotalCartasEnMazo: Error - {ex.Message}");
                 return 0;
             }
         }
@@ -251,26 +219,12 @@ namespace MVC_ProyectoFinalPOO.Services
         {
             try
             {
-                Debug.WriteLine("JuegoService.ReiniciarJuego: Reiniciando estado del juego.");
-                _juegoActual = null; // Set the current game instance to null to signify a reset.
-
-                // If Jugadores and IndiceJugador were truly static in Juego, you could clear them here.
-                // However, since we've made them instance members, creating a new Juego instance (as done in IniciarJuego)
-                // is the correct way to "reset" a game's state.
-                // These lines below will now cause errors if Juego.Jugadores and Juego.IndiceJugador are not static.
-                // If you want to clear players globally for some reason, you'd need a static method on Juego or a different approach.
-                // Assuming you want to reset _juegoActual to a fresh state, setting it to null is sufficient before starting a new one.
-
-                // If you *must* clear static lists (though they should generally not be static if you want per-game instances):
-                // CL_ProyectoFinalPOO.Clases.Juego.Jugadores.Clear();
-                // CL_ProyectoFinalPOO.Clases.Juego.IndiceJugador = 0;
+                _juegoActual = null; 
 
                 _homeService.LimpiarConfiguracionJugadores();
-                Debug.WriteLine("JuegoService.ReiniciarJuego: Juego reiniciado y configuración de HomeService limpiada.");
             }
             catch (Exception ex)
             {
-                Debug.WriteLine($"JuegoService.ReiniciarJuego: Error - {ex.Message}");
                 throw new Exception("Error en JuegoService al reiniciar el juego.", ex);
             }
         }
@@ -279,27 +233,21 @@ namespace MVC_ProyectoFinalPOO.Services
         {
             if (!EstaJuegoActivo())
             {
-                Debug.WriteLine("JuegoService.ComenzarNuevaRonda: No hay juego activo para iniciar nueva ronda.");
                 throw new InvalidOperationException("No hay un juego activo para iniciar una nueva ronda. Configure un nuevo juego.");
             }
-            // Access Jugadores and JugadoresMin through the _juegoActual instance
             if (_juegoActual.Jugadores == null ||
                 !_juegoActual.Jugadores.Any() ||
                 _juegoActual.Jugadores.Count < _juegoActual.JugadoresMin)
             {
-                Debug.WriteLine("JuegoService.ComenzarNuevaRonda: No hay suficientes jugadores para nueva ronda.");
                 throw new InvalidOperationException("No hay suficientes jugadores actuales para comenzar una nueva ronda.");
             }
 
             try
             {
-                Debug.WriteLine("JuegoService.ComenzarNuevaRonda: Iniciando nueva ronda con jugadores actuales.");
                 _juegoActual.IniciarRonda();
-                Debug.WriteLine("JuegoService.ComenzarNuevaRonda: Nueva ronda iniciada.");
             }
             catch (Exception ex)
             {
-                Debug.WriteLine($"JuegoService.ComenzarNuevaRonda: Error - {ex.Message}");
                 throw new Exception("Error en JuegoService al comenzar una nueva ronda.", ex);
             }
         }

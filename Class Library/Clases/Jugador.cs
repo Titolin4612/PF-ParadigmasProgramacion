@@ -46,9 +46,7 @@ namespace CL_ProyectoFinalPOO.Clases
 
         public bool Perdio { get => perdio; set => perdio = value; }
 
-
         // Constructor
-
         public Jugador(string nickname, int apuestaInicial, Juego juego)
         {
             Nickname = nickname;
@@ -57,7 +55,6 @@ namespace CL_ProyectoFinalPOO.Clases
             Juego = juego;
             Juego.AsignarPuntosSegunApuesta(this);
         }
-
 
         public Carta CogerCarta()
         {

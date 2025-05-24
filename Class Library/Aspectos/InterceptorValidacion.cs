@@ -14,7 +14,7 @@ namespace CL_ProyectoFinalPOO.Aspectos
 
         public InterceptorValidacion(IHttpContextAccessor httpContextAccessor)
         {
-            _httpContextAccessor = httpContextAccessor ?? throw new ArgumentNullException(nameof(httpContextAccessor));
+            _httpContextAccessor = httpContextAccessor ?? throw new Exception(nameof(httpContextAccessor));
         }
 
         public void Intercept(IInvocation invocation)

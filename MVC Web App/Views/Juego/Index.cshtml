@@ -44,7 +44,7 @@
 
 
         <div class="turn-indicator @(juegoTerminado ? "turn-ended" : "")">
-            @if (juegoTerminado && string.IsNullOrEmpty(mensajeError)) // Si el juego terminó Y NO HAY un banner de error específico del ganador
+            @if (juegoTerminado && string.IsNullOrEmpty(mensajeError)) 
             {
                     <span>¡La partida ha concluido!</span>
             }
@@ -52,11 +52,11 @@
             {
                     <span>Turno de: <strong>@jugadorActual.Nickname</strong></span>
             }
-            else if (!juegoTerminado && jugadorActual == null) // Condición para "Cargando..." o estado inicial sin jugador
+            else if (!juegoTerminado && jugadorActual == null) 
             {
                     <span>Cargando...</span>
             }
-            @* No se muestra nada más en el turn-indicator si hay mensajeError (banner) *@
+
         </div>
 
         <div class="game-main-content-wrapper">
@@ -118,12 +118,9 @@
                                         </form>
 
                                     </div>
-                            @* ---------- FIN DE LA MODIFICACIÓN ---------- *@
+
                         }
-                        @* Mover el botón de salir general fuera del if/else si quieres que siempre esté visible,
-                           o dejarlo solo para cuando el juego NO ha terminado.
-                           Si lo dejas como está arriba, el botón de Salir solo aparecerá cuando el juego termine.
-                           Si quieres un botón de salir durante el juego, sería este: *@
+
                         @if (!juegoTerminado)
                         {
                                         <form asp-controller="Juego" asp-action="Reiniciar" method="post" class="end-game-action-form">
@@ -133,7 +130,7 @@
                     </div>
                 </div>
 
-                @* ---------- INICIO DE LA MODIFICACIÓN ---------- *@
+
                 <div class="revealed-card-zone" id="revealedCardZone">
                     @if (juegoTerminado && cartaRevelada == null)
                     {
@@ -144,10 +141,8 @@
                     }
                     else
                     {
-                        @* Mostrar el flipper de la carta normal si el juego no ha terminado o hay una carta revelada *@
                                 <div class="card-flipper-container" id="cardFlipper">
 
-                            @* Placeholder Visual *@
                                     <div class="card-placeholder-visual @(mostrarCartaReal ? "is-flipped-away" : "")" id="cardPlaceholderVisual">
                                         <div class="card-content-overlay-game"></div>
                                         <div class="card-inner-content-game placeholder-content"> @* Contenido del placeholder, visible por CSS *@
@@ -156,7 +151,6 @@
                                         </div>
                                     </div>
 
-                            @* Carta Real Revelada *@
                             @{
                                 string revealedCardClasses = "revealed-game-card";
                                 if (mostrarCartaReal)
@@ -185,7 +179,7 @@
                                     string altFondoCarta = $"Carta: {cartaRevelada.Nombre}";
 
                                                         <div class="card-content-overlay-game"></div>
-                                                        <div class="card-inner-content-game"> @* El contenido se anima por la clase del padre *@
+                                                        <div class="card-inner-content-game"> 
                                                             <div class="card-top-section-game">
                                                                 <h3 class="card-title-game">@cartaRevelada.Nombre</h3>
                                                                 <p class="card-mythology-game">@cartaRevelada.Mitologia</p>
@@ -222,7 +216,6 @@
                                 </div>
                     }
                 </div>
-                @* ---------- FIN DE LA MODIFICACIÓN ---------- *@
             </div>
 
             <div class="players-column" id="players-right-column">
@@ -271,14 +264,12 @@
                 if (cardPlaceholderVisual && revealedGameCard) {
                     event.preventDefault();
 
-                    // 1. Ocultar placeholder, mostrar carta real (iniciar giro)
                     cardPlaceholderVisual.classList.remove('is-flipping-to-front');
                     cardPlaceholderVisual.classList.add('is-flipping-away');
 
                     revealedGameCard.classList.remove('is-flipped-away');
                     revealedGameCard.classList.add('is-flipping-to-front');
 
-                    // 2. Animar entrada del contenido de la carta real
                     revealedGameCard.classList.remove('animate-card-content-out');
                     revealedGameCard.classList.add('animate-card-content-in');
 
@@ -291,7 +282,7 @@
 
                     setTimeout(() => {
                         formCogerCarta.submit();
-                    }, 450); // Ajustado de 750ms a 450ms (0.4s giro + 50ms margen)
+                    }, 450); 
                 }
             });
         }
@@ -301,22 +292,20 @@
                 if (revealedGameCard && cardPlaceholderVisual) {
                     event.preventDefault();
 
-                    // 1. Animar salida del contenido de la carta real
                     revealedGameCard.classList.remove('animate-card-content-in');
                     revealedGameCard.classList.add('animate-card-content-out');
 
-                    // 2. Girar la carta real para ocultarla y mostrar el placeholder
                     setTimeout(() => {
                         revealedGameCard.classList.remove('is-flipping-to-front');
                         revealedGameCard.classList.add('is-flipping-away');
 
                         cardPlaceholderVisual.classList.remove('is-flipped-away');
                         cardPlaceholderVisual.classList.add('is-flipping-to-front');
-                    }, 200); // Ajustado de 350ms a 200ms (antes de que termine el desvanecimiento de 0.25s)
+                    }, 200); 
 
                     setTimeout(() => {
                         formSiguienteTurno.submit();
-                    }, 650); // Ajustado de 1050ms a 650ms (0.2s + 0.4s giro + 50ms margen)
+                    }, 650);
                 }
             });
         }

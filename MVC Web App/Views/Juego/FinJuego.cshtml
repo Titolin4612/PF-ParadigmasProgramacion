@@ -1,5 +1,4 @@
-﻿@* MVC_ProyectoFinalPOO/Views/Juego/FinJuego.cshtml *@
-
+﻿
 @{
     ViewData["Title"] = "Blessings & Curses - Fin de Partida";
     string gameLogoUrl = Url.Content("~/images/title-logo.png");
@@ -32,7 +31,6 @@
                 <div class="error-banner" id="gameErrorBanner"><i class="fas fa-exclamation-triangle"></i> @mensajeError</div>
         }
 
-        @* SECCIÓN PARA EL BANNER DE SIMULACIÓN BD - CLASES DINÁMICAS *@
         @if (!string.IsNullOrEmpty(simulacionBDMensaje))
         {
             string alertClass = "";
@@ -121,7 +119,7 @@
 
             const simulacionBdBanner = document.getElementById('simulacionBdBanner');
             if (simulacionBdBanner) {
-                // Determine duration based on type for better UX
+
                 const duration = simulacionBdBanner.classList.contains('alert-error') ? 10000 : 8000; 
                 setTimeout(() => {
                     simulacionBdBanner.style.transition = 'opacity 0.5s ease-out';
@@ -147,7 +145,6 @@
 </body>
 
 <style>
-    /* Add styles for your new button and the dynamic alert classes */
     .character {
         position: absolute;
         bottom: 0;
@@ -171,18 +168,16 @@
         overflow-x: hidden;
     }
 
-    /* Styles for the new save button */
     .save-button {
-        background-color: #4CAF50; /* Green */
+        background-color: #4CAF50;
         color: white;
         border: 2px solid #388E3C;
     }
 
     .save-button:hover {
-        background-color: #388E3C; /* Darker green on hover */
+        background-color: #388E3C; 
     }
 
-    /* Styles for dynamic alert banner types */
     .custom-alert-banner {
         padding: 10px 20px;
         margin-bottom: 20px;
@@ -197,25 +192,25 @@
     }
 
     .custom-alert-banner.alert-info {
-        background-color: #2196F3; /* Blue */
+        background-color: #2196F3; 
         color: white;
         border: 1px solid #1976D2;
     }
 
     .custom-alert-banner.alert-success {
-        background-color: #4CAF50; /* Green */
+        background-color: #4CAF50;
         color: white;
         border: 1px solid #388E3C;
     }
 
     .custom-alert-banner.alert-error {
-        background-color: #f44336; /* Red */
+        background-color: #f44336; 
         color: white;
         border: 1px solid #D32F2F;
     }
 
     .custom-alert-banner.alert-warning {
-        background-color: #ff9800; /* Orange */
+        background-color: #ff9800; 
         color: white;
         border: 1px solid #F57C00;
     }

@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "NK02dPH9mHQ=",
+  "dgSpecHash": "+jJH/fEljwE=",
   "success": true,
-  "projectFilePath": "C:\\Users\\mesaj\\Downloads\\Juego Final\\PF-ParadigmasProgramacion\\MVC Web App\\MVC_ProyectoFinalPOO.csproj",
+  "projectFilePath": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\MVC_ProyectoFinalPOO.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\mesaj\\.nuget\\packages\\castle.core\\5.2.1\\castle.core.5.2.1.nupkg.sha512",
-    "C:\\Users\\mesaj\\.nuget\\packages\\system.diagnostics.eventlog\\6.0.0\\system.diagnostics.eventlog.6.0.0.nupkg.sha512"
+    "C:\\Users\\Sanda\\.nuget\\packages\\castle.core\\5.2.1\\castle.core.5.2.1.nupkg.sha512",
+    "C:\\Users\\Sanda\\.nuget\\packages\\system.diagnostics.eventlog\\6.0.0\\system.diagnostics.eventlog.6.0.0.nupkg.sha512"
   ],
   "logs": []
 }
