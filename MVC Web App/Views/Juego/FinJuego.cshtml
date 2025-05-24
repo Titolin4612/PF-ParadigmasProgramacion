@@ -1,4 +1,6 @@
-﻿@{
+﻿@* MVC_ProyectoFinalPOO/Views/Juego/FinJuego.cshtml *@
+
+@{
     ViewData["Title"] = "Blessings & Curses - Fin de Partida";
     string gameLogoUrl = Url.Content("~/images/title-logo.png");
     var jugadores = ViewBag.Jugadores as List<CL_ProyectoFinalPOO.Clases.Jugador> ?? new();
@@ -6,10 +8,8 @@
     string mensajeGanador = ViewBag.MensajeGanador as string;
     string mensajeError = ViewBag.MensajeError as string;
 
-    // Ordenar jugadores por puntos (descendente) para mostrar el ranking
     var jugadoresOrdenados = jugadores.OrderByDescending(j => j.Puntos).ToList();
 
-    // Nuevas variables para el mensaje de simulación BD
     string simulacionBDMensaje = ViewBag.SimuladorBDMensaje as string;
     string simulacionBDMensajeTipo = ViewBag.SimulacionBDMensajeTipo as string;
 }
@@ -29,15 +29,32 @@
     <div class="fin-juego-container">
         @if (!string.IsNullOrEmpty(mensajeError))
         {
-            <div class="error-banner" id="gameErrorBanner"><i class="fas fa-exclamation-triangle"></i> @mensajeError</div>
+                <div class="error-banner" id="gameErrorBanner"><i class="fas fa-exclamation-triangle"></i> @mensajeError</div>
         }
 
-        @* NUEVA SECCIÓN PARA EL BANNER DE SIMULACIÓN BD *@
+        @* SECCIÓN PARA EL BANNER DE SIMULACIÓN BD - CLASES DINÁMICAS *@
         @if (!string.IsNullOrEmpty(simulacionBDMensaje))
         {
-        <div class="custom-alert-banner" id="simulacionBdBanner">
-            <i class="fas fa-database"></i> @simulacionBDMensaje
-        </div>
+            string alertClass = "";
+            switch (simulacionBDMensajeTipo)
+            {
+                case "success":
+                    alertClass = "alert-success";
+                    break;
+                case "error":
+                    alertClass = "alert-error";
+                    break;
+                case "warning":
+                    alertClass = "alert-warning";
+                    break;
+                case "info":
+                default:
+                    alertClass = "alert-info";
+                    break;
+            }
+                <div class="custom-alert-banner @alertClass" id="simulacionBdBanner">
+                    <i class="fas fa-database"></i> @simulacionBDMensaje
+                </div>
         }
 
         <div class="turn-indicator turn-ended">
@@ -45,7 +62,6 @@
         </div>
 
         <div class="fin-juego-main-wrapper">
-            <!-- Imagen del personaje a la izquierda -->
             <img src="@Url.Content("~/images/character-female3.png")" alt="Reina" class="fin-juego-character left-character" />
 
             <div class="fin-juego-central-board">
@@ -55,25 +71,26 @@
                         <h2><i class="fas fa-trophy"></i> Tabla de Puntuaciones Finales</h2>
                         @if (!string.IsNullOrEmpty(mensajeGanador))
                         {
-                            <p class="fin-juego-winner-message">@mensajeGanador</p>
+                                <p class="fin-juego-winner-message">@mensajeGanador</p>
                         }
                     </div>
                     <div class="fin-juego-scores-list">
                         @foreach (var jugador in jugadoresOrdenados)
                         {
-                            <div class="fin-juego-player-box @(jugadoresOrdenados.IndexOf(jugador) == 0 ? "fin-juego-winner-highlight" : "")">
-                                <div class="fin-juego-player-avatar">
-                                    <i class="fas @(jugadoresOrdenados.IndexOf(jugador) == 0 ? "fa-crown" : "fa-user-shield")"></i>
+                                <div class="fin-juego-player-box @(jugadoresOrdenados.IndexOf(jugador) == 0 ? "fin-juego-winner-highlight" : "")">
+                                    <div class="fin-juego-player-avatar">
+                                        <i class="fas @(jugadoresOrdenados.IndexOf(jugador) == 0 ? "fa-crown" : "fa-user-shield")"></i>
+                                    </div>
+                                    <h4 class="fin-juego-player-nickname">@jugador.Nickname</h4>
+                                    <div class="fin-juego-player-stats">
+                                        <p><i class="fas fa-coins gold-icon"></i> Puntos: <strong>@jugador.Puntos</strong></p>
+                                        <p><i class="fas fa-layer-group card-count-icon"></i> Cartas: <strong>@(jugador.L_cartas_jugador?.Count ?? 0)</strong></p>
+                                    </div>
                                 </div>
-                                <h4 class="fin-juego-player-nickname">@jugador.Nickname</h4>
-                                <div class="fin-juego-player-stats">
-                                    <p><i class="fas fa-coins gold-icon"></i> Puntos: <strong>@jugador.Puntos</strong></p>
-                                    <p><i class="fas fa-layer-group card-count-icon"></i> Cartas: <strong>@(jugador.L_cartas_jugador?.Count ?? 0)</strong></p>
-                                </div>
-                            </div>
                         }
                     </div>
                     <div class="fin-juego-actions-container">
+
                         <form asp-controller="Juego" asp-action="NuevaRonda" method="post" class="fin-juego-action-form">
                             <button type="submit" class="rules-button"><i class="fas fa-redo-alt"></i> Nueva Ronda</button>
                         </form>
@@ -84,7 +101,6 @@
                 </div>
             </div>
 
-            <!-- Imagen del personaje a la derecha -->
             <img src="@Url.Content("~/images/character-male3.png")" alt="Rey" class="fin-juego-character left-character" />
         </div>
 
@@ -103,14 +119,15 @@
                 }, 7000);
             }
 
-            // NUEVO SCRIPT PARA EL BANNER DE SIMULACIÓN BD
             const simulacionBdBanner = document.getElementById('simulacionBdBanner');
             if (simulacionBdBanner) {
+                // Determine duration based on type for better UX
+                const duration = simulacionBdBanner.classList.contains('alert-error') ? 10000 : 8000; 
                 setTimeout(() => {
                     simulacionBdBanner.style.transition = 'opacity 0.5s ease-out';
                     simulacionBdBanner.style.opacity = '0';
                     setTimeout(() => simulacionBdBanner.remove(), 500);
-                }, 8000);
+                }, duration);
             }
 
             const playerBoxes = document.querySelectorAll('.fin-juego-player-box');
@@ -130,20 +147,19 @@
 </body>
 
 <style>
-
+    /* Add styles for your new button and the dynamic alert classes */
     .character {
-    position: absolute;
-    bottom: 0;
-    width: auto;
-    max-height: 75vh;
-    pointer-events: none;
-    z-index: 1;
-    margin-left: -80px;
-    margin-right: -80px;
-}
+        position: absolute;
+        bottom: 0;
+        width: auto;
+        max-height: 75vh;
+        pointer-events: none;
+        z-index: 1;
+        margin-left: -80px;
+        margin-right: -80px;
+    }
 
-     .character.male {
-
+    .character.male {
         left: -24vw;
     }
 
@@ -151,10 +167,57 @@
         right: -24vw;
     }
 
-html, body {
-    overflow-x: hidden;
-}
+    html, body {
+        overflow-x: hidden;
+    }
+
+    /* Styles for the new save button */
+    .save-button {
+        background-color: #4CAF50; /* Green */
+        color: white;
+        border: 2px solid #388E3C;
+    }
+
+    .save-button:hover {
+        background-color: #388E3C; /* Darker green on hover */
+    }
+
+    /* Styles for dynamic alert banner types */
+    .custom-alert-banner {
+        padding: 10px 20px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        font-weight: bold;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .custom-alert-banner.alert-info {
+        background-color: #2196F3; /* Blue */
+        color: white;
+        border: 1px solid #1976D2;
+    }
+
+    .custom-alert-banner.alert-success {
+        background-color: #4CAF50; /* Green */
+        color: white;
+        border: 1px solid #388E3C;
+    }
+
+    .custom-alert-banner.alert-error {
+        background-color: #f44336; /* Red */
+        color: white;
+        border: 1px solid #D32F2F;
+    }
+
+    .custom-alert-banner.alert-warning {
+        background-color: #ff9800; /* Orange */
+        color: white;
+        border: 1px solid #F57C00;
+    }
 </style>
-
-
 </html>

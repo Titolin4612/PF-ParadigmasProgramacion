@@ -145,7 +145,7 @@ namespace MVC_ProyectoFinalPOO.Services
             }
         }
 
-        public Jugador FinalizarJuego()
+        public virtual Jugador FinalizarJuego()
         {
             if (!EstaJuegoActivo() && _juegoActual == null)
             {

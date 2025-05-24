@@ -18,7 +18,6 @@ namespace CL_ProyectoFinalPOO.Clases
         public Juego Juego { get; set; }
 
         // Accesores
-
         public string Nickname
         {
             get => _nickname;
@@ -64,10 +63,10 @@ namespace CL_ProyectoFinalPOO.Clases
         {
             try
             { 
-                    var carta = Juego.ObtenerCarta(); // Llama al método para obtener la primera carta
-                    L_cartas_jugador.Add(carta); // Agrega la carta al jugador
+                    var carta = Juego.ObtenerCarta(); 
+                    L_cartas_jugador.Add(carta); 
                     Puntos += Juego.AplicarEfectoCartas(carta);
-                    return carta; // Devuelve la carta 
+                    return carta; 
             }
             catch (Exception ex)
             {

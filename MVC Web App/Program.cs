@@ -1,31 +1,37 @@
 using Castle.DynamicProxy;
 using CL_ProyectoFinalPOO.Aspectos;
 using CL_ProyectoFinalPOO.Interfaces;
-using Microsoft.AspNetCore.Builder; // Para WebApplication, etc.
-using Microsoft.Extensions.DependencyInjection; // Para IServiceCollection
-using Microsoft.Extensions.Hosting; // Para IHostEnvironment
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using MVC_ProyectoFinalPOO.Services;
 using System;
+using Microsoft.AspNetCore.Mvc.ViewFeatures; // Added for ITempDataDictionaryFactory
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddControllersWithViews();
-builder.Services.AddHttpContextAccessor(); // Si lo necesitas para Session u otros servicios de HttpContext
+// Add HttpContextAccessor for access to HttpContext (needed by interceptors)
 builder.Services.AddHttpContextAccessor();
 
-builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-builder.Services.AddSingleton<AuthInterceptor>();
-builder.Services.AddSingleton<InterceptorValidacion>();
+// Register the factory for TempData (needed by InterceptorValidacion)
+builder.Services.AddSingleton<ITempDataDictionaryFactory, TempDataDictionaryFactory>();
 
-// Registrar instancias reales
+// Register your interceptors as Transient for proper request-scoped dependencies
+builder.Services.AddTransient<AuthInterceptor>();
+builder.Services.AddTransient<InterceptorValidacion>();
+
+// Register real service instances
+// The lifetime (Singleton/Scoped) for JuegoService depends on your game's state management.
+// If game state is shared across all users (static members in Juego), Singleton is fine.
+// If each user has their own game, consider Scoped for JuegoService and remove static members from Juego.
 builder.Services.AddSingleton<HomeService>();
 builder.Services.AddSingleton<JuegoService>();
 builder.Services.AddSingleton<ReglasService>();
 
-// Registrar con Proxy
+// Register IHomeService with AuthInterceptor (as Scoped as it's per-request/per-user in MVC)
 builder.Services.AddScoped<IHomeService>(provider =>
 {
     var generator = new ProxyGenerator();
@@ -34,34 +40,28 @@ builder.Services.AddScoped<IHomeService>(provider =>
     return generator.CreateInterfaceProxyWithTarget<IHomeService>(real, interceptor);
 });
 
-//builder.Services.AddScoped<IJuegoService>(provider =>
-//{
-//    var generator = new ProxyGenerator();
-//    var interceptor = provider.GetRequiredService<AuthInterceptor>();
-//    var real = provider.GetRequiredService<JuegoService>();
-//    return generator.CreateInterfaceProxyWithTarget<IJuegoService>(real, interceptor);
-//});
-
+// Register IJuegoService with *both* interceptors (Scoped as it's per-request/per-user in MVC)
 builder.Services.AddScoped<IJuegoService>(provider =>
 {
     var generator = new ProxyGenerator();
     var authInterceptor = provider.GetRequiredService<AuthInterceptor>();
-    var InterceptorValidacion = provider.GetRequiredService<InterceptorValidacion>(); // Obtener el nuevo interceptor
+    var interceptorValidacion = provider.GetRequiredService<InterceptorValidacion>(); // Clarified variable name
     var real = provider.GetRequiredService<JuegoService>();
-    // Aplicar ambos interceptores. El orden puede importar.
-    // AuthInterceptor primero, luego InterceptorValidacion.
-    return generator.CreateInterfaceProxyWithTarget<IJuegoService>(real, authInterceptor, InterceptorValidacion); // [cite: 405]
+
+    // Pass interceptors in the desired order of execution.
+    // For example, authentication/authorization first, then validation.
+    return generator.CreateInterfaceProxyWithTarget<IJuegoService>(real, authInterceptor, interceptorValidacion);
 });
 
-// --- HABILITAR SESIONES ---
-builder.Services.AddDistributedMemoryCache(); // Necesario para la sesión en memoria
+// --- Configure Session ---
+builder.Services.AddDistributedMemoryCache(); // Required for in-memory session store
 builder.Services.AddSession(options =>
 {
-    options.IdleTimeout = TimeSpan.FromMinutes(30); // Tiempo que la sesión puede estar inactiva
-    options.Cookie.HttpOnly = true; // La cookie de sesión no es accesible por script del lado del cliente
-    options.Cookie.IsEssential = true; // Necesario para cumplir con GDPR; la cookie de sesión es esencial
+    options.IdleTimeout = TimeSpan.FromMinutes(30);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
 });
-// --- FIN HABILITAR SESIONES ---
+// --- End Configure Session ---
 
 var app = builder.Build();
 
@@ -69,26 +69,17 @@ var app = builder.Build();
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
-
-builder.Services.AddSession(); // Habilitar sesiones
-app.UseStaticFiles();
-app.UseRouting();
-app.UseSession(); // Importante para ViewBag y Session
-app.MapDefaultControllerRoute();
-app.Run();
-
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
 
-// --- USAR SESIÓN (IMPORTANTE: DEBE IR ANTES DE UseAuthorization y MapControllerRoute) ---
+// --- Use Session (MUST be before UseAuthorization and MapControllerRoute) ---
 app.UseSession();
-// --- FIN USAR SESIÓN ---
+// --- End Use Session ---
 
 app.UseAuthorization();
 

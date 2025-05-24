@@ -44,21 +44,12 @@ namespace CL_ProyectoFinalPOO.Clases
         public void EventHandler() { }
 
         // Atributos de reglas de negocio
-        private  int cartasPorJugador = 15; /////
-        private  int jugadoresMin = 2;
-        private  int jugadoresMax = 4;
+        private int cartasPorJugador = 15; /////
+        private int jugadoresMin = 2;
+        private int jugadoresMax = 4;
         private bool agotadasResto = false;
         private bool agotadasCastigo = false;
         private bool agotadasPremio = false;
-
-        // TODO: Implementa 4 eventos, que notifican al usuario hechos importantes | •	No impresión desde los métodos |
-
-        // Cargue de información desde archivos planos. El aspecto revisa que los archivos planos
-        // Validación de información: acá se debe simular que se va a guardar en una base de datos, el aspecto debe simplemente validar la información
-        // y si es correcta presentar un mensaje correspondiente, de la misma forma si no es correcta
-        // Autenticación a la aplicación
-
-
 
         // Accesores
         public static List<Jugador> Jugadores { get => jugadores; set => jugadores = value; }
@@ -83,9 +74,9 @@ namespace CL_ProyectoFinalPOO.Clases
         // Constructor
         public Juego()
         {
-            baraja = new Baraja(); 
-                                  
-            Baraja.CargarCartas(); 
+            baraja = new Baraja();
+
+            Baraja.CargarCartas();
 
             // Inicializar las listas de instancia de la partida
             L_cartas_resto = new List<CartaJuego>(Baraja.CartasJuego);
@@ -93,7 +84,7 @@ namespace CL_ProyectoFinalPOO.Clases
             L_cartas_castigo = new List<CartaCastigo>(Baraja.CartasCastigo);
 
             Jugadores = new List<Jugador>();
-            indiceJugadorActual = 0;                 
+            indiceJugadorActual = 0;
 
             PublicadorJuego = new Publisher_Eventos_Juego();
             PublicadorJugador = new Publisher_Eventos_Jugador();
@@ -214,7 +205,7 @@ namespace CL_ProyectoFinalPOO.Clases
 
                 AplicarEfectoCartas(carta);
 
-                return carta; 
+                return carta;
             }
             catch (Exception ex)
             {
@@ -224,68 +215,72 @@ namespace CL_ProyectoFinalPOO.Clases
 
         // Metodo para validar y disparar eventos
         public void ValidarYDispararEventos(Jugador liderInicial)
-{
-            if (l_cartas_resto.Count == 0 && !agotadasResto)
+        {
+            try
             {
-                PublicadorCartas.NotificarAgotadasResto();
-                agotadasResto = true;
-            }
-
-            if (l_cartas_castigo.Count == 0 && !agotadasCastigo)
-            {
-                PublicadorCartas.NotificarAgotadasCastigo();
-                agotadasCastigo = true;
-            }
-
-            if (l_cartas_premio.Count == 0 && !agotadasPremio)
-            {
-                PublicadorCartas.NotificarAgotadasPremio();
-                agotadasPremio = true;
-            }
-
-            Jugador liderNuevo = ObtenerLider();
-            if (liderNuevo != null && liderNuevo.Nickname != nicknameLiderAnterior)
-            {
-                PublicadorJugador.NotificarCambioLider(liderNuevo, this);
-                nicknameLiderAnterior = liderNuevo.Nickname;
-            }
-
-            for (int i = Jugadores.Count - 1; i >= 0; i--)
-            {
-                Jugador jugador = Jugadores[i];
-                if (jugador.Puntos <= 0 && !jugador.Perdio)
+                if (l_cartas_resto.Count == 0 && !agotadasResto)
                 {
-                    PublicadorJugador.NotificarJugadorSinPuntos(jugador);
-                    jugador.Perdio = true; 
-                    Jugadores.RemoveAt(i);  
+                    PublicadorCartas.NotificarAgotadasResto();
+                    agotadasResto = true;
+                }
 
-                    if (i <= IndiceJugador)
+                if (l_cartas_castigo.Count == 0 && !agotadasCastigo)
+                {
+                    PublicadorCartas.NotificarAgotadasCastigo();
+                    agotadasCastigo = true;
+                }
+
+                if (l_cartas_premio.Count == 0 && !agotadasPremio)
+                {
+                    PublicadorCartas.NotificarAgotadasPremio();
+                    agotadasPremio = true;
+                }
+
+                Jugador liderNuevo = ObtenerLider();
+                if (liderNuevo != null && liderNuevo.Nickname != nicknameLiderAnterior)
+                {
+                    PublicadorJugador.NotificarCambioLider(liderNuevo, this);
+                    nicknameLiderAnterior = liderNuevo.Nickname;
+                }
+
+                for (int i = Jugadores.Count - 1; i >= 0; i--)
+                {
+                    Jugador jugador = Jugadores[i];
+                    if (jugador.Puntos <= 0 && !jugador.Perdio)
                     {
-                        if (IndiceJugador > 0) 
+                        PublicadorJugador.NotificarJugadorSinPuntos(jugador);
+                        jugador.Perdio = true;
+                        Jugadores.RemoveAt(i);
+
+                        if (i <= IndiceJugador)
                         {
-                            IndiceJugador--;
+                            if (IndiceJugador > 0)
+                            {
+                                IndiceJugador--;
+                            }
                         }
                     }
                 }
-            }
 
-            if (Jugadores.Count > 0 && IndiceJugador >= Jugadores.Count)
-            {
-                IndiceJugador = 0; 
-            }
-            else if (Jugadores.Count == 0)
-            {
-                IndiceJugador = 0;
-            }
+                if (Jugadores.Count > 0 && IndiceJugador >= Jugadores.Count)
+                {
+                    IndiceJugador = 0;
+                }
+                else if (Jugadores.Count == 0)
+                {
+                    IndiceJugador = 0;
+                }
 
-            if ((agotadasResto && agotadasCastigo && agotadasPremio) || Jugadores.Count < jugadoresMin)
-            {
-                FinalizarJuego(); 
+                if ((agotadasResto && agotadasCastigo && agotadasPremio) || Jugadores.Count < jugadoresMin)
+                {
+                    FinalizarJuego();
+                }
             }
-
+            catch (Exception ex)
+            {
+                throw new Exception("Error en ValidarYDispararEventos: ", ex);
+            }
         }
-
-
 
         // Método para asignar puntos según la apuesta inicial del jugador
         public void AsignarPuntosSegunApuesta(Jugador jugador)
@@ -304,7 +299,7 @@ namespace CL_ProyectoFinalPOO.Clases
             }
             catch (Exception ex)
             {
-                throw new Exception("Error en el método AsignarPuntosSegunApuesta: ", ex);
+                throw new Exception("Error en AsignarPuntosSegunApuesta: ", ex);
             }
         }
 
@@ -315,136 +310,147 @@ namespace CL_ProyectoFinalPOO.Clases
             {
                 if (Jugadores == null || Jugadores.Count == 0)
                 {
-                    Console.WriteLine("Error: No hay jugadores en el juego.");
                     throw new Exception("No hay jugadores en el juego.");
                 }
 
                 if (L_cartas_resto.Count < numeroCartasPorJugador * Jugadores.Count)
                 {
-                    Console.WriteLine("Error: No hay suficientes cartas en el mazo de juego.");
                     throw new Exception("No hay suficientes cartas en el resto para repartir.");
                 }
 
-
                 foreach (var jugador in Jugadores)
                 {
-
-                    Console.WriteLine($"\nRepartiendo cartas para {jugador.Nickname}");
                     for (int i = 0; i < numeroCartasPorJugador; i++)
                     {
                         var carta = L_cartas_resto.First();
                         L_cartas_resto.RemoveAt(0);
                         jugador.L_cartas_jugador.Add(carta);
                         jugador.Puntos += AplicarEfectoCartas(carta);
-                        Console.WriteLine($"   - {carta.Nombre} | Total puntos: {jugador.Puntos}");
                         PublicadorCartas.NotificarCartasObtenidas(jugador, carta);
                     }
                 }
-
-                Console.WriteLine("Reparto inicial completado.");
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error al repartir cartas iniciales: {ex.Message}");
-                throw new Exception("Error del metodo RepartirCartasIniciales: ", ex);
+                throw new Exception("Error en RepartirCartasIniciales: ", ex);
             }
         }
 
         // Aplicar efectos de las cartas y devolver puntos
         public int AplicarEfectoCartas(Carta carta)
         {
-            if (carta == null)
-                throw new Exception(nameof(carta));
-
-            int puntos;
-
-            switch (carta)
+            try
             {
-                case CartaJuego juego:
-                    puntos = juego.ObtenerPuntos();
-                    break;
-                case CartaPremio premio:
-                    puntos = premio.ObtenerPuntos();
-                    break;
-                case CartaCastigo castigo:
-                    puntos = castigo.ObtenerPuntos();
-                    break;
-                default:
-                    return 0;
-            }
+                if (carta == null)
+                    throw new Exception(nameof(carta));
 
-            return puntos;
+                int puntos;
+
+                switch (carta)
+                {
+                    case CartaJuego juego:
+                        puntos = juego.ObtenerPuntos();
+                        break;
+                    case CartaPremio premio:
+                        puntos = premio.ObtenerPuntos();
+                        break;
+                    case CartaCastigo castigo:
+                        puntos = castigo.ObtenerPuntos();
+                        break;
+                    default:
+                        return 0;
+                }
+
+                return puntos;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error en AplicarEfectoCartas: ", ex);
+            }
         }
 
+        // Método para finalizar el juego
         public Jugador FinalizarJuego()
         {
-
-            if (Jugadores == null || Jugadores.Count == 0)
-                throw new Exception("No hay jugadores para finalizar el juego.");
-
-            Jugador ganador = ObtenerLider();
-            if (ganador != null)
+            try
             {
-                ganador.Puntos += 20;
-                Console.WriteLine($"🏆 El ganador es {ganador.Nickname}, se le suman 20 puntos. Total: {ganador.Puntos}");
-                PublicadorJuego.NotificarFinPartida(ganador);
+                if (Jugadores == null || Jugadores.Count == 0)
+                    throw new Exception("No hay jugadores para finalizar el juego.");
+
+                Jugador ganador = ObtenerLider();
+                if (ganador != null)
+                {
+                    ganador.Puntos += 20;
+                    PublicadorJuego.NotificarFinPartida(ganador);
+                }
+                else
+                {
+                    Console.WriteLine("No se pudo determinar un ganador.");
+                }
+                return ganador;
             }
-            else
+            catch (Exception ex)
             {
-                Console.WriteLine("No se pudo determinar un ganador.");
+                throw new Exception("Error en FinalizarJuego: ", ex);
             }
-            return ganador;
         }
 
+        // Método para iniciar una ronda
         public void IniciarRonda()
         {
-            PublicadorJuego.NotificarInicioPartida();
-            Console.WriteLine("Iniciando nueva ronda con jugadores y puntos actuales...");
-
-            Baraja.CargarCartas();
-            L_cartas_resto = new List<CartaJuego>(Baraja.CartasJuego);
-            L_cartas_premio = new List<CartaPremio>(Baraja.CartasPremio);
-            L_cartas_castigo = new List<CartaCastigo>(Baraja.CartasCastigo);
-            BarajarCartas();
-
-            if (Jugadores != null && Jugadores.Count() >= 2)
+            try
             {
-                foreach (var jugador in Jugadores)
+                PublicadorJuego.NotificarInicioPartida();
+
+                Baraja.CargarCartas();
+                L_cartas_resto = new List<CartaJuego>(Baraja.CartasJuego);
+                L_cartas_premio = new List<CartaPremio>(Baraja.CartasPremio);
+                L_cartas_castigo = new List<CartaCastigo>(Baraja.CartasCastigo);
+                BarajarCartas();
+
+                if (Jugadores != null && Jugadores.Count() >= 2)
                 {
-                    jugador.L_cartas_jugador.Clear();
+                    foreach (var jugador in Jugadores)
+                    {
+                        jugador.L_cartas_jugador.Clear();
+                    }
                 }
+                else
+                {
+                    Jugadores = new List<Jugador>();
+                }
+
+                RepartirCartasIniciales(CartasPorJugador);
+                IndiceJugador = 0;
+                AgotadasResto = false;
+                AgotadasCastigo = false;
+                AgotadasPremio = false;
+                NicknameLiderAnterior = null;
             }
-            else
+            catch (Exception ex)
             {
-                Console.WriteLine("Advertencia: Iniciando ronda sin jugadores definidos.");
-                Jugadores = new List<Jugador>();
+                throw new Exception("Error en IniciarRonda: ", ex);
             }
-
-
-            RepartirCartasIniciales(CartasPorJugador); 
-            IndiceJugador = 0;
-            AgotadasResto = false;
-            AgotadasCastigo = false;
-            AgotadasPremio = false;
-            NicknameLiderAnterior = null;
-
-            Console.WriteLine("Nueva ronda iniciada. Los jugadores conservan sus puntos y reciben nuevas cartas.");
         }
 
+        // Método para pasar el turno
         public void PasarTurno()
         {
-            if (Jugadores.Count > 0)
+            try
             {
-                Console.WriteLine($"➡️ Turno de {Jugadores[IndiceJugador].Nickname} finalizado.");
-                IndiceJugador = (IndiceJugador + 1) % Jugadores.Count;
-                Console.WriteLine($"🕹️ Ahora es el turno de {Jugadores[IndiceJugador].Nickname}");
+                if (Jugadores.Count > 0)
+                {
+                    IndiceJugador = (IndiceJugador + 1) % Jugadores.Count;
+                }
+                else
+                {
+                    throw new Exception("No hay jugadores en el juego.");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                Console.WriteLine("❌ No hay jugadores registrados.");
-                throw new Exception("No hay jugadores en el juego.");
-            } 
+                throw new Exception("Error en PasarTurno: ", ex);
+            }
         }
-
     }
 }

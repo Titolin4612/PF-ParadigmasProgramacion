@@ -197,43 +197,126 @@ namespace MVC_ProyectoFinalPOO.Controllers
             }
         }
 
+        //[HttpPost]
+        //public IActionResult VerResumen()
+        //{
+        //    try
+        //    {
+        //        // Asegurarse que el juego esté efectivamente terminado o no activo para ver resumen.
+        //        if (!_juegoService.JuegoTerminado() && _juegoService.EstaJuegoActivo())
+        //        {
+        //            TempData["ErrorGeneralJuego"] = "La partida aún no ha finalizado para ver el resumen.";
+        //            return RedirectToAction("Index");
+        //        }
+        //        if (!_juegoService.EstaJuegoActivo() && !_juegoService.JuegoTerminado()) // Caso raro: no activo pero tampoco marcado como terminado
+        //        {
+        //            CargarViewBagComun("No hay información de partida para mostrar resumen.");
+        //            ViewBag.MensajeGanador = "No hay partida finalizada.";
+        //            return View("FinJuego");
+        //        }
+
+
+        //        var jugadores = _juegoService.ObtenerJugadores();
+        //        ViewBag.Jugadores = jugadores;
+        //        ViewBag.HistorialJuego = _juegoService.ObtenerHistorial();
+        //        ViewBag.JuegoTerminado = true; // Para la vista FinJuego, siempre debe ser true.
+
+        //        var ganador = jugadores?.OrderByDescending(j => j.Puntos).FirstOrDefault();
+        //        ViewBag.MensajeGanador = (ganador != null)
+        //            ? $"🎉 ¡GANADOR! {ganador.Nickname} con {ganador.Puntos} puntos. 🎉"
+        //            : "La partida ha finalizado sin un ganador claro, o no hay jugadores.";
+
+        //        var nombresJugadores = jugadores != null && jugadores.Any()
+        //        ? string.Join(", ", jugadores.Select(j => j.Nickname))
+        //        : "Ningún jugador";
+        //        var simuladorBDMensaje = $"La información de los usuarios ({nombresJugadores}) se ha verificado y guardado exitosamente en la base de datos.";
+
+        //        ViewBag.SimuladorBDMensaje = simuladorBDMensaje;
+
+        //        return View("FinJuego");
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Debug.WriteLine($"JuegoController.VerResumen: Error - {ex.Message}");
+        //        CargarViewBagComun("Error al generar el resumen del juego: " + ex.Message);
+        //        return View("Index"); // Vuelve a Index con mensaje de error.
+        //    }
+
+        // Inside JuegoController.cs
+
         [HttpPost]
+        public IActionResult FinalizarYGuardarJuego() // This action will trigger the interceptor
+        {
+            try
+            {
+                _juegoService.FinalizarJuego(); 
+
+
+                if (HttpContext.Items.ContainsKey("SimulacionBDMensaje"))
+                {
+                    TempData["SimulacionBDMensaje"] = HttpContext.Items["SimulacionBDMensaje"] as string;
+                    TempData["SimulacionBDMensajeTipo"] = HttpContext.Items["SimulacionBDMensajeTipo"] as string;
+                }
+                else
+                {
+                    // Fallback if interceptor didn't set it for some reason
+                    TempData["SimulacionBDMensaje"] = "Ocurrió un problema al guardar los resultados. Inténtalo de nuevo.";
+                    TempData["SimulacionBDMensajeTipo"] = "error";
+                }
+
+                return RedirectToAction("VerResumen"); 
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"JuegoController.FinalizarYGuardarJuego: Error - {ex.Message}");
+                TempData["ErrorGeneralJuego"] = "Error al intentar finalizar y guardar el juego: " + ex.Message;
+                return RedirectToAction("Index");
+            }
+        }
+
+        [HttpGet]
         public IActionResult VerResumen()
         {
             try
             {
-                // Asegurarse que el juego esté efectivamente terminado o no activo para ver resumen.
                 if (!_juegoService.JuegoTerminado() && _juegoService.EstaJuegoActivo())
                 {
                     TempData["ErrorGeneralJuego"] = "La partida aún no ha finalizado para ver el resumen.";
                     return RedirectToAction("Index");
                 }
-                if (!_juegoService.EstaJuegoActivo() && !_juegoService.JuegoTerminado()) // Caso raro: no activo pero tampoco marcado como terminado
+                if (!_juegoService.EstaJuegoActivo() && !_juegoService.JuegoTerminado())
                 {
                     CargarViewBagComun("No hay información de partida para mostrar resumen.");
                     ViewBag.MensajeGanador = "No hay partida finalizada.";
+                    // Default message if no game was active, no save attempt made
+                    ViewBag.SimuladorBDMensaje = "No hay datos de partida finalizada para mostrar.";
+                    ViewBag.SimuladorBDMensajeTipo = "info";
                     return View("FinJuego");
                 }
 
+                // --- Retrieve from TempData here ---
+                if (TempData.ContainsKey("SimulacionBDMensaje"))
+                {
+                    ViewBag.SimuladorBDMensaje = TempData["SimulacionBDMensaje"] as string;
+                    ViewBag.SimuladorBDMensajeTipo = TempData["SimulacionBDMensajeTipo"] as string;
+                }
+                else
+                {
+                    // This 'else' will be hit if VerResumen is accessed directly without
+                    // coming from the FinalizarYGuardarJuego action (or after a second refresh).
+                    ViewBag.SimuladorBDMensaje = "Resumen del juego disponible. Presiona un botón para acciones adicionales.";
+                    ViewBag.SimuladorBDMensajeTipo = "info";
+                }
 
                 var jugadores = _juegoService.ObtenerJugadores();
                 ViewBag.Jugadores = jugadores;
                 ViewBag.HistorialJuego = _juegoService.ObtenerHistorial();
-                ViewBag.JuegoTerminado = true; // Para la vista FinJuego, siempre debe ser true.
+                ViewBag.JuegoTerminado = true;
 
                 var ganador = jugadores?.OrderByDescending(j => j.Puntos).FirstOrDefault();
                 ViewBag.MensajeGanador = (ganador != null)
                     ? $"🎉 ¡GANADOR! {ganador.Nickname} con {ganador.Puntos} puntos. 🎉"
                     : "La partida ha finalizado sin un ganador claro, o no hay jugadores.";
-
-                var nombresJugadores = jugadores != null && jugadores.Any()
-                ? string.Join(", ", jugadores.Select(j => j.Nickname))
-                : "Ningún jugador";
-                var simuladorBDMensaje = $"La información de los usuarios ({nombresJugadores}) se ha verificado y guardado exitosamente en la base de datos.";
-
-                // Mostrar también en consola
-                ViewBag.SimuladorBDMensaje = simuladorBDMensaje;
-                Debug.WriteLine(simuladorBDMensaje);
 
                 return View("FinJuego");
             }
@@ -241,8 +324,10 @@ namespace MVC_ProyectoFinalPOO.Controllers
             {
                 Debug.WriteLine($"JuegoController.VerResumen: Error - {ex.Message}");
                 CargarViewBagComun("Error al generar el resumen del juego: " + ex.Message);
-                return View("Index"); // Vuelve a Index con mensaje de error.
+                return View("Index");
             }
         }
+
     }
+
 }

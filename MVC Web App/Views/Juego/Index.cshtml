@@ -113,9 +113,10 @@
                                                     <button type="submit" class="secondary-action-button end-game-button"><i class="fas fa-redo-alt"></i> Nueva Ronda</button>
                                         </form>
 
-                                        <form asp-controller="Juego" asp-action="VerResumen" method="post" class="end-game-action-form">
-                                                    <button type="submit" class="tertiary-action-button end-game-button"><i class="fas fa-sign-out-alt"></i>Ver Resumen</button>
+                                            <form asp-controller="Juego" asp-action="FinalizarYGuardarJuego" method="post" class="end-game-action-form">
+                                                    <button type="submit" class="tertiary-action-button end-game-button"><i class="fas fa-sign-out-alt"></i> Ver resumen y Guardar en BD</button>
                                         </form>
+
                                     </div>
                             @* ---------- FIN DE LA MODIFICACIÓN ---------- *@
                         }
