@@ -68,14 +68,6 @@ namespace CL_ProyectoFinalPOO.Aspectos
                     mensajeValidacion = $"Validación fallida: El ganador {ganador.Nickname} tiene {ganador.Puntos} puntos (se requiere > 0).";
                 }
 
-                // La clase Juego usa listas estáticas para los jugadores [cite: 154, 164, 180, 492, 499, 500]
-                // Por lo tanto, para validar el estado global de los jugadores, accedemos a ellas estáticamente.
-                if (CL_ProyectoFinalPOO.Clases.Juego.Jugadores == null || !CL_ProyectoFinalPOO.Clases.Juego.Jugadores.Any())
-                {
-                    esValidoParaGuardar = false;
-                    mensajeValidacion = "Validación fallida: No hay jugadores registrados en el estado final del juego.";
-                }
-
                 if (esValidoParaGuardar)
                 {
                     string mensajeExito = $"Guardado BD Interceptor: ¡Datos validados y guardados exitosamente!";

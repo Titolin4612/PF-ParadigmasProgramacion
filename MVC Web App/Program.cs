@@ -7,6 +7,7 @@ using Microsoft.Extensions.Hosting;
 using MVC_ProyectoFinalPOO.Services;
 using System;
 using Microsoft.AspNetCore.Mvc.ViewFeatures; // Added for ITempDataDictionaryFactory
+using CL_ProyectoFinalPOO.Clases; // Make sure to include this for Baraja
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,20 +17,43 @@ builder.Services.AddControllersWithViews();
 // Add HttpContextAccessor for access to HttpContext (needed by interceptors)
 builder.Services.AddHttpContextAccessor();
 
-// Register the factory for TempData (needed by InterceptorValidacion)
+// Register the factory for TempData (needed by InterceptorValidacion if it uses TempData)
 builder.Services.AddSingleton<ITempDataDictionaryFactory, TempDataDictionaryFactory>();
 
 // Register your interceptors as Transient for proper request-scoped dependencies
 builder.Services.AddTransient<AuthInterceptor>();
 builder.Services.AddTransient<InterceptorValidacion>();
+builder.Services.AddTransient<InterceptorCargaArchivo>(); // Register your file loading interceptor
 
 // Register real service instances
-// The lifetime (Singleton/Scoped) for JuegoService depends on your game's state management.
-// If game state is shared across all users (static members in Juego), Singleton is fine.
-// If each user has their own game, consider Scoped for JuegoService and remove static members from Juego.
+// HomeService and JuegoService are registered as Singletons, meaning one instance
+// will be shared across the entire application lifecycle. Be sure this is
+// the desired behavior, especially for JuegoService if game state is per-user.
 builder.Services.AddSingleton<HomeService>();
 builder.Services.AddSingleton<JuegoService>();
-builder.Services.AddSingleton<ReglasService>();
+
+// --- Baraja and ReglasService Configuration with Interception ---
+// Register Baraja and apply the InterceptorCargaArchivo
+builder.Services.AddSingleton(provider =>
+{
+    var proxyGenerator = new ProxyGenerator();
+    var interceptor = provider.GetRequiredService<InterceptorCargaArchivo>();
+
+    // Create a proxy for the Baraja class.
+    // The CargarCartas method MUST be 'virtual' for Castle.DynamicProxy to intercept it.
+    var barajaInstance = proxyGenerator.CreateClassProxy<Baraja>(interceptor);
+    return barajaInstance;
+});
+
+// Register ReglasService directly so it can be injected by other services (like ReglasController)
+// This is crucial because ReglasController directly asks for ReglasService, not IReglasService.
+builder.Services.AddScoped<ReglasService>(); // <--- ADDED THIS LINE
+
+// Register IReglasService, which depends on the proxied Baraja instance.
+// Using Scoped for IReglasService as it's common for request-scoped services.
+builder.Services.AddScoped<IReglasService, ReglasService>();
+// --- End Baraja and ReglasService Configuration ---
+
 
 // Register IHomeService with AuthInterceptor (as Scoped as it's per-request/per-user in MVC)
 builder.Services.AddScoped<IHomeService>(provider =>

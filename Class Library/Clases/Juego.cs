@@ -1,4 +1,5 @@
-﻿using System;
+﻿// CL_ProyectoFinalPOO/Clases/Juego.cs
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -13,54 +14,50 @@ namespace CL_ProyectoFinalPOO.Clases
 {
     public class Juego : IJuego
     {
-        // Listas
-        private static List<Jugador> jugadores;
-        private static List<CartaPremio> l_cartas_premio;
-        private static List<CartaCastigo> l_cartas_castigo;
-        private static List<CartaJuego> l_cartas_resto;
+        // Listas (estas son las listas internas de la partida, NO las de la Baraja original)
+        // Por lo tanto, no deben ser static si Juego es una instancia por partida.
+        private List<Jugador> jugadores;
+        private List<CartaPremio> l_cartas_premio;
+        private List<CartaCastigo> l_cartas_castigo;
+        private List<CartaJuego> l_cartas_resto;
 
         // Atributos
-        private static int indiceJugadorActual;
+        private int indiceJugadorActual;
         private string nicknameLiderAnterior = null;
 
-
-        // Ramdom 
+        // Random (puede ser static si quieres una única instancia de Random para todo el juego, o instancia si quieres una por cada objeto Juego)
         private static Random rng = new Random();
 
-        // Propiedad baraja
+        // Propiedad baraja (instancia de Baraja para acceder a sus métodos y propiedades de instancia)
         public Baraja baraja { get; set; }
 
         // Instancia de clase publicadora
         private Publisher_Eventos_Juego publicadorJuego;
-
         private Publisher_Eventos_Jugador publicadorJugador;
-
         private Publisher_Eventos_Cartas publicadorCartas;
-
         private Historial historial;
 
-        // Metodo para manejar los eventos 
-        // TODO: Implementar mejor el EventHandler para que tenga estructura y maneje bien los eventos
+        // Metodo para manejar los eventos
         public void EventHandler() { }
 
         // Atributos de reglas de negocio
-        private int cartasPorJugador = 15; /////
+        private int cartasPorJugador = 15;
         private int jugadoresMin = 2;
         private int jugadoresMax = 4;
         private bool agotadasResto = false;
         private bool agotadasCastigo = false;
         private bool agotadasPremio = false;
 
-        // Accesores
-        public static List<Jugador> Jugadores { get => jugadores; set => jugadores = value; }
-        public static List<CartaPremio> L_cartas_premio { get => l_cartas_premio; set => l_cartas_premio = value; }
-        public static List<CartaCastigo> L_cartas_castigo { get => l_cartas_castigo; set => l_cartas_castigo = value; }
-        public static List<CartaJuego> L_cartas_resto { get => l_cartas_resto; set => l_cartas_resto = value; }
+        // Accesores (mantenerlos como propiedades de instancia si Juego es una instancia por partida)
+        public List<Jugador> Jugadores { get => jugadores; set => jugadores = value; }
+        public List<CartaPremio> L_cartas_premio { get => l_cartas_premio; set => l_cartas_premio = value; }
+        public List<CartaCastigo> L_cartas_castigo { get => l_cartas_castigo; set => l_cartas_castigo = value; }
+        public List<CartaJuego> L_cartas_resto { get => l_cartas_resto; set => l_cartas_resto = value; }
         public int CartasPorJugador { get => cartasPorJugador; }
         public int JugadoresMin { get => jugadoresMin; }
         public int JugadoresMax { get => jugadoresMax; }
 
-        public static int IndiceJugador { get => indiceJugadorActual; set => indiceJugadorActual = value; }
+        public int IndiceJugador { get => indiceJugadorActual; set => indiceJugadorActual = value; }
         public Historial Historial { get => historial; set => historial = value; }
         public Publisher_Eventos_Juego PublicadorJuego { get => publicadorJuego; set => publicadorJuego = value; }
         public Publisher_Eventos_Jugador PublicadorJugador { get => publicadorJugador; set => publicadorJugador = value; }
@@ -74,14 +71,16 @@ namespace CL_ProyectoFinalPOO.Clases
         // Constructor
         public Juego()
         {
+            // baraja es una instancia de la clase Baraja
             baraja = new Baraja();
 
-            Baraja.CargarCartas();
+            // Cargar cartas usando la instancia de baraja
+            baraja.CargarCartas(); // Aquí se llama al método CargarCartas de la INSTANCIA
 
-            // Inicializar las listas de instancia de la partida
-            L_cartas_resto = new List<CartaJuego>(Baraja.CartasJuego);
-            L_cartas_premio = new List<CartaPremio>(Baraja.CartasPremio);
-            L_cartas_castigo = new List<CartaCastigo>(Baraja.CartasCastigo);
+            // Inicializar las listas internas de la partida, obteniendo las cartas de la INSTANCIA de baraja
+            L_cartas_resto = new List<CartaJuego>(baraja.CartasJuego);
+            L_cartas_premio = new List<CartaPremio>(baraja.CartasPremio);
+            L_cartas_castigo = new List<CartaCastigo>(baraja.CartasCastigo);
 
             Jugadores = new List<Jugador>();
             indiceJugadorActual = 0;
@@ -137,7 +136,7 @@ namespace CL_ProyectoFinalPOO.Clases
                     Revolver(L_cartas_premio);
                     Revolver(L_cartas_castigo);
                 }
-                else Console.WriteLine("Error");
+                else Console.WriteLine("Error"); // Deberías manejar este error de forma más robusta, ej. lanzar una excepción.
             }
             catch (Exception ex)
             {
@@ -163,6 +162,8 @@ namespace CL_ProyectoFinalPOO.Clases
                 Carta carta = null;
                 double random = rng.NextDouble();
 
+                if (totalCartas == 0) return null; // No hay cartas, no se puede obtener ninguna.
+
                 if (random < probCartaJuego && L_cartas_resto.Count > 0)
                 {
                     int index = rng.Next(L_cartas_resto.Count);
@@ -175,33 +176,26 @@ namespace CL_ProyectoFinalPOO.Clases
                     carta = L_cartas_castigo[index];
                     L_cartas_castigo.RemoveAt(index);
                 }
-                else if (L_cartas_premio.Count > 0)
+                else if (L_cartas_premio.Count > 0) // Si las otras están vacías, siempre intenta premio.
                 {
                     int index = rng.Next(L_cartas_premio.Count);
                     carta = L_cartas_premio[index];
                     L_cartas_premio.RemoveAt(index);
                 }
-                else
+                // Fallback: If probabilities didn't hit and lists are not empty, try remaining lists in order.
+                else if (L_cartas_resto.Count > 0)
                 {
-                    if (L_cartas_resto.Count > 0)
-                    {
-                        int index = rng.Next(L_cartas_resto.Count);
-                        carta = L_cartas_resto[index];
-                        L_cartas_resto.RemoveAt(index);
-                    }
-                    else if (L_cartas_castigo.Count > 0)
-                    {
-                        int index = rng.Next(L_cartas_castigo.Count);
-                        carta = L_cartas_castigo[index];
-                        L_cartas_castigo.RemoveAt(index);
-                    }
-                    else if (L_cartas_premio.Count > 0)
-                    {
-                        int index = rng.Next(L_cartas_premio.Count);
-                        carta = L_cartas_premio[index];
-                        L_cartas_premio.RemoveAt(index);
-                    }
+                    int index = rng.Next(L_cartas_resto.Count);
+                    carta = L_cartas_resto[index];
+                    L_cartas_resto.RemoveAt(index);
                 }
+                else if (L_cartas_castigo.Count > 0)
+                {
+                    int index = rng.Next(L_cartas_castigo.Count);
+                    carta = L_cartas_castigo[index];
+                    L_cartas_castigo.RemoveAt(index);
+                }
+
 
                 AplicarEfectoCartas(carta);
 
@@ -250,8 +244,8 @@ namespace CL_ProyectoFinalPOO.Clases
                     {
                         PublicadorJugador.NotificarJugadorSinPuntos(jugador);
                         jugador.Perdio = true;
-                        Jugadores.RemoveAt(i);
-
+                        Jugadores.RemoveAt(i); // Elimina al jugador de la lista activa
+                        // Ajusta el índice del jugador actual si el eliminado estaba antes o era el actual
                         if (i <= IndiceJugador)
                         {
                             if (IndiceJugador > 0)
@@ -262,13 +256,14 @@ namespace CL_ProyectoFinalPOO.Clases
                     }
                 }
 
+                // Ajusta el índice del jugador actual si ya no existe o se salió del rango.
                 if (Jugadores.Count > 0 && IndiceJugador >= Jugadores.Count)
                 {
                     IndiceJugador = 0;
                 }
                 else if (Jugadores.Count == 0)
                 {
-                    IndiceJugador = 0;
+                    IndiceJugador = 0; // O considera finalizar el juego si no quedan jugadores.
                 }
 
                 if ((agotadasResto && agotadasCastigo && agotadasPremio) || Jugadores.Count < jugadoresMin)
@@ -313,17 +308,18 @@ namespace CL_ProyectoFinalPOO.Clases
                     throw new Exception("No hay jugadores en el juego.");
                 }
 
-                if (L_cartas_resto.Count < numeroCartasPorJugador * Jugadores.Count)
+                // Asegúrate de que haya suficientes cartas para repartir
+                if (l_cartas_resto.Count < numeroCartasPorJugador * Jugadores.Count)
                 {
-                    throw new Exception("No hay suficientes cartas en el resto para repartir.");
+                    throw new Exception("No hay suficientes cartas de juego en el mazo para repartir las cartas iniciales.");
                 }
 
                 foreach (var jugador in Jugadores)
                 {
                     for (int i = 0; i < numeroCartasPorJugador; i++)
                     {
-                        var carta = L_cartas_resto.First();
-                        L_cartas_resto.RemoveAt(0);
+                        var carta = l_cartas_resto.First();
+                        l_cartas_resto.RemoveAt(0);
                         jugador.L_cartas_jugador.Add(carta);
                         jugador.Puntos += AplicarEfectoCartas(carta);
                         PublicadorCartas.NotificarCartasObtenidas(jugador, carta);
@@ -342,7 +338,7 @@ namespace CL_ProyectoFinalPOO.Clases
             try
             {
                 if (carta == null)
-                    throw new Exception(nameof(carta));
+                    throw new ArgumentNullException(nameof(carta)); // Usar ArgumentNullException para argumentos nulos.
 
                 int puntos;
 
@@ -358,7 +354,7 @@ namespace CL_ProyectoFinalPOO.Clases
                         puntos = castigo.ObtenerPuntos();
                         break;
                     default:
-                        return 0;
+                        return 0; // Si la carta no es de un tipo conocido, no da puntos.
                 }
 
                 return puntos;
@@ -375,17 +371,14 @@ namespace CL_ProyectoFinalPOO.Clases
             try
             {
                 if (Jugadores == null || Jugadores.Count == 0)
-                    throw new Exception("No hay jugadores para finalizar el juego.");
+                    // Si no hay jugadores al final, no se puede determinar un ganador.
+                    return null;
 
                 Jugador ganador = ObtenerLider();
                 if (ganador != null)
                 {
-                    ganador.Puntos += 20;
+                    ganador.Puntos += 20; // Bonificación al ganador
                     PublicadorJuego.NotificarFinPartida(ganador);
-                }
-                else
-                {
-                    Console.WriteLine("No se pudo determinar un ganador.");
                 }
                 return ganador;
             }
@@ -402,22 +395,28 @@ namespace CL_ProyectoFinalPOO.Clases
             {
                 PublicadorJuego.NotificarInicioPartida();
 
-                Baraja.CargarCartas();
-                L_cartas_resto = new List<CartaJuego>(Baraja.CartasJuego);
-                L_cartas_premio = new List<CartaPremio>(Baraja.CartasPremio);
-                L_cartas_castigo = new List<CartaCastigo>(Baraja.CartasCastigo);
+                // Cargar cartas usando la instancia de baraja
+                baraja.CargarCartas();
+                // Ahora, toma las cartas de las propiedades de instancia de la baraja
+                L_cartas_resto = new List<CartaJuego>(baraja.CartasJuego);
+                L_cartas_premio = new List<CartaPremio>(baraja.CartasPremio);
+                L_cartas_castigo = new List<CartaCastigo>(baraja.CartasCastigo);
                 BarajarCartas();
 
-                if (Jugadores != null && Jugadores.Count() >= 2)
+                if (Jugadores != null && Jugadores.Any()) // Usar Any() para verificar si hay jugadores
                 {
                     foreach (var jugador in Jugadores)
                     {
-                        jugador.L_cartas_jugador.Clear();
+                        jugador.L_cartas_jugador.Clear(); // Limpiar cartas del jugador para la nueva ronda
+                        jugador.Puntos = 0; // Reiniciar puntos para la nueva ronda
+                        jugador.Perdio = false; // Resetear estado de pérdida
+                        AsignarPuntosSegunApuesta(jugador); // Reasignar puntos iniciales basados en la apuesta
                     }
                 }
                 else
                 {
-                    Jugadores = new List<Jugador>();
+                    Jugadores = new List<Jugador>(); // Asegurarse de que la lista no sea nula
+                    throw new InvalidOperationException("No se pueden iniciar una ronda sin jugadores. Por favor, agregue jugadores primero.");
                 }
 
                 RepartirCartasIniciales(CartasPorJugador);

@@ -1,26 +1,29 @@
-﻿// MVC_ProyectoFinalPOO/Services/ReglasService.cs
-using CL_ProyectoFinalPOO.Clases;
-// Se eliminan using no necesarios como Microsoft.AspNetCore.Hosting, CultureInfo, etc.
-// a menos que sean realmente utilizados por otros métodos no mostrados.
+﻿using CL_ProyectoFinalPOO.Clases;
+using CL_ProyectoFinalPOO.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Diagnostics;
-
+using System.Linq;
 
 namespace MVC_ProyectoFinalPOO.Services
 {
-    public class ReglasService
+    public class ReglasService : IReglasService // Implement the interface
     {
-        // Constructor público (ya lo tiene, implícito si no se define otro)
-        // public ReglasService() {}
+        private readonly Baraja _baraja; // Dependency injection for Baraja
+
+        public ReglasService(Baraja baraja)
+        {
+            _baraja = baraja;
+        }
 
         public List<CartaJuego> ObtenerCartasJuego()
         {
             try
             {
-                Baraja.CargarCartas(); // Carga/recarga desde el JSON. Baraja usa miembros estáticos.
-                return Baraja.CartasJuego;
+                // Access CargarCartas via the instance and pass the static path
+                _baraja.CargarCartas(Baraja._rutaArchivoCartas);
+                // Access CartasJuego via the instance
+                return _baraja.CartasJuego;
             }
             catch (Exception ex)
             {
@@ -33,8 +36,9 @@ namespace MVC_ProyectoFinalPOO.Services
         {
             try
             {
-                Baraja.CargarCartas();
-                return Baraja.CartasPremio;
+                _baraja.CargarCartas(Baraja._rutaArchivoCartas);
+                // Access CartasPremio via the instance
+                return _baraja.CartasPremio;
             }
             catch (Exception ex)
             {
@@ -47,8 +51,9 @@ namespace MVC_ProyectoFinalPOO.Services
         {
             try
             {
-                Baraja.CargarCartas();
-                return Baraja.CartasCastigo;
+                _baraja.CargarCartas(Baraja._rutaArchivoCartas);
+                // Access CartasCastigo via the instance
+                return _baraja.CartasCastigo;
             }
             catch (Exception ex)
             {

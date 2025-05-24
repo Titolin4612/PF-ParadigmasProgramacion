@@ -12,59 +12,80 @@ namespace CL_ProyectoFinalPOO.Aspectos
     {
         public void Intercept(IInvocation invocation)
         {
-            if (invocation.Method.Name == "CargarCartas")
+            // We only want to intercept the "CargarCartas" method.
+            // Note: In a real-world scenario, you might use custom attributes
+            // or more sophisticated checks to decide when to apply the interceptor.
+            if (invocation.Method.Name == "CargarCartas" && invocation.Arguments.Length > 0 && invocation.Arguments[0] is string rutaArchivo)
             {
-                string rutaArchivo = (string)invocation.Arguments[0];
-
-                // Validación 1: Existencia del archivo
+                // Validation 1: Archivo existe
                 if (!File.Exists(rutaArchivo))
                 {
-                    throw new FileNotFoundException($"El archivo {rutaArchivo} no se encontró.");
+                    throw new FileNotFoundException($"Error de validación: El archivo '{rutaArchivo}' no se encontró.");
                 }
 
-                // Validación 2: Extensión correcta
+                // Validation 2: Extensión correcta
                 if (Path.GetExtension(rutaArchivo).ToLower() != ".json")
                 {
-                    throw new ArgumentException("El archivo debe ser un JSON válido (.json).");
+                    throw new ArgumentException($"Error de validación: El archivo '{rutaArchivo}' debe ser un JSON válido (.json).");
                 }
 
-                // Validación 3: Archivo no vacío
+                // Validation 3: Archivo no vacío
                 if (new FileInfo(rutaArchivo).Length == 0)
                 {
-                    throw new InvalidOperationException("El archivo está vacío.");
+                    throw new InvalidOperationException($"Error de validación: El archivo '{rutaArchivo}' está vacío.");
                 }
 
-                // Validación 4: Contenido JSON válido
+                // Validation 4 & 5: Contenido JSON válido y campos obligatorios
                 try
                 {
                     string contenido = File.ReadAllText(rutaArchivo);
                     var jsonDoc = JsonDocument.Parse(contenido);
-                    if (!jsonDoc.RootElement.EnumerateArray().Any())
+
+                    if (jsonDoc.RootElement.ValueKind != JsonValueKind.Array)
                     {
-                        throw new InvalidOperationException("El archivo JSON no contiene cartas.");
+                        throw new InvalidOperationException($"Error de validación: El contenido del archivo '{rutaArchivo}' no es un array JSON válido.");
                     }
 
-                    // Validación 5: Campos obligatorios
+                    if (!jsonDoc.RootElement.EnumerateArray().Any())
+                    {
+                        throw new InvalidOperationException($"Error de validación: El archivo JSON '{rutaArchivo}' no contiene ninguna carta.");
+                    }
+
                     foreach (var elemento in jsonDoc.RootElement.EnumerateArray())
                     {
-                        if (!elemento.TryGetProperty("Nombre", out _) || !elemento.TryGetProperty("Tipo", out _))
+                        if (elemento.ValueKind != JsonValueKind.Object)
                         {
-                            throw new InvalidOperationException("Una carta en el JSON carece de 'Nombre' o 'Tipo'.");
+                            throw new InvalidOperationException($"Error de validación: Un elemento en el archivo JSON '{rutaArchivo}' no es un objeto JSON.");
+                        }
+
+                        if (!elemento.TryGetProperty("Nombre", out JsonElement nombreElement) || string.IsNullOrWhiteSpace(nombreElement.GetString()))
+                        {
+                            throw new InvalidOperationException($"Error de validación: Una carta en el JSON '{rutaArchivo}' carece de un 'Nombre' válido.");
+                        }
+                        if (!elemento.TryGetProperty("Tipo", out JsonElement tipoElement) || string.IsNullOrWhiteSpace(tipoElement.GetString()))
+                        {
+                            throw new InvalidOperationException($"Error de validación: Una carta en el JSON '{rutaArchivo}' carece de un 'Tipo' válido.");
                         }
                     }
                 }
                 catch (JsonException ex)
                 {
-                    throw new InvalidOperationException("El archivo JSON tiene un formato inválido.", ex);
+                    throw new InvalidOperationException($"Error de validación: El archivo JSON '{rutaArchivo}' tiene un formato inválido. Detalles: {ex.Message}", ex);
+                }
+                catch (Exception ex)
+                {
+                    // Catch any other unexpected errors during content validation
+                    throw new InvalidOperationException($"Error de validación inesperado al procesar el contenido de '{rutaArchivo}'. Detalles: {ex.Message}", ex);
                 }
 
-                // Ejecutar el método original
+                // If all validations pass, proceed with the original method execution
                 invocation.Proceed();
-                Console.WriteLine($"Éxito: Archivo {rutaArchivo} cargado correctamente.");
+                Console.WriteLine($"Éxito: Archivo {rutaArchivo} validado y cargado correctamente.");
             }
             else
             {
-                invocation.Proceed(); // Métodos no relacionados pasan sin validación
+                // If it's not the CargarCartas method, just proceed normally.
+                invocation.Proceed();
             }
         }
     }
