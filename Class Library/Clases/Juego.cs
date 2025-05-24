@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics;
 using System.Linq;
 using System.Numerics;
 using System.Text;
@@ -403,14 +404,13 @@ namespace CL_ProyectoFinalPOO.Clases
                 L_cartas_castigo = new List<CartaCastigo>(baraja.CartasCastigo);
                 BarajarCartas();
 
-                if (Jugadores != null && Jugadores.Any()) // Usar Any() para verificar si hay jugadores
+                if (Jugadores != null && Jugadores.Any())
                 {
                     foreach (var jugador in Jugadores)
                     {
-                        jugador.L_cartas_jugador.Clear(); // Limpiar cartas del jugador para la nueva ronda
-                        jugador.Puntos = 0; // Reiniciar puntos para la nueva ronda
-                        jugador.Perdio = false; // Resetear estado de pérdida
-                        AsignarPuntosSegunApuesta(jugador); // Reasignar puntos iniciales basados en la apuesta
+                        jugador.L_cartas_jugador.Clear();
+
+                        jugador.Perdio = false;
                     }
                 }
                 else

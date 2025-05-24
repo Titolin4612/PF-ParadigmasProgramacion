@@ -84,3 +84,16 @@ C:\Users\mesaj\Downloads\Actual\Class Library\obj\Debug\net8.0\CL_ProyectoFinalP
 C:\Users\mesaj\Downloads\Actual\Class Library\obj\Debug\net8.0\refint\CL_ProyectoFinalPOO.dll
 C:\Users\mesaj\Downloads\Actual\Class Library\obj\Debug\net8.0\CL_ProyectoFinalPOO.pdb
 C:\Users\mesaj\Downloads\Actual\Class Library\obj\Debug\net8.0\ref\CL_ProyectoFinalPOO.dll
+C:\Users\mesaj\Downloads\Juego Final\PF-ParadigmasProgramacion\Class Library\bin\Debug\net8.0\CL_ProyectoFinalPOO.deps.json
+C:\Users\mesaj\Downloads\Juego Final\PF-ParadigmasProgramacion\Class Library\bin\Debug\net8.0\CL_ProyectoFinalPOO.dll
+C:\Users\mesaj\Downloads\Juego Final\PF-ParadigmasProgramacion\Class Library\bin\Debug\net8.0\CL_ProyectoFinalPOO.pdb
+C:\Users\mesaj\Downloads\Juego Final\PF-ParadigmasProgramacion\Class Library\obj\Debug\net8.0\CL_ProyectoFinalPOO.csproj.AssemblyReference.cache
+C:\Users\mesaj\Downloads\Juego Final\PF-ParadigmasProgramacion\Class Library\obj\Debug\net8.0\CL_ProyectoFinalPOO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mesaj\Downloads\Juego Final\PF-ParadigmasProgramacion\Class Library\obj\Debug\net8.0\CL_ProyectoFinalPOO.AssemblyInfoInputs.cache
+C:\Users\mesaj\Downloads\Juego Final\PF-ParadigmasProgramacion\Class Library\obj\Debug\net8.0\CL_ProyectoFinalPOO.AssemblyInfo.cs
+C:\Users\mesaj\Downloads\Juego Final\PF-ParadigmasProgramacion\Class Library\obj\Debug\net8.0\CL_ProyectoFinalPOO.csproj.CoreCompileInputs.cache
+C:\Users\mesaj\Downloads\Juego Final\PF-ParadigmasProgramacion\Class Library\obj\Debug\net8.0\CL_ProyectoFinalPOO.sourcelink.json
+C:\Users\mesaj\Downloads\Juego Final\PF-ParadigmasProgramacion\Class Library\obj\Debug\net8.0\CL_ProyectoFinalPOO.dll
+C:\Users\mesaj\Downloads\Juego Final\PF-ParadigmasProgramacion\Class Library\obj\Debug\net8.0\refint\CL_ProyectoFinalPOO.dll
+C:\Users\mesaj\Downloads\Juego Final\PF-ParadigmasProgramacion\Class Library\obj\Debug\net8.0\CL_ProyectoFinalPOO.pdb
+C:\Users\mesaj\Downloads\Juego Final\PF-ParadigmasProgramacion\Class Library\obj\Debug\net8.0\ref\CL_ProyectoFinalPOO.dll
