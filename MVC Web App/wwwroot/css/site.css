@@ -3310,3 +3310,141 @@ body {
         box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
         background: linear-gradient(to right, #a30000, #6b0000);
     }
+
+/* Contenedor de acciones */
+.fin-juego-actions-container {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 400px; /* Aumentado ligeramente para dar más espacio */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Centra verticalmente los botones */
+    gap: 15px; /* Espacio consistente entre botones */
+    padding: 0; /* Eliminar cualquier padding que pueda desplazar */
+}
+
+/* Formularios de acción */
+.fin-juego-action-form {
+    width: 100%;
+    max-width: 300px; /* Mantener el ancho máximo */
+    display: flex;
+    justify-content: center; /* Asegurar que el formulario esté centrado */
+}
+
+/* Botones de fin de juego */
+.fin-juego-button {
+    width: 100%;
+    max-width: 280px; /* Ancho fijo para consistencia */
+    padding: 12px 15px;
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #d4a017;
+    color: #fff;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+    .fin-juego-button i {
+        margin-right: 8px;
+    }
+
+    .fin-juego-button:hover {
+        background-color: #f1c40f;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+/* Asegurar que el contenedor principal no interfiera */
+.fin-juego-main-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 25px;
+    min-height: calc(100vh - 160px);
+    flex-grow: 1;
+}
+
+/* Single custom alert banner style with blue fade and wider layout */
+.custom-alert-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px; /* Slightly more space between icon and text */
+    padding: 10px 30px; /* Increased horizontal padding, reduced vertical */
+    border-radius: 10px;
+    font-family: 'Georgia', serif;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-align: center;
+    margin: 10px auto; /* Replaces inline margin-top: 10px */
+    max-width: 700px; /* Increased width for a more horizontal feel */
+    min-height: 60px; /* Ensures minimum height to avoid collapsing */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    transition: all 0.4s ease-in-out;
+    z-index: 9999;
+    animation: fadeIn 0.5s ease-out;
+    background: linear-gradient(to right, #1e3c72, #2a5298); /* Beautiful blue fade */
+    border: 2px solid #1a355f; /* Slightly darker blue border */
+    color: #f5f5f5; /* Light text for contrast */
+}
+
+    /* Hover effect */
+    .custom-alert-banner:hover {
+        background: linear-gradient(to right, #2a5298, #3b6ca4); /* Lighter blue fade on hover */
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        transform: translateY(-2px) scale(1.03); /* Subtle lift and scale */
+    }
+
+    /* Icon styling */
+    .custom-alert-banner i {
+        font-size: 1.4rem; /* Slightly larger icon to balance the wider layout */
+        color: #ffd700; /* Gold accent to match game theme */
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+/* Animation for fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .custom-alert-banner {
+        max-width: 90%; /* Maintains responsiveness */
+        padding: 8px 20px;
+        font-size: 1rem;
+    }
+
+        .custom-alert-banner i {
+            font-size: 1.2rem;
+        }
+}
+
+@media (max-width: 480px) {
+    .custom-alert-banner {
+        padding: 6px 15px;
+        font-size: 0.9rem;
+        min-height: 50px; /* Adjusted for smaller screens */
+    }
+
+        .custom-alert-banner i {
+            font-size: 1.1rem;
+        }
+}

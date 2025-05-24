@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using CL_ProyectoFinalPOO.Clases;
 using CL_ProyectoFinalPOO.Eventos;
 
@@ -11,22 +8,30 @@ namespace CL_ProyectoFinalPOO.Clases
     public class Historial // No necesita implementar ninguna interfaz específica para el enunciado
     {
         private readonly List<string> _notificaciones;
-        private readonly Publisher_Eventos_Juego _publisher; // Guardar referencia si se necesita desuscribir
+        private readonly Publisher_Eventos_Juego _publisherJuego;
+        private readonly Publisher_Eventos_Jugador _publisherJugador;
+        private readonly Publisher_Eventos_Cartas _publisherCartas;
 
-        public Historial(Publisher_Eventos_Juego publisher)
+        public Historial(Publisher_Eventos_Juego publisherJuego, Publisher_Eventos_Jugador publisherJugador, Publisher_Eventos_Cartas publisherCartas)
         {
-            _publisher = publisher ?? throw new ArgumentNullException(nameof(publisher));
+            _publisherJuego = publisherJuego ?? throw new ArgumentNullException(nameof(publisherJuego));
+            _publisherJugador = publisherJugador ?? throw new ArgumentNullException(nameof(publisherJugador));
+            _publisherCartas = publisherCartas ?? throw new ArgumentNullException(nameof(publisherCartas));
             _notificaciones = new List<string>();
 
-            // Suscripción a los eventos
-            _publisher.AgotadasPremio += AgotadasPremioHandler;
-            _publisher.AgotadasCastigo += AgotadasCastigoHandler;
-            _publisher.AgotadasResto += AgotadasRestoHandler;
-            _publisher.CambioLider += CambioLiderHandler;
-            _publisher.InicioPartida += InicioPartidaHandler;
-            _publisher.SinPuntos += SinPuntosHandler;
-            _publisher.CartasIniciales += CartasObtenidasHandler;
-            _publisher.FinPartida += FinPartidaHandler;
+            // Suscripción a los eventos de PublisherEventosJuego
+            _publisherJuego.InicioPartida += InicioPartidaHandler;
+            _publisherJuego.FinPartida += FinPartidaHandler;
+
+            // Suscripción a los eventos de PublisherEventosJugador
+            _publisherJugador.SinPuntos += SinPuntosHandler;
+            _publisherJugador.CambioLider += CambioLiderHandler;
+
+            // Suscripción a los eventos de PublisherEventosCartas
+            _publisherCartas.AgotadasPremio += AgotadasPremioHandler;
+            _publisherCartas.AgotadasCastigo += AgotadasCastigoHandler;
+            _publisherCartas.AgotadasResto += AgotadasRestoHandler;
+            _publisherCartas.CartasIniciales += CartasObtenidasHandler;
         }
 
         // Métodos Handler para cada evento
@@ -52,17 +57,14 @@ namespace CL_ProyectoFinalPOO.Clases
                 _notificaciones.Add($"{DateTime.Now:HH:mm:ss} - ¡El líder del juego ha cambiado! Ahora es: {nuevoLider.Nickname} con {nuevoLider.Puntos} puntos!");
             }
         }
-        
+
         private void InicioPartidaHandler()
         {
-
             _notificaciones.Add($"{DateTime.Now:HH:mm:ss} - ¡El juego ha comenzado, preparate para probar tu suerte!");
-            
         }
 
         private void CartasObtenidasHandler(Jugador jugador, Carta carta)
         {
-
             if (carta is CartaJuego)
             {
                 _notificaciones.Add($"{DateTime.Now:HH:mm:ss} - ¡{jugador.Nickname} recibio una carta de Juego: {carta.Nombre} de {carta.ObtenerPuntos()} puntos!");
@@ -75,7 +77,6 @@ namespace CL_ProyectoFinalPOO.Clases
             {
                 _notificaciones.Add($"{DateTime.Now:HH:mm:ss} - ¡{jugador.Nickname} recibio una carta de Castigo: {carta.Nombre} de {carta.ObtenerPuntos()} puntos!");
             }
-
         }
 
         public void SinPuntosHandler(Jugador jugador)
@@ -87,11 +88,11 @@ namespace CL_ProyectoFinalPOO.Clases
         {
             if (ganador != null)
             {
-                _notificaciones.Add($"{DateTime.Now:HH:mm:ss} - ¡El juego ha concluido!\nEl ganador fue {ganador.Nickname}, Se le dan 20 puntos adicionales, para un total de {ganador.Puntos} puntos.!");
+                _notificaciones.Add($"{DateTime.Now:HH:mm:ss} - ¡EL JUEGO HA FINALIZADO!\nEl ganador fue {ganador.Nickname}, Se le dan 20 puntos adicionales, para un total de {ganador.Puntos} puntos.!");
             }
             else
             {
-                _notificaciones.Add($"{DateTime.Now:HH:mm:ss} - ¡El juego ha concluido! No hubo un ganador claro o la partida terminó en empate!");
+                _notificaciones.Add($"{DateTime.Now:HH:mm:ss} - ¡EL JUEGO HA FINALIZADO! No hubo un ganador claro o la partida terminó en empate!");
             }
         }
 
@@ -99,6 +100,5 @@ namespace CL_ProyectoFinalPOO.Clases
         {
             return _notificaciones.AsReadOnly();
         }
-
     }
 }

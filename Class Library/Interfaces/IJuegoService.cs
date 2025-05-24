@@ -21,5 +21,6 @@ namespace CL_ProyectoFinalPOO.Interfaces
         bool JuegoTerminado();
         void ComenzarNuevaRondaConJugadoresActuales();
         void ReiniciarJuego();
+        Juego ObtenerInstanciaJuegoActual();
     }
 }

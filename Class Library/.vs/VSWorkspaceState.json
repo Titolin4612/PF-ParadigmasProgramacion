@@ -1,10 +1,12 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Aspectos",
     "\\bin",
     "\\Clases",
+    "\\Eventos",
     "\\Interfaces"
   ],
-  "SelectedNode": "\\CL_ProyectoFinalPOO.sln",
+  "SelectedNode": "\\Interfaces\\IHomeService.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -25,14 +25,12 @@ namespace CL_ProyectoFinalPOO.Aspectos
 
             bool tieneSesion = context.Session.GetString("UsuarioSesion") != null;
 
-            // Permitir si hay sesión o si está accediendo a algo libre
             if (tieneSesion)
             {
                 invocation.Proceed();
             }
             else
             {
-                // ❌ no hay sesión, y se llama a un método que espera retorno
                 var returnType = invocation.Method.ReturnType;
 
                 if (returnType == typeof(void))
@@ -42,7 +40,7 @@ namespace CL_ProyectoFinalPOO.Aspectos
                 else if (returnType == typeof(bool))
                 {
                     context.Response.Redirect("/Home/Login");
-                    invocation.ReturnValue = false; // valor por defecto
+                    invocation.ReturnValue = false;
                 }
                 else if (returnType.IsClass || returnType.IsInterface)
                 {

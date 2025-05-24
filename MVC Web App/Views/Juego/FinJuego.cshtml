@@ -8,6 +8,10 @@
 
     // Ordenar jugadores por puntos (descendente) para mostrar el ranking
     var jugadoresOrdenados = jugadores.OrderByDescending(j => j.Puntos).ToList();
+
+    // Nuevas variables para el mensaje de simulación BD
+    string simulacionBDMensaje = ViewBag.SimuladorBDMensaje as string;
+    string simulacionBDMensajeTipo = ViewBag.SimulacionBDMensajeTipo as string;
 }
 
 <!DOCTYPE html>
@@ -26,6 +30,14 @@
         @if (!string.IsNullOrEmpty(mensajeError))
         {
             <div class="error-banner" id="gameErrorBanner"><i class="fas fa-exclamation-triangle"></i> @mensajeError</div>
+        }
+
+        @* NUEVA SECCIÓN PARA EL BANNER DE SIMULACIÓN BD *@
+        @if (!string.IsNullOrEmpty(simulacionBDMensaje))
+        {
+        <div class="custom-alert-banner" id="simulacionBdBanner">
+            <i class="fas fa-database"></i> @simulacionBDMensaje
+        </div>
         }
 
         <div class="turn-indicator turn-ended">
@@ -89,6 +101,16 @@
                     errorBanner.style.opacity = '0';
                     setTimeout(() => errorBanner.remove(), 500);
                 }, 7000);
+            }
+
+            // NUEVO SCRIPT PARA EL BANNER DE SIMULACIÓN BD
+            const simulacionBdBanner = document.getElementById('simulacionBdBanner');
+            if (simulacionBdBanner) {
+                setTimeout(() => {
+                    simulacionBdBanner.style.transition = 'opacity 0.5s ease-out';
+                    simulacionBdBanner.style.opacity = '0';
+                    setTimeout(() => simulacionBdBanner.remove(), 500);
+                }, 8000);
             }
 
             const playerBoxes = document.querySelectorAll('.fin-juego-player-box');

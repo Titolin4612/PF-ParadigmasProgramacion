@@ -1,21 +1,25 @@
 ﻿using CL_ProyectoFinalPOO.Clases;
+using CL_ProyectoFinalPOO.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Diagnostics;
-using CL_ProyectoFinalPOO.Interfaces;
 
 namespace MVC_ProyectoFinalPOO.Services
 {
     public class JuegoService : IJuegoService
     {
-        private Juego _juegoActual; // Instancia del juego en curso. Será gestionada por este servicio Singleton.
-        private readonly HomeService _homeService; // Para limpiar la configuración de jugadores
+        private Juego _juegoActual;
+        private readonly HomeService _homeService;
 
-        // Constructor para Inyección de Dependencias
         public JuegoService(HomeService homeService)
         {
             _homeService = homeService;
+        }
+
+        public Juego ObtenerInstanciaJuegoActual()
+        {
+            return _juegoActual;
         }
 
         public bool EstaJuegoActivo()
@@ -66,10 +70,10 @@ namespace MVC_ProyectoFinalPOO.Services
                 Debug.WriteLine("JuegoService.ObtenerJugadorActual: No hay juego activo.");
                 return null;
             }
-            return CL_ProyectoFinalPOO.Clases.Juego.Jugadores.Count == 0 ? null : CL_ProyectoFinalPOO.Clases.Juego.Jugadores[CL_ProyectoFinalPOO.Clases.Juego.IndiceJugador];
+            return CL_ProyectoFinalPOO.Clases.Juego.Jugadores.Count == 0 ?
+                null : CL_ProyectoFinalPOO.Clases.Juego.Jugadores[CL_ProyectoFinalPOO.Clases.Juego.IndiceJugador];
         }
 
-        // MODIFICADO: La firma de retorno ya no incluye 'object cartaViewModel'
         public (Carta carta, int puntos) CogerCarta()
         {
             if (!EstaJuegoActivo())
@@ -93,13 +97,8 @@ namespace MVC_ProyectoFinalPOO.Services
                 if (carta != null)
                 {
                     puntosObtenidos = _juegoActual.AplicarEfectoCartas(carta);
-
                     jugadorActual.Puntos += puntosObtenidos;
                     jugadorActual.L_cartas_jugador.Add(carta);
-
-                    // ELIMINADO: La creación del objeto anónimo cartaViewModel se ha quitado de aquí.
-                    // El controlador será responsable de construir el ViewModel si es necesario.
-
                     Debug.WriteLine($"JuegoService.CogerCarta: Jugador '{jugadorActual.Nickname}' cogió '{carta.Nombre}'. Puntos efecto: {puntosObtenidos}. Puntos totales: {jugadorActual.Puntos}.");
                 }
                 else
@@ -108,8 +107,6 @@ namespace MVC_ProyectoFinalPOO.Services
                 }
 
                 _juegoActual.ValidarYDispararEventos(null);
-
-                // MODIFICADO: Se devuelve solo la carta y los puntos.
                 return (carta, puntosObtenidos);
             }
             catch (Exception ex)
@@ -150,9 +147,7 @@ namespace MVC_ProyectoFinalPOO.Services
 
         public Jugador FinalizarJuego()
         {
-            // La llamada a _juegoActual.FinalizarJuego() ya existe dentro del bloque try
-            // No es necesario llamarla dos veces.
-            if (!EstaJuegoActivo() && _juegoActual == null) // Si no está activo porque _juegoActual es null
+            if (!EstaJuegoActivo() && _juegoActual == null)
             {
                 Debug.WriteLine("JuegoService.FinalizarJuego: No hay juego (_juegoActual es null) para finalizar.");
                 return null;
@@ -160,7 +155,7 @@ namespace MVC_ProyectoFinalPOO.Services
 
             try
             {
-                var ganador = _juegoActual.ObtenerLider(); // Esta es la llamada principal
+                var ganador = _juegoActual.ObtenerLider();
                 Debug.WriteLine($"JuegoService.FinalizarJuego: Juego finalizado. Ganador: {ganador?.Nickname ?? "Ninguno"}.");
                 return ganador;
             }
@@ -175,7 +170,8 @@ namespace MVC_ProyectoFinalPOO.Services
         {
             if (_juegoActual != null)
             {
-                return CL_ProyectoFinalPOO.Clases.Juego.Jugadores ?? new List<Jugador>();
+                return CL_ProyectoFinalPOO.Clases.Juego.Jugadores ??
+                    new List<Jugador>();
             }
             return new List<Jugador>();
         }
@@ -210,7 +206,6 @@ namespace MVC_ProyectoFinalPOO.Services
                 bool pocosJugadores = CL_ProyectoFinalPOO.Clases.Juego.Jugadores == null || CL_ProyectoFinalPOO.Clases.Juego.Jugadores.Count < _juegoActual.JugadoresMin;
 
                 bool terminado = mazosAgotados || pocosJugadores;
-
                 Debug.WriteLineIf(terminado, "JuegoService.JuegoTerminado: El juego ha terminado.");
                 Debug.WriteLineIf(!terminado, "JuegoService.JuegoTerminado: El juego NO ha terminado.");
                 return terminado;
@@ -250,8 +245,6 @@ namespace MVC_ProyectoFinalPOO.Services
 
                 CL_ProyectoFinalPOO.Clases.Juego.Jugadores.Clear();
                 CL_ProyectoFinalPOO.Clases.Juego.IndiceJugador = 0;
-                // Las barajas estáticas se recargarán cuando se cree un `new Juego()` en `IniciarJuego`.
-
                 _homeService.LimpiarConfiguracionJugadores();
                 Debug.WriteLine("JuegoService.ReiniciarJuego: Juego reiniciado y configuración de HomeService limpiada.");
             }

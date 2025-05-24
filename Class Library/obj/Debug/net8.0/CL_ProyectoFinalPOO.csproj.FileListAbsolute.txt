@@ -72,3 +72,15 @@ C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Pr
 C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\PF-ParadigmasProgramacion\Class Library\bin\Debug\net8.0\CL_ProyectoFinalPOO.dll
 C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\PF-ParadigmasProgramacion\Class Library\bin\Debug\net8.0\CL_ProyectoFinalPOO.pdb
 C:\Users\Sanda\OneDrive - UPB\Archivos Materias\Tercer Semestre\Paradigmas De Programación\Proyecto Final POO\PF-ParadigmasProgramacion\Class Library\obj\Debug\net8.0\ref\CL_ProyectoFinalPOO.dll
+C:\Users\mesaj\Downloads\Actual\Class Library\bin\Debug\net8.0\CL_ProyectoFinalPOO.deps.json
+C:\Users\mesaj\Downloads\Actual\Class Library\bin\Debug\net8.0\CL_ProyectoFinalPOO.dll
+C:\Users\mesaj\Downloads\Actual\Class Library\bin\Debug\net8.0\CL_ProyectoFinalPOO.pdb
+C:\Users\mesaj\Downloads\Actual\Class Library\obj\Debug\net8.0\CL_ProyectoFinalPOO.csproj.AssemblyReference.cache
+C:\Users\mesaj\Downloads\Actual\Class Library\obj\Debug\net8.0\CL_ProyectoFinalPOO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mesaj\Downloads\Actual\Class Library\obj\Debug\net8.0\CL_ProyectoFinalPOO.AssemblyInfoInputs.cache
+C:\Users\mesaj\Downloads\Actual\Class Library\obj\Debug\net8.0\CL_ProyectoFinalPOO.AssemblyInfo.cs
+C:\Users\mesaj\Downloads\Actual\Class Library\obj\Debug\net8.0\CL_ProyectoFinalPOO.csproj.CoreCompileInputs.cache
+C:\Users\mesaj\Downloads\Actual\Class Library\obj\Debug\net8.0\CL_ProyectoFinalPOO.dll
+C:\Users\mesaj\Downloads\Actual\Class Library\obj\Debug\net8.0\refint\CL_ProyectoFinalPOO.dll
+C:\Users\mesaj\Downloads\Actual\Class Library\obj\Debug\net8.0\CL_ProyectoFinalPOO.pdb
+C:\Users\mesaj\Downloads\Actual\Class Library\obj\Debug\net8.0\ref\CL_ProyectoFinalPOO.dll

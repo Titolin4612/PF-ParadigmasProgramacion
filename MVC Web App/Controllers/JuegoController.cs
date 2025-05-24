@@ -226,6 +226,15 @@ namespace MVC_ProyectoFinalPOO.Controllers
                     ? $"🎉 ¡GANADOR! {ganador.Nickname} con {ganador.Puntos} puntos. 🎉"
                     : "La partida ha finalizado sin un ganador claro, o no hay jugadores.";
 
+                var nombresJugadores = jugadores != null && jugadores.Any()
+                ? string.Join(", ", jugadores.Select(j => j.Nickname))
+                : "Ningún jugador";
+                var simuladorBDMensaje = $"La información de los usuarios ({nombresJugadores}) se ha verificado y guardado exitosamente en la base de datos.";
+
+                // Mostrar también en consola
+                ViewBag.SimuladorBDMensaje = simuladorBDMensaje;
+                Debug.WriteLine(simuladorBDMensaje);
+
                 return View("FinJuego");
             }
             catch (Exception ex)

@@ -32,6 +32,11 @@ namespace CL_ProyectoFinalPOO.Clases
 
         // Instancia de clase publicadora
         private Publisher_Eventos_Juego publicadorJuego;
+
+        private Publisher_Eventos_Jugador publicadorJugador;
+
+        private Publisher_Eventos_Cartas publicadorCartas;
+
         private Historial historial;
 
         // Metodo para manejar los eventos 
@@ -39,7 +44,7 @@ namespace CL_ProyectoFinalPOO.Clases
         public void EventHandler() { }
 
         // Atributos de reglas de negocio
-        private  int cartasPorJugador = 3;
+        private  int cartasPorJugador = 15; /////
         private  int jugadoresMin = 2;
         private  int jugadoresMax = 4;
         private bool agotadasResto = false;
@@ -67,10 +72,13 @@ namespace CL_ProyectoFinalPOO.Clases
         public static int IndiceJugador { get => indiceJugadorActual; set => indiceJugadorActual = value; }
         public Historial Historial { get => historial; set => historial = value; }
         public Publisher_Eventos_Juego PublicadorJuego { get => publicadorJuego; set => publicadorJuego = value; }
+        public Publisher_Eventos_Jugador PublicadorJugador { get => publicadorJugador; set => publicadorJugador = value; }
+        public Publisher_Eventos_Cartas PublicadorCartas { get => publicadorCartas; set => publicadorCartas = value; }
         public bool AgotadasResto { get => agotadasResto; set => agotadasResto = value; }
         public bool AgotadasCastigo { get => agotadasCastigo; set => agotadasCastigo = value; }
         public bool AgotadasPremio { get => agotadasPremio; set => agotadasPremio = value; }
         public string NicknameLiderAnterior { get => nicknameLiderAnterior; set => nicknameLiderAnterior = value; }
+
 
         // Constructor
         public Juego()
@@ -88,7 +96,9 @@ namespace CL_ProyectoFinalPOO.Clases
             indiceJugadorActual = 0;                 
 
             PublicadorJuego = new Publisher_Eventos_Juego();
-            Historial = new Historial(PublicadorJuego);
+            PublicadorJugador = new Publisher_Eventos_Jugador();
+            PublicadorCartas = new Publisher_Eventos_Cartas();
+            Historial = new Historial(PublicadorJuego, PublicadorJugador, PublicadorCartas);
         }
 
         // Metodo para obtener nuevo lider
@@ -217,26 +227,26 @@ namespace CL_ProyectoFinalPOO.Clases
 {
             if (l_cartas_resto.Count == 0 && !agotadasResto)
             {
-                PublicadorJuego.NotificarAgotadasResto();
+                PublicadorCartas.NotificarAgotadasResto();
                 agotadasResto = true;
             }
 
             if (l_cartas_castigo.Count == 0 && !agotadasCastigo)
             {
-                PublicadorJuego.NotificarAgotadasCastigo();
+                PublicadorCartas.NotificarAgotadasCastigo();
                 agotadasCastigo = true;
             }
 
             if (l_cartas_premio.Count == 0 && !agotadasPremio)
             {
-                PublicadorJuego.NotificarAgotadasPremio();
+                PublicadorCartas.NotificarAgotadasPremio();
                 agotadasPremio = true;
             }
 
             Jugador liderNuevo = ObtenerLider();
             if (liderNuevo != null && liderNuevo.Nickname != nicknameLiderAnterior)
             {
-                PublicadorJuego.NotificarCambioLider(liderNuevo, this);
+                PublicadorJugador.NotificarCambioLider(liderNuevo, this);
                 nicknameLiderAnterior = liderNuevo.Nickname;
             }
 
@@ -245,7 +255,7 @@ namespace CL_ProyectoFinalPOO.Clases
                 Jugador jugador = Jugadores[i];
                 if (jugador.Puntos <= 0 && !jugador.Perdio)
                 {
-                    PublicadorJuego.NotificarJugadorSinPuntos(jugador);
+                    PublicadorJugador.NotificarJugadorSinPuntos(jugador);
                     jugador.Perdio = true; 
                     Jugadores.RemoveAt(i);  
 
@@ -327,7 +337,7 @@ namespace CL_ProyectoFinalPOO.Clases
                         jugador.L_cartas_jugador.Add(carta);
                         jugador.Puntos += AplicarEfectoCartas(carta);
                         Console.WriteLine($"   - {carta.Nombre} | Total puntos: {jugador.Puntos}");
-                        PublicadorJuego.NotificarCartasObtenidas(jugador, carta);
+                        PublicadorCartas.NotificarCartasObtenidas(jugador, carta);
                     }
                 }
 
@@ -381,7 +391,7 @@ namespace CL_ProyectoFinalPOO.Clases
             }
             else
             {
-                Console.WriteLine("⚠️ No se pudo determinar un ganador.");
+                Console.WriteLine("No se pudo determinar un ganador.");
             }
             return ganador;
         }

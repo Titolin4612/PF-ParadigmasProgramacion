@@ -15,10 +15,10 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddControllersWithViews();
 builder.Services.AddHttpContextAccessor(); // Si lo necesitas para Session u otros servicios de HttpContext
 builder.Services.AddHttpContextAccessor();
-builder.Services.AddSingleton<AuthInterceptor>();
 
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.AddSingleton<AuthInterceptor>();
+builder.Services.AddSingleton<InterceptorValidacion>();
 
 // Registrar instancias reales
 builder.Services.AddSingleton<HomeService>();
@@ -34,12 +34,23 @@ builder.Services.AddScoped<IHomeService>(provider =>
     return generator.CreateInterfaceProxyWithTarget<IHomeService>(real, interceptor);
 });
 
+//builder.Services.AddScoped<IJuegoService>(provider =>
+//{
+//    var generator = new ProxyGenerator();
+//    var interceptor = provider.GetRequiredService<AuthInterceptor>();
+//    var real = provider.GetRequiredService<JuegoService>();
+//    return generator.CreateInterfaceProxyWithTarget<IJuegoService>(real, interceptor);
+//});
+
 builder.Services.AddScoped<IJuegoService>(provider =>
 {
     var generator = new ProxyGenerator();
-    var interceptor = provider.GetRequiredService<AuthInterceptor>();
+    var authInterceptor = provider.GetRequiredService<AuthInterceptor>();
+    var InterceptorValidacion = provider.GetRequiredService<InterceptorValidacion>(); // Obtener el nuevo interceptor
     var real = provider.GetRequiredService<JuegoService>();
-    return generator.CreateInterfaceProxyWithTarget<IJuegoService>(real, interceptor);
+    // Aplicar ambos interceptores. El orden puede importar.
+    // AuthInterceptor primero, luego InterceptorValidacion.
+    return generator.CreateInterfaceProxyWithTarget<IJuegoService>(real, authInterceptor, InterceptorValidacion); // [cite: 405]
 });
 
 // --- HABILITAR SESIONES ---
