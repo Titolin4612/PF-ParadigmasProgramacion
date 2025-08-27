@@ -45,113 +45,22 @@ namespace CL_ProyectoFinalPOO.Clases
         private bool agotadasPremio = false;
 
         // Accesores
-        public List<Jugador> Jugadores
-        {
-            get => jugadores;
-            set
-            {
-                if (value == null)
-                    throw new Exception("Error, la lista de jugadores es inválida.");
-                jugadores = value;
-            }
-        }
-        public List<CartaPremio> L_cartas_premio
-        {
-            get => l_cartas_premio;
-            set
-            {
-                if (value == null)
-                    throw new Exception("Error, la lista de cartas premio es inválida.");
-                l_cartas_premio = value;
-            }
-        }
-        public List<CartaCastigo> L_cartas_castigo
-        {
-            get => l_cartas_castigo;
-            set
-            {
-                if (value == null)
-                    throw new Exception("Error, la lista de cartas castigo es inválida.");
-                l_cartas_castigo = value;
-            }
-        }
-        public List<CartaJuego> L_cartas_resto
-        {
-            get => l_cartas_resto;
-            set
-            {
-                if (value == null)
-                    throw new Exception("Error, la lista de cartas resto es inválida.");
-                l_cartas_resto = value;
-            }
-        }
-        public Historial Historial
-        {
-            get => historial;
-            set
-            {
-                if (value == null)
-                    throw new Exception("Error, el historial es inválido.");
-                historial = value;
-            }
-        }
-        public Publisher_Eventos_Juego PublicadorJuego
-        {
-            get => publicadorJuego;
-            set
-            {
-                if (value == null)
-                    throw new Exception("Error, el publicador de eventos de juego es inválido.");
-                publicadorJuego = value;
-            }
-        }
-        public Publisher_Eventos_Jugador PublicadorJugador
-        {
-            get => publicadorJugador;
-            set
-            {
-                if (value == null)
-                    throw new Exception("Error, el publicador de eventos de jugador es inválido.");
-                publicadorJugador = value;
-            }
-        }
-        public Publisher_Eventos_Cartas PublicadorCartas
-        {
-            get => publicadorCartas;
-            set
-            {
-                if (value == null)
-                    throw new Exception("Error, el publicador de eventos de cartas es inválido.");
-                publicadorCartas = value;
-            }
-        }
-        public int IndiceJugador
-        {
-            get => indiceJugadorActual;
-            set
-            {
-                if (value < 0)
-                    throw new Exception("Error, el índice del jugador no puede ser negativo.");
-                indiceJugadorActual = value;
-            }
-        }
-        public bool AgotadasResto { get => agotadasResto; set => agotadasResto = value; }
-        public bool AgotadasCastigo { get => agotadasCastigo; set => agotadasCastigo = value; }
-        public bool AgotadasPremio { get => agotadasPremio; set => agotadasPremio = value; }
-        public string NicknameLiderAnterior
-        {
-            get => nicknameLiderAnterior;
-            set
-            {
-                if (string.IsNullOrWhiteSpace(value))
-                    throw new Exception("Error, el nickname del líder anterior no puede estar vacio.");
-                nicknameLiderAnterior = value;
-            }
-        }
+        public List<Jugador> Jugadores { get => jugadores; set { if (value == null) throw new ArgumentException("La lista de jugadores no puede ser nula."); jugadores = value; } }
+        public List<CartaPremio> L_cartas_premio { get => l_cartas_premio; set { if (value == null) throw new ArgumentException("La lista de cartas premio no puede ser nula."); l_cartas_premio = value; } }
+        public List<CartaCastigo> L_cartas_castigo { get => l_cartas_castigo; set { if (value == null) throw new ArgumentException("La lista de cartas castigo no puede ser nula."); l_cartas_castigo = value; } }
+        public List<CartaJuego> L_cartas_resto { get => l_cartas_resto; set { if (value == null) throw new ArgumentException("La lista de cartas resto no puede ser nula."); l_cartas_resto = value; } }
         public int CartasPorJugador { get => cartasPorJugador; }
         public int JugadoresMin { get => jugadoresMin; }
         public int JugadoresMax { get => jugadoresMax; }
-
+        public int IndiceJugador { get => indiceJugadorActual; set => indiceJugadorActual = value; }
+        public Historial Historial { get => historial; set { if (value == null) throw new ArgumentException("El historial no puede ser nulo."); historial = value; } }
+        public Publisher_Eventos_Juego PublicadorJuego { get => publicadorJuego; set { if (value == null) throw new ArgumentException("El publicador de eventos de juego no puede ser nulo."); publicadorJuego = value; } }
+        public Publisher_Eventos_Jugador PublicadorJugador { get => publicadorJugador; set { if (value == null) throw new ArgumentException("El publicador de eventos de jugador no puede ser nulo."); publicadorJugador = value; } }
+        public Publisher_Eventos_Cartas PublicadorCartas { get => publicadorCartas; set { if (value == null) throw new ArgumentException("El publicador de eventos de cartas no puede ser nulo."); publicadorCartas = value; } }
+        public bool AgotadasResto { get => agotadasResto; set => agotadasResto = value; }
+        public bool AgotadasCastigo { get => agotadasCastigo; set => agotadasCastigo = value; }
+        public bool AgotadasPremio { get => agotadasPremio; set => agotadasPremio = value; }
+        public string NicknameLiderAnterior { get => nicknameLiderAnterior; set => nicknameLiderAnterior = value; }
 
         // Constructor
         public Juego()

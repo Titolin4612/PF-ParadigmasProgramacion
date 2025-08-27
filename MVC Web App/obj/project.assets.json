@@ -109,23 +109,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Sanda\\.nuget\\packages\\": {},
+    "C:\\Users\\LENOVO\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\MVC_ProyectoFinalPOO.csproj",
+      "projectUniqueName": "C:\\Users\\LENOVO\\Documents\\A\\PF-ParadigmasProgramacion\\MVC Web App\\MVC_ProyectoFinalPOO.csproj",
       "projectName": "MVC_ProyectoFinalPOO",
-      "projectPath": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\MVC_ProyectoFinalPOO.csproj",
-      "packagesPath": "C:\\Users\\Sanda\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Sanda\\OneDrive - UPB\\Archivos Materias\\Tercer Semestre\\Paradigmas De Programación\\Proyecto Final POO\\PF-ParadigmasProgramacion\\MVC Web App\\obj\\",
+      "projectPath": "C:\\Users\\LENOVO\\Documents\\A\\PF-ParadigmasProgramacion\\MVC Web App\\MVC_ProyectoFinalPOO.csproj",
+      "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\LENOVO\\Documents\\A\\PF-ParadigmasProgramacion\\MVC Web App\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Sanda\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

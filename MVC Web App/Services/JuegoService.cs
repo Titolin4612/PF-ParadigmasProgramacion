@@ -37,7 +37,7 @@ namespace MVC_ProyectoFinalPOO.Services
 
             try
             {
-                _juegoActual = new Juego(); // Create a new instance of Juego
+                _juegoActual = new Juego(); 
 
                 _juegoActual.Jugadores.Clear();
                 _juegoActual.IndiceJugador = 0;
