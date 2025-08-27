@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ypKAT/x51Bg=",
+  "dgSpecHash": "ec1WV6+7gLg=",
   "success": true,
-  "projectFilePath": "C:\\Users\\LENOVO\\Documents\\A\\PF-ParadigmasProgramacion\\Class Library\\CL_ProyectoFinalPOO.csproj",
+  "projectFilePath": "C:\\Users\\LENOVO\\Documents\\B\\PF-ParadigmasProgramacion\\Class Library\\CL_ProyectoFinalPOO.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\LENOVO\\.nuget\\packages\\castle.core\\5.2.1\\castle.core.5.2.1.nupkg.sha512",
     "C:\\Users\\LENOVO\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.3.0\\microsoft.aspnetcore.http.abstractions.2.3.0.nupkg.sha512",

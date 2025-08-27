@@ -37,7 +37,7 @@ namespace CL_ProyectoFinalPOO.Clases
         private Historial historial;
 
         // Atributos de reglas de negocio
-        private int cartasPorJugador = 15;
+        private int cartasPorJugador = 3;
         private int jugadoresMin = 2;
         private int jugadoresMax = 4;
         private bool agotadasResto = false;
