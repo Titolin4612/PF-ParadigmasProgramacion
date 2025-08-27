@@ -115,3 +115,4 @@ El **juego** tiene todas las listas de cartas.  Cada jugador que gana un juego 
 ## 📝 Changelog
 
   [**📝 Ver ChangeLog**](./ChangeLog.md)
+
