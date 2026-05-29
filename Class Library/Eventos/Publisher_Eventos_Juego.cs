@@ -9,8 +9,8 @@ namespace CL_ProyectoFinalPOO.Eventos
         public delegate void DelegadoEventoGeneral();
         public delegate void DelegadoEventoParametroJugador(Jugador jugador);
 
-        public event DelegadoEventoGeneral InicioPartida;
-        public event DelegadoEventoParametroJugador FinPartida;
+        public event DelegadoEventoGeneral? InicioPartida;
+        public event DelegadoEventoParametroJugador? FinPartida;
 
         public void NotificarInicioPartida()
         {

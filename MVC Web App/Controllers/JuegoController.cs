@@ -4,18 +4,27 @@ using CL_ProyectoFinalPOO.Interfaces;
 using MVC_ProyectoFinalPOO.Services;
 using System;
 using System.Linq;
-using System.Diagnostics;
-using System.Collections.Generic; 
+using Microsoft.Extensions.Logging;
+using System.Collections.Generic;
 
 namespace MVC_ProyectoFinalPOO.Controllers
 {
-    public class JuegoController : Controller
+    public record CartaRevelada(
+        string TipoCarta,
+        string Nombre,
+        string Mitologia,
+        string Descripcion,
+        string? ImagenUrl,
+        int Puntos,
+        string? Rareza,
+        string? Bendicion,
+        string? Maleficio
+    );
+
+    public class JuegoController(IJuegoService juegoService, ILogger<JuegoController> logger) : Controller
     {
-        private readonly IJuegoService _juegoService;
-        public JuegoController(IJuegoService juegoService)
-        {
-            _juegoService = juegoService;
-        }
+        private readonly IJuegoService _juegoService = juegoService;
+        private readonly ILogger<JuegoController> _logger = logger;
 
         public void CargarViewBagComun(string mensajeErrorPersonalizado = null)
         {
@@ -75,18 +84,17 @@ namespace MVC_ProyectoFinalPOO.Controllers
                     else if (cartaCogida is CartaPremio cp) { tipoCartaStr = "premio"; bendicion = cp.Bendicion; }
                     else if (cartaCogida is CartaCastigo cc) { tipoCartaStr = "castigo"; maleficio = cc.Maleficio; }
 
-                    ViewBag.CartaRevelada = new
-                    {
-                        TipoCarta = tipoCartaStr,
+                    ViewBag.CartaRevelada = new CartaRevelada(
+                        tipoCartaStr,
                         cartaCogida.Nombre,
                         cartaCogida.Mitologia,
                         cartaCogida.Descripcion,
                         cartaCogida.ImagenUrl,
-                        Puntos = puntosObtenidos,
-                        Rareza = rareza,
-                        Bendicion = bendicion,
-                        Maleficio = maleficio
-                    };
+                        puntosObtenidos,
+                        rareza,
+                        bendicion,
+                        maleficio
+                    );
                 }
                 else
                 {
@@ -117,7 +125,7 @@ namespace MVC_ProyectoFinalPOO.Controllers
             }
             catch (Exception ex)
             {
-                Debug.WriteLine($"JuegoController.CogerCarta: Error - {ex.Message}");
+                _logger.LogError($"JuegoController.CogerCarta: Error - {ex.Message}");
                 ViewBag.CartaRevelada = null;
                 CargarViewBagComun("Error al coger carta: " + ex.Message);
                 return View("Index");
@@ -135,7 +143,7 @@ namespace MVC_ProyectoFinalPOO.Controllers
             }
             catch (Exception ex)
             {
-                Debug.WriteLine($"JuegoController.SiguienteTurno: Error - {ex.Message}");
+                _logger.LogError($"JuegoController.SiguienteTurno: Error - {ex.Message}");
 
                 ViewBag.CartaRevelada = null; 
                 CargarViewBagComun("Error al pasar el turno: " + ex.Message);
@@ -159,13 +167,13 @@ namespace MVC_ProyectoFinalPOO.Controllers
             }
             catch (InvalidOperationException ex) 
             {
-                Debug.WriteLine($"JuegoController.NuevaRonda: Operación inválida - {ex.Message}");
+                _logger.LogError($"JuegoController.NuevaRonda: Operación inválida - {ex.Message}");
                 TempData["ErrorGeneralJuego"] = ex.Message;
                 return RedirectToAction("Index");
             }
             catch (Exception ex) 
             {
-                Debug.WriteLine($"JuegoController.NuevaRonda: Error crítico - {ex.Message}");
+                _logger.LogError($"JuegoController.NuevaRonda: Error crítico - {ex.Message}");
                 TempData["ErrorGeneralJuego"] = "Error crítico al iniciar nueva ronda: " + ex.Message;
                 return RedirectToAction("Index");
             }
@@ -181,7 +189,7 @@ namespace MVC_ProyectoFinalPOO.Controllers
             }
             catch (Exception ex)
             {
-                Debug.WriteLine($"JuegoController.Reiniciar: Error - {ex.Message}");
+                _logger.LogError($"JuegoController.Reiniciar: Error - {ex.Message}");
                 
                 TempData["ErrorGeneral"] = "Ocurrió un error al reiniciar el juego, por favor intente de nuevo: " + ex.Message;
                 return RedirectToAction("Index", "Home");
@@ -213,7 +221,7 @@ namespace MVC_ProyectoFinalPOO.Controllers
             }
             catch (Exception ex)
             {
-                Debug.WriteLine($"JuegoController.FinalizarYGuardarJuego: Error - {ex.Message}");
+                _logger.LogError($"JuegoController.FinalizarYGuardarJuego: Error - {ex.Message}");
                 TempData["ErrorGeneralJuego"] = "Error al intentar finalizar y guardar el juego: " + ex.Message;
                 return RedirectToAction("Index");
             }
@@ -266,7 +274,7 @@ namespace MVC_ProyectoFinalPOO.Controllers
             }
             catch (Exception ex)
             {
-                Debug.WriteLine($"JuegoController.VerResumen: Error - {ex.Message}");
+                _logger.LogError($"JuegoController.VerResumen: Error - {ex.Message}");
                 CargarViewBagComun("Error al generar el resumen del juego: " + ex.Message);
                 return View("Index");
             }

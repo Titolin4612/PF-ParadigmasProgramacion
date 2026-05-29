@@ -15,12 +15,12 @@ namespace CL_ProyectoFinalPOO.Interfaces
         (Carta carta, int puntos) CogerCarta();
         void PasarTurno();
         Jugador FinalizarJuego();
-        public int TotalCartasEnMazo();
         List<Jugador> ObtenerJugadores();
         List<string> ObtenerHistorial();
         bool JuegoTerminado();
         void ComenzarNuevaRondaConJugadoresActuales();
         void ReiniciarJuego();
-        Juego ObtenerInstanciaJuegoActual();
+        int TotalCartasEnMazo();
+        Juego? ObtenerInstanciaJuegoActual();
     }
 }

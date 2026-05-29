@@ -8,15 +8,10 @@ using System.Diagnostics;
 
 namespace MVC_ProyectoFinalPOO.Services
 {
-    public class JuegoService : IJuegoService
+    public class JuegoService(HomeService homeService) : IJuegoService
     {
-        private Juego _juegoActual;
-        private readonly HomeService _homeService;
-
-        public JuegoService(HomeService homeService)
-        {
-            _homeService = homeService;
-        }
+        private Juego _juegoActual = null!;
+        private readonly HomeService _homeService = homeService;
 
         public Juego ObtenerInstanciaJuegoActual()
         {
@@ -95,9 +90,6 @@ namespace MVC_ProyectoFinalPOO.Services
                     jugadorActual.Puntos += puntosObtenidos;
                     jugadorActual.L_cartas_jugador.Add(carta);
                 }
-                else
-                {
-                }
 
                 _juegoActual.ValidarYDispararEventos(null); 
                 return (carta, puntosObtenidos);
@@ -122,9 +114,6 @@ namespace MVC_ProyectoFinalPOO.Services
                 if (!JuegoTerminado() && _juegoActual.Jugadores != null && _juegoActual.Jugadores.Any())
                 {
                     _juegoActual.PasarTurno();
-                }
-                else
-                {
                 }
             }
             catch (Exception ex)
@@ -191,7 +180,7 @@ namespace MVC_ProyectoFinalPOO.Services
                 bool terminado = mazosAgotados || pocosJugadores;
                 return terminado;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return true;
             }
@@ -209,7 +198,7 @@ namespace MVC_ProyectoFinalPOO.Services
                        _juegoActual.L_cartas_castigo.Count +
                        _juegoActual.L_cartas_premio.Count;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return 0;
             }

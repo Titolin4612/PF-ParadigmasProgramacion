@@ -1,29 +1,39 @@
-﻿
-using MVC_ProyectoFinalPOO.Models; 
-using CL_ProyectoFinalPOO.Clases; 
+﻿using MVC_ProyectoFinalPOO.Models;
+using CL_ProyectoFinalPOO.Clases;
 using System.Collections.Generic;
 using System.Linq;
 using System.Diagnostics;
-using CL_ProyectoFinalPOO.Interfaces; 
+using CL_ProyectoFinalPOO.Interfaces;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Configuration;
+using MVC_ProyectoFinalPOO.Data;
+using MVC_ProyectoFinalPOO.Entities;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
+using Microsoft.IdentityModel.Tokens;
 
 namespace MVC_ProyectoFinalPOO.Services
 {
     public class HomeService : IHomeService
     {
-
+        private readonly AppDbContext _dbContext;
+        private readonly ILogger<HomeService> _logger;
+        private readonly IConfiguration _configuration;
         private List<Jugador> _listaJugadoresConfigActual = new List<Jugador>();
-        private static Dictionary<string, string> _usuariosRegistrados = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+
+        public HomeService(AppDbContext dbContext, ILogger<HomeService> logger, IConfiguration configuration)
+        {
+            _dbContext = dbContext;
+            _logger = logger;
+            _configuration = configuration;
+        }
 
         public void LimpiarConfiguracionJugadores()
         {
-            try
-            {
-                _listaJugadoresConfigActual.Clear();
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine($"HomeService: Error al limpiar configuración: {ex.Message}");
-            }
+            _listaJugadoresConfigActual.Clear();
+            _logger.LogInformation("Configuración de jugadores limpiada");
         }
 
         public bool BuscarUsuario(string usuario, string contraseña = null)
@@ -33,15 +43,18 @@ namespace MVC_ProyectoFinalPOO.Services
                 return false;
             }
 
-            if (_usuariosRegistrados.ContainsKey(usuario))
+            var user = _dbContext.Usuarios.FirstOrDefault(u => u.Nickname.ToLower() == usuario.ToLower());
+
+            if (user == null)
             {
-                if (contraseña != null)
-                {
-                    return _usuariosRegistrados[usuario] == contraseña;
-                }
-                return true;
+                return false;
             }
-            return false;
+
+            if (contraseña != null)
+            {
+                return BCrypt.Net.BCrypt.Verify(contraseña, user.PasswordHash);
+            }
+            return true;
         }
 
         public void RegistrarUsuario(string usuario, string contraseña)
@@ -54,19 +67,64 @@ namespace MVC_ProyectoFinalPOO.Services
             {
                 throw new ArgumentException("La contraseña debe tener al menos 6 caracteres.");
             }
-            if (_usuariosRegistrados.ContainsKey(usuario))
+            if (_dbContext.Usuarios.Any(u => u.Nickname.ToLower() == usuario.ToLower()))
             {
                 throw new InvalidOperationException($"El usuario '{usuario}' ya está registrado.");
             }
 
-            _usuariosRegistrados.Add(usuario, contraseña);
+            var passwordHash = BCrypt.Net.BCrypt.HashPassword(contraseña);
+
+            var usuarioNuevo = new Usuario
+            {
+                Nickname = usuario,
+                PasswordHash = passwordHash,
+                FechaRegistro = DateTime.UtcNow,
+                Estadistica = new Estadistica()
+            };
+
+            _dbContext.Usuarios.Add(usuarioNuevo);
+            _dbContext.SaveChanges();
+
+            _logger.LogInformation("Usuario '{Usuario}' registrado exitosamente", usuario);
+        }
+
+        public string GenerarToken(string usuario)
+        {
+            var user = _dbContext.Usuarios.FirstOrDefault(u => u.Nickname.ToLower() == usuario.ToLower());
+            if (user == null)
+            {
+                throw new InvalidOperationException("Usuario no encontrado");
+            }
+
+            user.UltimoLogin = DateTime.UtcNow;
+            _dbContext.SaveChanges();
+
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]!));
+            var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+            var claims = new[]
+            {
+                new Claim(ClaimTypes.Name, user.Nickname),
+                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+            };
+
+            var token = new JwtSecurityToken(
+                issuer: _configuration["Jwt:Issuer"],
+                audience: _configuration["Jwt:Audience"],
+                claims: claims,
+                expires: DateTime.UtcNow.AddMinutes(int.Parse(_configuration["Jwt:ExpiryMinutes"] ?? "60")),
+                signingCredentials: credentials
+            );
+
+            return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
         public void AgregarJugadorConfigurado(string nickname, int apuesta)
         {
             if (string.IsNullOrWhiteSpace(nickname) || nickname.Length < 4)
                 throw new ArgumentException("El Nickname es inválido. Debe tener al menos 4 caracteres.");
-            if (apuesta < 10 || apuesta > 1000) 
+            if (apuesta < 10 || apuesta > 1000)
                 throw new ArgumentException("La apuesta debe estar entre 10 y 1000 puntos.");
 
             Juego juegoReglas = new Juego();
@@ -82,9 +140,11 @@ namespace MVC_ProyectoFinalPOO.Services
                 var nuevoJugador = new Jugador(nickname, apuesta, juegoTemporalParaConstructor);
 
                 _listaJugadoresConfigActual.Add(nuevoJugador);
+                _logger.LogInformation("Jugador '{Nickname}' agregado a la configuración", nickname);
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex, "Error al agregar jugador '{Nickname}'", nickname);
                 throw new Exception("Error interno del servicio al intentar agregar el jugador.", ex);
             }
         }
@@ -94,16 +154,11 @@ namespace MVC_ProyectoFinalPOO.Services
             if (_listaJugadoresConfigActual.Count == 0)
                 throw new InvalidOperationException("No hay jugadores en la configuración actual para eliminar.");
 
-            try
-            {
-                var jugadorEliminado = _listaJugadoresConfigActual.Last();
-                _listaJugadoresConfigActual.RemoveAt(_listaJugadoresConfigActual.Count - 1);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Error interno del servicio al intentar eliminar el último jugador.", ex);
-            }
+            var jugadorEliminado = _listaJugadoresConfigActual.Last();
+            _listaJugadoresConfigActual.RemoveAt(_listaJugadoresConfigActual.Count - 1);
+            _logger.LogInformation("Último jugador '{Nickname}' eliminado de la configuración", jugadorEliminado.Nickname);
         }
+
         public List<Jugador> ValidarConfiguracionJugadoresParaJuego()
         {
             Juego juegoReglas = new Juego();
@@ -121,14 +176,7 @@ namespace MVC_ProyectoFinalPOO.Services
 
         public List<Jugador> ObtenerJugadoresConfigurados()
         {
-            try
-            {
-                return new List<Jugador>(_listaJugadoresConfigActual);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Error interno del servicio al intentar obtener la lista de jugadores configurados.", ex);
-            }
+            return new List<Jugador>(_listaJugadoresConfigActual);
         }
     }
 }

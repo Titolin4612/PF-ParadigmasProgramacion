@@ -43,32 +43,15 @@ namespace CL_ProyectoFinalPOO.Clases
 
         public override int ObtenerPuntos()
         {
-            int puntos;
-
-            switch (RarezaCarta)
+            return RarezaCarta switch
             {
-                case Rareza.Comun:
-                    puntos = RaComun;
-                    break;
-                case Rareza.Especial:
-                    puntos = RaEspecial;
-                    break;
-                case Rareza.Rara:
-                    puntos = RaRara;
-                    break;
-                case Rareza.Epica:
-                    puntos = RaEpica;
-                    break;
-                case Rareza.Legendaria:
-                    puntos = RaLegendaria;
-                    break;
-                default:
-                    puntos = 0;
-                    break;
-            }
-
-            return puntos;
-
+                Rareza.Comun => RaComun,
+                Rareza.Especial => RaEspecial,
+                Rareza.Rara => RaRara,
+                Rareza.Epica => RaEpica,
+                Rareza.Legendaria => RaLegendaria,
+                _ => 0
+            };
         }
 
     }

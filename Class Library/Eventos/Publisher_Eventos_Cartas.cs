@@ -9,10 +9,10 @@ namespace CL_ProyectoFinalPOO.Eventos
         public delegate void DelegadoEventoGeneral();
         public delegate void DelegadoEventoParametroJugador2(Jugador jugador, Carta carta);
 
-        public event DelegadoEventoGeneral AgotadasPremio;
-        public event DelegadoEventoGeneral AgotadasCastigo;
-        public event DelegadoEventoGeneral AgotadasResto;
-        public event DelegadoEventoParametroJugador2 CartasIniciales;
+        public event DelegadoEventoGeneral? AgotadasPremio;
+        public event DelegadoEventoGeneral? AgotadasCastigo;
+        public event DelegadoEventoGeneral? AgotadasResto;
+        public event DelegadoEventoParametroJugador2? CartasIniciales;
 
         public void NotificarAgotadasPremio()
         {

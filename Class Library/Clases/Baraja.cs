@@ -3,17 +3,18 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
+using System.Threading.Tasks;
 
 namespace CL_ProyectoFinalPOO.Clases
 {
     public class Baraja
     {
-        public List<CartaJuego> CartasJuego { get; private set; }
-        public List<CartaPremio> CartasPremio { get; private set; }
-        public List<CartaCastigo> CartasCastigo { get; private set; }
+        public List<CartaJuego> CartasJuego { get; private set; } = null!;
+        public List<CartaPremio> CartasPremio { get; private set; } = null!;
+        public List<CartaCastigo> CartasCastigo { get; private set; } = null!;
 
-        public static readonly string _rutaArchivoCartas = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "cartas.json");
-        public static readonly string _rutaBaseImagenesCartas = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "cartas\\");
+        public static readonly string _rutaArchivoCartas = Path.Combine(AppContext.BaseDirectory, "cartas.json");
+        public static readonly string _rutaBaseImagenesCartas = Path.Combine(AppContext.BaseDirectory, "cartas\\");
         public const string _rutaBaseImagenes = "images/cartas/";
 
         public Baraja()
@@ -25,6 +26,11 @@ namespace CL_ProyectoFinalPOO.Clases
 
         public virtual void CargarCartas(string rutaArchivo = null)
         {
+            CargarCartasAsync(rutaArchivo).GetAwaiter().GetResult();
+        }
+
+        public virtual async Task CargarCartasAsync(string rutaArchivo = null)
+        {
             rutaArchivo = rutaArchivo ?? _rutaArchivoCartas;
 
             CartasJuego.Clear();
@@ -33,7 +39,7 @@ namespace CL_ProyectoFinalPOO.Clases
 
             try
             {
-                string json = File.ReadAllText(rutaArchivo);
+                string json = await File.ReadAllTextAsync(rutaArchivo);
                 var cartas = JsonSerializer.Deserialize<List<Dictionary<string, string>>>(json);
 
                 foreach (var carta in cartas)

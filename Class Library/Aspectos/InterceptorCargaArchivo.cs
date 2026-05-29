@@ -5,34 +5,37 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Castle.DynamicProxy;
+using Microsoft.Extensions.Logging;
 
 namespace CL_ProyectoFinalPOO.Aspectos
 {
     public class InterceptorCargaArchivo : IInterceptor
     {
+        private readonly ILogger<InterceptorCargaArchivo> _logger;
+
+        public InterceptorCargaArchivo(ILogger<InterceptorCargaArchivo> logger)
+        {
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+        }
         public void Intercept(IInvocation invocation)
         {
             if (invocation.Method.Name == "CargarCartas" && invocation.Arguments.Length > 0 && invocation.Arguments[0] is string rutaArchivo)
             {
-                // Archivo existe
                 if (!File.Exists(rutaArchivo))
                 {
                     throw new FileNotFoundException($"Error de validación: El archivo '{rutaArchivo}' no se encontró.");
                 }
 
-                // Extensión correcta
                 if (Path.GetExtension(rutaArchivo).ToLower() != ".json")
                 {
                     throw new ArgumentException($"Error de validación: El archivo '{rutaArchivo}' debe ser un JSON válido (.json).");
                 }
 
-                // Archivo no vacío
                 if (new FileInfo(rutaArchivo).Length == 0)
                 {
                     throw new InvalidOperationException($"Error de validación: El archivo '{rutaArchivo}' está vacío.");
                 }
 
-                // Contenido JSON válido y campos obligatorios
                 try
                 {
                     string contenido = File.ReadAllText(rutaArchivo);
@@ -76,7 +79,7 @@ namespace CL_ProyectoFinalPOO.Aspectos
                 }
 
                 invocation.Proceed();
-                Console.WriteLine($"Éxito: Archivo {rutaArchivo} validado y cargado correctamente.");
+                _logger.LogInformation("Exito: Archivo {RutaArchivo} validado y cargado correctamente.", rutaArchivo);
             }
             else
             {

@@ -51,4 +51,93 @@
 
 * Los botones ya están bien pero aun no son funcionales, falta hacer el controller
 
-* Corregí la NavBar que estaba terriblemente fea  
+* Corregí la NavBar que estaba terriblemente fea
+
+---
+
+## Cambios Comprehensivos (Mayo 2026) - opencode AI
+
+### Fase 2: Testing, Null Safety y Logging
+
+**Tests Unitarios:**
+- Creados 7 archivos de test con 70+ tests (xUnit + Moq)
+- CartaJuegoTests, CartaPremioTests, CartaCastigoTests, JugadorTests, JuegoTests, BarajaTests, BarajaAsyncTests
+
+**Null Safety:**
+- 36+ warnings CS8618/CS8602 corregidos con `= null!` y `?` nullable
+- Eventos Publisher con `event EventHandler<T>?`
+
+**Logging:**
+- Console.WriteLine → ILogger en interceptores
+- Microsoft.Extensions.Logging.Abstractions añadido
+
+**Code Quality:**
+- Removido `public` redundante en IJuegoService
+- Removido método duplicado TotalCartasEnMazo
+- Removidos bloques else vacíos en JuegoService
+- Variables `ex` no usadas改为 discard pattern
+
+### Fase 3: Modernización .NET 10
+
+**.NET Upgrade:**
+- net8.0 → net10.0 en 3 proyectos
+- AllowMissingPrunePackageData=true para ASP.NET Core 10
+
+**Async/Await:**
+- Baraja.CargarCartasAsync() con File.ReadAllTextAsync
+- AppDomain.CurrentDomain.BaseDirectory → AppContext.BaseDirectory
+
+**Thread-Safety:**
+- Random rng instance → Random.Shared (7 usages)
+
+**C# 12 Modernizations:**
+- Primary constructors en 5 classes (services + controllers)
+- Switch expressions en CartaJuego.ObtenerPuntos() y Juego.AplicarEfectoCartas()
+- Record CartaRevelada para DTO en JuegoController
+
+**Cleanup:**
+- Removido using Microsoft.VisualBasic en Juego.cs
+
+**DI Fix:**
+- ReglasController: JuegoService concreto → IJuegoService interfaz
+
+### Fase 4: Seguridad, Persistencia y Deployment
+
+**Seguridad:**
+- BCrypt.Net-Next para password hashing
+- JWT Bearer authentication con tokens
+- Session hardening (SecurePolicy, DataProtection keys)
+
+**Persistencia (EF Core + SQLite):**
+- AppDbContext con 3 entidades: Usuario, Partida, Estadistica
+- Unique index en Nickname
+- Relaciones 1:1 (Usuario-Estadistica) y 1:N (Usuario-Partidas)
+
+**Deployment:**
+- Dockerfile multi-stage (SDK 10.0 → ASPNET 10.0, puerto 8080)
+- docker-compose.yml con health checks
+- GitHub Actions CI/CD (build, docker push, code quality)
+
+**Observabilidad:**
+- Serilog structured logging (console + rolling file)
+- Health endpoints: /health, /health/ready
+- Debug.WriteLine → ILogger en 8 lugares
+
+**Features:**
+- LeaderboardService con GetTopPlayersAsync, GetPlayerRankAsync, ActualizarEstadisticasAsync
+- Record LeaderboardEntry
+
+**Performance:**
+- IMemoryCache con 30min TTL para baraja
+- Cache keys: CartasJuego, CartasPremio, CartasCastigo
+
+**NuGet Packages Añadidos:**
+- BCrypt.Net-Next 4.0.3
+- Microsoft.AspNetCore.Authentication.JwtBearer 10.0.0
+- Microsoft.EntityFrameworkCore.Sqlite 10.0.0
+- Serilog.AspNetCore 8.0.0, Serilog.Sinks.Console 6.0.0
+- Serilog.Sinks.File 6.0.0, AspNetCore.HealthChecks.Sqlite 8.0.0
+
+---
+
+**Ver DOCUMENTATION_COMPLETE.md para documentación detallada de todos los cambios.**

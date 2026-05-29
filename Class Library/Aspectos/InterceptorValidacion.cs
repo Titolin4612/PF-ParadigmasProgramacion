@@ -1,20 +1,23 @@
 ﻿using Castle.DynamicProxy;
-using CL_ProyectoFinalPOO.Clases; // Para Jugador, Juego
-using CL_ProyectoFinalPOO.Eventos; // Para Publisher_Eventos_Juego
-using CL_ProyectoFinalPOO.Interfaces; // Para IJuegoService
+using CL_ProyectoFinalPOO.Clases;
+using CL_ProyectoFinalPOO.Eventos;
+using CL_ProyectoFinalPOO.Interfaces;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Logging;
 using System;
-using System.Linq; // Para Any()
+using System.Linq;
 
 namespace CL_ProyectoFinalPOO.Aspectos
 {
     public class InterceptorValidacion : IInterceptor
     {
         private readonly IHttpContextAccessor _httpContextAccessor;
+        private readonly ILogger<InterceptorValidacion> _logger;
 
-        public InterceptorValidacion(IHttpContextAccessor httpContextAccessor)
+        public InterceptorValidacion(IHttpContextAccessor httpContextAccessor, ILogger<InterceptorValidacion> logger)
         {
-            _httpContextAccessor = httpContextAccessor ?? throw new Exception(nameof(httpContextAccessor));
+            _httpContextAccessor = httpContextAccessor ?? throw new ArgumentNullException(nameof(httpContextAccessor));
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
         public void Intercept(IInvocation invocation)
@@ -30,26 +33,24 @@ namespace CL_ProyectoFinalPOO.Aspectos
 
                 if (juegoService == null)
                 {
-                    // Esto no debería ocurrir si el proxy se creó correctamente con CreateInterfaceProxyWithTarget
-                    Console.WriteLine("Error en ValidacionGuardadoInterceptor: invocation.InvocationTarget no es IJuegoService.");
+                    _logger.LogWarning("Error: invocation.InvocationTarget no es IJuegoService.");
                     return;
                 }
 
-                Juego juegoActual = juegoService.ObtenerInstanciaJuegoActual(); // Usamos el método de la interfaz
+                Juego? juegoActual = juegoService.ObtenerInstanciaJuegoActual();
 
                 if (juegoActual == null)
                 {
-                    Console.WriteLine("Error en ValidacionGuardadoInterceptor: No se pudo obtener juegoActual desde IJuegoService.");
+                    _logger.LogWarning("Error: No se pudo obtener juegoActual desde IJuegoService.");
                     return;
                 }
 
                 var publisher = juegoActual.PublicadorJuego;
-                var ganador = invocation.ReturnValue as Jugador; // El ganador es retornado por FinalizarJuego
+                var ganador = invocation.ReturnValue as Jugador;
 
                 if (publisher == null)
                 {
-                    // Esto tampoco debería ocurrir si juegoActual está bien inicializado
-                    Console.WriteLine("Error en ValidacionGuardadoInterceptor: No se pudo obtener publisher del juegoActual.");
+                    _logger.LogWarning("Error: No se pudo obtener publisher del juegoActual.");
                     return;
                 }
 

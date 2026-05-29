@@ -8,8 +8,8 @@ namespace CL_ProyectoFinalPOO.Eventos
     {
         public delegate void DelegadoEventoParametroJugador(Jugador jugador);
 
-        public event DelegadoEventoParametroJugador SinPuntos;
-        public event DelegadoEventoParametroJugador CambioLider;
+        public event DelegadoEventoParametroJugador? SinPuntos;
+        public event DelegadoEventoParametroJugador? CambioLider;
 
         public void NotificarJugadorSinPuntos(Jugador jugador)
         {
@@ -17,9 +17,8 @@ namespace CL_ProyectoFinalPOO.Eventos
         }
 
         public void NotificarCambioLider(Jugador nuevoLider, Juego juego)
-        {
-            CambioLider?.Invoke(nuevoLider);
-            juego.NicknameLiderAnterior = nuevoLider.Nickname;
-        }
+{
+    CambioLider?.Invoke(nuevoLider);
+}
     }
 }

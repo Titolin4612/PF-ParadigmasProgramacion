@@ -16,5 +16,6 @@ namespace CL_ProyectoFinalPOO.Interfaces
         void LimpiarConfiguracionJugadores();
         bool BuscarUsuario(string usuario, string contraseña = null);
         void RegistrarUsuario(string usuario, string contraseña);
+        string GenerarToken(string usuario);
     }
 }

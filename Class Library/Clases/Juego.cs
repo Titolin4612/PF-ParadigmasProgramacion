@@ -8,33 +8,25 @@ using System.Text;
 using System.Threading.Tasks;
 using CL_ProyectoFinalPOO.Eventos;
 using CL_ProyectoFinalPOO.Interfaces;
-using Microsoft.VisualBasic;
 
 namespace CL_ProyectoFinalPOO.Clases
 {
     public class Juego : IJuego
     {
-        // Listas
-        private List<Jugador> jugadores;
-        private List<CartaPremio> l_cartas_premio;
-        private List<CartaCastigo> l_cartas_castigo;
-        private List<CartaJuego> l_cartas_resto;
+        private List<Jugador> jugadores = null!;
+        private List<CartaPremio> l_cartas_premio = null!;
+        private List<CartaCastigo> l_cartas_castigo = null!;
+        private List<CartaJuego> l_cartas_resto = null!;
 
-        // Atributos
         private int indiceJugadorActual;
-        private string nicknameLiderAnterior = null;
+        private string? nicknameLiderAnterior;
 
-        // Random
-        private static Random rng = new Random();
+        public Baraja baraja { get; set; } = null!;
 
-        // Propiedad baraja
-        public Baraja baraja { get; set; }
-
-        // Instancia de clases publicadoras
-        private Publisher_Eventos_Juego publicadorJuego;
-        private Publisher_Eventos_Jugador publicadorJugador;
-        private Publisher_Eventos_Cartas publicadorCartas;
-        private Historial historial;
+        private Publisher_Eventos_Juego publicadorJuego = null!;
+        private Publisher_Eventos_Jugador publicadorJugador = null!;
+        private Publisher_Eventos_Cartas publicadorCartas = null!;
+        private Historial historial = null!;
 
         // Atributos de reglas de negocio
         private int cartasPorJugador = 3;
@@ -105,7 +97,7 @@ namespace CL_ProyectoFinalPOO.Clases
                 while (n > 1)
                 {
                     n--;
-                    int k = rng.Next(n + 1);
+                    int k = Random.Shared.Next(n + 1);
                     (lista[n], lista[k]) = (lista[k], lista[n]);
                 }
             }
@@ -149,38 +141,38 @@ namespace CL_ProyectoFinalPOO.Clases
                 double probCartaCastigo = (double)L_cartas_castigo.Count / totalCartas;
 
                 Carta carta = null;
-                double random = rng.NextDouble();
+                double random = Random.Shared.NextDouble();
 
                 if (totalCartas == 0) return null; 
 
                 if (random < probCartaJuego && L_cartas_resto.Count > 0)
                 {
-                    int index = rng.Next(L_cartas_resto.Count);
+                    int index = Random.Shared.Next(L_cartas_resto.Count);
                     carta = L_cartas_resto[index];
                     L_cartas_resto.RemoveAt(index);
                 }
                 else if (random < probCartaJuego + probCartaCastigo && L_cartas_castigo.Count > 0)
                 {
-                    int index = rng.Next(L_cartas_castigo.Count);
+                    int index = Random.Shared.Next(L_cartas_castigo.Count);
                     carta = L_cartas_castigo[index];
                     L_cartas_castigo.RemoveAt(index);
                 }
                 else if (L_cartas_premio.Count > 0) // Por si las otras están vacías
                 {
-                    int index = rng.Next(L_cartas_premio.Count);
+                    int index = Random.Shared.Next(L_cartas_premio.Count);
                     carta = L_cartas_premio[index];
                     L_cartas_premio.RemoveAt(index);
                 }
 
                 else if (L_cartas_resto.Count > 0)
                 {
-                    int index = rng.Next(L_cartas_resto.Count);
+                    int index = Random.Shared.Next(L_cartas_resto.Count);
                     carta = L_cartas_resto[index];
                     L_cartas_resto.RemoveAt(index);
                 }
                 else if (L_cartas_castigo.Count > 0)
                 {
-                    int index = rng.Next(L_cartas_castigo.Count);
+                    int index = Random.Shared.Next(L_cartas_castigo.Count);
                     carta = L_cartas_castigo[index];
                     L_cartas_castigo.RemoveAt(index);
                 }
@@ -330,20 +322,13 @@ namespace CL_ProyectoFinalPOO.Clases
 
                 int puntos;
 
-                switch (carta)
+                puntos = carta switch
                 {
-                    case CartaJuego juego:
-                        puntos = juego.ObtenerPuntos();
-                        break;
-                    case CartaPremio premio:
-                        puntos = premio.ObtenerPuntos();
-                        break;
-                    case CartaCastigo castigo:
-                        puntos = castigo.ObtenerPuntos();
-                        break;
-                    default:
-                        return 0; 
-                }
+                    CartaJuego juego => juego.ObtenerPuntos(),
+                    CartaPremio premio => premio.ObtenerPuntos(),
+                    CartaCastigo castigo => castigo.ObtenerPuntos(),
+                    _ => 0
+                };
 
                 return puntos;
             }

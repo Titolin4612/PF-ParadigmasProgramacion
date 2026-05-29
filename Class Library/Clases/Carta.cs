@@ -9,11 +9,10 @@ namespace CL_ProyectoFinalPOO.Clases
 {
     public abstract class Carta : IObtenerPuntos
     {
-        // Atributos
-        public string _nombre;
-        private string _mitologia;
-        private string _descripcion;
-        private string _imagenUrl;
+        private string _nombre = null!;
+        private string _mitologia = null!;
+        private string _descripcion = null!;
+        private string _imagenUrl = null!;
 
         // Accesores
         public string Nombre

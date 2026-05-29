@@ -2,28 +2,33 @@
 using CL_ProyectoFinalPOO.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace MVC_ProyectoFinalPOO.Services
 {
-    public class ReglasService : IReglasService 
+    public class ReglasService : IReglasService
     {
-        private readonly Baraja _baraja; 
+        private readonly Baraja _baraja;
+        private readonly IMemoryCache _cache;
+        private static readonly TimeSpan CacheDuration = TimeSpan.FromMinutes(30);
 
-        public ReglasService(Baraja baraja)
+        public ReglasService(Baraja baraja, IMemoryCache cache)
         {
             _baraja = baraja;
+            _cache = cache;
         }
 
         public List<CartaJuego> ObtenerCartasJuego()
         {
             try
             {
-
-                _baraja.CargarCartas(Baraja._rutaArchivoCartas);
-
-                return _baraja.CartasJuego;
+                return _cache.GetOrCreate("CartasJuego", entry =>
+                {
+                    entry.AbsoluteExpirationRelativeToNow = CacheDuration;
+                    _baraja.CargarCartas(Baraja._rutaArchivoCartas);
+                    return _baraja.CartasJuego;
+                }) ?? new List<CartaJuego>();
             }
             catch (Exception ex)
             {
@@ -35,9 +40,12 @@ namespace MVC_ProyectoFinalPOO.Services
         {
             try
             {
-                _baraja.CargarCartas(Baraja._rutaArchivoCartas);
-
-                return _baraja.CartasPremio;
+                return _cache.GetOrCreate("CartasPremio", entry =>
+                {
+                    entry.AbsoluteExpirationRelativeToNow = CacheDuration;
+                    _baraja.CargarCartas(Baraja._rutaArchivoCartas);
+                    return _baraja.CartasPremio;
+                }) ?? new List<CartaPremio>();
             }
             catch (Exception ex)
             {
@@ -49,8 +57,12 @@ namespace MVC_ProyectoFinalPOO.Services
         {
             try
             {
-                _baraja.CargarCartas(Baraja._rutaArchivoCartas);
-                return _baraja.CartasCastigo;
+                return _cache.GetOrCreate("CartasCastigo", entry =>
+                {
+                    entry.AbsoluteExpirationRelativeToNow = CacheDuration;
+                    _baraja.CargarCartas(Baraja._rutaArchivoCartas);
+                    return _baraja.CartasCastigo;
+                }) ?? new List<CartaCastigo>();
             }
             catch (Exception ex)
             {

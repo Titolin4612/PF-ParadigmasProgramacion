@@ -6,16 +6,10 @@ using CL_ProyectoFinalPOO.Interfaces;
 
 namespace MVC_ProyectoFinalPOO.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController(IHomeService homeService, IJuegoService juegoService) : Controller
     {
-        private readonly IHomeService _homeService;
-        private readonly IJuegoService _juegoService;
-
-        public HomeController(IHomeService homeService, IJuegoService juegoService)
-        {
-            _homeService = homeService;
-            _juegoService = juegoService;
-        }
+        private readonly IHomeService _homeService = homeService;
+        private readonly IJuegoService _juegoService = juegoService;
 
         public IActionResult Index()
         {
@@ -39,7 +33,7 @@ namespace MVC_ProyectoFinalPOO.Controllers
         {
             if (!SesionActiva())
             {
-                TempData["ErrorEnLogin"] = "Debes iniciar sesión para agregar un jugador.";
+                TempData["ErrorEnLogin"] = "Debes iniciar sesiÃ³n para agregar un jugador.";
                 return RedirectToAction("Login");
             }
 
@@ -61,7 +55,7 @@ namespace MVC_ProyectoFinalPOO.Controllers
         {
             if (!SesionActiva())
             {
-                TempData["ErrorEnLogin"] = "Debes iniciar sesión para eliminar un jugador.";
+                TempData["ErrorEnLogin"] = "Debes iniciar sesiÃ³n para eliminar un jugador.";
                 return RedirectToAction("Login");
             }
 
@@ -83,7 +77,7 @@ namespace MVC_ProyectoFinalPOO.Controllers
         {
             if (!SesionActiva())
             {
-                TempData["ErrorEnLogin"] = "Debes iniciar sesión para jugar.";
+                TempData["ErrorEnLogin"] = "Debes iniciar sesiÃ³n para jugar.";
                 return RedirectToAction("Login");
             }
 
@@ -109,30 +103,32 @@ namespace MVC_ProyectoFinalPOO.Controllers
 
         [HttpPost]
         
-        public IActionResult Login(string nickname, string contraseña)
+        public IActionResult Login(string nickname, string contraseÃ±a)
         {
             if (string.IsNullOrWhiteSpace(nickname) || nickname.Length < 4 ||
-                string.IsNullOrWhiteSpace(contraseña) || contraseña.Length < 6)
+                string.IsNullOrWhiteSpace(contraseÃ±a) || contraseÃ±a.Length < 6)
             {
-                ViewBag.Error = "Credenciales inválidas.";
+                ViewBag.Error = "Credenciales invÃ¡lidas.";
                 return View();
             }
 
             if (!_homeService.BuscarUsuario(nickname))
             {
-                TempData["ErrorEnRegistro"] = $"El usuario '{nickname}' no está registrado. Regístrate.";
+                TempData["ErrorEnRegistro"] = $"El usuario '{nickname}' no estÃ¡ registrado. RegÃ­strate.";
                 TempData["PerfilNickname"] = nickname;
                 return RedirectToAction("Signup");
             }
 
-            if (!_homeService.BuscarUsuario(nickname, contraseña))
+            if (!_homeService.BuscarUsuario(nickname, contraseÃ±a))
             {
-                ViewBag.Error = "Nickname o contraseña incorrectos.";
+                ViewBag.Error = "Nickname o contraseÃ±a incorrectos.";
                 return View();
             }
 
             HttpContext.Session.SetString("UsuarioSesion", nickname);
-            TempData["MensajeExito"] = $"¡Bienvenido {nickname}!";
+            var token = _homeService.GenerarToken(nickname);
+            HttpContext.Session.SetString("JwtToken", token);
+            TempData["MensajeExito"] = $"Â¡Bienvenido {nickname}!";
             return RedirectToAction("Index");
         }
 
@@ -146,27 +142,29 @@ namespace MVC_ProyectoFinalPOO.Controllers
 
         [HttpPost]
         
-        public IActionResult Signup(string nickname, string contraseña)
+        public IActionResult Signup(string nickname, string contraseÃ±a)
         {
             if (string.IsNullOrWhiteSpace(nickname) || nickname.Length < 4 ||
-                string.IsNullOrWhiteSpace(contraseña) || contraseña.Length < 6)
+                string.IsNullOrWhiteSpace(contraseÃ±a) || contraseÃ±a.Length < 6)
             {
-                TempData["ErrorEnSignup"] = "El nickname debe tener mínimo 4 caracteres y la contraseña 6.";
+                TempData["ErrorEnSignup"] = "El nickname debe tener mÃ­nimo 4 caracteres y la contraseÃ±a 6.";
                 TempData["PerfilNickname"] = nickname;
                 return RedirectToAction("Signup");
             }
 
             if (_homeService.BuscarUsuario(nickname))
             {
-                TempData["ErrorEnSignup"] = $"El nickname '{nickname}' ya está registrado.";
+                TempData["ErrorEnSignup"] = $"El nickname '{nickname}' ya estÃ¡ registrado.";
                 return RedirectToAction("Signup");
             }
 
             try
             {
-                _homeService.RegistrarUsuario(nickname, contraseña);
+                _homeService.RegistrarUsuario(nickname, contraseÃ±a);
                 HttpContext.Session.SetString("UsuarioSesion", nickname);
-                TempData["MensajeExito"] = $"¡Cuenta creada! Bienvenido, {nickname}.";
+                var token = _homeService.GenerarToken(nickname);
+                HttpContext.Session.SetString("JwtToken", token);
+                TempData["MensajeExito"] = $"Â¡Cuenta creada! Bienvenido, {nickname}.";
                 return RedirectToAction("Index");
             }
             catch (Exception ex)
@@ -182,7 +180,7 @@ namespace MVC_ProyectoFinalPOO.Controllers
         public IActionResult Logout()
         {
             HttpContext.Session.Clear();
-            TempData["MensajeExito"] = "Has cerrado sesión correctamente.";
+            TempData["MensajeExito"] = "Has cerrado sesiÃ³n correctamente.";
             return RedirectToAction("Login");
         }
 
@@ -192,7 +190,7 @@ namespace MVC_ProyectoFinalPOO.Controllers
         {
             if (!SesionActiva())
             {
-                TempData["ErrorEnLogin"] = "Debes iniciar sesión para ver las reglas.";
+                TempData["ErrorEnLogin"] = "Debes iniciar sesiÃ³n para ver las reglas.";
                 return RedirectToAction("Login");
             }
             return View();

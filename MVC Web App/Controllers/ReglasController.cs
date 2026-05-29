@@ -1,20 +1,16 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MVC_ProyectoFinalPOO.Services;
+using CL_ProyectoFinalPOO.Interfaces;
 using System;
-using System.Diagnostics;
+using Microsoft.Extensions.Logging;
 
 namespace MVC_ProyectoFinalPOO.Controllers
 {
-    public class ReglasController : Controller
+    public class ReglasController(ReglasService reglasService, IJuegoService juegoService, ILogger<ReglasController> logger) : Controller
     {
-        private readonly ReglasService _reglasService;
-        private readonly JuegoService _juegoService; 
-
-        public ReglasController(ReglasService reglasService, JuegoService juegoService)
-        {
-            _reglasService = reglasService;
-            _juegoService = juegoService;
-        }
+        private readonly ReglasService _reglasService = reglasService;
+        private readonly IJuegoService _juegoService = juegoService;
+        private readonly ILogger<ReglasController> _logger = logger;
 
         public IActionResult BarajaCatalogo()
         {
@@ -29,13 +25,12 @@ namespace MVC_ProyectoFinalPOO.Controllers
             }
             catch (Exception ex)
             {
-                Debug.WriteLine($"ReglasController.BarajaCatalogo: Error - {ex.Message}");
+                _logger.LogError(ex, "Error al cargar el catálogo de cartas");
                 ViewBag.Error = "Error al cargar el catálogo de cartas: " + ex.Message;
-                ViewBag.HayJuegoActivo = _juegoService.EstaJuegoActivo(); 
-                return View(); 
+                ViewBag.HayJuegoActivo = _juegoService.EstaJuegoActivo();
+                return View();
             }
         }
-
 
         public IActionResult Index()
         {

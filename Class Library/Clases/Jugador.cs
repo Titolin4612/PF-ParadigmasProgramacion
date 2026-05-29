@@ -9,20 +9,23 @@ namespace CL_ProyectoFinalPOO.Clases
 {
     public class Jugador : IJugador
     {
-        // Atributos
-        private string _nickname;
+        private string _nickname = null!;
         private int _puntos;
         private int _apuestaInicial;
-        private List<Carta> l_cartas_jugador;
+        private List<Carta> l_cartas_jugador = null!;
         private bool perdio = false;
-        public Juego Juego { get; set; }
+        public Juego? Juego { get; set; }
 
         // Accesores
         public string Nickname
         {
             get => _nickname;
-            set => _nickname = value = !(string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value)) || !(value.Length < 4) ? value
-                : throw new Exception("Error, el nickname es invalido.");
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value) || value.Length < 4)
+                    throw new Exception("Error, el nickname es invalido.");
+                _nickname = value;
+            }
         }
 
         public int Puntos
