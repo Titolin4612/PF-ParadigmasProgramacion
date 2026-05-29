@@ -97,7 +97,6 @@ namespace MVC_ProyectoFinalPOO.Controllers
             try
             {
                 var jugadores = _homeService.ValidarConfiguracionJugadoresParaJuego();
-                HttpContext.Session.SetString("ListaJugadoresConfig", JsonSerializer.Serialize(jugadores));
                 _juegoService.IniciarJuego(jugadores);
                 return RedirectToAction("Index", "Juego");
             }

@@ -15,6 +15,7 @@ using MVC_ProyectoFinalPOO.Models;
 using CL_ProyectoFinalPOO.Clases;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json;
 using System.Diagnostics;
 using CL_ProyectoFinalPOO.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -34,18 +35,44 @@ namespace MVC_ProyectoFinalPOO.Services
         private readonly AppDbContext _dbContext;
         private readonly ILogger<HomeService> _logger;
         private readonly IConfiguration _configuration;
-        private List<Jugador> _listaJugadoresConfigActual = new List<Jugador>();
+        private readonly IHttpContextAccessor _httpContextAccessor;
+        private const string SessionKey = "ListaJugadoresConfig";
 
-        public HomeService(AppDbContext dbContext, ILogger<HomeService> logger, IConfiguration configuration)
+        public HomeService(AppDbContext dbContext, ILogger<HomeService> logger, IConfiguration configuration, IHttpContextAccessor httpContextAccessor)
         {
             _dbContext = dbContext;
             _logger = logger;
             _configuration = configuration;
+            _httpContextAccessor = httpContextAccessor;
+        }
+
+        private List<Jugador> GetJugadoresFromSession()
+        {
+            var session = _httpContextAccessor.HttpContext?.Session;
+            if (session == null) return new List<Jugador>();
+
+            var json = session.GetString(SessionKey);
+            if (string.IsNullOrEmpty(json)) return new List<Jugador>();
+
+            try
+            {
+                return JsonSerializer.Deserialize<List<Jugador>>(json) ?? new List<Jugador>();
+            }
+            catch
+            {
+                return new List<Jugador>();
+            }
+        }
+
+        private void SaveJugadoresToSession(List<Jugador> jugadores)
+        {
+            var session = _httpContextAccessor.HttpContext?.Session;
+            session?.SetString(SessionKey, JsonSerializer.Serialize(jugadores));
         }
 
         public void LimpiarConfiguracionJugadores()
         {
-            _listaJugadoresConfigActual.Clear();
+            _httpContextAccessor.HttpContext?.Session.Remove(SessionKey);
             _logger.LogInformation("Configuración de jugadores limpiada");
         }
 
@@ -141,10 +168,12 @@ namespace MVC_ProyectoFinalPOO.Services
                 throw new ArgumentException("La apuesta debe estar entre 10 y 1000 puntos.");
 
             Juego juegoReglas = new Juego();
-            if (_listaJugadoresConfigActual.Count >= juegoReglas.JugadoresMax)
+            var jugadoresActuales = GetJugadoresFromSession();
+
+            if (jugadoresActuales.Count >= juegoReglas.JugadoresMax)
                 throw new InvalidOperationException($"No se pueden agregar más de {juegoReglas.JugadoresMax} jugadores.");
 
-            if (_listaJugadoresConfigActual.Any(j => j.Nickname.Equals(nickname, StringComparison.OrdinalIgnoreCase)))
+            if (jugadoresActuales.Any(j => j.Nickname.Equals(nickname, StringComparison.OrdinalIgnoreCase)))
                 throw new ArgumentException("El nickname ingresado ya está en uso por otro jugador en la configuración actual.");
 
             try
@@ -152,7 +181,8 @@ namespace MVC_ProyectoFinalPOO.Services
                 Juego juegoTemporalParaConstructor = new Juego();
                 var nuevoJugador = new Jugador(nickname, apuesta, juegoTemporalParaConstructor);
 
-                _listaJugadoresConfigActual.Add(nuevoJugador);
+                jugadoresActuales.Add(nuevoJugador);
+                SaveJugadoresToSession(jugadoresActuales);
                 _logger.LogInformation("Jugador '{Nickname}' agregado a la configuración", nickname);
             }
             catch (Exception ex)
@@ -164,32 +194,35 @@ namespace MVC_ProyectoFinalPOO.Services
 
         public void EliminarUltimoJugadorConfigurado()
         {
-            if (_listaJugadoresConfigActual.Count == 0)
+            var jugadoresActuales = GetJugadoresFromSession();
+            if (jugadoresActuales.Count == 0)
                 throw new InvalidOperationException("No hay jugadores en la configuración actual para eliminar.");
 
-            var jugadorEliminado = _listaJugadoresConfigActual.Last();
-            _listaJugadoresConfigActual.RemoveAt(_listaJugadoresConfigActual.Count - 1);
+            var jugadorEliminado = jugadoresActuales.Last();
+            jugadoresActuales.RemoveAt(jugadoresActuales.Count - 1);
+            SaveJugadoresToSession(jugadoresActuales);
             _logger.LogInformation("Último jugador '{Nickname}' eliminado de la configuración", jugadorEliminado.Nickname);
         }
 
         public List<Jugador> ValidarConfiguracionJugadoresParaJuego()
         {
+            var jugadoresActuales = GetJugadoresFromSession();
             Juego juegoReglas = new Juego();
             int minJugadores = juegoReglas.JugadoresMin;
             int maxJugadores = juegoReglas.JugadoresMax;
 
-            if (_listaJugadoresConfigActual.Count < minJugadores || _listaJugadoresConfigActual.Count > maxJugadores)
+            if (jugadoresActuales.Count < minJugadores || jugadoresActuales.Count > maxJugadores)
             {
-                string mensajeError = $"Se requieren entre {minJugadores} y {maxJugadores} jugadores para iniciar el juego. Actualmente hay {_listaJugadoresConfigActual.Count} jugadores configurados.";
+                string mensajeError = $"Se requieren entre {minJugadores} y {maxJugadores} jugadores para iniciar el juego. Actualmente hay {jugadoresActuales.Count} jugadores configurados.";
                 throw new InvalidOperationException(mensajeError);
             }
 
-            return new List<Jugador>(_listaJugadoresConfigActual);
+            return new List<Jugador>(jugadoresActuales);
         }
 
         public List<Jugador> ObtenerJugadoresConfigurados()
         {
-            return new List<Jugador>(_listaJugadoresConfigActual);
+            return GetJugadoresFromSession();
         }
     }
 }
