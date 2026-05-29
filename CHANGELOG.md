@@ -1,4 +1,4 @@
-# Registro de Cambios y Mejoras - Mythological Card Game
+# Registro de Cambios y Mejoras - Blessings & Curses
 
 ## Tabla de Contenidos
 1. [Fase 1: Mejoras UI/UX](#fase-1-mejoras-uiux)

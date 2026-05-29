@@ -30,7 +30,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection") ?? "Data Source=app.db"));
 
 builder.Services.AddDataProtection()
-    .SetApplicationName("MythologicalCardGame")
+    .SetApplicationName("BlessingsAndCurses")
     .SetDefaultKeyLifetime(TimeSpan.FromDays(90));
 
 builder.Services.AddAuthentication(options =>
@@ -46,8 +46,8 @@ builder.Services.AddAuthentication(options =>
         ValidateAudience = true,
         ValidateLifetime = true,
         ValidateIssuerSigningKey = true,
-        ValidIssuer = builder.Configuration["Jwt:Issuer"] ?? "MythologicalCardGame",
-        ValidAudience = builder.Configuration["Jwt:Audience"] ?? "MythologicalCardGameUsers",
+        ValidIssuer = builder.Configuration["Jwt:Issuer"] ?? "BlessingsAndCurses",
+        ValidAudience = builder.Configuration["Jwt:Audience"] ?? "BlessingsAndCursesUsers",
         IssuerSigningKey = new SymmetricSecurityKey(
             Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"] ?? "SuperSecretKeyThatShouldBeAtLeast32CharactersLong!"))
     };

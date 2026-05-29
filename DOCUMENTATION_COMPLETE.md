@@ -1,4 +1,4 @@
-# Guía Rápida - Mythological Card Game
+# Guía Rápida - Blessings & Curses
 
 ## 🚀 Inicio Rápido
 
@@ -123,8 +123,8 @@ await leaderboardService.ActualizarEstadisticasAsync("Nickname", puntos, esGanad
   },
   "Jwt": {
     "Key": "TuClaveSecretaDeAlMenos32Caracteres!",
-    "Issuer": "MythologicalCardGame",
-    "Audience": "MythologicalCardGameUsers",
+    "Issuer": "BlessingsAndCurses",
+    "Audience": "BlessingsAndCursesUsers",
     "ExpiryMinutes": 60
   }
 }

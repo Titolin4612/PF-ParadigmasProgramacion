@@ -1,4 +1,4 @@
-# Mythological Card Game - Proyecto Final Paradigmas de Programación
+# Blessings & Curses - Proyecto Final Paradigmas de Programación
 
 [![Typing SVG](https://readme-typing-svg.demolab.com/?font=Alfa+Slab+One&size=30&pause=1000&color=98F7D0&vCenter=true&width=435&lines=Proyecto+Final+Paradigmas)](https://git.io/typing-svg)
 
@@ -122,8 +122,8 @@ docker-compose down
   },
   "Jwt": {
     "Key": "TuClaveSecretaDeAlMenos32Caracteres!",
-    "Issuer": "MythologicalCardGame",
-    "Audience": "MythologicalCardGameUsers",
+    "Issuer": "BlessingsAndCurses",
+    "Audience": "BlessingsAndCursesUsers",
     "ExpiryMinutes": 60
   }
 }

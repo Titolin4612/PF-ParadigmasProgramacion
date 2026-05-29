@@ -3,7 +3,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: mythological-card-game
+    container_name: blessings-and-curses
     ports:
       - "8080:8080"
     environment:
