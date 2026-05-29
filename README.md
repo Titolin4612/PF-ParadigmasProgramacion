@@ -171,7 +171,7 @@ dotnet test --collect:"XPlat Code Coverage"
 
 ## 📝 Changelog
 
-[**📝 View ChangeLog**](./ChangeLog.md)
+[**📝 View ChangeLog**](./CHANGELOG.md)
 
 ---
 
