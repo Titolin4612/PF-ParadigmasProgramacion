@@ -35,25 +35,36 @@ html, body {
 /* FORMULARIO */
 .form-container {
     background: rgba(0, 0, 0, 0.7);
+    position: relative;
+    z-index: 5;
+    width: min(420px, calc(100vw - 32px));
     padding: 25px 30px;
     border-radius: 16px;
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
-    max-width: 400px;
+    max-width: 420px;
     margin: 0 auto;
+    box-sizing: border-box;
     backdrop-filter: blur(4px);
 }
 
 /* CAMPOS */
-.nickname-row, .apuesta-container {
-    display: flex;
-    justify-content: center;
+.nickname-row,
+.apuesta-container {
+    display: grid;
+    grid-template-columns: 42px minmax(0, 1fr) 42px;
     align-items: center;
     gap: 10px;
+    width: 100%;
     margin-bottom: 16px;
 }
 
+.apuesta-container .game-input {
+    grid-column: 2;
+}
+
 .game-input {
-    width: 250px;
+    width: 100%;
+    min-width: 0;
     padding: 12px;
     border-radius: 10px;
     font-size: 16px;
@@ -63,6 +74,7 @@ html, body {
     color: #3b2a16;
     text-align: center;
     font-weight: bold;
+    box-sizing: border-box;
     transition: transform 0.2s ease;
 }
 
@@ -76,6 +88,8 @@ html, body {
 .add-player-icon, .remove-player-icon {
     width: 42px;
     height: 42px;
+    min-width: 42px;
+    padding: 0;
     border-radius: 50%;
     border: none;
     color: white;

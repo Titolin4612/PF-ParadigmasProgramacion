@@ -84,10 +84,7 @@ builder.Services.AddScoped<IReglasService, ReglasService>();
 
 builder.Services.AddScoped<IHomeService>(provider =>
 {
-    var generator = new ProxyGenerator();
-    var interceptor = provider.GetRequiredService<AuthInterceptor>();
-    var real = provider.GetRequiredService<HomeService>();
-    return generator.CreateInterfaceProxyWithTarget<IHomeService>(real, interceptor);
+    return provider.GetRequiredService<HomeService>();
 });
 
 builder.Services.AddScoped<IJuegoService>(provider =>
@@ -106,7 +103,8 @@ builder.Services.AddSession(options =>
     options.IdleTimeout = TimeSpan.FromMinutes(30);
     options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true;
-    options.Cookie.SecurePolicy = CookieSecurePolicy.SameAsRequest;
+    options.Cookie.SecurePolicy = CookieSecurePolicy.None;
+    options.Cookie.SameSite = SameSiteMode.Lax;
 });
 
 builder.Services.AddHealthChecks()

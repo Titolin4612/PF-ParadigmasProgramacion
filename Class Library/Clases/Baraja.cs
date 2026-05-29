@@ -55,6 +55,11 @@ namespace CL_ProyectoFinalPOO.Clases
                 string json = await File.ReadAllTextAsync(rutaArchivo);
                 var cartas = JsonSerializer.Deserialize<List<Dictionary<string, string>>>(json);
 
+                if (cartas == null || cartas.Count == 0)
+                {
+                    throw new InvalidOperationException("El archivo de cartas no contiene cartas para cargar.");
+                }
+
                 foreach (var carta in cartas)
                 {
                     string tipo = carta.ContainsKey("Tipo") ? carta["Tipo"].ToLower() : "";
@@ -109,6 +114,11 @@ namespace CL_ProyectoFinalPOO.Clases
                     {
                         Console.WriteLine($"Advertencia: Tipo de carta '{tipo}' desconocido para '{nombre}', se ignora.");
                     }
+                }
+
+                if (CartasJuego.Count + CartasPremio.Count + CartasCastigo.Count == 0)
+                {
+                    throw new InvalidOperationException("El archivo de cartas no contiene cartas válidas.");
                 }
             }
             catch (Exception ex)

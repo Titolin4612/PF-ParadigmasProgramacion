@@ -14,26 +14,31 @@
 // MVC_ProyectoFinalPOO/Services/JuegoService.cs
 using CL_ProyectoFinalPOO.Clases;
 using CL_ProyectoFinalPOO.Interfaces;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Caching.Memory;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Diagnostics;
 
 namespace MVC_ProyectoFinalPOO.Services
 {
-    public class JuegoService(HomeService homeService) : IJuegoService
+    public class JuegoService(HomeService homeService, IHttpContextAccessor httpContextAccessor, IMemoryCache memoryCache) : IJuegoService
     {
-        private Juego _juegoActual = null!;
+        private const string SessionGameKey = "JuegoActualCacheKey";
+        private static readonly TimeSpan GameSlidingExpiration = TimeSpan.FromMinutes(30);
         private readonly HomeService _homeService = homeService;
+        private readonly IHttpContextAccessor _httpContextAccessor = httpContextAccessor;
+        private readonly IMemoryCache _memoryCache = memoryCache;
 
-        public Juego ObtenerInstanciaJuegoActual()
+        public Juego? ObtenerInstanciaJuegoActual()
         {
-            return _juegoActual;
+            return ObtenerJuegoActual();
         }
 
         public bool EstaJuegoActivo()
         {
-            return _juegoActual != null && _juegoActual.Jugadores != null && _juegoActual.Jugadores.Any();
+            var juegoActual = ObtenerJuegoActual();
+            return juegoActual != null && juegoActual.Jugadores != null && juegoActual.Jugadores.Any();
         }
 
         public void IniciarJuego(List<Jugador> jugadoresConfigurados)
@@ -45,48 +50,52 @@ namespace MVC_ProyectoFinalPOO.Services
 
             try
             {
-                _juegoActual = new Juego(); 
+                var juegoActual = new Juego(); 
 
-                _juegoActual.Jugadores.Clear();
-                _juegoActual.IndiceJugador = 0;
+                juegoActual.Jugadores.Clear();
+                juegoActual.IndiceJugador = 0;
 
                 foreach (var jConf in jugadoresConfigurados)
                 {
 
-                    var nuevoJugador = new Jugador(jConf.Nickname, jConf.ApuestaInicial, _juegoActual);
-                    _juegoActual.AsignarPuntosSegunApuesta(nuevoJugador);
+                    var nuevoJugador = new Jugador(jConf.Nickname, jConf.ApuestaInicial, juegoActual);
+                    juegoActual.AsignarPuntosSegunApuesta(nuevoJugador);
 
-                    _juegoActual.Jugadores.Add(nuevoJugador);
+                    juegoActual.Jugadores.Add(nuevoJugador);
                 }
 
-                _juegoActual.IniciarRonda();
+                juegoActual.IniciarRonda();
+                GuardarJuegoActual(juegoActual);
                 _homeService.LimpiarConfiguracionJugadores();
             }
             catch (Exception ex)
             {
-                _juegoActual = null;
+                EliminarJuegoActual();
                 throw new Exception("Error crítico en JuegoService al intentar iniciar el juego.", ex);
             }
         }
 
         public Jugador ObtenerJugadorActual()
         {
-            if (!EstaJuegoActivo())
+            var juegoActual = ObtenerJuegoActual();
+            if (!EsJuegoActivo(juegoActual))
             {
                 return null;
             }
-            return _juegoActual.Jugadores.Count == 0 ?
-                null : _juegoActual.Jugadores[_juegoActual.IndiceJugador];
+            return juegoActual!.Jugadores.Count == 0 ?
+                null : juegoActual.Jugadores[juegoActual.IndiceJugador];
         }
 
         public (Carta? carta, int puntos) CogerCarta()
         {
-            if (!EstaJuegoActivo())
+            var juegoActual = ObtenerJuegoActual();
+            if (!EsJuegoActivo(juegoActual))
             {
                 throw new InvalidOperationException("El juego no ha sido iniciado o no hay jugadores.");
             }
 
-            var jugadorActual = ObtenerJugadorActual();
+            var jugadorActual = juegoActual!.Jugadores.Count == 0 ?
+                null : juegoActual.Jugadores[juegoActual.IndiceJugador];
             if (jugadorActual == null)
             {
                 throw new InvalidOperationException("No se pudo determinar el jugador actual.");
@@ -94,17 +103,18 @@ namespace MVC_ProyectoFinalPOO.Services
 
             try
             {
-                var carta = _juegoActual.ObtenerCarta();
+                var carta = juegoActual.ObtenerCarta();
                 int puntosObtenidos = 0;
 
                 if (carta != null)
                 {
-                    puntosObtenidos = _juegoActual.AplicarEfectoCartas(carta);
+                    puntosObtenidos = juegoActual.AplicarEfectoCartas(carta);
                     jugadorActual.Puntos += puntosObtenidos;
                     jugadorActual.L_cartas_jugador.Add(carta);
                 }
 
-                _juegoActual.ValidarYDispararEventos(null); 
+                juegoActual.ValidarYDispararEventos(null);
+                GuardarJuegoActual(juegoActual);
                 return (carta, puntosObtenidos);
             }
             catch (Exception ex)
@@ -115,19 +125,22 @@ namespace MVC_ProyectoFinalPOO.Services
 
         public void PasarTurno()
         {
-            if (!EstaJuegoActivo())
+            var juegoActual = ObtenerJuegoActual();
+            if (!EsJuegoActivo(juegoActual))
             {
                 throw new InvalidOperationException("El juego no ha sido iniciado.");
             }
             try
             {
-                Jugador liderInicial = _juegoActual.ObtenerLider();
-                _juegoActual.ValidarYDispararEventos(liderInicial);
+                Jugador liderInicial = juegoActual!.ObtenerLider();
+                juegoActual.ValidarYDispararEventos(liderInicial);
 
-                if (!JuegoTerminado() && _juegoActual.Jugadores != null && _juegoActual.Jugadores.Any())
+                if (!JuegoTerminado() && juegoActual.Jugadores != null && juegoActual.Jugadores.Any())
                 {
-                    _juegoActual.PasarTurno();
+                    juegoActual.PasarTurno();
                 }
+
+                GuardarJuegoActual(juegoActual);
             }
             catch (Exception ex)
             {
@@ -137,14 +150,16 @@ namespace MVC_ProyectoFinalPOO.Services
 
         public virtual Jugador FinalizarJuego()
         {
-            if (!EstaJuegoActivo() && _juegoActual == null)
+            var juegoActual = ObtenerJuegoActual();
+            if (!EsJuegoActivo(juegoActual) && juegoActual == null)
             {
                 return null;
             }
 
             try
             {
-                var ganador = _juegoActual.ObtenerLider();
+                var ganador = juegoActual!.ObtenerLider();
+                GuardarJuegoActual(juegoActual);
                 return ganador;
             }
             catch (Exception ex)
@@ -155,22 +170,24 @@ namespace MVC_ProyectoFinalPOO.Services
 
         public List<Jugador> ObtenerJugadores()
         {
-            if (_juegoActual != null)
+            var juegoActual = ObtenerJuegoActual();
+            if (juegoActual != null)
             {
-                return _juegoActual.Jugadores ?? new List<Jugador>();
+                return juegoActual.Jugadores ?? new List<Jugador>();
             }
             return new List<Jugador>();
         }
 
         public List<string> ObtenerHistorial()
         {
-            if (_juegoActual == null || _juegoActual.Historial == null)
+            var juegoActual = ObtenerJuegoActual();
+            if (juegoActual == null || juegoActual.Historial == null)
             {
                 return new List<string>();
             }
             try
             {
-                return _juegoActual.Historial.ObtenerNotificaciones().ToList();
+                return juegoActual.Historial.ObtenerNotificaciones().ToList();
             }
             catch (Exception ex)
             {
@@ -180,15 +197,16 @@ namespace MVC_ProyectoFinalPOO.Services
 
         public bool JuegoTerminado()
         {
-            if (!EstaJuegoActivo())
+            var juegoActual = ObtenerJuegoActual();
+            if (!EsJuegoActivo(juegoActual))
             {
                 return true;
             }
             try
             {
 
-                bool mazosAgotados = _juegoActual.AgotadasResto && _juegoActual.AgotadasCastigo && _juegoActual.AgotadasPremio;
-                bool pocosJugadores = _juegoActual.Jugadores == null || _juegoActual.Jugadores.Count < _juegoActual.JugadoresMin;
+                bool mazosAgotados = juegoActual!.AgotadasResto && juegoActual.AgotadasCastigo && juegoActual.AgotadasPremio;
+                bool pocosJugadores = juegoActual.Jugadores == null || juegoActual.Jugadores.Count < juegoActual.JugadoresMin;
 
                 bool terminado = mazosAgotados || pocosJugadores;
                 return terminado;
@@ -201,15 +219,16 @@ namespace MVC_ProyectoFinalPOO.Services
 
         public int TotalCartasEnMazo()
         {
-            if (!EstaJuegoActivo())
+            var juegoActual = ObtenerJuegoActual();
+            if (!EsJuegoActivo(juegoActual))
             {
                 return 0;
             }
             try
             {
-                return _juegoActual.L_cartas_resto.Count +
-                       _juegoActual.L_cartas_castigo.Count +
-                       _juegoActual.L_cartas_premio.Count;
+                return juegoActual!.L_cartas_resto.Count +
+                       juegoActual.L_cartas_castigo.Count +
+                       juegoActual.L_cartas_premio.Count;
             }
             catch (Exception)
             {
@@ -221,7 +240,7 @@ namespace MVC_ProyectoFinalPOO.Services
         {
             try
             {
-                _juegoActual = null; 
+                EliminarJuegoActual();
 
                 _homeService.LimpiarConfiguracionJugadores();
             }
@@ -233,25 +252,86 @@ namespace MVC_ProyectoFinalPOO.Services
 
         public void ComenzarNuevaRondaConJugadoresActuales()
         {
-            if (!EstaJuegoActivo())
+            var juegoActual = ObtenerJuegoActual();
+            if (!EsJuegoActivo(juegoActual))
             {
                 throw new InvalidOperationException("No hay un juego activo para iniciar una nueva ronda. Configure un nuevo juego.");
             }
-            if (_juegoActual.Jugadores == null ||
-                !_juegoActual.Jugadores.Any() ||
-                _juegoActual.Jugadores.Count < _juegoActual.JugadoresMin)
+            if (juegoActual!.Jugadores == null ||
+                !juegoActual.Jugadores.Any() ||
+                juegoActual.Jugadores.Count < juegoActual.JugadoresMin)
             {
                 throw new InvalidOperationException("No hay suficientes jugadores actuales para comenzar una nueva ronda.");
             }
 
             try
             {
-                _juegoActual.IniciarRonda();
+                juegoActual.IniciarRonda();
+                GuardarJuegoActual(juegoActual);
             }
             catch (Exception ex)
             {
                 throw new Exception("Error en JuegoService al comenzar una nueva ronda.", ex);
             }
+        }
+
+        private Juego? ObtenerJuegoActual()
+        {
+            var cacheKey = ObtenerCacheKey(crearSiNoExiste: false);
+            if (cacheKey == null)
+            {
+                return null;
+            }
+
+            return _memoryCache.TryGetValue(cacheKey, out Juego? juego) ? juego : null;
+        }
+
+        private void GuardarJuegoActual(Juego juego)
+        {
+            var cacheKey = ObtenerCacheKey(crearSiNoExiste: true);
+            if (cacheKey == null)
+            {
+                throw new InvalidOperationException("No se pudo acceder a la sesión para guardar la partida.");
+            }
+
+            _memoryCache.Set(cacheKey, juego, new MemoryCacheEntryOptions
+            {
+                SlidingExpiration = GameSlidingExpiration
+            });
+        }
+
+        private void EliminarJuegoActual()
+        {
+            var cacheKey = ObtenerCacheKey(crearSiNoExiste: false);
+            if (cacheKey != null)
+            {
+                _memoryCache.Remove(cacheKey);
+            }
+
+            _httpContextAccessor.HttpContext?.Session.Remove(SessionGameKey);
+        }
+
+        private string? ObtenerCacheKey(bool crearSiNoExiste)
+        {
+            var session = _httpContextAccessor.HttpContext?.Session;
+            if (session == null)
+            {
+                return null;
+            }
+
+            var sessionGameId = session.GetString(SessionGameKey);
+            if (string.IsNullOrWhiteSpace(sessionGameId) && crearSiNoExiste)
+            {
+                sessionGameId = Guid.NewGuid().ToString("N");
+                session.SetString(SessionGameKey, sessionGameId);
+            }
+
+            return string.IsNullOrWhiteSpace(sessionGameId) ? null : $"JuegoActual:{sessionGameId}";
+        }
+
+        private static bool EsJuegoActivo(Juego? juego)
+        {
+            return juego != null && juego.Jugadores != null && juego.Jugadores.Any();
         }
     }
 }

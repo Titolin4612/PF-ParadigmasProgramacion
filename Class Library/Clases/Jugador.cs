@@ -76,10 +76,15 @@ namespace CL_ProyectoFinalPOO.Clases
         {
             try
             { 
-                    var carta = Juego.ObtenerCarta(); 
-                    L_cartas_jugador.Add(carta); 
-                    Puntos += Juego.AplicarEfectoCartas(carta);
-                    return carta; 
+                if (Juego == null || Juego.Jugadores == null || !Juego.Jugadores.Contains(this))
+                {
+                    throw new InvalidOperationException("El jugador no pertenece a una partida activa.");
+                }
+
+                var carta = Juego.ObtenerCarta(); 
+                L_cartas_jugador.Add(carta); 
+                Puntos += Juego.AplicarEfectoCartas(carta);
+                return carta; 
             }
             catch (Exception ex)
             {

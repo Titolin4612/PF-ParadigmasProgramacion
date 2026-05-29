@@ -37,6 +37,7 @@ namespace MVC_ProyectoFinalPOO.Services
         private readonly IConfiguration _configuration;
         private readonly IHttpContextAccessor _httpContextAccessor;
         private const string SessionKey = "ListaJugadoresConfig";
+        private sealed record JugadorConfigurado(string Nickname, int ApuestaInicial);
 
         public HomeService(AppDbContext dbContext, ILogger<HomeService> logger, IConfiguration configuration, IHttpContextAccessor httpContextAccessor)
         {
@@ -46,28 +47,42 @@ namespace MVC_ProyectoFinalPOO.Services
             _httpContextAccessor = httpContextAccessor;
         }
 
-        private List<Jugador> GetJugadoresFromSession()
+        private List<JugadorConfigurado> GetJugadoresFromSession()
         {
             var session = _httpContextAccessor.HttpContext?.Session;
-            if (session == null) return new List<Jugador>();
+            if (session == null) return new List<JugadorConfigurado>();
 
             var json = session.GetString(SessionKey);
-            if (string.IsNullOrEmpty(json)) return new List<Jugador>();
+            if (string.IsNullOrEmpty(json)) return new List<JugadorConfigurado>();
 
             try
             {
-                return JsonSerializer.Deserialize<List<Jugador>>(json) ?? new List<Jugador>();
+                return JsonSerializer.Deserialize<List<JugadorConfigurado>>(json) ?? new List<JugadorConfigurado>();
             }
             catch
             {
-                return new List<Jugador>();
+                return new List<JugadorConfigurado>();
             }
         }
 
-        private void SaveJugadoresToSession(List<Jugador> jugadores)
+        private void SaveJugadoresToSession(List<JugadorConfigurado> jugadores)
         {
             var session = _httpContextAccessor.HttpContext?.Session;
             session?.SetString(SessionKey, JsonSerializer.Serialize(jugadores));
+        }
+
+        private static List<Jugador> CrearJugadoresDesdeConfiguracion(List<JugadorConfigurado> jugadoresConfigurados)
+        {
+            var juegoTemporal = new Juego();
+
+            return jugadoresConfigurados
+                .Select(jugadorConfigurado =>
+                {
+                    var jugador = new Jugador(jugadorConfigurado.Nickname, jugadorConfigurado.ApuestaInicial, juegoTemporal);
+                    juegoTemporal.AsignarPuntosSegunApuesta(jugador);
+                    return jugador;
+                })
+                .ToList();
         }
 
         public void LimpiarConfiguracionJugadores()
@@ -83,7 +98,8 @@ namespace MVC_ProyectoFinalPOO.Services
                 return false;
             }
 
-            var user = _dbContext.Usuarios.FirstOrDefault(u => u.Nickname.ToLower() == usuario.ToLower());
+            var normalizedUsuario = usuario.Trim().ToLower();
+            var user = _dbContext.Usuarios.FirstOrDefault(u => u.Nickname.ToLower() == normalizedUsuario);
 
             if (user == null)
             {
@@ -92,8 +108,33 @@ namespace MVC_ProyectoFinalPOO.Services
 
             if (contraseña != null)
             {
-                return BCrypt.Net.BCrypt.Verify(contraseña, user.PasswordHash);
+                return VerificarPassword(user, contraseña);
             }
+            return true;
+        }
+
+        private bool VerificarPassword(Usuario user, string contraseña)
+        {
+            try
+            {
+                if (BCrypt.Net.BCrypt.Verify(contraseña, user.PasswordHash))
+                {
+                    return true;
+                }
+            }
+            catch (BCrypt.Net.SaltParseException)
+            {
+                _logger.LogWarning("Usuario '{Usuario}' tiene una contraseña en formato antiguo", user.Nickname);
+            }
+
+            if (!string.Equals(user.PasswordHash, contraseña, StringComparison.Ordinal))
+            {
+                return false;
+            }
+
+            user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(contraseña);
+            _dbContext.SaveChanges();
+            _logger.LogInformation("Contraseña de usuario '{Usuario}' migrada a BCrypt", user.Nickname);
             return true;
         }
 
@@ -178,8 +219,7 @@ namespace MVC_ProyectoFinalPOO.Services
 
             try
             {
-                Juego juegoTemporalParaConstructor = new Juego();
-                var nuevoJugador = new Jugador(nickname, apuesta, juegoTemporalParaConstructor);
+                var nuevoJugador = new JugadorConfigurado(nickname.Trim(), apuesta);
 
                 jugadoresActuales.Add(nuevoJugador);
                 SaveJugadoresToSession(jugadoresActuales);
@@ -217,12 +257,12 @@ namespace MVC_ProyectoFinalPOO.Services
                 throw new InvalidOperationException(mensajeError);
             }
 
-            return new List<Jugador>(jugadoresActuales);
+            return CrearJugadoresDesdeConfiguracion(jugadoresActuales);
         }
 
         public List<Jugador> ObtenerJugadoresConfigurados()
         {
-            return GetJugadoresFromSession();
+            return CrearJugadoresDesdeConfiguracion(GetJugadoresFromSession());
         }
     }
 }
