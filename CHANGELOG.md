@@ -1,375 +1,179 @@
-# Registro de Cambios y Mejoras - Blessings & Curses
+# 📝 ChangeLog - Blessings & Curses
 
-## Tabla de Contenidos
-1. [Fase 1: Mejoras UI/UX](#fase-1-mejoras-uiux)
-2. [Fase 2: Testing, Null Safety y Logging](#fase-2-testing-null-safety-y-logging)
-3. [Fase 3: Modernización](#fase-3-modernización)
-4. [Fase 4: Seguridad, Persistencia y Deployment](#fase-4-seguridad-persistencia-y-deployment)
+## Juego V 1.30 (Mayo 7 2025) - Chanda
 
----
+- Cambie en la clase Baraja para manejar 3 listas diferentes dependiendo el tipo de carta (Juego, Castigo, premio)
+	
+- Ahora la clase Resto solo incluye las cartas de tipo Juego, las de castigo y premio se manejarán con listas aparte en la clase juego
+	
+- Cambie el método AplicarEfectoCartas() para que imprima mejor los puntos obtenidos en esa carta y los puntos totales del jugador
+	
+- Cree las listas l_cartas_premio y l_cartas_castigo en la Clase juego, estas se rellenan en el constructor con los nuevos métodos de la clase Baraja ( CrearCartasCastigo() y CrearCartasPremio() )
+	
+- Cambie el método BarajarCartas() para que ahora no solo revuelva las cartas de resto si no también las de premio y castigo
+	
+- Cambie el constructor de Resto para evitar quemar valores
+	
+- Cambie durísimo la clase baraja y le agregue otro método que obtiene una lista con todas las cartas, algo similar a como antes funcionaba el Resto
+	
+- Añadí nuevos y modifiqué métodos y listas en la clase Juego, también cambié el constructor
+	
+- El método ObtenerCarta() pasó de estar en resto a estar en juego ya que al cambiar el funcionamiento de Resto quedaba obsoleto el método
+	
+- Modifiqué el funcionamiento del método BarajarCartas()
+	
+- Cambie los accesores de Carta por unos "Menos redundantes y mejor estructurados" similares a los que se hicieron en el proyecto del Multiplex
+	
+- Eliminé la interfaz ICartaEfecto ya que no estaba programada y por el momento sobraba, el método ActualizarPuntos(); que estaba en cada carta lo eliminé ya que no tenía estructura ni funcionalidad, luego se estructura mejor cada interfaz y métodos que llevaran
+	
+- Transferí el método de AplicarEfectoCartas de Jugador a Juego para intentar tener todos los métodos que regulen el funcionamiento del juego en la clase Juego, para eso modifique el funcionamiento para que devuelva un Int con el efecto de la carta
+	
+- También cree nuevos atributos estáticos en cada carta para dejar ahí el valor que van a sumar o restar y evitar quemar valores en los métodos que usen esos valores
+	
+- Añadí el método para repartir las cartas iniciales en cada juego, el método simplemente saca las 3 primeras cartas de la baraja actual y las entrega a un jugador y así repite hasta terminar con los jugadores
+	
+- Añadí también un par de atributos de reglas de negocio en el juego como numero max de jugadores y cartas por jugador
+	
+- Cambie el accesor de puntos ya que estaba haciendo que nadie pudiera pasar de 80 puntos, esta mal, hay que hacer una validación diferente si queremos controlar que al INICIAR los puntos estén en ese rango
+	
+- Hice mucha corrección de errores, falta revisar mucho pero creo que se logro avanzar bastante hoy, faltaron cosas por mencionar aquí ya que cada que me iba acordando iba poniendo, algunas se me pasaron
+--- 
+## Juego V 1.34 (Mayo 9 2025) - Chanda
 
-## Fase 1: Mejoras UI/UX
+- Cree un par de interfaces con los métodos ya creados para ir definiendo mejor la biblioteca
 
-### Problemas Identificados
-- Encodings incorrectos en archivos (ISO-8859 → UTF-8)
-- README desactualizado (12 Castigo → 17, 8 Premio → 13)
+- A TODOS los métodos le cree bloque Try Catch para mejor control de errores y mejorar el cumplimiento de requisitos
 
-### Cambios Realizados
+- Cree la carpeta de Eventos para encaminar el creado de los eventos 
+--- 
+## Juego V 1.40 (Mayo 17 2025) - Chanda
 
-| Archivo | Cambio | Detalle |
-|---------|--------|---------|
-| `MVC Web App/Controllers/HomeController.cs` | Encoding fix | Cambiado de ISO-8859 a UTF-8 |
-| `README.md` | Actualización tablas | 12→17 Castigo, 8→13 Premio |
+- Empecé a implementar en el MVC, Fueron avances cortos pero significativos en la parte del front de el Home, Ya se ve bonito al menos para la pantalla 2k y la 1080p. quizas en resoluciones mayores se pueda distorsionar un poco
 
----
+- Los botones ya están bien pero aun no son funcionales, falta hacer el controller
 
-## Fase 2: Testing, Null Safety y Logging
-
-### Problemas Identificados
-- 36+ nullable reference warnings en Class Library
-- Console.WriteLine disperso sin ILogger
-- Sin tests unitarios
-- Código quality issues (bloques else vacíos, excepciones swallowed)
-
-### Tests Creados
-
-| Archivo | Tests | Descripción |
-|---------|-------|-------------|
-| `Tests/CL_ProyectoFinalPOO.Tests/CartaJuegoTests.cs` | 10 | Tests para carta de juego |
-| `Tests/CL_ProyectoFinalPOO.Tests/CartaPremioTests.cs` | 9 | Tests para carta premio |
-| `Tests/CL_ProyectoFinalPOO.Tests/CartaCastigoTests.cs` | 9 | Tests para carta castigo |
-| `Tests/CL_ProyectoFinalPOO.Tests/JugadorTests.cs` | 14 | Tests para jugador |
-| `Tests/CL_ProyectoFinalPOO.Tests/JuegoTests.cs` | 17 | Tests para lógica de juego |
-| `Tests/CL_ProyectoFinalPOO.Tests/BarajaTests.cs` | 5 | Tests para baraja |
-| `Tests/CL_ProyectoFinalPOO.Tests/BarajaAsyncTests.cs` | 6 | Tests async para baraja |
-
-### Null Safety Fixes
-
-| Archivo | Campo/Método | Fix |
-|---------|--------------|-----|
-| `Class Library/Clases/Carta.cs` | Campos | `= null!` initializer |
-| `Class Library/Clases/Jugador.cs` | Campos | `= null!` initializer |
-| `Class Library/Clases/Juego.cs` | Campos | `= null!` initializer |
-| `Class Library/Clases/Baraja.cs` | Campos | `= null!` initializer |
-| `Class Library/Eventos/Publisher_Eventos_Juego.cs` | Eventos | `event EventHandler<T>?` |
-| `Class Library/Eventos/Publisher_Eventos_Jugador.cs` | Eventos | `event EventHandler<T>?` |
-| `Class Library/Eventos/Publisher_Eventos_Cartas.cs` | Eventos | `event EventHandler<T>?` |
-| `Class Library/Clases/CartaCastigo.cs` | `_maleficio` | Inicialización en constructor |
-| `Class Library/Clases/CartaPremio.cs` | `_bendicion` | Inicialización en constructor |
-
-### Logging Modernization
-
-| Archivo | Antes | Después |
-|---------|-------|---------|
-| `Class Library/Aspectos/InterceptorCargaArchivo.cs` | `Console.WriteLine` | `ILogger<InterceptorCargaArchivo>` |
-| `Class Library/Aspectos/InterceptorValidacion.cs` | `Console.WriteLine` | `ILogger<InterceptorValidacion>` |
-
-### Code Quality Fixes
-
-| Archivo | Problema | Fix |
-|---------|----------|-----|
-| `Class Library/Interfaces/IJuegoService.cs:18` | `public` redundante | Removido |
-| `Class Library/Interfaces/IJuegoService.cs:24` | Método duplicado `TotalCartasEnMazo` | Removido duplicado |
-| `MVC Web App/Services/JuegoService.cs:99-100` | Bloques else vacíos | Removidos |
-| `MVC Web App/Services/JuegoService.cs:127-128` | Bloques else vacíos | Removidos |
-| `MVC Web App/Services/JuegoService.cs` | Variables `ex` no usadas en catch | Cambiado a `catch` |
-
-### Paquetes NuGet Añadidos
-
-| Paquete | Versión | Propósito |
-|---------|---------|-----------|
-| `Microsoft.Extensions.Logging.Abstractions` | 8.0.0 | Logging interfaces |
-| `Microsoft.NET.Test.Sdk` | 17.8.0 | Test SDK |
-| `xunit` | 2.6.1 | Test framework |
-| `xunit.runner.visualstudio` | 2.5.3 | Test runner |
-| `Moq` | 4.20.70 | Mocking framework |
-| `coverlet.collector` | 6.0.0 | Code coverage |
+- Corregí la NavBar que estaba terriblemente fea
 
 ---
 
-## Fase 3: Modernización
+## V 1.50 (Mayo 2026) - Chanda
 
-### Problemas Identificados
-- .NET 8 (legacy) → .NET 10 disponible
-- I/O sincrónico bloqueante
-- Random no thread-safe
-- Constructores tradicionales
-- Switch statements en lugar de expressions
-- Tipos anónimos en lugar de records
+### Mejoras de Calidad de Código
 
-### .NET Upgrade
+**Tests Unitarios:**
+- Creados 7 archivos de test con 70+ tests utilizando xUnit y Moq
+- Implementados tests para: CartaJuegoTests, CartaPremioTests, CartaCastigoTests, JugadorTests, JuegoTests, BarajaTests, BarajaAsyncTests
 
-| Archivo | Cambio |
-|---------|--------|
-| `Class Library/CL_ProyectoFinalPOO.csproj` | `net8.0` → `net10.0` |
-| `MVC Web App/MVC_ProyectoFinalPOO.csproj` | `net8.0` → `net10.0` + `AllowMissingPrunePackageData=true` |
-| `Tests/CL_ProyectoFinalPOO.Tests/CL_ProyectoFinalPOO.Tests.csproj` | `net8.0` → `net10.0` |
+**Corrección de Warnings Null Safety:**
+- Corregidos 36+ warnings CS8618/CS8602 en toda la Class Library
+- Añadido operador null-forgiving `= null!` en campos de clases
+- Convertidos eventos Publisher a formato nullable `event EventHandler<T>?`
 
-### Async/Await Implementation
+**Refactorización de Logging:**
+- Reemplazado Console.WriteLine con ILogger en InterceptorCargaArchivo e InterceptorValidacion
+- Añadido paquete Microsoft.Extensions.Logging.Abstractions
 
-| Archivo | Método | Cambio |
-|---------|--------|--------|
-| `Class Library/Clases/Baraja.cs` | `CargarCartasAsync` | Nuevo método async |
-| `Class Library/Clases/Baraja.cs` | `CargarCartas` | Ahora llama a async via `.GetAwaiter().GetResult()` |
-| `Class Library/Clases/Baraja.cs:15-16` | Rutas | `AppDomain.CurrentDomain.BaseDirectory` → `AppContext.BaseDirectory` |
+**Mejoras de Código:**
+- Removido modificador `public` redundante en IJuegoService
+- Removido método duplicado TotalCartasEnMazo en IJuegoService
+- Removidos bloques else vacíos en JuegoService
+- Mejorado manejo de excepciones usando discard pattern para variables no usadas
 
-### Thread-Safe Random
+### Modernización del Proyecto
 
-| Archivo | Cambio |
-|---------|--------|
-| `Class Library/Clases/Juego.cs:25` | Removido `private static Random rng = new Random()` |
-| `Class Library/Clases/Juego.cs` | 7 usages `rng.Next()` → `Random.Shared.Next()` |
+**Upgrade de .NET:**
+- Actualizado de .NET 8.0 a .NET 10.0 en los 3 proyectos (Class Library, MVC App, Tests)
+- Añadido AllowMissingPrunePackageData=true para compatibilidad con ASP.NET Core 10
 
-### Primary Constructors (C# 12)
+**Implementación Async/Await:**
+- Creado método CargarCartasAsync en Baraja usando File.ReadAllTextAsync
+- Actualizado CargarCartas para llamar a versión async
+- Cambiado AppDomain.CurrentDomain.BaseDirectory por AppContext.BaseDirectory
 
-| Archivo | Antes | Después |
-|---------|-------|---------|
-| `MVC Web App/Services/JuegoService.cs` | Constructor tradicional | `public class JuegoService(HomeService homeService)` |
-| `MVC Web App/Services/ReglasService.cs` | Constructor tradicional | `public class ReglasService(Baraja baraja)` |
-| `MVC Web App/Controllers/JuegoController.cs` | Constructor tradicional | `public class JuegoController(IJuegoService juegoService)` |
-| `MVC Web App/Controllers/HomeController.cs` | Constructor tradicional | `public class HomeController(IHomeService, IJuegoService)` |
-| `MVC Web App/Controllers/ReglasController.cs` | Constructor tradicional | `public class ReglasController(ReglasService, IJuegoService)` |
+**Thread-Safety:**
+- Reemplazado Random instance por Random.Shared en Juego.cs (7 usages)
 
-### Switch Expressions
+**Características C# 12:**
+- Implementados primary constructors en HomeService, JuegoService, ReglasService
+- Implementados primary constructors en HomeController, JuegoController, ReglasController
+- Convertidos switch statements a switch expressions en CartaJuego y Juego
+- Creado record CartaRevelada para DTOs en JuegoController
 
-| Archivo | Método | Cambio |
-|---------|--------|--------|
-| `Class Library/Clases/CartaJuego.cs` | `ObtenerPuntos()` | `switch` → `return RarezaCarta switch {...}` |
-| `Class Library/Clases/Juego.cs` | `AplicarEfectoCartas()` | `switch` → `carta switch {...}` |
+**Limpieza de Código:**
+- Removido import Microsoft.VisualBasic de Juego.cs
 
-### Record Types
+**Mejoras de Inyección de Dependencias:**
+- ReglasController ahora inyecta IJuegoService en lugar de implementación concreta
 
-| Archivo | Cambio |
-|---------|--------|
-| `MVC Web App/Controllers/JuegoController.cs` | Creado `record CartaRevelada(...)` para reemplazar anonymous type |
+### Seguridad y Autenticación
 
-### Cleanup
+**Hash de Contraseñas:**
+- Implementado BCrypt.Net-Next para hashing de contraseñas en HomeService
 
-| Archivo | Cambio |
-|---------|--------|
-| `Class Library/Clases/Juego.cs:11` | Removido `using Microsoft.VisualBasic;` |
+**Autenticación JWT:**
+- Añadido JWT Bearer authentication en Program.cs
+- Añadido método GenerarToken en IHomeService y HomeService
+- Configurados TokenValidationParameters con issuer, audience y signing key
 
-### DI Fix
+**Refuerzo de Sesión:**
+- Añadido Cookie.SecurePolicy.SameAsRequest
+- Configuradas Data Protection keys con lifetime de 90 días
 
-| Archivo | Cambio |
-|---------|--------|
-| `MVC Web App/Controllers/ReglasController.cs` | `JuegoService` concreto → `IJuegoService` interfaz |
+### Persistencia de Datos
 
----
+**Entity Framework Core + SQLite:**
+- Creado AppDbContext.cs con configuración de entidades
+- Creadas entidades: Usuario, Partida, Estadistica
+- Implementado unique index en Usuario.Nickname
+- Configuradas relaciones: Usuario(1:1)Estadistica, Usuario(1:N)Partidas
 
-## Fase 4: Seguridad, Persistencia y Deployment
+### Deployment y Contenedores
 
-### Problemas Identificados
-- Contraseñas en texto plano (Dictionary estático)
-- Sin autenticación JWT real
-- Sin base de datos (simulación en memoria)
-- Sin Docker ni CI/CD
-- Sin health checks
-- Sin structured logging
-- Debug.WriteLine disperso
-- Sin caching
+**Docker:**
+- Creado Dockerfile multi-stage (SDK 10.0 → ASPNET 10.0, puerto 8080)
+- Implementado health check con curl
+- Creado docker-compose.yml con health checks y volúmenes persistentes
 
-### Seguridad
-
-#### BCrypt Password Hashing
-
-| Archivo | Cambio |
-|---------|--------|
-| `MVC Web App/Services/HomeService.cs` | `BuscarUsuario()` ahora usa `BCrypt.Net.BCrypt.Verify()` |
-| `MVC Web App/Services/HomeService.cs` | `RegistrarUsuario()` ahora usa `BCrypt.Net.BCrypt.HashPassword()` |
-
-#### JWT Authentication
-
-| Archivo | Cambio |
-|---------|--------|
-| `MVC Web App/Program.cs` | Añadido `AddJwtBearer()` con `TokenValidationParameters` |
-| `MVC Web App/Services/HomeService.cs` | Nuevo método `GenerarToken(string usuario)` |
-| `Class Library/Interfaces/IHomeService.cs` | Nueva firma `string GenerarToken(string usuario)` |
-| `MVC Web App/Controllers/HomeController.cs` | Login/Signup ahora generan y almacenan JWT en sesión |
-
-#### Session Hardening
-
-| Archivo | Cambio |
-|---------|--------|
-| `MVC Web App/Program.cs` | `Cookie.SecurePolicy = CookieSecurePolicy.SameAsRequest` |
-| `MVC Web App/Program.cs` | Data Protection keys con lifetime de 90 días |
-
-### Persistencia
-
-#### EF Core + SQLite
-
-| Archivo | Propósito |
-|---------|-----------|
-| `MVC Web App/Data/AppDbContext.cs` | DbContext con configuración de entidades |
-| `MVC Web App/Entities/Usuario.cs` | Entidad usuario con password hash |
-| `MVC Web App/Entities/Partida.cs` | Entidad para historial de partidas |
-| `MVC Web App/Entities/Estadistica.cs` | Entidad para estadísticas de jugador |
-
-#### DbContext Configuration
-
-```csharp
-// Usuario - unique index on Nickname
-entity.HasIndex(e => e.Nickname).IsUnique();
-
-// Partida - relación opcional con Usuario (nullable FK)
-entity.HasOne(e => e.Usuario).WithMany(u => u.Partidas).OnDelete(DeleteBehavior.SetNull);
-
-// Estadistica - relación 1:1 con Usuario, cascade delete
-entity.HasOne(e => e.Usuario).WithOne(u => u.Estadistica).OnDelete(DeleteBehavior.Cascade);
-```
-
-### Deployment
-
-#### Dockerfile
-
-| Característica | Detalle |
-|---------------|---------|
-| Build stage | `mcr.microsoft.com/dotnet/sdk:10.0` |
-| Runtime stage | `mcr.microsoft.com/dotnet/aspnet:10.0` |
-| Puerto | 8080 (no 443) |
-| Health check | `curl -f http://localhost:8080/health` |
-
-#### docker-compose.yml
-
-| Servicio | Configuración |
-|----------|--------------|
-| app | Puerto 8080:8080 |
-| Volumes | `app-data`, `app-logs` |
-| Health check | Interval 30s, timeout 10s, 3 retries |
-| Restart policy | `unless-stopped` |
-
-#### GitHub Actions CI/CD
-
-| Job | Pipeline |
-|-----|----------|
-| build | restore, build, test, upload artifacts |
-| docker | build & push a GHCR |
-| deploy | placeholder para producción |
-| code-quality | dotnet format verify |
+**CI/CD:**
+- Creado pipeline GitHub Actions con jobs: build, docker, deploy, code-quality
 
 ### Observabilidad
 
-#### Serilog Structured Logging
+**Logging Estructurado:**
+- Integración de Serilog con sink de consola y archivo rotativo
+- Logs diarios en directorio logs/
 
-| Componente | Configuración |
-|------------|---------------|
-| Console sink | Template con timestamp, level, message, properties |
-| File sink | Rolling file diario en `logs/app-.log` |
-| Enrichment | `FromLogContext`, thread id |
+**Health Checks:**
+- Endpoint /health para estado general
+- Endpoint /health/ready para verificar conexión SQLite
 
-#### Health Checks
+**Reemplazo de Debug.WriteLine:**
+- Convertidos 8 usages de Debug.WriteLine a ILogger.LogError en controladores
 
-| Endpoint | Predicate |
-|----------|----------|
-| `/health` | Todos los checks |
-| `/health/ready` | Solo checks con tag "ready" (SQLite) |
+### Features y Performance
 
-#### Debug.WriteLine Replacement
+**Leaderboard:**
+- Creado LeaderboardService con métodos: GetTopPlayersAsync, GetPlayerRankAsync, ActualizarEstadisticasAsync
+- Creado record LeaderboardEntry
 
-| Archivo | Antes | Después |
-|---------|-------|---------|
-| `MVC Web App/Controllers/JuegoController.cs` | 7x `Debug.WriteLine` | `_logger.LogError` |
-| `MVC Web App/Controllers/ReglasController.cs` | 1x `Debug.WriteLine` | `_logger.LogError` |
+**Caching:**
+- Implementado IMemoryCache con TTL de 30 minutos para baraja
+- Keys de cache: CartasJuego, CartasPremio, CartasCastigo
 
-### Features
+**NuGet Packages Añadidos:**
+- BCrypt.Net-Next 4.0.3
+- Microsoft.AspNetCore.Authentication.JwtBearer 10.0.0
+- Microsoft.EntityFrameworkCore.Sqlite 10.0.0
+- Microsoft.EntityFrameworkCore.Design 10.0.0
+- Serilog.AspNetCore 8.0.0
+- Serilog.Sinks.Console 6.0.0
+- Serilog.Sinks.File 6.0.0
+- AspNetCore.HealthChecks.Sqlite 8.0.0
 
-#### LeaderboardService
-
-| Método | Descripción |
-|--------|-------------|
-| `GetTopPlayersAsync(int count)` | Top N jugadores por victorias/promedio |
-| `GetPlayerRankAsync(string nickname)` | Posición de un jugador específico |
-| `ActualizarEstadisticasAsync(string, int, bool)` | Actualiza stats tras partida |
-
-#### Record Types
-
-```csharp
-public record LeaderboardEntry(
-    int Posicion,
-    string Nickname,
-    int PartidasJugadas,
-    int PartidasGanadas,
-    double PromedioPuntos,
-    int MejorPuntuacion
-);
-```
-
-### Performance
-
-#### MemoryCache Implementation
-
-| Componente | Configuración |
-|------------|---------------|
-| Cache duration | 30 minutos |
-| Keys | `CartasJuego`, `CartasPremio`, `CartasCastigo` |
-| Implementation | `IMemoryCache` con `GetOrCreate` |
-
-### Paquetes NuGet Añadidos (Fase 4)
-
-| Paquete | Versión | Propósito |
-|---------|---------|-----------|
-| `BCrypt.Net-Next` | 4.0.3 | Password hashing |
-| `Microsoft.AspNetCore.Authentication.JwtBearer` | 10.0.0 | JWT auth |
-| `Microsoft.EntityFrameworkCore.Sqlite` | 10.0.0 | EF Core + SQLite |
-| `Microsoft.EntityFrameworkCore.Design` | 10.0.0 | EF Core tooling |
-| `Serilog.AspNetCore` | 8.0.0 | Serilog integration |
-| `Serilog.Sinks.Console` | 6.0.0 | Console logging |
-| `Serilog.Sinks.File` | 6.0.0 | File logging |
-| `AspNetCore.HealthChecks.Sqlite` | 8.0.0 | SQLite health check |
+**Infrastructure:**
+- Corregido DI: HomeService y JuegoService cambiados de Singleton a Scoped
+- Asegurado que AppDbContext se inyecta correctamente como scoped
 
 ---
 
-## Resumen de Archivos Modificados/Creados
-
-### Creados (Fase 4)
-
-```
-MVC Web App/
-├── Data/
-│   └── AppDbContext.cs
-├── Entities/
-│   ├── Usuario.cs
-│   ├── Partida.cs
-│   └── Estadistica.cs
-└── Services/
-    └── LeaderboardService.cs
-
-Raíz/
-├── Dockerfile
-├── docker-compose.yml
-├── .github/workflows/ci-cd.yml
-└── (README.md actualizado)
-```
-
-### Modificados Significantly
-
-| Archivo | Principales Cambios |
-|---------|---------------------|
-| `MVC Web App/Program.cs` | Serilog, JWT, EF Core, Health Checks, MemoryCache |
-| `MVC Web App/Services/HomeService.cs` | BCrypt, DbContext, JWT generation |
-| `MVC Web App/Services/ReglasService.cs` | IMemoryCache, primary constructor |
-| `MVC Web App/Controllers/JuegoController.cs` | ILogger, CartaRevelada record |
-| `MVC Web App/Controllers/HomeController.cs` | JWT token storage |
-| `MVC Web App/Controllers/ReglasController.cs` | ILogger |
-| `MVC Web App/appsettings.json` | ConnectionStrings, Jwt config |
-| `Class Library/Clases/Juego.cs` | Random.Shared, switch expression, removed VB import |
-| `Class Library/Clases/Baraja.cs` | Async I/O, AppContext.BaseDirectory |
-| `Class Library/Clases/CartaJuego.cs` | Switch expression |
-| `Class Library/Interfaces/IHomeService.cs` | GenerarToken method |
-| `Tests/CL_ProyectoFinalPOO.Tests/*.cs` | 7 archivos de test |
-
----
-
-## Métricas Finales
-
-| Métrica | Valor |
-|---------|-------|
-| Tests creados | 70+ |
-| Warnings reducidos | 36 → ~16 |
-| Errores de compilación | 0 |
-| Métodos async | 2+ |
-| Records types | 2 |
-| Primary constructors | 5 |
-| Entidades EF Core | 3 |
-| Health endpoints | 2 |
-| Jobs CI/CD | 4 |
+**Ver DOCUMENTATION_COMPLETE.md para documentación detallada de todos los cambios.**
