@@ -39,7 +39,7 @@ namespace MVC_ProyectoFinalPOO.Controllers
         private readonly IJuegoService _juegoService = juegoService;
         private readonly ILogger<JuegoController> _logger = logger;
 
-        public void CargarViewBagComun(string mensajeErrorPersonalizado = null)
+        public void CargarViewBagComun(string? mensajeErrorPersonalizado = null)
         {
             ViewBag.Jugadores = _juegoService.ObtenerJugadores();
             ViewBag.JugadorActual = _juegoService.ObtenerJugadorActual();
@@ -91,7 +91,7 @@ namespace MVC_ProyectoFinalPOO.Controllers
                 if (cartaCogida != null)
                 {
                     string tipoCartaStr = "desconocido";
-                    string rareza = null, bendicion = null, maleficio = null;
+                    string? rareza = null, bendicion = null, maleficio = null;
 
                     if (cartaCogida is CartaJuego cj) { tipoCartaStr = "juego"; rareza = cj.RarezaCarta.ToString(); }
                     else if (cartaCogida is CartaPremio cp) { tipoCartaStr = "premio"; bendicion = cp.Bendicion; }
@@ -114,7 +114,7 @@ namespace MVC_ProyectoFinalPOO.Controllers
                     ViewBag.CartaRevelada = null;
                 }
 
-                string mensajeErrorCarta = null;
+                string? mensajeErrorCarta = null;
                 if (ViewBag.CartaRevelada == null && !_juegoService.JuegoTerminado())
                 {
                     mensajeErrorCarta = "No quedan más cartas en el mazo o no se pudo obtener una carta.";

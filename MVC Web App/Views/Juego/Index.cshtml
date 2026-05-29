@@ -9,7 +9,7 @@
     dynamic cartaRevelada = ViewBag.CartaRevelada;
     var historialJuego = ViewBag.HistorialJuego as List<string> ?? new();
     bool juegoTerminado = ViewBag.JuegoTerminado ?? false;
-    string mensajeError = ViewBag.MensajeError as string;
+    string? mensajeError = ViewBag.MensajeError as string;
     int totalCartasEnMazo = ViewBag.TotalCartasEnMazo ?? 0;
 
     var jugadoresIzquierda = jugadores.Take((int)Math.Ceiling(jugadores.Count / 2.0)).ToList();

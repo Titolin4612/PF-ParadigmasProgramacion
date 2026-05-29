@@ -4,13 +4,13 @@
     string gameLogoUrl = Url.Content("~/images/title-logo.png");
     var jugadores = ViewBag.Jugadores as List<CL_ProyectoFinalPOO.Clases.Jugador> ?? new();
     bool juegoTerminado = ViewBag.JuegoTerminado ?? false;
-    string mensajeGanador = ViewBag.MensajeGanador as string;
-    string mensajeError = ViewBag.MensajeError as string;
+    string? mensajeGanador = ViewBag.MensajeGanador as string;
+    string? mensajeError = ViewBag.MensajeError as string;
 
     var jugadoresOrdenados = jugadores.OrderByDescending(j => j.Puntos).ToList();
 
-    string simulacionBDMensaje = ViewBag.SimuladorBDMensaje as string;
-    string simulacionBDMensajeTipo = ViewBag.SimulacionBDMensajeTipo as string;
+    string? simulacionBDMensaje = ViewBag.SimuladorBDMensaje as string;
+    string? simulacionBDMensajeTipo = ViewBag.SimulacionBDMensajeTipo as string;
 }
 
 <!DOCTYPE html>

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "gbcXH4rS5vM=",
+  "dgSpecHash": "ZNhdUvFr2OY=",
   "success": true,
   "projectFilePath": "/home/chanda/Projects/PF-ParadigmasProgramacion/MVC Web App/MVC_ProyectoFinalPOO.csproj",
   "expectedPackageFiles": [
@@ -90,30 +90,5 @@
     "/home/chanda/.nuget/packages/system.windows.extensions/9.0.0/system.windows.extensions.9.0.0.nupkg.sha512",
     "/home/chanda/.nuget/packages/microsoft.aspnetcore.app.ref/10.0.8/microsoft.aspnetcore.app.ref.10.0.8.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1903",
-      "level": "Warning",
-      "message": "Package 'System.Security.Cryptography.Xml' 9.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-37gx-xxp4-5rgx",
-      "projectPath": "/home/chanda/Projects/PF-ParadigmasProgramacion/MVC Web App/MVC_ProyectoFinalPOO.csproj",
-      "warningLevel": 1,
-      "filePath": "/home/chanda/Projects/PF-ParadigmasProgramacion/MVC Web App/MVC_ProyectoFinalPOO.csproj",
-      "libraryId": "System.Security.Cryptography.Xml",
-      "targetGraphs": [
-        "net10.0"
-      ]
-    },
-    {
-      "code": "NU1903",
-      "level": "Warning",
-      "message": "Package 'System.Security.Cryptography.Xml' 9.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-w3x6-4m5h-cxqf",
-      "projectPath": "/home/chanda/Projects/PF-ParadigmasProgramacion/MVC Web App/MVC_ProyectoFinalPOO.csproj",
-      "warningLevel": 1,
-      "filePath": "/home/chanda/Projects/PF-ParadigmasProgramacion/MVC Web App/MVC_ProyectoFinalPOO.csproj",
-      "libraryId": "System.Security.Cryptography.Xml",
-      "targetGraphs": [
-        "net10.0"
-      ]
-    }
-  ]
+  "logs": []
 }

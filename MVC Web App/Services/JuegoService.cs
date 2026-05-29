@@ -79,7 +79,7 @@ namespace MVC_ProyectoFinalPOO.Services
                 null : _juegoActual.Jugadores[_juegoActual.IndiceJugador];
         }
 
-        public (Carta carta, int puntos) CogerCarta()
+        public (Carta? carta, int puntos) CogerCarta()
         {
             if (!EstaJuegoActivo())
             {

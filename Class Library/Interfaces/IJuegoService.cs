@@ -25,7 +25,7 @@ namespace CL_ProyectoFinalPOO.Interfaces
         void IniciarJuego(List<Jugador> jugadoresConfigurados);
         bool EstaJuegoActivo();
         Jugador ObtenerJugadorActual();
-        (Carta carta, int puntos) CogerCarta();
+        (Carta? carta, int puntos) CogerCarta();
         void PasarTurno();
         Jugador FinalizarJuego();
         List<Jugador> ObtenerJugadores();
