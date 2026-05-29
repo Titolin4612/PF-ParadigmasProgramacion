@@ -1,21 +1,21 @@
-# Blessings & Curses - Proyecto Final Paradigmas de Programación
+# Blessings & Curses - Final Project Programming Paradigms
 
 [![Typing SVG](https://readme-typing-svg.demolab.com/?font=Alfa+Slab+One&size=30&pause=1000&color=98F7D0&vCenter=true&width=435&lines=Proyecto+Final+Paradigmas)](https://git.io/typing-svg)
 
-## 👤 Integrantes
+## 👤 Contributors
 
-- `Santiago Hernández Morantes`
-- `Juan José Mesa Cardona`
-
----
-
-## 📖 Descripción
-
-Juego de cartas mitológico donde jugadores compiten usando cartas de tres tipos: juego, premio y castigo. Cada carta tiene efectos únicos basados en la mitología mundial.
+- `Santiago Hernandez M`
+- `Juan Jose Mesa Cardona`
 
 ---
 
-## 🏗️ Arquitectura
+## 📖 Description
+
+Mythological card game where players compete using three types of cards: game, prize, and punishment. Each card has unique effects based on world mythology.
+
+---
+
+## 🏗️ Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -54,66 +54,66 @@ Juego de cartas mitológico donde jugadores compiten usando cartas de tres tipos
 
 ---
 
-## 🚀 Inicio Rápido
+## 🚀 Quick Start
 
 ### Prerequisites
 
 - [.NET 10.0 SDK](https://dotnet.microsoft.com/download/dotnet/10.0)
-- [Docker](https://docs.docker.com/get-docker/) (opcional)
+- [Docker](https://docs.docker.com/get-docker/) (optional)
 
 ### Local Development
 
 ```bash
-# Clonar repositorio
+# Clone repository
 cd "MVC Web App"
 
-# Restaurar dependencias
+# Restore dependencies
 dotnet restore
 
-# Ejecutar en desarrollo
+# Run in development
 dotnet run
 ```
 
-Abre [http://localhost:5141](http://localhost:5141) en tu navegador.
+Open [http://localhost:5141](http://localhost:5141) in your browser.
 
 ### Docker
 
 ```bash
-# Build y ejecución
+# Build and run
 docker-compose up -d
 
-# Ver logs
+# View logs
 docker-compose logs -f
 
-# Detener
+# Stop
 docker-compose down
 ```
 
 ---
 
-## 🃏 Distribución de la Baraja
+## 🃏 Deck Distribution
 
-| Tipo | Cantidad | Probabilidad |
+| Type | Quantity | Probability |
 |------|----------|--------------|
-| Cartas de Juego | 30 | 60% |
-| Cartas de Castigo | 17 | 24% |
-| Cartas de Premio | 13 | 16% |
+| Game Cards | 30 | 60% |
+| Punishment Cards | 17 | 24% |
+| Prize Cards | 13 | 16% |
 
-### Rareza de Cartas de Juego
+### Game Card Rarity
 
-| Rareza | Puntos | Probabilidad |
+| Rarity | Points | Probability |
 |--------|--------|--------------|
-| Legendaria | +2 | 10% |
-| Épica | +1 | 20% |
-| Rara | 0 | 20% |
-| Especial | -1 | 25% |
-| Común | -2 | 25% |
+| Legendary | +2 | 10% |
+| Epic | +1 | 20% |
+| Rare | 0 | 20% |
+| Special | -1 | 25% |
+| Common | -2 | 25% |
 
 ---
 
-## 🔧 Configuración
+## 🔧 Configuration
 
-### Variables de Entorno
+### Environment Variables
 
 ```json
 {
@@ -121,7 +121,7 @@ docker-compose down
     "DefaultConnection": "Data Source=app.db"
   },
   "Jwt": {
-    "Key": "TuClaveSecretaDeAlMenos32Caracteres!",
+    "Key": "YourSecretKeyOfAtLeast32Characters!",
     "Issuer": "BlessingsAndCurses",
     "Audience": "BlessingsAndCursesUsers",
     "ExpiryMinutes": 60
@@ -129,59 +129,59 @@ docker-compose down
 }
 ```
 
-### Endpoints de Salud
+### Health Endpoints
 
-- `GET /health` - Health check básico
-- `GET /health/ready` - Readiness check (verifica DB)
+- `GET /health` - Basic health check
+- `GET /health/ready` - Readiness check (verifies DB)
 
 ---
 
-## 🔐 Seguridad
+## 🔐 Security
 
-- **Autenticación**: JWT Bearer tokens
-- **Contraseñas**: BCrypt hashing
-- **Sesiones**: 30 minutos timeout, HttpOnly cookies
-- **Data Protection**: Keys persistidas para producción
+- **Authentication**: JWT Bearer tokens
+- **Passwords**: BCrypt hashing
+- **Sessions**: 30 minute timeout, HttpOnly cookies
+- **Data Protection**: Keys persisted for production
 
 ---
 
 ## 🧪 Testing
 
 ```bash
-# Ejecutar todos los tests
+# Run all tests
 dotnet test
 
-# Con coverage
+# With coverage
 dotnet test --collect:"XPlat Code Coverage"
 ```
 
 ---
 
-## 📊 API de Persistencia
+## 📊 Persistence API
 
-### Entidades
+### Entities
 
-| Entidad | Descripción |
-|---------|-------------|
-| `Usuario` | Nickname, password hash, fecha registro |
-| `Partida` | Ganador, puntos, jugadores, fecha |
-| `Estadistica` | Partidas jugadas/ganadas, promedio puntos |
+| Entity | Description |
+|--------|-------------|
+| `Usuario` | Nickname, password hash, registration date |
+| `Partida` | Winner, points, players, date |
+| `Estadistica` | Games played/won, average points |
 
 ---
 
 ## 📝 Changelog
 
-[**📝 Ver ChangeLog**](./ChangeLog.md)
+[**📝 View ChangeLog**](./ChangeLog.md)
 
 ---
 
-## 📄 Licencia
+## 📄 License
 
-Este proyecto está licenciado bajo la GNU Affero General Public License v3.0 or later (AGPL-3.0-or-later). Consulta el archivo [LICENSE](./LICENSE) para más detalles.
+This project is licensed under the GNU Affero General Public License v3.0 or later (AGPL-3.0-or-later). See the [LICENSE](./LICENSE) file for details.
 
-### Nota sobre AGPL y uso en red
+### Note on AGPL and Network Use
 
-Al usar este software a través de una red (como una aplicación web/SaaS), los usuarios que interactúen con una versión modificada del software tienen derecho a acceder al código fuente correspondiente según los términos de AGPL-3.0-or-later.
+When this software is used over a network (such as a web application/SaaS), users who interact with a modified version of the software have the right to access the corresponding source code under the terms of AGPL-3.0-or-later.
 
 ---
 
