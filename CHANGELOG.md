@@ -1,64 +1,47 @@
 # 📝 ChangeLog - Blessings & Curses
 
-## Juego V 1.30 (Mayo 7 2025) - Chanda
+## V 1.30 (Mayo 7 2025) - Chanda
 
-- Cambie en la clase Baraja para manejar 3 listas diferentes dependiendo el tipo de carta (Juego, Castigo, premio)
-	
-- Ahora la clase Resto solo incluye las cartas de tipo Juego, las de castigo y premio se manejarán con listas aparte en la clase juego
-	
-- Cambie el método AplicarEfectoCartas() para que imprima mejor los puntos obtenidos en esa carta y los puntos totales del jugador
-	
-- Cree las listas l_cartas_premio y l_cartas_castigo en la Clase juego, estas se rellenan en el constructor con los nuevos métodos de la clase Baraja ( CrearCartasCastigo() y CrearCartasPremio() )
-	
-- Cambie el método BarajarCartas() para que ahora no solo revuelva las cartas de resto si no también las de premio y castigo
-	
-- Cambie el constructor de Resto para evitar quemar valores
-	
-- Cambie durísimo la clase baraja y le agregue otro método que obtiene una lista con todas las cartas, algo similar a como antes funcionaba el Resto
-	
+- Cambié en la clase Baraja para manejar 3 listas diferentes dependiendo el tipo de carta (Juego, Castigo, Premio)
+- Ahora la clase Resto solo incluye las cartas de tipo Juego, las de Castigo y Premio se manejarán con listas aparte en la clase Juego
+- Cambié el método AplicarEfectoCartas() para que imprima mejor los puntos obtenidos en esa carta y los puntos totales del jugador
+- Creé las listas l_cartas_premio y l_cartas_castigo en la clase Juego, estas se rellenan en el constructor con los nuevos métodos de la clase Baraja (CrearCartasCastigo() y CrearCartasPremio())
+- Cambié el método BarajarCartas() para que ahora no solo revuelva las cartas de resto sino también las de Premio y Castigo
+- Cambié el constructor de Resto para evitar quemar valores
+- Cambié la clase Baraja y le agregué otro método que obtiene una lista con todas las cartas, algo similar a como antes funcionaba el Resto
 - Añadí nuevos y modifiqué métodos y listas en la clase Juego, también cambié el constructor
-	
-- El método ObtenerCarta() pasó de estar en resto a estar en juego ya que al cambiar el funcionamiento de Resto quedaba obsoleto el método
-	
+- El método ObtenerCarta() pasó de estar en Resto a estar en Juego ya que al cambiar el funcionamiento de Resto quedaba obsoleto el método
 - Modifiqué el funcionamiento del método BarajarCartas()
-	
-- Cambie los accesores de Carta por unos "Menos redundantes y mejor estructurados" similares a los que se hicieron en el proyecto del Multiplex
-	
-- Eliminé la interfaz ICartaEfecto ya que no estaba programada y por el momento sobraba, el método ActualizarPuntos(); que estaba en cada carta lo eliminé ya que no tenía estructura ni funcionalidad, luego se estructura mejor cada interfaz y métodos que llevaran
-	
-- Transferí el método de AplicarEfectoCartas de Jugador a Juego para intentar tener todos los métodos que regulen el funcionamiento del juego en la clase Juego, para eso modifique el funcionamiento para que devuelva un Int con el efecto de la carta
-	
-- También cree nuevos atributos estáticos en cada carta para dejar ahí el valor que van a sumar o restar y evitar quemar valores en los métodos que usen esos valores
-	
-- Añadí el método para repartir las cartas iniciales en cada juego, el método simplemente saca las 3 primeras cartas de la baraja actual y las entrega a un jugador y así repite hasta terminar con los jugadores
-	
-- Añadí también un par de atributos de reglas de negocio en el juego como numero max de jugadores y cartas por jugador
-	
-- Cambie el accesor de puntos ya que estaba haciendo que nadie pudiera pasar de 80 puntos, esta mal, hay que hacer una validación diferente si queremos controlar que al INICIAR los puntos estén en ese rango
-	
-- Hice mucha corrección de errores, falta revisar mucho pero creo que se logro avanzar bastante hoy, faltaron cosas por mencionar aquí ya que cada que me iba acordando iba poniendo, algunas se me pasaron
---- 
-## Juego V 1.34 (Mayo 9 2025) - Chanda
+- Cambié los accesores de Carta por unos menos redundantes y mejor estructurados, similares a los que se hicieron en el proyecto del Multiplex
+- Eliminé la interfaz ICartaEfecto ya que no estaba programada y por el momento sobraba, el método ActualizarPuntos(); que estaba en cada carta lo eliminé ya que no tenía estructura ni funcionalidad
+- Transferí el método de AplicarEfectoCartas de Jugador a Juego para intentar tener todos los métodos que regulen el funcionamiento del juego en la clase Juego
+- Creé nuevos atributos estáticos en cada carta para dejar ahí el valor que van a sumar o restar y evitar quemar valores en los métodos que usen esos valores
+- Añadí el método para repartir las cartas iniciales en cada juego, el método simplemente saca las 3 primeras cartas de la baraja actual y las entrega a un jugador
+- Añadí atributos de reglas de negocio en el juego como número máximo de jugadores y cartas por jugador
+- Cambié el accesor de puntos ya que estaba haciendo que nadie pudiera pasar de 80 puntos
+- Hice mucha corrección de errores
 
-- Cree un par de interfaces con los métodos ya creados para ir definiendo mejor la biblioteca
+---
 
-- A TODOS los métodos le cree bloque Try Catch para mejor control de errores y mejorar el cumplimiento de requisitos
+## V 1.34 (Mayo 9 2025) - Chanda
 
-- Cree la carpeta de Eventos para encaminar el creado de los eventos 
---- 
-## Juego V 1.40 (Mayo 17 2025) - Chanda
+- Creé un par de interfaces con los métodos ya creados para ir definiendo mejor la biblioteca
+- A todos los métodos les creé bloque Try Catch para mejor control de errores y mejorar el cumplimiento de requisitos
+- Creé la carpeta de Eventos para encaminar la creación de los eventos
 
-- Empecé a implementar en el MVC, Fueron avances cortos pero significativos en la parte del front de el Home, Ya se ve bonito al menos para la pantalla 2k y la 1080p. quizas en resoluciones mayores se pueda distorsionar un poco
+---
 
-- Los botones ya están bien pero aun no son funcionales, falta hacer el controller
+## V 1.40 (Mayo 17 2025) - Chanda
 
+- Empecé a implementar en el MVC, fueron avances cortos pero significativos en la parte del front del Home, ya se ve bonito
+- Los botones ya están bien pero aún no son funcionales, falta hacer el controller
 - Corregí la NavBar que estaba terriblemente fea
 
 ---
 
-## V 1.50 (Mayo 2026) - Chanda
+## V 1.50 (Mayo 29 2026) - Chanda
 
-### Mejoras de Calidad de Código
+### Fase 2: Testing, Null Safety y Logging
 
 **Tests Unitarios:**
 - Creados 7 archivos de test con 70+ tests utilizando xUnit y Moq
@@ -79,7 +62,7 @@
 - Removidos bloques else vacíos en JuegoService
 - Mejorado manejo de excepciones usando discard pattern para variables no usadas
 
-### Modernización del Proyecto
+### Fase 3: Modernización .NET 10
 
 **Upgrade de .NET:**
 - Actualizado de .NET 8.0 a .NET 10.0 en los 3 proyectos (Class Library, MVC App, Tests)
@@ -105,7 +88,7 @@
 **Mejoras de Inyección de Dependencias:**
 - ReglasController ahora inyecta IJuegoService en lugar de implementación concreta
 
-### Seguridad y Autenticación
+### Fase 4: Seguridad y Autenticación
 
 **Hash de Contraseñas:**
 - Implementado BCrypt.Net-Next para hashing de contraseñas en HomeService
@@ -119,7 +102,7 @@
 - Añadido Cookie.SecurePolicy.SameAsRequest
 - Configuradas Data Protection keys con lifetime de 90 días
 
-### Persistencia de Datos
+### Fase 4: Persistencia de Datos
 
 **Entity Framework Core + SQLite:**
 - Creado AppDbContext.cs con configuración de entidades
@@ -127,7 +110,7 @@
 - Implementado unique index en Usuario.Nickname
 - Configuradas relaciones: Usuario(1:1)Estadistica, Usuario(1:N)Partidas
 
-### Deployment y Contenedores
+### Fase 4: Deployment y Contenedores
 
 **Docker:**
 - Creado Dockerfile multi-stage (SDK 10.0 → ASPNET 10.0, puerto 8080)
@@ -137,7 +120,7 @@
 **CI/CD:**
 - Creado pipeline GitHub Actions con jobs: build, docker, deploy, code-quality
 
-### Observabilidad
+### Fase 4: Observabilidad
 
 **Logging Estructurado:**
 - Integración de Serilog con sink de consola y archivo rotativo
@@ -150,7 +133,7 @@
 **Reemplazo de Debug.WriteLine:**
 - Convertidos 8 usages de Debug.WriteLine a ILogger.LogError en controladores
 
-### Features y Performance
+### Fase 4: Features y Performance
 
 **Leaderboard:**
 - Creado LeaderboardService con métodos: GetTopPlayersAsync, GetPlayerRankAsync, ActualizarEstadisticasAsync
@@ -160,7 +143,8 @@
 - Implementado IMemoryCache con TTL de 30 minutos para baraja
 - Keys de cache: CartasJuego, CartasPremio, CartasCastigo
 
-**NuGet Packages Añadidos:**
+### Paquetes NuGet Añadidos
+
 - BCrypt.Net-Next 4.0.3
 - Microsoft.AspNetCore.Authentication.JwtBearer 10.0.0
 - Microsoft.EntityFrameworkCore.Sqlite 10.0.0
@@ -170,7 +154,8 @@
 - Serilog.Sinks.File 6.0.0
 - AspNetCore.HealthChecks.Sqlite 8.0.0
 
-**Infrastructure:**
+### Infraestructura
+
 - Corregido DI: HomeService y JuegoService cambiados de Singleton a Scoped
 - Asegurado que AppDbContext se inyecta correctamente como scoped
 
