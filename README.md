@@ -177,4 +177,12 @@ dotnet test --collect:"XPlat Code Coverage"
 
 ## 📄 Licencia
 
-MIT License
+Este proyecto está licenciado bajo la GNU Affero General Public License v3.0 or later (AGPL-3.0-or-later). Consulta el archivo [LICENSE](./LICENSE) para más detalles.
+
+### Nota sobre AGPL y uso en red
+
+Al usar este software a través de una red (como una aplicación web/SaaS), los usuarios que interactúen con una versión modificada del software tienen derecho a acceder al código fuente correspondiente según los términos de AGPL-3.0-or-later.
+
+---
+
+**Copyright (C) 2026 Santiago Hernandez M**
