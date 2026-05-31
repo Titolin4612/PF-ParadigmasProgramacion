@@ -22,6 +22,8 @@ namespace MVC_ProyectoFinalPOO.Services
     {
         Task<List<LeaderboardEntry>> GetTopPlayersAsync(int count = 10);
         Task<LeaderboardEntry?> GetPlayerRankAsync(string nickname);
+        Task<List<PartidaHistorialEntry>> GetHistorialPartidasAsync(int count = 50);
+        Task GuardarPartidaAsync(string nombreGanador, int puntosGanador, int cantidadJugadores, int cartasJugadas);
         Task ActualizarEstadisticasAsync(string nickname, int puntos, bool esGanador);
     }
 
@@ -32,6 +34,14 @@ namespace MVC_ProyectoFinalPOO.Services
         int PartidasGanadas,
         double PromedioPuntos,
         int MejorPuntuacion
+    );
+
+    public record PartidaHistorialEntry(
+        DateTime Fecha,
+        string NombreGanador,
+        int PuntosGanador,
+        int CantidadJugadores,
+        int CartasJugadas
     );
 
     public class LeaderboardService : ILeaderboardService
@@ -113,6 +123,58 @@ namespace MVC_ProyectoFinalPOO.Services
             {
                 _logger.LogError(ex, "Error al obtener rank del jugador {Nickname}", nickname);
                 return null;
+            }
+        }
+
+        public async Task<List<PartidaHistorialEntry>> GetHistorialPartidasAsync(int count = 50)
+        {
+            try
+            {
+                return await _dbContext.Partidas
+                    .AsNoTracking()
+                    .OrderByDescending(p => p.Fecha)
+                    .Take(count)
+                    .Select(p => new PartidaHistorialEntry(
+                        p.Fecha,
+                        p.NombreGanador,
+                        p.PuntosGanador,
+                        p.CantidadJugadores,
+                        p.CartasJugadas
+                    ))
+                    .ToListAsync();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error al obtener historial de partidas");
+                return new List<PartidaHistorialEntry>();
+            }
+        }
+
+        public async Task GuardarPartidaAsync(string nombreGanador, int puntosGanador, int cantidadJugadores, int cartasJugadas)
+        {
+            try
+            {
+                var usuario = await _dbContext.Usuarios
+                    .AsNoTracking()
+                    .FirstOrDefaultAsync(u => u.Nickname.ToLower() == nombreGanador.ToLower());
+
+                _dbContext.Partidas.Add(new Partida
+                {
+                    NombreGanador = nombreGanador,
+                    PuntosGanador = puntosGanador,
+                    CantidadJugadores = cantidadJugadores,
+                    CartasJugadas = cartasJugadas,
+                    Fecha = DateTime.UtcNow,
+                    UsuarioId = usuario?.Id
+                });
+
+                await _dbContext.SaveChangesAsync();
+                _logger.LogInformation("Partida guardada para ganador {NombreGanador}", nombreGanador);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error al guardar partida para ganador {NombreGanador}", nombreGanador);
+                throw;
             }
         }
 

@@ -81,6 +81,7 @@ builder.Services.AddMemoryCache();
 builder.Services.AddScoped<ReglasService>();
 
 builder.Services.AddScoped<IReglasService, ReglasService>();
+builder.Services.AddScoped<ILeaderboardService, LeaderboardService>();
 
 builder.Services.AddScoped<IHomeService>(provider =>
 {

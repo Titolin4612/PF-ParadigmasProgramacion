@@ -34,9 +34,13 @@ namespace MVC_ProyectoFinalPOO.Controllers
         string? Maleficio
     );
 
-    public class JuegoController(IJuegoService juegoService, ILogger<JuegoController> logger) : Controller
+    public class JuegoController(
+        IJuegoService juegoService,
+        ILeaderboardService leaderboardService,
+        ILogger<JuegoController> logger) : Controller
     {
         private readonly IJuegoService _juegoService = juegoService;
+        private readonly ILeaderboardService _leaderboardService = leaderboardService;
         private readonly ILogger<JuegoController> _logger = logger;
 
         public void CargarViewBagComun(string? mensajeErrorPersonalizado = null)
@@ -211,12 +215,26 @@ namespace MVC_ProyectoFinalPOO.Controllers
 
         
         [HttpPost]
-        public IActionResult FinalizarYGuardarJuego() 
+        public async Task<IActionResult> FinalizarYGuardarJuego() 
         {
             try
             {
-                _juegoService.FinalizarJuego(); 
+                var jugadores = _juegoService.ObtenerJugadores();
+                var ganador = _juegoService.FinalizarJuego();
 
+                if (ganador == null)
+                {
+                    TempData["SimulacionBDMensaje"] = "No se pudo determinar un ganador. No se guardó la partida.";
+                    TempData["SimulacionBDMensajeTipo"] = "error";
+                    return RedirectToAction("VerResumen");
+                }
+
+                var cartasJugadas = jugadores.Sum(j => j.L_cartas_jugador?.Count ?? 0);
+                await _leaderboardService.GuardarPartidaAsync(
+                    ganador.Nickname,
+                    ganador.Puntos,
+                    jugadores.Count,
+                    cartasJugadas);
 
                 if (HttpContext.Items.ContainsKey("SimulacionBDMensaje"))
                 {
@@ -225,9 +243,8 @@ namespace MVC_ProyectoFinalPOO.Controllers
                 }
                 else
                 {
-
-                    TempData["SimulacionBDMensaje"] = "Ocurrió un problema al guardar los resultados. Inténtalo de nuevo.";
-                    TempData["SimulacionBDMensajeTipo"] = "error";
+                    TempData["SimulacionBDMensaje"] = "Partida guardada correctamente en el historial.";
+                    TempData["SimulacionBDMensajeTipo"] = "success";
                 }
 
                 return RedirectToAction("VerResumen"); 
