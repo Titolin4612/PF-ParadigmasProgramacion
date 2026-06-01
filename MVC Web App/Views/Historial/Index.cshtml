@@ -204,17 +204,21 @@
         position: fixed;
         bottom: 0;
         width: auto;
-        max-height: 64vh;
-        opacity: 0.92;
+        max-height: 58vh;
+        opacity: 0.84;
         z-index: 2;
+        --historial-character-offset: 780px;
+        --historial-character-bleed: -150px;
     }
 
     .historial-character.male {
-        left: max(-130px, calc(50vw - 690px));
+        left: max(var(--historial-character-bleed), calc(50vw - var(--historial-character-offset)));
+        margin-left: -24px;
     }
 
     .historial-character.female {
-        right: max(-130px, calc(50vw - 690px));
+        right: max(var(--historial-character-bleed), calc(50vw - var(--historial-character-offset)));
+        margin-right: -24px;
     }
 
     @@media (max-width: 768px) {
