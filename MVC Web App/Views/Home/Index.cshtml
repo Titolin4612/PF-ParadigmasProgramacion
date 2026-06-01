@@ -3,9 +3,6 @@
     var jugadores = ViewBag.Players as List<CL_ProyectoFinalPOO.Clases.Jugador>;
 }
 
-<link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
-<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Sorts+Mill+Goudy&display=swap" rel="stylesheet">
-
 <div class="game-container">
     <!-- Botón de cerrar sesión -->
     <form method="post" action="@Url.Action("Logout", "Home")" class="logout-form">
