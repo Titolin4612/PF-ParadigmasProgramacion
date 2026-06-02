@@ -167,6 +167,14 @@ dotnet test --collect:"XPlat Code Coverage"
 | `Partida` | Winner, points, players, date |
 | `Estadistica` | Games played/won, average points |
 
+---
+
+## 📝 Changelog
+
+[**📝 View ChangeLog**](./CHANGELOG.md)
+
+---
+
 ## 📄 License
 
 This project is licensed under the GNU Affero General Public License v3.0 or later (AGPL-3.0-or-later). See the [LICENSE](./LICENSE) file for details.

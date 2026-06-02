@@ -265,21 +265,19 @@ html, body {
     position: absolute;
     bottom: 0;
     width: auto;
-    max-height: 58vh;
+    max-height: 75vh;
     pointer-events: none;
     z-index: 1;
-    --character-offset: 920px;
-    --character-bleed: -240px;
-    margin-left: -48px;
-    margin-right: -48px;
+    margin-left: -80px;
+    margin-right: -80px;
 }
 
     .character.male {
-        left: max(var(--character-bleed), calc(50vw - var(--character-offset)));
+        left: -15vw;
     }
 
     .character.female {
-        right: max(var(--character-bleed), calc(50vw - var(--character-offset)));
+        right: -18vw;
     }
 
 /* ANIMACIÓN LOGO */
@@ -610,21 +608,19 @@ a, a:hover, a:visited, a:focus {
     position: absolute;
     bottom: 0;
     width: auto;
-    max-height: 58vh;
+    max-height: 75vh;
     pointer-events: none;
     z-index: 1;
-    --character-offset: 920px;
-    --character-bleed: -240px;
-    margin-left: -48px;
-    margin-right: -48px;
+    margin-left: -80px;
+    margin-right: -80px;
 }
 
     .character.male {
-        left: max(var(--character-bleed), calc(50vw - var(--character-offset)));
+        left: -15vw;
     }
 
     .character.female {
-        right: max(var(--character-bleed), calc(50vw - var(--character-offset)));
+        right: -18vw;
     }
 
 .return-section {
@@ -1156,19 +1152,19 @@ a, a:hover, a:visited, a:focus {
 .game-bg-character {
     opacity: 0; /* Inicialmente ocultos, si los quieres fade in con JS o CSS animation */
     /* opacity: 0.2; Para que sean visibles pero sutiles */
-    max-height: 58vh !important;
+    max-height: 70vh !important;
     pointer-events: none; /* Para que no interfieran con clicks */
     z-index: -1; /* Detrás de todo el contenido del juego */
 }
 
     .game-bg-character.male {
-        left: max(var(--character-bleed), calc(50vw - var(--character-offset))) !important;
-        bottom: 0 !important;
+        left: -22vw !important;
+        bottom: -5vh !important;
     }
     /* Ajusta posiciones */
     .game-bg-character.female {
-        right: max(var(--character-bleed), calc(50vw - var(--character-offset))) !important;
-        bottom: 0 !important;
+        right: -25vw !important;
+        bottom: -5vh !important;
     }
 
 /* --- MEDIA QUERIES (Ajustes para diferentes tamaños) --- */
@@ -2933,7 +2929,7 @@ body {
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
-    gap: 48px;
+    gap: 25px;
     min-height: calc(100vh - 160px); /* Asegurar que ocupe el espacio vertical disponible */
     flex-grow: 1; /* Permitir que crezca y deje espacio para las imágenes abajo */
 }
@@ -3121,20 +3117,20 @@ body {
 /* Estilos para los personajes a los costados */
 .fin-juego-character {
      /* Tamaño máximo para las imágenes */
-    max-height: 58vh; /* Altura similar a los personajes de Historial */
+    max-height: 75vh; /* Altura máxima según lo especificado */
     width: auto;
-    height: 58vh;
+    height: 75vh;
     align-self: flex-end; /* Asegurar que estén abajo */
     z-index: 0; /* Por detrás del contenedor central si hay superposición */
 }
 
 .left-character {
     transform: scaleX(-1); /* Voltear horizontalmente para que mire hacia el centro */
-    margin-right: 96px; /* Espacio entre la imagen y el contenedor central */
+    margin-right: 20px; /* Espacio entre la imagen y el contenedor central */
 }
 
 .right-character {
-    margin-left: 96px; /* Espacio entre la imagen y el contenedor central */
+    margin-left: 20px; /* Espacio entre la imagen y el contenedor central */
 }
 
 /* Media Queries */
@@ -3386,7 +3382,7 @@ body {
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
-    gap: 48px;
+    gap: 25px;
     min-height: calc(100vh - 160px);
     flex-grow: 1;
 }
