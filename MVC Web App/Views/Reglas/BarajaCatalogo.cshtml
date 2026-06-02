@@ -234,20 +234,22 @@
     position: absolute;
     bottom: 0;
     width: auto;
-    max-height: 75vh;
+    max-height: 58vh;
     pointer-events: none;
     z-index: 1;
-    margin-left: -80px;
-    margin-right: -80px;
+    --character-offset: 920px;
+    --character-bleed: -240px;
+    margin-left: -48px;
+    margin-right: -48px;
 }
 
      .character.male {
 
-        left: -7vw;
+        left: max(var(--character-bleed), calc(50vw - var(--character-offset)));
     }
 
     .character.female {
-        right: -5vw;
+        right: max(var(--character-bleed), calc(50vw - var(--character-offset)));
     }
 
 html, body {

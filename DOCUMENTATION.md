@@ -38,7 +38,6 @@ dotnet test --collect:"XPlat Code Coverage"
 
 ```
 PF-ParadigmasProgramacion/
-├── 📄 CHANGELOG.md                    # Registro completo de cambios
 ├── 📄 DOCUMENTATION_COMPLETE.md       # Esta documentación
 │
 ├── Class Library/

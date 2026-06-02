@@ -94,7 +94,7 @@
                 </div>
             </div>
 
-            <img src="@Url.Content("~/images/character-male3.png")" alt="Rey" class="fin-juego-character left-character" />
+            <img src="@Url.Content("~/images/character-male3.png")" alt="Rey" class="fin-juego-character right-character" />
         </div>
 
         <img src="@Url.Content("~/images/character-male.png")" alt="Decoración" class="character male game-bg-character" />
@@ -144,19 +144,21 @@
         position: absolute;
         bottom: 0;
         width: auto;
-        max-height: 75vh;
+        max-height: 58vh;
         pointer-events: none;
         z-index: 1;
-        margin-left: -80px;
-        margin-right: -80px;
+        --character-offset: 920px;
+        --character-bleed: -240px;
+        margin-left: -48px;
+        margin-right: -48px;
     }
 
     .character.male {
-        left: -24vw;
+        left: max(var(--character-bleed), calc(50vw - var(--character-offset)));
     }
 
     .character.female {
-        right: -24vw;
+        right: max(var(--character-bleed), calc(50vw - var(--character-offset)));
     }
 
     html, body {
