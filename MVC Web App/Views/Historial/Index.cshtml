@@ -201,20 +201,31 @@
         bottom: 0;
         width: auto;
         max-height: 58vh;
-        opacity: 0.84;
+        opacity: 1; /* sin transparencia — bien visibles */
         z-index: 2;
-        --historial-character-offset: 780px;
-        --historial-character-bleed: -150px;
+        pointer-events: none;
+        filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.45));
+        animation: character-float 5.5s ease-in-out infinite;
+        will-change: transform;
     }
 
     .historial-character.male {
-        left: max(var(--historial-character-bleed), calc(50vw - var(--historial-character-offset)));
-        margin-left: -24px;
+        left: 1.2vw;
+        animation-delay: 0s;
     }
 
     .historial-character.female {
-        right: max(var(--historial-character-bleed), calc(50vw - var(--historial-character-offset)));
-        margin-right: -24px;
+        right: 1.2vw;
+        animation-delay: 1.4s;
+    }
+
+    .historial-character:hover {
+        transform: scale(1.05) translateY(-6px);
+        filter: drop-shadow(0 14px 22px rgba(212, 175, 55, 0.55));
+    }
+
+    .historial-character.female:hover {
+        transform: scale(1.05) translateY(-6px) rotate(1.2deg);
     }
 
     @@media (max-width: 768px) {

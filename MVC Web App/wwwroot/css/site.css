@@ -124,7 +124,7 @@ html, body {
     margin-top: 20px;
 }
 
-/* Ambos botones comparten diseño base */
+/* Ambos botones comparten diseï¿½o base */
 
 .rules-button,
 .play-button {
@@ -239,12 +239,12 @@ html, body {
     max-width: 320px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.4);
     animation: fadeIn 0.5s ease-out;
-    transition: all 0.5s ease-in-out; /* Transición suave y lenta */
+    transition: all 0.5s ease-in-out; /* Transiciï¿½n suave y lenta */
 }
 
     .error-banner:hover {
-        background: #8b0000; /* Rojo más oscuro */
-        box-shadow: 0 8px 16px rgba(0,0,0,0.5); /* Sombra más profunda */
+        background: #8b0000; /* Rojo mï¿½s oscuro */
+        box-shadow: 0 8px 16px rgba(0,0,0,0.5); /* Sombra mï¿½s profunda */
         transform: translateY(5px) scale(1.05); /* Desplazamiento hacia abajo y escalado suave */
     }
 
@@ -260,27 +260,74 @@ html, body {
     }
 }
 
-/* PERSONAJES FIRMES */
+/* === PERSONAJES â€” visibles, juntos y con vida === */
 .character {
     position: absolute;
     bottom: 0;
     width: auto;
+    height: 62vh;
     max-height: 75vh;
     pointer-events: none;
-    z-index: 1;
-    margin-left: -80px;
-    margin-right: -80px;
+    z-index: 2;
+    opacity: 1;
+    margin-left: 0;
+    margin-right: 0;
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.45));
+    will-change: transform;
+    transform-origin: 50% 100%;
+    animation: character-float 5.5s ease-in-out infinite;
+    transition: transform 0.4s ease, filter 0.4s ease;
 }
 
     .character.male {
-        left: -15vw;
+        left: 1.2vw;
+        animation-delay: 0s;
     }
 
     .character.female {
-        right: -18vw;
+        right: 1.2vw;
+        animation-delay: 1.4s; /* desincronizado con el masculino para dar vida */
     }
 
-/* ANIMACIÓN LOGO */
+/* Hover sutil y lindo */
+.character:hover {
+    transform: scale(1.05) rotate(-1.2deg) translateY(-6px);
+    filter: drop-shadow(0 14px 22px rgba(212, 175, 55, 0.55));
+    cursor: default;
+}
+
+.character.female:hover {
+    transform: scale(1.05) rotate(1.2deg) translateY(-6px);
+}
+
+/* AnimaciÃ³n de respiraciÃ³n/flotaciÃ³n */
+@keyframes character-float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(0.4deg);
+    }
+}
+
+@keyframes character-float-soft {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-8px) rotate(-0.4deg);
+    }
+}
+
+/* Responsive: en pantallas chicas los personajes se esconden para no estorbar */
+@media (max-width: 768px) {
+    .character,
+    .fin-juego-character {
+        display: none;
+    }
+}
+
+/* ANIMACIï¿½N LOGO */
 @keyframes pulse-logo {
     0%, 100% {
         transform: scale(1);
@@ -470,7 +517,7 @@ a, a:hover, a:visited, a:focus {
     margin-top: 150px; /* Ajusta a gusto */
 }
 
-/* Estilos específicos para la página About */
+/* Estilos especï¿½ficos para la pï¿½gina About */
 .about-scroll {
     background: rgba(245, 230, 202, 0.95);
     border: 2px solid #c17e3a;
@@ -608,20 +655,39 @@ a, a:hover, a:visited, a:focus {
     position: absolute;
     bottom: 0;
     width: auto;
+    height: 62vh;
     max-height: 75vh;
     pointer-events: none;
-    z-index: 1;
-    margin-left: -80px;
-    margin-right: -80px;
+    z-index: 2;
+    opacity: 1;
+    margin-left: 0;
+    margin-right: 0;
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.45));
+    will-change: transform;
+    transform-origin: 50% 100%;
+    animation: character-float 5.5s ease-in-out infinite;
+    transition: transform 0.4s ease, filter 0.4s ease;
 }
 
     .character.male {
-        left: -15vw;
+        left: 1.2vw;
+        animation-delay: 0s;
     }
 
     .character.female {
-        right: -18vw;
+        right: 1.2vw;
+        animation-delay: 1.4s;
     }
+
+.character:hover {
+    transform: scale(1.05) rotate(-1.2deg) translateY(-6px);
+    filter: drop-shadow(0 14px 22px rgba(212, 175, 55, 0.55));
+    cursor: default;
+}
+
+.character.female:hover {
+    transform: scale(1.05) rotate(1.2deg) translateY(-6px);
+}
 
 .return-section {
     text-align: center;
@@ -655,9 +721,9 @@ a, a:hover, a:visited, a:focus {
 /* --- GENERALES DE PANTALLA DE JUEGO --- */
 /* === INDICADOR DE TURNO (Esta es la que debes conservar y ajustar si es necesario) === */
 .turn-indicator {
-    background: rgba(0, 0, 0, 0.85); /* Fondo un poco más opaco */
-    padding: 10px 30px; /* Más padding horizontal */
-    border-radius: 30px; /* Píldora */
+    background: rgba(0, 0, 0, 0.85); /* Fondo un poco mï¿½s opaco */
+    padding: 10px 30px; /* Mï¿½s padding horizontal */
+    border-radius: 30px; /* Pï¿½ldora */
     border: 2px solid #d4af37; /* Borde dorado */
     font-size: 1.25em;
     color: #f5eeda; /* Color de texto principal */
@@ -665,10 +731,10 @@ a, a:hover, a:visited, a:focus {
     box-shadow: 0 0 20px rgba(255, 215, 0, 0.5), 0 0 5px rgba(0,0,0,0.3) inset;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
     font-family: 'Cinzel Decorative', serif;
-    /* Añadidos para asegurar centrado y visibilidad */
+    /* Aï¿½adidos para asegurar centrado y visibilidad */
     width: fit-content; /* Ajustar al contenido */
-    min-width: 280px; /* Ancho mínimo */
-    max-width: 90%; /* Máximo del contenedor */
+    min-width: 280px; /* Ancho mï¿½nimo */
+    max-width: 90%; /* Mï¿½ximo del contenedor */
     margin-left: auto; /* Centrar */
     margin-right: auto; /* Centrar */
     display: block; /* Para que margin:auto funcione bien */
@@ -680,7 +746,7 @@ a, a:hover, a:visited, a:focus {
 
     /* Ajustar el nombre del jugador DENTRO del indicador de turno */
     .turn-indicator strong, /* Si usas <strong> directamente */
-    .turn-indicator .current-player-name /* Si tienes una clase específica para el nombre */ {
+    .turn-indicator .current-player-name /* Si tienes una clase especï¿½fica para el nombre */ {
         color: #ffd700; /* Dorado brillante */
         font-weight: 700;
     }
@@ -689,23 +755,23 @@ a, a:hover, a:visited, a:focus {
     .turn-indicator.turn-ended {
         background: rgba(80, 20, 20, 0.85); /* Fondo rojo oscuro */
         color: #ffdad4;
-        border-color: #b75757; /* Borde rojo más oscuro */
+        border-color: #b75757; /* Borde rojo mï¿½s oscuro */
         box-shadow: 0 0 15px rgba(200, 80, 80, 0.5), 0 0 5px rgba(0,0,0,0.3) inset;
     }
 
 .current-player-name {
     color: #ffd700;
-    font-weight: 700; /* Cinzel Decorative puede necesitar más peso */
+    font-weight: 700; /* Cinzel Decorative puede necesitar mï¿½s peso */
 }
 
-/* --- ÁREA DE JUGADORES --- */
+/* --- ï¿½REA DE JUGADORES --- */
 .player-areas-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
     width: 100%;
-    max-width: 1300px; /* Ajusta según el número de jugadores */
+    max-width: 1300px; /* Ajusta segï¿½n el nï¿½mero de jugadores */
 }
 
 .player-box {
@@ -716,7 +782,7 @@ a, a:hover, a:visited, a:focus {
     text-align: center;
     box-shadow: 0 6px 18px rgba(0,0,0,0.6);
     transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
-    width: 260px; /* Ancho base, se ajustará */
+    width: 260px; /* Ancho base, se ajustarï¿½ */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -750,7 +816,7 @@ a, a:hover, a:visited, a:focus {
     border-bottom: 1px solid #7a6240;
     padding-bottom: 10px;
     width: 100%;
-    font-family: 'Cinzel', serif; /* Fuente temática */
+    font-family: 'Cinzel', serif; /* Fuente temï¿½tica */
     letter-spacing: 0.5px;
 }
 
@@ -761,7 +827,7 @@ a, a:hover, a:visited, a:focus {
     align-items: center;
     justify-content: flex-start; /* Alineado a la izquierda dentro de su espacio */
     width: 100%;
-    padding-left: 20px; /* Un poco de indentación */
+    padding-left: 20px; /* Un poco de indentaciï¿½n */
 }
 
     .player-stats p i {
@@ -816,7 +882,7 @@ a, a:hover, a:visited, a:focus {
     background-color: #4a3b2c; /* Color de fondo si la imagen no carga */
 }
 
-/* --- ÁREA CENTRAL DEL JUEGO --- */
+/* --- ï¿½REA CENTRAL DEL JUEGO --- */
 .central-game-board {
     display: flex;
     gap: 25px;
@@ -825,13 +891,13 @@ a, a:hover, a:visited, a:focus {
     padding: 25px;
     background: rgba(0,0,0,0.7);
     border-radius: 20px;
-    border: 2px solid #6b4f34; /* Borde más pronunciado */
+    border: 2px solid #6b4f34; /* Borde mï¿½s pronunciado */
     align-items: stretch;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
 .deck-and-actions-column {
-    flex: 0 0 220px; /* Ligeramente más ancho */
+    flex: 0 0 220px; /* Ligeramente mï¿½s ancho */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -847,7 +913,7 @@ a, a:hover, a:visited, a:focus {
 }
 
 .deck-image {
-    width: 140px; /* Mazo más grande */
+    width: 140px; /* Mazo mï¿½s grande */
     height: auto;
     border-radius: 12px;
     box-shadow: 0 0 18px rgba(0,0,0,0.8);
@@ -877,7 +943,7 @@ a, a:hover, a:visited, a:focus {
 }
 
 
-.tertiary-action-button { /* Hereda de .back-button, puedes ajustar aquí si es necesario */
+.tertiary-action-button { /* Hereda de .back-button, puedes ajustar aquï¿½ si es necesario */
 }
 
 
@@ -886,12 +952,12 @@ a, a:hover, a:visited, a:focus {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 480px; /* Para la carta más grande */
+    min-height: 480px; /* Para la carta mï¿½s grande */
     background-color: rgba(10,5,0,0.35);
     border-radius: 15px;
     padding: 20px;
-    border: 2px dashed #7a6240; /* Borde más visible */
-    position: relative; /* Para efectos de entrada de carta si se añaden */
+    border: 2px dashed #7a6240; /* Borde mï¿½s visible */
+    position: relative; /* Para efectos de entrada de carta si se aï¿½aden */
 }
 
 .card-display-placeholder {
@@ -927,12 +993,12 @@ a, a:hover, a:visited, a:focus {
     color: #a1e0a1;
     font-weight: bold;
 }
-/* Verde más claro */
+/* Verde mï¿½s claro */
 .points-negative {
     color: #f7a3a3;
     font-weight: bold;
 }
-/* Rojo más claro */
+/* Rojo mï¿½s claro */
 .points-neutral {
     color: #d0d0d0;
     font-weight: bold;
@@ -963,7 +1029,7 @@ a, a:hover, a:visited, a:focus {
     color: #f5eeda;
 }
 
-/* Colores específicos por tipo de carta (fondos, bordes, texto principal) */
+/* Colores especï¿½ficos por tipo de carta (fondos, bordes, texto principal) */
 .game-card-visual.type-juego {
     background: linear-gradient(150deg, #d7c7ad 0%, #c0aa8e 100%);
     border: 4px solid #604c38;
@@ -986,7 +1052,7 @@ a, a:hover, a:visited, a:focus {
 
 .game-card-visual.type-premio {
     background: linear-gradient(150deg, #fff0c5 0%, #ffe082 100%);
-    border: 4px solid #c5a052; /* Dorado más oscuro */
+    border: 4px solid #c5a052; /* Dorado mï¿½s oscuro */
     color: #6d4c10;
 }
 
@@ -1006,7 +1072,7 @@ a, a:hover, a:visited, a:focus {
 
 .game-card-visual.type-castigo {
     background: linear-gradient(150deg, #e8c5c5 0%, #d8a8a8 100%);
-    border: 4px solid #7a2a2a; /* Rojo oscuro más apagado */
+    border: 4px solid #7a2a2a; /* Rojo oscuro mï¿½s apagado */
     color: #4d1a1a;
 }
 
@@ -1035,12 +1101,12 @@ a, a:hover, a:visited, a:focus {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     font-size: 1.2rem;
     z-index: 9999;
-    transition: all 0.5s ease-in-out; /* Transición suave y lenta */
+    transition: all 0.5s ease-in-out; /* Transiciï¿½n suave y lenta */
 }
 
     .success-banner:hover {
-        background: linear-gradient(to right, #2e7d32, #4caf50); /* Degradado verde más oscuro */
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Sombra más profunda */
+        background: linear-gradient(to right, #2e7d32, #4caf50); /* Degradado verde mï¿½s oscuro */
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Sombra mï¿½s profunda */
         transform: translateY(5px) scale(1.05); /* Desplazamiento hacia abajo y escalado suave */
     }
 
@@ -1150,24 +1216,24 @@ a, a:hover, a:visited, a:focus {
 
 /* --- PERSONAJES DE FONDO (GAME SCREEN) --- */
 .game-bg-character {
-    opacity: 0; /* Inicialmente ocultos, si los quieres fade in con JS o CSS animation */
-    /* opacity: 0.2; Para que sean visibles pero sutiles */
+    opacity: 0.55; /* visibles pero sutiles como decoraciÃ³n */
     max-height: 70vh !important;
     pointer-events: none; /* Para que no interfieran con clicks */
-    z-index: -1; /* Detrás de todo el contenido del juego */
+    z-index: 0; /* DetrÃ¡s del contenido central del juego */
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.45)) saturate(0.85);
 }
 
     .game-bg-character.male {
-        left: -22vw !important;
-        bottom: -5vh !important;
+        left: 0.5vw !important;
+        bottom: 0 !important;
     }
     /* Ajusta posiciones */
     .game-bg-character.female {
-        right: -25vw !important;
-        bottom: -5vh !important;
+        right: 0.5vw !important;
+        bottom: 0 !important;
     }
 
-/* --- MEDIA QUERIES (Ajustes para diferentes tamaños) --- */
+/* --- MEDIA QUERIES (Ajustes para diferentes tamaï¿½os) --- */
 @media (max-width: 1200px) {
     .player-box {
         width: 230px;
@@ -1257,7 +1323,7 @@ a, a:hover, a:visited, a:focus {
     }
 }
 
-@media (max-width: 767px) { /* Móviles grandes */
+@media (max-width: 767px) { /* Mï¿½viles grandes */
     .player-box {
         width: calc(100% - 20px);
         max-width: 380px;
@@ -1287,7 +1353,7 @@ a, a:hover, a:visited, a:focus {
     }
 }
 
-@media (max-width: 480px) { /* Móviles pequeños */
+@media (max-width: 480px) { /* Mï¿½viles pequeï¿½os */
     .play-screen {
         padding: 10px;
         padding-top: 50px;
@@ -1369,13 +1435,13 @@ a, a:hover, a:visited, a:focus {
 /* JUEGO ========================================================================================================================================================================================= */
 /* JUEGO ========================================================================================================================================================================================= */
 
-/* === VARIABLES GLOBALES DE DISEÑO === */
+/* === VARIABLES GLOBALES DE DISEï¿½O === */
 :root {
     --card-bg-color: #1a1520; /* Fondo oscuro para la carta */
     --card-border-color: rgba(200, 180, 150, 0.2); /* Borde sutil */
     --card-text-primary: #f0e8d8; /* Texto principal */
-    --card-text-secondary: #d0c0a0; /* Texto secundario (mitología, etiquetas) */
-    --card-text-title: #ffe8c0; /* Título de la carta */
+    --card-text-secondary: #d0c0a0; /* Texto secundario (mitologï¿½a, etiquetas) */
+    --card-text-title: #ffe8c0; /* Tï¿½tulo de la carta */
     --card-accent-gold: #c5a052; /* Acento dorado */
     --points-positive-color: #a0ffa0;
     --points-negative-color: #ffa0a0;
@@ -1388,7 +1454,7 @@ a, a:hover, a:visited, a:focus {
     --ui-text-light: #e8e0d0;
     --ui-text-highlight: #fff0c0;
     --ui-accent-color1: #b8860b; /* Dorado oscuro para botones/acentos */
-    --ui-accent-color2: #8c643c; /* Marrón cobrizo */
+    --ui-accent-color2: #8c643c; /* Marrï¿½n cobrizo */
 
     --color-accent-gold: var(--card-accent-gold);
     --color-bg-deep-dark: var(--card-bg-color);
@@ -1399,7 +1465,7 @@ a, a:hover, a:visited, a:focus {
 }
 
 /* === ESTILOS GENERALES DE LA PANTALLA DE JUEGO === */
-.game-active-bg { /* Asumo que esto está en tu <body> */
+.game-active-bg { /* Asumo que esto estï¿½ en tu <body> */
     /* Ejemplo: background: url(...) no-repeat center center fixed; background-size: cover; */
 }
 
@@ -1734,7 +1800,7 @@ a, a:hover, a:visited, a:focus {
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
     opacity: 0; /* Inicialmente oculto */
     transform: translateY(15px) scale(0.98);
-    transition: opacity 0.25s 0.15s ease-out, transform 0.4s 0.3s ease-out; /* Delay para aparecer DESPUÉS del giro */
+    transition: opacity 0.25s 0.15s ease-out, transform 0.4s 0.3s ease-out; /* Delay para aparecer DESPUï¿½S del giro */
 }
 
 .revealed-game-card.animate-card-content-in .card-inner-content-game {
@@ -1748,7 +1814,7 @@ a, a:hover, a:visited, a:focus {
     transition-delay: 0s; /* Salida inmediata del contenido */
 }
 
-/* Animación de entrada opcional si la carta ya está revelada al cargar (NO USADA AHORA para evitar doble animación) */
+/* Animaciï¿½n de entrada opcional si la carta ya estï¿½ revelada al cargar (NO USADA AHORA para evitar doble animaciï¿½n) */
 .revealed-game-card.animate-initial-entrance {
     animation: cardEntranceAnimFull 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0.1s forwards;
 }
@@ -2123,7 +2189,7 @@ a, a:hover, a:visited, a:focus {
 .end-game-button {
     width: 100%; /* Para que todos los botones tengan el mismo ancho */
     padding: 10px 15px; /* Ajusta el padding si es necesario */
-    font-size: 0.9rem; /* Ajusta el tamaño de fuente si es necesario */
+    font-size: 0.9rem; /* Ajusta el tamaï¿½o de fuente si es necesario */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2134,11 +2200,11 @@ a, a:hover, a:visited, a:focus {
     }
 
 /* Puedes usar tus clases existentes de botones (primary, secondary, tertiary)
-   o definir estilos específicos si es necesario.
+   o definir estilos especï¿½ficos si es necesario.
    Por ejemplo, para .primary-action-button, .secondary-action-button, .tertiary-action-button
-   que ya tienes, solo asegúrate que se vean bien en este contexto. */
+   que ya tienes, solo asegï¿½rate que se vean bien en este contexto. */
 
-/* Ejemplo de cómo podrían ser tus clases de botones si no las tienes definidas con mucho estilo */
+/* Ejemplo de cï¿½mo podrï¿½an ser tus clases de botones si no las tienes definidas con mucho estilo */
 .primary-action-button {
     background-color: var(--card-accent-gold); /* O tu color primario */
     color: var(--dark-text-color); /* O tu color de texto para primario */
@@ -2146,7 +2212,7 @@ a, a:hover, a:visited, a:focus {
 }
 
     .primary-action-button:hover {
-        background-color: #e0ac4e; /* Un tono más oscuro o diferente para el hover */
+        background-color: #e0ac4e; /* Un tono mï¿½s oscuro o diferente para el hover */
     }
 
 .secondary-action-button {
@@ -2173,7 +2239,7 @@ a, a:hover, a:visited, a:focus {
 /* BARJA ===================================================================================================================================================================== */
 /* BARJA ===================================================================================================================================================================== */
 
-/* === VARIABLES GLOBALES DE DISEÑO (adaptadas de juego-pantalla.css) === */
+/* === VARIABLES GLOBALES DE DISEï¿½O (adaptadas de juego-pantalla.css) === */
 :root {
     --card-bg-color: #1a1520;
     --card-border-color: rgba(200, 180, 150, 0.25);
@@ -2198,12 +2264,12 @@ a, a:hover, a:visited, a:focus {
     --type-premio-bg: #f0932b;
     --type-castigo-bg: #eb4d4b;
     --type-text-color: #ffffff;
-    /* Colores específicos para el tema Papiro si es necesario, o usar directos */
+    /* Colores especï¿½ficos para el tema Papiro si es necesario, o usar directos */
     --papyrus-bg: rgba(245, 230, 202, 0.96);
     --papyrus-border: #a07d5c;
     --papyrus-text-primary: #3a2e1f;
-    --papyrus-text-title: #800000; /* Rojo oscuro para títulos principales en papiro */
-    --papyrus-text-subtitle: #4a3b2c; /* Marrón para subtítulos en papiro */
+    --papyrus-text-title: #800000; /* Rojo oscuro para tï¿½tulos principales en papiro */
+    --papyrus-text-subtitle: #4a3b2c; /* Marrï¿½n para subtï¿½tulos en papiro */
     --papyrus-icon-color: #b87333; /* Cobre para iconos en papiro */
     /* Para que el CSS pueda usar las variables de RGB directamente */
     --card-border-color-rgb: 200, 180, 150;
@@ -2212,7 +2278,7 @@ a, a:hover, a:visited, a:focus {
 /* Apply fonts if not globally set in _Layout.cshtml or site.css */
 body {
     font-family: var(--font-primary); /* Fuente por defecto, puede ser sobreescrita por elementos papiro */
-    background-color: #1e1a27; /* Fondo oscuro general de la página, como en tu segundo ejemplo */
+    background-color: #1e1a27; /* Fondo oscuro general de la pï¿½gina, como en tu segundo ejemplo */
     color: var(--ui-text-light); /* Color de texto general para fuera del papiro */
     margin: 0;
     padding: 0;
@@ -2224,7 +2290,7 @@ body {
 .catalog-container {
     width: 100%;
     min-height: 100vh; /* Asegura que ocupa toda la altura de la ventana */
-    padding-top: 70px; /* Espacio para la navbar (ajustar según altura real de tu navbar) */
+    padding-top: 70px; /* Espacio para la navbar (ajustar segï¿½n altura real de tu navbar) */
     padding-bottom: 20px; /* Espacio inferior */
     box-sizing: border-box;
     display: flex;
@@ -2232,7 +2298,7 @@ body {
     align-items: flex-start; /* Alinea el papiro arriba */
 }
 
-/* El área de scroll que simula el papiro */
+/* El ï¿½rea de scroll que simula el papiro */
 .catalog-scroll-area {
     width: 100%;
     max-width: 1400px;
@@ -2246,7 +2312,7 @@ body {
     color: var(--papyrus-text-primary); /* Color de texto principal dentro del papiro */
     overflow-y: auto; /* Habilita el scroll vertical para el papiro */
     overflow-x: hidden; /* Previene scroll horizontal accidental en el papiro */
-    font-family: 'Georgia', serif; /* Fuente específica para el contenido del papiro */
+    font-family: 'Georgia', serif; /* Fuente especï¿½fica para el contenido del papiro */
 }
 
     /* Estilo para el SCROLLBAR PRINCIPAL del papiro */
@@ -2266,7 +2332,7 @@ body {
     }
 
         .catalog-scroll-area::-webkit-scrollbar-thumb:hover {
-            background-color: #8c643c; /* Un tono más oscuro del borde del papiro para el hover */
+            background-color: #8c643c; /* Un tono mï¿½s oscuro del borde del papiro para el hover */
         }
 /* Para Firefox */
 .catalog-scroll-area {
@@ -2277,12 +2343,12 @@ body {
 
 .catalog-main-title {
     font-family: var(--font-decorative);
-    color: var(--papyrus-text-title); /* Color para título principal en papiro */
+    color: var(--papyrus-text-title); /* Color para tï¿½tulo principal en papiro */
     text-align: center;
-    font-size: 2.3em; /* Tamaño del título como en tu segundo ejemplo */
+    font-size: 2.3em; /* Tamaï¿½o del tï¿½tulo como en tu segundo ejemplo */
     margin-top: 0; /* Quitamos margen superior ya que el papiro tiene su padding */
     margin-bottom: 25px;
-    padding: 0 25px; /* Añadido padding horizontal como en el segundo ejemplo */
+    padding: 0 25px; /* Aï¿½adido padding horizontal como en el segundo ejemplo */
     border-bottom: 1px solid var(--card-accent-gold); /* Mantenemos este borde de tu primer CSS */
     text-shadow: 1px 1px 2px rgba(0,0,0,0.25);
 }
@@ -2303,9 +2369,9 @@ body {
     }
 
     .card-gallery-section h2 {
-        font-family: 'Georgia', serif; /* Fuente para los subtítulos de sección */
-        color: var(--papyrus-text-subtitle); /* Color para subtítulos en papiro */
-        font-size: 1.7em; /* Tamaño como en tu segundo ejemplo */
+        font-family: 'Georgia', serif; /* Fuente para los subtï¿½tulos de secciï¿½n */
+        color: var(--papyrus-text-subtitle); /* Color para subtï¿½tulos en papiro */
+        font-size: 1.7em; /* Tamaï¿½o como en tu segundo ejemplo */
         margin-bottom: 18px;
         padding-bottom: 10px;
         border-bottom: 1px dashed #c1a57e; /* Borde como en tu segundo ejemplo */
@@ -2315,7 +2381,7 @@ body {
 
         .card-gallery-section h2 i {
             margin-right: 10px;
-            color: #8c643c; /* Color para iconos de subtítulo */
+            color: #8c643c; /* Color para iconos de subtï¿½tulo */
             font-size: 0.9em;
         }
 
@@ -2327,7 +2393,7 @@ body {
     gap: 25px;
     padding: 20px 5px;
     min-height: 320px;
-    /* Quitado el padding horizontal global, se maneja por sección */
+    /* Quitado el padding horizontal global, se maneja por secciï¿½n */
 }
 
     /* Scrollbar styling for Webkit (Chrome, Safari, Edge) */
@@ -2460,7 +2526,7 @@ body {
     object-fit: contain;
 }
 
-/* INICIO DE CAMBIOS PARA EL REVERSO DE LA CARTA DEL CATÁLOGO */
+/* INICIO DE CAMBIOS PARA EL REVERSO DE LA CARTA DEL CATï¿½LOGO */
 .catalog-card-back {
     transform: rotateY(180deg);
     z-index: 1;
@@ -2504,34 +2570,34 @@ body {
     z-index: 2; /* Encima del overlay */
     width: 100%;
     height: 100%;
-    padding: 15px; /* Ajusta este padding según necesites */
+    padding: 15px; /* Ajusta este padding segï¿½n necesites */
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: space-between; /* Distribuye el espacio */
     color: var(--card-text-primary);
     text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
-    font-size: 0.85em; /* Tamaño base un poco más pequeño para el catálogo */
+    font-size: 0.85em; /* Tamaï¿½o base un poco mï¿½s pequeï¿½o para el catï¿½logo */
 }
 
-/* Sección superior: Título y Mitología */
+/* Secciï¿½n superior: Tï¿½tulo y Mitologï¿½a */
 .details-top-section {
     text-align: center;
-    margin-bottom: 8px; /* Espacio antes de la sección media */
+    margin-bottom: 8px; /* Espacio antes de la secciï¿½n media */
 }
 
 .details-title { /* Reutilizamos la clase pero ajustamos estilos */
     font-family: var(--font-decorative);
-    font-size: 1.5em; /* Ajustado para el tamaño de la carta de catálogo */
+    font-size: 1.5em; /* Ajustado para el tamaï¿½o de la carta de catï¿½logo */
     color: var(--card-text-title);
     margin: 0 0 2px 0;
     line-height: 1.1;
     text-shadow: 0 0 10px rgba(var(--card-accent-gold-rgb), 0.6), 1px 1px 2px rgba(0,0,0,0.7);
-    border-bottom: none; /* Quitamos el borde que tenía antes */
+    border-bottom: none; /* Quitamos el borde que tenï¿½a antes */
     padding-bottom: 0;
 }
 
-.details-mythology { /* Nueva clase para la mitología */
+.details-mythology { /* Nueva clase para la mitologï¿½a */
     font-family: var(--font-primary);
     font-size: 0.8em;
     color: var(--card-text-secondary);
@@ -2540,17 +2606,17 @@ body {
     opacity: 0.8;
 }
 
-/* Sección media: Atributos (Rareza, Bendición/Maleficio) y Descripción */
+/* Secciï¿½n media: Atributos (Rareza, Bendiciï¿½n/Maleficio) y Descripciï¿½n */
 .details-middle-section {
     flex-grow: 1; /* Ocupa el espacio disponible */
     display: flex;
     flex-direction: column;
     justify-content: flex-start; /* Alinea el contenido arriba */
-    overflow: hidden; /* Para controlar el scroll de la descripción */
+    overflow: hidden; /* Para controlar el scroll de la descripciï¿½n */
     margin-bottom: 8px; /* Espacio antes del footer */
 }
 
-.details-attributes { /* Contenedor para rareza, bendición/maleficio */
+.details-attributes { /* Contenedor para rareza, bendiciï¿½n/maleficio */
     padding: 6px 8px;
     margin-bottom: 8px;
     background-color: rgba(0,0,0,0.25);
@@ -2584,7 +2650,7 @@ body {
             font-weight: bold;
         }
 
-.details-content-scrollable { /* Contenedor para la descripción, que será scrollable */
+.details-content-scrollable { /* Contenedor para la descripciï¿½n, que serï¿½ scrollable */
     flex-grow: 1;
     overflow-y: auto;
     padding: 6px;
@@ -2624,7 +2690,7 @@ body {
         font-style: italic;
     }
 /* Ya no son necesarios los estilos para p y p strong dentro de .details-content-scrollable,
-       ya que ahora solo contiene el texto de la descripción directamente. */
+       ya que ahora solo contiene el texto de la descripciï¿½n directamente. */
 
 
 /* Footer: Puntos y Tipo de Carta */
@@ -2656,10 +2722,10 @@ body {
         display: inline-block;
         margin-left: 4px;
     }
-/* Las clases .points-positive, .points-negative, .points-neutral se aplicarán aquí */
+/* Las clases .points-positive, .points-negative, .points-neutral se aplicarï¿½n aquï¿½ */
 
 /* .details-footer .badge-type se mantiene como estaba, ya tiene sus estilos */
-/* FIN DE CAMBIOS PARA EL REVERSO DE LA CARTA DEL CATÁLOGO */
+/* FIN DE CAMBIOS PARA EL REVERSO DE LA CARTA DEL CATï¿½LOGO */
 
 
 /* Rarity styles (MANTENIDO DE TU PRIMER CSS) */
@@ -2689,7 +2755,7 @@ body {
     text-shadow: 0 0 8px #ffc659, 0 0 3px #ffc659;
 }
 
-/* .details-footer span strong YA NO SE USA ASÍ, los puntos tienen su propia estructura */
+/* .details-footer span strong YA NO SE USA ASï¿½, los puntos tienen su propia estructura */
 
 .points-positive {
     color: var(--points-positive-color);
@@ -2808,7 +2874,7 @@ body {
     color: #58151c; /* Texto rojo oscuro */
     padding: 15px 25px;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Sombra más sutil sobre papiro */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Sombra mï¿½s sutil sobre papiro */
     font-family: 'Georgia', serif; /* Fuente papiro */
     font-size: 1.1em;
     display: flex;
@@ -2826,11 +2892,11 @@ body {
 /* Small screen adjustments (MANTENIDO DE TU PRIMER CSS, PUEDE NECESITAR AJUSTES FINOS) */
 @media (max-width: 768px) {
     .catalog-main-title {
-        font-size: 1.8em; /* Un poco más pequeño para móviles */
+        font-size: 1.8em; /* Un poco mï¿½s pequeï¿½o para mï¿½viles */
     }
 
     .card-gallery-section h2 {
-        font-size: 1.4em; /* Un poco más pequeño para móviles */
+        font-size: 1.4em; /* Un poco mï¿½s pequeï¿½o para mï¿½viles */
     }
 
     .catalog-card-item {
@@ -2840,13 +2906,13 @@ body {
 
     .card-carousel {
         gap: 15px;
-        padding: 15px 0px; /* Menos padding en el carrusel para móviles */
+        padding: 15px 0px; /* Menos padding en el carrusel para mï¿½viles */
     }
 
     .card-gallery-section, .action-buttons-section, .catalog-main-title, .catalog-alert.error-alert {
         padding-left: 15px;
         padding-right: 15px;
-        margin-left: 0; /* Resetear márgenes si los tiene */
+        margin-left: 0; /* Resetear mï¿½rgenes si los tiene */
         margin-right: 0;
     }
 
@@ -2863,7 +2929,7 @@ body {
     }
     /* Ajuste para que el papiro no sea tan alto y deje ver el fondo superior/inferior */
     .catalog-container {
-        padding-top: 60px; /* Menos padding si la navbar es más pequeña en móvil */
+        padding-top: 60px; /* Menos padding si la navbar es mï¿½s pequeï¿½a en mï¿½vil */
         padding-bottom: 10px;
     }
 
@@ -2871,7 +2937,7 @@ body {
         height: calc(100vh - 70px);
     }
 
-    /* Ajustes para el reverso de la carta en móviles */
+    /* Ajustes para el reverso de la carta en mï¿½viles */
     .card-details-inner-content {
         padding: 10px;
         font-size: 0.8em;
@@ -2931,7 +2997,7 @@ body {
     margin: 0 auto;
     gap: 25px;
     min-height: calc(100vh - 160px); /* Asegurar que ocupe el espacio vertical disponible */
-    flex-grow: 1; /* Permitir que crezca y deje espacio para las imágenes abajo */
+    flex-grow: 1; /* Permitir que crezca y deje espacio para las imï¿½genes abajo */
 }
 
 /* Contenedor central de puntuaciones */
@@ -2939,7 +3005,7 @@ body {
     flex-grow: 1;
     max-width: 1200px;
     background: rgba(0, 0, 0, 0.7); /* Fondo oscuro */
-    border: 2px solid #5a4a3c; /* Borde marrón oscuro */
+    border: 2px solid #5a4a3c; /* Borde marrï¿½n oscuro */
     border-radius: 15px;
     padding: 25px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
@@ -3026,17 +3092,17 @@ body {
     .fin-juego-player-box:hover {
         transform: translateY(-20px);
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-        box-shadow: 0 0 30px rgba(160, 160, 160, 0.8), 0 0 20px rgba(120, 120, 120, 0.5); /* Efecto gris más notable 
-        background: linear-gradient(145deg, rgba(80, 60, 40, 0.95), rgba(50, 30, 15, 1)); /* Fondo con más intensidad */
+        box-shadow: 0 0 30px rgba(160, 160, 160, 0.8), 0 0 20px rgba(120, 120, 120, 0.5); /* Efecto gris mï¿½s notable 
+        background: linear-gradient(145deg, rgba(80, 60, 40, 0.95), rgba(50, 30, 15, 1)); /* Fondo con mï¿½s intensidad */
     }
 
 /* Hover especial para el ganador */
     .fin-juego-player-box.fin-juego-winner-highlight:hover {
         transform: translateY(-20px);
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-        border-color: #ffe066; /* Dorado más vibrante */
-        box-shadow: 0 0 30px rgba(255, 215, 0, 0.8), 0 0 20px rgba(255, 230, 102, 0.5); /* Efecto dorado más notable */
-        background: linear-gradient(145deg, rgba(80, 60, 40, 0.95), rgba(50, 30, 15, 1)); /* Fondo con más intensidad */
+        border-color: #ffe066; /* Dorado mï¿½s vibrante */
+        box-shadow: 0 0 30px rgba(255, 215, 0, 0.8), 0 0 20px rgba(255, 230, 102, 0.5); /* Efecto dorado mï¿½s notable */
+        background: linear-gradient(145deg, rgba(80, 60, 40, 0.95), rgba(50, 30, 15, 1)); /* Fondo con mï¿½s intensidad */
     }
 
 .fin-juego-player-avatar {
@@ -3116,21 +3182,50 @@ body {
 
 /* Estilos para los personajes a los costados */
 .fin-juego-character {
-     /* Tamaño máximo para las imágenes */
-    max-height: 75vh; /* Altura máxima según lo especificado */
+    max-height: 75vh; /* Altura mÃ¡xima segÃºn lo especificado */
     width: auto;
     height: 75vh;
-    align-self: flex-end; /* Asegurar que estén abajo */
-    z-index: 0; /* Por detrás del contenedor central si hay superposición */
+    align-self: flex-end; /* Asegurar que estÃ©n abajo */
+    z-index: 1; /* Por delante del fondo pero detrÃ¡s del contenedor central */
+    filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.45));
+    pointer-events: none;
+    will-change: transform;
+    animation: character-float 5.5s ease-in-out infinite;
+    transition: transform 0.4s ease, filter 0.4s ease;
 }
 
 .left-character {
-    transform: scaleX(-1); /* Voltear horizontalmente para que mire hacia el centro */
     margin-right: 20px; /* Espacio entre la imagen y el contenedor central */
+    /* Flip horizontal con animaciÃ³n que preserva el scaleX */
+    animation: character-float-flipped 5.5s ease-in-out infinite;
+    animation-delay: 0s;
 }
 
 .right-character {
     margin-left: 20px; /* Espacio entre la imagen y el contenedor central */
+    animation: character-float 5.5s ease-in-out infinite;
+    animation-delay: 1.4s;
+}
+
+/* AnimaciÃ³n de respiraciÃ³n/flotaciÃ³n para personajes volteados horizontalmente */
+@keyframes character-float-flipped {
+    0%, 100% {
+        transform: scaleX(-1) translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: scaleX(-1) translateY(-10px) rotate(-0.4deg);
+    }
+}
+
+/* Hover sutil â€” preserva el scaleX del flip horizontal */
+.fin-juego-character.left-character:hover {
+    transform: scaleX(-1) scale(1.05) translateY(-6px) rotate(-1.2deg);
+    filter: drop-shadow(0 14px 24px rgba(212, 175, 55, 0.55));
+}
+
+.fin-juego-character.right-character:hover {
+    transform: scale(1.05) translateY(-6px) rotate(1.2deg);
+    filter: drop-shadow(0 14px 24px rgba(212, 175, 55, 0.55));
 }
 
 /* Media Queries */
@@ -3139,13 +3234,13 @@ body {
         flex-direction: column;
         align-items: center;
         padding: 0 10px;
-        min-height: auto; /* Ajustar en móviles */
+        min-height: auto; /* Ajustar en mï¿½viles */
     }
 
     .fin-juego-central-board {
         max-width: 100%;
         margin: 0;
-        align-self: center; /* Centrar en móviles */
+        align-self: center; /* Centrar en mï¿½viles */
     }
 
     .fin-juego-scores-list {
@@ -3162,9 +3257,9 @@ body {
         max-width: 100%;
     }
 
-    /* Ajustar personajes en pantallas pequeñas */
+    /* Ajustar personajes en pantallas pequeï¿½as */
     .fin-juego-character {
-        display: none; /* Ocultar personajes en pantallas pequeñas */
+        display: none; /* Ocultar personajes en pantallas pequeï¿½as */
     }
 }
 
@@ -3192,7 +3287,7 @@ body {
 }
 
 
-/* --- Estilos para los Títulos de Autenticación (Login/Signup) --- */
+/* --- Estilos para los Tï¿½tulos de Autenticaciï¿½n (Login/Signup) --- */
 .auth-title-container {
     display: flex;
     justify-content: center;
@@ -3234,8 +3329,8 @@ body {
         left: 50%;
         width: 0;
         height: 3px;
-        background-color: #b8860b; /* Color por defecto, el activo lo sobrescribirá si es necesario */
-        transition: width 0.3s ease-in-out, left 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Añadida transición para background-color */
+        background-color: #b8860b; /* Color por defecto, el activo lo sobrescribirï¿½ si es necesario */
+        transition: width 0.3s ease-in-out, left 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Aï¿½adida transiciï¿½n para background-color */
     }
 
     .auth-title a {
@@ -3246,7 +3341,7 @@ body {
         height: 100%;
     }
 
-    /* HOVER en el título INACTIVO */
+    /* HOVER en el tï¿½tulo INACTIVO */
     .auth-title:not(.active):hover {
         color: #f5e6ca;
         background-color: rgba(255, 255, 255, 0.05);
@@ -3255,10 +3350,10 @@ body {
         .auth-title:not(.active):hover::after {
             width: 70%; /* Ancho de la barra en hover (ajustado para ser consistente) */
             left: 15%; /* 50% - (70%/2) = 15% */
-            background-color: rgba(245, 230, 202, 0.7); /* Color más sutil para el hover */
+            background-color: rgba(245, 230, 202, 0.7); /* Color mï¿½s sutil para el hover */
         }
 
-    /* Estilo para el título ACTIVO */
+    /* Estilo para el tï¿½tulo ACTIVO */
     .auth-title.active {
         color: #f5e6ca;
     }
@@ -3270,7 +3365,7 @@ body {
         }
 
 
-/* Media Query para pantallas más pequeñas */
+/* Media Query para pantallas mï¿½s pequeï¿½as */
 @media (max-width: 480px) {
     .auth-title-container {
         max-width: 90%;
@@ -3286,23 +3381,23 @@ body {
             height: 2px;
         }
 
-        /* Asegurar consistencia en móviles también */
+        /* Asegurar consistencia en mï¿½viles tambiï¿½n */
         .auth-title:not(.active):hover::after,
         .auth-title.active::after {
-            width: 60%; /* Ajustar si es necesario para móviles */
+            width: 60%; /* Ajustar si es necesario para mï¿½viles */
             left: 20%;
         }
 }
 
-/* FORMULARIO DE CERRAR SESIÓN */
+/* FORMULARIO DE CERRAR SESIï¿½N */
 .logout-form {
     position: absolute;
     top: 20px;
-    right: 5px; /* Más cerca del borde derecho, pero con un pequeño margen */
-    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    right: 5px; /* Mï¿½s cerca del borde derecho, pero con un pequeï¿½o margen */
+    z-index: 1000; /* Asegura que estï¿½ por encima de otros elementos */
 }
 
-/* BOTÓN DE CERRAR SESIÓN */
+/* BOTï¿½N DE CERRAR SESIï¿½N */
 .logout-button {
     width: 42px;
     height: 42px;
@@ -3329,7 +3424,7 @@ body {
 .fin-juego-actions-container {
     margin-top: 20px;
     width: 100%;
-    max-width: 400px; /* Aumentado ligeramente para dar más espacio */
+    max-width: 400px; /* Aumentado ligeramente para dar mï¿½s espacio */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -3338,12 +3433,12 @@ body {
     padding: 0; /* Eliminar cualquier padding que pueda desplazar */
 }
 
-/* Formularios de acción */
+/* Formularios de acciï¿½n */
 .fin-juego-action-form {
     width: 100%;
-    max-width: 300px; /* Mantener el ancho máximo */
+    max-width: 300px; /* Mantener el ancho mï¿½ximo */
     display: flex;
-    justify-content: center; /* Asegurar que el formulario esté centrado */
+    justify-content: center; /* Asegurar que el formulario estï¿½ centrado */
 }
 
 /* Botones de fin de juego */
